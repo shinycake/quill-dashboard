@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T17:25:17.466879+00:00",
+ "generated_at": "2026-09-28T17:27:18.239246+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": null
    },
    "status": "parked",
-   "updated_at": "2026-09-28T18:05:00Z",
+   "updated_at": "2026-09-28T17:25:54Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 84
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T17:15:59Z",
+   "updated_at": "2026-09-28T17:26:02Z",
    "stale": false,
-   "age_seconds": 558
+   "age_seconds": 76
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -59,17 +59,17 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": true,
-   "age_seconds": 917
+   "age_seconds": 1038
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A5 profile management",
-    "phase": "pr-open-then-park",
+    "phase": "parked",
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "PR #121 rebased (4c48058), all gates green; merge watcher round 2 waiting on CI"
+    "detail": "PARKED per Idan 2026-09-28: A6 merged (PR #121, d0fd7b6); A7 stood down; all slice worktrees removed. Resumes after kit adoption."
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -81,17 +81,17 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T17:22:07Z",
+   "updated_at": "2026-09-28T17:26:50Z",
    "last_merged": {
-    "pr": 115,
-    "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
-    "at": "2026-09-28T15:04:42Z",
-    "parity": "347/499=69.5%"
+    "pr": 121,
+    "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
+    "at": "2026-09-28T17:26:23Z",
+    "parity": "364/522=69.7%"
    },
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
-   "parked": false,
+   "parked": true,
    "stale": false,
-   "age_seconds": 190
+   "age_seconds": 28
   }
  ]
 }
