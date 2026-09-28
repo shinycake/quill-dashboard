@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-28T11:33:17.409891+00:00",
+ "generated_at": "2026-09-28T11:35:16.991225+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/chat-preview",
-    "detail": "B1 fixed in 8e5aaae (stop_propagation on overlay mouse-up); delta re-review in flight; linkpreview implementer running parallel",
-    "phase": "fixups",
+    "branch": "parity/media-shared-gallery",
+    "detail": "per-tab empty states for shared-media gallery; linkpreview slice in adversarial review (PR pending)",
+    "phase": "implementing",
     "pr": null,
-    "slice": "chat-preview (chatlist-chat-preview)",
-    "worktree": "~/workspace/quill-l1-chatpreview"
+    "slice": "media-shared-gallery",
+    "worktree": "~/workspace/quill-l1-gallery"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "per-tab media/photos/videos/files empty states",
+    "detail": "joiner-side rendering of the group welcome message",
     "phase": "queued",
-    "slice": "media-shared-gallery"
+    "slice": "groups-welcome-view"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:25:52Z",
-   "stale": false,
-   "age_seconds": 445
+   "updated_at": "2026-09-28T11:56:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:26:02Z",
    "stale": false,
-   "age_seconds": 435
+   "age_seconds": 554
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 11897
+   "age_seconds": 12016
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:28:41Z",
    "stale": false,
-   "age_seconds": 276
+   "age_seconds": 395
   }
  ]
 }
