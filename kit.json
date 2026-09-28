@@ -1,1 +1,1 @@
-{"phase":"Phase 2 — Kit overlays","status":"active","prs":[122,123,124,126],"updated_at":"2026-09-28T21:30:00Z","notes":"PR #124 reverted via #126 (kit Dialog unworkable in direct-render mode); dialogs back to hand-rolled"}
+{"phase":"Phase 2 — Kit overlays","status":"active","prs":[122,123,126],"updated_at":"2026-09-28T21:35:00Z","notes":"PR #124 reverted (#126 merged); dialogs back to hand-rolled pending open_dialog redesign"}
