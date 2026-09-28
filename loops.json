@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:07:17.598558+00:00",
+ "generated_at": "2026-09-28T07:09:17.666201+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -21,32 +21,32 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T07:08:30Z",
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 47
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "branch": "parity/stories-3",
-    "detail": "rebase conflict fallout fixed (B1 imports restored), clippy re-running",
-    "phase": "gates",
+    "branch": "parity/stories-4",
+    "detail": "dedicated reviewer running on 3 commits; S3 gates still in flight in quill-stories1",
+    "phase": "reviewing",
     "pr": null,
-    "slice": "S3 story management",
-    "worktree": "~/workspace/quill-stories1"
+    "slice": "S4 story viewers/report/stealth",
+    "worktree": "~/workspace/quill-stories2"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "branch": "parity/stories-4",
-    "detail": "implementer running in quill-stories2: viewers list + report story + stealth mode",
+    "branch": "parity/stories-5",
+    "detail": "implementer dispatched in quill-stories3 per spec: albums + archive + pinned stories",
     "phase": "implementing",
-    "slice": "S4 story viewers/report/stealth"
+    "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:05:57Z",
-   "stale": false,
-   "age_seconds": 80
+   "updated_at": "2026-09-28T07:10:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": null,
@@ -91,9 +91,9 @@
     "slice": "A3 sessions management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:58:39Z",
+   "updated_at": "2026-09-28T07:08:41Z",
    "stale": false,
-   "age_seconds": 518
+   "age_seconds": 36
   }
  ]
 }
