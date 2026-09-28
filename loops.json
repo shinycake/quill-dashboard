@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T15:45:18.330149+00:00",
+ "generated_at": "2026-09-28T15:47:21.002436+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "tbd"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:35:54Z",
+   "updated_at": "2026-09-28T15:45:55Z",
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,30 +39,34 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:35:57Z",
+   "updated_at": "2026-09-28T15:46:02Z",
    "stale": false,
-   "age_seconds": 561
+   "age_seconds": 79
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/settings-appearance",
-    "detail": "implementer completed (881f730, 6 boxes, gates green incl. UI build); dedicated adversarial reviewer dispatched",
+    "detail": "reviewer verdict recovered from transcript: MERGE WITH FIXUPS (5 items, #1 Theme::sync_base is the blocker); fixup+gate worker dispatched in quill-l3-s1",
     "head": "881f730",
-    "phase": "review",
+    "phase": "fixups",
     "slice": "settings appearance",
     "worktree": "~/workspace/quill-l3-s1"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "branch": "parity/payments-p1",
-    "detail": "fixup+rebase+gate worker running in ~/workspace/quill-l3-next (11 reviewer fixups, incl. payment_request lifecycle blocker and double-pay guard)",
-    "phase": "fixups",
-    "slice": "payments p1"
+    "branch": "parity/settings-privacy",
+    "detail": "pipelined implementer dispatched in quill-l3-s2: Privacy settings screen (9 boxes: lastseen/phone/photo/forwards/calls/invites/readreceipts/blocked/exceptions)",
+    "phase": "in_progress",
+    "slice": "settings privacy"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:15:00Z",
+   "updated_at": "2026-09-28T16:20:00Z",
+   "waiting_on": {
+    "detail": "payments fixup+rebase+gate worker in quill-l3-next (11 reviewer fixups)",
+    "slice": "payments p1"
+   },
    "stale": false,
    "age_seconds": 0
   },
@@ -94,7 +98,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 397
+   "age_seconds": 520
   }
  ]
 }
