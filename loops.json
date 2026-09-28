@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:01:18.027343+00:00",
+ "generated_at": "2026-09-28T13:03:17.745923+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:55:54Z",
    "stale": false,
-   "age_seconds": 324
+   "age_seconds": 443
   },
   {
    "branch": "parity/stories-3",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:58:42Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 275
   }
  ]
 }
