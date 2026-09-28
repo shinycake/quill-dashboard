@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:05:17.428863+00:00",
+ "generated_at": "2026-09-28T13:07:17.888538+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,18 +20,18 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:55:54Z",
+   "updated_at": "2026-09-28T13:05:53Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 84
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "gates green on 7beb1a2; UI build running; then fresh PR (old #105 wedged) + CI watch + merge",
-    "phase": "gates",
-    "pr": 105,
+    "detail": "all gates green on 7beb1a2; fresh PR #112 opened (old #105 wedged); CI watch running; merge on green",
+    "phase": "ci",
+    "pr": 112,
     "slice": "S4 story viewers/report/stealth",
     "worktree": "~/workspace/quill-stories2"
    },
@@ -39,13 +39,13 @@
    "loop": 2,
    "next": {
     "branch": "parity/stories-3",
-    "detail": "gates green on latest; CI watch on fresh push; merge when linux-fmt-clippy-test green",
+    "detail": "gates + force-push running; then CI watch; merge when linux-fmt-clippy-test green",
     "phase": "ci",
     "pr": 108,
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:20:00Z",
+   "updated_at": "2026-09-28T15:35:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:03:48Z",
    "stale": false,
-   "age_seconds": 89
+   "age_seconds": 209
   }
  ]
 }
