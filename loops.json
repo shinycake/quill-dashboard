@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-28T16:53:20.110411+00:00",
+ "generated_at": "2026-09-28T16:55:21.555065+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/calls-group-self-tile",
-    "detail": "PARK ORDER (Idan): finishing 2 in-flight slices only \u2014 screenshare-send in delta re-review, group self-tile (4c32b4d, 70.1%) in adversarial review \u2014 then park. No new slices.",
+    "branch": "parity/calls-screenshare-send-ci2",
+    "detail": "PARK ORDER (Idan): finishing 2 in-flight slices only \u2014 screenshare PR #119 open, local gates rerunning post-rebase; group self-tile (4c32b4d, 70.1%) in adversarial review \u2014 then park. No new slices.",
     "phase": "review",
-    "pr": null,
-    "slice": "calls-group-self-tile",
-    "worktree": "~/workspace/quill-l1-selftile"
+    "pr": 119,
+    "slice": "calls-screenshare-send",
+    "worktree": "~/workspace/quill-l1-screenshare"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -20,9 +20,9 @@
     "slice": null
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:45:54Z",
+   "updated_at": "2026-09-28T17:00:00Z",
    "stale": false,
-   "age_seconds": 446
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,15 +41,16 @@
    "status": "active",
    "updated_at": "2026-09-28T16:45:57Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 564
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/payments-p1",
-    "detail": "STOP-WORK ORDER (Idan): finishing payments through gates->PR->merge per normal protocol, then parking. Gate worker running in quill-l3-next.",
-    "head": "74d670b",
-    "phase": "gates",
+    "detail": "STOP-WORK ORDER (Idan): PR #118 opened for payments; head-specific CI watch running (proc_63661a928736); merge on green, then park",
+    "head": "0b8548b",
+    "phase": "merging",
+    "pr": 118,
     "slice": "payments p1",
     "worktree": "~/workspace/quill-l3-next"
    },
@@ -57,19 +58,18 @@
    "loop": 3,
    "parked": {
     "branch": "parity/settings-appearance",
-    "detail": "all 5 reviewer fixups applied, full gates green (961 lib + 59 replay, UI build), rebased onto c9eddc6, README union 0 lost / 6 added (355->361). NOT pushed, no PR \u2014 parked per stop-work order; kit-adoption coordinator owns src/ui/mod.rs next.",
+    "detail": "fixups done, gates green, parked (not pushed, no PR). Kit-adoption coordinator owns src/ui/mod.rs next.",
     "head": "c3bb7ad",
-    "slice": "settings appearance",
-    "worktree": "~/workspace/quill-l3-s1"
+    "slice": "settings appearance"
    },
    "status": "stopping",
-   "updated_at": "2026-09-28T16:50:00Z",
+   "updated_at": "2026-09-28T17:00:00Z",
    "waiting_on": {
     "detail": "privacy implementer STOPPED via interrupt (commit WIP as-is, no push/PR/builds, then halt); completion report pending",
     "slice": "settings privacy"
    },
    "stale": false,
-   "age_seconds": 200
+   "age_seconds": 0
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -101,7 +101,7 @@
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
    "parked": false,
    "stale": false,
-   "age_seconds": 268
+   "age_seconds": 389
   }
  ]
 }
