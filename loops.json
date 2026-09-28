@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:03:17.745923+00:00",
+ "generated_at": "2026-09-28T13:05:17.428863+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:55:54Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 563
   },
   {
    "branch": "parity/stories-3",
@@ -76,11 +76,11 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A4 web sessions + per-session toggles",
-    "phase": "reviewing",
+    "phase": "fixups",
     "branch": "parity/auth-websessions-1",
     "worktree": "~/workspace/quill-a4-websessions",
     "pr": 111,
-    "detail": "implementer done (971 tests green) \u2014 dedicated reviewer running"
+    "detail": "fixing reviewer blockers: websites stale-refetch + current-session toggles"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -92,9 +92,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:58:42Z",
+   "updated_at": "2026-09-28T13:03:48Z",
    "stale": false,
-   "age_seconds": 275
+   "age_seconds": 89
   }
  ]
 }
