@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:45:17.312167+00:00",
+ "generated_at": "2026-09-28T06:47:16.979241+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-remainder-2 (audio-fx + proxy)"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:35:56Z",
+   "updated_at": "2026-09-28T06:45:52Z",
    "stale": false,
-   "age_seconds": 561
+   "age_seconds": 84
   },
   {
    "branch": "parity/stories-3",
@@ -44,16 +44,16 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:35:58Z",
+   "updated_at": "2026-09-28T06:45:55Z",
    "stale": false,
-   "age_seconds": 559
+   "age_seconds": 81
   },
   {
    "branch": "parity/bots-profile",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/bots-profile",
-    "detail": "gates: fmt+clippy passed, cargo test running, ui build next",
+    "detail": "gates: fmt+clippy+test passed; ui link failed on -lxkbcommon-x11 (env quirk, AGENTS.md recipe) \u2014 rerunning ui build with LIBRARY_PATH=/tmp/xkb-lib",
     "phase": "gates",
     "pr": null,
     "slice": "B2 bot-profile actions",
@@ -68,9 +68,9 @@
     "slice": "B3 poll creation"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:36:00Z",
-   "stale": false,
-   "age_seconds": 557
+   "updated_at": "2026-09-28T07:05:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:38:50Z",
    "stale": false,
-   "age_seconds": 387
+   "age_seconds": 506
   }
  ]
 }
