@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:21:17.842940+00:00",
+ "generated_at": "2026-09-28T13:23:18.328023+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,32 +22,31 @@
    "status": "active",
    "updated_at": "2026-09-28T13:15:57Z",
    "stale": false,
-   "age_seconds": 320
+   "age_seconds": 441
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "branch": "parity/stories-4",
-    "detail": "all gates green on 7beb1a2; fresh PR #112 opened (old #105 wedged); CI watch running; merge on green",
-    "phase": "ci",
-    "pr": 112,
-    "slice": "S4 story viewers/report/stealth",
-    "worktree": "~/workspace/quill-stories2"
+    "branch": "parity/stories-3",
+    "detail": "rebased onto 8ac4b90 (S4 merge); 19 conflict regions resolved; gates running; then force-push + CI + merge on PR #108",
+    "phase": "gates",
+    "pr": 108,
+    "slice": "S3 manage posted stories",
+    "worktree": "~/workspace/quill-stories1"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "branch": "parity/stories-3",
-    "detail": "gates + force-push running; then CI watch; merge when linux-fmt-clippy-test green",
-    "phase": "ci",
-    "pr": 108,
-    "slice": "S3 manage posted stories"
+    "branch": "parity/stories-5",
+    "detail": "rebased onto 7beb1a2; brace fix + fmt running; then gates + UI build + PR",
+    "phase": "gates",
+    "slice": "S5 albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:15:55Z",
-   "stale": false,
-   "age_seconds": 322
+   "updated_at": "2026-09-28T15:55:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -94,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:18:40Z",
    "stale": false,
-   "age_seconds": 157
+   "age_seconds": 278
   }
  ]
 }
