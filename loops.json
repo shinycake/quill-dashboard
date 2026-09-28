@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:07:21.814949+00:00",
+ "generated_at": "2026-09-28T14:09:17.207637+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:05:53Z",
    "stale": false,
-   "age_seconds": 88
+   "age_seconds": 204
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,14 +41,14 @@
    "status": "active",
    "updated_at": "2026-09-28T14:05:59Z",
    "stale": false,
-   "age_seconds": 82
+   "age_seconds": 198
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "duplicate #[test] from merge-script removed (fmt clean), amended as 0c6a8e8; full gate suite re-running (proc_bf8a7eef469f)",
-    "head": "0c6a8e8",
+    "detail": "dropped import tail (SupergroupMembersFetch, WelcomeMessagesFetch, active_custom_keyboard, effective_preview) restored and amended (82fe278); UI build re-running (proc_9fad084a16a3); lib tests 921 + replay 59 already passed on this tree",
+    "head": "82fe278",
     "phase": "gates",
     "pr": 113,
     "slice": "B4 poll management",
@@ -62,9 +62,9 @@
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:05:00Z",
-   "stale": false,
-   "age_seconds": 141
+   "updated_at": "2026-09-28T14:45:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -86,9 +86,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:58:44Z",
+   "updated_at": "2026-09-28T14:08:44Z",
    "stale": false,
-   "age_seconds": 517
+   "age_seconds": 33
   }
  ]
 }
