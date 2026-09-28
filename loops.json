@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:23:18.192555+00:00",
+ "generated_at": "2026-09-28T08:25:17.865589+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,14 +22,14 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:53Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 564
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "fix-ups applied, rebased onto origin/main, post-rebase clippy+test running",
+    "detail": "leftover rebase markers fixed and committed; post-rebase clippy+test re-running",
     "phase": "gates",
     "pr": null,
     "slice": "S4 story viewers/report/stealth",
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:15:57Z",
+   "updated_at": "2026-09-28T08:15:00Z",
    "stale": false,
-   "age_seconds": 441
+   "age_seconds": 617
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": false,
-   "age_seconds": 498
+   "age_seconds": 617
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:18:45Z",
    "stale": false,
-   "age_seconds": 273
+   "age_seconds": 392
   }
  ]
 }
