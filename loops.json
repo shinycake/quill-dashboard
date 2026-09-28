@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-28T16:21:19.208310+00:00",
+ "generated_at": "2026-09-28T16:23:18.535532+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-group-self-tile",
-    "detail": "local camera self tile in group calls; screenshare-send in fixup for review blocker (reconnect desync \u2014 screen-share intent lost, camera reactivates unannounced)",
+    "detail": "local camera self tile in group calls; screenshare-send reconnect fix (f7f4425) in delta re-review",
     "phase": "implementing",
     "pr": null,
     "slice": "calls-group-self-tile",
@@ -20,9 +20,9 @@
     "slice": "tbd"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:15:53Z",
+   "updated_at": "2026-09-28T17:15:00Z",
    "stale": false,
-   "age_seconds": 326
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T16:15:54Z",
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 444
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -98,7 +98,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 138
+   "age_seconds": 257
   }
  ]
 }
