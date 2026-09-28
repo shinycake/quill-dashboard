@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:17:16.860748+00:00",
+ "generated_at": "2026-09-28T12:19:17.153123+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:15:56Z",
    "stale": false,
-   "age_seconds": 80
+   "age_seconds": 201
   },
   {
    "loop": 3,
@@ -69,7 +69,7 @@
     "detail": "implemented in ~/workspace/quill-l3-b4 (commit f17880a); awaiting B3 merge, then rebase onto origin/main, dedicated review, PR"
    },
    "stale": false,
-   "age_seconds": 166
+   "age_seconds": 287
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -90,9 +90,9 @@
     "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:08:38Z",
+   "updated_at": "2026-09-28T12:18:38Z",
    "stale": false,
-   "age_seconds": 518
+   "age_seconds": 39
   }
  ]
 }
