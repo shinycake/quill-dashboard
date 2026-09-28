@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:53:17.528813+00:00",
+ "generated_at": "2026-09-28T08:55:17.194430+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:45:54Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 563
   },
   {
    "branch": "parity/stories-3",
@@ -45,8 +45,8 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T08:40:00Z",
-   "stale": false,
-   "age_seconds": 797
+   "stale": true,
+   "age_seconds": 917
   },
   {
    "branch": "parity/polls",
@@ -70,17 +70,17 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 2297
+   "age_seconds": 2417
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A2 two-step verification (setPassword)",
-    "phase": "reviewing",
+    "phase": "gates",
     "branch": "parity/auth-2fa-1",
     "worktree": "~/workspace/quill-a2-2fa",
-    "pr": null,
-    "detail": "targeted re-verification of fixups (blocker + 4 nits fixed, 937 tests green)"
+    "pr": 104,
+    "detail": "PR #104 open \u2014 merge watcher tracking linux-fmt-clippy-test"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -91,9 +91,9 @@
     "detail": "implementer re-dispatched after infra error \u2014 continuing surviving uncommitted work"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:48:38Z",
+   "updated_at": "2026-09-28T08:54:12Z",
    "stale": false,
-   "age_seconds": 279
+   "age_seconds": 65
   }
  ]
 }
