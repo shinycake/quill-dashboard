@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-28T12:51:17.693600+00:00",
+ "generated_at": "2026-09-28T12:53:17.487948+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/media-shared-gallery",
-    "detail": "PR #110 welcome-view merged (66.5%); gallery slice in adversarial review, PR to open on MERGE verdict",
-    "phase": "review",
+    "branch": "parity/calls-screenshare-send",
+    "detail": "1:1 screen-share send path (receive done); gallery fixup in flight for review blocker B1 (close gallery on chat change)",
+    "phase": "implementing",
     "pr": null,
-    "slice": "media-shared-gallery",
-    "worktree": "~/workspace/quill-l1-gallery"
+    "slice": "calls-screenshare-send",
+    "worktree": "~/workspace/quill-l1-screenshare"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "1:1 call screen-share send path (receive side already done)",
+    "detail": "local camera tile in group calls",
     "phase": "queued",
-    "slice": "calls-screenshare-send"
+    "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:45:53Z",
-   "stale": false,
-   "age_seconds": 324
+   "updated_at": "2026-09-28T13:10:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -76,24 +76,25 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A4 web sessions + per-session toggles",
-    "phase": "implementing",
+    "phase": "reviewing",
     "branch": "parity/auth-websessions-1",
     "worktree": "~/workspace/quill-a4-websessions",
-    "pr": null,
-    "detail": "rebasing stacked branch onto origin/main after A3 merge, then continuing"
+    "pr": 111,
+    "detail": "implementer done (971 tests green) \u2014 dedicated reviewer running"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
    "next": {
-    "slice": "A5 next auth/accounts slice",
-    "phase": "queued",
-    "branch": null,
-    "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
+    "slice": "A5 profile management",
+    "phase": "implementing",
+    "branch": "parity/auth-profile-1",
+    "worktree": "~/workspace/quill-a5-profile",
+    "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:48:41Z",
+   "updated_at": "2026-09-28T12:52:19Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 58
   }
  ]
 }
