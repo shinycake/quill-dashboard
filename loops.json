@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-28T12:33:17.107626+00:00",
+ "generated_at": "2026-09-28T12:35:18.556441+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/media-shared-gallery",
-    "detail": "PR #109 linkpreview merged (64.9%); gallery completion agent finishing WIP: gates + screenshot + commit",
+    "branch": "parity/groups-welcome-view",
+    "detail": "joiner-side group welcome-message rendering (investigate TDLib exposure + TGX, render only); gallery slice in adversarial review (PR pending)",
     "phase": "implementing",
     "pr": null,
-    "slice": "media-shared-gallery (completion)",
-    "worktree": "~/workspace/quill-l1-gallery"
+    "slice": "groups-welcome-view",
+    "worktree": "~/workspace/quill-l1-welcome"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "joiner-side rendering of the group welcome message",
+    "detail": "1:1 call screen-share send path (receive side already done)",
     "phase": "queued",
-    "slice": "groups-welcome-view"
+    "slice": "calls-screenshare-send"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:25:53Z",
-   "stale": false,
-   "age_seconds": 444
+   "updated_at": "2026-09-28T12:38:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -47,7 +47,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:26:03Z",
    "stale": false,
-   "age_seconds": 434
+   "age_seconds": 555
   },
   {
    "loop": 3,
@@ -69,8 +69,8 @@
     "branch": "parity/polls-manage",
     "detail": "implemented in ~/workspace/quill-l3-b4 (commit f17880a); awaiting B3 merge, then rebase onto origin/main, dedicated review, PR"
    },
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 48
   },
   {
    "loop": 4,
