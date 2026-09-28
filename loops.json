@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:31:17.255947+00:00",
+ "generated_at": "2026-09-28T11:33:17.409891+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:25:52Z",
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 445
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:26:02Z",
    "stale": false,
-   "age_seconds": 315
+   "age_seconds": 435
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 11777
+   "age_seconds": 11897
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:28:41Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 276
   }
  ]
 }
