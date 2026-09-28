@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:37:17.550221+00:00",
+ "generated_at": "2026-09-28T13:39:19.298920+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -21,8 +21,8 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T13:38:00Z",
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 79
   },
   {
    "branch": "parity/stories-3",
@@ -46,14 +46,14 @@
    "status": "active",
    "updated_at": "2026-09-28T13:35:58Z",
    "stale": false,
-   "age_seconds": 79
+   "age_seconds": 201
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "PR #112 (stories-4) merged during B4 CI -> rebase conflict in 3 files (imports + story test), resolved with union semantics; README union verified 335->341, 0 lost; post-resolution gates running (proc_4dbb83d10f76)",
-    "head": "0532a30",
+    "detail": "rustfmt reflow from rebase resolution fixed and amended (f54d951); full post-resolution gate suite re-running (proc_a15df8dcbedf)",
+    "head": "f54d951",
     "phase": "gates",
     "pr": 113,
     "slice": "B4 poll management",
@@ -67,7 +67,7 @@
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:47:00Z",
+   "updated_at": "2026-09-28T13:55:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -91,9 +91,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:37:10Z",
+   "updated_at": "2026-09-28T13:38:39Z",
    "stale": false,
-   "age_seconds": 7
+   "age_seconds": 40
   }
  ]
 }
