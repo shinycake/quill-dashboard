@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:35:18.160981+00:00",
+ "generated_at": "2026-09-28T08:37:17.698584+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "media-link-preview-send-options"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:25:54Z",
+   "updated_at": "2026-09-28T08:35:54Z",
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 83
   },
   {
    "branch": "parity/stories-3",
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:26:01Z",
+   "updated_at": "2026-09-28T08:35:56Z",
    "stale": false,
-   "age_seconds": 557
+   "age_seconds": 81
   },
   {
    "branch": "parity/polls",
@@ -70,17 +70,17 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 1218
+   "age_seconds": 1337
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A2 two-step verification (setPassword)",
-    "phase": "fixups",
+    "phase": "reviewing",
     "branch": "parity/auth-2fa-1",
     "worktree": "~/workspace/quill-a2-2fa",
     "pr": null,
-    "detail": "fixing reviewer blocker (stale email on change/disable) + 4 nits"
+    "detail": "targeted re-verification of fixups (blocker + 4 nits fixed, 937 tests green)"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -91,9 +91,9 @@
     "detail": "implementer re-dispatched after infra error \u2014 continuing surviving uncommitted work"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:28:42Z",
+   "updated_at": "2026-09-28T08:36:20Z",
    "stale": false,
-   "age_seconds": 396
+   "age_seconds": 57
   }
  ]
 }
