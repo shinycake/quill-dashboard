@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:11:18.934898+00:00",
+ "generated_at": "2026-09-28T07:13:18.564730+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -29,8 +29,8 @@
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "dedicated reviewer running on 3 commits; S3 gates still in flight in quill-stories1",
-    "phase": "reviewing",
+    "detail": "reviewer CHANGES REQUESTED: viewers re-open duplication, report send-failure hang, citation nit + 6 nits; fix-up implementer dispatched",
+    "phase": "fixups",
     "pr": null,
     "slice": "S4 story viewers/report/stealth",
     "worktree": "~/workspace/quill-stories2"
@@ -39,14 +39,14 @@
    "loop": 2,
    "next": {
     "branch": "parity/stories-5",
-    "detail": "implementer dispatched in quill-stories3 per spec: albums + archive + pinned stories",
+    "detail": "implementer running in quill-stories3: albums + archive + pinned stories",
     "phase": "implementing",
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:10:00Z",
+   "updated_at": "2026-09-28T07:12:30Z",
    "stale": false,
-   "age_seconds": 78
+   "age_seconds": 48
   },
   {
    "branch": null,
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:10:02Z",
    "stale": false,
-   "age_seconds": 76
+   "age_seconds": 196
   }
  ]
 }
