@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quill — Live Parity Dashboard</title>
+<meta name="description" content="Live build progress of Quill, the Rust Telegram desktop client. Parity checklist, merged PRs, reviews, and work in progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14; --card:#131824; --card2:#171e2c; --border:#232c3f;
+    --text:#e8eef7; --muted:#8b96a9; --faint:#5b6579;
+    --green:#3fb950; --green-dim:rgba(63,185,80,.14);
+    --blue:#58a6ff; --blue-dim:rgba(88,166,255,.12);
+    --amber:#d29922; --amber-dim:rgba(210,153,34,.13);
+    --purple:#bc8cff; --purple-dim:rgba(188,140,255,.12);
+    --radius:16px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    font-size:15px; line-height:1.5;
+    background-image:radial-gradient(1200px 500px at 50% -10%, rgba(88,166,255,.07), transparent 60%);
+    min-height:100vh;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:20px 16px 64px}
+  header.top{display:flex; align-items:center; gap:12px; margin:8px 0 4px}
+  .logo{
+    width:44px; height:44px; border-radius:13px; flex:0 0 44px;
+    background:linear-gradient(135deg,#2ea043,#58a6ff);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:22px; color:#fff;
+    box-shadow:0 6px 20px rgba(88,166,255,.25);
+  }
+  h1{font-size:20px; margin:0; font-weight:800; letter-spacing:-.02em}
+  .sub{color:var(--muted); font-size:13px; margin:2px 0 0}
+  .live-dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--green); margin-right:6px; animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .hero{
+    margin:18px 0; background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--border); border-radius:var(--radius);
+    padding:22px 18px; display:flex; align-items:center; gap:20px;
+  }
+  .ring{position:relative; width:132px; height:132px; flex:0 0 132px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .pct{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+  }
+  .ring .pct b{font-size:30px; font-weight:800; letter-spacing:-.03em}
+  .ring .pct span{font-size:11px; color:var(--muted); font-weight:600}
+  .hero-meta{flex:1; min-width:0}
+  .hero-meta .big{font-size:15px; font-weight:700}
+  .hero-meta .muted{color:var(--muted); font-size:13px; margin-top:4px}
+  .refresh-row{display:flex; align-items:center; gap:10px; margin-top:12px}
+  button.refresh{
+    appearance:none; border:1px solid var(--border); background:var(--card2); color:var(--text);
+    border-radius:999px; padding:9px 18px; font:600 13px 'Inter',sans-serif; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  button.refresh:active{transform:scale(.97)}
+  button.refresh:disabled{opacity:.55; cursor:default}
+  .spin{display:inline-block; animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  #updatedAt{font-size:12px; color:var(--faint)}
+
+  .banner{
+    display:none; margin:14px 0 0; padding:12px 14px; border-radius:12px;
+    background:var(--amber-dim); border:1px solid rgba(210,153,34,.4);
+    color:#e8c56d; font-size:13px; font-weight:500;
+  }
+  .banner.show{display:block}
+
+  section{margin-top:26px}
+  section h2{
+    font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 12px 2px; display:flex; align-items:center; gap:8px;
+  }
+  section h2 .count{
+    background:var(--card2); border:1px solid var(--border); color:var(--text);
+    border-radius:999px; font-size:11px; padding:1px 9px; letter-spacing:0;
+  }
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:14px 15px; margin-bottom:10px;
+  }
+  .card a{color:inherit; text-decoration:none}
+  .card a:hover .t{color:var(--blue)}
+
+  .area{margin-bottom:12px}
+  .area .row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px}
+  .area .name{font-weight:600; font-size:14px}
+  .area .num{font-size:12.5px; color:var(--muted); font-variant-numeric:tabular-nums}
+  .bar{height:8px; border-radius:99px; background:#1e2635; overflow:hidden}
+  .bar i{display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,#2ea043,#3fb950); transition:width .8s cubic-bezier(.2,.7,.2,1)}
+  .bar.low i{background:linear-gradient(90deg,#9e6a03,#d29922)}
+  .bar.mid i{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
+
+  .pr .t{font-weight:600; font-size:14px; line-height:1.4}
+  .pr .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:7px; font-size:12.5px; color:var(--muted)}
+  .pill{border-radius:999px; padding:2px 10px; font-size:11.5px; font-weight:700}
+  .pill.merged{background:var(--purple-dim); color:var(--purple); border:1px solid rgba(188,140,255,.35)}
+  .pill.open{background:var(--green-dim); color:var(--green); border:1px solid rgba(63,185,80,.35)}
+  .pill.wip{background:var(--blue-dim); color:var(--blue); border:1px solid rgba(88,166,255,.35)}
+  .pill.num{background:var(--card2); border:1px solid var(--border); color:var(--muted); font-variant-numeric:tabular-nums}
+  .ext{color:var(--faint)}
+
+  .commit .t{font-size:13.5px; font-weight:500; line-height:1.45; word-break:break-word}
+  .commit .meta{margin-top:6px; font-size:12px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap}
+  .sha{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; color:var(--faint)}
+
+  .empty{color:var(--faint); font-size:13.5px; padding:18px; text-align:center; border:1px dashed var(--border); border-radius:var(--radius)}
+  .skel{border-radius:var(--radius); background:linear-gradient(90deg,var(--card) 25%,var(--card2) 50%,var(--card) 75%); background-size:200% 100%; animation:sh 1.4s infinite; height:64px; margin-bottom:10px}
+  @keyframes sh{to{background-position:-200% 0}}
+
+  footer{margin-top:36px; text-align:center; color:var(--faint); font-size:12.5px}
+  footer a{color:var(--blue); text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">Q</div>
+    <div>
+      <h1>Quill <span style="color:var(--muted);font-weight:600">parity dashboard</span></h1>
+      <p class="sub"><span class="live-dot"></span>Live build progress · Rust Telegram desktop client</p>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="ring">
+      <svg width="132" height="132" viewBox="0 0 132 132">
+        <circle cx="66" cy="66" r="58" fill="none" stroke="#1e2635" stroke-width="11"/>
+        <circle id="ringFg" cx="66" cy="66" r="58" fill="none" stroke="url(#g)" stroke-width="11"
+                stroke-linecap="round" stroke-dasharray="364.4" stroke-dashoffset="364.4"/>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#2ea043"/><stop offset="1" stop-color="#58a6ff"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="pct"><b id="pctNum">–</b><span>parity</span></div>
+    </div>
+    <div class="hero-meta">
+      <div class="big" id="parityFrac">Loading…</div>
+      <div class="muted" id="parityNote">checklist items complete</div>
+      <div class="refresh-row">
+        <button class="refresh" id="refreshBtn" onclick="refresh(true)">↻ Refresh</button>
+        <span id="updatedAt"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner" id="rateBanner">⚠️ GitHub API rate limit reached — showing last good data. It refreshes automatically.</div>
+
+  <section>
+    <h2>Progress by area</h2>
+    <div id="areas"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <section>
+    <h2>Merged <span class="count" id="mergedCount"></span></h2>
+    <div id="merged"><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <section>
+    <h2>In review <span class="count" id="openCount"></span></h2>
+    <div id="open"><div class="skel"></div></div>
+  </section>
+
+  <section>
+    <h2>Work in progress <span class="count" id="wipCount"></span></h2>
+    <div id="wip"><div class="skel"></div></div>
+  </section>
+
+  <section>
+    <h2>Recent commits</h2>
+    <div id="commits"><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <footer>
+    Data from the public GitHub API · auto-refreshes every 10 min<br>
+    <a href="https://github.com/shinycake/quill">shinycake/quill</a> ·
+    <a href="https://github.com/shinycake/quill-dashboard">dashboard source</a>
+  </footer>
+</div>
+
+<script>
+const OWNER = 'shinycake', REPO = 'quill';
+const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
+let cache = null;          // last good payload, kept in memory
+let refreshing = false;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function ago(iso){
+  const s = Math.max(1, Math.floor((Date.now() - new Date(iso)) / 1000));
+  if (s < 60) return s + 's ago';
+  const m = Math.floor(s / 60);
+  if (m < 60) return m + 'm ago';
+  const h = Math.floor(m / 60);
+  if (h < 24) return h + 'h ago';
+  const d = Math.floor(h / 24);
+  if (d < 30) return d + 'd ago';
+  return new Date(iso).toLocaleDateString();
+}
+
+async function getJSON(url){
+  const r = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } });
+  if (r.status === 403 && r.headers.get('x-ratelimit-remaining') === '0') {
+    const e = new Error('rate-limited'); e.rateLimited = true; throw e;
+  }
+  if (!r.ok) { const e = new Error('HTTP ' + r.status); e.status = r.status; throw e; }
+  return r.json();
+}
+
+function parseReadme(md){
+  const lines = md.split('\n');
+  let inStatus = false;
+  const section = [];
+  for (const l of lines){
+    if (/^## Status\s*$/.test(l)){ inStatus = true; continue; }
+    if (inStatus && /^## /.test(l)) break;
+    if (inStatus) section.push(l);
+  }
+  let done = 0, total = 0;
+  const areas = [];
+  let cur = null;
+  for (const l of section){
+    const m = l.match(/^### (.+)$/);
+    if (m){ cur = { name: m[1], done: 0, total: 0 }; areas.push(cur); continue; }
+    if (/^- \[[ x]\]/.test(l)){
+      total++;
+      if (/^- \[x\]/.test(l)) done++;
+      if (cur){ cur.total++; if (/^- \[x\]/.test(l)) cur.done++; }
+    }
+  }
+  return { done, total, pct: total ? done / total : 0, areas };
+}
+
+function barClass(p){ return p < .33 ? 'bar low' : p < .7 ? 'bar mid' : 'bar'; }
+
+function render(d){
+  // hero
+  const pct = Math.round(d.readme.pct * 1000) / 10;
+  $('pctNum').textContent = pct.toFixed(1) + '%';
+  $('ringFg').style.transition = 'stroke-dashoffset 1s cubic-bezier(.2,.7,.2,1)';
+  $('ringFg').style.strokeDashoffset = (364.4 * (1 - d.readme.pct)).toFixed(1);
+  $('parityFrac').textContent = d.readme.done + ' / ' + d.readme.total + ' items';
+  $('updatedAt').textContent = 'Updated ' + ago(d.fetchedAt);
+
+  // areas
+  $('areas').innerHTML = d.readme.areas.map(a => {
+    const p = a.total ? a.done / a.total : 0;
+    return '<div class="card area"><div class="row"><span class="name">' + esc(a.name) + '</span>' +
+      '<span class="num">' + a.done + '/' + a.total + '</span></div>' +
+      '<div class="' + barClass(p) + '"><i style="width:' + (p * 100).toFixed(1) + '%"></i></div></div>';
+  }).join('');
+
+  // merged
+  $('mergedCount').textContent = d.merged.length;
+  $('merged').innerHTML = d.merged.length ? d.merged.map(p =>
+    '<div class="card pr"><a href="' + p.html_url + '">' +
+    '<div class="t">' + esc(p.title) + '</div>' +
+    '<div class="meta"><span class="pill num">#' + p.number + '</span>' +
+    '<span class="pill merged">merged</span><span>' + ago(p.merged_at) + '</span>' +
+    '<span class="ext">↗</span></div></a></div>'
+  ).join('') : '<div class="empty">No merged PRs yet.</div>';
+
+  // open
+  $('openCount').textContent = d.open.length;
+  $('open').innerHTML = d.open.length ? d.open.map(p =>
+    '<div class="card pr"><a href="' + p.html_url + '">' +
+    '<div class="t">' + esc(p.title) + '</div>' +
+    '<div class="meta"><span class="pill num">#' + p.number + '</span>' +
+    '<span class="pill open">in review</span><span>updated ' + ago(p.updated_at) + '</span>' +
+    '<span class="ext">↗</span></div></a></div>'
+  ).join('') : '<div class="empty">Nothing in review right now.</div>';
+
+  // wip (recent pushes to parity/* branches)
+  $('wipCount').textContent = d.wip.length;
+  $('wip').innerHTML = d.wip.length ? d.wip.map(b =>
+    '<div class="card pr"><a href="https://github.com/' + OWNER + '/' + REPO + '/tree/' + encodeURIComponent(b.branch) + '">' +
+    '<div class="t"><span style="font-family:ui-monospace,monospace;font-size:13px">' + esc(b.branch) + '</span></div>' +
+    '<div class="meta"><span class="pill wip">in progress</span><span>pushed ' + ago(b.pushed_at) + '</span>' +
+    '<span>by ' + esc(b.actor) + '</span><span class="ext">↗</span></div></a></div>'
+  ).join('') : '<div class="empty">No active feature branches.</div>';
+
+  // commits
+  $('commits').innerHTML = d.commits.map(c =>
+    '<div class="card commit"><a href="' + c.html_url + '">' +
+    '<div class="t">' + esc(c.message) + '</div>' +
+    '<div class="meta"><span class="sha">' + esc(c.sha.slice(0, 7)) + '</span>' +
+    '<span>' + esc(c.author) + '</span><span>' + ago(c.date) + '</span>' +
+    '<span class="ext">↗</span></div></a></div>'
+  ).join('');
+}
+
+async function refresh(manual){
+  if (refreshing) return;
+  refreshing = true;
+  const btn = $('refreshBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin">↻</span> Loading…';
+  $('rateBanner').classList.remove('show');
+  try {
+    const [md, closedPRs, openPRs, events, commits] = await Promise.all([
+      fetch('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md').then(r => {
+        if (!r.ok) throw new Error('README HTTP ' + r.status);
+        return r.text();
+      }),
+      getJSON(API + '/pulls?state=closed&per_page=20&sort=updated&direction=desc'),
+      getJSON(API + '/pulls?state=open&per_page=20'),
+      getJSON(API + '/events?per_page=40'),
+      getJSON(API + '/commits?per_page=10&sha=main'),
+    ]);
+
+    const readme = parseReadme(md);
+    const merged = closedPRs
+      .filter(p => p.merged_at)
+      .slice(0, 12)
+      .map(p => ({ number: p.number, title: p.title, merged_at: p.merged_at, html_url: p.html_url }));
+    const open = openPRs.map(p => ({ number: p.number, title: p.title, updated_at: p.updated_at, html_url: p.html_url }));
+
+    const seen = new Map();
+    for (const e of events){
+      if (e.type !== 'PushEvent' || !e.payload || !e.payload.ref) continue;
+      const m = String(e.payload.ref).match(/^refs\/heads\/(parity\/.+)$/);
+      if (!m) continue;
+      const branch = m[1];
+      if (!seen.has(branch))
+        seen.set(branch, { branch, pushed_at: e.created_at, actor: (e.actor && e.actor.login) || '—' });
+      if (seen.size >= 10) break;
+    }
+    const wip = [...seen.values()];
+
+    const commitList = commits.map(c => ({
+      sha: c.sha,
+      message: (c.commit && c.commit.message || '').split('\n')[0],
+      author: (c.author && c.author.login) || (c.commit && c.commit.author && c.commit.author.name) || '—',
+      date: c.commit && c.commit.author && c.commit.author.date,
+      html_url: c.html_url,
+    }));
+
+    cache = { readme, merged, open, wip, commits: commitList, fetchedAt: new Date().toISOString() };
+    render(cache);
+  } catch (err) {
+    if (err && err.rateLimited) $('rateBanner').classList.add('show');
+    if (cache) {
+      render(cache); // never blank the page on a failed refresh
+      if (!(err && err.rateLimited)){
+        $('updatedAt').textContent = 'Update failed — showing data from ' + ago(cache.fetchedAt);
+      }
+    } else {
+      $('parityFrac').textContent = 'Could not load data';
+      $('parityNote').textContent = err && err.rateLimited
+        ? 'GitHub API rate limit reached — try again in a few minutes.'
+        : 'Network error — check your connection and tap Refresh.';
+    }
+  } finally {
+    refreshing = false;
+    btn.disabled = false;
+    btn.innerHTML = '↻ Refresh';
+  }
+}
+
+refresh(false);
+setInterval(() => refresh(false), 10 * 60 * 1000);
+</script>
+</body>
+</html>
