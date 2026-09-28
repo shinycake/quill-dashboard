@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:47:17.043656+00:00",
+ "generated_at": "2026-09-28T12:49:17.178150+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,15 +22,15 @@
    "status": "active",
    "updated_at": "2026-09-28T12:45:53Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 204
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "all gates green on 63671c0; force-pushed (superseded stale origin commits from 08:25/09:09); CI watch running on PR #105",
-    "phase": "ci",
+    "detail": "rebased onto 7beb1a2 (PR #110); empty CI commit dropped; gates running; then fresh PR (old #105 never triggered CI) + merge",
+    "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
     "worktree": "~/workspace/quill-stories2"
@@ -39,15 +39,15 @@
    "loop": 2,
    "next": {
     "branch": "parity/stories-3",
-    "detail": "all gates green on 63671c0; force-pushed; CI watch running on PR #108",
-    "phase": "ci",
+    "detail": "rebased onto dedc8b6; gates running; then force-push + CI + merge on PR #108",
+    "phase": "gates",
     "pr": 108,
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:45:53Z",
-   "stale": false,
-   "age_seconds": 84
+   "updated_at": "2026-09-28T15:00:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "loop": 3,
@@ -91,9 +91,9 @@
     "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:38:56Z",
+   "updated_at": "2026-09-28T12:48:41Z",
    "stale": false,
-   "age_seconds": 501
+   "age_seconds": 36
   }
  ]
 }
