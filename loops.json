@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:45:17.684969+00:00",
+ "generated_at": "2026-09-28T12:47:17.043656+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-screenshare-send"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:02:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T12:45:53Z",
+   "stale": false,
+   "age_seconds": 84
   },
   {
    "branch": "parity/stories-3",
@@ -45,9 +45,9 @@
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:35:52Z",
+   "updated_at": "2026-09-28T12:45:53Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 84
   },
   {
    "loop": 3,
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:38:56Z",
    "stale": false,
-   "age_seconds": 381
+   "age_seconds": 501
   }
  ]
 }
