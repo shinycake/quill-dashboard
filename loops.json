@@ -1,35 +1,35 @@
 {
- "generated_at": "2026-09-28T09:43:18.467847+00:00",
+ "generated_at": "2026-09-28T09:45:19.690103+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/chat-preview",
-    "detail": "floating read-only peek on row long-press/hover; PR #102 (docs-only) in light review parallel",
+    "branch": "parity/media-linkpreview",
+    "detail": "force_small/large media + show_above_text + getLinkPreview prefetch; chat-preview in adversarial review (PR pending)",
     "phase": "implementing",
     "pr": null,
-    "slice": "chat-preview (chatlist-chat-preview)",
-    "worktree": "~/workspace/quill-l1-chatpreview"
+    "slice": "media-link-preview-send-options",
+    "worktree": "~/workspace/quill-l1-linkpreview"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "force small/large + show-above-text + getLinkPreview prefetch",
+    "detail": "per-tab media/photos/videos/files empty states",
     "phase": "queued",
-    "slice": "media-link-preview-send-options"
+    "slice": "media-shared-gallery"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:35:52Z",
-   "stale": false,
-   "age_seconds": 446
+   "updated_at": "2026-09-28T09:48:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "rebased onto origin/main a80d0ca (history cleaned of embedded markers); post-rebase clippy+test running",
+    "detail": "clippy green post-rebase; final UI build gate running, then force-push + CI watch on PR #105",
     "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:35:52Z",
-   "stale": false,
-   "age_seconds": 446
+   "updated_at": "2026-09-28T10:30:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 5298
+   "age_seconds": 5419
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:40:02Z",
    "stale": false,
-   "age_seconds": 196
+   "age_seconds": 317
   }
  ]
 }
