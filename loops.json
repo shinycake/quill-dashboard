@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-28T12:43:18.201926+00:00",
+ "generated_at": "2026-09-28T12:45:17.684969+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/groups-welcome-view",
-    "detail": "research slice: joiner welcome = regular updateNewMessage via existing pipeline (box checked, docs-only); light review in flight; gallery slice in adversarial review (PR pending)",
+    "branch": "parity/media-shared-gallery",
+    "detail": "PR #110 welcome-view merged (66.5%); gallery slice in adversarial review, PR to open on MERGE verdict",
     "phase": "review",
     "pr": null,
-    "slice": "groups-welcome-view",
-    "worktree": "~/workspace/quill-l1-welcome"
+    "slice": "media-shared-gallery",
+    "worktree": "~/workspace/quill-l1-gallery"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -20,7 +20,7 @@
     "slice": "calls-screenshare-send"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:45:00Z",
+   "updated_at": "2026-09-28T13:02:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -47,7 +47,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:35:52Z",
    "stale": false,
-   "age_seconds": 446
+   "age_seconds": 565
   },
   {
    "loop": 3,
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:38:56Z",
    "stale": false,
-   "age_seconds": 262
+   "age_seconds": 381
   }
  ]
 }
