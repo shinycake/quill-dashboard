@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-28T07:09:17.666201+00:00",
+ "generated_at": "2026-09-28T07:11:18.934898+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/calls-remainder-2",
-    "detail": "echo cancellation / noise suppression toggles + use-proxy-for-calls setting; schema/TGX investigation first",
+    "branch": "parity/chat-preview",
+    "detail": "floating read-only peek on row long-press/hover; PR #102 (docs-only) in light review parallel",
     "phase": "implementing",
     "pr": null,
-    "slice": "calls-remainder-2 (audio-fx + proxy)",
-    "worktree": "~/workspace/quill-l1-calls-2"
+    "slice": "chat-preview (chatlist-chat-preview)",
+    "worktree": "~/workspace/quill-l1-chatpreview"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "floating peek slice after calls-remainder-2",
+    "detail": "force small/large + show-above-text + getLinkPreview prefetch",
     "phase": "queued",
-    "slice": "chat-preview"
+    "slice": "media-link-preview-send-options"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:08:30Z",
-   "stale": false,
-   "age_seconds": 47
+   "updated_at": "2026-09-28T07:14:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -45,8 +45,8 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T07:10:00Z",
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 78
   },
   {
    "branch": null,
@@ -75,25 +75,25 @@
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
-    "branch": "parity/auth-2fa-1",
-    "detail": "implementer in flight \u2014 enable/change/disable + recovery email",
-    "phase": "implementing",
-    "pr": null,
     "slice": "A2 two-step verification (setPassword)",
-    "worktree": "~/workspace/quill-a2-2fa"
+    "phase": "reviewing",
+    "branch": "parity/auth-2fa-1",
+    "worktree": "~/workspace/quill-a2-2fa",
+    "pr": null,
+    "detail": "implementer done \u2014 873+59 tests green; dedicated reviewer running"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
    "next": {
+    "slice": "A3 sessions management",
+    "phase": "implementing",
     "branch": "parity/auth-sessions-1",
-    "detail": "active sessions list + terminate flows \u2014 starts when A2 goes to review",
-    "phase": "queued",
-    "slice": "A3 sessions management"
+    "detail": "implementer dispatching \u2014 active sessions list + terminate flows"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:08:41Z",
+   "updated_at": "2026-09-28T07:10:02Z",
    "stale": false,
-   "age_seconds": 36
+   "age_seconds": 76
   }
  ]
 }
