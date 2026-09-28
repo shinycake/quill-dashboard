@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T15:31:18.279917+00:00",
+ "generated_at": "2026-09-28T15:33:21.027971+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T15:26:00Z",
    "stale": false,
-   "age_seconds": 318
+   "age_seconds": 441
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -74,7 +74,7 @@
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "A5 merged (#115, 3e40f09); A6 contacts implementing"
+    "detail": "A6 implementer died to runtime fault; work safe at cf91c73 (pushed); pickup worker rebasing + gating"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -86,7 +86,7 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:28:45Z",
+   "updated_at": "2026-09-28T15:32:36Z",
    "last_merged": {
     "pr": 115,
     "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
@@ -94,7 +94,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 153
+   "age_seconds": 45
   }
  ]
 }
