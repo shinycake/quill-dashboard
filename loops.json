@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:23:17.367119+00:00",
+ "generated_at": "2026-09-28T14:25:17.674076+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:15:52Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 565
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,15 +41,15 @@
    "status": "active",
    "updated_at": "2026-09-28T14:12:00Z",
    "stale": false,
-   "age_seconds": 677
+   "age_seconds": 797
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "UI build green; force-pushed fixed head 82fe278; head-specific CI re-watch running (proc_9f018b6e1472)",
-    "head": "82fe278",
-    "phase": "merging",
+    "detail": "main advanced (PR #111 auth-websessions-1); B4 rebased clean onto aef4ba0, README union 337->343, 0 lost; post-rebase full gates running (proc_293a5564f5b6)",
+    "head": "a252ebe",
+    "phase": "gates",
     "pr": 113,
     "slice": "B4 poll management",
     "worktree": "~/workspace/quill-l3-b4"
@@ -57,12 +57,12 @@
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "detail": "rebase-merge PR #113 once CI green, pull main, recompute parity, clean up branch/worktree",
+    "detail": "push, CI re-watch, rebase-merge PR #113, recompute parity",
     "phase": "queued",
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:55:00Z",
+   "updated_at": "2026-09-28T15:05:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -88,7 +88,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:23:01Z",
    "stale": false,
-   "age_seconds": 16
+   "age_seconds": 136
   }
  ]
 }
