@@ -1,1 +1,1 @@
-{"phase":"Phase 2 — Kit overlays","status":"done","prs":[122,123,124],"updated_at":"2026-09-28T20:45:00Z","notes":"Phase 2 done: 26 dialogs to kit Dialog, tooltips verified kit-backed; menus/preview/viewers/notification deferred (not cleanly possible)"}
+{"phase":"Phase 2 — Kit overlays","status":"active","prs":[122,123,124,125],"updated_at":"2026-09-28T21:15:00Z","notes":"PR #125 open: hotfix for #124 dialog backdrop regressions (D1/D2/D3); in review"}
