@@ -2,6 +2,6 @@
   "phase": "Phase 0 \u2014 Color tokens",
   "status": "active",
   "prs": [],
-  "updated_at": "2026-09-28T17:43:41Z",
-  "notes": "447 color sites migrated to chat_theme tokens; clippy --features ui running"
+  "updated_at": "2026-09-28T17:53:03Z",
+  "notes": "Phase 0 committed; adversarial review in flight"
 }
