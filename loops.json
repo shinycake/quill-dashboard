@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T15:57:18.116824+00:00",
+ "generated_at": "2026-09-28T15:59:18.574917+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T15:55:54Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 204
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T15:56:02Z",
    "stale": false,
-   "age_seconds": 76
+   "age_seconds": 196
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -90,7 +90,7 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:57:02Z",
+   "updated_at": "2026-09-28T15:58:37Z",
    "last_merged": {
     "pr": 115,
     "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
@@ -98,7 +98,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 16
+   "age_seconds": 41
   }
  ]
 }
