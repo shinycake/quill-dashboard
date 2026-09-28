@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-28T13:35:18.538932+00:00",
+ "generated_at": "2026-09-28T13:37:17.550221+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-screenshare-send",
-    "detail": "1:1 screen-share send path (receive done); gallery fixup in flight for review blocker B1 (close gallery on chat change)",
+    "detail": "1:1 screen-share send path (ntgcalls API + Linux capture investigation); gallery B1 fixed in 80504e7, delta re-review in flight",
     "phase": "implementing",
     "pr": null,
     "slice": "calls-screenshare-send",
@@ -20,9 +20,9 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:25:53Z",
-   "stale": false,
-   "age_seconds": 565
+   "updated_at": "2026-09-28T13:38:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -44,9 +44,9 @@
     "slice": "S5 albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:25:55Z",
+   "updated_at": "2026-09-28T13:35:58Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 79
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -75,11 +75,11 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A4 web sessions + per-session toggles",
-    "phase": "fixups",
+    "phase": "reviewing",
     "branch": "parity/auth-websessions-1",
     "worktree": "~/workspace/quill-a4-websessions",
     "pr": 111,
-    "detail": "fixing reviewer blockers: websites stale-refetch + current-session toggles"
+    "detail": "targeted re-check of fixups (4e51a70) \u2014 PR #111"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -91,9 +91,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:28:40Z",
+   "updated_at": "2026-09-28T13:37:10Z",
    "stale": false,
-   "age_seconds": 398
+   "age_seconds": 7
   }
  ]
 }
