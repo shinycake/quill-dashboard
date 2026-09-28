@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T16:15:20.887540+00:00",
+ "generated_at": "2026-09-28T16:17:19.102752+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "tbd"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:05:54Z",
+   "updated_at": "2026-09-28T16:15:53Z",
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:06:00Z",
+   "updated_at": "2026-09-28T16:15:54Z",
    "stale": false,
-   "age_seconds": 560
+   "age_seconds": 85
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -98,7 +98,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 278
+   "age_seconds": 397
   }
  ]
 }
