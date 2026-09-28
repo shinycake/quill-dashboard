@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T21:07:17.708939+00:00",
+ "generated_at": "2026-09-28T21:09:17.140361+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "parked",
    "updated_at": "2026-09-28T21:05:52Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 205
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -43,7 +43,7 @@
    "parked": true,
    "phase": "parked",
    "stale": false,
-   "age_seconds": 80
+   "age_seconds": 200
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -61,7 +61,7 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": true,
-   "age_seconds": 14237
+   "age_seconds": 14357
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -83,7 +83,7 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "parked",
-   "updated_at": "2026-09-28T20:58:38Z",
+   "updated_at": "2026-09-28T21:08:43Z",
    "last_merged": {
     "pr": 121,
     "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
@@ -94,7 +94,7 @@
    "parked": true,
    "phase": "parked",
    "stale": false,
-   "age_seconds": 519
+   "age_seconds": 34
   }
  ]
 }
