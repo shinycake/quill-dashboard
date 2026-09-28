@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:57:17.292555+00:00",
+ "generated_at": "2026-09-28T08:59:17.212770+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:55:53Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 204
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:55:56Z",
    "stale": false,
-   "age_seconds": 81
+   "age_seconds": 201
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 2537
+   "age_seconds": 2657
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -91,9 +91,9 @@
     "detail": "implementer re-dispatched after infra error \u2014 continuing surviving uncommitted work"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:54:12Z",
+   "updated_at": "2026-09-28T08:58:42Z",
    "stale": false,
-   "age_seconds": 185
+   "age_seconds": 35
   }
  ]
 }
