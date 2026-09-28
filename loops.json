@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:17:16.660960+00:00",
+ "generated_at": "2026-09-28T14:19:18.602042+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,34 +22,34 @@
    "status": "active",
    "updated_at": "2026-09-28T14:15:52Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 206
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90, 19 conflict regions resolved, brace fixes applied; fmt/clippy/tests running in proc_22607f277610; then targeted re-review verification, force-push, CI, merge",
+    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90; fixed lost S4 types (StoryViewersState/StoryReportFlow/StoryStealthMode) and duplicated #[test]; clippy+tests running in proc_22045b2e14c6; then targeted re-review, force-push, CI, merge",
     "phase": "gates",
     "slice": "S3 stories-edit/cover/privacy/post-as-channel/admin-rights/repost"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "detail": "S5 albums/archive/pinned: rebased onto 8ac4b90, conflict brace fixes applied; fmt/clippy/tests queued in proc_c741d47bf681; then final UI build, open PR, CI, merge. S6 playback progress: review APPROVE. S7 clickable story areas implementer dispatched and running",
+    "detail": "S5 albums/archive/pinned: rebased onto 8ac4b90, connect.rs marker fixed; gates need re-run after S3 (proc_c741d47bf681 failed on old head); then final UI build, open PR, CI, merge. S6 playback progress: review APPROVE. S7 clickable story areas implementer running",
     "phase": "queued",
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:15:59Z",
+   "updated_at": "2026-09-28T14:05:00Z",
    "stale": false,
-   "age_seconds": 77
+   "age_seconds": 858
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "dropped import tail (SupergroupMembersFetch, WelcomeMessagesFetch, active_custom_keyboard, effective_preview) restored and amended (82fe278); UI build re-running (proc_9fad084a16a3); lib tests 921 + replay 59 already passed on this tree",
+    "detail": "UI build green; force-pushed fixed head 82fe278; head-specific CI re-watch running (proc_9f018b6e1472)",
     "head": "82fe278",
-    "phase": "gates",
+    "phase": "merging",
     "pr": 113,
     "slice": "B4 poll management",
     "worktree": "~/workspace/quill-l3-b4"
@@ -57,12 +57,12 @@
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "detail": "force-push, CI re-watch, rebase-merge PR #113, recompute parity",
+    "detail": "rebase-merge PR #113 once CI green, pull main, recompute parity, clean up branch/worktree",
     "phase": "queued",
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:45:00Z",
+   "updated_at": "2026-09-28T14:55:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -85,9 +85,9 @@
     "detail": "TBD from remaining unchecked boxes when A5 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:16:53Z",
+   "updated_at": "2026-09-28T14:18:40Z",
    "stale": false,
-   "age_seconds": 23
+   "age_seconds": 38
   }
  ]
 }
