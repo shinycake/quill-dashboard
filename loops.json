@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T15:33:21.027971+00:00",
+ "generated_at": "2026-09-28T15:35:19.344354+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T15:26:00Z",
    "stale": false,
-   "age_seconds": 441
+   "age_seconds": 559
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -94,7 +94,7 @@
     "parity": "347/499=69.5%"
    },
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 163
   }
  ]
 }
