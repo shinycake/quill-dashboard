@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:49:16.790926+00:00",
+ "generated_at": "2026-09-28T13:51:17.688881+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:45:55Z",
    "stale": false,
-   "age_seconds": 201
+   "age_seconds": 322
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:46:03Z",
    "stale": false,
-   "age_seconds": 193
+   "age_seconds": 314
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -70,11 +70,11 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A4 web sessions + per-session toggles",
-    "phase": "reviewing",
+    "phase": "gates",
     "branch": "parity/auth-websessions-1",
     "worktree": "~/workspace/quill-a4-websessions",
     "pr": 111,
-    "detail": "targeted re-check of fixups (4e51a70) \u2014 PR #111"
+    "detail": "rebased onto 8ac4b90 (1 usage-string conflict) \u2014 pre-merge gates running"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -86,7 +86,7 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:48:41Z",
+   "updated_at": "2026-09-28T13:50:42Z",
    "stale": false,
    "age_seconds": 35
   }
