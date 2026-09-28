@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:55:19.128455+00:00",
+ "generated_at": "2026-09-28T13:57:17.030176+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:55:00Z",
+   "updated_at": "2026-09-28T13:55:55Z",
    "stale": false,
-   "age_seconds": 19
+   "age_seconds": 82
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:46:03Z",
+   "updated_at": "2026-09-28T13:56:00Z",
    "stale": false,
-   "age_seconds": 556
+   "age_seconds": 77
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -88,7 +88,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:52:07Z",
    "stale": false,
-   "age_seconds": 192
+   "age_seconds": 310
   }
  ]
 }
