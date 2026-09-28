@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:07:17.467857+00:00",
+ "generated_at": "2026-09-28T11:09:17.321134+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:05:56Z",
    "stale": false,
-   "age_seconds": 81
+   "age_seconds": 201
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:05:56Z",
    "stale": false,
-   "age_seconds": 81
+   "age_seconds": 201
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 10337
+   "age_seconds": 10457
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -91,9 +91,9 @@
     "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:58:48Z",
+   "updated_at": "2026-09-28T11:08:43Z",
    "stale": false,
-   "age_seconds": 509
+   "age_seconds": 34
   }
  ]
 }
