@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:57:18.158298+00:00",
+ "generated_at": "2026-09-28T07:59:22.361393+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:55:52Z",
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 210
   },
   {
    "branch": "parity/stories-3",
@@ -46,15 +46,15 @@
    "status": "active",
    "updated_at": "2026-09-28T07:55:54Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 208
   },
   {
    "branch": "parity/polls",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls",
-    "detail": "PR #103 open, dedicated adversarial reviewer verifying (quiz shape, show-voters negative claim, README honesty)",
-    "phase": "reviewing",
+    "detail": "reviewer APPROVED; 4 non-blocking findings applied (TGX citations, revoting quiz guard, README honesty, getPollVoters line) \u2014 full gate suite re-running on final tree",
+    "phase": "gates",
     "pr": 103,
     "slice": "B3 poll creation options",
     "worktree": "~/workspace/quill-l3-b3"
@@ -68,7 +68,7 @@
     "slice": "B4 poll management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:05:00Z",
+   "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -91,9 +91,9 @@
     "detail": "implementer dispatching \u2014 active sessions list + terminate flows"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:48:50Z",
+   "updated_at": "2026-09-28T07:58:39Z",
    "stale": false,
-   "age_seconds": 508
+   "age_seconds": 43
   }
  ]
 }
