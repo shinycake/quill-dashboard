@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:35:18.556441+00:00",
+ "generated_at": "2026-09-28T12:37:20.823099+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-screenshare-send"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:38:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T12:35:53Z",
+   "stale": false,
+   "age_seconds": 87
   },
   {
    "branch": "parity/stories-3",
@@ -45,32 +45,32 @@
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:26:03Z",
+   "updated_at": "2026-09-28T12:35:52Z",
    "stale": false,
-   "age_seconds": 555
+   "age_seconds": 88
   },
   {
    "loop": 3,
    "lanes": "bots, polls, payments, settings",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
-   "updated_at": "2026-09-28T12:34:30Z",
+   "updated_at": "2026-09-28T12:47:30Z",
    "status": "active",
    "current": {
-    "slice": "B3 poll creation options",
-    "phase": "merging",
-    "branch": "parity/polls",
-    "worktree": "~/workspace/quill-l3-b3",
-    "pr": 103,
-    "detail": "post-rebase gates green (fmt, clippy, 899 lib + 59 replay tests, UI build); rebased branch force-pushed; CI watcher will rebase-merge once checks go green"
+    "slice": "B4 poll management",
+    "phase": "implementing",
+    "branch": "parity/polls-manage",
+    "worktree": "~/workspace/quill-l3-b4",
+    "pr": null,
+    "detail": "PR #103 (B3 poll creation options) merged via rebase; B4 worktree rebasing onto new main now"
    },
    "next": {
-    "slice": "B4 poll management",
+    "slice": "B4 dedicated review + PR",
     "phase": "queued",
     "branch": "parity/polls-manage",
-    "detail": "implemented in ~/workspace/quill-l3-b4 (commit f17880a); awaiting B3 merge, then rebase onto origin/main, dedicated review, PR"
+    "detail": "after rebase: full gates, dedicated adversarial reviewer, then PR and merge"
    },
-   "stale": false,
-   "age_seconds": 48
+   "stale": true,
+   "age_seconds": null
   },
   {
    "loop": 4,
