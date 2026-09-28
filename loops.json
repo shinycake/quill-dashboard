@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:25:17.503848+00:00",
+ "generated_at": "2026-09-28T12:27:17.779771+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "groups-welcome-view"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:30:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T12:25:53Z",
+   "stale": false,
+   "age_seconds": 84
   },
   {
    "branch": "parity/stories-3",
@@ -45,9 +45,9 @@
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:30:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T12:26:03Z",
+   "stale": false,
+   "age_seconds": 74
   },
   {
    "loop": 3,
@@ -70,7 +70,7 @@
     "detail": "implemented in ~/workspace/quill-l3-b4 (commit f17880a); awaiting B3 merge, then rebase onto origin/main, dedicated review, PR"
    },
    "stale": false,
-   "age_seconds": 197
+   "age_seconds": 317
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T12:18:38Z",
    "stale": false,
-   "age_seconds": 399
+   "age_seconds": 519
   }
  ]
 }
