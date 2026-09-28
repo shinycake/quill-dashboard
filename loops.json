@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:45:18.726691+00:00",
+ "generated_at": "2026-09-28T13:47:20.226011+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,28 +20,28 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:38:00Z",
+   "updated_at": "2026-09-28T13:45:55Z",
    "stale": false,
-   "age_seconds": 438
+   "age_seconds": 85
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90 (S4 merge), 19 conflict regions resolved, brace fixes applied; fmt/clippy/tests running in proc_22607f277610; then targeted re-review verification, force-push, CI, merge",
+    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90, 19 conflict regions resolved, brace fixes applied; fmt/clippy/tests running in proc_22607f277610; then targeted re-review verification, force-push, CI, merge",
     "phase": "gates",
     "slice": "S3 stories-edit/cover/privacy/post-as-channel/admin-rights/repost"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "detail": "S5 story albums/archive/pinned: rebased onto 8ac4b90, conflict brace fixes applied; fmt/clippy/tests running in proc_1a4151b413c8; then final UI build, open PR, CI, merge. S6 playback progress AUTO-ADVANCE review: APPROVE, awaiting rebase after S5 merges",
+    "detail": "S5 albums/archive/pinned: rebased onto 8ac4b90, conflict brace fixes applied; fmt/clippy/tests queued in proc_c741d47bf681; then final UI build, open PR, CI, merge. S6 playback progress: review APPROVE. S7 clickable story areas implementer dispatched and running",
     "phase": "queued",
-    "slice": "S5/S6 pipeline"
+    "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:43:30Z",
+   "updated_at": "2026-09-28T13:46:03Z",
    "stale": false,
-   "age_seconds": 108
+   "age_seconds": 77
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -88,7 +88,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:38:39Z",
    "stale": false,
-   "age_seconds": 399
+   "age_seconds": 521
   }
  ]
 }
