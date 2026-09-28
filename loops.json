@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:21:16.929471+00:00",
+ "generated_at": "2026-09-28T14:23:17.367119+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,26 +22,26 @@
    "status": "active",
    "updated_at": "2026-09-28T14:15:52Z",
    "stale": false,
-   "age_seconds": 324
+   "age_seconds": 445
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90; fixed lost S4 types (StoryViewersState/StoryReportFlow/StoryStealthMode) and duplicated #[test]; clippy+tests running in proc_22045b2e14c6; then targeted re-review, force-push, CI, merge",
+    "detail": "S3 manage-posted-stories (PR #108): all gates green (fmt, clippy, 920+59 tests), 9/9 README boxes checked; final UI build running in proc_a35aec90c2a5; targeted re-review dispatched; then force-push, CI, merge",
     "phase": "gates",
     "slice": "S3 stories-edit/cover/privacy/post-as-channel/admin-rights/repost"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "detail": "S5 albums/archive/pinned: rebased onto 8ac4b90, connect.rs marker fixed; gates need re-run after S3 (proc_c741d47bf681 failed on old head); then final UI build, open PR, CI, merge. S6 playback progress: review APPROVE. S7 clickable story areas implementer running",
+    "detail": "S5 albums/archive/pinned: rebased onto 8ac4b90, marker fixed; gates re-running in proc_2560bc565de5 (queued behind S3 UI build); then final UI build, open PR, CI, merge. S6: review APPROVE, awaiting rebase after S5. S7 clickable areas implementer running",
     "phase": "queued",
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:05:00Z",
-   "stale": true,
-   "age_seconds": 976
+   "updated_at": "2026-09-28T14:12:00Z",
+   "stale": false,
+   "age_seconds": 677
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -70,24 +70,25 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A5 profile management",
-    "phase": "implementing",
+    "phase": "reviewing",
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "implementer in flight \u2014 edit name/bio, username mgmt, profile photo"
+    "detail": "implementer done (00efa8d, 968 tests green) \u2014 dedicated reviewer running"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
    "next": {
-    "slice": "A6 next auth/accounts slice",
-    "phase": "queued",
-    "branch": null,
-    "detail": "TBD from remaining unchecked boxes when A5 goes to review"
+    "slice": "A6 contacts management + block user",
+    "phase": "implementing",
+    "branch": "parity/auth-contacts-1",
+    "worktree": "~/workspace/quill-a6-contacts",
+    "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:18:40Z",
+   "updated_at": "2026-09-28T14:23:01Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 16
   }
  ]
 }
