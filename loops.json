@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T09:13:17.155213+00:00",
+ "generated_at": "2026-09-28T09:15:19.019132+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,15 +22,15 @@
    "status": "active",
    "updated_at": "2026-09-28T09:05:54Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 565
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "PR #105 opened; waiting for linux-fmt-clippy-test check",
-    "phase": "merging",
+    "detail": "rebased onto origin/main a80d0ca (history cleaned of embedded markers); post-rebase clippy+test running",
+    "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
     "worktree": "~/workspace/quill-stories2"
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:05:57Z",
-   "stale": false,
-   "age_seconds": 440
+   "updated_at": "2026-09-28T09:45:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 3497
+   "age_seconds": 3619
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:08:47Z",
    "stale": false,
-   "age_seconds": 270
+   "age_seconds": 392
   }
  ]
 }
