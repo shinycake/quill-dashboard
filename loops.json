@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:01:29.586462+00:00",
+ "generated_at": "2026-09-28T08:03:17.440604+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:55:52Z",
    "stale": false,
-   "age_seconds": 337
+   "age_seconds": 445
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:55:54Z",
    "stale": false,
-   "age_seconds": 335
+   "age_seconds": 443
   },
   {
    "branch": "parity/polls",
@@ -88,12 +88,12 @@
     "slice": "A3 sessions management",
     "phase": "implementing",
     "branch": "parity/auth-sessions-1",
-    "detail": "implementer dispatching \u2014 active sessions list + terminate flows"
+    "detail": "implementer re-dispatched after infra error \u2014 continuing surviving uncommitted work"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:58:39Z",
+   "updated_at": "2026-09-28T08:01:38Z",
    "stale": false,
-   "age_seconds": 170
+   "age_seconds": 99
   }
  ]
 }
