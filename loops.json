@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T10:25:17.594289+00:00",
+ "generated_at": "2026-09-28T10:27:20.521177+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "media-shared-gallery"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:15:53Z",
+   "updated_at": "2026-09-28T10:25:53Z",
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 87
   },
   {
    "branch": "parity/stories-3",
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:45:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T10:25:56Z",
+   "stale": false,
+   "age_seconds": 84
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 7817
+   "age_seconds": 7940
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T10:18:42Z",
    "stale": false,
-   "age_seconds": 395
+   "age_seconds": 518
   }
  ]
 }
