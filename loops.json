@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T10:57:17.473232+00:00",
+ "generated_at": "2026-09-28T10:59:17.001384+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T10:55:54Z",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 203
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T10:55:53Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 204
   },
   {
    "branch": "parity/polls",
@@ -70,31 +70,30 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 9737
+   "age_seconds": 9857
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
-    "slice": "A3 sessions management",
-    "phase": "gates",
-    "branch": "parity/auth-sessions-1",
-    "worktree": "~/workspace/quill-a3-sessions",
-    "pr": 106,
-    "detail": "PR #106 open \u2014 merge watcher tracking linux-fmt-clippy-test"
-   },
-   "lanes": "auth/accounts, platform edge cases",
-   "loop": 4,
-   "next": {
     "slice": "A4 web sessions + per-session toggles",
     "phase": "implementing",
     "branch": "parity/auth-websessions-1",
     "worktree": "~/workspace/quill-a4-websessions",
-    "detail": "stacked on A3 branch (unmerged) \u2014 extends its sessions UI"
+    "pr": null,
+    "detail": "rebasing stacked branch onto origin/main after A3 merge, then continuing"
+   },
+   "lanes": "auth/accounts, platform edge cases",
+   "loop": 4,
+   "next": {
+    "slice": "A5 next auth/accounts slice",
+    "phase": "queued",
+    "branch": null,
+    "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:52:45Z",
+   "updated_at": "2026-09-28T10:58:48Z",
    "stale": false,
-   "age_seconds": 272
+   "age_seconds": 29
   }
  ]
 }
