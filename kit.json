@@ -1,9 +1,9 @@
 {
-  "phase": "Phase 0 \u2014 Color tokens",
+  "phase": "Phase 1 \u2014 Remove debug chrome",
   "status": "active",
   "prs": [
     122
   ],
-  "updated_at": "2026-09-28T17:55:51Z",
-  "notes": "PR #122 open; CI pending"
+  "updated_at": "2026-09-28T17:59:44Z",
+  "notes": "Phase 0 done (PR #122 merged); Phase 1 starting"
 }
