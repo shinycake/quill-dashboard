@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:03:18.871606+00:00",
+ "generated_at": "2026-09-28T07:05:17.663307+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:55:54Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 563
   },
   {
    "branch": "parity/stories-3",
@@ -46,16 +46,16 @@
    "status": "active",
    "updated_at": "2026-09-28T06:55:53Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 564
   },
   {
    "branch": "parity/bots-profile",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/bots-profile",
-    "detail": "reviewer APPROVED (1 non-blocking finding applied as doc-comment commit); opening PR once fmt+commit lands",
+    "detail": "PR #101 opened, awaiting linux-fmt-clippy-test before rebase-merge",
     "phase": "merging",
-    "pr": null,
+    "pr": 101,
     "slice": "B2 bot-profile actions",
     "worktree": "~/workspace/quill-l3-b2"
    },
@@ -63,12 +63,12 @@
    "loop": 3,
    "next": {
     "branch": "parity/polls",
-    "detail": "worktree rebased, brief drafted (poll creation options) \u2014 implementer dispatches once B2 PR opens",
-    "phase": "queued",
+    "detail": "implementer active: poll creation options (quiz/description/duration/revoting/shuffle/countries/discard)",
+    "phase": "implementing",
     "slice": "B3 poll creation options"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:28:00Z",
+   "updated_at": "2026-09-28T07:45:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:58:39Z",
    "stale": false,
-   "age_seconds": 279
+   "age_seconds": 398
   }
  ]
 }
