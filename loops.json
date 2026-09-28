@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-28T07:05:17.663307+00:00",
+ "generated_at": "2026-09-28T07:07:17.598558+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/connect-driver-dyn",
-    "detail": "compile-speed experiment (slice b) in flight",
+    "branch": "parity/calls-remainder-2",
+    "detail": "echo cancellation / noise suppression toggles + use-proxy-for-calls setting; schema/TGX investigation first",
     "phase": "implementing",
     "pr": null,
-    "slice": "de-genericize ConnectDriver (Box<dyn JsonSender>)",
-    "worktree": "~/workspace/quill-l1-conndriver"
+    "slice": "calls-remainder-2 (audio-fx + proxy)",
+    "worktree": "~/workspace/quill-l1-calls-2"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "branch": "parity/calls-remainder-2",
-    "detail": "worktree prepped, pipelined per SPEED rule",
+    "branch": null,
+    "detail": "floating peek slice after calls-remainder-2",
     "phase": "queued",
-    "slice": "calls-remainder-2 (audio-fx + proxy)"
+    "slice": "chat-preview"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:55:54Z",
-   "stale": false,
-   "age_seconds": 563
+   "updated_at": "2026-09-28T07:08:30Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -44,31 +44,31 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:55:53Z",
+   "updated_at": "2026-09-28T07:05:57Z",
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 80
   },
   {
-   "branch": "parity/bots-profile",
+   "branch": null,
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
-    "branch": "parity/bots-profile",
-    "detail": "PR #101 opened, awaiting linux-fmt-clippy-test before rebase-merge",
-    "phase": "merging",
-    "pr": 101,
-    "slice": "B2 bot-profile actions",
-    "worktree": "~/workspace/quill-l3-b2"
+    "branch": "parity/polls",
+    "detail": "B3 implementer active: poll creation options (quiz/description/duration/revoting/shuffle/countries/discard)",
+    "phase": "implementing",
+    "pr": null,
+    "slice": "B3 poll creation options",
+    "worktree": "~/workspace/quill-l3-b3"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "branch": "parity/polls",
-    "detail": "implementer active: poll creation options (quiz/description/duration/revoting/shuffle/countries/discard)",
-    "phase": "implementing",
-    "slice": "B3 poll creation options"
+    "branch": null,
+    "detail": "B4 poll management (voters, stop, restrictions, permissions) after B3 merges",
+    "phase": "queued",
+    "slice": "B4 poll management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:45:00Z",
+   "updated_at": "2026-09-28T07:52:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:58:39Z",
    "stale": false,
-   "age_seconds": 398
+   "age_seconds": 518
   }
  ]
 }
