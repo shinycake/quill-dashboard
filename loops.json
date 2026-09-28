@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T16:57:21.169454+00:00",
+ "generated_at": "2026-09-28T16:59:23.192360+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T16:55:54Z",
    "stale": false,
-   "age_seconds": 87
+   "age_seconds": 209
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,33 +41,23 @@
    "status": "active",
    "updated_at": "2026-09-28T16:56:10Z",
    "stale": false,
-   "age_seconds": 71
+   "age_seconds": 193
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
-    "branch": "parity/payments-p1",
-    "detail": "STOP-WORK ORDER (Idan): PR #118 opened for payments; head-specific CI watch running (proc_63661a928736); merge on green, then park",
-    "head": "0b8548b",
-    "phase": "merging",
-    "pr": 118,
-    "slice": "payments p1",
-    "worktree": "~/workspace/quill-l3-next"
+    "detail": "PARKED per Idan stop-work order (2026-09-28). Payments PR #118 merged (359/522 = 68.8%). No feature work in flight. Kit-adoption coordinator owns UI work per quill-progress/plans/telegram-desktop-ui-cleanup.md; loop resumes after kit adoption.",
+    "phase": "parked",
+    "slice": "none"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
-   "parked": {
-    "branch": "parity/settings-appearance",
-    "detail": "fixups done, gates green, parked (not pushed, no PR). Kit-adoption coordinator owns src/ui/mod.rs next.",
-    "head": "c3bb7ad",
-    "slice": "settings appearance"
+   "parked_branches": {
+    "parity/settings-appearance": "c3bb7ad (fixups done, gates green, 6 boxes; NOT pushed, no PR)",
+    "parity/settings-privacy": "WIP commit pending from stopped implementer (no push, no PR)"
    },
-   "status": "stopping",
-   "updated_at": "2026-09-28T17:00:00Z",
-   "waiting_on": {
-    "detail": "privacy implementer STOPPED via interrupt (commit WIP as-is, no push/PR/builds, then halt); completion report pending",
-    "slice": "settings privacy"
-   },
+   "status": "parked",
+   "updated_at": "2026-09-28T17:05:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -91,7 +81,7 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:48:52Z",
+   "updated_at": "2026-09-28T16:58:51Z",
    "last_merged": {
     "pr": 115,
     "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
@@ -101,7 +91,7 @@
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
    "parked": false,
    "stale": false,
-   "age_seconds": 509
+   "age_seconds": 32
   }
  ]
 }
