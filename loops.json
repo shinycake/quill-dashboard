@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:11:17.074419+00:00",
+ "generated_at": "2026-09-28T06:13:18.218184+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,14 +22,14 @@
    "status": "active",
    "updated_at": "2026-09-28T05:48:15Z",
    "stale": true,
-   "age_seconds": 1382
+   "age_seconds": 1503
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-3",
-    "detail": "reviewer fixups applied, rebased onto origin/main, running post-rebase gates (fmt/clippy/test/ui)",
+    "detail": "rebase conflict fallout fixed (B1 imports restored), clippy re-running",
     "phase": "gates",
     "pr": null,
     "slice": "S3 story management",
@@ -44,9 +44,9 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T05:49:30Z",
+   "updated_at": "2026-09-28T05:58:00Z",
    "stale": true,
-   "age_seconds": 1307
+   "age_seconds": 918
   },
   {
    "branch": "parity/bots-profile",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T05:48:14Z",
    "stale": true,
-   "age_seconds": 1383
+   "age_seconds": 1504
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:08:41Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 277
   }
  ]
 }
