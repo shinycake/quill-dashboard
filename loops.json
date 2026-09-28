@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:17:18.320573+00:00",
+ "generated_at": "2026-09-28T06:19:17.283330+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T05:48:15Z",
    "stale": true,
-   "age_seconds": 1743
+   "age_seconds": 1862
   },
   {
    "branch": "parity/stories-3",
@@ -46,14 +46,14 @@
    "status": "active",
    "updated_at": "2026-09-28T05:58:00Z",
    "stale": true,
-   "age_seconds": 1158
+   "age_seconds": 1277
   },
   {
    "branch": "parity/bots-profile",
-   "coordinator": "ba8065a8-4731-4aa0-aecb-42a6929ae834",
+   "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/bots-profile",
-    "detail": "review fix-ups committed, rebased on 02c51ab, re-running all gates post-rebase",
+    "detail": "successor coordinator resumed; fix-ups at 228ada1, full gate suite re-running post-rebase",
     "phase": "gates",
     "pr": null,
     "slice": "B2 bot-profile actions",
@@ -63,14 +63,14 @@
    "loop": 3,
    "next": {
     "branch": "parity/polls",
-    "detail": "worktree prepped, brief drafted, implementer dispatches at B2 merge per SPEED rule",
+    "detail": "worktree prepped, implementer dispatches once B2 PR is opened (SPEED rule)",
     "phase": "queued",
     "slice": "B3 poll creation"
    },
    "status": "active",
-   "updated_at": "2026-09-28T05:48:14Z",
+   "updated_at": "2026-09-28T06:19:30Z",
    "stale": true,
-   "age_seconds": 1744
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -91,9 +91,9 @@
     "slice": "A3 sessions management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:08:41Z",
+   "updated_at": "2026-09-28T06:18:45Z",
    "stale": false,
-   "age_seconds": 517
+   "age_seconds": 32
   }
  ]
 }
