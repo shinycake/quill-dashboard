@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:59:17.212770+00:00",
+ "generated_at": "2026-09-28T09:01:17.975380+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:55:53Z",
    "stale": false,
-   "age_seconds": 204
+   "age_seconds": 324
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:55:56Z",
    "stale": false,
-   "age_seconds": 201
+   "age_seconds": 321
   },
   {
    "branch": "parity/polls",
@@ -70,30 +70,30 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 2657
+   "age_seconds": 2777
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
-    "slice": "A2 two-step verification (setPassword)",
-    "phase": "gates",
-    "branch": "parity/auth-2fa-1",
-    "worktree": "~/workspace/quill-a2-2fa",
-    "pr": 104,
-    "detail": "PR #104 open \u2014 merge watcher tracking linux-fmt-clippy-test"
+    "slice": "A3 sessions management",
+    "phase": "implementing",
+    "branch": "parity/auth-sessions-1",
+    "worktree": "~/workspace/quill-a3-sessions",
+    "pr": null,
+    "detail": "implementer in flight \u2014 sessions list + terminate flows"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
    "next": {
-    "slice": "A3 sessions management",
-    "phase": "implementing",
-    "branch": "parity/auth-sessions-1",
-    "detail": "implementer re-dispatched after infra error \u2014 continuing surviving uncommitted work"
+    "slice": "A4 web sessions + per-session toggles",
+    "phase": "queued",
+    "branch": "parity/auth-websessions-1",
+    "detail": "starts when A3 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:58:42Z",
+   "updated_at": "2026-09-28T09:00:19Z",
    "stale": false,
-   "age_seconds": 35
+   "age_seconds": 58
   }
  ]
 }
