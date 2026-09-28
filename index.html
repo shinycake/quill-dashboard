@@ -353,12 +353,19 @@ async function refresh(manual){
       .map(p => ({ number: p.number, title: p.title, merged_at: p.merged_at, html_url: p.html_url }));
     const open = openPRs.map(p => ({ number: p.number, title: p.title, updated_at: p.updated_at, html_url: p.html_url }));
 
+    // Branches whose PR already merged are done — never show them as
+    // in-progress, even if the branch wasn't deleted after merging.
+    const mergedBranches = new Set(
+      closedPRs.filter(p => p.merged_at && p.head && p.head.ref).map(p => p.head.ref)
+    );
+
     const seen = new Map();
     for (const e of events){
       if (e.type !== 'PushEvent' || !e.payload || !e.payload.ref) continue;
       const m = String(e.payload.ref).match(/^refs\/heads\/(parity\/.+)$/);
       if (!m) continue;
       const branch = m[1];
+      if (mergedBranches.has(branch)) continue; // merged — not in progress
       if (!seen.has(branch))
         seen.set(branch, { branch, pushed_at: e.created_at, actor: (e.actor && e.actor.login) || '—' });
       if (seen.size >= 10) break;
