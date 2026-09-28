@@ -164,6 +164,11 @@
   </section>
 
   <section>
+    <h2>gpui-kit adoption <span class="count" id="kitCount"></span></h2>
+    <div id="kit"><div class="skel"></div></div>
+  </section>
+
+  <section>
     <h2>Progress by area</h2>
     <div id="areas"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
   </section>
@@ -201,6 +206,7 @@ const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 let cache = null;          // last good payload, kept in memory
 let refreshing = false;
 let lastLoopsSig = null;  // signature of last rendered loops.json
+let lastKitSig = null;   // signature of last rendered kit.json
 // ETag stores: GitHub returns 304 Not Modified for unchanged resources and
 // 304s do NOT count against the API rate limit — this is what allows 30s polling.
 const etags = {};          // url -> ETag
@@ -295,6 +301,68 @@ function barClass(p){ return p < .33 ? 'bar low' : p < .7 ? 'bar mid' : 'bar'; }
 
 const PHASE_PILL = { implementing:'wip', reviewing:'review', fixups:'review',
                      gates:'wip', merging:'merged', idle:'num', blocked:'stale' };
+
+const KIT_PHASES = [
+  'Color tokens', 'Kill debug chrome', 'Kit overlays', 'Virtualized lists',
+  'Bubbles & message chrome', 'Composer', 'Dialogs, settings & forms',
+  'Native chrome (macOS)', 'Light theme', 'Delight polish'
+];
+
+const KIT_PILL = { waiting: 'wip', active: 'review', done: 'merged' };
+
+// gpui-kit adoption progress published by the build machine (~/workspace/bin/quill-loops-publish
+// every 2 min, from ~/workspace/quill-progress/kit.json maintained by the kit coordinator).
+async function getKit(){
+  const url = 'kit.json';
+  const headers = {};
+  if (etags[url]) headers['If-None-Match'] = etags[url];
+  const r = await fetch(url, { headers, cache: 'no-store' });
+  if (r.status === 304) return { notModified: true, data: bodies[url] };
+  if (!r.ok) return { notModified: false, data: null };
+  const et = r.headers.get('ETag');
+  if (et) etags[url] = et;
+  const data = await r.json();
+  bodies[url] = data;
+  return { notModified: false, data };
+}
+
+function renderKit(data){
+  const el = $('kit');
+  if (!data){
+    $('kitCount').textContent = '';
+    el.innerHTML = '<div class="empty">Kit adoption feed is starting…</div>';
+    return;
+  }
+  const m = String(data.phase || '').match(/phase\s*(\d+)/i);
+  const curIdx = m ? parseInt(m[1], 10) : -1;
+  const doneAll = data.status === 'done';
+  const doneCount = doneAll ? 10 : Math.max(0, curIdx);
+  $('kitCount').textContent = (curIdx >= 0 || doneAll) ? doneCount + '/10' : '';
+  const pill = '<span class="pill ' + (KIT_PILL[data.status] || 'num') + '">' + esc(data.status || 'unknown') + '</span>';
+  const upd = data.updated_at ? 'updated ' + ago(data.updated_at) : 'no update yet';
+  const phases = KIT_PHASES.map((name, i) => {
+    const state = doneAll || i < curIdx ? 'done' : (i === curIdx ? 'current' : 'todo');
+    const dot = state === 'done' ? '✓' : (state === 'current' ? '●' : '○');
+    const color = state === 'done' ? 'var(--green)' : (state === 'current' ? 'var(--amber)' : 'var(--faint)');
+    const tcolor = state === 'todo' ? 'var(--faint)' : 'var(--text)';
+    return '<div style="display:flex;gap:8px;align-items:center;margin-top:5px">' +
+      '<span style="color:' + color + ';font-weight:700;width:16px;text-align:center">' + dot + '</span>' +
+      '<span style="color:' + tcolor + ';font-size:13.5px">Phase ' + i + ' — ' + esc(name) + '</span></div>';
+  }).join('');
+  const prs = (data.prs && data.prs.length)
+    ? '<div class="meta" style="margin-top:9px;gap:6px">' + data.prs.map(n =>
+        '<a href="https://github.com/' + OWNER + '/' + REPO + '/pull/' + n + '">' +
+        '<span class="pill num">#' + n + '</span> <span class="ext">↗</span></a>').join('') + '</div>'
+    : '';
+  el.innerHTML = '<div class="card">' +
+    '<div class="t">gpui-kit adoption' +
+    (data.phase ? ' <span style="color:var(--muted);font-weight:500;font-size:12.5px">· ' + esc(data.phase) + '</span>' : '') + '</div>' +
+    (data.notes ? '<div class="meta" style="color:var(--muted)">' + esc(data.notes) + '</div>' : '') +
+    '<div class="meta">' + pill + '<span>' + upd + '</span></div>' +
+    prs +
+    '<div style="margin-top:10px">' + phases + '</div>' +
+    '</div>';
+}
 
 function renderLoops(data){
   const el = $('loops');
@@ -397,13 +465,14 @@ async function refresh(manual){
   btn.innerHTML = '<span class="spin">↻</span> Loading…';
   $('rateBanner').classList.remove('show');
   try {
-    const [mdR, closedR, openR, eventsR, commitsR, loopsR] = await Promise.all([
+    const [mdR, closedR, openR, eventsR, commitsR, loopsR, kitR] = await Promise.all([
       getText('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md'),
       getJSON(API + '/pulls?state=closed&per_page=20&sort=updated&direction=desc'),
       getJSON(API + '/pulls?state=open&per_page=20'),
       getJSON(API + '/events?per_page=40'),
       getJSON(API + '/commits?per_page=10&sha=main'),
       getLoops().catch(() => ({ notModified: false, data: null })),
+      getKit().catch(() => ({ notModified: false, data: null })),
     ]);
     const now = new Date().toISOString();
     const changed = [mdR, closedR, openR, eventsR, commitsR].some(r => !r.notModified);
@@ -458,6 +527,13 @@ async function refresh(manual){
     if (loopsSig !== lastLoopsSig) {
       lastLoopsSig = loopsSig;
       renderLoops(loopsR.data);
+    }
+
+    // Kit adoption renders independently too.
+    const kitSig = JSON.stringify(kitR.data);
+    if (kitSig !== lastKitSig) {
+      lastKitSig = kitSig;
+      renderKit(kitR.data);
     }
   } catch (err) {
     if (err && err.rateLimited) $('rateBanner').classList.add('show');
