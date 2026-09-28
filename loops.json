@@ -1,26 +1,26 @@
 {
- "generated_at": "2026-09-28T17:15:17.629732+00:00",
+ "generated_at": "2026-09-28T17:17:18.423275+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/calls-group-self-tile-ci2",
-    "detail": "PARK ORDER (Idan): screenshare-send merged as 5957add. Group self-tile (MERGE review, no blockers) rebased onto main, PR #120 open, local gates rerunning. Last step before park.",
-    "phase": "review",
-    "pr": 120,
-    "slice": "calls-group-self-tile",
-    "worktree": "~/workspace/quill-l1-selftile"
+    "branch": null,
+    "detail": "PARKED (Idan order 2026-09-28): in-flight slices merged \u2014 screenshare-send PR #119, group self-tile PR #120. Final parity 360/522 = 69.0%. No new feature slices.",
+    "phase": "parked",
+    "pr": null,
+    "slice": null,
+    "worktree": null
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "PARKED after PR #120 merges \u2014 resumes after kit adoption completes",
+    "detail": "Resumes feature slices after kit-adoption coordinator completes telegram-desktop-ui-cleanup.md",
     "phase": "parked",
     "slice": null
    },
-   "status": "active",
-   "updated_at": "2026-09-28T17:45:00Z",
+   "status": "parked",
+   "updated_at": "2026-09-28T18:05:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T17:06:29Z",
+   "updated_at": "2026-09-28T17:15:59Z",
    "stale": false,
-   "age_seconds": 528
+   "age_seconds": 79
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -59,17 +59,17 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": false,
-   "age_seconds": 317
+   "age_seconds": 438
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A5 profile management",
-    "phase": "rechecking-then-park",
+    "phase": "pr-open-then-park",
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "A6 fixup worker died post-push (aee00ff safe); re-check worker verifying fixups + prepping PR"
+    "detail": "PR #121 open (A6 APPROVED); merge watcher waiting on linux-fmt-clippy-test; park after merge"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -81,7 +81,7 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T17:10:25Z",
+   "updated_at": "2026-09-28T17:15:36Z",
    "last_merged": {
     "pr": 115,
     "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
@@ -91,7 +91,7 @@
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
    "parked": false,
    "stale": false,
-   "age_seconds": 292
+   "age_seconds": 102
   }
  ]
 }
