@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:47:17.497816+00:00",
+ "generated_at": "2026-09-28T11:49:18.070061+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:45:55Z",
    "stale": false,
-   "age_seconds": 82
+   "age_seconds": 203
   },
   {
    "branch": "parity/stories-3",
@@ -47,7 +47,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:45:54Z",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 204
   },
   {
    "branch": "parity/polls",
@@ -92,9 +92,9 @@
     "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:38:42Z",
+   "updated_at": "2026-09-28T11:48:44Z",
    "stale": false,
-   "age_seconds": 515
+   "age_seconds": 34
   }
  ]
 }
