@@ -1,9 +1,1 @@
-{
-  "phase": "Phase 1 \u2014 Remove debug chrome",
-  "status": "active",
-  "prs": [
-    122
-  ],
-  "updated_at": "2026-09-28T18:11:35Z",
-  "notes": "Phase 1 implemented; ui build gate running"
-}
+{"notes":"Phase 1 committed (9e72829); screenshots verified (icon buttons render, no status bar); adversarial review in flight","phase":"Phase 1 — Remove debug chrome","prs":[122],"status":"active","updated_at":"2026-09-28T18:30:00Z"}
