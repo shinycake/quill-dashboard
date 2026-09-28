@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:45:18.619317+00:00",
+ "generated_at": "2026-09-28T11:47:17.497816+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "groups-welcome-view"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:35:54Z",
+   "updated_at": "2026-09-28T11:45:55Z",
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 82
   },
   {
    "branch": "parity/stories-3",
@@ -45,16 +45,16 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:30:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T11:45:54Z",
+   "stale": false,
+   "age_seconds": 83
   },
   {
    "branch": "parity/polls",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls",
-    "detail": "reviewer APPROVED; 4 non-blocking findings applied (TGX citations, revoting quiz guard, README honesty, getPollVoters line) \u2014 full gate suite re-running on final tree",
+    "detail": "PR #103 open; rebased onto 63671c0 (DECISIONS.md conflict resolved, box union intact: 323\u2192330); full gate suite re-running post-rebase",
     "phase": "gates",
     "pr": 103,
     "slice": "B3 poll creation options",
@@ -64,14 +64,14 @@
    "loop": 3,
    "next": {
     "branch": "parity/polls-manage",
-    "detail": "B4 implementer active: voter list, stop poll, quiz explanation display, restriction reasons, can_send_polls gating, stopped service message",
-    "phase": "implementing",
+    "detail": "B4 implementer finished (f17880a, gates green, screenshot updated); needs rebase onto latest main + dedicated reviewer + PR",
+    "phase": "reviewing",
     "slice": "B4 poll management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T08:15:00Z",
+   "updated_at": "2026-09-28T12:05:00Z",
    "stale": true,
-   "age_seconds": 12618
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:38:42Z",
    "stale": false,
-   "age_seconds": 396
+   "age_seconds": 515
   }
  ]
 }
