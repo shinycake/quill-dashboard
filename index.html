@@ -161,11 +161,6 @@
   </section>
 
   <section>
-    <h2>Merged <span class="count" id="mergedCount"></span></h2>
-    <div id="merged"><div class="skel"></div><div class="skel"></div></div>
-  </section>
-
-  <section>
     <h2>In review <span class="count" id="openCount"></span></h2>
     <div id="open"><div class="skel"></div></div>
   </section>
@@ -176,12 +171,17 @@
   </section>
 
   <section>
+    <h2>Merged <span class="count" id="mergedCount"></span></h2>
+    <div id="merged"><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <section>
     <h2>Recent commits</h2>
     <div id="commits"><div class="skel"></div><div class="skel"></div></div>
   </section>
 
   <footer>
-    Data from the public GitHub API · auto-refreshes every 10 min<br>
+    Data from the public GitHub API · live, re-checks every 30s<br>
     <a href="https://github.com/shinycake/quill">shinycake/quill</a> ·
     <a href="https://github.com/shinycake/quill-dashboard">dashboard source</a>
   </footer>
@@ -192,6 +192,10 @@ const OWNER = 'shinycake', REPO = 'quill';
 const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 let cache = null;          // last good payload, kept in memory
 let refreshing = false;
+// ETag stores: GitHub returns 304 Not Modified for unchanged resources and
+// 304s do NOT count against the API rate limit — this is what allows 30s polling.
+const etags = {};          // url -> ETag
+const bodies = {};         // url -> last parsed body
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
@@ -210,12 +214,32 @@ function ago(iso){
 }
 
 async function getJSON(url){
-  const r = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } });
+  const headers = { 'Accept': 'application/vnd.github+json' };
+  if (etags[url]) headers['If-None-Match'] = etags[url];
+  const r = await fetch(url, { headers, cache: 'no-store' });
+  if (r.status === 304) return { notModified: true, data: bodies[url] };
   if (r.status === 403 && r.headers.get('x-ratelimit-remaining') === '0') {
     const e = new Error('rate-limited'); e.rateLimited = true; throw e;
   }
   if (!r.ok) { const e = new Error('HTTP ' + r.status); e.status = r.status; throw e; }
-  return r.json();
+  const et = r.headers.get('ETag');
+  if (et) etags[url] = et;
+  const data = await r.json();
+  bodies[url] = data;
+  return { notModified: false, data };
+}
+
+async function getText(url){
+  const headers = {};
+  if (etags[url]) headers['If-None-Match'] = etags[url];
+  const r = await fetch(url, { headers, cache: 'no-store' });
+  if (r.status === 304) return { notModified: true, data: bodies[url] };
+  if (!r.ok) { const e = new Error('README HTTP ' + r.status); e.status = r.status; throw e; }
+  const et = r.headers.get('ETag');
+  if (et) etags[url] = et;
+  const data = await r.text();
+  bodies[url] = data;
+  return { notModified: false, data };
 }
 
 function parseReadme(md){
@@ -251,7 +275,7 @@ function render(d){
   $('ringFg').style.transition = 'stroke-dashoffset 1s cubic-bezier(.2,.7,.2,1)';
   $('ringFg').style.strokeDashoffset = (364.4 * (1 - d.readme.pct)).toFixed(1);
   $('parityFrac').textContent = d.readme.done + ' / ' + d.readme.total + ' items';
-  $('updatedAt').textContent = 'Updated ' + ago(d.fetchedAt);
+  $('updatedAt').textContent = 'Checked ' + ago(d.fetchedAt);
 
   // areas
   $('areas').innerHTML = d.readme.areas.map(a => {
@@ -308,16 +332,19 @@ async function refresh(manual){
   btn.innerHTML = '<span class="spin">↻</span> Loading…';
   $('rateBanner').classList.remove('show');
   try {
-    const [md, closedPRs, openPRs, events, commits] = await Promise.all([
-      fetch('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md').then(r => {
-        if (!r.ok) throw new Error('README HTTP ' + r.status);
-        return r.text();
-      }),
+    const [mdR, closedR, openR, eventsR, commitsR] = await Promise.all([
+      getText('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md'),
       getJSON(API + '/pulls?state=closed&per_page=20&sort=updated&direction=desc'),
       getJSON(API + '/pulls?state=open&per_page=20'),
       getJSON(API + '/events?per_page=40'),
       getJSON(API + '/commits?per_page=10&sha=main'),
     ]);
+    const now = new Date().toISOString();
+    const changed = [mdR, closedR, openR, eventsR, commitsR].some(r => !r.notModified);
+
+    if (changed || !cache) {
+      const md = mdR.data, closedPRs = closedR.data, openPRs = openR.data,
+            events = eventsR.data, commits = commitsR.data;
 
     const readme = parseReadme(md);
     const merged = closedPRs
@@ -346,8 +373,12 @@ async function refresh(manual){
       html_url: c.html_url,
     }));
 
-    cache = { readme, merged, open, wip, commits: commitList, fetchedAt: new Date().toISOString() };
-    render(cache);
+    cache = { readme, merged, open, wip, commits: commitList, fetchedAt: now };
+      render(cache);
+    } else {
+      cache.fetchedAt = now; // unchanged — just refresh the "checked" timestamp
+      $('updatedAt').textContent = 'Checked ' + ago(now);
+    }
   } catch (err) {
     if (err && err.rateLimited) $('rateBanner').classList.add('show');
     if (cache) {
@@ -369,7 +400,7 @@ async function refresh(manual){
 }
 
 refresh(false);
-setInterval(() => refresh(false), 10 * 60 * 1000);
+setInterval(() => refresh(false), 30 * 1000);
 </script>
 </body>
 </html>
