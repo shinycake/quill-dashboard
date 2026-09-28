@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:47:20.226011+00:00",
+ "generated_at": "2026-09-28T13:49:16.790926+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:45:55Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 201
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:46:03Z",
    "stale": false,
-   "age_seconds": 77
+   "age_seconds": 193
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -86,9 +86,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:38:39Z",
+   "updated_at": "2026-09-28T13:48:41Z",
    "stale": false,
-   "age_seconds": 521
+   "age_seconds": 35
   }
  ]
 }
