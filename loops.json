@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:41:19.674539+00:00",
+ "generated_at": "2026-09-28T13:43:18.540293+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,38 +22,33 @@
    "status": "active",
    "updated_at": "2026-09-28T13:38:00Z",
    "stale": false,
-   "age_seconds": 199
+   "age_seconds": 318
   },
   {
-   "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "branch": "parity/stories-3",
-    "detail": "rebased onto 8ac4b90 (S4 merge); 19 conflict regions resolved; gates running; then force-push + CI + merge on PR #108",
+    "detail": "S3 manage-posted-stories (PR #108): rebased onto 8ac4b90 (S4 merge), 19 conflict regions resolved, brace fixes applied; fmt/clippy/tests running in proc_22607f277610; then targeted re-review verification, force-push, CI, merge",
     "phase": "gates",
-    "pr": 108,
-    "slice": "S3 manage posted stories",
-    "worktree": "~/workspace/quill-stories1"
+    "slice": "S3 stories-edit/cover/privacy/post-as-channel/admin-rights/repost"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "branch": "parity/stories-5",
-    "detail": "rebased onto 7beb1a2; brace fix + fmt running; then gates + UI build + PR",
-    "phase": "gates",
-    "slice": "S5 albums/archive/pinned"
+    "detail": "S5 story albums/archive/pinned: rebased onto 8ac4b90, conflict brace fixes applied; fmt/clippy/tests running in proc_1a4151b413c8; then final UI build, open PR, CI, merge. S6 playback progress AUTO-ADVANCE review: APPROVE, awaiting rebase after S5 merges",
+    "phase": "queued",
+    "slice": "S5/S6 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:35:58Z",
-   "stale": false,
-   "age_seconds": 321
+   "updated_at": "2026-09-28T13:43:30Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "rustfmt reflow from rebase resolution fixed and amended (f54d951); full post-resolution gate suite re-running (proc_a15df8dcbedf)",
-    "head": "f54d951",
+    "detail": "duplicate #[test] from merge-script removed (fmt clean), amended as 0c6a8e8; full gate suite re-running (proc_bf8a7eef469f)",
+    "head": "0c6a8e8",
     "phase": "gates",
     "pr": 113,
     "slice": "B4 poll management",
@@ -67,7 +62,7 @@
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:55:00Z",
+   "updated_at": "2026-09-28T14:05:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -93,7 +88,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:38:39Z",
    "stale": false,
-   "age_seconds": 160
+   "age_seconds": 279
   }
  ]
 }
