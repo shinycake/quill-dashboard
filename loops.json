@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:55:17.664016+00:00",
+ "generated_at": "2026-09-28T07:57:18.158298+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "media-link-preview-send-options"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:45:52Z",
+   "updated_at": "2026-09-28T07:55:52Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 86
   },
   {
    "branch": "parity/stories-3",
@@ -44,33 +44,33 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:45:59Z",
+   "updated_at": "2026-09-28T07:55:54Z",
    "stale": false,
-   "age_seconds": 558
+   "age_seconds": 84
   },
   {
-   "branch": null,
+   "branch": "parity/polls",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls",
-    "detail": "B3 implementer active: poll creation options (quiz/description/duration/revoting/shuffle/countries/discard)",
-    "phase": "implementing",
-    "pr": null,
+    "detail": "PR #103 open, dedicated adversarial reviewer verifying (quiz shape, show-voters negative claim, README honesty)",
+    "phase": "reviewing",
+    "pr": 103,
     "slice": "B3 poll creation options",
     "worktree": "~/workspace/quill-l3-b3"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "branch": null,
-    "detail": "B4 poll management (voters, stop, restrictions, permissions) after B3 merges",
-    "phase": "queued",
+    "branch": "parity/polls-manage",
+    "detail": "B4 implementer active: voter list, stop poll, quiz explanation display, restriction reasons, can_send_polls gating, stopped service message",
+    "phase": "implementing",
     "slice": "B4 poll management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:52:00Z",
-   "stale": false,
-   "age_seconds": 197
+   "updated_at": "2026-09-28T08:05:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:48:50Z",
    "stale": false,
-   "age_seconds": 387
+   "age_seconds": 508
   }
  ]
 }
