@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T12:57:16.961089+00:00",
+ "generated_at": "2026-09-28T12:59:17.105887+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,14 +22,14 @@
    "status": "active",
    "updated_at": "2026-09-28T12:55:54Z",
    "stale": false,
-   "age_seconds": 82
+   "age_seconds": 203
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "rebased onto 7beb1a2 (PR #110); empty CI commit dropped; gates running; then fresh PR (old #105 never triggered CI) + merge",
+    "detail": "gates green on 7beb1a2; UI build running; then fresh PR (old #105 wedged) + CI watch + merge",
     "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
@@ -39,36 +39,36 @@
    "loop": 2,
    "next": {
     "branch": "parity/stories-3",
-    "detail": "rebased onto dedc8b6; gates running; then force-push + CI + merge on PR #108",
-    "phase": "gates",
+    "detail": "gates green on latest; CI watch on fresh push; merge when linux-fmt-clippy-test green",
+    "phase": "ci",
     "pr": 108,
     "slice": "S3 manage posted stories"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:55:55Z",
-   "stale": false,
-   "age_seconds": 81
+   "updated_at": "2026-09-28T15:20:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
-   "loop": 3,
-   "lanes": "bots, polls, payments, settings",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
-   "updated_at": "2026-09-28T13:12:00Z",
-   "status": "active",
    "current": {
-    "slice": "B4 poll management",
-    "phase": "fixups",
     "branch": "parity/polls-manage",
-    "worktree": "~/workspace/quill-l3-b4",
+    "detail": "reviewer APPROVE WITH FIXUPS all applied (330b2cb); rebased onto origin/main after PR #110 (clean rebase, README union verified: 0 lost, 6 B4 boxes); post-rebase full gate suite running (proc_8a3b510348e2); pipelined next slice (payments/settings implementer spawned, own worktree quill-l3-next)",
+    "phase": "gates",
     "pr": null,
-    "detail": "dedicated reviewer verdict: APPROVE WITH FIXUPS; all 5 findings + nits applied (41e824b); stale pre-fixup gate run killed; fresh full gate suite running under build lock"
+    "slice": "B4 poll management",
+    "worktree": "~/workspace/quill-l3-b4"
    },
+   "lanes": "bots, polls, payments, settings",
+   "loop": 3,
    "next": {
-    "slice": "B4 PR",
-    "phase": "queued",
     "branch": "parity/polls-manage",
-    "detail": "force-push, open PR #110+, CI, merge"
+    "detail": "push, open PR, head-specific CI watch, rebase-merge",
+    "phase": "queued",
+    "slice": "B4 PR"
    },
+   "status": "active",
+   "updated_at": "2026-09-28T13:23:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -92,9 +92,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:52:19Z",
+   "updated_at": "2026-09-28T12:58:42Z",
    "stale": false,
-   "age_seconds": 297
+   "age_seconds": 35
   }
  ]
 }
