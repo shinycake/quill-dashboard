@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:39:17.307934+00:00",
+ "generated_at": "2026-09-28T14:41:17.274972+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:35:51Z",
    "stale": false,
-   "age_seconds": 206
+   "age_seconds": 326
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:35:55Z",
    "stale": false,
-   "age_seconds": 202
+   "age_seconds": 322
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -70,11 +70,11 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A5 profile management",
-    "phase": "fixups",
+    "phase": "reviewing",
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "fixing reviewer blocker: is_public=true still at call site (privacy bug)"
+    "detail": "targeted re-check of fixups (7cb34ce) \u2014 is_public param deleted"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -86,9 +86,9 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:38:45Z",
+   "updated_at": "2026-09-28T14:39:40Z",
    "stale": false,
-   "age_seconds": 32
+   "age_seconds": 97
   }
  ]
 }
