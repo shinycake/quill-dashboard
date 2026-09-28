@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:55:17.597580+00:00",
+ "generated_at": "2026-09-28T06:57:18.078533+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-remainder-2 (audio-fx + proxy)"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:45:52Z",
+   "updated_at": "2026-09-28T06:55:54Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 84
   },
   {
    "branch": "parity/stories-3",
@@ -44,9 +44,9 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:45:55Z",
+   "updated_at": "2026-09-28T06:55:53Z",
    "stale": false,
-   "age_seconds": 562
+   "age_seconds": 85
   },
   {
    "branch": "parity/bots-profile",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:48:40Z",
    "stale": false,
-   "age_seconds": 397
+   "age_seconds": 518
   }
  ]
 }
