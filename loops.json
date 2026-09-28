@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:33:17.516025+00:00",
+ "generated_at": "2026-09-28T07:35:17.643966+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:25:52Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 565
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:25:52Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 565
   },
   {
    "branch": null,
@@ -76,11 +76,11 @@
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A2 two-step verification (setPassword)",
-    "phase": "reviewing",
+    "phase": "fixups",
     "branch": "parity/auth-2fa-1",
     "worktree": "~/workspace/quill-a2-2fa",
     "pr": null,
-    "detail": "implementer done \u2014 873+59 tests green; dedicated reviewer running"
+    "detail": "fixing reviewer blocker (stale email on change/disable) + 4 nits"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -91,9 +91,9 @@
     "detail": "implementer dispatching \u2014 active sessions list + terminate flows"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:28:54Z",
+   "updated_at": "2026-09-28T07:33:39Z",
    "stale": false,
-   "age_seconds": 263
+   "age_seconds": 98
   }
  ]
 }
