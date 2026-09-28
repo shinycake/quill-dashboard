@@ -16,6 +16,7 @@
     --blue:#58a6ff; --blue-dim:rgba(88,166,255,.12);
     --amber:#d29922; --amber-dim:rgba(210,153,34,.13);
     --purple:#bc8cff; --purple-dim:rgba(188,140,255,.12);
+    --red:#f85149; --red-dim:rgba(248,81,73,.12);
     --radius:16px;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
@@ -106,6 +107,8 @@
   .pill.merged{background:var(--purple-dim); color:var(--purple); border:1px solid rgba(188,140,255,.35)}
   .pill.open{background:var(--green-dim); color:var(--green); border:1px solid rgba(63,185,80,.35)}
   .pill.wip{background:var(--blue-dim); color:var(--blue); border:1px solid rgba(88,166,255,.35)}
+  .pill.review{background:var(--amber-dim); color:#e8c56d; border:1px solid rgba(210,153,34,.4)}
+  .pill.stale{background:var(--red-dim); color:var(--red); border:1px solid rgba(248,81,73,.4)}
   .pill.num{background:var(--card2); border:1px solid var(--border); color:var(--muted); font-variant-numeric:tabular-nums}
   .ext{color:var(--faint)}
 
@@ -156,6 +159,11 @@
   <div class="banner" id="rateBanner">⚠️ GitHub API rate limit reached — showing last good data. It refreshes automatically.</div>
 
   <section>
+    <h2>Live loops <span class="count" id="loopsCount"></span></h2>
+    <div id="loops"><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <section>
     <h2>Progress by area</h2>
     <div id="areas"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
   </section>
@@ -181,7 +189,7 @@
   </section>
 
   <footer>
-    Data from the public GitHub API · live, re-checks every 30s<br>
+    Loop status published live from the build machine · PR/branch data from the GitHub API · re-checks every 30s<br>
     <a href="https://github.com/shinycake/quill">shinycake/quill</a> ·
     <a href="https://github.com/shinycake/quill-dashboard">dashboard source</a>
   </footer>
@@ -192,6 +200,7 @@ const OWNER = 'shinycake', REPO = 'quill';
 const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 let cache = null;          // last good payload, kept in memory
 let refreshing = false;
+let lastLoopsSig = null;  // signature of last rendered loops.json
 // ETag stores: GitHub returns 304 Not Modified for unchanged resources and
 // 304s do NOT count against the API rate limit — this is what allows 30s polling.
 const etags = {};          // url -> ETag
@@ -242,6 +251,22 @@ async function getText(url){
   return { notModified: false, data };
 }
 
+// Live loop heartbeats published by the build machine (~/workspace/bin/quill-loops-publish
+// every 2 min). Same-origin, so no CORS issues. Missing file = not published yet, not fatal.
+async function getLoops(){
+  const url = 'loops.json';
+  const headers = {};
+  if (etags[url]) headers['If-None-Match'] = etags[url];
+  const r = await fetch(url, { headers, cache: 'no-store' });
+  if (r.status === 304) return { notModified: true, data: bodies[url] };
+  if (!r.ok) return { notModified: false, data: null };
+  const et = r.headers.get('ETag');
+  if (et) etags[url] = et;
+  const data = await r.json();
+  bodies[url] = data;
+  return { notModified: false, data };
+}
+
 function parseReadme(md){
   const lines = md.split('\n');
   let inStatus = false;
@@ -267,6 +292,46 @@ function parseReadme(md){
 }
 
 function barClass(p){ return p < .33 ? 'bar low' : p < .7 ? 'bar mid' : 'bar'; }
+
+const PHASE_PILL = { implementing:'wip', reviewing:'review', fixups:'review',
+                     gates:'wip', merging:'merged', idle:'num', blocked:'stale' };
+
+function renderLoops(data){
+  const el = $('loops');
+  if (!data || !data.loops || !data.loops.length){
+    $('loopsCount').textContent = '';
+    el.innerHTML = '<div class="empty">Loop status feed is starting…</div>';
+    return;
+  }
+  $('loopsCount').textContent = data.loops.length;
+  el.innerHTML = data.loops.map(L => {
+    const cur = L.current || {}, nxt = L.next || {};
+    const phase = cur.phase || 'idle';
+    const pills = L.stale
+      ? '<span class="pill stale">stale</span>'
+      : '<span class="pill ' + (PHASE_PILL[phase] || 'num') + '">' + esc(phase) + '</span>';
+    const upd = L.updated_at ? 'updated ' + ago(L.updated_at) : 'no heartbeat yet';
+    const staleNote = L.stale
+      ? '<div class="meta"><span style="color:var(--red)">⚠️ no heartbeat for 15+ min — loop may be down</span></div>' : '';
+    const branchLink = cur.branch
+      ? '<div class="meta"><a href="https://github.com/' + OWNER + '/' + REPO + '/tree/' + encodeURIComponent(cur.branch) + '">' +
+        '<span style="font-family:ui-monospace,monospace;font-size:12.5px">' + esc(cur.branch) + '</span> <span class="ext">↗</span></a></div>' : '';
+    const prLink = cur.pr
+      ? '<div class="meta"><a href="https://github.com/' + OWNER + '/' + REPO + '/pull/' + cur.pr + '">' +
+        '<span class="pill num">#' + cur.pr + '</span> <span class="ext">↗</span></a></div>' : '';
+    const nextLine = (nxt.slice && nxt.slice !== 'TBD')
+      ? '<div class="meta"><span style="color:var(--faint)">Next: ' + esc(nxt.slice) +
+        (nxt.phase ? ' (' + esc(nxt.phase) + ')' : '') + '</span></div>' : '';
+    return '<div class="card pr">' +
+      '<div class="t">Loop ' + L.loop +
+      (L.lanes ? ' <span style="color:var(--muted);font-weight:500;font-size:12.5px">· ' + esc(L.lanes) + '</span>' : '') + '</div>' +
+      (cur.slice ? '<div class="meta" style="color:var(--text);font-weight:600">' + esc(cur.slice) + '</div>' : '') +
+      (cur.detail ? '<div class="meta"><span style="color:var(--muted)">' + esc(cur.detail) + '</span></div>' : '') +
+      '<div class="meta">' + pills + '<span>' + upd + '</span></div>' +
+      branchLink + prLink + nextLine + staleNote +
+      '</div>';
+  }).join('');
+}
 
 function render(d){
   // hero
@@ -332,12 +397,13 @@ async function refresh(manual){
   btn.innerHTML = '<span class="spin">↻</span> Loading…';
   $('rateBanner').classList.remove('show');
   try {
-    const [mdR, closedR, openR, eventsR, commitsR] = await Promise.all([
+    const [mdR, closedR, openR, eventsR, commitsR, loopsR] = await Promise.all([
       getText('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md'),
       getJSON(API + '/pulls?state=closed&per_page=20&sort=updated&direction=desc'),
       getJSON(API + '/pulls?state=open&per_page=20'),
       getJSON(API + '/events?per_page=40'),
       getJSON(API + '/commits?per_page=10&sha=main'),
+      getLoops().catch(() => ({ notModified: false, data: null })),
     ]);
     const now = new Date().toISOString();
     const changed = [mdR, closedR, openR, eventsR, commitsR].some(r => !r.notModified);
@@ -385,6 +451,13 @@ async function refresh(manual){
     } else {
       cache.fetchedAt = now; // unchanged — just refresh the "checked" timestamp
       $('updatedAt').textContent = 'Checked ' + ago(now);
+    }
+
+    // Live loops render independently of the GitHub-data gate above.
+    const loopsSig = JSON.stringify(loopsR.data);
+    if (loopsSig !== lastLoopsSig) {
+      lastLoopsSig = loopsSig;
+      renderLoops(loopsR.data);
     }
   } catch (err) {
     if (err && err.rateLimited) $('rateBanner').classList.add('show');
