@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T21:15:17.467803+00:00",
+ "generated_at": "2026-09-28T21:17:17.220803+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": null
    },
    "status": "parked",
-   "updated_at": "2026-09-28T21:05:52Z",
+   "updated_at": "2026-09-28T21:15:52Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 85
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,11 +39,11 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "parked",
-   "updated_at": "2026-09-28T21:05:57Z",
+   "updated_at": "2026-09-28T21:15:55Z",
    "parked": true,
    "phase": "parked",
    "stale": false,
-   "age_seconds": 560
+   "age_seconds": 82
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -61,7 +61,7 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": true,
-   "age_seconds": 14717
+   "age_seconds": 14837
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "parked": true,
    "phase": "parked",
    "stale": false,
-   "age_seconds": 394
+   "age_seconds": 514
   }
  ]
 }
