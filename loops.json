@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:35:18.555713+00:00",
+ "generated_at": "2026-09-28T06:37:17.036990+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-remainder-2 (audio-fx + proxy)"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:25:39Z",
+   "updated_at": "2026-09-28T06:35:56Z",
    "stale": false,
-   "age_seconds": 579
+   "age_seconds": 81
   },
   {
    "branch": "parity/stories-3",
@@ -44,9 +44,9 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:30:00Z",
+   "updated_at": "2026-09-28T06:35:58Z",
    "stale": false,
-   "age_seconds": 318
+   "age_seconds": 79
   },
   {
    "branch": "parity/bots-profile",
@@ -69,8 +69,8 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T06:36:00Z",
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 77
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:28:38Z",
    "stale": false,
-   "age_seconds": 400
+   "age_seconds": 519
   }
  ]
 }
