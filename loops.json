@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:25:20.154805+00:00",
+ "generated_at": "2026-09-28T13:27:18.062599+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:15:57Z",
+   "updated_at": "2026-09-28T13:25:53Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 85
   },
   {
    "branch": "parity/stories-3",
@@ -44,17 +44,17 @@
     "slice": "S5 albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T15:55:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T13:25:55Z",
+   "stale": false,
+   "age_seconds": 83
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/polls-manage",
-    "detail": "gates ALL-GREEN post-rebase; pushed; PR #113 opened; watching head-specific CI check runs",
-    "head": "39e3c2b",
-    "phase": "merging",
+    "detail": "PR #112 (stories-4) merged during B4 CI -> rebase conflict in 3 files (imports + story test), resolved with union semantics; README union verified 335->341, 0 lost; post-resolution gates running (proc_4dbb83d10f76)",
+    "head": "0532a30",
+    "phase": "gates",
     "pr": 113,
     "slice": "B4 poll management",
     "worktree": "~/workspace/quill-l3-b4"
@@ -62,12 +62,12 @@
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "next": {
-    "detail": "rebase-merge PR #113 once both checks green, pull main, recompute parity",
+    "detail": "force-push, CI re-watch, rebase-merge PR #113, recompute parity",
     "phase": "queued",
     "slice": "B4 merge"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:38:00Z",
+   "updated_at": "2026-09-28T13:47:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:18:40Z",
    "stale": false,
-   "age_seconds": 400
+   "age_seconds": 518
   }
  ]
 }
