@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:25:17.171582+00:00",
+ "generated_at": "2026-09-28T11:27:17.896401+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,16 +20,16 @@
     "slice": "media-shared-gallery"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:15:52Z",
+   "updated_at": "2026-09-28T11:25:52Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 85
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "clippy green; final UI build gate running, then force-push + CI watch on PR #105",
+    "detail": "clippy green; final UI build gate queued behind the lock, then force-push + CI watch on PR #105",
     "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
@@ -44,9 +44,9 @@
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:15:58Z",
+   "updated_at": "2026-09-28T11:26:02Z",
    "stale": false,
-   "age_seconds": 559
+   "age_seconds": 75
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 11417
+   "age_seconds": 11537
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:18:40Z",
    "stale": false,
-   "age_seconds": 397
+   "age_seconds": 517
   }
  ]
 }
