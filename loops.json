@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-28T16:25:21.763181+00:00",
+ "generated_at": "2026-09-28T16:27:40.326479+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-group-self-tile",
-    "detail": "PARK ORDER (Idan): finishing 2 in-flight slices only \u2014 screenshare-send in delta re-review, group self-tile implementing \u2014 then park. No new slices.",
-    "phase": "implementing",
+    "detail": "PARK ORDER (Idan): finishing 2 in-flight slices only \u2014 screenshare-send in delta re-review, group self-tile (4c32b4d, 70.1%) in adversarial review \u2014 then park. No new slices.",
+    "phase": "review",
     "pr": null,
     "slice": "calls-group-self-tile",
     "worktree": "~/workspace/quill-l1-selftile"
@@ -20,7 +20,7 @@
     "slice": null
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:30:00Z",
+   "updated_at": "2026-09-28T16:35:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:15:54Z",
+   "updated_at": "2026-09-28T16:26:04Z",
    "stale": false,
-   "age_seconds": 567
+   "age_seconds": 96
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -101,7 +101,7 @@
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
    "parked": false,
    "stale": false,
-   "age_seconds": 75
+   "age_seconds": 214
   }
  ]
 }
