@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-28T12:37:20.823099+00:00",
+ "generated_at": "2026-09-28T12:39:18.320092+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/groups-welcome-view",
-    "detail": "joiner-side group welcome-message rendering (investigate TDLib exposure + TGX, render only); gallery slice in adversarial review (PR pending)",
-    "phase": "implementing",
+    "detail": "research slice: joiner welcome = regular updateNewMessage via existing pipeline (box checked, docs-only); light review in flight; gallery slice in adversarial review (PR pending)",
+    "phase": "review",
     "pr": null,
     "slice": "groups-welcome-view",
     "worktree": "~/workspace/quill-l1-welcome"
@@ -20,9 +20,9 @@
     "slice": "calls-screenshare-send"
    },
    "status": "active",
-   "updated_at": "2026-09-28T12:35:53Z",
-   "stale": false,
-   "age_seconds": 87
+   "updated_at": "2026-09-28T12:45:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/stories-3",
@@ -47,40 +47,53 @@
    "status": "active",
    "updated_at": "2026-09-28T12:35:52Z",
    "stale": false,
-   "age_seconds": 88
+   "age_seconds": 206
   },
   {
    "loop": 3,
    "lanes": "bots, polls, payments, settings",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
-   "updated_at": "2026-09-28T12:47:30Z",
+   "updated_at": "2026-09-28T12:58:00Z",
    "status": "active",
    "current": {
     "slice": "B4 poll management",
-    "phase": "implementing",
+    "phase": "reviewing",
     "branch": "parity/polls-manage",
     "worktree": "~/workspace/quill-l3-b4",
     "pr": null,
-    "detail": "PR #103 (B3 poll creation options) merged via rebase; B4 worktree rebasing onto new main now"
+    "detail": "rebased onto new main (commit b4045ff); one rebase conflict in src/connect.rs resolved (import unions); README union verified (no losses, +6 B4 boxes); full gates running; dedicated adversarial reviewer dispatched"
    },
    "next": {
-    "slice": "B4 dedicated review + PR",
+    "slice": "B4 review fixups + PR",
     "phase": "queued",
     "branch": "parity/polls-manage",
-    "detail": "after rebase: full gates, dedicated adversarial reviewer, then PR and merge"
+    "detail": "apply reviewer fixups, force-push, CI, merge PR"
    },
    "stale": true,
    "age_seconds": null
   },
   {
+   "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
+   "current": {
+    "slice": "A4 web sessions + per-session toggles",
+    "phase": "implementing",
+    "branch": "parity/auth-websessions-1",
+    "worktree": "~/workspace/quill-a4-websessions",
+    "pr": null,
+    "detail": "rebasing stacked branch onto origin/main after A3 merge, then continuing"
+   },
+   "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
-   "status": "missing",
-   "lanes": "",
-   "updated_at": null,
-   "current": {},
-   "next": {},
-   "stale": true,
-   "age_seconds": null
+   "next": {
+    "slice": "A5 next auth/accounts slice",
+    "phase": "queued",
+    "branch": null,
+    "detail": "TBD from remaining unchecked auth/accounts boxes when A4 goes to review"
+   },
+   "status": "active",
+   "updated_at": "2026-09-28T12:38:56Z",
+   "stale": false,
+   "age_seconds": 22
   }
  ]
 }
