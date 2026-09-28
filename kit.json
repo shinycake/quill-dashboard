@@ -1,1 +1,1 @@
-{"phase":"Phase 2 — Kit overlays","status":"active","prs":[122,123,126],"updated_at":"2026-09-28T21:35:00Z","notes":"PR #124 reverted (#126 merged); dialogs back to hand-rolled pending open_dialog redesign"}
+{"notes":"Round 2 (Idan approved option 1): Phase 2 redo via window.open_dialog redesign, then phases 3-9 serially. Feature loops stay parked.","phase":"Phase 2 (redo) — dialogs via window.open_dialog","prs":[122,123,126],"status":"active","updated_at":"2026-09-28T19:40:00Z"}
