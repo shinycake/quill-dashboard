@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:59:18.104193+00:00",
+ "generated_at": "2026-09-28T12:01:17.321111+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -28,26 +28,25 @@
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "branch": "parity/stories-3",
-    "detail": "all gates green on a80d0ca; PR #108 opened, waiting on linux-fmt-clippy-test",
-    "phase": "ci",
-    "pr": 108,
-    "slice": "S3 manage posted stories",
-    "worktree": "~/workspace/quill-stories1"
+    "branch": "parity/stories-4",
+    "detail": "rebased onto 63671c0 (PR #107 chat-preview); gates re-running; then force-push superseding the stale origin branch + CI watch on PR #105",
+    "phase": "gates",
+    "pr": 105,
+    "slice": "S4 story viewers/report/stealth",
+    "worktree": "~/workspace/quill-stories2"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "branch": "parity/stories-4",
-    "detail": "UI build gate queued; then force-push + CI watch on PR #105",
-    "phase": "gates",
-    "pr": 105,
-    "slice": "S4 story viewers/report/stealth"
+    "branch": "parity/stories-5",
+    "detail": "review CHANGES REQUESTED (1 blocking + nits); fix-ups applied in quill-stories3, gates running; S6 implementer (viewer playback) also running",
+    "phase": "review",
+    "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:55:52Z",
-   "stale": false,
-   "age_seconds": 206
+   "updated_at": "2026-09-28T13:00:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/polls",
@@ -94,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:58:40Z",
    "stale": false,
-   "age_seconds": 38
+   "age_seconds": 157
   }
  ]
 }
