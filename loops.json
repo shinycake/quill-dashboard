@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:49:17.514408+00:00",
+ "generated_at": "2026-09-28T06:51:16.954431+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:45:52Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 324
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:45:55Z",
    "stale": false,
-   "age_seconds": 202
+   "age_seconds": 321
   },
   {
    "branch": "parity/bots-profile",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:48:40Z",
    "stale": false,
-   "age_seconds": 37
+   "age_seconds": 156
   }
  ]
 }
