@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T10:51:16.659531+00:00",
+ "generated_at": "2026-09-28T10:53:17.700138+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T10:45:54Z",
    "stale": false,
-   "age_seconds": 322
+   "age_seconds": 443
   },
   {
    "branch": "parity/stories-3",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 9376
+   "age_seconds": 9497
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -79,8 +79,8 @@
     "phase": "gates",
     "branch": "parity/auth-sessions-1",
     "worktree": "~/workspace/quill-a3-sessions",
-    "pr": null,
-    "detail": "rebasing onto origin/main (35 conflict regions) + pre-PR gates"
+    "pr": 106,
+    "detail": "PR #106 open \u2014 merge watcher tracking linux-fmt-clippy-test"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -92,9 +92,9 @@
     "detail": "stacked on A3 branch (unmerged) \u2014 extends its sessions UI"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:48:44Z",
+   "updated_at": "2026-09-28T10:52:45Z",
    "stale": false,
-   "age_seconds": 152
+   "age_seconds": 32
   }
  ]
 }
