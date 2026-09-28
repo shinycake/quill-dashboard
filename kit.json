@@ -1,1 +1,1 @@
-{"notes":"Phase 1 committed (9e72829); screenshots verified (icon buttons render, no status bar); adversarial review in flight","phase":"Phase 1 — Remove debug chrome","prs":[122],"status":"active","updated_at":"2026-09-28T18:30:00Z"}
+{"notes":"Phase 1 merged as PR #123 (origin/main 32ba1a6); starting Phase 2 kit overlays","phase":"Phase 2 — Kit overlays","prs":[122,123],"status":"active","updated_at":"2026-09-28T19:05:00Z"}
