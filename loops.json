@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:25:17.844832+00:00",
+ "generated_at": "2026-09-28T06:27:17.201154+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-remainder-2 (audio-fx + proxy)"
    },
    "status": "active",
-   "updated_at": "2026-09-28T05:48:15Z",
-   "stale": true,
-   "age_seconds": 2222
+   "updated_at": "2026-09-28T06:25:39Z",
+   "stale": false,
+   "age_seconds": 98
   },
   {
    "branch": "parity/stories-3",
@@ -44,16 +44,16 @@
     "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T05:58:00Z",
+   "updated_at": "2026-09-28T06:30:00Z",
    "stale": true,
-   "age_seconds": 1637
+   "age_seconds": null
   },
   {
    "branch": "parity/bots-profile",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/bots-profile",
-    "detail": "gate suite re-running under build lock (wrapper arg fix): fmt, clippy, test, ui build",
+    "detail": "gates: fmt+clippy passed, cargo test running, ui build next",
     "phase": "gates",
     "pr": null,
     "slice": "B2 bot-profile actions",
@@ -68,7 +68,7 @@
     "slice": "B3 poll creation"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:28:00Z",
+   "updated_at": "2026-09-28T06:36:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:18:45Z",
    "stale": false,
-   "age_seconds": 392
+   "age_seconds": 512
   }
  ]
 }
