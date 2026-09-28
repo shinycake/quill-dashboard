@@ -1,0 +1,97 @@
+{
+ "generated_at": "2026-09-28T05:46:17.896735+00:00",
+ "loops": [
+  {
+   "loop": 1,
+   "lanes": "calls, secret chats, chat list, media, groups/channels",
+   "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
+   "updated_at": "2026-09-28T05:46:13Z",
+   "status": "active",
+   "current": {
+    "slice": "de-genericize ConnectDriver (Box<dyn JsonSender>)",
+    "phase": "implementing",
+    "branch": "parity/connect-driver-dyn",
+    "worktree": "~/workspace/quill-l1-conndriver",
+    "pr": null,
+    "detail": "compile-speed experiment (slice b) in flight"
+   },
+   "next": {
+    "slice": "calls-remainder-2 (audio-fx + proxy)",
+    "phase": "queued",
+    "branch": "parity/calls-remainder-2",
+    "detail": "worktree prepped, pipelined per SPEED rule"
+   },
+   "stale": false,
+   "age_seconds": 4
+  },
+  {
+   "loop": 2,
+   "lanes": "stories, stickers, emoji, GIFs",
+   "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
+   "updated_at": "2026-09-28T05:46:13Z",
+   "status": "active",
+   "current": {
+    "slice": "S3 story management",
+    "phase": "fixups",
+    "branch": "parity/stories-3",
+    "worktree": "~/workspace/quill-stories1",
+    "pr": null,
+    "detail": "reviewer requested changes \u2014 shared-pending-operation fix in progress"
+   },
+   "next": {
+    "slice": "stories-4",
+    "phase": "queued",
+    "branch": "parity/stories-4",
+    "detail": "worktree prepped, pipelined per SPEED rule"
+   },
+   "stale": false,
+   "age_seconds": 4
+  },
+  {
+   "loop": 3,
+   "lanes": "bots, polls, payments, settings",
+   "coordinator": "ba8065a8-4731-4aa0-aecb-42a6929ae834",
+   "updated_at": "2026-09-28T05:46:13Z",
+   "status": "active",
+   "current": {
+    "slice": "B2 bot-profile actions",
+    "phase": "fixups",
+    "branch": "parity/bots-profile",
+    "worktree": "~/workspace/quill-l3-b2",
+    "pr": null,
+    "detail": "reviewer requested changes \u2014 unblock-before-start fix in progress"
+   },
+   "next": {
+    "slice": "polls",
+    "phase": "queued",
+    "branch": "parity/polls",
+    "detail": "worktree prepped, pipelined per SPEED rule"
+   },
+   "stale": false,
+   "age_seconds": 4
+  },
+  {
+   "loop": 4,
+   "lanes": "auth/accounts, platform edge cases",
+   "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
+   "updated_at": "2026-09-28T05:46:13Z",
+   "status": "active",
+   "current": {
+    "slice": "A2 two-step verification (setPassword)",
+    "phase": "implementing",
+    "branch": "parity/auth-2fa-1",
+    "worktree": "~/workspace/quill-a2-2fa",
+    "pr": null,
+    "detail": "implementer in flight \u2014 enable/change/disable + recovery email"
+   },
+   "next": {
+    "slice": "TBD",
+    "phase": "queued",
+    "branch": null,
+    "detail": "coordinator picks next auth slice once A2 goes to review"
+   },
+   "stale": false,
+   "age_seconds": 4
+  }
+ ]
+}
