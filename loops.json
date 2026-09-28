@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:57:18.078533+00:00",
+ "generated_at": "2026-09-28T06:59:17.610376+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:55:54Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 203
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:55:53Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 204
   },
   {
    "branch": "parity/bots-profile",
@@ -91,9 +91,9 @@
     "slice": "A3 sessions management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:48:40Z",
+   "updated_at": "2026-09-28T06:58:39Z",
    "stale": false,
-   "age_seconds": 518
+   "age_seconds": 38
   }
  ]
 }
