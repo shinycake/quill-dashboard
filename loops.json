@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T06:47:16.979241+00:00",
+ "generated_at": "2026-09-28T06:49:17.514408+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T06:45:52Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 205
   },
   {
    "branch": "parity/stories-3",
@@ -46,15 +46,15 @@
    "status": "active",
    "updated_at": "2026-09-28T06:45:55Z",
    "stale": false,
-   "age_seconds": 81
+   "age_seconds": 202
   },
   {
    "branch": "parity/bots-profile",
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
    "current": {
     "branch": "parity/bots-profile",
-    "detail": "gates: fmt+clippy+test passed; ui link failed on -lxkbcommon-x11 (env quirk, AGENTS.md recipe) \u2014 rerunning ui build with LIBRARY_PATH=/tmp/xkb-lib",
-    "phase": "gates",
+    "detail": "all gates passed; adversarial reviewer verifying fix-ups (unblock-first, README partial marker, restart error note, driver test)",
+    "phase": "reviewing",
     "pr": null,
     "slice": "B2 bot-profile actions",
     "worktree": "~/workspace/quill-l3-b2"
@@ -63,12 +63,12 @@
    "loop": 3,
    "next": {
     "branch": "parity/polls",
-    "detail": "worktree rebased onto 02c51ab, implementer dispatches once B2 PR is opened (SPEED rule)",
+    "detail": "worktree rebased, brief drafted (poll creation options: quiz/description/duration/revoting/shuffle/countries/discard) \u2014 implementer dispatches once B2 PR opens",
     "phase": "queued",
-    "slice": "B3 poll creation"
+    "slice": "B3 poll creation options"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:05:00Z",
+   "updated_at": "2026-09-28T07:20:00Z",
    "stale": true,
    "age_seconds": null
   },
@@ -91,9 +91,9 @@
     "slice": "A3 sessions management"
    },
    "status": "active",
-   "updated_at": "2026-09-28T06:38:50Z",
+   "updated_at": "2026-09-28T06:48:40Z",
    "stale": false,
-   "age_seconds": 506
+   "age_seconds": 37
   }
  ]
 }
