@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:17:17.611012+00:00",
+ "generated_at": "2026-09-28T07:19:18.975042+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:15:53Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 205
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T07:15:57Z",
    "stale": false,
-   "age_seconds": 80
+   "age_seconds": 201
   },
   {
    "branch": null,
@@ -91,9 +91,9 @@
     "detail": "implementer dispatching \u2014 active sessions list + terminate flows"
    },
    "status": "active",
-   "updated_at": "2026-09-28T07:10:02Z",
+   "updated_at": "2026-09-28T07:18:39Z",
    "stale": false,
-   "age_seconds": 435
+   "age_seconds": 39
   }
  ]
 }
