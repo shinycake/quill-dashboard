@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T17:13:18.382265+00:00",
+ "generated_at": "2026-09-28T17:15:17.629732+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -41,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-28T17:06:29Z",
    "stale": false,
-   "age_seconds": 409
+   "age_seconds": 528
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -59,7 +59,7 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": false,
-   "age_seconds": 198
+   "age_seconds": 317
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -91,7 +91,7 @@
    "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
    "parked": false,
    "stale": false,
-   "age_seconds": 173
+   "age_seconds": 292
   }
  ]
 }
