@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T09:07:17.578389+00:00",
+ "generated_at": "2026-09-28T09:09:17.300891+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:05:54Z",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 203
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:05:57Z",
    "stale": false,
-   "age_seconds": 80
+   "age_seconds": 200
   },
   {
    "branch": "parity/polls",
@@ -70,30 +70,31 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 3137
+   "age_seconds": 3257
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A3 sessions management",
-    "phase": "implementing",
+    "phase": "reviewing",
     "branch": "parity/auth-sessions-1",
     "worktree": "~/workspace/quill-a3-sessions",
     "pr": null,
-    "detail": "implementer in flight \u2014 sessions list + terminate flows"
+    "detail": "implementer done (1111b6f, 940 tests green) \u2014 dedicated reviewer running"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
    "next": {
     "slice": "A4 web sessions + per-session toggles",
-    "phase": "queued",
+    "phase": "implementing",
     "branch": "parity/auth-websessions-1",
-    "detail": "starts when A3 goes to review"
+    "worktree": "~/workspace/quill-a4-websessions",
+    "detail": "stacked on A3 branch (unmerged) \u2014 extends its sessions UI"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:00:19Z",
+   "updated_at": "2026-09-28T09:08:47Z",
    "stale": false,
-   "age_seconds": 418
+   "age_seconds": 30
   }
  ]
 }
