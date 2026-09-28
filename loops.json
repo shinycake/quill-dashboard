@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T10:19:18.430255+00:00",
+ "generated_at": "2026-09-28T10:21:17.206425+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,14 +22,14 @@
    "status": "active",
    "updated_at": "2026-09-28T10:15:53Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 324
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
     "branch": "parity/stories-4",
-    "detail": "clippy green post-rebase; final UI build gate running, then force-push + CI watch on PR #105",
+    "detail": "clippy green; final UI build gate running, then force-push + CI watch on PR #105",
     "phase": "gates",
     "pr": 105,
     "slice": "S4 story viewers/report/stealth",
@@ -39,14 +39,14 @@
    "loop": 2,
    "next": {
     "branch": "parity/stories-5",
-    "detail": "implementer running in quill-stories3: albums + archive + pinned stories",
+    "detail": "previous implementer died on runtime error after committing 0ad2ccc; replacement dispatched to verify+finish+report",
     "phase": "implementing",
     "slice": "S5 story albums/archive/pinned"
    },
    "status": "active",
-   "updated_at": "2026-09-28T10:15:54Z",
-   "stale": false,
-   "age_seconds": 204
+   "updated_at": "2026-09-28T10:45:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 7458
+   "age_seconds": 7577
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T10:18:42Z",
    "stale": false,
-   "age_seconds": 36
+   "age_seconds": 155
   }
  ]
 }
