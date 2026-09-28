@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:19:17.234305+00:00",
+ "generated_at": "2026-09-28T13:21:17.842940+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:15:57Z",
    "stale": false,
-   "age_seconds": 200
+   "age_seconds": 320
   },
   {
    "branch": "parity/stories-3",
@@ -47,7 +47,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:15:55Z",
    "stale": false,
-   "age_seconds": 202
+   "age_seconds": 322
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -94,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:18:40Z",
    "stale": false,
-   "age_seconds": 37
+   "age_seconds": 157
   }
  ]
 }
