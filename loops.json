@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-28T16:23:18.535532+00:00",
+ "generated_at": "2026-09-28T16:24:53.055420+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-group-self-tile",
-    "detail": "local camera self tile in group calls; screenshare-send reconnect fix (f7f4425) in delta re-review",
+    "detail": "PARK ORDER (Idan): finishing 2 in-flight slices only \u2014 screenshare-send in delta re-review, group self-tile implementing \u2014 then park. No new slices.",
     "phase": "implementing",
     "pr": null,
     "slice": "calls-group-self-tile",
@@ -15,12 +15,12 @@
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "next Loop 1 gap per README backlog after self-tile",
-    "phase": "queued",
-    "slice": "tbd"
+    "detail": "PARKED after in-flight slices merge \u2014 resumes after kit adoption completes",
+    "phase": "parked",
+    "slice": null
    },
    "status": "active",
-   "updated_at": "2026-09-28T17:15:00Z",
+   "updated_at": "2026-09-28T16:30:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -41,44 +41,27 @@
    "status": "active",
    "updated_at": "2026-09-28T16:15:54Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 539
   },
   {
-   "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
-   "current": {
-    "branch": "parity/payments-p1",
-    "detail": "rebased onto c9eddc6 (stories-3) with 5 conflict resolutions done manually; README union verified (0 lost, 4 added: 355/522 -> 359/522); full gate suite worker dispatched",
-    "head": "74d670b",
-    "phase": "gates",
-    "slice": "payments p1",
-    "worktree": "~/workspace/quill-l3-next"
-   },
-   "lanes": "bots, polls, payments, settings",
    "loop": 3,
-   "next": {
-    "branch": "parity/settings-appearance",
-    "detail": "fixup worker running in quill-l3-s1 (5 reviewer items)",
-    "phase": "fixups",
-    "slice": "settings appearance"
-   },
-   "status": "active",
-   "updated_at": "2026-09-28T16:40:00Z",
-   "waiting_on": {
-    "detail": "privacy implementer in quill-l3-s2 (9 boxes)",
-    "slice": "settings privacy"
-   },
-   "stale": false,
-   "age_seconds": 0
+   "status": "missing",
+   "lanes": "",
+   "updated_at": null,
+   "current": {},
+   "next": {},
+   "stale": true,
+   "age_seconds": null
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A5 profile management",
-    "phase": "fixups+implementing",
+    "phase": "finishing-a6-then-park",
     "branch": "parity/auth-profile-1",
     "worktree": "~/workspace/quill-a5-profile",
     "pr": null,
-    "detail": "A6 fixups (reviewer: 2 must-fix + 6 nits); A7 implementing"
+    "detail": "A6 fixups in flight (reviewer: 2 must-fix + 6 nits); A7 STOPPED per park order (worktree+branch removed, no commits lost); kit-adoption coordinator takes UI work per telegram-desktop-ui-cleanup.md"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -90,15 +73,17 @@
     "detail": "contact delete/import/sync + block user"
    },
    "status": "active",
-   "updated_at": "2026-09-28T16:19:01Z",
+   "updated_at": "2026-09-28T16:24:06Z",
    "last_merged": {
     "pr": 115,
     "commit": "3e40f09c7f728586da3f33bf6a3134d5fab945d3",
     "at": "2026-09-28T15:04:42Z",
     "parity": "347/499=69.5%"
    },
+   "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
+   "parked": false,
    "stale": false,
-   "age_seconds": 257
+   "age_seconds": 47
   }
  ]
 }

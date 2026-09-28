@@ -1,0 +1,7 @@
+{
+  "phase": "none (gate closed)",
+  "status": "waiting",
+  "prs": [],
+  "updated_at": "2026-09-28T16:24:12Z",
+  "notes": "waiting for kit-go gate; feature loops still landing slices"
+}
