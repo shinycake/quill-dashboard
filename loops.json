@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T21:47:18.249615+00:00",
+ "generated_at": "2026-09-28T21:49:16.916094+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "parked",
    "updated_at": "2026-09-28T21:45:53Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 203
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -43,7 +43,7 @@
    "parked": true,
    "phase": "parked",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 201
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -61,40 +61,17 @@
    "status": "parked",
    "updated_at": "2026-09-28T17:10:00Z",
    "stale": true,
-   "age_seconds": 16638
+   "age_seconds": 16756
   },
   {
-   "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
-   "current": {
-    "slice": "A5 profile management",
-    "phase": "parked",
-    "branch": "parity/auth-profile-1",
-    "worktree": "~/workspace/quill-a5-profile",
-    "pr": null,
-    "detail": "PARKED per Idan 2026-09-28: A6 merged (PR #121, d0fd7b6); A7 stood down; all slice worktrees removed. Resumes after kit adoption."
-   },
-   "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
-   "next": {
-    "slice": "A6 contacts management + block user",
-    "phase": "implementing",
-    "branch": "parity/auth-contacts-1",
-    "worktree": "~/workspace/quill-a6-contacts",
-    "detail": "contact delete/import/sync + block user"
-   },
-   "status": "parked",
-   "updated_at": "2026-09-28T21:38:41Z",
-   "last_merged": {
-    "pr": 121,
-    "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
-    "at": "2026-09-28T17:26:23Z",
-    "parity": "364/522=69.7%"
-   },
-   "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
-   "parked": true,
-   "phase": "parked",
-   "stale": false,
-   "age_seconds": 517
+   "status": "missing",
+   "lanes": "",
+   "updated_at": null,
+   "current": {},
+   "next": {},
+   "stale": true,
+   "age_seconds": null
   }
  ]
 }
