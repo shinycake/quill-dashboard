@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T09:57:17.706544+00:00",
+ "generated_at": "2026-09-28T09:59:17.927950+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:55:52Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 205
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:55:55Z",
    "stale": false,
-   "age_seconds": 82
+   "age_seconds": 202
   },
   {
    "branch": "parity/polls",
@@ -70,7 +70,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 6137
+   "age_seconds": 6257
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -92,9 +92,9 @@
     "detail": "stacked on A3 branch (unmerged) \u2014 extends its sessions UI"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:48:55Z",
+   "updated_at": "2026-09-28T09:58:40Z",
    "stale": false,
-   "age_seconds": 502
+   "age_seconds": 37
   }
  ]
 }
