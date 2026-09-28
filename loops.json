@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T09:39:17.405665+00:00",
+ "generated_at": "2026-09-28T09:41:17.568333+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:35:52Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 325
   },
   {
    "branch": "parity/stories-3",
@@ -46,7 +46,7 @@
    "status": "active",
    "updated_at": "2026-09-28T09:35:52Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 325
   },
   {
    "branch": "parity/polls",
@@ -70,17 +70,17 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 5057
+   "age_seconds": 5177
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
    "current": {
     "slice": "A3 sessions management",
-    "phase": "reviewing",
+    "phase": "fixups",
     "branch": "parity/auth-sessions-1",
     "worktree": "~/workspace/quill-a3-sessions",
     "pr": null,
-    "detail": "implementer done (1111b6f, 940 tests green) \u2014 dedicated reviewer running"
+    "detail": "fixing reviewer findings: stale-refetch retry + 2 DECISIONS.md corrections"
    },
    "lanes": "auth/accounts, platform edge cases",
    "loop": 4,
@@ -92,9 +92,9 @@
     "detail": "stacked on A3 branch (unmerged) \u2014 extends its sessions UI"
    },
    "status": "active",
-   "updated_at": "2026-09-28T09:38:47Z",
+   "updated_at": "2026-09-28T09:40:02Z",
    "stale": false,
-   "age_seconds": 30
+   "age_seconds": 75
   }
  ]
 }
