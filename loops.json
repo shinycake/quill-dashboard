@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T13:07:17.888538+00:00",
+ "generated_at": "2026-09-28T13:09:17.952668+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,7 +22,7 @@
    "status": "active",
    "updated_at": "2026-09-28T13:05:53Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 204
   },
   {
    "branch": "parity/stories-3",
@@ -92,9 +92,9 @@
     "detail": "edit name/bio, username mgmt, profile photo"
    },
    "status": "active",
-   "updated_at": "2026-09-28T13:03:48Z",
+   "updated_at": "2026-09-28T13:08:39Z",
    "stale": false,
-   "age_seconds": 209
+   "age_seconds": 38
   }
  ]
 }
