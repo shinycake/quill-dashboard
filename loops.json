@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T11:39:19.436435+00:00",
+ "generated_at": "2026-09-28T11:41:17.005286+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -22,31 +22,32 @@
    "status": "active",
    "updated_at": "2026-09-28T11:35:54Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 323
   },
   {
    "branch": "parity/stories-3",
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "branch": "parity/stories-4",
-    "detail": "clippy green; final UI build gate queued behind the lock, then force-push + CI watch on PR #105",
-    "phase": "gates",
-    "pr": 105,
-    "slice": "S4 story viewers/report/stealth",
-    "worktree": "~/workspace/quill-stories2"
+    "branch": "parity/stories-3",
+    "detail": "all gates green on a80d0ca; PR #108 opened, waiting on linux-fmt-clippy-test",
+    "phase": "ci",
+    "pr": 108,
+    "slice": "S3 manage posted stories",
+    "worktree": "~/workspace/quill-stories1"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": {
-    "branch": "parity/stories-5",
-    "detail": "implementer finished (ea94024, all gates green); dedicated reviewer active; S6 implementer (viewer playback) also running",
-    "phase": "review",
-    "slice": "S5 story albums/archive/pinned"
+    "branch": "parity/stories-4",
+    "detail": "UI build gate queued; then force-push + CI watch on PR #105",
+    "phase": "gates",
+    "pr": 105,
+    "slice": "S4 story viewers/report/stealth"
    },
    "status": "active",
-   "updated_at": "2026-09-28T11:35:56Z",
-   "stale": false,
-   "age_seconds": 203
+   "updated_at": "2026-09-28T12:30:00Z",
+   "stale": true,
+   "age_seconds": null
   },
   {
    "branch": "parity/polls",
@@ -70,7 +71,7 @@
    "status": "active",
    "updated_at": "2026-09-28T08:15:00Z",
    "stale": true,
-   "age_seconds": 12259
+   "age_seconds": 12377
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -93,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-28T11:38:42Z",
    "stale": false,
-   "age_seconds": 37
+   "age_seconds": 155
   }
  ]
 }
