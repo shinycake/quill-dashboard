@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T14:45:17.753142+00:00",
+ "generated_at": "2026-09-28T14:46:48.396241+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,9 +20,9 @@
     "slice": "calls-group-self-tile"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:35:51Z",
+   "updated_at": "2026-09-28T14:45:54Z",
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 54
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,9 +39,9 @@
     "slice": "S5/S6/S7 pipeline"
    },
    "status": "active",
-   "updated_at": "2026-09-28T14:50:00Z",
-   "stale": true,
-   "age_seconds": null
+   "updated_at": "2026-09-28T14:45:56Z",
+   "stale": false,
+   "age_seconds": 52
   },
   {
    "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
@@ -63,8 +63,8 @@
    },
    "status": "active",
    "updated_at": "2026-09-28T16:05:00Z",
-   "stale": true,
-   "age_seconds": null
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
@@ -88,7 +88,7 @@
    "status": "active",
    "updated_at": "2026-09-28T14:39:40Z",
    "stale": false,
-   "age_seconds": 337
+   "age_seconds": 428
   }
  ]
 }
