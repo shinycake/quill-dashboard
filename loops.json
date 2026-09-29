@@ -1,26 +1,24 @@
 {
- "generated_at": "2026-09-29T03:43:17.649248+00:00",
+ "generated_at": "2026-09-29T03:45:16.965368+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": "parity/calls-screen-share-receive",
-    "detail": "PR #137 open (C2j screen-share receive backend). Waiting on linux-fmt-clippy-test, then merge. Next slice implementing in parallel worktree.",
-    "phase": "pr",
-    "pr": 137,
-    "slice": "calls-screen-share-receive",
-    "worktree": "~/workspace/quill-l1-screenrecv"
+    "slice": "community-service-messages",
+    "branch": "parity/community-service-messages",
+    "worktree": "~/workspace/quill-l1-community",
+    "phase": "review",
+    "pr": null,
+    "detail": "C2k envelope parsing implemented (1f7d8a7, gates green per implementer); in adversarial review. Rebase onto 1905a28 + PR after review."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "slice": "community-service-messages",
-    "branch": "parity/community-service-messages",
-    "worktree": "~/workspace/quill-l1-community",
-    "phase": "implementing"
+    "slice": null,
+    "note": "TBD after C2k review"
    },
    "status": "active",
-   "updated_at": "2026-09-29T04:10:00Z",
+   "updated_at": "2026-09-29T04:30:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -43,7 +41,7 @@
    "status": "active",
    "updated_at": "2026-09-29T03:35:52Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 564
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -61,9 +59,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T03:34:36Z",
+   "updated_at": "2026-09-29T03:44:34Z",
    "stale": false,
-   "age_seconds": 521
+   "age_seconds": 42
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -96,7 +94,7 @@
    "status": "active",
    "updated_at": "2026-09-29T03:38:43Z",
    "stale": false,
-   "age_seconds": 274
+   "age_seconds": 393
   }
  ]
 }
