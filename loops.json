@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:49:18.761008+00:00",
+ "generated_at": "2026-09-29T13:51:18.844892+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:45:53Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 325
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -84,7 +84,7 @@
    },
    "updated_at": "2026-09-29T13:45:54Z",
    "stale": false,
-   "age_seconds": 204
+   "age_seconds": 324
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -104,7 +104,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:44:40Z",
    "stale": false,
-   "age_seconds": 278
+   "age_seconds": 398
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -135,7 +135,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:48:41Z",
    "stale": false,
-   "age_seconds": 37
+   "age_seconds": 157
   }
  ]
 }
