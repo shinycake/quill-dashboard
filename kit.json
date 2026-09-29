@@ -1,1 +1,18 @@
-{"notes":"Phase 7 merged as PR #132 (kit TitleBar, AppMenuBar + native menus, shortcuts, accessibility; sessions-overflow fixup folded in and screenshot-verified). Review verdict MERGE, no fixups. Moving to Phase 8 serially. Feature loops stay parked.","phase":"Phase 8 — light theme wiring + screenshots","prs":[122,123,126,127,128,129,130,131,132],"status":"active","updated_at":"2026-09-29T01:05:00Z"}
+{
+  "notes": "Phase 8 merged as PR #133 (light theme; 5 review fixups incl. dark-mode orange regression, outgoing-bubble action-row contrast, media-viewer control contrast; linux-fmt-clippy-test green). Moving to Phase 9, the final kit phase. Feature loops stay parked.",
+  "phase": "Phase 9 — delight polish (hover/pressed feedback, skeletons, empty states, tooltips, reduced motion)",
+  "prs": [
+    122,
+    123,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133
+  ],
+  "status": "active",
+  "updated_at": "2026-09-29T01:33:30Z"
+}
