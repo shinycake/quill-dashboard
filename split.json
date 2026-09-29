@@ -4,32 +4,32 @@
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "waiver": 49101,
-   "current": 49101
+   "waiver": 49204,
+   "current": 49204
   },
   {
    "path": "src/connect.rs",
    "original": 23615,
-   "waiver": 24898,
-   "current": 24898
+   "waiver": 24922,
+   "current": 24922
   },
   {
    "path": "src/state.rs",
    "original": 20295,
-   "waiver": 21773,
-   "current": 21773
+   "waiver": 21854,
+   "current": 21854
   },
   {
    "path": "src/telegram/envelope.rs",
    "original": 17953,
-   "waiver": 18633,
-   "current": 18633
+   "waiver": 18722,
+   "current": 18722
   },
   {
    "path": "src/telegram/requests.rs",
    "original": 10262,
-   "waiver": 10477,
-   "current": 10477
+   "waiver": 10517,
+   "current": 10517
   },
   {
    "path": "src/calls/engine.rs",

@@ -1,14 +1,6 @@
 {
  "items": [
   {
-   "area": "Auth & accounts",
-   "label": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
-   "kind": "pr",
-   "pr": 180,
-   "url": "https://github.com/shinycake/quill/pull/180",
-   "branch": "parity/auth-profile-accent"
-  },
-  {
    "area": "Bots, polls & payments",
    "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
    "kind": "pr",

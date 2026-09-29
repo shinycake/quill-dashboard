@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 410,
+  "done": 411,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 180,
+   "title": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
+   "merged_at": "2026-09-29T23:08:21Z",
+   "html_url": "https://github.com/shinycake/quill/pull/180",
+   "head": {
+    "ref": "parity/auth-profile-accent"
+   }
+  },
   {
    "number": 179,
    "title": "ephemeral-updates: apply updateMessageEphemeralContent over time",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/secret-chats-2"
    }
-  },
-  {
-   "number": 81,
-   "title": "parity:secret-chats secret-chat parity (S1)",
-   "merged_at": "2026-09-27T12:58:50Z",
-   "html_url": "https://github.com/shinycake/quill/pull/81",
-   "head": {
-    "ref": "parity/secret-chats-1"
-   }
   }
  ],
  "openPRs": [
@@ -932,18 +932,39 @@
    "head": {
     "ref": "parity/community-search-filter"
    }
-  },
-  {
-   "number": 180,
-   "title": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
-   "updated_at": "2026-09-29T22:59:51Z",
-   "html_url": "https://github.com/shinycake/quill/pull/180",
-   "head": {
-    "ref": "parity/auth-profile-accent"
-   }
   }
  ],
  "events": [
+  {
+   "type": "DeleteEvent",
+   "payload": {
+    "ref": "parity/auth-profile-accent"
+   },
+   "created_at": "2026-09-29T23:08:23Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T23:08:21Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/auth-profile-accent"
+   },
+   "created_at": "2026-09-29T22:09:38Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1313,39 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T21:20:08Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T21:11:49Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T21:11:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
+   "html_url": "https://github.com/shinycake/quill/commit/4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
+   "commit": {
+    "message": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker (#180)\n\n* Merge-pipeline: rebase post-#179; union DECISIONS.md, exact waiver baselines\n\n* Merge-pipeline: fix off-by-one schema line pins (10963->10964, review nit)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T23:08:20Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "bda430766d48fe555a13caf549a88639b630a5a1",
    "html_url": "https://github.com/shinycake/quill/commit/bda430766d48fe555a13caf549a88639b630a5a1",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T20:07:07Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "0d262a6c3136a4c4e30299cd6a6b7de35e708a41",
-   "html_url": "https://github.com/shinycake/quill/commit/0d262a6c3136a4c4e30299cd6a6b7de35e708a41",
-   "commit": {
-    "message": "Loop 2 S13: story custom-emoji + paid chosen reactions (backend) (#167)\n\n* Slice S13: story custom-emoji + paid chosen reactions, backend\n\nenvelope.rs: StoryChosenExtraReaction { CustomEmoji(i64), Paid };\nparse_story_chosen_reaction returns (emoji, extra) \u2014 new match arms on the\nexisting reaction-type match; ParsedStory::chosen_reaction_extra and\nStoryInteractionView::reaction_extra fields (story + viewers list no longer\ndrop non-emoji chosen reactions). chosen_reaction_emoji untouched, so the\nfrozen ui/mod.rs reads keep working.\nrequests.rs: reaction_type_custom_emoji helper + set_story_custom_emoji_reaction\nbuilder (additive; existing Option<&str> signatures untouched).\nconnect.rs: ConnectDriver::set_story_custom_emoji_reaction with the emoji\npath's gates + positive-id check; reuses RequestPurpose::SetStoryReaction\n(ok ignored, updateStory is the authority). Premium enforcement is\nserver-side per the schema comment.\nTests: envelope parse (story custom/paid/unknown; viewers-list extras),\nrequest shape, driver gates. README parity:stories-custom-reactions stays\n[ ] with partial note (viewer render + picker offer pending post-Phase-9).\nWaiver bumps (exact): connect.rs 24015->24126, state.rs 20913->20914,\nenvelope.rs 18209->18320, requests.rs 10322->10371 \u2014 type-coherent\nextensions of existing areas; see DECISIONS.md Slice S13 entry.\n\n* Move S13 story-reaction tests out of waived files\n\nPer the file-size standing rule, the three public-API-only test blocks\nadded by S13 move verbatim to tests/story_reactions.rs:\n\n- story_chosen_reaction_custom_emoji_and_paid_parsed (from envelope.rs)\n- story_interactions_extra_reactions_parse (from envelope.rs)\n- set_story_custom_emoji_reaction_shape (custom-emoji assertions carved\n  out of the requests.rs shape test)\n\ndriver_story_custom_emoji_reaction_gates stays in src/connect.rs: it needs\nthe private mod-tests harness and cannot live in a named module.\n\nWaiver baselines updated to the exact new counts:\nsrc/telegram/envelope.rs 18320 -> 18248, src/telegram/requests.rs\n10371 -> 10358.\n\n* rebase: onto current main + exact S13 waiver bumps (README union verified)\n\n* rebase: onto main post-S3-merge + exact S13 waiver bumps\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: quill-merge <quill-merge@local>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T19:57:58Z"
     }
    },
    "author": {

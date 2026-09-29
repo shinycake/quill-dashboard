@@ -29,7 +29,8 @@
     "Edit name: \"Edit profile\" dialog on the own info panel sends setName",
     "Edit bio: \"Edit profile\" dialog sends setBio; the info panel now also renders the bio from getUserFullInfo",
     "Username management: Check availability via checkChatUsername (private chat with self; all six checkChatUsernameResult verdicts parsed, envelope.rs:2386), set/clear editable username (empty clears per schema :14830), up/down reorder of active usernames, activate/deactivate (editable username can't be deactivated per schema :14835); schema: setUsername, reorderActiveUsernames, toggleUsernameIsActive",
-    "Set / remove profile photo: setProfilePhoto via inputChatPhotoStatic + inputFileLocal with is_public hard-coded false for the main (non-public) photo (schema :14803; TGX AvatarPickerManager), remove via deleteProfilePhoto with the retained chatPhoto.id (state.rs:3771)"
+    "Set / remove profile photo: setProfilePhoto via inputChatPhotoStatic + inputFileLocal with is_public hard-coded false for the main (non-public) photo (schema :14803; TGX AvatarPickerManager), remove via deleteProfilePhoto with the retained chatPhoto.id (state.rs:3771)",
+    "Profile accent color (schema: setProfileAccentColor)"
    ],
    "pending": [
     {
@@ -64,11 +65,6 @@
     },
     {
      "text": "Change phone number: move contacts/groups/messages/media to a new number (partial: A8 backend shipped \u2014 sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth), + connect + reducer; UI blocked on server-acceptance verification: schema marks phoneNumberCodeTypeChange \"for official Android and iOS applications only\")",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Profile accent color (schema: setProfileAccentColor)",
      "blocked": false,
      "reason": null
     }
