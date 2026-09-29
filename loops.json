@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:51:18.844892+00:00",
+ "generated_at": "2026-09-29T13:53:18.129373+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:45:53Z",
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 445
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -84,16 +84,16 @@
    },
    "updated_at": "2026-09-29T13:45:54Z",
    "stale": false,
-   "age_seconds": 324
+   "age_seconds": 444
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/bots-payment-clear-backend",
-    "detail": "Slice 3 RECOVERED (2026-09-29 ~13:40Z): orphaned commit 9ff0204 inspected (clean tree, 40-line backend-only diff). Rebasing 65 commits onto origin/main@530de44 exposed a real gate failure: check_file_sizes.sh FAIL \u2014 the slice grew waived requests.rs to 10362 > waived 10322 (waivers only shrink). Restructured per the standing code-organization rule + requests_emoji/requests_story split precedent: builders moved to NEW src/telegram/requests_payments.rs, requests.rs restored to main state, re-exports added in telegram/mod.rs. Commit amended to ea1eb2b. Gates (fmt + file-size + clippy + test + ui build) re-running on the restructured tree. NOT merged \u2014 PR to open after gates. Old dedicated review verdict (APPROVE in the pre-rebase commit message) is stale post-restructure; a FRESH dedicated adversarial reviewer subagent is required before merge \u2014 coordinator is depth 2/2 (can_spawn=no) and cannot spawn it; parent must spawn.",
+    "detail": "Slice 3 RECOVERED and PR #159 OPENED (2026-09-29 ~14:00Z): orphaned commit 9ff0204 inspected; rebase onto origin/main@530de44 exposed a file-size gate failure (waived requests.rs grew to 10362 > 10322). Restructured per standing code-organization rule: builders moved to NEW src/telegram/requests_payments.rs (requests_emoji/requests_story split precedent), requests.rs restored to main state, re-exports in telegram/mod.rs; amended to ea1eb2b. Gates all green: fmt, clippy -D warnings, test --no-default-features --locked (2 new shape tests pass), build --features ui (recreated wiped /tmp/xkb-lib for the xkb link quirk), check_file_sizes.sh. Branch pushed. NOT merged \u2014 awaiting fresh dedicated adversarial reviewer (coordinator depth 2/2 cannot spawn subagents). Next: re-evaluate parked settings branches (kit Phase 9 #142 merged, UI-block lifted).",
     "phase": "payments-clear",
-    "pr": null,
-    "slice": "Slice 3 RECOVERED: payments-clear backend restructured (requests_payments.rs), rebased onto origin/main@530de44, gates running. PR number TBD on open."
+    "pr": 159,
+    "slice": "Slice 3 OPEN as PR #159 (payments-clear backend, restructured requests_payments.rs). All gates green on rebased tree. Fresh adversarial review required before merge (parent must spawn; coordinator cannot)."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -102,9 +102,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:44:40Z",
+   "updated_at": "2026-09-29T14:02:00Z",
    "stale": false,
-   "age_seconds": 398
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -135,7 +135,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:48:41Z",
    "stale": false,
-   "age_seconds": 157
+   "age_seconds": 277
   }
  ]
 }
