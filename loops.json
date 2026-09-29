@@ -22,16 +22,11 @@
    },
    "loop": 1,
    "next": {
-    "slice": "communities-search-filter",
-    "branch": "parity/community-search-filter",
-    "worktree": "~/workspace/quill-l1-commsearch",
-    "phase": "in-review",
-    "detail": "Community message-search filter: add community option to search chat-type filters, wire searchMessagesChatTypeFilterCommunity { community_id } (td_api.tl:6344) into the search request path. Existing ChatTypeFilter infra in src/telegram/requests.rs.",
-    "commit": "1e14bab",
-    "reviewer": "376f6933-d09b-4065-b978-814396e5dcf6 (pending)",
-    "review_verdict": "BLOCK \u2014 new free function in waived requests.rs; fixup in progress",
-    "fixup_agent": "cbbff731-e519-4b2e-a933-916e54633194 (pending)",
-    "parity": "405/525 (77.1%) \u2014 counted by reviewer from branch README"
+    "slice": "communities-chatlist-mode",
+    "branch": "parity/community-chatlist-mode",
+    "worktree": "~/workspace/quill-l1-commmode",
+    "phase": "implementing",
+    "detail": "Community chat-list mode: selected community filters the main chat list to its chats (community_id match), with enter/exit affordances. Builds on G10 hub + communities backend core (merged)."
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -40,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:14:00Z",
+   "updated_at": "2026-09-29T22:17:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -53,8 +48,8 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T22:14:00Z",
-   "last_evidence_event": "PR #181 opened for communities-search-filter (parity/community-search-filter); handoff to merge-pipeline; scanning next slice",
+   "last_evidence_at": "2026-09-29T22:17:00Z",
+   "last_evidence_event": "next slice claimed: communities-chatlist-mode (parity:communities-chatlist-mode) \u2014 now unblocked (#176 merged); schema/state support verified (communityFullInfo.chats, chat.community_id tracked, G10 hub exists); implementer dispatched",
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
@@ -162,7 +157,7 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": true,
-   "age_seconds": 2451
+   "age_seconds": 2569
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -170,8 +165,8 @@
     "base": "origin/main @ 8fd501b",
     "branch": "parity/bots-force-reply",
     "commit": "210e920",
-    "detail": "PR #177 fixups pushed (210e920): F1 selector fix, DECISIONS.md restored to origin/main + my entry, F4 corrected, F2 filed as follow-up, stray marker file dropped. Gates all green: fmt, clippy -D warnings, 1104+59 tests, cargo check --features ui. Branch parity/bots-force-reply @ 210e920 handed back to merge pipeline for rebase onto current main (#173 merged since my rebase) + FIFO merge. Repo still 4/4 open PRs \u2014 no new slice until one merges.",
-    "phase": "pr-open-review-fixups",
+    "detail": "PR #177 (force-reply keyboard bar) merged 2026-09-29T22:12:52Z. Slice complete. Standing by at 4-PR cap \u2014 next slice starts when count drops below 4.",
+    "phase": "merged-standing-by",
     "pr": 177,
     "screenshot": "docs/screenshots/ready-bot-keyboards.png",
     "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
@@ -185,10 +180,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:04:31Z",
+   "updated_at": "2026-09-29T22:16:00Z",
    "last_evidence_at": "2026-09-29T21:50:41Z",
    "stale": true,
-   "age_seconds": 1360
+   "age_seconds": 1478
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
