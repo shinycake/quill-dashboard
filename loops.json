@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:25:18.862479+00:00",
+ "generated_at": "2026-09-29T13:27:17.468689+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -7,20 +7,19 @@
     "slice": "community-service-messages",
     "branch": "parity/community-service-messages",
     "worktree": "~/workspace/quill-l1-community",
-    "phase": "parked-blocked",
+    "phase": "stalled-recovery",
     "pr": null,
-    "detail": "PR #147 MERGED (docs: secret-session-terminate impossible, premise corrected). PR #146 (C2k) still blocked by file-size cap \u2014 escalated. C2l blocked (same files)."
+    "detail": "PR #147 MERGED (docs: secret-session-terminate impossible, premise corrected). PR #146 MERGED 2026-09-29T06:42:04Z \u2014 file-size-cap blocker is MOOT. Awaiting recovery coordinator restart."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "slice": "C2k",
-    "branch": "parity/community-service-messages",
-    "phase": "blocked-file-size-cap",
-    "pr": 146
+    "slice": "C2l",
+    "phase": "queued",
+    "detail": "Next lane item per README gaps; coordinator to pick exact slice on restart."
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:15:55Z",
+   "updated_at": "2026-09-29T13:25:52Z",
    "last_merged": {
     "pr": 147,
     "slice": "docs-secret-session-terminate",
@@ -33,31 +32,21 @@
     "pr": 142,
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked"
    },
-   "blockers": [
-    {
-     "pr": 146,
-     "cause": "file-size cap (PR #143) \u2014 waivers only shrink, no splits in flight, no exemption process",
-     "files": {
-      "src/telegram/envelope.rs": "+81 over 17953",
-      "src/ui/mod.rs": "+7 over 48393"
-     },
-     "escalated": "2026-09-29"
-    }
-   ],
+   "blockers": [],
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 85
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S5 merged (#154); S7 PR #155 CI rerun after fmt fix",
+   "current": "S11 implementing (parity/loop2-s11-group-sticker-set): setSupergroupStickerSet + setSupergroupCustomEmojiStickerSet backend (builders, envelope fields, state, drivers, tests). Folds in S7's unchecked parity:stories-areas-view box.",
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
-    "commit": "5da1d24",
-    "pr": 140,
-    "slice": "S9 GIF backend"
+    "pr": 155,
+    "slice": "S7 clickable story areas",
+    "commit": "530de44"
    },
    "loop": 2,
-   "next": "Merge S7 after CI",
+   "next": "Finish S11 gates -> adversarial review -> open PR",
    "parity": "371/525 (70.7%)",
    "parked": false,
    "phase": "active",
@@ -76,7 +65,7 @@
     },
     "s7": {
      "number": 155,
-     "state": "open"
+     "state": "merged"
     },
     "s8": 138,
     "s9": 140
@@ -88,62 +77,60 @@
     "s6": "merged (#149)",
     "s7": "PR #155"
    },
-   "updated_at": "2026-09-29T13:15:52Z",
+   "updated_at": "2026-09-29T13:35:00Z",
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 0
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
-    "phase": "bots-backend",
-    "slice": "Slice 3 IN REVIEW: payments-clear backend (dedicated adversarial review in flight on ~/workspace/quill-l3-payclear). Slice 4 research next.",
     "branch": "parity/bots-payment-clear-backend",
-    "pr": 135,
-    "detail": "PR #135 MERGED (rebase, 9dfc925): inline-mode TDLib backend. UI-build gate green locally + required linux-fmt-clippy-test green. Parity steady 366/522 = 70.1% (backend-only, box unchecked). Worktree removed, branch deleted local+remote. Slice 3 rebase onto new main queued for its review verdict."
+    "detail": "Slice 3 RECOVERED (2026-09-29 ~13:40Z): orphaned commit 9ff0204 inspected (clean tree, 40-line backend-only diff). Rebasing 65 commits onto origin/main@530de44 exposed a real gate failure: check_file_sizes.sh FAIL \u2014 the slice grew waived requests.rs to 10362 > waived 10322 (waivers only shrink). Restructured per the standing code-organization rule + requests_emoji/requests_story split precedent: builders moved to NEW src/telegram/requests_payments.rs, requests.rs restored to main state, re-exports added in telegram/mod.rs. Commit amended to ea1eb2b. Gates (fmt + file-size + clippy + test + ui build) re-running on the restructured tree. NOT merged \u2014 PR to open after gates. Old dedicated review verdict (APPROVE in the pre-rebase commit message) is stale post-restructure; a FRESH dedicated adversarial reviewer subagent is required before merge \u2014 coordinator is depth 2/2 (can_spawn=no) and cannot spawn it; parent must spawn.",
+    "phase": "payments-clear",
+    "pr": null,
+    "slice": "Slice 3 RECOVERED: payments-clear backend restructured (requests_payments.rs), rebased onto origin/main@530de44, gates running. PR number TBD on open."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "parked_branches": {
-    "parity/settings-appearance": "c3bb7ad \u2014 5 reviewer fixups applied, gates green, rebased onto c9eddc6. NOT pushed, no PR. UI-blocked until kit Phase 9 merges.",
-    "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
+    "parity/settings-appearance": "c3bb7ad \u2014 5 reviewer fixups applied, gates green, rebased onto c9eddc6. NOT pushed, no PR. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR).",
+    "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:24:37Z",
+   "updated_at": "2026-09-29T13:45:00Z",
    "stale": false,
-   "age_seconds": 41
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
-    "branch": "parity/auth-lifecycle-1",
-    "detail": "A7 backend merged-ready: PR #136 open (deleteAccount + get/setAccountTtl). Adversarial review MERGE, all gates green incl. full ui build. Awaiting merge.",
-    "phase": "pr-open",
-    "pr": 136,
-    "slice": "A7 account lifecycle (backend)",
-    "worktree": "~/workspace/quill-l4-lifecycle"
+    "branch": null,
+    "worktree": null,
+    "slice": null,
+    "phase": "stalled-recovery",
+    "detail": "A7 merged as PR #136 at 2026-09-29T13:01:41Z. Remote branch parity/auth-lifecycle-1 deleted (superseded). Awaiting recovery coordinator restart."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
    "last_merged": {
-    "at": "2026-09-28T17:26:23Z",
-    "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
-    "parity": "364/522=69.7%",
-    "pr": 121
+    "pr": 136,
+    "slice": "A7 account lifecycle backend",
+    "commit": "dec95dc"
    },
    "loop": 4,
    "next": {
     "branch": null,
-    "detail": "Research complete: sendPhoneNumberCode/checkPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth; README claim corrected). Caveat: schema says official Android/iOS only \u2014 verify server acceptance before UI. Full notes: quill-progress/loop4-research-change-number.md",
-    "phase": "research-done",
+    "detail": "A8 change phone number (backend). Research complete: sendPhoneNumberCode/checkPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth; README claim corrected). Caveat: schema says official Android/iOS only \u2014 verify server acceptance before UI. Full notes: quill-progress/loop4-research-change-number.md",
+    "phase": "queued",
     "slice": "A8 change phone number (backend)",
     "worktree": null
    },
    "parked": false,
-   "phase": "pr-open",
+   "phase": "stalled-recovery",
    "status": "active",
-   "updated_at": "2026-09-29T13:18:40Z",
+   "updated_at": "2026-09-29T13:26:00Z",
    "stale": false,
-   "age_seconds": 398
+   "age_seconds": 77
   }
  ]
 }
