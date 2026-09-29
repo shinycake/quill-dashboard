@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:13:18.184953+00:00",
+ "generated_at": "2026-09-29T15:15:17.593083+00:00",
  "loops": [
   {
    "blockers": [],
@@ -58,7 +58,7 @@
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S12 REVIEW FIXUP APPLIED, PR #163 OPEN (do not merge): sticker suggestions by emoji in composer (backend). Branch parity/loop2-s12-sticker-suggest @ 7c560e9 (worktree ~/workspace/quill-loop2-s12), pushed. Adversarial review returned NOT APPROVED with one required fix + one nit \u2014 both applied: (1) the clear path now takes the pending RequestPurpose::SuggestStickers before clearing (reviewer's exact snippet) + new regression test s12_clear_path_drops_pending_suggest_so_late_answer_is_ignored (issue via update_sticker_suggestions(\"\ud83d\ude00\"), clear with no-emoji text, late answer for the taken request id is ignored, suggestions stays empty); (2) SUGGEST_LIMIT = 12 documented as an arbitrary client page size. StickerSuggestMode in src/sticker_suggest.rs (persisted in MediaPrefs), trailing-emoji detection incl. keycap sequences, SuggestStickers + searchStickers dispatch into StickerPanel::suggestions (InstalledOnly filters to installed set ids). Backend-only; composer suggestion-row UI + settings toggle pending post-Phase-9. All gates green (fmt, clippy -D warnings, 1057 unit + 59 replay tests, file sizes OK with exact connect.rs waiver bump 24064 -> 24138 for the type-coherent fixup). README stickers-suggest-by-emoji box stays [ ] with partial note. AWAITING adversarial re-review of the fixup \u2014 not merged.",
+   "current": "S13 IMPLEMENTED, PR #167 OPEN (do not merge): story custom-emoji + paid chosen reactions backend. Branch parity/loop2-s13-story-reactions @ 1bde19e (worktree ~/workspace/quill-loop2-s13), pushed. New StoryChosenExtraReaction { CustomEmoji(i64), Paid }; parse_story_chosen_reaction returns (emoji, extra) with new match arms; ParsedStory::chosen_reaction_extra + StoryInteractionView::reaction_extra fields (story + viewers list no longer drop non-emoji chosen reactions); set_story_custom_emoji_reaction builder (requests.rs) + ConnectDriver::set_story_custom_emoji_reaction driver (connect.rs, same gates + positive-id check, reuses RequestPurpose::SetStoryReaction). Additive only \u2014 src/ui/mod.rs untouched (frozen for kit Phase 9); the two ui call sites keep their Option<&str> signatures. availableReaction custom-emoji parse deliberately deferred to the post-Phase-9 picker UI slice (frozen picker would render empty chips). All gates green (fmt, clippy -D warnings, 1056 unit + 59 replay tests, file sizes OK with exact waiver bumps: connect.rs 24015->24126, state.rs 20913->20914, envelope.rs 18209->18320, requests.rs 10322->10371). README parity:stories-custom-reactions stays [ ] with partial note; parity steady 372/525 (70.9%). AWAITING adversarial review \u2014 not merged.",
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
     "pr": 155,
@@ -66,7 +66,7 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "Adversarial re-review of S12 fixup (PR #163) -> merge",
+   "next": "Adversarial review of S13 (PR #167) -> merge; then next Loop 2 slice (stories-restriction-notice backend or stickers-dynamic-order are the top remaining backend candidates)",
    "parity": "372/525 (70.9%)",
    "parked": false,
    "phase": "active",
@@ -96,6 +96,10 @@
     "s12": {
      "number": 163,
      "state": "open \u2014 awaiting adversarial re-review, do not merge"
+    },
+    "s13": {
+     "number": 167,
+     "state": "open \u2014 awaiting adversarial review, do not merge"
     }
    },
    "status": "active",
@@ -105,11 +109,12 @@
     "s6": "merged (#149)",
     "s7": "PR #155",
     "s11": "PR #158 (open, awaiting review)",
-    "s12": "PR #163 (open, fixup applied, awaiting re-review)"
+    "s12": "PR #163 (open, fixup applied, awaiting re-review)",
+    "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T15:05:50Z",
+   "updated_at": "2026-09-29T15:14:56Z",
    "stale": false,
-   "age_seconds": 448
+   "age_seconds": 21
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -126,9 +131,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:04:30Z",
+   "updated_at": "2026-09-29T15:14:29Z",
    "stale": false,
-   "age_seconds": 528
+   "age_seconds": 48
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -167,7 +172,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:08:37Z",
    "stale": false,
-   "age_seconds": 281
+   "age_seconds": 400
   }
  ]
 }
