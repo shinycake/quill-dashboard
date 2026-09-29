@@ -196,6 +196,13 @@
   .mitem.wipitem{border:1px solid rgba(88,166,255,.45); background:var(--blue-dim); animation:wpulse 2s ease-in-out infinite}
   .mitem.wipitem .ic{color:var(--blue)}
   @keyframes wpulse{0%,100%{box-shadow:0 0 0 0 rgba(88,166,255,0)}50%{box-shadow:0 0 0 3px rgba(88,166,255,.18)}}
+  /* blocked checklist items: muted row, gray pill, reason shown inline */
+  .mitem.blocked{opacity:.85}
+  .mitem.blocked .ic{color:var(--muted)}
+  .pill.blocked{background:#262c38; color:#9aa4b2; border:1px solid #39424f}
+  .breason{font-size:12px; color:var(--muted); margin-top:3px; line-height:1.4}
+  .mcol h4.blockedhead{margin-top:16px}
+  .blockedbadge{display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; color:#9aa4b2; margin-left:8px}
   .wipgroup{margin-top:14px}
   .wipgroup h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted)}
   .wipcard{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px; margin-bottom:8px;
@@ -727,15 +734,23 @@ function renderAreas(){
       ? '<em class="wip" style="left:' + (p * 100).toFixed(1) + '%"></em>' : '';
     const badge = wips.length
       ? '<span class="wipbadge"><span class="dot"></span>' + wips.length + ' in progress</span>' : '';
+    const nBlocked = (a.pendingItems || []).filter(t => normItem(t).blocked).length;
+    const bbadge = nBlocked
+      ? '<span class="blockedbadge">⊘ ' + nBlocked + ' blocked</span>' : '';
     return '<div class="card area" data-area="' + esc(a.name) + '" role="button" tabindex="0" ' +
       'aria-label="' + esc(a.name) + ' details">' +
       '<div class="row"><span class="name">' + esc(a.name) + '</span>' +
-      '<span class="num">' + a.done + '/' + a.total + badge + '</span></div>' +
+      '<span class="num">' + a.done + '/' + a.total + badge + bbadge + '</span></div>' +
       '<div class="' + barClass(p) + '"><i style="width:' + (p * 100).toFixed(1) + '%"></i>' + wseg + '</div></div>';
   }).join('');
 }
 
 const WIP_STOP = new Set(['parity', 'ui', 'slice', 'batch', 'refactor', 'split', 'wip', 'pr']);
+// Pending items are {text, blocked, reason} objects (see quill-github-snapshot);
+// tolerate plain strings from an older snapshot.
+function normItem(p){
+  return typeof p === 'string' ? {text: p, blocked: false, reason: null} : p;
+}
 function wipTokens(s){
   const slug = String(s || '').split('/').pop();
   return slug.toLowerCase().split(/[^a-z0-9]+/).filter(t =>
@@ -772,15 +787,25 @@ function openArea(name){
     : '';
   const doneItems = a.doneItems.map(t =>
     '<div class="mitem done"><span class="ic">✓</span><span>' + esc(t) + '</span></div>').join('');
-  const todoItems = a.pendingItems.map(t => {
-    const w = itemIsWip(t, tokenSets);
+  const pend = (a.pendingItems || []).map(normItem);
+  const blocked = pend.filter(p => p.blocked);
+  const todo = pend.filter(p => !p.blocked);
+  const todoItems = todo.map(t => {
+    const w = itemIsWip(t.text, tokenSets);
     return '<div class="mitem todo' + (w ? ' wipitem' : '') + '"><span class="ic">' + (w ? '◐' : '○') + '</span><span>' +
-      esc(t) + (w ? ' <span class="pill wip">in progress</span>' : '') + '</span></div>';
+      esc(t.text) + (w ? ' <span class="pill wip">in progress</span>' : '') + '</span></div>';
   }).join('');
+  const blockedItems = blocked.map(b =>
+    '<div class="mitem blocked"><span class="ic">⊘</span><span>' + esc(b.text) +
+    ' <span class="pill blocked">Blocked</span>' +
+    '<div class="breason">Blocked — ' + esc(b.reason || 'reason not recorded') + '</div></span></div>').join('');
+  const blockedSection = blocked.length
+    ? '<h4 class="blockedhead">Blocked <span class="count">' + blocked.length + '</span></h4>' + blockedItems
+    : '';
   $('mBody').innerHTML = wipGroup +
     '<div class="mcols">' +
     '<div class="mcol"><h4>Done <span class="count">' + a.doneItems.length + '</span></h4>' + (doneItems || '<div class="empty">Nothing done yet.</div>') + '</div>' +
-    '<div class="mcol"><h4>To do <span class="count">' + a.pendingItems.length + '</span></h4>' + (todoItems || '<div class="empty">All done.</div>') + '</div>' +
+    '<div class="mcol"><h4>To do <span class="count">' + todo.length + '</span></h4>' + (todoItems || '<div class="empty">All done.</div>') + blockedSection + '</div>' +
     '</div>';
   $('modal').classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -960,8 +985,17 @@ async function refresh(manual){
       if (areasR.data && areasR.data.areas){
         areasData = areasR.data.areas.map(a => ({
           name: a.name, done: a.done.length, total: a.done.length + a.pending.length,
-          doneItems: a.done, pendingItems: a.pending,
+          doneItems: a.done, pendingItems: (a.pending || []).map(normItem),
         }));
+        const nBlocked = areasData.reduce((n, a) =>
+          n + a.pendingItems.filter(t => t.blocked).length, 0);
+        if (nBlocked){
+          const nTodo = areasData.reduce((n, a) =>
+            n + a.pendingItems.filter(t => !t.blocked).length, 0);
+          $('parityNote').textContent = nBlocked + ' blocked · ' + nTodo + ' to do';
+        } else {
+          $('parityNote').textContent = 'checklist items complete';
+        }
       }
       inprogressByArea = {};
       ((wipR.data && wipR.data.items) || []).forEach(w => {
