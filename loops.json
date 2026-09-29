@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T19:51:17.531496+00:00",
+ "generated_at": "2026-09-29T19:53:18.878513+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 324
+   "age_seconds": 445
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -145,7 +145,7 @@
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
    "stale": false,
-   "age_seconds": 320
+   "age_seconds": 441
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -169,7 +169,7 @@
    "status": "active",
    "updated_at": "2026-09-29T19:44:30Z",
    "stale": false,
-   "age_seconds": 407
+   "age_seconds": 528
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -218,7 +218,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 160
+   "age_seconds": 281
   }
  ]
 }
