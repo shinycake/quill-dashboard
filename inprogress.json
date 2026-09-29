@@ -1,0 +1,116 @@
+{
+ "items": [
+  {
+   "area": "Auth & accounts",
+   "label": "auth-lifecycle-1",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/auth-lifecycle-1",
+   "branch": "parity/auth-lifecycle-1"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "auth-password-recovery",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/auth-password-recovery",
+   "branch": "parity/auth-password-recovery"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "auth-profile-accent: profile accent color (setProfileAccentColor)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/auth-profile-accent"
+  },
+  {
+   "area": "Bots, polls & payments",
+   "label": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
+   "kind": "pr",
+   "pr": 177,
+   "url": "https://github.com/shinycake/quill/pull/177",
+   "branch": "parity/bots-force-reply"
+  },
+  {
+   "area": "Groups, supergroups & channels",
+   "label": "community-service-rows",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/community-service-rows",
+   "branch": "parity/community-service-rows"
+  },
+  {
+   "area": "Platform & edge cases",
+   "label": "platform-tray-icon",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/platform-tray-icon",
+   "branch": "parity/platform-tray-icon"
+  },
+  {
+   "area": "Secret chats",
+   "label": "G10",
+   "kind": "pr",
+   "pr": 176,
+   "url": "https://github.com/shinycake/quill/pull/176",
+   "branch": "parity/communities-ui"
+  },
+  {
+   "area": "Settings",
+   "label": "settings-data-storage",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/settings-data-storage",
+   "branch": "parity/settings-data-storage"
+  },
+  {
+   "area": "Stickers, emoji & GIFs",
+   "label": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
+   "kind": "pr",
+   "pr": 175,
+   "url": "https://github.com/shinycake/quill/pull/175",
+   "branch": "parity/loop2-s16-emoji-sticker-type"
+  },
+  {
+   "area": "Stickers, emoji & GIFs",
+   "label": "Slice S17: show 'choosing a sticker' chat action of others",
+   "kind": "pr",
+   "pr": 178,
+   "url": "https://github.com/shinycake/quill/pull/178",
+   "branch": "parity/loop2-s17-choosing-sticker"
+  },
+  {
+   "area": "Stickers, emoji & GIFs",
+   "label": "loop2-s16-emoji-sticker-type",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s16-emoji-sticker-type",
+   "branch": "parity/loop2-s16-emoji-sticker-type"
+  },
+  {
+   "area": "Stories",
+   "label": "S18 sticker suggestions by emoji in composer",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/loop2-s18-sticker-suggest"
+  },
+  {
+   "area": "Stories",
+   "label": "loop2-s13-story-reactions",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s13-story-reactions",
+   "branch": "parity/loop2-s13-story-reactions"
+  },
+  {
+   "area": null,
+   "label": "loop2-s15-dynamic-order",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s15-dynamic-order",
+   "branch": "parity/loop2-s15-dynamic-order"
+  }
+ ]
+}
