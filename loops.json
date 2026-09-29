@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-29T03:07:16.675185+00:00",
+ "generated_at": "2026-09-29T03:09:18.663100+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-screen-share-receive",
-    "detail": "C2j rebased onto fa3f9ed, all gates green, in adversarial review. Next slice (community service-message envelope parsing) implementing in parallel worktree.",
+    "detail": "C2j review done (0 blockers, 6 nits fixed+amended as a6eecb2). Final UI build gate running. Next slice implementing in parallel worktree.",
     "phase": "review",
     "pr": null,
     "slice": "calls-screen-share-receive",
@@ -20,9 +20,9 @@
     "phase": "implementing"
    },
    "status": "active",
-   "updated_at": "2026-09-29T03:05:52Z",
+   "updated_at": "2026-09-29T03:45:00Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -43,16 +43,16 @@
    "status": "active",
    "updated_at": "2026-09-29T02:55:53Z",
    "stale": false,
-   "age_seconds": 683
+   "age_seconds": 805
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "phase": "bots-backend",
-    "slice": "Slice 2 fixups APPLIED + committed (594d51e); full --features ui build gate running (background, via shared lock). Slice 3 review in flight.",
-    "branch": "parity/bots-inline-backend",
-    "pr": null,
-    "detail": "Slice 2: fixup agent applied button payload fields + driver test, gates green, committed. UI-build final gate compiling now. Slice 3 reviewer on the payments-clear diff. Next: push + PR #135 on green build, merge, rebase Slice 3. Parity 366/522 = 70.1%."
+    "slice": "Slice 3 IN REVIEW: payments-clear backend (dedicated adversarial review in flight on ~/workspace/quill-l3-payclear). Slice 4 research next.",
+    "branch": "parity/bots-payment-clear-backend",
+    "pr": 135,
+    "detail": "PR #135 MERGED (rebase, 9dfc925): inline-mode TDLib backend. UI-build gate green locally + required linux-fmt-clippy-test green. Parity steady 366/522 = 70.1% (backend-only, box unchecked). Worktree removed, branch deleted local+remote. Slice 3 rebase onto new main queued for its review verdict."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -61,9 +61,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T03:04:36Z",
-   "stale": false,
-   "age_seconds": 160
+   "updated_at": "2026-09-29T02:52:00Z",
+   "stale": true,
+   "age_seconds": 1038
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -94,9 +94,9 @@
    "parked": false,
    "phase": "review",
    "status": "active",
-   "updated_at": "2026-09-29T02:58:42Z",
+   "updated_at": "2026-09-29T03:08:38Z",
    "stale": false,
-   "age_seconds": 514
+   "age_seconds": 40
   }
  ]
 }
