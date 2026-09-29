@@ -35,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T23:03:00Z",
+   "updated_at": "2026-09-29T22:55:53Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -149,7 +149,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:54:27Z",
+   "updated_at": "2026-09-29T22:55:53Z",
    "last_merge": {
     "pr": 178,
     "slice": "S17 choosing-a-sticker chat action",
@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": false,
-   "age_seconds": 54
+   "age_seconds": 170
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -185,18 +185,18 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": false,
-   "age_seconds": 558
+   "age_seconds": 674
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
    "current": {
-    "slice": "secret-chat blocker verification (phase-1 partition)",
-    "branch": null,
-    "worktree": null,
-    "phase": "phase2-start",
+    "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
+    "branch": "parity/settings-mentions-pinned",
+    "worktree": "~/workspace/quill-l4-mentions-pinned",
+    "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Parent-directed standby: loop 4 verified all 3 secret-chat blockers as genuinely blocked with fresh concept-level evidence (screenshot-send: no Linux OS detection API; screenshot-block: no FLAG_SECURE equiv; session-terminate: no auth-key linkage in td_api.tl). Phase-1 pool audited \u2014 nothing unblocked/unclaimed remains in its lanes. Wake condition: parent declares phase 2. Watchdog: do NOT respawn as dead \u2014 deliberate hold. Moved to phase 2 partition by Idan 2026-09-29 ~17:53 CDT. Phase-2 coordinator dispatched 2026-09-29T22:53:36Z."
+    "detail": "Phase 2 (settings+auth/accounts). Claimed: mention/pinned notification override Switches per scope in Notification defaults dialog, live via setScopeNotificationSettings. Unclaimed \u2014 loop2 is on bots/polls/payments, loops 1/3 on phase-1 slices, #180/#181 are unrelated."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -225,8 +225,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:53:36Z",
-   "updated_at": "2026-09-29T22:53:36Z",
+   "last_evidence_at": "2026-09-29T22:54:00Z",
+   "updated_at": "2026-09-29T22:54:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -255,7 +255,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 105
+   "age_seconds": 197
   }
  ]
 }
