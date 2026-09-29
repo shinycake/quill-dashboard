@@ -936,7 +936,7 @@
   {
    "number": 178,
    "title": "Slice S17: show 'choosing a sticker' chat action of others",
-   "updated_at": "2026-09-29T22:21:23Z",
+   "updated_at": "2026-09-29T22:21:32Z",
    "html_url": "https://github.com/shinycake/quill/pull/178",
    "head": {
     "ref": "parity/loop2-s17-choosing-sticker"
