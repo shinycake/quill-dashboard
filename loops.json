@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:27:19.808211+00:00",
+ "generated_at": "2026-09-29T21:29:20.519432+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
    "wip_open_prs": 1,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 259
+   "age_seconds": 380
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -152,7 +152,7 @@
    },
    "last_evidence_at": "2026-09-29T20:59:56Z",
    "stale": true,
-   "age_seconds": 1643
+   "age_seconds": 1764
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +178,7 @@
    "updated_at": "2026-09-29T21:24:34Z",
    "last_evidence_at": "2026-09-29T21:21:06Z",
    "stale": false,
-   "age_seconds": 373
+   "age_seconds": 494
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -220,7 +220,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-29T21:15:00Z",
-   "updated_at": "2026-09-29T21:18:41Z",
+   "updated_at": "2026-09-29T21:28:41Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -230,7 +230,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 739
+   "age_seconds": 860
   }
  ]
 }
