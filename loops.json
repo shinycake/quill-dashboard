@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": false,
-   "age_seconds": 290
+   "age_seconds": 410
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -256,7 +256,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 317
+   "age_seconds": 437
   }
  ]
 }

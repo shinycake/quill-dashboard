@@ -936,7 +936,7 @@
   {
    "number": 180,
    "title": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
-   "updated_at": "2026-09-29T22:55:00Z",
+   "updated_at": "2026-09-29T22:59:51Z",
    "html_url": "https://github.com/shinycake/quill/pull/180",
    "head": {
     "ref": "parity/auth-profile-accent"
@@ -944,6 +944,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/auth-profile-accent"
+   },
+   "created_at": "2026-09-29T22:59:50Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1330,16 +1340,6 @@
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T21:11:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/loop2-s17-choosing-sticker"
-   },
-   "created_at": "2026-09-29T20:59:53Z",
    "actor": {
     "login": "shinycake"
    }
