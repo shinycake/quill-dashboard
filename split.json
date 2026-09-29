@@ -1,0 +1,64 @@
+{
+ "generated_at": "2026-09-29T12:51:06.255538+00:00",
+ "target_lines": 2000,
+ "files": [
+  {
+   "path": "src/ui/mod.rs",
+   "original": 48393,
+   "waiver": 48753,
+   "current": 48753
+  },
+  {
+   "path": "src/connect.rs",
+   "original": 23615,
+   "waiver": 23941,
+   "current": 23941
+  },
+  {
+   "path": "src/state.rs",
+   "original": 20295,
+   "waiver": 20722,
+   "current": 20722
+  },
+  {
+   "path": "src/telegram/envelope.rs",
+   "original": 17953,
+   "waiver": 18141,
+   "current": 18141
+  },
+  {
+   "path": "src/telegram/requests.rs",
+   "original": 10262,
+   "waiver": 10262,
+   "current": 10262
+  },
+  {
+   "path": "src/calls/engine.rs",
+   "original": 3212,
+   "waiver": 3212,
+   "current": 3212
+  },
+  {
+   "path": "tests/replay.rs",
+   "original": 3505,
+   "waiver": 3505,
+   "current": 3505
+  }
+ ],
+ "batches": [
+  {
+   "html_url": "https://github.com/shinycake/quill/pull/148",
+   "merged_at": "2026-09-29T06:36:00Z",
+   "number": 148,
+   "title": "refactor: split src/ui/mod.rs batch 1 \u2014 dialogs (Poll..Restrict)",
+   "updated_at": "2026-09-29T06:36:00Z"
+  },
+  {
+   "html_url": "https://github.com/shinycake/quill/pull/153",
+   "merged_at": null,
+   "number": 153,
+   "title": "refactor: split ui/mod.rs dialogs batch 2 (GroupConfirm->Welcome)",
+   "updated_at": "2026-09-29T12:46:29Z"
+  }
+ ]
+}
