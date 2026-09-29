@@ -428,7 +428,8 @@
     "GIF picker refreshes when updateSavedAnimations arrives (state.rs:4397-4398)",
     "Emoji reactions picker (emoji-only) + reaction chips on messages (ui/mod.rs:631, state.rs:1298-1308)",
     "Sticker thumbnails shown in picker and history (state.rs:5215, ui/mod.rs:14067)",
-    "Dynamic set order (auto-place recently used sets above others) (backend + state: sticker sends pass update_order_of_installed_sticker_sets, updateInstalledStickerSets reorders the cached sets in place; picker already lists stored order, no UI change)"
+    "Dynamic set order (auto-place recently used sets above others) (backend + state: sticker sends pass update_order_of_installed_sticker_sets, updateInstalledStickerSets reorders the cached sets in place; picker already lists stored order, no UI change)",
+    "Show \"choosing a sticker\" chat action of others (S17: `chatActionChoosingSticker` parsed to `ChatAction::ChoosingSticker`, per-sender tracking in `ChatSummary`, \"choosing a sticker\u2026\" label in header + sidebar preview, winning over \"typing\u2026\")"
    ],
    "pending": [
     "Trending sticker sets tab (partial: backend wired \u2014 getTrendingStickerSets/viewTrendingStickerSets + state; tab UI pending)",
@@ -447,7 +448,6 @@
     "Video sticker (WebM) playback (partial: format parsed, static thumb only)",
     "\"Loop Animated Stickers\" setting",
     "Premium sticker gating (\"Sending this sticker requires Telegram Premium\")",
-    "Show \"choosing a sticker\" chat action of others",
     "GIF search + trending GIFs (inline bot path searchInlineBots/getInlineQueryResults) (partial: backend wired \u2014 getInlineQueryResults search + AnimationItem results + next_offset paging + updateAnimationSearchParameters state; search UI pending. Note: `searchInlineBots` does not exist in TDLib 1.8.67 \u2014 the bot resolves via the `animation_search_bot_username` option, see DECISIONS.md S9)",
     "Save GIF to media keyboard (addSavedAnimation) (partial: backend wired \u2014 addSavedAnimation + cache invalidation; picker UI pending)",
     "Delete saved GIF (removeSavedAnimation + confirm) (partial: backend wired \u2014 removeSavedAnimation + cache invalidation; confirm dialog pending)",

@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 408,
+  "done": 409,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 178,
+   "title": "Slice S17: show 'choosing a sticker' chat action of others",
+   "merged_at": "2026-09-29T22:26:17Z",
+   "html_url": "https://github.com/shinycake/quill/pull/178",
+   "head": {
+    "ref": "parity/loop2-s17-choosing-sticker"
+   }
+  },
   {
    "number": 177,
    "title": "Bots: force-reply keyboard bar above the composer",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/calls-settings"
    }
-  },
-  {
-   "number": 79,
-   "title": "parity:calls video-chat management - title, schedule, invite link, recording, RTMP, in-call chat (C2h)",
-   "merged_at": "2026-09-27T10:54:38Z",
-   "html_url": "https://github.com/shinycake/quill/pull/79",
-   "head": {
-    "ref": "parity/group-calls-3"
-   }
   }
  ],
  "openPRs": [
@@ -932,18 +932,29 @@
    "head": {
     "ref": "parity/ephemeral-updates"
    }
-  },
-  {
-   "number": 178,
-   "title": "Slice S17: show 'choosing a sticker' chat action of others",
-   "updated_at": "2026-09-29T22:21:32Z",
-   "html_url": "https://github.com/shinycake/quill/pull/178",
-   "head": {
-    "ref": "parity/loop2-s17-choosing-sticker"
-   }
   }
  ],
  "events": [
+  {
+   "type": "DeleteEvent",
+   "payload": {
+    "ref": "parity/loop2-s17-choosing-sticker"
+   },
+   "created_at": "2026-09-29T22:26:20Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:26:17Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1323,29 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T20:17:53Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "kit/phase4-message"
-   },
-   "created_at": "2026-09-28T22:08:02Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
+   "html_url": "https://github.com/shinycake/quill/commit/fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
+   "commit": {
+    "message": "Slice S17: show 'choosing a sticker' chat action of others\n\nMerge of #178 (S17 choosing-sticker chat action).\n\nReview: dedicated adversarial re-review CONFIRM on head e814b57e (header-gate defect fixed, S17 DECISIONS.md section added, baselines exact).\nCI: linux-fmt-clippy-test SUCCESS, macos-compile-smoke SUCCESS on merged head.\nParity: 409/525 (77.9%).",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T22:26:16Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "54d4d7a947c0c6a5df9b9db1df69cd16e0d2ce51",
    "html_url": "https://github.com/shinycake/quill/commit/54d4d7a947c0c6a5df9b9db1df69cd16e0d2ce51",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T19:46:43Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "cf39d8be82bb12e4902d6ccbe9ea103303a7eb79",
-   "html_url": "https://github.com/shinycake/quill/commit/cf39d8be82bb12e4902d6ccbe9ea103303a7eb79",
-   "commit": {
-    "message": "S14: story-posting restriction notices backend (TGX-verbatim) (#172)\n\n* S14: story-posting restriction notices backend (TGX-verbatim copy)\n\nDetect per-chat story-posting restriction state via the canPostStory\nerror channel and surface TGX-verbatim notices at the story-composer\nentry point (existing eligibility gating: canPostStory error ->\nstory_post.check_error -> composer status line).\n\n- New src/story_restriction.rs: TGX-verbatim ChatDisabledStory /\n  ChatRestrictedStory / ChatRestrictedStoryUntil copy (strings taken\n  verbatim from TGX-Android strings.xml), plus scrub-safe\n  classification of the raw TDLib error message.\n- telegram/envelope.rs: two new ErrorClass variants (StoryChatDisabled,\n  StoryUserRestricted); parse_error classifies CHAT_ADMIN_REQUIRED\n  (documented 400 error for stories.canSendStory/sendStory) and\n  USER_RESTRICTED (documented 403) at the only point the raw message\n  is still available (TdError drops it for secret-scrubbing).\n- state.rs: canPostStory check failures show the TGX notice instead of\n  the generic 'Eligibility check failed'; error_reason /\n  sessions_error_line keep byte-identical text for non-story flows.\n- README: check parity:stories-restriction-notice.\n\nWaiver bumps (exact, type-coherent only): src/state.rs 21173->21192\n(new match arms on existing matches), src/telegram/envelope.rs\n18293->18310 (new ErrorClass variants + parse_error call-site wiring;\nall new logic lives in the new story_restriction module, which the\nwaived files cannot host).\n\nGates: cargo fmt, clippy -D warnings, cargo test\n--no-default-features --locked (1067 passed), check_file_sizes.sh \u2014\nall green. No UI code touched (backend-only slice).\n\n* S14 review fixups: headline gate message mapping, drop until scaffolding, reducer feature test, honest README box, exact waiver bumps (state.rs 21279, envelope.rs 18363)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: quill-fixup <quill@localhost>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T19:13:21Z"
     }
    },
    "author": {

@@ -4,8 +4,8 @@
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "waiver": 49090,
-   "current": 49090
+   "waiver": 49101,
+   "current": 49101
   },
   {
    "path": "src/connect.rs",
@@ -16,14 +16,14 @@
   {
    "path": "src/state.rs",
    "original": 20295,
-   "waiver": 21658,
-   "current": 21658
+   "waiver": 21721,
+   "current": 21721
   },
   {
    "path": "src/telegram/envelope.rs",
    "original": 17953,
-   "waiver": 18600,
-   "current": 18600
+   "waiver": 18604,
+   "current": 18604
   },
   {
    "path": "src/telegram/requests.rs",

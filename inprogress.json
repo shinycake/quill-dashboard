@@ -47,14 +47,6 @@
    "pr": null,
    "url": null,
    "branch": "parity/loop2-s18-sticker-suggest"
-  },
-  {
-   "area": "Stickers, emoji & GIFs",
-   "label": "Slice S17: show 'choosing a sticker' chat action of others",
-   "kind": "pr",
-   "pr": 178,
-   "url": "https://github.com/shinycake/quill/pull/178",
-   "branch": "parity/loop2-s17-choosing-sticker"
   }
  ]
 }
