@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:27:17.586450+00:00",
+ "generated_at": "2026-09-29T14:29:17.348635+00:00",
  "loops": [
   {
    "blockers": [],
@@ -36,7 +36,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:25:51Z",
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 206
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -48,7 +48,7 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "Tests green -> commit -> report S12 branch to parent for adversarial review -> fix findings -> open PR",
+   "next": "Adversarial review of S12 (b06e742) -> fix findings -> push -> open PR -> merge",
    "parity": "372/525 (70.9%)",
    "parked": false,
    "phase": "active",
@@ -86,7 +86,7 @@
    },
    "updated_at": "2026-09-29T14:25:51Z",
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 206
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -106,7 +106,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:24:30Z",
    "stale": false,
-   "age_seconds": 167
+   "age_seconds": 287
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -141,9 +141,9 @@
     "slice": "A8 change phone number (backend)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:25:58Z",
+   "updated_at": "2026-09-29T14:28:37Z",
    "stale": false,
-   "age_seconds": 79
+   "age_seconds": 40
   }
  ]
 }
