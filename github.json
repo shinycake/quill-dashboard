@@ -936,6 +936,16 @@
  ],
  "events": [
   {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/platform-tray-icon"
+   },
+   "created_at": "2026-09-29T21:18:34Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "DeleteEvent",
    "payload": {
     "ref": "parity/loop2-s15-dynamic-order"
@@ -1321,16 +1331,6 @@
     "ref": "kit/phase6-forms"
    },
    "created_at": "2026-09-28T23:53:16Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T19:34:25Z",
    "actor": {
     "login": "shinycake"
    }
