@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:59:22.473626+00:00",
+ "generated_at": "2026-09-29T21:01:20.939124+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
    "wip_open_prs": 0,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 202
+   "age_seconds": 320
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -63,9 +63,9 @@
     "slice": "S17 choosing-sticker action label",
     "branch": "parity/loop2-s17-choosing-sticker",
     "worktree": "~/workspace/quill-loop2-s17",
-    "phase": "implementing",
+    "phase": "holding-pr",
     "pr": null,
-    "detail": "chatActionChoosingSticker -> \"choosing a sticker\u2026\" label in header + sidebar; PR on hold (per-loop cap: #173, #175 open; repo at 3/4)",
+    "detail": "S17 implemented, gates green, committed 5ca8e3d, branch pushed. PR NOT opened: per-loop WIP cap (2) full with #173 + #175 open; repo at 3/4 open PRs. Will open when one merges.",
     "handoff": null
    },
    "lanes": "stories, stickers, emoji, GIFs",
@@ -151,9 +151,9 @@
     "parity": "372/525 (70.9%)",
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
-   "last_evidence_at": "2026-09-29T20:55:55Z",
+   "last_evidence_at": "2026-09-29T20:59:56Z",
    "stale": false,
-   "age_seconds": 207
+   "age_seconds": 84
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +178,7 @@
    "updated_at": "2026-09-29T20:54:34Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": true,
-   "age_seconds": 1720
+   "age_seconds": 1838
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -209,16 +209,17 @@
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "branch": "parity/auth-a7-ui",
-    "worktree": "/home/hatch/workspace/quill-loop4-a9",
-    "slice": "A9 account lifecycle UI (A7 UI half: delete-account dialog + TTL picker)",
-    "phase": "merged",
-    "pr": 164,
-    "commit": "d50d515",
-    "detail": "PR #164 MERGED 2026-09-29T18:53:25Z as 2a36aed (opened as commit d50d515): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry; README auth-delete-account + auth-account-ttl checked (374/525 = 71.2%). Screenshot docs/screenshots/ready-account.png captured from a real GPUI window (injected fixtures, dialog open). ALL GATES GREEN: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay), cargo build --features ui, check_file_sizes, 2 new ui unit tests (cargo test --features ui --bin quill account_lifecycle). REVIEWER GAP: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before merge; parent must arrange. Do NOT merge without review (standing: coordinators never merge own PRs)."
+    "branch": "parity/platform-tray-icon",
+    "worktree": "/home/hatch/workspace/quill-loop4-a11",
+    "slice": "system tray icon (unread badge, 1s sync)",
+    "phase": "in_review",
+    "pr": 174,
+    "commit": "b95629c",
+    "detail": "PR #174 opened 2026-09-29T20:36:59Z (https://github.com/shinycake/quill/pull/174); handoff recorded as merge-pipeline \u2014 review/CI/merge owned by the merge pipeline, not this loop.",
+    "last_evidence_at": "2026-09-29T20:36:59Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T20:37:00Z",
+   "last_evidence_at": "2026-09-29T21:15:00Z",
    "updated_at": "2026-09-29T20:58:38Z",
    "last_merge": {
     "pr": 164,
@@ -228,8 +229,8 @@
     "parity": "374/525 (71.2%)",
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
-   "stale": true,
-   "age_seconds": 1342
+   "stale": false,
+   "age_seconds": 0
   }
  ]
 }
