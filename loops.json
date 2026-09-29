@@ -56,7 +56,7 @@
     "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
    },
    "stale": false,
-   "age_seconds": 140
+   "age_seconds": 260
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -64,10 +64,11 @@
     "slice": "bot inline mode (parity:bots-inline-mode)",
     "branch": "parity/bots-inline-mode",
     "worktree": "~/workspace/quill-l2-inline-mode",
-    "phase": "researching",
+    "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Phase 2 start per Idan 17:53 CDT directive (no standby). Claimed inline mode first (highest user value). Worktree at bda4307. Research subagent gathering evidence pack on existing GIF-search inline backend, schema, composer, popup UI patterns, TGX behavior. Open PRs repo-wide: 2 (#180, #181), cap not binding."
+    "detail": "parity:bots-inline-mode implementation complete in worktree (branch parity/bots-inline-mode): @bot trigger parse, searchPublicChat resolution w/ generation correlation, 100ms debounce, results dropdown, sendInlineQueryResultMessage, secret-chat alert on typed path, screenshot demo ready-inline-results. Waiting on UI compile check + gates before PR.",
+    "updated_at": "2026-09-30T00:15:00Z"
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -162,7 +163,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 2333
+   "age_seconds": 2453
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -183,24 +184,24 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T23:24:33Z",
+   "updated_at": "2026-09-29T23:34:33Z",
    "last_evidence_at": "2026-09-29T23:05:00Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 1700
+   "age_seconds": 1820
   },
   {
-   "coordinator": "3b206b72-87f3-4482-b9be-3c7ddca21736-loop4",
+   "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
    "current": {
-    "slice": "reaction + story notification settings (parity:settings-reaction-notif)",
-    "branch": "parity/settings-reaction-notif",
-    "worktree": "~/workspace/quill-l4-reaction-notif",
-    "phase": "implementing",
-    "pr": null,
-    "handoff": null,
-    "detail": "Claimed 2026-09-29T23:31Z after PR #184 opened (mentions-pinned, handed to merge-pipeline). Reaction half: new setReactionNotificationSettings plumbing (requests builder + connect driver + state reducer + envelope update parsing) with source selectors (All/Contacts/None) for message/story reactions and poll votes in Notification defaults dialog. Story half: per-scope 'Notify about stories' Switch via apply_scope_story_mute following the existing apply_scope_preview pattern. Schema verified: reactionNotificationSettings @td_api.tl:3396, setReactionNotificationSettings @13668, updateReactionNotificationSettings @10671; mute_stories in scopeNotificationSettings @3375."
+    "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
+    "branch": "parity/settings-mentions-pinned",
+    "worktree": "~/workspace/quill-l4-mentions-pinned",
+    "phase": "in_review",
+    "pr": 184,
+    "handoff": "merge-pipeline",
+    "detail": "PR #184 OPEN on rebased commit 6493f55 (was b95e551; rebased onto origin/main 4c7ce8b after #180 landed; scripts/check_file_sizes.sh conflict resolved: waiver baselines taken from #180's numbers, slice bump re-measured exact 49204 -> 49338; README checkbox union-kept, no dupes). PR opened 2026-09-29T23:28:35Z on the rebased branch; gates re-verified green post-rebase (fmt, clippy -D warnings, tests, check_file_sizes.sh). Review/merge owned by merge-pipeline per FIFO. Repo back at 4-PR cap (#181-#184)."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -219,16 +220,17 @@
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
-    "branch": "parity/settings-mentions-pinned",
-    "worktree": "~/workspace/quill-l4-mentions-pinned",
+    "branch": "parity/auth-profile-accent",
+    "worktree": "/home/hatch/workspace/quill-loop4-a12",
+    "slice": "auth-profile-accent: profile accent color (setProfileAccentColor)",
     "phase": "in_review",
-    "pr": 184,
-    "handoff": "merge-pipeline",
-    "detail": "PR #184 OPEN on rebased commit 6493f55 (was b95e551; rebased onto origin/main 4c7ce8b after #180 landed; scripts/check_file_sizes.sh conflict resolved: waiver baselines taken from #180's numbers, slice bump re-measured exact 49204 -> 49338; README checkbox union-kept). PR opened 2026-09-29T23:28:35Z on the pushed rebased branch; gates re-verified green post-rebase by the watchdog-restart coordinator (fmt, clippy -D warnings, tests, check_file_sizes). Review/merge owned by merge-pipeline per FIFO. Repo back at 4-PR cap (#181-#184)."
+    "pr": 180,
+    "commit": "a0c81b68496935ca6b3b3eaba15f073ad7454479",
+    "detail": "PR #180 OPEN and CI GREEN (linux-fmt-clippy-test + macos-compile-smoke SUCCESS, verified 2026-09-29T22:18Z); handoff merge-pipeline \u2014 review/merge owned by merge pipeline. Awaiting dedicated review.",
+    "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T23:31:00Z",
+   "last_evidence_at": "2026-09-29T23:30:06Z",
    "updated_at": "2026-09-29T23:28:44Z",
    "last_merge": {
     "pr": 164,
@@ -257,8 +259,15 @@
     },
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
+   "watchdog_restart_note": {
+    "at": "2026-09-29T23:35:00Z",
+    "by": "watchdog-restart coordinator instance (session 5b79b949-a6fa-453e-8ebd-9773a58e9d59)",
+    "finding": "Watchdog misfire: loop was NOT dead. Prior coordinator instance e33b2d4d is alive and productive: it opened PR #184 (2026-09-29T23:28:35Z) on the rebased branch and is actively implementing the reaction-notif slice in ~/workspace/quill-l4-reaction-notif (branch parity/settings-reaction-notif, created 23:08Z; uncommitted WIP +138 lines in src/telegram/envelope.rs + src/telegram/requests.rs; files edited as recently as 23:32:55Z).",
+    "done_by_this_instance": "Rebased parity/settings-mentions-pinned b95e551 -> 6493f55 onto origin/main 4c7ce8b (post-#180); resolved scripts/check_file_sizes.sh conflict with exact waiver bump 49204 -> 49338 (+134); README checkbox union kept; re-gated green post-rebase (fmt, clippy -D warnings, tests, check_file_sizes.sh); verified cap slot (3 open at the time) and that no PR existed on the branch; force-pushed 6493f55; verified PR #184 exists on it; recorded in_review handoff in this JSON. Touched NOTHING in ~/workspace/quill-l4-reaction-notif.",
+    "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
+   },
    "stale": false,
-   "age_seconds": 140
+   "age_seconds": 314
   }
  ]
 }
