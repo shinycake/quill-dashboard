@@ -35,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T23:35:57Z",
+   "updated_at": "2026-09-29T23:45:58Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -55,8 +55,8 @@
    "standing_rules": {
     "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
    },
-   "stale": false,
-   "age_seconds": 788
+   "stale": true,
+   "age_seconds": 904
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -68,7 +68,7 @@
     "pr": null,
     "handoff": null,
     "detail": "parity:bots-inline-mode implementation complete in worktree (branch parity/bots-inline-mode): @bot trigger parse, searchPublicChat resolution w/ generation correlation, 100ms debounce, results dropdown, sendInlineQueryResultMessage, secret-chat alert on typed path, screenshot demo ready-inline-results. Waiting on UI compile check + gates before PR.",
-    "updated_at": "2026-09-29T23:35:56Z"
+    "updated_at": "2026-09-29T23:45:57Z"
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -153,7 +153,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T23:35:56Z",
+   "updated_at": "2026-09-29T23:45:57Z",
    "last_merge": {
     "pr": 178,
     "slice": "S17 choosing-a-sticker chat action",
@@ -163,7 +163,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 2981
+   "age_seconds": 3097
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -184,13 +184,13 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T23:34:33Z",
+   "updated_at": "2026-09-29T23:44:32Z",
    "last_evidence_at": "2026-09-29T23:05:00Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 2348
+   "age_seconds": 2464
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -266,8 +266,8 @@
     "done_by_this_instance": "Rebased parity/settings-mentions-pinned b95e551 -> 6493f55 onto origin/main 4c7ce8b (post-#180); resolved scripts/check_file_sizes.sh conflict with exact waiver bump 49204 -> 49338 (+134); README checkbox union kept; re-gated green post-rebase (fmt, clippy -D warnings, tests, check_file_sizes.sh); verified cap slot (3 open at the time) and that no PR existed on the branch; force-pushed 6493f55; verified PR #184 exists on it; recorded in_review handoff in this JSON. Touched NOTHING in ~/workspace/quill-l4-reaction-notif.",
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
-   "stale": false,
-   "age_seconds": 842
+   "stale": true,
+   "age_seconds": 958
   }
  ]
 }
