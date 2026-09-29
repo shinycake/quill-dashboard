@@ -1,24 +1,24 @@
 {
- "generated_at": "2026-09-29T19:05:20.536969+00:00",
+ "generated_at": "2026-09-29T19:07:21.379874+00:00",
  "target_lines": 2000,
  "files": [
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "waiver": 48748,
-   "current": 48748
+   "waiver": 48767,
+   "current": 48751
   },
   {
    "path": "src/connect.rs",
    "original": 23615,
-   "waiver": 24405,
-   "current": 24405
+   "waiver": 24449,
+   "current": 24449
   },
   {
    "path": "src/state.rs",
    "original": 20295,
-   "waiver": 21311,
-   "current": 21311
+   "waiver": 21331,
+   "current": 21331
   },
   {
    "path": "src/telegram/envelope.rs",
@@ -29,8 +29,8 @@
   {
    "path": "src/telegram/requests.rs",
    "original": 10262,
-   "waiver": 10407,
-   "current": 10407
+   "waiver": 10434,
+   "current": 10434
   },
   {
    "path": "src/calls/engine.rs",
