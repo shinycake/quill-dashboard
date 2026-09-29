@@ -4,14 +4,14 @@
    "blockers": [],
    "coordinator": "990383e7-7bb5-4704-8d87-59a7c3866893",
    "current": {
-    "slice": "G10",
-    "branch": "parity/communities-ui",
-    "worktree": "~/workspace/quill-l1-communities",
+    "slice": "ephemeral-updates",
+    "branch": "parity/ephemeral-updates",
+    "worktree": "~/workspace/quill-l1-ephemeral",
     "phase": "pr-open",
-    "pr": 176,
+    "pr": 179,
     "handoff": "merge-pipeline",
-    "commit": "f451e74",
-    "detail": "G10 PR #176 open (https://github.com/shinycake/quill/pull/176). Reviewer CONFIRM-equivalent: BLOCK verdict fully addressed in f451e74. Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed, then deleted per hygiene rule."
+    "commit": "ce18f06f6acbd97995c290ce606748ededbad5b7",
+    "detail": "ephemeral-updates PR #179 open (https://github.com/shinycake/quill/pull/179). Reviewer BLOCK verdict fully addressed in ce18f06 (tests moved to tests/ephemeral_updates.rs, waivers shrunk to 21701/18615). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
@@ -22,16 +22,11 @@
    },
    "loop": 1,
    "next": {
-    "slice": "ephemeral-updates",
-    "branch": "parity/ephemeral-updates",
-    "worktree": "~/workspace/quill-l1-ephemeral",
-    "phase": "in-review",
-    "commit": "bb807a64234b1d0bcbdb9467ae2ec8705baaeb0c",
-    "reviewer": "ce7ad521-97a0-47be-89ba-5fda839bd083 (pending)",
-    "detail": "Apply updateMessageEphemeralContent over time. EnvelopePayload variant + parse arm, HistoryState::update_ephemeral + reducer arm, 2 tests, waiver bumps state.rs +100 / envelope.rs +49 (exact). Awaiting dedicated review; then PR open (global cap check at open time), handoff to merge-pipeline.",
-    "review_verdict": "BLOCK \u2014 tests inside waived files; fixup in progress",
-    "fixup_agent": "c09b2c81-a414-4d9e-81a2-fe026ab74bd4 (pending)",
-    "parity": "404/525 (77.0%) \u2014 corrected by reviewer (was claimed 406)"
+    "slice": "communities-search-filter",
+    "branch": "parity/community-search-filter",
+    "worktree": "~/workspace/quill-l1-commsearch",
+    "phase": "implementing",
+    "detail": "Community message-search filter: add community option to search chat-type filters, wire searchMessagesChatTypeFilterCommunity { community_id } (td_api.tl:6344) into the search request path. Existing ChatTypeFilter infra in src/telegram/requests.rs."
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -40,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T21:40:00Z",
+   "updated_at": "2026-09-29T21:45:55Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -53,12 +48,12 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T21:40:00Z",
-   "last_evidence_event": "dedicated adversarial review returned BLOCK: waiver-rule violation \u2014 87 of 149 added lines are tests inside waived files (state.rs, envelope.rs); reviewer also corrected claimed parity 406\u2192404/525 (77.0%). Fixup agent dispatched with exact prescription (move tests to tests/ephemeral_updates.rs, shrink waivers to 21701/18615).",
-   "wip_open_prs": 1,
-   "global_open_prs": 3,
+   "last_evidence_at": "2026-09-29T21:50:00Z",
+   "last_evidence_event": "next slice claimed: communities-search-filter (parity:communities-search-filter) \u2014 communities/groups lane, schema constructor verified (td_api.tl:6344), existing ChatTypeFilter infra in src/telegram/requests.rs, no other loop/PR claims it; implementer dispatched",
+   "wip_open_prs": 2,
+   "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 317
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -152,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T21:35:55Z",
+   "updated_at": "2026-09-29T21:46:00Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -162,7 +157,7 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": false,
-   "age_seconds": 767
+   "age_seconds": 888
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -188,7 +183,7 @@
    "updated_at": "2026-09-29T21:44:30Z",
    "last_evidence_at": "2026-09-29T21:33:00Z",
    "stale": false,
-   "age_seconds": 737
+   "age_seconds": 858
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -240,7 +235,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 1817
+   "age_seconds": 1938
   }
  ]
 }

@@ -18,7 +18,7 @@
   },
   {
    "area": "Groups, supergroups & channels",
-   "label": "G10",
+   "label": "G10: community create/hub/info UI",
    "kind": "pr",
    "pr": 176,
    "url": "https://github.com/shinycake/quill/pull/176",
@@ -26,7 +26,7 @@
   },
   {
    "area": "Messaging core",
-   "label": "ephemeral-updates: apply updateMessageEphemeralContent over time",
+   "label": "ephemeral-updates",
    "kind": "pr",
    "pr": 179,
    "url": "https://github.com/shinycake/quill/pull/179",
