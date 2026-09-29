@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:17:19.153315+00:00",
+ "generated_at": "2026-09-29T20:19:20.071941+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 207
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -145,7 +145,7 @@
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
    "stale": false,
-   "age_seconds": 88
+   "age_seconds": 209
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -169,7 +169,7 @@
    "status": "active",
    "updated_at": "2026-09-29T20:14:30Z",
    "stale": false,
-   "age_seconds": 169
+   "age_seconds": 290
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -208,7 +208,7 @@
     "detail": "PR #164 MERGED 2026-09-29T18:53:25Z as 2a36aed (opened as commit d50d515): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry; README auth-delete-account + auth-account-ttl checked (374/525 = 71.2%). Screenshot docs/screenshots/ready-account.png captured from a real GPUI window (injected fixtures, dialog open). ALL GATES GREEN: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay), cargo build --features ui, check_file_sizes, 2 new ui unit tests (cargo test --features ui --bin quill account_lifecycle). REVIEWER GAP: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before merge; parent must arrange. Do NOT merge without review (standing: coordinators never merge own PRs)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:08:38Z",
+   "updated_at": "2026-09-29T20:18:40Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -218,7 +218,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 521
+   "age_seconds": 40
   }
  ]
 }
