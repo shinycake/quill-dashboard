@@ -17,14 +17,6 @@
    "branch": "parity/bots-force-reply"
   },
   {
-   "area": "Groups, supergroups & channels",
-   "label": "G10: community create/hub/info UI",
-   "kind": "pr",
-   "pr": 176,
-   "url": "https://github.com/shinycake/quill/pull/176",
-   "branch": "parity/communities-ui"
-  },
-  {
    "area": "Messaging core",
    "label": "ephemeral-updates",
    "kind": "pr",

@@ -258,18 +258,18 @@
     "Welcome messages: joiner-side rendering \u2014 welcome content reaches a new joiner as regular `updateNewMessage` messages (server pushes `updateNewEphemeralMessage` with `welcome_template=false`; TDLib converts it to a normal message) and renders through the existing message pipeline; `updateChatWelcomeMessages` is pack sync for admins only (requires `can_send_welcome_messages`; TGX leaves it unhandled) and is never delivered to plain joiners \u2014 mechanism verified against TDLib 1.8.67 source, see DECISIONS.md",
     "Welcome messages: add/edit/delete via addChatWelcomeMessage, editChatWelcomeMessage, deleteChatWelcomeMessage, loadChatWelcomeMessages (gated on `can_send_welcome_messages`; pack refetched after each confirmed mutation) (src/ui/mod.rs, src/connect.rs)",
     "Welcome message setup: Welcome-message row in the group/channel info panel opens the pack editor dialog (src/ui/mod.rs)",
+    "Communities: create a community (createCommunity exists in TDLib 1.8.67; backend \u2014 builder + driver + state sync \u2014 plus \"New community\" dialog UI: name field, base-chat picker, hide-chat option)",
+    "Communities: browse and manage owned communities (backend \u2014 builders + drivers + state sync for create/loadFullInfo/setName \u2014 plus Communities hub dialog listing owned communities with per-row info buttons)",
+    "Communities: info panel (backend \u2014 loadFullInfo/setName builders + drivers + state sync \u2014 plus community info panel UI: name with edit prompt, admin/banned/request counts, chat list with hidden badges)",
     "Communities: \"chat added to community\" service message (`messageChatAddedToCommunity`; TGX `ActionChatAddedToCommunity`/`ActionChatAddedToCommunityUnknown` verbatim \u2014 `This chat was added to community \"NAME\"` with the name from the session `updateCommunity` cache, nameless fallback when unknown) (src/telegram/envelope.rs, src/ui/mod.rs)",
     "Communities: \"chat removed from community\" service message (`messageChatRemovedFromCommunity`; TGX `ActionChatRemovedFromCommunity` verbatim \u2014 `This chat was removed from community`) (src/telegram/envelope.rs, src/ui/mod.rs)",
     "Communities: community join service message (`messageChatJoinFromCommunity`; TGX `group_user_join_from_community*` verbatim \u2014 `{name} joined the group from the community \"NAME\"` / `You joined the group from the community \"NAME\"`, nameless fallbacks; sender kept uncollapsed so incoming rows attribute the join) (src/telegram/envelope.rs, src/ui/mod.rs)"
    ],
    "pending": [
-    "Communities: create a community (createCommunity exists in TDLib 1.8.67; Quill backend landed \u2014 builder + driver + state sync; no Quill UI)",
-    "Communities: browse and manage owned communities (partial: Quill backend landed \u2014 builders + drivers + state sync for create/loadFullInfo/setName; no Quill UI)",
     "Communities: toggle community chat visibility (blocked: no TDLib 1.8.67 method to toggle hidden state)",
     "Communities: community chat-list mode (view a community's chats as a filtered chat list)",
     "Communities: add a chat to a community (blocked: no TDLib 1.8.67 method)",
     "Communities: admin-rights management (blocked: no TDLib 1.8.67 method)",
-    "Communities: info panel (partial: Quill backend landed \u2014 loadFullInfo/setName builders + drivers + state sync; no Quill UI)",
     "Communities: community search filter (searchMessagesChatTypeFilterCommunity)"
    ]
   },
