@@ -909,7 +909,7 @@
   {
    "number": 185,
    "title": "infra: delete check_file_sizes.sh waiver system",
-   "updated_at": "2026-09-29T23:39:41Z",
+   "updated_at": "2026-09-29T23:48:31Z",
    "html_url": "https://github.com/shinycake/quill/pull/185",
    "head": {
     "ref": "parity/remove-check-file-sizes"
