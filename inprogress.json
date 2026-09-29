@@ -33,6 +33,14 @@
    "branch": "parity/ephemeral-updates"
   },
   {
+   "area": "Platform & edge cases",
+   "label": "platform-minimize-to-tray: minimize/close-to-tray behavior",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-minimize-to-tray"
+  },
+  {
    "area": "Stickers, emoji & GIFs",
    "label": "S18 sticker suggestions by emoji in composer",
    "kind": "branch",
