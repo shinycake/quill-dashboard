@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": true,
-   "age_seconds": 1217
+   "age_seconds": 1338
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -147,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:44:00Z",
+   "updated_at": "2026-09-29T22:38:33Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -155,9 +155,9 @@
     "parity": "403/525 (76.8%)",
     "note": "Backend-only, no README box change."
    },
-   "last_evidence_at": "2026-09-29T22:44:00Z",
+   "last_evidence_at": "2026-09-29T22:38:33Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 45
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -168,7 +168,7 @@
     "base": "origin/main @ fdc7ea7",
     "phase": "implementing",
     "pr": null,
-    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance."
+    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance. Replacement coordinator dispatched 2026-09-29T22:48Z to resume badge-settings in the existing worktree (prior coordinator died in daemon restart)."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
@@ -177,8 +177,8 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:34:34Z",
-   "last_evidence_at": "2026-09-29T22:45:00Z",
+   "updated_at": "2026-09-29T22:38:09Z",
+   "last_evidence_at": "2026-09-29T22:48:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -220,8 +220,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:46:00Z",
-   "updated_at": "2026-09-29T22:46:00Z",
+   "last_evidence_at": "2026-09-29T22:38:33Z",
+   "updated_at": "2026-09-29T22:38:38Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -231,7 +231,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 45
   }
  ]
 }

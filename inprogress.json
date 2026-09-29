@@ -25,6 +25,14 @@
    "branch": "parity/chatlist-badge-settings"
   },
   {
+   "area": "Chat list",
+   "label": "community-chatlist-mode",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/community-chatlist-mode",
+   "branch": "parity/community-chatlist-mode"
+  },
+  {
    "area": "Groups, supergroups & channels",
    "label": "communities-search-filter",
    "kind": "pr",
