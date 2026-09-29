@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:25:20.348516+00:00",
+ "generated_at": "2026-09-29T17:27:21.115172+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,11 +34,11 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T17:23:00Z",
+   "updated_at": "2026-09-29T17:25:55Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
-   "current_status": "GATES PENDING: G10 communities create + hub + info UI implemented and pushed (b82341d, branch parity/communities-ui, worktree ~/workspace/quill-l1-communities). Remote Mac UI build FAILED first run (2 ui-only errors: window out of scope in hub Info button, Debug derive on CommunityUi) -- both fixed in b82341d; remote rebuild 36604401681 dispatched, in progress. Local --features ui build restarting for screenshots (previous session died mid-build). cargo fmt / clippy --no-default-features -D warnings / cargo test --no-default-features / check_file_sizes.sh all green on the pushed tree. Parity 375/525 = 71.4% (3 boxes checked). Remaining: screenshots (ready-community-create/hub/info) + docs/screenshots/README.md, then READY-FOR-REVIEW (no PR until parent relays APPROVED).",
+   "current_status": "UI GATE GREEN: remote Mac UI build (run 36604401681, ref parity/communities-ui @ b82341d) concluded success. cargo fmt / clippy --no-default-features -D warnings / cargo test --no-default-features / check_file_sizes.sh all green on the pushed tree. Parity 375/525 = 71.4% (3 boxes checked). Remaining: local --features ui build (restarted ~17:24, for screenshots) -> capture ready-community-create/hub/info PNGs -> docs/screenshots/README.md rows -> final gates re-check -> READY-FOR-REVIEW (no PR until parent relays APPROVED).",
    "parity": "375/525 = 71.4%",
    "last_slice": {
     "id": "G9",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 140
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -125,7 +125,7 @@
     "s13": "PR #167 (open, awaiting review)",
     "s14": "implementing (branch parity/loop2-s14-story-restriction @ 494e16b, gates green, awaiting review)"
    },
-   "updated_at": "2026-09-29T17:15:54Z",
+   "updated_at": "2026-09-29T17:25:54Z",
    "last_merge": {
     "pr": 158,
     "slice": "S11 group sticker-set management backend",
@@ -135,7 +135,7 @@
     "note": "Adversarial review: APPROVE, no blockers. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 87
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -159,7 +159,7 @@
    "status": "active",
    "updated_at": "2026-09-29T17:24:31Z",
    "stale": false,
-   "age_seconds": 49
+   "age_seconds": 170
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -208,7 +208,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 401
+   "age_seconds": 522
   }
  ]
 }
