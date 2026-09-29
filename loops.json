@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:45:17.124275+00:00",
+ "generated_at": "2026-09-29T15:47:17.370442+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:35:53Z",
+   "updated_at": "2026-09-29T15:45:53Z",
    "current_slice": "G9",
    "current_branch": "parity/community-service-rows",
    "current_commit": "377c4ed",
@@ -54,11 +54,18 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 84
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S13 IMPLEMENTED, PR #167 OPEN (do not merge): story custom-emoji + paid chosen reactions backend. Branch parity/loop2-s13-story-reactions @ 1bde19e (worktree ~/workspace/quill-loop2-s13), pushed. New StoryChosenExtraReaction { CustomEmoji(i64), Paid }; parse_story_chosen_reaction returns (emoji, extra) with new match arms; ParsedStory::chosen_reaction_extra + StoryInteractionView::reaction_extra fields (story + viewers list no longer drop non-emoji chosen reactions); set_story_custom_emoji_reaction builder (requests.rs) + ConnectDriver::set_story_custom_emoji_reaction driver (connect.rs, same gates + positive-id check, reuses RequestPurpose::SetStoryReaction). Additive only \u2014 src/ui/mod.rs untouched (frozen for kit Phase 9); the two ui call sites keep their Option<&str> signatures. availableReaction custom-emoji parse deliberately deferred to the post-Phase-9 picker UI slice (frozen picker would render empty chips). All gates green (fmt, clippy -D warnings, 1056 unit + 59 replay tests, file sizes OK with exact waiver bumps: connect.rs 24015->24126, state.rs 20913->20914, envelope.rs 18209->18320, requests.rs 10322->10371). README parity:stories-custom-reactions stays [ ] with partial note; parity steady 372/525 (70.9%). AWAITING adversarial review \u2014 not merged.",
+   "current": {
+    "slice": "S13 story custom-emoji + paid chosen reactions backend",
+    "branch": "parity/loop2-s13-story-reactions",
+    "worktree": "~/workspace/quill-loop2-s13",
+    "phase": "review",
+    "pr": 167,
+    "detail": "Coordinator revived by watchdog 2026-09-29 (previous coordinator dead 90m, no commits/worktree activity). Verified GitHub reality: PRs #158 (S11 group sticker-set backend, branch parity/loop2-s11-group-sticker-set @ ed6159f), #163 (S12 sticker-suggest backend, @ 7c560e9, 3 commits incl. prior fixup+waiver bump), #167 (S13 story reactions backend, @ 1bde19e) all OPEN, MERGEABLE, CLEAN merge state, zero reviews/comments. Dispatched one dedicated adversarial reviewer per PR (read-only). Merge plan: apply fix-ups -> re-run gates via quill-build -> merge S11 then S12 then S13, re-checking mergeability after each. README parity:stories-custom-reactions stays [ ] with partial note. Parity 372/525 (70.9%)."
+   },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
     "pr": 155,
@@ -66,7 +73,7 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "Adversarial review of S13 (PR #167) -> merge; then next Loop 2 slice (stories-restriction-notice backend or stickers-dynamic-order are the top remaining backend candidates)",
+   "next": "Adversarial reviews of S11/S12/S13 (PRs #158/#163/#167) -> fix-ups -> merge; then next Loop 2 slice (stories-restriction-notice backend or stickers-dynamic-order are top remaining backend candidates \u2014 both unchecked in README, lanes clear)",
    "parity": "372/525 (70.9%)",
    "parked": false,
    "phase": "active",
@@ -112,15 +119,15 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T15:35:54Z",
+   "updated_at": "2026-09-29T15:45:51Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 86
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/settings-privacy",
-    "detail": "Slice S3 in review as PR #166. Adversarial review returned approve-once-fixed with 3 mechanical findings (plus partial-box questions the parent is deciding). Fixup applied on parity/settings-privacy: deleted dead PrivacyWho::rules_with_exceptions (19 lines) + doc from src/telegram/requests.rs; deleted dead PrivacySettingKey::ALL from src/telegram/requests_privacy.rs; test repointed at PrivacyRuleDetail::recompose(); corrected 6 wrong schema line citations (userPrivacySettingAllowChatInvites :9003 not :9004; readDatePrivacySettings :9026 not :9022) in requests_privacy.rs, state.rs, DECISIONS.md; waiver entry in scripts/check_file_sizes.sh back to 10323 (verified with wc -l). Gates running. Awaiting adversarial re-review \u2014 do NOT merge own PR.",
+    "detail": "Slice S3 in review as PR #166. Adversarial review returned approve-once-fixed; fixup committed as a163ea2 and pushed to parity/settings-privacy: deleted dead PrivacyWho::rules_with_exceptions (19 lines) + doc from src/telegram/requests.rs; deleted dead PrivacySettingKey::ALL from src/telegram/requests_privacy.rs; test repointed at PrivacyRuleDetail::recompose(); corrected 6 wrong schema line citations (userPrivacySettingAllowChatInvites :9003 not :9004; readDatePrivacySettings :9026 not :9022) in requests_privacy.rs, state.rs, DECISIONS.md; waiver entry in scripts/check_file_sizes.sh back to 10323 (verified with wc -l). All gates green: fmt, clippy -D warnings, test (exit 0), UI build via quill-build (exit 0), check_file_sizes.sh OK. Awaiting adversarial re-review \u2014 do NOT merge own PR.",
     "phase": "settings-privacy-rereview",
     "pr": 166,
     "slice": "Slice 3 in review as PR #166 \u2014 adversarial review APPROVE-ONCE-FINDINGS-FIXED; fixup applied (deleted dead PrivacyWho::rules_with_exceptions + dead const ALL; fixed 6 wrong schema citations; waiver back to 10323), awaiting re-review. Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
@@ -131,9 +138,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:44:32Z",
+   "updated_at": "2026-09-29T16:05:00Z",
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -172,7 +179,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:38:37Z",
    "stale": false,
-   "age_seconds": 400
+   "age_seconds": 520
   }
  ]
 }
