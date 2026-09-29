@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T03:55:17.954643+00:00",
+ "generated_at": "2026-09-29T03:57:17.565484+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -7,20 +7,22 @@
     "slice": "community-service-messages",
     "branch": "parity/community-service-messages",
     "worktree": "~/workspace/quill-l1-community",
-    "phase": "review",
+    "phase": "parked-blocked",
     "pr": null,
-    "detail": "C2k envelope parsing implemented (1f7d8a7, gates green per implementer); in adversarial review. Rebase onto 1905a28 + PR after review."
+    "detail": "C2k review done (1 blocker: 2 exhaustive MessageContent matches in frozen src/ui/mod.rs need arms post-Phase-9; SHOULD-FIX+NITs fixed, rebased onto 1905a28, fmt/clippy/tests green). Parked until Phase 9 unfreezes ui/mod.rs, then 2-arm fix + UI gate + PR."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "slice": null,
-    "note": "TBD after C2k review"
+    "slice": "community-join-service-message",
+    "branch": "parity/community-join-service-message",
+    "worktree": "~/workspace/quill-l1-joincommunity",
+    "phase": "implementing"
    },
    "status": "active",
-   "updated_at": "2026-09-29T03:45:52Z",
+   "updated_at": "2026-09-29T05:00:00Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -39,9 +41,9 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T03:45:57Z",
+   "updated_at": "2026-09-29T03:55:55Z",
    "stale": false,
-   "age_seconds": 560
+   "age_seconds": 82
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -61,7 +63,7 @@
    "status": "active",
    "updated_at": "2026-09-29T03:54:35Z",
    "stale": false,
-   "age_seconds": 42
+   "age_seconds": 162
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -94,7 +96,7 @@
    "status": "active",
    "updated_at": "2026-09-29T03:48:45Z",
    "stale": false,
-   "age_seconds": 392
+   "age_seconds": 512
   }
  ]
 }
