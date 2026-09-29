@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:47:17.370442+00:00",
+ "generated_at": "2026-09-29T15:49:21.154488+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,27 +34,28 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:45:53Z",
+   "updated_at": "2026-09-29T16:05:00Z",
    "current_slice": "G9",
    "current_branch": "parity/community-service-rows",
-   "current_commit": "377c4ed",
-   "current_status": "implemented + committed 377c4ed in ~/workspace/quill-l1-community-rows; gates green (fmt, clippy --no-default-features --all-targets -D warnings, test 1055+59, check_file_sizes.sh with exact waiver bumps: ui/mod.rs 48465->48528, envelope.rs 18209->18264); UI build gate running via quill-build (queued, lock-serialized); pending: build gate, rebase on current origin/main, PR, adversarial review. DO NOT merge own PR.",
+   "current_commit": "b0616c1",
+   "current_status": "PR #168 OPEN (https://github.com/shinycake/quill/pull/168), head b0616c1, branch parity/community-service-rows, worktree ~/workspace/quill-l1-community-rows; all gates green on final tree incl. cargo build --features ui (caught + fixed one ui-only E0004: the &mut caption-edit match in src/ui/mod.rs needed the ChatJoinFromCommunity arm). NEEDS: adversarial reviewer dispatched by parent (depth 2/2 cannot spawn subagents). DO NOT merge own PR.",
    "parity": "375/525 = 71.4%",
    "last_slice": {
     "id": "G9",
     "name": "community service message rows (join/added/removed)",
     "branch": "parity/community-service-rows",
-    "commit": "377c4ed",
+    "commit": "b0616c1",
     "worktree": "~/workspace/quill-l1-community-rows",
+    "pr": 168,
     "checklist_boxes": [
      "parity:groups-added-to-community",
      "parity:groups-removed-from-community",
      "parity:communities-join-service-message"
     ],
-    "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
+    "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -121,7 +122,7 @@
    },
    "updated_at": "2026-09-29T15:45:51Z",
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 210
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -177,9 +178,9 @@
     "slice": "A8 change phone number (backend)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:38:37Z",
+   "updated_at": "2026-09-29T15:48:38Z",
    "stale": false,
-   "age_seconds": 520
+   "age_seconds": 43
   }
  ]
 }
