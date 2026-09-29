@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T08:53:17.042678+00:00",
+ "generated_at": "2026-09-29T08:55:16.654740+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,7 +45,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 447
+   "age_seconds": 566
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -90,7 +90,7 @@
    },
    "parity": "371/525 (70.7%)",
    "stale": false,
-   "age_seconds": 438
+   "age_seconds": 557
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -108,9 +108,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T08:44:34Z",
+   "updated_at": "2026-09-29T08:54:35Z",
    "stale": false,
-   "age_seconds": 523
+   "age_seconds": 41
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -143,7 +143,7 @@
    "status": "active",
    "updated_at": "2026-09-29T08:48:40Z",
    "stale": false,
-   "age_seconds": 277
+   "age_seconds": 396
   }
  ]
 }
