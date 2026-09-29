@@ -35,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:17:00Z",
+   "updated_at": "2026-09-29T22:15:56Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 19
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -147,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:05:52Z",
+   "updated_at": "2026-09-29T22:15:54Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -157,7 +157,7 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": true,
-   "age_seconds": 2569
+   "age_seconds": 2689
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -183,7 +183,7 @@
    "updated_at": "2026-09-29T22:16:00Z",
    "last_evidence_at": "2026-09-29T21:50:41Z",
    "stale": true,
-   "age_seconds": 1478
+   "age_seconds": 1598
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
