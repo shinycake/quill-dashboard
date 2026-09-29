@@ -52,10 +52,10 @@
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
    "last_evidence_at": "2026-09-29T22:47:00Z",
    "last_evidence_event": "communities-chatlist-mode reviewer agent errored on daemon restart (no verdict); re-dispatched identical review brief",
-   "wip_open_prs": 2,
-   "global_open_prs": 4,
+   "wip_open_prs": 1,
+   "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 18
+   "age_seconds": 139
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -75,8 +75,8 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "S18 sticker-suggest-by-emoji (getStickers query + composer suggestion row + Installed/Recommended/None setting); #178 (S17) open under merge-pipeline.",
-   "parity": "403/525 (76.8%) \u2014 main; +1 pending via #178 (stickers-typing-action)",
+   "next": "S18 sticker-suggest-by-emoji (getStickers query + composer suggestion row + Installed/Recommended/None setting); parked to phase 4 per Idan.",
+   "parity": "409/525 (77.9%) -- main @ fdc7ea73778b (verified 2026-09-29T22:48Z watchdog)",
    "parked": false,
    "phase": "active",
    "pr": {
@@ -128,12 +128,14 @@
     },
     "s17": {
      "number": 178,
-     "state": "open \u2014 handed to merge-pipeline",
+     "state": "merged",
+     "merged_at": "2026-09-29T22:26:17Z",
      "handoff": "merge-pipeline"
     },
     "s16": {
      "number": 175,
-     "state": "open \u2014 handed to merge-pipeline",
+     "state": "merged",
+     "merged_at": "2026-09-29T21:43:03Z",
      "handoff": "merge-pipeline"
     }
    },
@@ -151,15 +153,15 @@
    },
    "updated_at": "2026-09-29T22:45:56Z",
    "last_merge": {
-    "pr": 173,
-    "slice": "S15 dynamic sticker-set order (usage-driven)",
-    "merged_at": "2026-09-29T21:11:49Z",
-    "parity": "403/525 (76.8%)",
-    "note": "Backend-only, no README box change."
+    "pr": 178,
+    "slice": "S17 choosing-a-sticker chat action",
+    "merged_at": "2026-09-29T22:26:17Z",
+    "commit": "fdc7ea73",
+    "parity": "409/525 (77.9%)"
    },
    "last_evidence_at": "2026-09-29T22:40:30Z",
    "stale": false,
-   "age_seconds": 408
+   "age_seconds": 529
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -185,7 +187,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": false,
-   "age_seconds": 75
+   "age_seconds": 196
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -226,7 +228,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-29T22:43:00Z",
-   "updated_at": "2026-09-29T22:43:00Z",
+   "updated_at": "2026-09-29T22:48:42Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -255,7 +257,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 258
+   "age_seconds": 379
   }
  ]
 }
