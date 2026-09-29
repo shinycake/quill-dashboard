@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:25:18.399576+00:00",
+ "generated_at": "2026-09-29T14:27:17.586450+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,13 +34,13 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:35:00Z",
+   "updated_at": "2026-09-29T14:25:51Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S12 in progress: sticker suggestions by emoji in composer (backend) \u2014 StickerSuggestMode in new src/sticker_suggest.rs (persisted in MediaPrefs), trailing-emoji detection, RequestPurpose::SuggestStickers + searchStickers dispatch into StickerPanel::suggestions (InstalledOnly filters to installed set ids), update_sticker_suggestions driver with dedupe + stale in-flight drop. Fresh worktree ~/workspace/quill-loop2-s12 on branch parity/loop2-s12-sticker-suggest. Backend-only (composer suggestion-row UI + settings toggle pending post-Phase-9). Tests running; gates so far: fmt OK, cargo check OK, clippy OK, file sizes OK (waiver bumps: state.rs 20913->21017, connect.rs 24015->24064).",
+   "current": "S12 READY FOR REVIEW: sticker suggestions by emoji in composer (backend). Branch parity/loop2-s12-sticker-suggest @ b06e742 (worktree ~/workspace/quill-loop2-s12). StickerSuggestMode in new src/sticker_suggest.rs (persisted in MediaPrefs), trailing-emoji detection incl. keycap sequences, RequestPurpose::SuggestStickers + searchStickers dispatch into StickerPanel::suggestions (InstalledOnly filters to installed set ids), update_sticker_suggestions driver with dedupe + stale in-flight drop. Backend-only; composer suggestion-row UI + settings toggle pending post-Phase-9. All gates green (fmt, clippy -D warnings, 1056+59 tests, file sizes with exact waiver bumps state.rs 20913->21017 / connect.rs 24015->24064). AWAITING adversarial review \u2014 NOT pushed, no PR opened yet.",
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
     "pr": 155,
@@ -84,9 +84,9 @@
     "s7": "PR #155",
     "s11": "PR #158 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T14:15:55Z",
+   "updated_at": "2026-09-29T14:25:51Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 86
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -106,38 +106,44 @@
    "status": "active",
    "updated_at": "2026-09-29T14:24:30Z",
    "stale": false,
-   "age_seconds": 48
+   "age_seconds": 167
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
-    "branch": "parity/auth-change-number-1",
-    "worktree": "/home/hatch/workspace/quill-loop4-a8",
-    "slice": "A8 change phone number (backend)",
-    "phase": "in-review",
-    "detail": "PR #157 opened 2026-09-29 (commit e6535ad): sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode builders + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose unit variants + Session change_number_* fields + reducer arms + connect.rs drivers + 10 new tests; DECISIONS.md A8 entry; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). All gates green: fmt, clippy -D warnings, 1062 lib + 59 replay tests, check_file_sizes (waiver bumps: connect.rs 24104, state.rs 21150, envelope.rs 18293, requests.rs 10407). No UI touched so no --features ui build needed. REVIEWER GAP: this coordinator cannot spawn subagents (depth 2/2) \u2014 performed a rigorous adversarial self-review instead (found + fixed: refused resend/send was clearing the pending number; fixed to keep pending number/timeout since the failed request never aborted the existing verification). Needs a dedicated independent reviewer subagent before merge \u2014 parent must arrange."
+    "branch": "parity/auth-a7-ui",
+    "detail": "PR not yet opened. Slice A9 = the spec'd A7 UI half (kit Phase 9 merged, src/ui touchable again): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only (module decl/re-export, 1 field + init, DialogKind variant, 2 dispatch arms, KINDS entry, sidebar entry, ReadyAccountLifecycle demo variant + arms) \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry appended; README auth-delete-account + auth-account-ttl checked (genuinely complete: backend A7 + UI A9). Gates so far: cargo fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay, green), check_file_sizes OK. cargo build --features ui (final pre-merge gate) running via quill-build (serialized lock). Screenshot demo: quill --screenshot-demo ready-account (fixture: accountTtl 180d + passwordState with password). BLOCKED ON REVIEW: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before PR/merge; parent must arrange.",
+    "phase": "implementing",
+    "slice": "A9 account lifecycle UI (A7 UI half: delete-account dialog + TTL picker)",
+    "worktree": "/home/hatch/workspace/quill-loop4-a9"
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
    "last_merged": {
+    "commit": "dec95dc",
     "pr": 136,
-    "slice": "A7 account lifecycle backend",
-    "commit": "dec95dc"
+    "slice": "A7 account lifecycle backend"
    },
-   "loop": 4,
    "next": {
     "branch": null,
-    "detail": "After A8 PR #157 merges: next Loop 4 lane item (auth/password-recovery, auth-qr-authorize-other, or platform edge cases).",
+    "detail": "After A9 merges: next Loop 4 lane item (auth-password-recovery backend+UI, auth-qr-authorize-other, or platform edge cases).",
     "phase": "queued",
     "slice": null,
     "worktree": null
    },
    "parked": false,
-   "phase": "in-review",
+   "phase": "implementing",
+   "previous": {
+    "branch": "parity/auth-change-number-1",
+    "detail": "PR #157 opened 2026-09-29: sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode builders + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose unit variants + Session change_number_* fields + reducer arms + connect.rs drivers + 10 new tests; DECISIONS.md A8 entry; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). Adversarial review APPROVED; review fixups applied and pushed (fd3375d). Awaiting merge \u2014 untouched worktree at /home/hatch/workspace/quill-loop4-a8.",
+    "phase": "in-review",
+    "pr": 157,
+    "slice": "A8 change phone number (backend)"
+   },
    "status": "active",
-   "updated_at": "2026-09-29T14:18:38Z",
+   "updated_at": "2026-09-29T14:25:58Z",
    "stale": false,
-   "age_seconds": 400
+   "age_seconds": 79
   }
  ]
 }
