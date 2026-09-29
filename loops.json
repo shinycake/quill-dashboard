@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:15:19.771305+00:00",
+ "generated_at": "2026-09-29T02:17:18.386030+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -19,9 +19,9 @@
     "phase": "research"
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:10:00Z",
+   "updated_at": "2026-09-29T02:15:55Z",
    "stale": false,
-   "age_seconds": 319
+   "age_seconds": 83
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -40,18 +40,18 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T02:05:56Z",
+   "updated_at": "2026-09-29T02:15:56Z",
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 82
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
-    "branch": "parity/bots-audit-verify",
-    "detail": "Resumed per Idan 2026-09-28. settings-appearance (quill-l3-s1 @ c3bb7ad) stays parked \u2014 UI-blocked until kit Phase 9 merges. settings-privacy (quill-l3-s2 @ c11d29e) stays parked, NOT rebased: rebase onto current main conflicts in src/ui/mod.rs which the kit Phase 9 coordinator is actively rewriting; rebase deferred to unpark time to avoid wasted/invalidated conflict resolution. Slice 1 (in flight): evidence-verify two audit-noted bot items and check their README boxes. Next in pipeline: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests), research starts at Slice 1 review time.",
     "phase": "bots-backend",
-    "pr": null,
-    "slice": "audit verification: bots-inline-disabled-buttons + bots-poll-show-voters \u2014 implementer done (both verified-as-is, README-only, gates green), DEDICATED adversarial review in flight; inline-mode backend research scout running in parallel (Slice 2 pipeline)"
+    "slice": "Slice 2 queued: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests, no UI) \u2014 research scout in flight; implementer starts when spec lands",
+    "branch": null,
+    "pr": 134,
+    "detail": "PR #134 MERGED 2026-09-29 (rebase): verified bots-inline-disabled-buttons + bots-poll-show-voters, +2 boxes, parity 366/522 = 70.1%. Adversarial review: APPROVE. Gates green. Worktree quill-l3-verify removed, branch deleted local+remote."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -60,9 +60,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:14:36Z",
+   "updated_at": "2026-09-29T02:25:00Z",
    "stale": false,
-   "age_seconds": 43
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -95,7 +95,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:09:01Z",
    "stale": false,
-   "age_seconds": 378
+   "age_seconds": 497
   }
  ]
 }
