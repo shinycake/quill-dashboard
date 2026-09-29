@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:39:18.186750+00:00",
+ "generated_at": "2026-09-29T16:41:16.677894+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 323
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -122,16 +122,19 @@
    },
    "updated_at": "2026-09-29T16:35:54Z",
    "stale": false,
-   "age_seconds": 204
+   "age_seconds": 322
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
-    "slice": "Slice S4 (Settings \u2192 Data & Storage) implementing in worktree ~/workspace/quill-l3-s4 on branch parity/settings-data-storage \u2014 no PR yet, review-gated.",
+    "slice": "Slice S4 (Settings -> Data & Storage) committed 24b085c on branch parity/settings-data-storage \u2014 no PR yet, awaiting adversarial review (at max agent depth; parent must arrange review).",
     "branch": "parity/settings-data-storage",
+    "commit": "24b085ce52fdfb94205aef2a8592f27e8e222bfa",
+    "base": "origin/main @ 5b587bb",
     "pr": null,
-    "phase": "s4-implementation",
-    "detail": "S4 implementing: auto-download per network (getAutoDownloadSettingsPresets/setAutoDownloadSettings), use-less-data-for-calls via TDLib field (old local-only CallPrefs flag deleted), storage usage with per-chat breakdown (chat_limit 50), clear cache via removeAllFilesFromDownloads. New files: src/data_settings.rs, src/telegram/requests_data_settings.rs, src/ui/dialogs/data_storage.rs. README boxes 546-549 checked in-branch; DECISIONS.md slice entry appended. Lib check green; UI check running."
+    "phase": "s4-review-ready",
+    "detail": "S4 review-ready: auto-download per network (getAutoDownloadSettingsPresets/setAutoDownloadSettings, complete 10-field struct, presets seed wifi=high/mobile=medium/roaming=low), shared use-less-data-for-calls toggle driving all three networks (old local-only CallPrefs flag deleted), storage usage with per-chat breakdown (chat_limit 50), clear cache via removeAllFilesFromDownloads (only_active:false/only_completed:true/delete_from_cache:true). Settings apply on confirmed ok (purpose carries sent settings, never optimistically). Fresh screenshot docs/screenshots/ready-storage-usage.png captured via lavapipe on fresh Xvfb (first paint ~1.5s after the 1.5s marker \u2014 capture at marker+1.5s). Gates: cargo fmt, clippy -D warnings (0 errors), tests 1066 lib + 59 replay, full UI build, file-size gate (state.rs waiver 21012->21018 exact, type-coherent). Parity: main 372/525 (70.9%), branch 376/525 (71.6%).",
+    "screenshot": "docs/screenshots/ready-storage-usage.png"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -139,10 +142,10 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:34:32Z",
+   "updated_at": "2026-09-29T16:58:00Z",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
    "stale": false,
-   "age_seconds": 286
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -183,7 +186,7 @@
    "status": "active",
    "updated_at": "2026-09-29T16:38:38Z",
    "stale": false,
-   "age_seconds": 40
+   "age_seconds": 158
   }
  ]
 }
