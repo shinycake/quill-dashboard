@@ -96,10 +96,10 @@
     "Send rich messages (inputMessageRichMessage)",
     "Render richMessage PageBlocks in message bubbles (messageRichMessage, getFullRichMessage)",
     "In-message buttons: render pageBlockButtonRow + richTextButton, taps fire bot callbacks",
-    "Ephemeral messages: render message.ephemeral_content instead of regular content"
+    "Ephemeral messages: render message.ephemeral_content instead of regular content",
+    "Apply updateMessageEphemeralContent (ephemeral content refreshes over time; initial render covered by parity:msg-ephemeral-render)"
    ],
    "pending": [
-    "Apply updateMessageEphemeralContent (ephemeral content refreshes over time; initial render covered by parity:msg-ephemeral-render)",
     "Compact tables in rich messages",
     "Expandable block quotes (long block quotes collapse with an expand affordance; authoring covered by parity:msg-quote-block)",
     "Inline photos/videos in the rich-text composer (partial: inline documents/files/music done \u2014 parity:msg-richtext-inline-doc)",

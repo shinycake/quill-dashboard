@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 409,
+  "done": 410,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 179,
+   "title": "ephemeral-updates: apply updateMessageEphemeralContent over time",
+   "merged_at": "2026-09-29T22:50:33Z",
+   "html_url": "https://github.com/shinycake/quill/pull/179",
+   "head": {
+    "ref": "parity/ephemeral-updates"
+   }
+  },
   {
    "number": 178,
    "title": "Slice S17: show 'choosing a sticker' chat action of others",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/secret-chats-1"
    }
-  },
-  {
-   "number": 80,
-   "title": "parity:calls call history + call settings (C2i)",
-   "merged_at": "2026-09-27T11:41:56Z",
-   "html_url": "https://github.com/shinycake/quill/pull/80",
-   "head": {
-    "ref": "parity/calls-settings"
-   }
   }
  ],
  "openPRs": [
@@ -923,18 +923,29 @@
    "head": {
     "ref": "parity/auth-profile-accent"
    }
-  },
-  {
-   "number": 179,
-   "title": "ephemeral-updates: apply updateMessageEphemeralContent over time",
-   "updated_at": "2026-09-29T22:41:01Z",
-   "html_url": "https://github.com/shinycake/quill/pull/179",
-   "head": {
-    "ref": "parity/ephemeral-updates"
-   }
   }
  ],
  "events": [
+  {
+   "type": "DeleteEvent",
+   "payload": {
+    "ref": "parity/ephemeral-updates"
+   },
+   "created_at": "2026-09-29T22:50:35Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:50:33Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1314,29 +1325,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T20:36:55Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/platform-tray-icon"
-   },
-   "created_at": "2026-09-29T20:36:45Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "bda430766d48fe555a13caf549a88639b630a5a1",
+   "html_url": "https://github.com/shinycake/quill/commit/bda430766d48fe555a13caf549a88639b630a5a1",
+   "commit": {
+    "message": "ephemeral-updates: apply updateMessageEphemeralContent over time (#179)\n\n* Slice: apply updateMessageEphemeralContent (ephemeral content refreshes over time) [parity:msg-ephemeral-updates]\n\n- envelope: new UpdateMessageEphemeralContent variant + parse arm on the\n  existing parse_payload match (td_api.tl:10424); missing ephemeral_content\n  drops the update (MissingField)\n- state: update_ephemeral on HistoryState + reducer arm mirroring\n  UpdateMessageContent \u2014 replaces the stored ephemeral content in place,\n  refreshes chat.last_preview when it is the last message (ephemeral wins\n  via effective_content)\n- tests: parse test (envelope) + reducer test (synthetic update through\n  apply_json asserts stored content and preview)\n- README: parity:msg-ephemeral-updates checked\n- Waiver bumps (exact, post-fmt): state.rs 21654->21754, envelope.rs\n  18600->18649 \u2014 type-coherent extensions only (new enum variant, new\n  match arms on existing matches, new method on existing type)\n\n* ephemeral-updates: review fixups \u2014 move tests to tests/ephemeral_updates.rs, shrink waivers to type-coherent deltas\n\n- tests: both slice tests moved out of the waived files into\n  tests/ephemeral_updates.rs, driven through public APIs only (per the\n  tests/sticker_dynamic_order.rs template); the in-module test fns in\n  src/state.rs and src/telegram/envelope.rs are deleted\n- waivers: exact post-fmt type-coherent deltas \u2014 state.rs 21654->21701\n  (+47: update_ephemeral method + reducer match arm), envelope.rs\n  18600->18615 (+15: UpdateMessageEphemeralContent variant + parse arm);\n  comment fixed, test-growth justification dropped\n- parity 404/525 (77.0%) \u2014 README has 404 checked boxes; the previous\n  commit's 406/525 was a miscount, not repeated here\n\n* Merge-pipeline: rebase post-#178; exact waiver baselines\n\n* Merge-pipeline: add ephemeral-updates DECISIONS.md section\n\n* Merge-pipeline: fix null ephemeral_content semantics (review finding)\n\nSchema-legal explicit null clears the stored ephemeral content instead of\ndropping the update as MissingField. Variant field -> Option, parse arm\ndistinguishes present-null (None) from missing/mistyped (MissingField),\nupdate_ephemeral takes Option and assigns. Null-case test added.\n\nExact waiver bumps (type-coherent): state.rs 21768->21773 (+5),\nenvelope.rs 18619->18633 (+14).\n\n* Merge-pipeline: DECISIONS.md reflects final +52/+29 deltas and null semantics\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T22:50:32Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
    "html_url": "https://github.com/shinycake/quill/commit/fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
@@ -1457,20 +1462,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T19:57:58Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "611966fec507b72f06db093c586fdf1d9fde6fd6",
-   "html_url": "https://github.com/shinycake/quill/commit/611966fec507b72f06db093c586fdf1d9fde6fd6",
-   "commit": {
-    "message": "Slice S3: Settings \u2192 Privacy \u2014 rules, exceptions, read date, blocked users (#166)\n\n* Slice S3: Settings \u2192 Privacy \u2014 rules, exceptions, read date, blocked users\n\n- TDLib 1.8.67: get/setUserPrivacySettingRules, get/setReadDatePrivacySettings,\n  getBlockedMessageSenders + setMessageSenderBlockList (block/unblock)\n- PrivacyRuleDetail: base who + always/never exceptions + preserved extra_rules,\n  TGX canonical order (restrict-users \u2192 allow-users \u2192 base)\n- UI: Privacy overlay (5 visibility rows, 2 call rows, blocked list),\n  per-rule editor (Everybody/Contacts/Nobody, Hide read time for Last Seen),\n  always/never exception pickers, confirmed unblock, block picker\n- Screenshot: docs/screenshots/ready-privacy.png\n\nGates: fmt clean, clippy -D warnings clean, test 954 lib + 59 replay passed,\nbuild --features ui green.\n\n* Slice S3: Settings \u2192 Privacy \u2014 rebase onto main + file-split refactor\n\nRebased onto origin/main@530de44 (kit Phases 4/7/8, story areas #155):\n6 conflicted files resolved via import-list unions; kept both\nInlineQuery + PrivacyRule structs in envelope.rs; kept both payment +\nprivacy request tests; ui/mod.rs render wiring takes kit-Phase-2 HEAD\ncomments + privacy's own 3 overlay wirings (old deleted overlay calls\ndropped). Zero README checked boxes lost; +9 new privacy boxes.\n\nFile-split refactor for the file-size CI gate (waivers only shrink):\nprivacy UI -> src/ui/privacy.rs (impl QuillApp: overlay, rule editor,\nexceptions overlay, blocked users, ready-privacy fixture); privacy\ndomain state -> src/privacy.rs (PrivacyRule, PrivacyRuleDetail,\nPrivacyKeyState + 5 unit tests); privacy requests ->\nsrc/telegram/requests_privacy.rs (PrivacySettingKey + 5 builders +\nshape test). Pure moves, no logic change; verified by a fresh\nready-privacy.png capture from the rebuilt binary.\n\nRemaining waived-file growth is type-coherent only, with exact bumps\nin scripts/check_file_sizes.sh:\n- src/ui/mod.rs 48465 -> 48532 (+67): struct fields, ScreenshotDemo\n  variant + match arm, render wiring, sidebar entry \u2014 cannot live\n  outside the existing QuillApp type/render impl\n- src/connect.rs 24015 -> 24209 (+194): 7 new methods on ConnectDriver\n- src/state.rs 20913 -> 21082 (+169): RequestPurpose variants, reducer\n  match arms, Session.privacy field\n- src/telegram/envelope.rs 18209 -> 18272 (+63): payload variants +\n  parser match arms\n- src/telegram/requests.rs 10322 -> 10342 (+20): PrivacyWho method\n\nGates: cargo fmt clean; clippy -D warnings clean; cargo test\n--no-default-features (1059 + 59 pass); cargo build --features ui\npasses; scripts/check_file_sizes.sh OK.\n\nREADME parity: 381/525 checked (72.6%), +9 privacy boxes.\n\n* Slice S3: review fixup \u2014 delete dead PrivacyWho::rules_with_exceptions + PrivacySettingKey::ALL, fix 6 schema line citations, shrink requests.rs waiver to 10323\n\n* Slice S3: re-review follow-ups \u2014 requests.rs waiver 10323\u219210322, fix stale PrivacyWho::rules_with_exceptions note in DECISIONS.md\n\n* PR #166 review fix: ignore privacy-rule clicks until key is Ready\n\nGuard both send paths on PrivacyKeyState::Ready so a click while the\nrule is Loading/Failed can no longer send a base-only detail and wipe\nthe server-side exceptions (set_privacy_target_who) or recompose a\nbase-less deny-all rule list (edit_exception).\n\nAlso: remove stray Slice S3 doc comment above the unrelated G2 test in\nstate.rs; fix readDatePrivacySettings schema line citation :9022 -> :9026\nin envelope.rs.\n\n* rebase: onto current main + exact S3 waiver bumps (README union verified)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: Muse <muse@hatch.local>\nCo-authored-by: quill-merge <quill-merge@local>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T19:46:43Z"
     }
    },
    "author": {

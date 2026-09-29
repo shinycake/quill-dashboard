@@ -16,14 +16,14 @@
   {
    "path": "src/state.rs",
    "original": 20295,
-   "waiver": 21721,
-   "current": 21721
+   "waiver": 21773,
+   "current": 21773
   },
   {
    "path": "src/telegram/envelope.rs",
    "original": 17953,
-   "waiver": 18604,
-   "current": 18604
+   "waiver": 18633,
+   "current": 18633
   },
   {
    "path": "src/telegram/requests.rs",

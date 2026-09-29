@@ -31,14 +31,6 @@
    "pr": 181,
    "url": "https://github.com/shinycake/quill/pull/181",
    "branch": "parity/community-search-filter"
-  },
-  {
-   "area": "Messaging core",
-   "label": "ephemeral-updates: apply updateMessageEphemeralContent over time",
-   "kind": "pr",
-   "pr": 179,
-   "url": "https://github.com/shinycake/quill/pull/179",
-   "branch": "parity/ephemeral-updates"
   }
  ]
 }
