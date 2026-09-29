@@ -25,7 +25,7 @@
    "branch": "parity/community-search-filter"
   },
   {
-   "area": "Settings",
+   "area": "Media",
    "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
    "kind": "pr",
    "pr": 184,
