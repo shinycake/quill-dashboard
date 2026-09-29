@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T04:29:17.863194+00:00",
+ "generated_at": "2026-09-29T04:31:17.238772+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,7 +9,7 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #139 MERGED (367/522=70.3%). C2k + C2l parked-blocked on Phase 9 unfreeze. group-info-edit implemented (97d164a), in adversarial review."
+    "detail": "PR #139 MERGED (367/522=70.3%). group-info-edit review: 1 BLOCKER (gate wrongly refuses basic-group plain members + permission-holding supergroup members; fix mirrors chat_can_add_members G1 pattern) + test fix; fix subagent dispatched."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -17,17 +17,18 @@
     "slice": "group-info-edit",
     "branch": "parity/group-info-edit",
     "worktree": "~/workspace/quill-l1-groupedit",
-    "phase": "reviewing",
+    "phase": "fixing-review-blocker",
     "commit": "97d164a"
    },
    "status": "active",
-   "updated_at": "2026-09-29T06:45:00Z",
+   "updated_at": "2026-09-29T06:50:00Z",
    "last_merged": {
     "pr": 139,
     "slice": "docs-secret-session-accept",
     "parity": "367/522 (70.3%)",
     "commit": "9bdb2d4"
    },
+   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated to this slice, left alone.",
    "stale": false,
    "age_seconds": 0
   },
@@ -50,7 +51,7 @@
     "commit": "098dd94"
    },
    "stale": false,
-   "age_seconds": 200
+   "age_seconds": 320
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -70,7 +71,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:24:40Z",
    "stale": false,
-   "age_seconds": 277
+   "age_seconds": 397
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -103,7 +104,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:28:43Z",
    "stale": false,
-   "age_seconds": 34
+   "age_seconds": 154
   }
  ]
 }
