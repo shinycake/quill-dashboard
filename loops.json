@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:33:21.526961+00:00",
+ "generated_at": "2026-09-29T20:35:20.060171+00:00",
  "loops": [
   {
    "blockers": [],
@@ -51,7 +51,7 @@
    "last_evidence_event": "coordinator restarted; G10 branch state verified (b82341d clean vs origin/main); G10 implementer dispatched (rebase+gates+screenshots+review+PR); pipeline workflow adopted",
    "wip_open_prs": 0,
    "stale": false,
-   "age_seconds": 111
+   "age_seconds": 230
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -148,7 +148,7 @@
    },
    "last_evidence_at": "2026-09-29T20:31:50Z",
    "stale": false,
-   "age_seconds": 91
+   "age_seconds": 210
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -170,10 +170,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:24:31Z",
+   "updated_at": "2026-09-29T20:34:32Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": false,
-   "age_seconds": 159
+   "age_seconds": 277
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -212,6 +212,7 @@
     "detail": "PR #164 MERGED 2026-09-29T18:53:25Z as 2a36aed (opened as commit d50d515): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry; README auth-delete-account + auth-account-ttl checked (374/525 = 71.2%). Screenshot docs/screenshots/ready-account.png captured from a real GPUI window (injected fixtures, dialog open). ALL GATES GREEN: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay), cargo build --features ui, check_file_sizes, 2 new ui unit tests (cargo test --features ui --bin quill account_lifecycle). REVIEWER GAP: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before merge; parent must arrange. Do NOT merge without review (standing: coordinators never merge own PRs)."
    },
    "status": "active",
+   "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "updated_at": "2026-09-29T20:52:00Z",
    "last_merge": {
     "pr": 164,
@@ -221,9 +222,8 @@
     "parity": "374/525 (71.2%)",
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
-   "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": false,
-   "age_seconds": 159
+   "age_seconds": 277
   }
  ]
 }
