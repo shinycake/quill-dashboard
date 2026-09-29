@@ -2,22 +2,6 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "auth-lifecycle-1",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/auth-lifecycle-1",
-   "branch": "parity/auth-lifecycle-1"
-  },
-  {
-   "area": "Auth & accounts",
-   "label": "auth-password-recovery",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/auth-password-recovery",
-   "branch": "parity/auth-password-recovery"
-  },
-  {
-   "area": "Auth & accounts",
    "label": "auth-profile-accent: profile accent color (setProfileAccentColor)",
    "kind": "branch",
    "pr": null,
@@ -34,22 +18,6 @@
   },
   {
    "area": "Groups, supergroups & channels",
-   "label": "community-service-rows",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/community-service-rows",
-   "branch": "parity/community-service-rows"
-  },
-  {
-   "area": "Platform & edge cases",
-   "label": "platform-tray-icon",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/platform-tray-icon",
-   "branch": "parity/platform-tray-icon"
-  },
-  {
-   "area": "Secret chats",
    "label": "G10",
    "kind": "pr",
    "pr": 176,
@@ -57,12 +25,12 @@
    "branch": "parity/communities-ui"
   },
   {
-   "area": "Settings",
-   "label": "settings-data-storage",
+   "area": "Stickers, emoji & GIFs",
+   "label": "S18 sticker suggestions by emoji in composer",
    "kind": "branch",
    "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/settings-data-storage",
-   "branch": "parity/settings-data-storage"
+   "url": null,
+   "branch": "parity/loop2-s18-sticker-suggest"
   },
   {
    "area": "Stickers, emoji & GIFs",
@@ -87,30 +55,6 @@
    "pr": null,
    "url": "https://github.com/shinycake/quill/tree/parity/loop2-s16-emoji-sticker-type",
    "branch": "parity/loop2-s16-emoji-sticker-type"
-  },
-  {
-   "area": "Stories",
-   "label": "S18 sticker suggestions by emoji in composer",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/loop2-s18-sticker-suggest"
-  },
-  {
-   "area": "Stories",
-   "label": "loop2-s13-story-reactions",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s13-story-reactions",
-   "branch": "parity/loop2-s13-story-reactions"
-  },
-  {
-   "area": null,
-   "label": "loop2-s15-dynamic-order",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s15-dynamic-order",
-   "branch": "parity/loop2-s15-dynamic-order"
   }
  ]
 }
