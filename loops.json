@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:01:22.030714+00:00",
+ "generated_at": "2026-09-29T17:03:20.513955+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 327
+   "age_seconds": 445
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -122,7 +122,7 @@
    },
    "updated_at": "2026-09-29T16:55:53Z",
    "stale": false,
-   "age_seconds": 329
+   "age_seconds": 447
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -146,18 +146,18 @@
    "status": "active",
    "updated_at": "2026-09-29T16:54:32Z",
    "stale": false,
-   "age_seconds": 410
+   "age_seconds": 528
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
-    "branch": "parity/auth-password-recovery",
-    "worktree": "/home/hatch/workspace/quill-loop4-a10",
-    "slice": "A10 password recovery (requestAuthenticationPasswordRecovery + recoverAuthenticationPassword, backend + UI)",
-    "phase": "in-review",
-    "pr": 169,
-    "commit": "aa134f6",
-    "detail": "PR #169 opened 2026-09-29 (commit 634c69a): request_authentication_password_recovery + recover_authentication_password builders (schema 1.8.67, td_api.tl:11381/:11390) + shape tests; RequestPurpose variants riding shared auth-error path with honest user_message arms + classification test; ConnectDriver::request_password_recovery (guarded on WaitPassword{has_recovery_email:true}; resend re-issues, server enforces cooldown) + submit_recovery_code (guarded on WaitPassword, empty rejected; code rides request JSON only, zeroized after send \u2014 the A2 rule); new named module src/ui/auth_recovery.rs (kit-first: 'Forgot password?' ghost button, recovery-code entry + Submit/Resend/Back; recovery_mode resets when auth leaves WaitPassword); auth.rs WaitPassword copy updated. checkAuthenticationPasswordRecoveryCode deliberately skipped (recoverAuthenticationPassword validates the code; no extra round-trip). Recovery sets empty new password (removes 2FA); status note points to Settings \u2192 Two-Step Verification (A2) to re-enable. Exact waiver bumps: ui/mod.rs 48465\u219248484 (+19), connect.rs 24015\u219224059 (+44), state.rs 20913\u219220965 (+52), telegram/requests.rs 10322\u219210363 (+41) \u2014 type-coherent only; new code in named module. DECISIONS.md A10 entry; README parity:auth-password-recovery checked (373/525 = 71.0%). Screenshot docs/screenshots/connect-wait-password.png re-captured (wait-password demo, shows 'Forgot password?' button). ALL GATES GREEN on final HEAD: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1056 lib + 59 replay), cargo build --features ui, check_file_sizes.sh. REVIEWER GAP: coordinator at max depth cannot spawn subagents \u2014 needs dedicated independent reviewer subagent before merge; parent must arrange. Do NOT merge without review (standing: coordinators never merge own PRs). ADVERSARIAL REVIEW 2026-09-29: APPROVED, two non-blocking findings. Fixups pushed 2026-09-29 as aa134f6 (NOT MERGED): F1 - sidebar no longer takes recovery_mode/has_recovery_email params (computed from self.recovery_mode / self.current_auth()); auth_password_section(&self, cx) computes them internally; deletes the 14-line call-site matches! block; ui/mod.rs waiver baseline 48484->48475 (exact). F3 - recover_authentication_password_shape now also asserts new_hint:\"\"; requests.rs waiver baseline 10363->10364 (one-line test assertion). F2 deliberately NOT applied (reviewer: duplicated UI guard is harmless defense-in-depth). ALL GATES GREEN on aa134f6: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1055 lib passed in full run; vendored_schema_equals_official_commit failed once only because its curl stalled 6+ min on the sandbox proxy - passes standalone in 2.09s, so 1056/1056), check_file_sizes.sh. STILL AWAITING MERGE: parent must arrange merge (coordinators never merge own PRs)."
+    "branch": "parity/platform-tray-icon",
+    "worktree": "/home/hatch/workspace/quill-loop4-a11",
+    "slice": "platform-tray-icon: system tray icon with unread count (PIVOTED from A11 auth-qr-authorize-other \u2014 TDLib 1.8.67 cannot mint a login token for another device from an authorized client; schema evidence in DECISIONS.md)",
+    "phase": "implementing",
+    "pr": null,
+    "commit": null,
+    "detail": "A11 QR verdict: requestQrCodeAuthentication is WaitPhoneNumber-only (new-device side); confirmQrCodeAuthentication is scan-only (reverse direction); TDLib's only auth.exportLoginToken call site is create_unauth (login flow). Pivot per slice brief. Implementing: src/tray.rs (total_unread + programmatic 64x64 icon + red 99+-capped badge + tray-icon 0.21 handle, sync_tray), main.rs 1s UI-thread timer, ui/mod.rs zero line growth (48465). tray-menu/minimize-to-tray/start-minimized/updater boxes untouched."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
@@ -174,7 +174,7 @@
     "detail": "After A9/A10 merge: next Loop 4 lane item (auth-qr-authorize-other, or platform edge cases). A8 PR #157 file-size CI failure FIXED 2026-09-29: waiver miscounted (connect.rs 24104 vs actual 24109; the three new ConnectDriver methods are type-coherent extensions on an existing type) \u2014 exact bump to 24109 committed as cd2e655 on parity/auth-change-number-1 (worktree /home/hatch/workspace/quill-fix-157), PR description corrected, CI ALL GREEN on new head (linux-fmt-clippy-test + macos-compile-smoke). NOT MERGED \u2014 merge watcher takes it from there."
    },
    "parked": false,
-   "phase": "in-review",
+   "phase": "implementing",
    "previous": {
     "branch": "parity/auth-a7-ui",
     "worktree": "/home/hatch/workspace/quill-loop4-a9",
@@ -195,7 +195,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 163
+   "age_seconds": 281
   }
  ]
 }
