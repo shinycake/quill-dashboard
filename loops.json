@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T05:25:17.562862+00:00",
+ "generated_at": "2026-09-29T05:27:16.437479+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,19 +9,19 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #141 MERGED (367/525=69.9%). PHASE 9 MERGED (PR #142) \u2014 ui/mod.rs UNFROZEN; C2k + C2l now unparkable. Communities backend core approved-with-nits, rebased (30283c9), UI gate building."
+    "detail": "PR #141 MERGED (367/525=69.9%). PHASE 9 MERGED \u2014 C2k UNPARKED (adding ui/mod.rs arms post-freeze). Communities backend core PR #144 open, awaiting CI."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "slice": "community-backend-core",
     "branch": "parity/community-backend-core",
-    "worktree": "~/workspace/quill-l1-communitycore",
-    "phase": "ui-gate",
-    "commit": "30283c9"
+    "phase": "pr-open",
+    "pr": 144,
+    "unpark": "C2k adding UI arms"
    },
    "status": "active",
-   "updated_at": "2026-09-29T08:15:00Z",
+   "updated_at": "2026-09-29T08:30:00Z",
    "last_merged": {
     "pr": 141,
     "slice": "group-info-edit",
@@ -46,7 +46,7 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T05:15:56Z",
+   "updated_at": "2026-09-29T05:25:56Z",
    "pr": {
     "s8": 138,
     "s9": 140
@@ -57,7 +57,7 @@
     "commit": "5da1d24"
    },
    "stale": false,
-   "age_seconds": 561
+   "age_seconds": 80
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -77,7 +77,7 @@
    "status": "active",
    "updated_at": "2026-09-29T05:24:33Z",
    "stale": false,
-   "age_seconds": 44
+   "age_seconds": 163
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -110,7 +110,7 @@
    "status": "active",
    "updated_at": "2026-09-29T05:18:40Z",
    "stale": false,
-   "age_seconds": 397
+   "age_seconds": 516
   }
  ]
 }
