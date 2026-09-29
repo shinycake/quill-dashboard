@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:09:19.968868+00:00",
+ "generated_at": "2026-09-29T15:11:18.975337+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
     "status": "review approved; fixups F1-F3 applied; all gates green; PR #165 open -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 208
+   "age_seconds": 327
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -109,7 +109,7 @@
    },
    "updated_at": "2026-09-29T15:05:50Z",
    "stale": false,
-   "age_seconds": 209
+   "age_seconds": 328
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -128,7 +128,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:04:30Z",
    "stale": false,
-   "age_seconds": 289
+   "age_seconds": 408
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -167,7 +167,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:08:37Z",
    "stale": false,
-   "age_seconds": 42
+   "age_seconds": 161
   }
  ]
 }
