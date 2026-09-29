@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:21:20.110734+00:00",
+ "generated_at": "2026-09-29T21:23:18.966565+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
    "wip_open_prs": 1,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 18
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -152,7 +152,7 @@
    },
    "last_evidence_at": "2026-09-29T20:59:56Z",
    "stale": true,
-   "age_seconds": 1284
+   "age_seconds": 1402
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +178,7 @@
    "updated_at": "2026-09-29T21:21:06Z",
    "last_evidence_at": "2026-09-29T21:21:06Z",
    "stale": false,
-   "age_seconds": 14
+   "age_seconds": 132
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -230,7 +230,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 380
+   "age_seconds": 498
   }
  ]
 }
