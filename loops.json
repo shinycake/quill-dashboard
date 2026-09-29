@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T04:11:18.188163+00:00",
+ "generated_at": "2026-09-29T04:13:16.626747+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -64,7 +64,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:04:37Z",
    "stale": false,
-   "age_seconds": 401
+   "age_seconds": 519
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -97,7 +97,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:08:42Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 274
   }
  ]
 }
