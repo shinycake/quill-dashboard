@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:03:18.091006+00:00",
+ "generated_at": "2026-09-29T15:05:16.726827+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,27 +34,27 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:05:00Z",
+   "updated_at": "2026-09-29T15:03:00Z",
    "current_slice": "G8",
    "current_branch": "parity/groups-info-edit",
-   "current_commit": "9f473b9",
-   "current_status": "implemented \u2014 ready for adversarial review",
+   "current_commit": "351122f",
+   "current_status": "adversarial review APPROVED with non-blocking findings; fixups F1 (honesty: Ok(None) notes -> 'request already in flight'), F2 (waiver rationale corrected to cite the waiver-bump rule's type-coherent-extension carve-out), F3 (photo path ~ expansion) applied. Gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1053 + 59 passed), check_file_sizes.sh. Waiver recalculated exact: ui/mod.rs 48465->48717 (+6 for tilde expansion). Based on origin/main 530de44 (no rebase needed). PR #165 OPEN, head 351122f -- do NOT merge",
    "parity": "375/525 = 71.4%",
    "last_slice": {
     "id": "G8",
     "name": "group/channel title, description, photo edit UI",
     "branch": "parity/groups-info-edit",
-    "commit": "9f473b9",
+    "commit": "351122f",
     "worktree": "~/workspace/quill-l1-g8",
     "checklist_boxes": [
      "parity:groups-set-title",
      "parity:groups-set-description",
      "parity:groups-set-photo"
     ],
-    "status": "implemented, all gates green, awaiting adversarial review \u2014 DO NOT merge without reviewer"
+    "status": "review approved; fixups F1-F3 applied; all gates green; PR #165 open -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 136
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -109,16 +109,16 @@
    },
    "updated_at": "2026-09-29T14:55:53Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 563
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/settings-privacy",
-    "detail": "Rebased onto origin/main@530de44 (7ce6a6d): 6 conflicted files resolved (import-list unions; kept both InlineQuery+PrivacyRule structs in envelope.rs; kept both payment+privacy request tests; ui/mod.rs render wiring takes kit-Phase-2 HEAD comments + privacy's own 3 overlay wirings \u2014 the old deleted overlay calls dropped). Refactored for the file-size CI gate (waivers only shrink): privacy UI -> src/ui/privacy.rs (1038 lines, impl QuillApp), privacy domain state -> src/privacy.rs (PrivacyRule, PrivacyRuleDetail, PrivacyKeyState + 5 unit tests), privacy requests -> src/telegram/requests_privacy.rs (PrivacySettingKey + 5 builders + shape test). ui/mod.rs keeps fields/variants/match arms + render wiring; state.rs keeps RequestPurpose variants + reducer arms; connect.rs keeps driver methods; envelope.rs keeps payload variants. Gates: cargo fmt clean; cargo check/clippy/test + ui build + check_file_sizes.sh queued/running. NOT pushed, no PR yet. 9 README boxes (privacy) verified: 0 lost, +9 new.",
-    "phase": "settings-privacy-rebase",
-    "pr": 159,
-    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Appearance PR #161 OPEN (awaiting fresh adversarial review). Privacy: rebased + file-split refactor, gates running."
+    "detail": "Slice S3 COMPLETE and in review as PR #166 (commit 6ae172b, pushed). Rebased onto origin/main@530de44; 6 conflicts resolved via unions; zero README boxes lost, +9 new (372 -> 381/525 = 72.6%). File-split refactor for the CI size gate: src/ui/privacy.rs (1044 lines, impl QuillApp), src/privacy.rs (352 lines, domain + 5 tests), src/telegram/requests_privacy.rs (204 lines, builders + shape test). Waived-file growth is type-coherent only with exact bumps in scripts/check_file_sizes.sh (ui/mod.rs +67, connect.rs +194, state.rs +169, envelope.rs +63, requests.rs +20). All 5 gates green: fmt, clippy -D warnings, test (1059+59), ui build, check_file_sizes.sh. ready-privacy.png re-captured post-rebase from the rebuilt binary and verified. Fixed two dead rebase-union imports (unread_badge_text, outgoing_status_label) removed by kit Phase 4. Awaiting adversarial review \u2014 do NOT merge own PR.",
+    "phase": "settings-privacy-review",
+    "pr": 166,
+    "slice": "Slice 3 DONE as PR #166 (awaiting adversarial review). Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -126,9 +126,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:54:31Z",
+   "updated_at": "2026-09-29T15:04:30Z",
    "stale": false,
-   "age_seconds": 527
+   "age_seconds": 46
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -167,7 +167,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:58:37Z",
    "stale": false,
-   "age_seconds": 281
+   "age_seconds": 399
   }
  ]
 }
