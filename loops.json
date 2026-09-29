@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T07:21:17.510484+00:00",
+ "generated_at": "2026-09-29T07:23:16.699577+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,18 +45,18 @@
     }
    ],
    "stale": false,
-   "age_seconds": 323
+   "age_seconds": 442
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S5 PR #154 CI running; S7 reviewer running",
+   "current": "S5 PR #154 CI rerun after fmt fix; S7 fixups running",
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
    "next": "Merge S5; S7 fixups + PR",
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T07:35:00Z",
+   "updated_at": "2026-09-29T07:40:00Z",
    "pr": {
     "s8": 138,
     "s9": 140,
@@ -109,7 +109,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:14:32Z",
    "stale": false,
-   "age_seconds": 405
+   "age_seconds": 524
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -142,7 +142,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:18:42Z",
    "stale": false,
-   "age_seconds": 155
+   "age_seconds": 274
   }
  ]
 }
