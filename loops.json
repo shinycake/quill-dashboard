@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T08:45:16.841004+00:00",
+ "generated_at": "2026-09-29T08:47:17.378652+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,7 +20,7 @@
     "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T08:35:51Z",
+   "updated_at": "2026-09-29T08:45:50Z",
    "last_merged": {
     "pr": 147,
     "slice": "docs-secret-session-terminate",
@@ -45,7 +45,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 87
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -56,7 +56,7 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T08:36:00Z",
+   "updated_at": "2026-09-29T08:45:59Z",
    "pr": {
     "s8": 138,
     "s9": 140,
@@ -90,7 +90,7 @@
    },
    "parity": "371/525 (70.7%)",
    "stale": false,
-   "age_seconds": 556
+   "age_seconds": 78
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -110,7 +110,7 @@
    "status": "active",
    "updated_at": "2026-09-29T08:44:34Z",
    "stale": false,
-   "age_seconds": 42
+   "age_seconds": 163
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -143,7 +143,7 @@
    "status": "active",
    "updated_at": "2026-09-29T08:38:40Z",
    "stale": false,
-   "age_seconds": 396
+   "age_seconds": 517
   }
  ]
 }
