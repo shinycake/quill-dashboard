@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-29T13:27:17.468689+00:00",
+ "generated_at": "2026-09-29T13:29:18.714674+00:00",
  "loops": [
   {
-   "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
+   "blockers": [],
+   "coordinator": "104dcfec-76b7-4a06-8acf-c538c75d2fa6",
    "current": {
-    "slice": "community-service-messages",
-    "branch": "parity/community-service-messages",
-    "worktree": "~/workspace/quill-l1-community",
-    "phase": "stalled-recovery",
+    "branch": "parity/calls-screen-share-render",
+    "detail": "C2l: render the peer's 1:1 screen share in the call card (the open gap from C2j). Phase 9 merged (#142) so src/ui/mod.rs is unfrozen. Plan: screen frame becomes the main video-stage tile w/ 'Peer's screen' badge when a frame is retained; dedicated decode-cache slot (seq-0 demo fixtures would collide in the camera slot); track peer screen state on ActiveCall (remote_screen) so a late frame arriving after Inactive can't repopulate a stale tile \u2014 resolves C2j's deferred fencing question. Demo: new ScreenshotDemo::ReadyCallScreenShareReceive fixture for screenshots. README parity:calls-screen-share box to update.",
+    "phase": "implementing",
     "pr": null,
-    "detail": "PR #147 MERGED (docs: secret-session-terminate impossible, premise corrected). PR #146 MERGED 2026-09-29T06:42:04Z \u2014 file-size-cap blocker is MOOT. Awaiting recovery coordinator restart."
+    "slice": "C2l",
+    "worktree": "~/workspace/quill-l1-c2l"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
+   "last_merged": {
+    "commit": "f85661c",
+    "parity": "367/525 (69.9%)",
+    "pr": 147,
+    "slice": "docs-secret-session-terminate"
+   },
    "loop": 1,
    "next": {
-    "slice": "C2l",
+    "detail": "Next lane item per README gaps; coordinator picks on C2l merge.",
     "phase": "queued",
-    "detail": "Next lane item per README gaps; coordinator to pick exact slice on restart."
+    "slice": "TBD"
+   },
+   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated, left alone. quill-l1-community worktree removed (branch merged in #146); fresh worktree quill-l1-c2l created at origin/main 530de44.",
+   "phase9": {
+    "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
+    "pr": 142,
+    "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:25:52Z",
-   "last_merged": {
-    "pr": 147,
-    "slice": "docs-secret-session-terminate",
-    "parity": "367/525 (69.9%)",
-    "commit": "f85661c"
-   },
-   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated to this slice, left alone.",
-   "phase9": {
-    "status": "merged",
-    "pr": 142,
-    "note": "ui/mod.rs unfrozen; C2k/C2l unblocked"
-   },
-   "blockers": [],
+   "updated_at": "2026-09-29T13:35:00Z",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -104,11 +104,11 @@
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
-    "branch": null,
-    "worktree": null,
-    "slice": null,
-    "phase": "stalled-recovery",
-    "detail": "A7 merged as PR #136 at 2026-09-29T13:01:41Z. Remote branch parity/auth-lifecycle-1 deleted (superseded). Awaiting recovery coordinator restart."
+    "branch": "parity/auth-change-number-1",
+    "worktree": "/home/hatch/workspace/quill-loop4-a8",
+    "slice": "A8 change phone number (backend)",
+    "phase": "implementing",
+    "detail": "Builders (send/resend/checkPhoneNumberCode) + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose variants + Session change_number_* fields + reducer arms + connect.rs drivers + tests all written in dedicated worktree; DECISIONS.md A8 entry added; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). Gates running (fmt done, clippy in progress). No PR yet."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
@@ -120,17 +120,17 @@
    "loop": 4,
    "next": {
     "branch": null,
-    "detail": "A8 change phone number (backend). Research complete: sendPhoneNumberCode/checkPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth; README claim corrected). Caveat: schema says official Android/iOS only \u2014 verify server acceptance before UI. Full notes: quill-progress/loop4-research-change-number.md",
+    "detail": "After A8 PR merges: pick next Loop 4 lane item (auth/password-recovery, auth-qr-authorize-other, or platform edge cases).",
     "phase": "queued",
-    "slice": "A8 change phone number (backend)",
+    "slice": null,
     "worktree": null
    },
    "parked": false,
-   "phase": "stalled-recovery",
+   "phase": "implementing",
    "status": "active",
-   "updated_at": "2026-09-29T13:26:00Z",
+   "updated_at": "2026-09-29T13:28:47Z",
    "stale": false,
-   "age_seconds": 77
+   "age_seconds": 31
   }
  ]
 }
