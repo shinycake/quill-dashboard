@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:31:27.149810+00:00",
+ "generated_at": "2026-09-29T21:33:21.906269+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
    "wip_open_prs": 1,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 507
+   "age_seconds": 621
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -62,10 +62,10 @@
     "slice": "S17 choosing-sticker action label",
     "branch": "parity/loop2-s17-choosing-sticker",
     "worktree": "~/workspace/quill-loop2-s17",
-    "phase": "holding-pr",
-    "pr": null,
-    "detail": "S17 implemented, gates green, committed 5ca8e3d, branch pushed. PR NOT opened: per-loop WIP cap (2) full with #173 + #175 open; repo at 3/4 open PRs. Will open when one merges.",
-    "handoff": null
+    "phase": "pr-open",
+    "pr": 178,
+    "detail": "PR #178 opened 2026-09-29T21:32Z; commit fef4263 (rebased onto d4caf43; waiver baselines re-derived post-S15). All gates green (fmt/clippy/test local, Mac UI build run 36632707426 success). Handed to merge-pipeline.",
+    "handoff": "merge-pipeline"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -74,8 +74,8 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "S16 implementing; #173 (S15) open under merge-pipeline.",
-   "parity": "398/525 (75.8%)",
+   "next": "S18 sticker-suggest-by-emoji (getStickers query + composer suggestion row + Installed/Recommended/None setting); #178 (S17) open under merge-pipeline.",
+   "parity": "403/525 (76.8%) \u2014 main; +1 pending via #178 (stickers-typing-action)",
    "parked": false,
    "phase": "active",
    "pr": {
@@ -121,6 +121,12 @@
     },
     "s15": {
      "number": 173,
+     "state": "merged",
+     "merged_at": "2026-09-29T21:11:49Z",
+     "handoff": "merge-pipeline"
+    },
+    "s17": {
+     "number": 178,
      "state": "open \u2014 handed to merge-pipeline",
      "handoff": "merge-pipeline"
     },
@@ -139,20 +145,20 @@
     "s11": "merged (#158 @ bb6d393, 2026-09-29T17:05Z)",
     "s12": "merged (#163 @ 098f453, 2026-09-29T18:41Z)",
     "s13": "merged (#167)",
-    "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)"
+    "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
+    "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T21:25:53Z",
+   "updated_at": "2026-09-29T21:32:30Z",
    "last_merge": {
-    "pr": 172,
-    "slice": "S14 story-posting restriction notices backend",
-    "commit": "cf39d8be82bb12e4902d6ccbe9ea103303a7eb79",
-    "merged_at": "2026-09-29T19:13:22Z",
-    "parity": "372/525 (70.9%)",
-    "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
+    "pr": 173,
+    "slice": "S15 dynamic sticker-set order (usage-driven)",
+    "merged_at": "2026-09-29T21:11:49Z",
+    "parity": "403/525 (76.8%)",
+    "note": "Backend-only, no README box change."
    },
-   "last_evidence_at": "2026-09-29T20:59:56Z",
-   "stale": true,
-   "age_seconds": 1891
+   "last_evidence_at": "2026-09-29T21:32:30Z",
+   "stale": false,
+   "age_seconds": 51
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -160,8 +166,8 @@
     "base": "origin/main @ 8fd501b",
     "branch": "parity/bots-force-reply",
     "commit": "ade480b",
-    "detail": "PR #177 open (parity/bots-force-reply @ af3f881), handoff to merge-pipeline for CI chase + FIFO merge. Adversarial reviewer spawned pre-pipeline-model, finishes under my hand; will apply fixups if it BLOCKs. Repo at 4/4 open PRs (#174, #175, #176, #177) \u2014 feature dev PAUSED per global cap; no new slice until count drops below 4.",
-    "phase": "pr-open-review-under-my-hand",
+    "detail": "PR #177 reviewer verdict: NOT CONFIRM. F1 (armed-vs-newest selector mismatch) fixed in open_chat_force_reply (armed reply wins); F3 fixed: DECISIONS.md rebuilt = current origin/main + my 25-line entry (8 other slices sections restored, incl. S13/A10/S3/S4 the reviewer missed); F4 field order fixed; F2 (is_personal dropped at parse) filed as follow-up in the entry Out-of-this-slice. Fixups committed+pushed; gates green; merge pipeline owns rebase/merge. Repo still 4/4 open PRs \u2014 no new slice.",
+    "phase": "pr-open-review-fixups",
     "pr": 177,
     "screenshot": "docs/screenshots/ready-bot-keyboards.png",
     "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
@@ -175,10 +181,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T21:24:34Z",
-   "last_evidence_at": "2026-09-29T21:21:06Z",
+   "updated_at": "2026-09-29T21:33:00Z",
+   "last_evidence_at": "2026-09-29T21:33:00Z",
    "stale": false,
-   "age_seconds": 621
+   "age_seconds": 21
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -230,7 +236,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 987
+   "age_seconds": 1101
   }
  ]
 }
