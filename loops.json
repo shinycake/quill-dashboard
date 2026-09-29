@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-29T14:13:17.571803+00:00",
+ "generated_at": "2026-09-29T14:15:17.590574+00:00",
  "loops": [
   {
    "blockers": [],
    "coordinator": "104dcfec-76b7-4a06-8acf-c538c75d2fa6",
    "current": {
     "branch": "parity/calls-screen-share-render",
-    "commit": "4c7e0f4",
-    "detail": "C2l implemented + committed: peer 1:1 screen share renders as the main video-stage tile w/ badge; dedicated decode slot; ActiveCall::remote_screen closes the C2j late-frame race; ReadyCallScreenShareReceive demo fixture; README parity:calls-screen-share checked (373/525 = 71.0%). Gates: fmt/clippy/test/size-check green. cargo build --features ui running as final pre-merge gate.",
+    "commit": "ccd80be",
+    "detail": "C2l implemented + committed (ccd80be): peer 1:1 screen share renders as the main video-stage tile w/ badge; dedicated decode slot; ActiveCall::remote_screen closes the C2j late-frame race; ReadyCallScreenShareReceive demo fixture; README parity:calls-screen-share checked (373/525 = 71.0%). All gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1054 passed + new remote_screen_state_recorded_on_call), cargo build --features ui, check_file_sizes.sh. Two fixes since first ui-gate attempt: (1) E0004 seed-match arm for the new demo variant; (2) link needs LIBRARY_PATH=/tmp/xkb-lib (earlier 'success' was masked by tail pipe). Fresh screenshot docs/screenshots/ready-call-screenshare-receive.png captured on :101 (lavapipe) \u2014 peer screen renders with 'Peer's screen' badge. Branch not pushed, no PR yet. NEEDS: dedicated adversarial reviewer from parent (depth 2/2 cannot spawn), then push + PR; do NOT merge.",
     "parity": "373/525 (71.0%)",
-    "phase": "ui-build-gate",
+    "phase": "ready-for-review",
     "pr": null,
     "slice": "C2l",
     "worktree": "~/workspace/quill-l1-c2l"
@@ -34,9 +34,9 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:05:53Z",
+   "updated_at": "2026-09-29T14:16:00Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -86,7 +86,7 @@
    },
    "updated_at": "2026-09-29T14:05:52Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 565
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -104,9 +104,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:04:36Z",
+   "updated_at": "2026-09-29T14:14:31Z",
    "stale": false,
-   "age_seconds": 521
+   "age_seconds": 46
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -137,7 +137,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:08:42Z",
    "stale": false,
-   "age_seconds": 275
+   "age_seconds": 395
   }
  ]
 }
