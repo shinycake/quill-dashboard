@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T11:05:17.385236+00:00",
+ "generated_at": "2026-09-29T11:07:16.512673+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,7 +20,7 @@
     "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T10:55:51Z",
+   "updated_at": "2026-09-29T11:05:51Z",
    "last_merged": {
     "pr": 147,
     "slice": "docs-secret-session-terminate",
@@ -45,7 +45,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 85
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -88,9 +88,9 @@
     "s6": "merged (#149)",
     "s7": "PR #155"
    },
-   "updated_at": "2026-09-29T10:55:52Z",
+   "updated_at": "2026-09-29T11:05:53Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 83
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -110,7 +110,7 @@
    "status": "active",
    "updated_at": "2026-09-29T11:04:37Z",
    "stale": false,
-   "age_seconds": 40
+   "age_seconds": 159
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -143,7 +143,7 @@
    "status": "active",
    "updated_at": "2026-09-29T10:58:50Z",
    "stale": false,
-   "age_seconds": 387
+   "age_seconds": 506
   }
  ]
 }
