@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:45:19.579810+00:00",
+ "generated_at": "2026-09-29T16:47:17.655751+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:35:53Z",
+   "updated_at": "2026-09-29T16:45:53Z",
    "current_slice": "G9",
    "current_branch": "parity/community-service-rows",
    "current_commit": "b0616c1",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 84
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -120,9 +120,9 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T16:35:54Z",
+   "updated_at": "2026-09-29T16:45:52Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 85
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -146,7 +146,7 @@
    "status": "active",
    "updated_at": "2026-09-29T16:44:33Z",
    "stale": false,
-   "age_seconds": 46
+   "age_seconds": 164
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -186,8 +186,16 @@
    },
    "status": "active",
    "updated_at": "2026-09-29T16:38:38Z",
+   "last_merge": {
+    "pr": 157,
+    "slice": "A8 change phone number backend",
+    "commit": "de943a2",
+    "merged_at": "2026-09-29T16:46:44Z",
+    "parity": "372/525 (70.9%)",
+    "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
+   },
    "stale": false,
-   "age_seconds": 401
+   "age_seconds": 519
   }
  ]
 }
