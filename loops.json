@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:17:18.386030+00:00",
+ "generated_at": "2026-09-29T02:19:18.285532+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -21,7 +21,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:15:55Z",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 203
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -42,16 +42,16 @@
    "status": "active",
    "updated_at": "2026-09-29T02:15:56Z",
    "stale": false,
-   "age_seconds": 82
+   "age_seconds": 202
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "phase": "bots-backend",
-    "slice": "Slice 2 queued: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests, no UI) \u2014 research scout in flight; implementer starts when spec lands",
-    "branch": null,
-    "pr": 134,
-    "detail": "PR #134 MERGED 2026-09-29 (rebase): verified bots-inline-disabled-buttons + bots-poll-show-voters, +2 boxes, parity 366/522 = 70.1%. Adversarial review: APPROVE. Gates green. Worktree quill-l3-verify removed, branch deleted local+remote."
+    "slice": "Slice 2 IN FLIGHT: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests, no UI) \u2014 implementer running in ~/workspace/quill-l3-inline on branch parity/bots-inline-backend",
+    "branch": "parity/bots-inline-backend",
+    "pr": null,
+    "detail": "PR #134 merged (parity 366/522 = 70.1%). Slice 2 spec (research scout) complete: no schema gaps, both constructors exist in 1.8.67, dovetails with existing insert_switch_inline_text composer hook. Implementer spawned; dedicated adversarial reviewer queued for its completion."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -60,7 +60,7 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:25:00Z",
+   "updated_at": "2026-09-29T02:28:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -93,9 +93,9 @@
    "parked": false,
    "phase": "implementing",
    "status": "active",
-   "updated_at": "2026-09-29T02:09:01Z",
+   "updated_at": "2026-09-29T02:18:42Z",
    "stale": false,
-   "age_seconds": 497
+   "age_seconds": 36
   }
  ]
 }
