@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:33:17.950138+00:00",
+ "generated_at": "2026-09-29T15:35:19.154622+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 565
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -114,7 +114,7 @@
    },
    "updated_at": "2026-09-29T15:25:54Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 565
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -131,9 +131,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:24:30Z",
+   "updated_at": "2026-09-29T15:34:30Z",
    "stale": false,
-   "age_seconds": 527
+   "age_seconds": 49
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -172,7 +172,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:28:38Z",
    "stale": false,
-   "age_seconds": 279
+   "age_seconds": 401
   }
  ]
 }
