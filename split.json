@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:07:23.281032+00:00",
+ "generated_at": "2026-09-29T17:09:23.552954+00:00",
  "target_lines": 2000,
  "files": [
   {
@@ -67,7 +67,7 @@
    "merged_at": null,
    "number": 160,
    "title": "refactor: split ui/mod.rs batch 3 (keybindings, menu states, history rows, playback, format helpers)",
-   "updated_at": "2026-09-29T16:54:48Z",
+   "updated_at": "2026-09-29T17:08:14Z",
    "extracted": 347
   }
  ]
