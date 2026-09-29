@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T07:15:18.186668+00:00",
+ "generated_at": "2026-09-29T07:17:16.960989+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,7 +20,7 @@
     "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T07:05:52Z",
+   "updated_at": "2026-09-29T07:15:54Z",
    "last_merged": {
     "pr": 147,
     "slice": "docs-secret-session-terminate",
@@ -45,18 +45,18 @@
     }
    ],
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 82
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S10 PR #152 opened; ui build running, awaiting CI",
+   "current": "S10 merged (#152); S5/S7 rebases in flight",
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
-   "next": "Merge S10; then S5/S7 PRs",
+   "next": "S7 review + PR; S5 PR; next Loop 2 slice",
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T07:05:53Z",
+   "updated_at": "2026-09-29T07:20:00Z",
    "pr": {
     "s8": 138,
     "s9": 140,
@@ -64,7 +64,10 @@
      "number": 149,
      "state": "merged"
     },
-    "s10": 152
+    "s10": {
+     "number": 152,
+     "state": "merged"
+    }
    },
    "last_merged": {
     "slice": "S9 GIF backend",
@@ -73,13 +76,13 @@
    },
    "unparked": {
     "s6": "merged (#149)",
+    "s10": "merged (#152)",
     "s5": "rebase in progress",
-    "s7": "rebase in progress",
-    "s10": "PR #152"
+    "s7": "rebase in progress"
    },
    "parity": "368/525 (70.1%)",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 0
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -99,7 +102,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:14:32Z",
    "stale": false,
-   "age_seconds": 46
+   "age_seconds": 164
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -132,7 +135,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:08:47Z",
    "stale": false,
-   "age_seconds": 391
+   "age_seconds": 509
   }
  ]
 }
