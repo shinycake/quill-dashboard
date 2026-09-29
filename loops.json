@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:15:17.590574+00:00",
+ "generated_at": "2026-09-29T14:17:18.089808+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,9 +34,9 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:16:00Z",
+   "updated_at": "2026-09-29T14:15:51Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 87
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -84,18 +84,18 @@
     "s7": "PR #155",
     "s11": "PR #158 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T14:05:52Z",
+   "updated_at": "2026-09-29T14:15:55Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 83
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/bots-payment-clear-backend",
-    "detail": "PR #159 OPEN (payments-clear backend). Appearance branch parity/settings-appearance rebased onto origin/main@530de44 (was 109 behind): resolved conflicts in main.rs, synthetic.rs (kit Phase 4 MessageChrome + BubbleLook union; plain mode -> kit Ghost variant), settings.rs (merged test fns), ui/mod.rs (8 hunks: module decls, kit import union, appearance overlay wiring kept, look-threading ported onto virtualized history pipeline, link-preview fixups kept font scaling + theme-aware colors). Waiver bump src/ui/mod.rs 48465->48628 committed (type-coherent wiring). Gates re-running.",
+    "detail": "PR #159 OPEN (payments-clear backend, no README boxes). Appearance slice parity/settings-appearance rebased onto origin/main@530de44 (109 commits): 8 mod.rs hunks + fixups resolved, kit Phase 4/7/8 integrated (MessageChrome + BubbleLook union, Ghost variant for plain mode, theme-aware link preview, virtualized history look-threading), waiver bump ui/mod.rs 48465->48628, safe_app_root fix, all 5 gates green, fresh screenshot captured, PR #161 OPEN with 6 README boxes (theme-switch, auto-night, accent-color, chat-wallpaper, font-size, bubble-style). Both pre-rebase reviews are STALE \u2014 fresh dedicated adversarial reviewers needed for #159 and #161 before merge. Parity: 371/525 = 70.7% now; 377/525 = 71.8% after #161 merges.",
     "phase": "payments-clear",
     "pr": 159,
-    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Parked settings-appearance: rebased onto origin/main@530de44, re-gating."
+    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Appearance rebased + PR #161 OPEN (awaiting fresh adversarial review). Next: privacy branch rebase."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -104,9 +104,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:14:31Z",
+   "updated_at": "2026-09-29T14:55:00Z",
    "stale": false,
-   "age_seconds": 46
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -137,7 +137,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:08:42Z",
    "stale": false,
-   "age_seconds": 395
+   "age_seconds": 516
   }
  ]
 }
