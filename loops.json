@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:21:19.291212+00:00",
+ "generated_at": "2026-09-29T20:23:19.095926+00:00",
  "loops": [
   {
    "blockers": [],
@@ -46,7 +46,7 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "stale": false,
-   "age_seconds": 79
+   "age_seconds": 199
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -54,7 +54,7 @@
     "slice": "S15 dynamic sticker-set order (backend + state)",
     "branch": "parity/loop2-s15-dynamic-order",
     "worktree": "~/workspace/quill-loop2-s15",
-    "phase": "implementing",
+    "phase": "in-review",
     "pr": null,
     "detail": "S15 implementing in dedicated worktree on origin/main @ 8fd501b (rebased from 87892ab post-freeze). Design: send_sticker passes update_order_of_installed_sticker_sets=true (schema 1.8.67:5928) so TDLib moves the used set to front; handle updateInstalledStickerSets (schema:10932) by reordering cached sets in place (no refetch, no UI change \u2014 picker lists stored order). Dedup: #158/#163/#167/#172 all merged, no overlap."
    },
@@ -136,7 +136,7 @@
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
    "stale": false,
-   "age_seconds": 328
+   "age_seconds": 448
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -209,7 +209,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 159
+   "age_seconds": 279
   }
  ]
 }
