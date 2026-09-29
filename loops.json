@@ -1,28 +1,27 @@
 {
- "generated_at": "2026-09-29T02:05:17.079891+00:00",
+ "generated_at": "2026-09-29T02:07:19.077449+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
-    "branch": null,
-    "detail": "PARKED (Idan order 2026-09-28): in-flight slices merged \u2014 screenshare-send PR #119, group self-tile PR #120. Final parity 360/522 = 69.0%. No new feature slices.",
-    "phase": "parked",
+    "branch": "parity/calls-screen-share-receive",
+    "detail": "Slice C2j \u2014 1:1 screen-share RECEIVE (backend): accept PLAYBACK+SCREEN frames in the P2P frames trampoline, slot them separately in the driver, expose latest_screen_frame(), clear stale screen frames on peer screen-share stop. UI rendering of the peer's share deferred to post-Phase-9 (src/ui/mod.rs untouched).",
+    "phase": "implementing",
     "pr": null,
-    "slice": null,
-    "worktree": null
+    "slice": "calls-screen-share-receive",
+    "worktree": "~/workspace/quill-l1-screenrecv"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
     "branch": null,
-    "detail": "Resumes feature slices after kit-adoption coordinator completes telegram-desktop-ui-cleanup.md",
-    "phase": "parked",
-    "slice": null
+    "detail": "After C2j review: research next slice (secret-chat state machine or chat-list state) so it starts at review time",
+    "phase": "research"
    },
-   "status": "parked",
-   "updated_at": "2026-09-29T01:55:56Z",
+   "status": "active",
+   "updated_at": "2026-09-29T02:10:00Z",
    "stale": false,
-   "age_seconds": 561
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -41,60 +40,62 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T02:10:00Z",
+   "updated_at": "2026-09-29T02:05:56Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 83
   },
   {
-   "coordinator": "45b2d7d0-edf8-4b81-9c50-78cb7445fb06",
+   "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
-    "detail": "PARKED per Idan stop-work order (2026-09-28). Payments PR #118 merged (359/522 = 68.8%). No feature work in flight. Kit-adoption coordinator owns UI work per quill-progress/plans/telegram-desktop-ui-cleanup.md; loop resumes after kit adoption.",
-    "phase": "parked",
-    "slice": "none"
+    "branch": "parity/bots-audit-verify",
+    "detail": "Resumed per Idan 2026-09-28. settings-appearance (quill-l3-s1 @ c3bb7ad) stays parked \u2014 UI-blocked until kit Phase 9 merges. settings-privacy (quill-l3-s2 @ c11d29e) stays parked, NOT rebased: rebase onto current main conflicts in src/ui/mod.rs which the kit Phase 9 coordinator is actively rewriting; rebase deferred to unpark time to avoid wasted/invalidated conflict resolution. Slice 1 (in flight): evidence-verify two audit-noted bot items and check their README boxes. Next in pipeline: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests), research starts at Slice 1 review time.",
+    "phase": "bots-backend",
+    "pr": null,
+    "slice": "audit verification: bots-inline-disabled-buttons + bots-poll-show-voters"
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "parked_branches": {
-    "parity/settings-appearance": "c3bb7ad \u2014 5 reviewer fixups applied, gates green (961 lib + 59 replay, UI build), rebased onto c9eddc6, README union 0 lost / 6 added. NOT pushed, no PR.",
-    "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Implementer halted per stop order."
+    "parity/settings-appearance": "c3bb7ad \u2014 5 reviewer fixups applied, gates green, rebased onto c9eddc6. NOT pushed, no PR. UI-blocked until kit Phase 9 merges.",
+    "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
-   "status": "parked",
-   "updated_at": "2026-09-28T17:10:00Z",
-   "stale": true,
-   "age_seconds": 32117
+   "status": "active",
+   "updated_at": "2026-09-29T02:06:00Z",
+   "stale": false,
+   "age_seconds": 79
   },
   {
-   "coordinator": "dfb5778c-2f39-4384-9eba-1925005dd62c",
+   "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
-    "slice": "A5 profile management",
-    "phase": "parked",
-    "branch": "parity/auth-profile-1",
-    "worktree": "~/workspace/quill-a5-profile",
+    "branch": "parity/auth-lifecycle-1",
+    "detail": "deleteAccount + getAccountTtl/setAccountTtl backend (request builders, connect methods, state reducer, envelope parse, tests). UI halves (delete-confirm dialog, TTL picker) spec'd in DECISIONS.md for post-Phase-9. No UI code while kit Phase 9 owns src/ui/mod.rs.",
+    "phase": "implementing",
     "pr": null,
-    "detail": "PARKED per Idan 2026-09-28: A6 merged (PR #121, d0fd7b6); A7 stood down; all slice worktrees removed. Resumes after kit adoption."
+    "slice": "A7 account lifecycle (backend)",
+    "worktree": "~/workspace/quill-l4-lifecycle"
    },
+   "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Hard constraint: no src/ui/mod.rs or UI surface files until kit Phase 9 merges (~/workspace/quill-kit-9 owns it).",
    "lanes": "auth/accounts, platform edge cases",
+   "last_merged": {
+    "at": "2026-09-28T17:26:23Z",
+    "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
+    "parity": "364/522=69.7%",
+    "pr": 121
+   },
    "loop": 4,
    "next": {
-    "slice": "A6 contacts management + block user",
-    "phase": "implementing",
-    "branch": "parity/auth-contacts-1",
-    "worktree": "~/workspace/quill-a6-contacts",
-    "detail": "contact delete/import/sync + block user"
+    "branch": null,
+    "detail": "queued",
+    "phase": "queued",
+    "slice": "A7 follow-up: change-number backend research / platform flood-errors",
+    "worktree": null
    },
-   "status": "parked",
-   "updated_at": "2026-09-29T01:58:41Z",
-   "last_merged": {
-    "pr": 121,
-    "commit": "d0fd7b6ad466f7dc18c165c2da88e8897c592935",
-    "at": "2026-09-28T17:26:23Z",
-    "parity": "364/522=69.7%"
-   },
-   "directive": "PARK per Idan 2026-09-28: finish A6 through review+merge, then stop. No new feature slices until kit adoption completes.",
-   "parked": true,
-   "phase": "parked",
+   "parked": false,
+   "phase": "implementing",
+   "status": "active",
+   "updated_at": "2026-09-29T02:10:00Z",
    "stale": false,
-   "age_seconds": 396
+   "age_seconds": 0
   }
  ]
 }
