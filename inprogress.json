@@ -17,14 +17,6 @@
    "branch": "parity/chatlist-badge-settings"
   },
   {
-   "area": "Bots, polls & payments",
-   "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/settings-mentions-pinned"
-  },
-  {
    "area": "Chat list",
    "label": "communities-chatlist-mode",
    "kind": "pr",
@@ -39,6 +31,14 @@
    "pr": 181,
    "url": "https://github.com/shinycake/quill/pull/181",
    "branch": "parity/community-search-filter"
+  },
+  {
+   "area": "Settings",
+   "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-mentions-pinned"
   },
   {
    "area": "Stickers, emoji & GIFs",

@@ -32,14 +32,46 @@
     "Set / remove profile photo: setProfilePhoto via inputChatPhotoStatic + inputFileLocal with is_public hard-coded false for the main (non-public) photo (schema :14803; TGX AvatarPickerManager), remove via deleteProfilePhoto with the retained chatPhoto.id (state.rs:3771)"
    ],
    "pending": [
-    "\"Link desktop device\": show QR so another device can log in as this account",
-    "New-user registration: first/last name + terms (partial: explicit UnsupportedHalt \u2014 \"finish registration in an official client\", auth.rs:83)",
-    "Email-based login flow (partial: explicit UnsupportedHalt, auth.rs:72)",
-    "Premium-purchase-gated login state (partial: explicit UnsupportedHalt, auth.rs:66)",
-    "Logout warning text: secret chats die, downloaded media erased (TGX SignOutHint2) (partial: logout works, no warning copy)",
-    "Add another account / switch between accounts: single \"accounts/primary\" DB layout only, no account UI",
-    "Change phone number: move contacts/groups/messages/media to a new number (partial: A8 backend shipped \u2014 sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth), + connect + reducer; UI blocked on server-acceptance verification: schema marks phoneNumberCodeTypeChange \"for official Android and iOS applications only\")",
-    "Profile accent color (schema: setProfileAccentColor)"
+    {
+     "text": "\"Link desktop device\": show QR so another device can log in as this account",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "New-user registration: first/last name + terms (partial: explicit UnsupportedHalt \u2014 \"finish registration in an official client\", auth.rs:83)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Email-based login flow (partial: explicit UnsupportedHalt, auth.rs:72)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Premium-purchase-gated login state (partial: explicit UnsupportedHalt, auth.rs:66)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Logout warning text: secret chats die, downloaded media erased (TGX SignOutHint2) (partial: logout works, no warning copy)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Add another account / switch between accounts: single \"accounts/primary\" DB layout only, no account UI",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Change phone number: move contacts/groups/messages/media to a new number (partial: A8 backend shipped \u2014 sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth), + connect + reducer; UI blocked on server-acceptance verification: schema marks phoneNumberCodeTypeChange \"for official Android and iOS applications only\")",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Profile accent color (schema: setProfileAccentColor)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -100,12 +132,36 @@
     "Apply updateMessageEphemeralContent (ephemeral content refreshes over time; initial render covered by parity:msg-ephemeral-render)"
    ],
    "pending": [
-    "Compact tables in rich messages",
-    "Expandable block quotes (long block quotes collapse with an expand affordance; authoring covered by parity:msg-quote-block)",
-    "Inline photos/videos in the rich-text composer (partial: inline documents/files/music done \u2014 parity:msg-richtext-inline-doc)",
-    "AI tools in the rich-text composer (composeTextWithAi, composeRichMessageWithAi, createRichMessageWithAi, fixTextWithAi, fixRichMessageWithAi)",
-    "Rich-text composer max length (32,768 chars)",
-    "Premium gating of the rich-text editor"
+    {
+     "text": "Compact tables in rich messages",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Expandable block quotes (long block quotes collapse with an expand affordance; authoring covered by parity:msg-quote-block)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Inline photos/videos in the rich-text composer (partial: inline documents/files/music done \u2014 parity:msg-richtext-inline-doc)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "AI tools in the rich-text composer (composeTextWithAi, composeRichMessageWithAi, createRichMessageWithAi, fixTextWithAi, fixRichMessageWithAi)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Rich-text composer max length (32,768 chars)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Premium gating of the rich-text editor",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -148,8 +204,16 @@
     "Unread / Archived filter category chips beside the folder tabs (the folder/Main selection itself is the All view); Archived forces the archive section open (src/ui/mod.rs: ChatListFilter)"
    ],
    "pending": [
-    "App badge counter settings: include muted chats, include archived chats, count messages vs chats",
-    "Chat list style settings: two/three lines, media icons, text formatting"
+    {
+     "text": "App badge counter settings: include muted chats, include archived chats, count messages vs chats",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Chat list style settings: two/three lines, media icons, text formatting",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -208,8 +272,16 @@
     "Caption-too-long validation on sends and caption edits (runtime `message_caption_length_max`, live counter, refusal names the limit)"
    ],
    "pending": [
-    "Picture-in-picture for video playback \u2014 BLOCKED: GPUI 0.3.5 `WindowOptions` has no always-on-top field on Linux and the repo has no multi-window plumbing; a second window would not be an honest PiP",
-    "Pause / resume a download (schema: pause exists only for the persistent file-download list \u2014 `toggleDownloadIsPaused`; MED3 uses one-shot `downloadFile`, so pause is out of slice, see DECISIONS.md)"
+    {
+     "text": "Picture-in-picture for video playback",
+     "blocked": true,
+     "reason": "GPUI 0.3.5 `WindowOptions` has no always-on-top field on Linux and the repo has no multi-window plumbing; a second window would not be an honest PiP"
+    },
+    {
+     "text": "Pause / resume a download (schema: pause exists only for the persistent file-download list \u2014 `toggleDownloadIsPaused`; MED3 uses one-shot `downloadFile`, so pause is out of slice, see DECISIONS.md)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -266,11 +338,31 @@
     "Communities: community join service message (`messageChatJoinFromCommunity`; TGX `group_user_join_from_community*` verbatim \u2014 `{name} joined the group from the community \"NAME\"` / `You joined the group from the community \"NAME\"`, nameless fallbacks; sender kept uncollapsed so incoming rows attribute the join) (src/telegram/envelope.rs, src/ui/mod.rs)"
    ],
    "pending": [
-    "Communities: toggle community chat visibility (blocked: no TDLib 1.8.67 method to toggle hidden state)",
-    "Communities: community chat-list mode (view a community's chats as a filtered chat list)",
-    "Communities: add a chat to a community (blocked: no TDLib 1.8.67 method)",
-    "Communities: admin-rights management (blocked: no TDLib 1.8.67 method)",
-    "Communities: community search filter (searchMessagesChatTypeFilterCommunity)"
+    {
+     "text": "Communities: toggle community chat visibility",
+     "blocked": true,
+     "reason": "no TDLib 1.8.67 method to toggle hidden state"
+    },
+    {
+     "text": "Communities: community chat-list mode (view a community's chats as a filtered chat list)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Communities: add a chat to a community",
+     "blocked": true,
+     "reason": "no TDLib 1.8.67 method"
+    },
+    {
+     "text": "Communities: admin-rights management",
+     "blocked": true,
+     "reason": "no TDLib 1.8.67 method"
+    },
+    {
+     "text": "Communities: community search filter (searchMessagesChatTypeFilterCommunity)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -299,9 +391,21 @@
     "\"Secret media and files\" category in storage usage (new \"\ud83d\udcbe Storage usage\" sidebar entry backed by getStorageStatistics; overlay lists TGX-ordered categories with counts and sizes, including the Secret media and files row for fileTypeSecret)"
    ],
    "pending": [
-    "Send screenshot-taken notification when the user screenshots (blocked: Linux desktop has no OS-level screenshot-detection API to trigger it; the TDLib mechanism exists \u2014 viewMessages with messageSourceScreenshot, td_api.tl:13230/:3234, as Telegram X's sendScreenshotMessage does \u2014 but nothing on Linux can tell us a screenshot happened)",
-    "Screenshot capture prevention for secret chats on the desktop (blocked: no OS-level screen-capture prevention API on Linux \u2014 no FLAG_SECURE equivalent on X11/Wayland; verified 2026-09-27)",
-    "Secret-chat count shown when terminating a session that would cancel secret chats (impossible via TDLib 1.8.67: the `session` type (td_api.tl:9144) has no secret-chat linkage \u2014 `secretChat` (:2816) carries no session id, and the only secret-related session field is the capability flag `can_accept_secret_chats`; which auth-key a secret chat is bound to is server-side state. Telegram X shows no such count on session termination either \u2014 its `ClosingXSecretChats` string belongs to bulk chat deletion (ChatsController.java:1650), not sessions; Quill's terminate confirmations match TGX verbatim)"
+    {
+     "text": "Send screenshot-taken notification when the user screenshots",
+     "blocked": true,
+     "reason": "Linux desktop has no OS-level screenshot-detection API to trigger it; the TDLib mechanism exists \u2014 viewMessages with messageSourceScreenshot, td_api.tl:13230/:3234, as Telegram X's sendScreenshotMessage does \u2014 but nothing on Linux can tell us a screenshot happened"
+    },
+    {
+     "text": "Screenshot capture prevention for secret chats on the desktop",
+     "blocked": true,
+     "reason": "no OS-level screen-capture prevention API on Linux \u2014 no FLAG_SECURE equivalent on X11/Wayland; verified 2026-09-27"
+    },
+    {
+     "text": "Secret-chat count shown when terminating a session that would cancel secret chats (impossible via TDLib 1.8.67: the `session` type (td_api.tl:9144) has no secret-chat linkage \u2014 `secretChat` (:2816) carries no session id, and the only secret-related session field is the capability flag `can_accept_secret_chats`; which auth-key a secret chat is bound to is server-side state. Telegram X shows no such count on session termination either \u2014 its `ClosingXSecretChats` string belongs to bulk chat deletion (ChatsController.java:1650), not sessions; Quill's terminate confirmations match TGX verbatim)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -348,9 +452,21 @@
     "Repost / re-share a story (storyRepostInfo / storyInteractionTypeRepost parsed; repost via postStory from_story_full_id, Phase 9.5)"
    ],
    "pending": [
-    "Join or play live stories (storyContentLive / startLiveStory in schema)",
-    "Chosen custom-emoji or paid reactions (partial: envelope parses reactionTypeCustomEmoji/reactionTypePaid into story state + viewers list (S13), setStoryReaction custom-emoji builder + driver; viewer render + picker offer pending post-Phase-9)",
-    "Story notification settings (mute stories per chat, story sound, show story poster) \u2014 parsed into fields only (telegram/envelope.rs:1859-1860)"
+    {
+     "text": "Join or play live stories (storyContentLive / startLiveStory in schema)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Chosen custom-emoji or paid reactions (partial: envelope parses reactionTypeCustomEmoji/reactionTypePaid into story state + viewers list (S13), setStoryReaction custom-emoji builder + driver; viewer render + picker offer pending post-Phase-9)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Story notification settings (mute stories per chat, story sound, show story poster) \u2014 parsed into fields only (telegram/envelope.rs:1859-1860)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -409,12 +525,36 @@
     "In-call chat messages for group calls (`sendGroupCallMessage` + live `updateNewGroupCallMessage` feed with composer, gated on `can_send_messages`/`are_messages_allowed`; no history getter exists in the schema, so live feed only; code + demo only, live unverified)"
    ],
    "pending": [
-    "Incoming-call-while-busy swap prompt (partial: no Telegram-level hold/swap API; incoming call is auto-declined with an explanatory banner, state.rs)",
-    "Less data for calls setting (partial: persisted in call_prefs.json, but the native call engine exposes no data-saving API)",
-    "Use proxy for calls setting",
-    "Echo cancellation / noise suppression toggles (partial: ntgcalls defaults only, no settings UI)",
-    "Group video tiles show live video (partial: engine\u2192tile path implemented + mock-tested + demo screenshot; live group call never exercised \u2014 no ntgcalls runtime on this VM)",
-    "Share screen in a group call (partial: startGroupCallScreenSharing/endGroupCallScreenSharing + native presentation handshake implemented; screen-source availability gate added; native screen source unverified \u2014 no ntgcalls runtime on this VM)"
+    {
+     "text": "Incoming-call-while-busy swap prompt (partial: no Telegram-level hold/swap API; incoming call is auto-declined with an explanatory banner, state.rs)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Less data for calls setting (partial: persisted in call_prefs.json, but the native call engine exposes no data-saving API)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Use proxy for calls setting",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Echo cancellation / noise suppression toggles (partial: ntgcalls defaults only, no settings UI)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Group video tiles show live video (partial: engine\u2192tile path implemented + mock-tested + demo screenshot; live group call never exercised \u2014 no ntgcalls runtime on this VM)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Share screen in a group call (partial: startGroupCallScreenSharing/endGroupCallScreenSharing + native presentation handshake implemented; screen-source availability gate added; native screen source unverified \u2014 no ntgcalls runtime on this VM)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -432,42 +572,186 @@
     "Show \"choosing a sticker\" chat action of others (S17: `chatActionChoosingSticker` parsed to `ChatAction::ChoosingSticker`, per-sender tracking in `ChatSummary`, \"choosing a sticker\u2026\" label in header + sidebar preview, winning over \"typing\u2026\")"
    ],
    "pending": [
-    "Trending sticker sets tab (partial: backend wired \u2014 getTrendingStickerSets/viewTrendingStickerSets + state; tab UI pending)",
-    "Search sticker sets / stickers (searchStickerSets/searchStickers) (partial: backend wired \u2014 searchStickerSets/searchStickers + state; picker UI pending)",
-    "Favorites sticker tab (getFavoriteStickers/addFavoriteSticker/removeFavoriteSticker) (partial: backend wired \u2014 get/add/removeFavoriteSticker + state; tab UI pending)",
-    "Recent stickers tab + clear recent stickers (getRecentStickers/clearRecentStickers) (partial: backend wired \u2014 getRecentStickers/clearRecentStickers + state; tab UI pending)",
-    "Install sticker set (changeStickerSet install) (partial: backend wired \u2014 changeStickerSet install + cache invalidation; UI affordance pending)",
-    "Remove sticker set with confirm dialog (partial: backend wired \u2014 changeStickerSet remove + cache invalidation; UI confirm dialog pending)",
-    "Archive sticker set + Archived view in settings (restore path) (partial: backend wired \u2014 changeStickerSet archive; Archived view UI pending)",
-    "Reorder installed sticker sets (partial: backend wired \u2014 reorderInstalledStickerSets + cache invalidation; drag-reorder UI pending)",
-    "Open sticker set preview screen (title, stickers grid, install/remove from preview)",
-    "\"No sticker sets installed\" empty state",
-    "\"X sets installed\" counts and batch install/remove feedback (partial: backend wired \u2014 changeStickerSet install + cache invalidation; UI affordance pending)",
-    "Sticker suggestions by emoji in composer (Installed + recommended / Only installed / None) (partial: backend wired \u2014 `StickerSuggestMode` in `src/sticker_suggest.rs` (persisted in `MediaPrefs`, serde-defaulted), trailing-emoji detection, `RequestPurpose::SuggestStickers` + `searchStickers` dispatch into `StickerPanel::suggestions` (never the search slot), `InstalledOnly` filters to installed set ids, `update_sticker_suggestions` driver dedupes repeats and drops stale in-flight suggests; composer suggestion-row UI pending)",
-    "Animated sticker (TGS) playback in picker and history (partial: format parsed, only thumbnails rendered)",
-    "Video sticker (WebM) playback (partial: format parsed, static thumb only)",
-    "\"Loop Animated Stickers\" setting",
-    "Premium sticker gating (\"Sending this sticker requires Telegram Premium\")",
-    "GIF search + trending GIFs (inline bot path searchInlineBots/getInlineQueryResults) (partial: backend wired \u2014 getInlineQueryResults search + AnimationItem results + next_offset paging + updateAnimationSearchParameters state; search UI pending. Note: `searchInlineBots` does not exist in TDLib 1.8.67 \u2014 the bot resolves via the `animation_search_bot_username` option, see DECISIONS.md S9)",
-    "Save GIF to media keyboard (addSavedAnimation) (partial: backend wired \u2014 addSavedAnimation + cache invalidation; picker UI pending)",
-    "Delete saved GIF (removeSavedAnimation + confirm) (partial: backend wired \u2014 removeSavedAnimation + cache invalidation; confirm dialog pending)",
-    "\"No GIFs\" empty state",
-    "\"Autoplay GIFs\" setting",
-    "GIF loop playback in history (partial: static frame cache only, ui/mod.rs:3015)",
-    "Apply updateAnimationSearchParameters to GIF search (search still rides the animation_search_bot_username inline-bot path) (partial: backend wired \u2014 update parsed + provider/emojis stored in state; search UI pending)",
-    "Emoji picker in composer with categories (Smileys & People, etc.) and search (partial: backend wired \u2014 getEmojiCategories + searchEmojis parsed into EmojiPanel; picker UI pending)",
-    "Insert emoji at cursor in composer text",
-    "Big emoji rendering for emoji-only messages (Big Emoji setting)",
-    "Custom emoji packs (browse/install/remove, \"Emoji Sets\" settings screen) (partial: backend wired \u2014 getInstalledStickerSets/getArchivedStickerSets/getTrendingStickerSets/searchStickerSets with stickerTypeCustomEmoji + changeStickerSet reuse + reorderInstalledStickerSets; \"Emoji Sets\" screen pending)",
-    "Render custom emoji inside message text (partial: backend wired \u2014 getCustomEmojiStickers resolves ids to stickers in EmojiPanel; render in text pending)",
-    "Suggest animated emoji in composer (partial: backend wired \u2014 getAnimatedEmoji + animatedEmoji parse into EmojiPanel; composer suggestion UI pending)",
-    "Emoji status: select/set status, timed status (1h/2h/8h/2d/custom), trending statuses (partial: backend wired \u2014 setEmojiStatus incl. null-clear, getRecent/getThemed/getDefault/getUpgradedGiftEmojiStatuses parsed into EmojiPanel; status picker UI pending)",
-    "Clear recent emoji statuses (partial: backend wired \u2014 clearRecentEmojiStatuses + cache invalidation; UI affordance pending)",
-    "Clear recent emoji (partial: no TDLib API \u2014 recent plain emoji are client-side state in every official client; the picker slice owns local storage)",
-    "Dynamic emoji pack order setting (partial: backend wired \u2014 reorderInstalledStickerSets with stickerTypeCustomEmoji; the dynamic toggle itself is client-side recency ordering, settings UI pending)",
-    "Emoji pack download states (Downloading\u2026/Downloaded/Update Needed/Installing\u2026)",
-    "\"Send Stickers & GIFs\" permission denied messaging in groups",
-    "Group sticker set management (setSupergroupStickerSet / setSupergroupCustomEmojiStickerSet) (partial: backend landed \u2014 both builders + drivers, `can_set_sticker_set` / `sticker_set_id` / `custom_emoji_sticker_set_id` parsed into cached full info; group settings UI deferred post-Phase-9)"
+    {
+     "text": "Trending sticker sets tab (partial: backend wired \u2014 getTrendingStickerSets/viewTrendingStickerSets + state; tab UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Search sticker sets / stickers (searchStickerSets/searchStickers) (partial: backend wired \u2014 searchStickerSets/searchStickers + state; picker UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Favorites sticker tab (getFavoriteStickers/addFavoriteSticker/removeFavoriteSticker) (partial: backend wired \u2014 get/add/removeFavoriteSticker + state; tab UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Recent stickers tab + clear recent stickers (getRecentStickers/clearRecentStickers) (partial: backend wired \u2014 getRecentStickers/clearRecentStickers + state; tab UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Install sticker set (changeStickerSet install) (partial: backend wired \u2014 changeStickerSet install + cache invalidation; UI affordance pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Remove sticker set with confirm dialog (partial: backend wired \u2014 changeStickerSet remove + cache invalidation; UI confirm dialog pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Archive sticker set + Archived view in settings (restore path) (partial: backend wired \u2014 changeStickerSet archive; Archived view UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Reorder installed sticker sets (partial: backend wired \u2014 reorderInstalledStickerSets + cache invalidation; drag-reorder UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Open sticker set preview screen (title, stickers grid, install/remove from preview)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"No sticker sets installed\" empty state",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"X sets installed\" counts and batch install/remove feedback (partial: backend wired \u2014 changeStickerSet install + cache invalidation; UI affordance pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Sticker suggestions by emoji in composer (Installed + recommended / Only installed / None) (partial: backend wired \u2014 `StickerSuggestMode` in `src/sticker_suggest.rs` (persisted in `MediaPrefs`, serde-defaulted), trailing-emoji detection, `RequestPurpose::SuggestStickers` + `searchStickers` dispatch into `StickerPanel::suggestions` (never the search slot), `InstalledOnly` filters to installed set ids, `update_sticker_suggestions` driver dedupes repeats and drops stale in-flight suggests; composer suggestion-row UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Animated sticker (TGS) playback in picker and history (partial: format parsed, only thumbnails rendered)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Video sticker (WebM) playback (partial: format parsed, static thumb only)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"Loop Animated Stickers\" setting",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Premium sticker gating (\"Sending this sticker requires Telegram Premium\")",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "GIF search + trending GIFs (inline bot path searchInlineBots/getInlineQueryResults) (partial: backend wired \u2014 getInlineQueryResults search + AnimationItem results + next_offset paging + updateAnimationSearchParameters state; search UI pending. Note: `searchInlineBots` does not exist in TDLib 1.8.67 \u2014 the bot resolves via the `animation_search_bot_username` option, see DECISIONS.md S9)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Save GIF to media keyboard (addSavedAnimation) (partial: backend wired \u2014 addSavedAnimation + cache invalidation; picker UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Delete saved GIF (removeSavedAnimation + confirm) (partial: backend wired \u2014 removeSavedAnimation + cache invalidation; confirm dialog pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"No GIFs\" empty state",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"Autoplay GIFs\" setting",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "GIF loop playback in history (partial: static frame cache only, ui/mod.rs:3015)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Apply updateAnimationSearchParameters to GIF search (search still rides the animation_search_bot_username inline-bot path) (partial: backend wired \u2014 update parsed + provider/emojis stored in state; search UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Emoji picker in composer with categories (Smileys & People, etc.) and search (partial: backend wired \u2014 getEmojiCategories + searchEmojis parsed into EmojiPanel; picker UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Insert emoji at cursor in composer text",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Big emoji rendering for emoji-only messages (Big Emoji setting)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Custom emoji packs (browse/install/remove, \"Emoji Sets\" settings screen) (partial: backend wired \u2014 getInstalledStickerSets/getArchivedStickerSets/getTrendingStickerSets/searchStickerSets with stickerTypeCustomEmoji + changeStickerSet reuse + reorderInstalledStickerSets; \"Emoji Sets\" screen pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Render custom emoji inside message text (partial: backend wired \u2014 getCustomEmojiStickers resolves ids to stickers in EmojiPanel; render in text pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Suggest animated emoji in composer (partial: backend wired \u2014 getAnimatedEmoji + animatedEmoji parse into EmojiPanel; composer suggestion UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Emoji status: select/set status, timed status (1h/2h/8h/2d/custom), trending statuses (partial: backend wired \u2014 setEmojiStatus incl. null-clear, getRecent/getThemed/getDefault/getUpgradedGiftEmojiStatuses parsed into EmojiPanel; status picker UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Clear recent emoji statuses (partial: backend wired \u2014 clearRecentEmojiStatuses + cache invalidation; UI affordance pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Clear recent emoji (partial: no TDLib API \u2014 recent plain emoji are client-side state in every official client; the picker slice owns local storage)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Dynamic emoji pack order setting (partial: backend wired \u2014 reorderInstalledStickerSets with stickerTypeCustomEmoji; the dynamic toggle itself is client-side recency ordering, settings UI pending)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Emoji pack download states (Downloading\u2026/Downloaded/Update Needed/Installing\u2026)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"Send Stickers & GIFs\" permission denied messaging in groups",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Group sticker set management (setSupergroupStickerSet / setSupergroupCustomEmojiStickerSet) (partial: backend landed \u2014 both builders + drivers, `can_set_sticker_set` / `sticker_set_id` / `custom_emoji_sticker_set_id` parsed into cached full info; group settings UI deferred post-Phase-9)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -520,14 +804,46 @@
     "Payment receipts: getPaymentReceipt dialog from paid invoices (\"View receipt\") plus messagePaymentSuccessful/messagePaymentSuccessfulBot rows (ui/mod.rs)"
    ],
    "pending": [
-    "Stop button for streaming bot drafts (cancel an in-flight streaming bot reply)",
-    "Ephemeral-command icon in the bot command list (BotCommand.is_ephemeral)",
-    "Inline mode: type @bot in composer, inline query results list, send an inline result (no getInlineQueryResults code in src)",
-    "Games: send / play, high scores (no game code at all)",
-    "Recurring payments",
-    "Clear payment/shipping info (privacy)",
-    "Signed gifts: personal comment when buying a collectible gift via Marketplace (sendResoldGift text)",
-    "Signed gifts: custom signature on Marketplace gift purchase (blocked: no TDLib/raw API for a gift signature field \u2014 concept-level search: sendResoldGift/inputInvoiceStarGiftResale carry text/message only)"
+    {
+     "text": "Stop button for streaming bot drafts (cancel an in-flight streaming bot reply)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Ephemeral-command icon in the bot command list (BotCommand.is_ephemeral)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Inline mode: type @bot in composer, inline query results list, send an inline result (no getInlineQueryResults code in src)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Games: send / play, high scores (no game code at all)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Recurring payments",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Clear payment/shipping info (privacy)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Signed gifts: personal comment when buying a collectible gift via Marketplace (sendResoldGift text)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Signed gifts: custom signature on Marketplace gift purchase",
+     "blocked": true,
+     "reason": "no TDLib/raw API for a gift signature field \u2014 concept-level search: sendResoldGift/inputInvoiceStarGiftResale carry text/message only"
+    }
    ]
   },
   {
@@ -560,14 +876,46 @@
     "Clear cache"
    ],
    "pending": [
-    "Mentions/replies and pinned-message notification overrides",
-    "Reaction and story notification settings",
-    "List of chats with custom notification exceptions (partial: per-chat settings can be set, but no exceptions list view)",
-    "Reset all notification settings",
-    "In-app notification sounds toggle",
-    "App language selector (partial: `system_language_code:\"en\"` hardcoded in src/connect.rs:284)",
-    "Enter-to-send toggle (partial: Enter always sends, hardcoded in src/composer.rs:19-20; no toggle)",
-    "Send by Cmd/Ctrl+Enter option"
+    {
+     "text": "Mentions/replies and pinned-message notification overrides",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Reaction and story notification settings",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "List of chats with custom notification exceptions (partial: per-chat settings can be set, but no exceptions list view)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Reset all notification settings",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "In-app notification sounds toggle",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "App language selector (partial: `system_language_code:\"en\"` hardcoded in src/connect.rs:284)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Enter-to-send toggle (partial: Enter always sends, hardcoded in src/composer.rs:19-20; no toggle)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Send by Cmd/Ctrl+Enter option",
+     "blocked": false,
+     "reason": null
+    }
    ]
   },
   {
@@ -579,34 +927,146 @@
     "Copy text to clipboard (inline keyboard copy-text button src/ui/mod.rs:3932; invite link src/ui/mod.rs:6357)"
    ],
    "pending": [
-    "Keyboard shortcuts reference/help overlay listing all bindings",
-    "Customizable key bindings",
-    "Screen-reader accessible labels/roles on UI elements (no accessibility API usage in src)",
-    "VoiceOver support (blocked: Linux desktop has no VoiceOver; no accessibility tree backend in the UI layer)",
-    "High-contrast theme/mode",
-    "Minimize/close-to-tray behavior",
-    "Tray context menu (open window, quit)",
-    "Start minimized to tray",
-    "Autostart on login (OS-level; schema `autostart` is bot-start-only, no TDLib involvement)",
-    "Spellcheck in composer",
-    "Chat history export to file (partial: getChatHistory fetching exists; no export-to-file; implementable client-side \u2014 no exportHistory constructor in schema, not schema-blocked)",
-    "Full account data export (Telegram Desktop \"Export Telegram data\")",
-    "Check for updates automatically on launch against GitHub Releases (latest tag vs compiled-in `CARGO_PKG_VERSION`), with an opt-out toggle in Settings",
-    "Manual \"Check for updates\" action in Settings/menu",
-    "Update-available UI: non-intrusive banner/dialog showing the new version and release notes",
-    "One-click download, install, and restart (replace own binary, relaunch; user confirms \u2014 no silent auto-install)",
-    "Honest updater states: already up to date, no network, download/install failed with retry",
-    "Outdated-feature placeholder: placeholder card with one-tap update button when the app can't render a new feature",
-    "Update changelog display after updates",
-    "Offline connection indicator in UI (partial: updateConnectionState parsed at telegram/envelope.rs:5506 and stored in state.rs:2199, but never rendered)",
-    "Reconnect state labels (\"Connecting\u2026\", \"Waiting for network\u2026\", \"Updating\u2026\", \"Connecting to proxy\u2026\")",
-    "\"You're offline\" error messaging when sending/calling while offline",
-    "Flood/rate-limit errors with retry countdown (e.g. \"Try again in N seconds\")",
-    "Unread badge on the app/taskbar icon",
-    "OS desktop notifications (partial: in-app toast queue with burst coalescing exists in src/notify.rs; no OS dispatch)",
-    "Drag-and-drop files into the composer",
-    "Paste image from clipboard into composer (partial: clipboard write exists, no read_from_clipboard usage)",
-    "t.me/tg: deep-link handling via getDeepLinkInfo (schema support exists; no usage in Quill)"
+    {
+     "text": "Keyboard shortcuts reference/help overlay listing all bindings",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Customizable key bindings",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Screen-reader accessible labels/roles on UI elements (no accessibility API usage in src)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "VoiceOver support",
+     "blocked": true,
+     "reason": "Linux desktop has no VoiceOver; no accessibility tree backend in the UI layer"
+    },
+    {
+     "text": "High-contrast theme/mode",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Minimize/close-to-tray behavior",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Tray context menu (open window, quit)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Start minimized to tray",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Autostart on login (OS-level; schema `autostart` is bot-start-only, no TDLib involvement)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Spellcheck in composer",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Chat history export to file (partial: getChatHistory fetching exists; no export-to-file; implementable client-side \u2014 no exportHistory constructor in schema, not schema-blocked)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Full account data export (Telegram Desktop \"Export Telegram data\")",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Check for updates automatically on launch against GitHub Releases (latest tag vs compiled-in `CARGO_PKG_VERSION`), with an opt-out toggle in Settings",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Manual \"Check for updates\" action in Settings/menu",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Update-available UI: non-intrusive banner/dialog showing the new version and release notes",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "One-click download, install, and restart (replace own binary, relaunch; user confirms \u2014 no silent auto-install)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Honest updater states: already up to date, no network, download/install failed with retry",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Outdated-feature placeholder: placeholder card with one-tap update button when the app can't render a new feature",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Update changelog display after updates",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Offline connection indicator in UI (partial: updateConnectionState parsed at telegram/envelope.rs:5506 and stored in state.rs:2199, but never rendered)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Reconnect state labels (\"Connecting\u2026\", \"Waiting for network\u2026\", \"Updating\u2026\", \"Connecting to proxy\u2026\")",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "\"You're offline\" error messaging when sending/calling while offline",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Flood/rate-limit errors with retry countdown (e.g. \"Try again in N seconds\")",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Unread badge on the app/taskbar icon",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "OS desktop notifications (partial: in-app toast queue with burst coalescing exists in src/notify.rs; no OS dispatch)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Drag-and-drop files into the composer",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "Paste image from clipboard into composer (partial: clipboard write exists, no read_from_clipboard usage)",
+     "blocked": false,
+     "reason": null
+    },
+    {
+     "text": "t.me/tg: deep-link handling via getDeepLinkInfo (schema support exists; no usage in Quill)",
+     "blocked": false,
+     "reason": null
+    }
    ]
   }
  ]

@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 20
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": false,
-   "age_seconds": 410
+   "age_seconds": 533
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -194,10 +194,10 @@
     "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
     "branch": "parity/settings-mentions-pinned",
     "worktree": "~/workspace/quill-l4-mentions-pinned",
-    "phase": "implementing",
+    "phase": "holding-pr",
     "pr": null,
     "handoff": null,
-    "detail": "Phase 2 (settings+auth/accounts). Claimed: mention/pinned notification override Switches per scope in Notification defaults dialog, live via setScopeNotificationSettings. Unclaimed \u2014 loop2 is on bots/polls/payments, loops 1/3 on phase-1 slices, #180/#181 are unrelated."
+    "detail": "Slice complete and gated: commit b95e551 (rebased onto origin/main) pushed to parity/settings-mentions-pinned. Gates green: fmt, clippy -D warnings, tests, Mac-runner ui build (run 36642741525, success). PR deliberately NOT opened \u2014 repo at 4-PR cap (#180, #181, #182, #183). Waiting for a slot."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -226,8 +226,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:54:00Z",
-   "updated_at": "2026-09-29T22:58:39Z",
+   "last_evidence_at": "2026-09-29T23:00:00Z",
+   "updated_at": "2026-09-29T23:00:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -256,7 +256,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 437
+   "age_seconds": 200
   }
  ]
 }
