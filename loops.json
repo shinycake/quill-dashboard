@@ -52,8 +52,8 @@
    "last_evidence_event": "next slice claimed: communities-chatlist-mode (parity:communities-chatlist-mode) \u2014 now unblocked (#176 merged); schema/state support verified (communityFullInfo.chats, chat.community_id tracked, G10 hub exists); implementer dispatched",
    "wip_open_prs": 2,
    "global_open_prs": 4,
-   "stale": false,
-   "age_seconds": 857
+   "stale": true,
+   "age_seconds": 978
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -63,7 +63,7 @@
     "worktree": "~/workspace/quill-loop2-s18",
     "phase": "parked-phase4",
     "pr": null,
-    "detail": "PARKED per Idan 2026-09-29: stickers/emoji/GIFs deferred to phase 4 (last priority). Branch kept, not deleted. Do NOT open a PR for it.",
+    "detail": "PARKED per Idan 2026-09-29: stickers/emoji/GIFs deferred to phase 4 (last priority). Branch kept, not deleted. Do NOT open a PR for it. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent 004b3cd9).",
     "handoff": null
    },
    "lanes": "groups/channels/communities (phase 1: functionality-first)",
@@ -147,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:35:00Z",
+   "updated_at": "2026-09-29T22:38:00Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -155,7 +155,7 @@
     "parity": "403/525 (76.8%)",
     "note": "Backend-only, no README box change."
    },
-   "last_evidence_at": "2026-09-29T22:35:00Z",
+   "last_evidence_at": "2026-09-29T22:38:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -165,7 +165,7 @@
     "base": "origin/main @ 8fd501b",
     "branch": "parity/bots-force-reply",
     "commit": "210e920",
-    "detail": "PR #177 (force-reply keyboard bar) merged 2026-09-29T22:12:52Z. Slice complete. Standing by at 4-PR cap \u2014 next slice starts when count drops below 4.",
+    "detail": "PR #177 (force-reply keyboard bar) merged 2026-09-29T22:12:52Z. Slice complete. Standing by at 4-PR cap \u2014 next slice starts when count drops below 4. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent aa9e03ce).",
     "phase": "merged-standing-by",
     "pr": 177,
     "screenshot": "docs/screenshots/ready-bot-keyboards.png",
@@ -180,10 +180,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:35:00Z",
-   "last_evidence_at": "2026-09-29T21:50:41Z",
-   "stale": true,
-   "age_seconds": 2436
+   "updated_at": "2026-09-29T22:38:00Z",
+   "last_evidence_at": "2026-09-29T22:38:00Z",
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "75b864ab-d2d6-4314-915a-91df37669f17",
@@ -193,7 +193,7 @@
     "worktree": "~/workspace/quill-loop4-a12",
     "phase": "parked-phase4",
     "pr": null,
-    "detail": "PARKED per Idan 2026-09-29 phase plan: platform work waits for phase 4 (after loop-1 list, loop-3+auth list, and the file-split freeze). Branch kept if it exists.",
+    "detail": "PARKED per Idan 2026-09-29 phase plan: platform work waits for phase 4 (after loop-1 list, loop-3+auth list, and the file-split freeze). Branch kept if it exists. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent 415e4224).",
     "handoff": null
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
@@ -223,8 +223,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:35:00Z",
-   "updated_at": "2026-09-29T22:29:45Z",
+   "last_evidence_at": "2026-09-29T22:38:00Z",
+   "updated_at": "2026-09-29T22:38:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
