@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-29T02:51:17.655741+00:00",
+ "generated_at": "2026-09-29T02:53:17.709330+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
    "current": {
     "branch": "parity/calls-screen-share-receive",
-    "detail": "C2j screen-share receive backend done; gates: fmt+clippy green, full tests queued behind Phase-9 UI build lock (1 new test had a JSON typo, fixed). UI rendering deferred to post-Phase-9; src/ui/mod.rs untouched.",
-    "phase": "implementing",
+    "detail": "C2j rebased onto fa3f9ed, all gates green, in adversarial review. Next slice (community service-message envelope parsing) implementing in parallel worktree.",
+    "phase": "review",
     "pr": null,
     "slice": "calls-screen-share-receive",
     "worktree": "~/workspace/quill-l1-screenrecv"
@@ -14,14 +14,15 @@
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "branch": null,
-    "detail": "After C2j review: research next slice (secret-chat state machine or chat-list state) so it starts at review time",
-    "phase": "research"
+    "slice": "community-service-messages",
+    "branch": "parity/community-service-messages",
+    "worktree": "~/workspace/quill-l1-community",
+    "phase": "implementing"
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:45:53Z",
+   "updated_at": "2026-09-29T03:20:00Z",
    "stale": false,
-   "age_seconds": 324
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -42,7 +43,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:46:02Z",
    "stale": false,
-   "age_seconds": 315
+   "age_seconds": 435
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -62,7 +63,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:44:32Z",
    "stale": false,
-   "age_seconds": 405
+   "age_seconds": 525
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -95,7 +96,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:48:41Z",
    "stale": false,
-   "age_seconds": 156
+   "age_seconds": 276
   }
  ]
 }
