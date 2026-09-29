@@ -53,20 +53,20 @@
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": true,
-   "age_seconds": 978
+   "age_seconds": 1139
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "S18 sticker suggestions by emoji in composer",
-    "branch": "parity/loop2-s18-sticker-suggest",
-    "worktree": "~/workspace/quill-loop2-s18",
-    "phase": "parked-phase4",
+    "slice": null,
+    "branch": null,
+    "worktree": null,
+    "phase": "reassigned-calls",
     "pr": null,
-    "detail": "PARKED per Idan 2026-09-29: stickers/emoji/GIFs deferred to phase 4 (last priority). Branch kept, not deleted. Do NOT open a PR for it. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent 004b3cd9).",
+    "detail": "S18 sticker-suggestions PARKED per Idan (phase 4); branch parity/loop2-s18-sticker-suggest kept in ~/workspace/quill-loop2-s18, no PR. Groups/channels/communities partition exhausted on origin/main fdc7ea73: all 5 unchecked items accounted for \u2014 communities-search-filter (#181, open, loop 1), communities-chatlist-mode (loop 1 implementing), and 3 blocked items verified against pinned td_api.tl 1.8.67 (69 community mentions; only methods are loadCommunityFullInfo/createCommunity/setCommunityName \u2014 no toggle-visibility, no add/remove-chat, no admin-rights methods). Awaiting parent reassignment; will not poach other loops' lanes. Reassigned 2026-09-29T22:42Z: groups partition exhausted (5 unchecked items all claimed/blocked), moving to calls pool.",
     "handoff": null
    },
-   "lanes": "groups/channels/communities (phase 1: functionality-first)",
+   "lanes": "calls + groups/channels (phase 1: functionality-first; shared pool with Loop 1 \u2014 check loop1.json first, never take a slice Loop 1 is on)",
    "last_merged": {
     "pr": 155,
     "slice": "S7 clickable story areas",
@@ -147,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:38:00Z",
+   "updated_at": "2026-09-29T22:35:57Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -155,23 +155,20 @@
     "parity": "403/525 (76.8%)",
     "note": "Backend-only, no README box change."
    },
-   "last_evidence_at": "2026-09-29T22:38:00Z",
+   "last_evidence_at": "2026-09-29T22:33:39Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 140
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
    "current": {
-    "base": "origin/main @ 8fd501b",
-    "branch": "parity/bots-force-reply",
-    "commit": "210e920",
-    "detail": "PR #177 (force-reply keyboard bar) merged 2026-09-29T22:12:52Z. Slice complete. Standing by at 4-PR cap \u2014 next slice starts when count drops below 4. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent aa9e03ce).",
-    "phase": "merged-standing-by",
-    "pr": 177,
-    "screenshot": "docs/screenshots/ready-bot-keyboards.png",
-    "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
-    "worktree": "~/workspace/quill-l3-force-reply",
-    "handoff": "merge-pipeline"
+    "slice": "chat list badge counter settings (parity:chatlist-badge-settings)",
+    "branch": "parity/chatlist-badge-settings",
+    "worktree": "~/workspace/quill-l3-badge-settings",
+    "base": "origin/main @ fdc7ea7",
+    "phase": "implementing",
+    "pr": null,
+    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
@@ -180,8 +177,8 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:38:00Z",
-   "last_evidence_at": "2026-09-29T22:38:00Z",
+   "updated_at": "2026-09-29T22:34:34Z",
+   "last_evidence_at": "2026-09-29T22:45:00Z",
    "stale": false,
    "age_seconds": 0
   },

@@ -938,6 +938,26 @@
   {
    "type": "DeleteEvent",
    "payload": {
+    "ref": "parity/loop2-s16-emoji-sticker-type"
+   },
+   "created_at": "2026-09-29T21:43:05Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/communities-ui"
+   },
+   "created_at": "2026-09-29T21:42:39Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "DeleteEvent",
+   "payload": {
     "ref": "parity/loop2-s17-choosing-sticker"
    },
    "created_at": "2026-09-29T22:26:20Z",
@@ -1311,26 +1331,6 @@
     "ref": "refs/heads/parity/loop2-s15-dynamic-order"
    },
    "created_at": "2026-09-29T20:30:04Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T13:17:40Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T20:17:52Z",
    "actor": {
     "login": "shinycake"
    }

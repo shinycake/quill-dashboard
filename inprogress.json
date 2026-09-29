@@ -17,12 +17,12 @@
    "branch": "parity/platform-minimize-to-tray"
   },
   {
-   "area": "Bots, polls & payments",
-   "label": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
-   "kind": "pr",
-   "pr": 177,
-   "url": "https://github.com/shinycake/quill/pull/177",
-   "branch": "parity/bots-force-reply"
+   "area": "Chat list",
+   "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/chatlist-badge-settings"
   },
   {
    "area": "Groups, supergroups & channels",
@@ -39,14 +39,6 @@
    "pr": 179,
    "url": "https://github.com/shinycake/quill/pull/179",
    "branch": "parity/ephemeral-updates"
-  },
-  {
-   "area": "Stickers, emoji & GIFs",
-   "label": "S18 sticker suggestions by emoji in composer",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/loop2-s18-sticker-suggest"
   }
  ]
 }
