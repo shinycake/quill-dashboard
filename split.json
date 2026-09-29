@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T12:51:20.087748+00:00",
+ "generated_at": "2026-09-29T12:51:42.452570+00:00",
  "target_lines": 2000,
  "files": [
   {
@@ -51,14 +51,16 @@
    "merged_at": "2026-09-29T06:36:00Z",
    "number": 148,
    "title": "refactor: split src/ui/mod.rs batch 1 \u2014 dialogs (Poll..Restrict)",
-   "updated_at": "2026-09-29T06:36:00Z"
+   "updated_at": "2026-09-29T06:36:00Z",
+   "extracted": 626
   },
   {
    "html_url": "https://github.com/shinycake/quill/pull/153",
    "merged_at": null,
    "number": 153,
    "title": "refactor: split ui/mod.rs dialogs batch 2 (GroupConfirm->Welcome)",
-   "updated_at": "2026-09-29T12:46:29Z"
+   "updated_at": "2026-09-29T12:46:29Z",
+   "extracted": 504
   }
  ]
 }
