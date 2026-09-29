@@ -1,13 +1,15 @@
 {
- "generated_at": "2026-09-29T13:53:18.129373+00:00",
+ "generated_at": "2026-09-29T13:55:18.328451+00:00",
  "loops": [
   {
    "blockers": [],
    "coordinator": "104dcfec-76b7-4a06-8acf-c538c75d2fa6",
    "current": {
     "branch": "parity/calls-screen-share-render",
-    "detail": "C2l: render the peer's 1:1 screen share in the call card (the open gap from C2j). Phase 9 merged (#142) so src/ui/mod.rs is unfrozen. Plan: screen frame becomes the main video-stage tile w/ 'Peer's screen' badge when a frame is retained; dedicated decode-cache slot (seq-0 demo fixtures would collide in the camera slot); track peer screen state on ActiveCall (remote_screen) so a late frame arriving after Inactive can't repopulate a stale tile \u2014 resolves C2j's deferred fencing question. Demo: new ScreenshotDemo::ReadyCallScreenShareReceive fixture for screenshots. README parity:calls-screen-share box to update.",
-    "phase": "implementing",
+    "commit": "4c7e0f4",
+    "detail": "C2l implemented + committed: peer 1:1 screen share renders as the main video-stage tile w/ badge; dedicated decode slot; ActiveCall::remote_screen closes the C2j late-frame race; ReadyCallScreenShareReceive demo fixture; README parity:calls-screen-share checked (373/525 = 71.0%). Gates: fmt/clippy/test/size-check green. cargo build --features ui running as final pre-merge gate.",
+    "parity": "373/525 (71.0%)",
+    "phase": "ui-build-gate",
     "pr": null,
     "slice": "C2l",
     "worktree": "~/workspace/quill-l1-c2l"
@@ -25,16 +27,16 @@
     "phase": "queued",
     "slice": "TBD"
    },
-   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated, left alone. quill-l1-community worktree removed (branch merged in #146); fresh worktree quill-l1-c2l created at origin/main 530de44.",
+   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 verified intact, unrelated, left alone. quill-l1-community worktree removed (branch merged in #146); fresh worktree quill-l1-c2l at origin/main 530de44. Parity script on clean origin/main reads 372/525 (task standing 371/525 was slightly stale); C2l checks one box -> 373/525. Subagents cannot be spawned at depth 2/2, so the dedicated adversarial reviewer must come from the parent \u2014 a rigorous self-review of the diff was done instead; flagging explicitly.",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
     "pr": 142,
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:45:53Z",
+   "updated_at": "2026-09-29T14:10:00Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -84,7 +86,7 @@
    },
    "updated_at": "2026-09-29T13:45:54Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 564
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -102,9 +104,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:02:00Z",
+   "updated_at": "2026-09-29T13:54:39Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 39
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -135,7 +137,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:48:41Z",
    "stale": false,
-   "age_seconds": 277
+   "age_seconds": 397
   }
  ]
 }
