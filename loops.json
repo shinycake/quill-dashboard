@@ -4,14 +4,14 @@
    "blockers": [],
    "coordinator": "990383e7-7bb5-4704-8d87-59a7c3866893",
    "current": {
-    "slice": "communities-search-filter",
-    "branch": "parity/community-search-filter",
-    "worktree": "~/workspace/quill-l1-commsearch",
+    "slice": "communities-chatlist-mode",
+    "branch": "parity/community-chatlist-mode",
+    "worktree": "~/workspace/quill-l1-commmode",
     "phase": "pr-open",
-    "pr": 181,
+    "pr": 182,
     "handoff": "merge-pipeline",
-    "commit": "5955a0b",
-    "detail": "communities-search-filter PR #181 open (https://github.com/shinycake/quill/pull/181). Reviewer BLOCK verdict fully addressed in 5955a0b (free function inlined as Option<i64> param, waiver recomputed to exact 10491). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
+    "commit": "ee95ed5",
+    "detail": "communities-chatlist-mode PR #182 open (https://github.com/shinycake/quill/pull/182). Reviewer BLOCK resolved via correct-ref UI build (36642005654 success). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
    "last_merged": {
@@ -22,13 +22,11 @@
    },
    "loop": 1,
    "next": {
-    "slice": "communities-chatlist-mode",
-    "branch": "parity/community-chatlist-mode",
-    "worktree": "~/workspace/quill-l1-commmode",
-    "phase": "in-review",
-    "detail": "Community chat-list mode: selected community filters the main chat list to its chats (community_id match), with enter/exit affordances. Builds on G10 hub + communities backend core (merged).",
-    "commit": "ee95ed5",
-    "reviewer": "0b79b31c-b088-4c52-8955-fba687b555da (pending, re-dispatched)"
+    "slice": "chatlist-list-style",
+    "branch": "parity/chatlist-list-style",
+    "worktree": "~/workspace/quill-l1-clstyle",
+    "phase": "implementing",
+    "detail": "Chat-list style settings: row density (two/three lines), media icons in preview, text formatting in preview. Builds on appearance-prefs infrastructure."
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -37,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:45:54Z",
+   "updated_at": "2026-09-29T23:03:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -50,25 +48,25 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T22:47:00Z",
-   "last_evidence_event": "communities-chatlist-mode reviewer agent errored on daemon restart (no verdict); re-dispatched identical review brief",
-   "wip_open_prs": 1,
+   "last_evidence_at": "2026-09-29T23:03:00Z",
+   "last_evidence_event": "next slice claimed: chatlist-list-style (parity:chatlist-list-style) \u2014 chat-list lane, squarely Loop 1; implementer dispatched",
+   "wip_open_prs": 2,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 377
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": null,
-    "branch": null,
-    "worktree": null,
-    "phase": "standby-phase1",
+    "slice": "bot inline mode (parity:bots-inline-mode)",
+    "branch": "parity/bots-inline-mode",
+    "worktree": "~/workspace/quill-l2-inline-mode",
+    "phase": "researching",
     "pr": null,
     "handoff": null,
-    "detail": "Parent-directed standby 2026-09-29 ~17:40 CDT: loop 2 verified its calls+groups pool is exhausted (6 calls items blocked/already-implemented per DECISIONS.md evidence; 5 groups items claimed by loop 1 or TDLib-blocked). S18 stays parked. Wake condition: parent declares phase 2, or a phase-1 slice opens in its lanes. Watchdog: do NOT respawn as dead \u2014 this is a deliberate hold."
+    "detail": "Phase 2 start per Idan 17:53 CDT directive (no standby). Claimed inline mode first (highest user value). Worktree at bda4307. Research subagent gathering evidence pack on existing GIF-search inline backend, schema, composer, popup UI patterns, TGX behavior. Open PRs repo-wide: 2 (#180, #181), cap not binding."
    },
-   "lanes": "calls + groups/channels (phase 1: functionality-first; shared pool with Loop 1 \u2014 check loop1.json first, never take a slice Loop 1 is on)",
+   "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
     "pr": 155,
     "slice": "S7 clickable story areas",
@@ -151,7 +149,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:45:56Z",
+   "updated_at": "2026-09-29T22:54:27Z",
    "last_merge": {
     "pr": 178,
     "slice": "S17 choosing-a-sticker chat action",
@@ -159,9 +157,9 @@
     "commit": "fdc7ea73",
     "parity": "409/525 (77.9%)"
    },
-   "last_evidence_at": "2026-09-29T22:40:30Z",
+   "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": false,
-   "age_seconds": 767
+   "age_seconds": 54
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -181,13 +179,13 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:46:03Z",
+   "updated_at": "2026-09-29T22:54:33Z",
    "last_evidence_at": "2026-09-29T22:46:03Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": false,
-   "age_seconds": 434
+   "age_seconds": 558
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -195,13 +193,13 @@
     "slice": "secret-chat blocker verification (phase-1 partition)",
     "branch": null,
     "worktree": null,
-    "phase": "standby-phase1",
+    "phase": "phase2-start",
     "pr": null,
     "handoff": null,
-    "detail": "Parent-directed standby: loop 4 verified all 3 secret-chat blockers as genuinely blocked with fresh concept-level evidence (screenshot-send: no Linux OS detection API; screenshot-block: no FLAG_SECURE equiv; session-terminate: no auth-key linkage in td_api.tl). Phase-1 pool audited \u2014 nothing unblocked/unclaimed remains in its lanes. Wake condition: parent declares phase 2. Watchdog: do NOT respawn as dead \u2014 deliberate hold."
+    "detail": "Parent-directed standby: loop 4 verified all 3 secret-chat blockers as genuinely blocked with fresh concept-level evidence (screenshot-send: no Linux OS detection API; screenshot-block: no FLAG_SECURE equiv; session-terminate: no auth-key linkage in td_api.tl). Phase-1 pool audited \u2014 nothing unblocked/unclaimed remains in its lanes. Wake condition: parent declares phase 2. Watchdog: do NOT respawn as dead \u2014 deliberate hold. Moved to phase 2 partition by Idan 2026-09-29 ~17:53 CDT. Phase-2 coordinator dispatched 2026-09-29T22:53:36Z."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
-   "lanes": "secret chats (phase 1: functionality-first)",
+   "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
     "commit": "dec95dc",
     "pr": 136,
@@ -227,8 +225,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:43:00Z",
-   "updated_at": "2026-09-29T22:48:42Z",
+   "last_evidence_at": "2026-09-29T22:53:36Z",
+   "updated_at": "2026-09-29T22:53:36Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -257,7 +255,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 617
+   "age_seconds": 105
   }
  ]
 }
