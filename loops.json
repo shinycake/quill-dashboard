@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:01:17.768587+00:00",
+ "generated_at": "2026-09-29T16:03:17.588528+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 445
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -122,7 +122,7 @@
    },
    "updated_at": "2026-09-29T15:55:52Z",
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 445
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -141,7 +141,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:54:32Z",
    "stale": false,
-   "age_seconds": 405
+   "age_seconds": 525
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -182,7 +182,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:58:40Z",
    "stale": false,
-   "age_seconds": 157
+   "age_seconds": 277
   }
  ]
 }
