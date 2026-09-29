@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T04:09:17.622389+00:00",
+ "generated_at": "2026-09-29T04:11:18.188163+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -27,23 +27,24 @@
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S8 sticker-set backend \u2014 PR #138 opened, awaiting linux-fmt-clippy-test",
+   "current": "S9 GIF backend (brief ready, worktree rebased to 098dd94)",
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
-   "next": {
-    "detail": "S9 GIFs backend (search trending, save/delete, search parameters). Parked UI slices: S5 albums/archive/pinned (stories3), S6 viewer playback (stories4), S7 clickable areas (stories5) \u2014 rebase onto origin/main deferred until kit Phase 9 merges to avoid double UI-conflict resolution",
-    "phase": "queued",
-    "slice": "S9 GIFs backend"
-   },
+   "next": "S9 GIF backend implementation",
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T04:06:01Z",
+   "updated_at": "2026-09-29T04:20:00Z",
    "pr": {
     "s8": 138
    },
+   "last_merged": {
+    "slice": "S8 sticker-set backend",
+    "pr": 138,
+    "commit": "098dd94"
+   },
    "stale": false,
-   "age_seconds": 196
+   "age_seconds": 0
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -63,7 +64,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:04:37Z",
    "stale": false,
-   "age_seconds": 280
+   "age_seconds": 401
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -96,7 +97,7 @@
    "status": "active",
    "updated_at": "2026-09-29T04:08:42Z",
    "stale": false,
-   "age_seconds": 35
+   "age_seconds": 156
   }
  ]
 }
