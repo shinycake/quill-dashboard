@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T07:29:16.736238+00:00",
+ "generated_at": "2026-09-29T07:31:17.016556+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,18 +45,18 @@
     }
    ],
    "stale": false,
-   "age_seconds": 204
+   "age_seconds": 325
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S5 PR #154 CI rerun; S7 PR #155 opened",
+   "current": "S5 merged (#154); S7 PR #155 CI rerun after fmt fix",
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
-   "next": "Merge S5 and S7 after CI",
+   "next": "Merge S7 after CI",
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T07:45:00Z",
+   "updated_at": "2026-09-29T07:50:00Z",
    "pr": {
     "s8": 138,
     "s9": 140,
@@ -70,7 +70,7 @@
     },
     "s5": {
      "number": 154,
-     "state": "open"
+     "state": "merged"
     },
     "s7": {
      "number": 155,
@@ -85,10 +85,10 @@
    "unparked": {
     "s6": "merged (#149)",
     "s10": "merged (#152)",
-    "s5": "PR #154",
+    "s5": "merged (#154)",
     "s7": "PR #155"
    },
-   "parity": "368/525 (70.1%)",
+   "parity": "371/525 (70.7%)",
    "stale": false,
    "age_seconds": 0
   },
@@ -110,7 +110,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:24:31Z",
    "stale": false,
-   "age_seconds": 285
+   "age_seconds": 406
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -143,7 +143,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:28:39Z",
    "stale": false,
-   "age_seconds": 37
+   "age_seconds": 158
   }
  ]
 }
