@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:39:19.221878+00:00",
+ "generated_at": "2026-09-29T15:41:24.200773+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 206
+   "age_seconds": 331
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -114,7 +114,7 @@
    },
    "updated_at": "2026-09-29T15:35:54Z",
    "stale": false,
-   "age_seconds": 205
+   "age_seconds": 330
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -172,7 +172,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:38:37Z",
    "stale": false,
-   "age_seconds": 42
+   "age_seconds": 167
   }
  ]
 }
