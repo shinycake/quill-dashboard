@@ -156,8 +156,8 @@
     "note": "Backend-only, no README box change."
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
-   "stale": false,
-   "age_seconds": 888
+   "stale": true,
+   "age_seconds": 1007
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -182,8 +182,8 @@
    "status": "active",
    "updated_at": "2026-09-29T21:44:30Z",
    "last_evidence_at": "2026-09-29T21:33:00Z",
-   "stale": false,
-   "age_seconds": 858
+   "stale": true,
+   "age_seconds": 977
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -225,7 +225,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-29T21:15:00Z",
-   "updated_at": "2026-09-29T21:38:41Z",
+   "updated_at": "2026-09-29T21:48:41Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -235,7 +235,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 1938
+   "age_seconds": 2057
   }
  ]
 }
