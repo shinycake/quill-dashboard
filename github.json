@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 411,
+  "done": 412,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 181,
+   "title": "communities-search-filter: community chat-type filter for message search",
+   "merged_at": "2026-09-29T23:40:31Z",
+   "html_url": "https://github.com/shinycake/quill/pull/181",
+   "head": {
+    "ref": "parity/community-search-filter"
+   }
+  },
   {
    "number": 180,
    "title": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
@@ -894,18 +903,18 @@
    "head": {
     "ref": "parity/messaging-core-1"
    }
-  },
-  {
-   "number": 82,
-   "title": "parity:secret-chats-2 inline-bot warning + storage usage (S2)",
-   "merged_at": "2026-09-27T13:26:57Z",
-   "html_url": "https://github.com/shinycake/quill/pull/82",
-   "head": {
-    "ref": "parity/secret-chats-2"
-   }
   }
  ],
  "openPRs": [
+  {
+   "number": 185,
+   "title": "infra: delete check_file_sizes.sh waiver system",
+   "updated_at": "2026-09-29T23:39:41Z",
+   "html_url": "https://github.com/shinycake/quill/pull/185",
+   "head": {
+    "ref": "parity/remove-check-file-sizes"
+   }
+  },
   {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
@@ -932,18 +941,49 @@
    "head": {
     "ref": "parity/community-chatlist-mode"
    }
-  },
-  {
-   "number": 181,
-   "title": "communities-search-filter: community chat-type filter for message search",
-   "updated_at": "2026-09-29T23:29:20Z",
-   "html_url": "https://github.com/shinycake/quill/pull/181",
-   "head": {
-    "ref": "parity/community-search-filter"
-   }
   }
  ],
  "events": [
+  {
+   "type": "DeleteEvent",
+   "payload": {
+    "ref": "parity/community-search-filter"
+   },
+   "created_at": "2026-09-29T23:40:34Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-29T23:40:33Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T23:40:31Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T23:39:41Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1303,49 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T21:43:03Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/ephemeral-updates"
-   },
-   "created_at": "2026-09-29T21:34:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T21:31:52Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s16-emoji-sticker-type"
-   },
-   "created_at": "2026-09-29T21:28:16Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "73c31931def29192a88895084eed2f80ed364bd3",
+   "html_url": "https://github.com/shinycake/quill/commit/73c31931def29192a88895084eed2f80ed364bd3",
+   "commit": {
+    "message": "communities-search-filter: community chat-type filter for message search (#181)\n\n* Slice: community search filter (searchMessagesChatTypeFilterCommunity)\n\nTyped-search panel gains 'All chats' + per-community filter chips fed by\nSessionState.communities (updateCommunity; have_access only \u2014 TDLib has no\nlist-communities method). Chip click stores SearchState::community_filter and\nre-runs the query; the driver sends searchMessagesChatTypeFilterCommunity\n{ community_id } in the chat_type_filter slot (schema 1.8.67, line 6344).\nNo selection (or 'All chats') keeps the historical null filter.\n\nWaiver bumps (type-coherent extensions only, cannot live in named modules):\nrequests.rs +22 (search_messages_chat_type_filter_json builder next to its\nsibling + search_messages chat_type_filter param \u2014 request builders are this\nfile's single responsibility); connect.rs +30 (set_search_community_filter\ndriver method on the existing Connect type + import + call-site wiring);\nstate.rs +9 (SearchState::community_filter field + Default init + resets \u2014\nper-search-session state the driver must read); ui/mod.rs +75\n(search_community_filter_chips render fn + set_search_community_filter\nhandler on the existing app type + chips-row hook). All new tests in\ntests/community_search_filter.rs.\n\n* communities-search-filter: review fixups \u2014 inline chat-type filter, drop free function\n\nRemove the new free function search_messages_chat_type_filter_json from\nwaived src/telegram/requests.rs; search_messages now takes\ncommunity_filter: Option<i64> and builds the\nsearchMessagesChatTypeFilterCommunity constructor inline. Call site in\nconnect.rs passes self.session.search.community_filter straight through;\nre-export and import of the deleted function dropped. Integration tests\ndrive search_messages directly with Some(42)/None. Waiver entry set to\nthe exact 10491 lines (+14 edit to the existing search_messages only).\n\n* Merge-pipeline: rebase post-#180; union DECISIONS.md section, exact waiver baselines\n\n* Merge-pipeline: restore set_profile_accent_color re-export (review finding)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T23:40:31Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
    "html_url": "https://github.com/shinycake/quill/commit/4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
@@ -1466,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T20:17:51Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "8f7f144240045ee67000e51724a2f014ca9a730c",
-   "html_url": "https://github.com/shinycake/quill/commit/8f7f144240045ee67000e51724a2f014ca9a730c",
-   "commit": {
-    "message": "G9: community service message rows (join/added/removed) (#168)\n\n* G9: community service message rows (join/added/removed)\n\nRender the three community service messages as centered neutral rows\nin session_history_row (schema 1.8.67, td_api.tl:5353-5363):\n\n- messageChatAddedToCommunity -> 'This chat was added to community\n  \"NAME\"' (name from the session updateCommunity cache) or the nameless\n  fallback; TGX ActionChatAddedToCommunity{,Unknown} verbatim.\n- messageChatRemovedFromCommunity -> 'This chat was removed from\n  community'; TGX ActionChatRemovedFromCommunity verbatim.\n- messageChatJoinFromCommunity (new MessageContent::ChatJoinFromCommunity\n  { community_id } parse arm + chat-list preview 'Joined the group from\n  the community') -> '{sender}/You joined the group from the community\n  [\"NAME\"]'; TGX group_user_join_from_community* verbatim; the row\n  keeps the sender uncollapsed (same rule as ScreenshotTaken).\n\nNo bubble, no reply/react/edit/delete; not caption-editable\n(composer.rs arm); no extra media arm. TGX reference: TGMessageService.java\ncommunity constructors + strings.xml.\n\nWaiver bumps (exact, type-coherent extensions per the waiver-bump\nrule: new enum variant + new match arms on the existing row-dispatch\nand preview/parser/caption matches \u2014 they cannot live in named modules):\n- src/telegram/envelope.rs 18209 -> 18264 (variant + parse + preview\n  arms + tests)\n- src/ui/mod.rs 48465 -> 48531 (three service-row arms + sender/no-media/\n  caption arms on existing matches)\n\nGates: cargo fmt, clippy --no-default-features --all-targets -D\nwarnings, cargo test --no-default-features (1055 + 59 passed),\ncargo build --features ui (LIBRARY_PATH=/tmp/xkb-lib),\ncheck_file_sizes.sh green.\n\n* rebase: onto main post-S3/S13 + exact G9 waiver bumps\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: quill-merge <quill-merge@local>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T20:07:07Z"
     }
    },
    "author": {

@@ -331,6 +331,7 @@
     "Communities: info panel (backend \u2014 loadFullInfo/setName builders + drivers + state sync \u2014 plus community info panel UI: name with edit prompt, admin/banned/request counts, chat list with hidden badges)",
     "Communities: \"chat added to community\" service message (`messageChatAddedToCommunity`; TGX `ActionChatAddedToCommunity`/`ActionChatAddedToCommunityUnknown` verbatim \u2014 `This chat was added to community \"NAME\"` with the name from the session `updateCommunity` cache, nameless fallback when unknown) (src/telegram/envelope.rs, src/ui/mod.rs)",
     "Communities: \"chat removed from community\" service message (`messageChatRemovedFromCommunity`; TGX `ActionChatRemovedFromCommunity` verbatim \u2014 `This chat was removed from community`) (src/telegram/envelope.rs, src/ui/mod.rs)",
+    "Communities: community search filter (searchMessagesChatTypeFilterCommunity)",
     "Communities: community join service message (`messageChatJoinFromCommunity`; TGX `group_user_join_from_community*` verbatim \u2014 `{name} joined the group from the community \"NAME\"` / `You joined the group from the community \"NAME\"`, nameless fallbacks; sender kept uncollapsed so incoming rows attribute the join) (src/telegram/envelope.rs, src/ui/mod.rs)"
    ],
    "pending": [
@@ -353,11 +354,6 @@
      "text": "Communities: admin-rights management",
      "blocked": true,
      "reason": "no TDLib 1.8.67 method"
-    },
-    {
-     "text": "Communities: community search filter (searchMessagesChatTypeFilterCommunity)",
-     "blocked": false,
-     "reason": null
     }
    ]
   },

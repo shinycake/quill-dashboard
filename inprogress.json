@@ -17,19 +17,11 @@
    "branch": "parity/community-chatlist-mode"
   },
   {
-   "area": "Groups, supergroups & channels",
-   "label": "communities-search-filter: community chat-type filter for message search",
-   "kind": "pr",
-   "pr": 181,
-   "url": "https://github.com/shinycake/quill/pull/181",
-   "branch": "parity/community-search-filter"
-  },
-  {
    "area": "Media",
-   "label": "remove-check-file-sizes",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/remove-check-file-sizes",
+   "label": "infra: delete check_file_sizes.sh waiver system",
+   "kind": "pr",
+   "pr": 185,
+   "url": "https://github.com/shinycake/quill/pull/185",
    "branch": "parity/remove-check-file-sizes"
   },
   {
