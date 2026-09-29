@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T05:15:16.748838+00:00",
+ "generated_at": "2026-09-29T05:17:17.654106+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,7 +9,7 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #141 MERGED (group-info-edit; 367/525=69.9%). C2k + C2l parked-blocked on Phase 9 unfreeze. Communities backend core implementing."
+    "detail": "PR #141 MERGED (367/525=69.9%). C2k + C2l parked-blocked on Phase 9 unfreeze. Communities backend core implemented (f289abe, 1013+59 tests green), in adversarial review."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -17,10 +17,11 @@
     "slice": "community-backend-core",
     "branch": "parity/community-backend-core",
     "worktree": "~/workspace/quill-l1-communitycore",
-    "phase": "implementing"
+    "phase": "reviewing",
+    "commit": "f289abe"
    },
    "status": "active",
-   "updated_at": "2026-09-29T07:45:00Z",
+   "updated_at": "2026-09-29T05:15:51Z",
    "last_merged": {
     "pr": 141,
     "slice": "group-info-edit",
@@ -29,7 +30,7 @@
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated to this slice, left alone.",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -40,7 +41,7 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T05:05:54Z",
+   "updated_at": "2026-09-29T05:15:56Z",
    "pr": {
     "s8": 138,
     "s9": 140
@@ -51,7 +52,7 @@
     "commit": "5da1d24"
    },
    "stale": false,
-   "age_seconds": 562
+   "age_seconds": 81
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -71,7 +72,7 @@
    "status": "active",
    "updated_at": "2026-09-29T05:14:31Z",
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 166
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -83,7 +84,7 @@
     "slice": "A7 account lifecycle (backend)",
     "worktree": "~/workspace/quill-l4-lifecycle"
    },
-   "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Hard constraint: no src/ui/mod.rs or UI surface files until kit Phase 9 merges (~/workspace/quill-kit-9 owns it).",
+   "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
    "last_merged": {
     "at": "2026-09-28T17:26:23Z",
@@ -104,7 +105,7 @@
    "status": "active",
    "updated_at": "2026-09-29T05:08:45Z",
    "stale": false,
-   "age_seconds": 391
+   "age_seconds": 512
   }
  ]
 }
