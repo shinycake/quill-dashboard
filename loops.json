@@ -1,31 +1,30 @@
 {
- "generated_at": "2026-09-29T20:19:20.071941+00:00",
+ "generated_at": "2026-09-29T20:21:19.291212+00:00",
  "loops": [
   {
    "blockers": [],
-   "coordinator": "7dfc916b-9b21-423a-aad3-23ca706e683e",
+   "coordinator": "990383e7-7bb5-4704-8d87-59a7c3866893",
    "current": {
+    "slice": "G10",
     "branch": "parity/communities-ui",
-    "commit": "b82341d",
-    "detail": "G10: community create/hub/info UI (verified: worktree ~/workspace/quill-l1-communities on parity/communities-ui @ b82341d, last commit 2026-09-29 17:21:45Z). Prior slice C2l/PR #162 merged 2026-09-29T17:58:15Z; last_merged updated accordingly. Coordinator status (unverified by watchdog): remote UI gate green, local --features ui build restarted ~17:24Z for screenshots. No PR opened for G10 yet.",
-    "parity": "375/525 = 71.4%",
+    "worktree": "~/workspace/quill-l1-communities",
     "phase": "in-progress",
     "pr": null,
-    "slice": "G10",
-    "worktree": "~/workspace/quill-l1-communities"
+    "commit": "b82341d",
+    "detail": "G10: community create/hub/info UI. Verified 2026-09-29 20:20Z: worktree @ b82341d == origin/parity/communities-ui tip, no unpushed commits, merge-tree clean vs origin/main 8fd501b. Pre-freeze gates were green (remote Mac UI build success, local fmt/clippy/test/file-sizes green, parity 375/525 with 3 boxes checked). Remaining: rebase onto origin/main (preserve README box union), re-run full gates, capture screenshots, add docs/screenshots/README.md rows, adversarial review, open PR."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
-    "commit": "ff7dbfb",
-    "parity": "373/525 (71.0%)",
-    "pr": 162,
-    "slice": "C2l"
+    "pr": 168,
+    "slice": "G9",
+    "name": "community service message rows",
+    "parity": "398/525 (75.8%)"
    },
    "loop": 1,
    "next": {
-    "detail": "G8: group/channel title + description + photo edit UI (parity:groups-set-title/description/photo). Backend drivers exist (connect.rs set_group_title/description/photo + group_info_edit_allowed gate; README: 'backend done, edit UI deferred post-Phase-9' \u2014 #142 merged, unblocked). Plan: extend TextPromptKind with GroupTitle/GroupDescription reusing UsernameDialog (open from group/channel info panel, can_change_info-gated); photo via existing file-picker pattern + set_group_photo (None deletes). Fresh worktree ~/workspace/quill-l1-g8 from origin/main 530de44.",
-    "phase": "starting",
-    "slice": "G8"
+    "detail": "G8 (Settings \u2192 Privacy edit UI) merged as #165 during freeze flush. Next slice TBD from lanes after G10.",
+    "phase": "unpicked",
+    "slice": null
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -34,28 +33,20 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:15:53Z",
+   "updated_at": "2026-09-29T20:20:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
    "current_status": "UI GATE GREEN: remote Mac UI build (run 36604401681, ref parity/communities-ui @ b82341d) concluded success. cargo fmt / clippy --no-default-features -D warnings / cargo test --no-default-features / check_file_sizes.sh all green on the pushed tree. Parity 375/525 = 71.4% (3 boxes checked). Remaining: local --features ui build (restarted ~17:24, for screenshots) -> capture ready-community-create/hub/info PNGs -> docs/screenshots/README.md rows -> final gates re-check -> READY-FOR-REVIEW (no PR until parent relays APPROVED).",
-   "parity": "375/525 = 71.4%",
+   "parity": "398/525 = 75.8%",
    "last_slice": {
     "id": "G9",
     "name": "community service message rows (join/added/removed)",
-    "branch": "parity/community-service-rows",
-    "commit": "b0616c1",
-    "worktree": "~/workspace/quill-l1-community-rows",
     "pr": 168,
-    "checklist_boxes": [
-     "parity:groups-added-to-community",
-     "parity:groups-removed-from-community",
-     "parity:communities-join-service-message"
-    ],
-    "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
+    "status": "merged 2026-09-29 during freeze flush"
    },
    "stale": false,
-   "age_seconds": 207
+   "age_seconds": 79
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -65,7 +56,7 @@
     "worktree": "~/workspace/quill-loop2-s15",
     "phase": "implementing",
     "pr": null,
-    "detail": "S15 implementing in dedicated worktree on origin/main @ 87892ab. Design: send_sticker passes update_order_of_installed_sticker_sets=true (schema 1.8.67:5928) so TDLib moves the used set to front; handle updateInstalledStickerSets (schema:10932) by reordering cached sets in place (no refetch, no UI change \u2014 picker lists stored order). Dedup: #158 merged, #163/#167/#172 open in other features, no overlap."
+    "detail": "S15 implementing in dedicated worktree on origin/main @ 8fd501b (rebased from 87892ab post-freeze). Design: send_sticker passes update_order_of_installed_sticker_sets=true (schema 1.8.67:5928) so TDLib moves the used set to front; handle updateInstalledStickerSets (schema:10932) by reordering cached sets in place (no refetch, no UI change \u2014 picker lists stored order). Dedup: #158/#163/#167/#172 all merged, no overlap."
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -74,8 +65,8 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "S13 (PR #167) still open \u2014 merge watcher owns the queue. S12 (#163) merged 2026-09-29T18:41Z and S14 (#172) merged 2026-09-29T19:13Z. S15 dynamic sticker-set order implementing in ~/workspace/quill-loop2-s15.",
-   "parity": "372/525 (70.9%)",
+   "next": "S15 dynamic sticker-set order (this slice) implementing in ~/workspace/quill-loop2-s15; #163/#167/#172 all merged.",
+   "parity": "398/525 (75.8%)",
    "parked": false,
    "phase": "active",
    "pr": {
@@ -111,7 +102,7 @@
     },
     "s13": {
      "number": 167,
-     "state": "open \u2014 awaiting adversarial review, do not merge"
+     "state": "merged"
     },
     "s14": {
      "number": 172,
@@ -132,7 +123,7 @@
     "s7": "PR #155",
     "s11": "merged (#158 @ bb6d393, 2026-09-29T17:05Z)",
     "s12": "merged (#163 @ 098f453, 2026-09-29T18:41Z)",
-    "s13": "PR #167 (open, awaiting review)",
+    "s13": "merged (#167)",
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)"
    },
    "updated_at": "2026-09-29T20:15:51Z",
@@ -145,16 +136,16 @@
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
    "stale": false,
-   "age_seconds": 209
+   "age_seconds": 328
   },
   {
-   "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
+   "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
    "current": {
-    "base": "origin/main @ de943a2",
+    "base": "origin/main @ 8fd501b",
     "branch": "parity/bots-force-reply",
-    "commit": "9a7ae01",
-    "detail": "Force-reply keyboard bar implemented and committed as 9a7ae01 (pushed to parity/bots-force-reply). Gates green: fmt, clippy -D warnings, cargo test (1067 lib incl. 3 new force_reply tests + 59 replay), check_file_sizes OK (ui/mod.rs waiver exact bump 48465->48469). Mac remote UI build dispatched (run 36603600537); local screenshot build running -j1. Screenshot + PR pending on builds.",
-    "phase": "gates-green-awaiting-screenshot",
+    "commit": "ade480b",
+    "detail": "Freeze LIFTED 2026-09-29 ~15:20 CDT (queue hit 0; branch protection strict re-enabled). Resumed force-reply keyboard slice: amended doc fix, rebased onto origin/main @ 8fd501b (resolved 3 conflicts: ui/mod.rs mod decls, DECISIONS.md union, check_file_sizes waiver 48851->48855 exact). fmt OK; clippy+test re-running post-rebase. Mac remote UI build SUCCESS (run 36603600537) pre-freeze. Pending: screenshot recapture, open PR, adversarial review, merge.",
+    "phase": "rebased-gates-rerunning",
     "pr": null,
     "screenshot": null,
     "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
@@ -164,12 +155,12 @@
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
    "loop": 3,
    "parked_branches": {
-    "parity/settings-appearance": "PR #161 OPEN (verified 2026-09-29T16:43Z) \u2014 awaiting fresh adversarial review (parent dispatched)."
+    "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:14:30Z",
+   "updated_at": "2026-09-29T20:25:00Z",
    "stale": false,
-   "age_seconds": 290
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -218,7 +209,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 40
+   "age_seconds": 159
   }
  ]
 }
