@@ -510,7 +510,10 @@ function renderLoops(data){
 // Parity-over-time area chart (inline SVG, no libraries).
 function renderTrend(history, live){
   const el = $('trend');
-  let pts = (history && history.points ? history.points.slice() : []);
+  // Chronological order — history points aren't guaranteed sorted (rebased
+  // commits carry older timestamps), and the line draws them as-is.
+  let pts = (history && history.points ? history.points.slice() : [])
+    .sort((a, b) => new Date(a.t) - new Date(b.t));
   if (live && live.total){
     const last = pts[pts.length - 1];
     const lp = { t: live.at, done: live.done, total: live.total };
