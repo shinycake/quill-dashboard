@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T03:13:17.356062+00:00",
+ "generated_at": "2026-09-29T03:15:18.090783+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -43,7 +43,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:55:53Z",
    "stale": true,
-   "age_seconds": 1044
+   "age_seconds": 1165
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -61,9 +61,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:52:00Z",
-   "stale": true,
-   "age_seconds": 1277
+   "updated_at": "2026-09-29T03:14:36Z",
+   "stale": false,
+   "age_seconds": 42
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -96,7 +96,7 @@
    "status": "active",
    "updated_at": "2026-09-29T03:08:38Z",
    "stale": false,
-   "age_seconds": 279
+   "age_seconds": 400
   }
  ]
 }
