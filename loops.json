@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:55:18.690910+00:00",
+ "generated_at": "2026-09-29T14:57:27.485981+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,9 +34,9 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:45:51Z",
+   "updated_at": "2026-09-29T14:55:51Z",
    "stale": false,
-   "age_seconds": 567
+   "age_seconds": 96
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -89,9 +89,9 @@
     "s11": "PR #158 (open, awaiting review)",
     "s12": "PR #163 (open, fixup applied, awaiting re-review)"
    },
-   "updated_at": "2026-09-29T14:45:53Z",
+   "updated_at": "2026-09-29T14:55:53Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 94
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -110,16 +110,18 @@
    "status": "active",
    "updated_at": "2026-09-29T14:54:31Z",
    "stale": false,
-   "age_seconds": 47
+   "age_seconds": 176
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
     "branch": "parity/auth-a7-ui",
-    "detail": "PR not yet opened. Slice A9 = the spec'd A7 UI half (kit Phase 9 merged, src/ui touchable again): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only (module decl/re-export, 1 field + init, DialogKind variant, 2 dispatch arms, KINDS entry, sidebar entry, ReadyAccountLifecycle demo variant + arms) \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry appended; README auth-delete-account + auth-account-ttl checked (genuinely complete: backend A7 + UI A9). Gates so far: cargo fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay, green), check_file_sizes OK. cargo build --features ui (final pre-merge gate) running via quill-build (serialized lock). Screenshot demo: quill --screenshot-demo ready-account (fixture: accountTtl 180d + passwordState with password). BLOCKED ON REVIEW: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before PR/merge; parent must arrange.",
-    "phase": "implementing",
+    "worktree": "/home/hatch/workspace/quill-loop4-a9",
     "slice": "A9 account lifecycle UI (A7 UI half: delete-account dialog + TTL picker)",
-    "worktree": "/home/hatch/workspace/quill-loop4-a9"
+    "phase": "in-review",
+    "pr": 164,
+    "commit": "d50d515",
+    "detail": "PR #164 opened 2026-09-29 (commit d50d515): new named module src/ui/account_lifecycle.rs \u2014 'Account' kit dialog with self-destruct TTL picker (kit RadioGroup, TGX-verified 1/3/6/12/18/24mo \u2192 31/91/181/366/546/730d options + TGX display rule, unit-tested) + delete-account danger zone (TGX-verbatim 'Deleted Account' explainer, reason field, 2FA password field only when passwordState.has_password, inline 'Alright, delete account.' final confirm; password zeroized, never logged \u2014 the A2 rule). A7 backend reused as-is. src/ui/mod.rs +54 type-coherent lines only \u2014 exact waiver bump 48465\u219248519 recorded in scripts/check_file_sizes.sh. DECISIONS.md A9 entry; README auth-delete-account + auth-account-ttl checked (374/525 = 71.2%). Screenshot docs/screenshots/ready-account.png captured from a real GPUI window (injected fixtures, dialog open). ALL GATES GREEN: fmt, clippy --no-default-features --all-targets -D warnings, cargo test --no-default-features (1053 lib + 59 replay), cargo build --features ui, check_file_sizes, 2 new ui unit tests (cargo test --features ui --bin quill account_lifecycle). REVIEWER GAP: this coordinator is at max depth and cannot spawn subagents \u2014 needs a dedicated independent reviewer subagent before merge; parent must arrange. Do NOT merge without review (standing: coordinators never merge own PRs)."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
@@ -136,7 +138,7 @@
     "worktree": null
    },
    "parked": false,
-   "phase": "implementing",
+   "phase": "in-review",
    "previous": {
     "branch": "parity/auth-change-number-1",
     "detail": "PR #157 opened 2026-09-29: sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode builders + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose unit variants + Session change_number_* fields + reducer arms + connect.rs drivers + 10 new tests; DECISIONS.md A8 entry; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). Adversarial review APPROVED; review fixups applied and pushed (fd3375d). Awaiting merge \u2014 untouched worktree at /home/hatch/workspace/quill-loop4-a8.",
@@ -145,9 +147,9 @@
     "slice": "A8 change phone number (backend)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:48:41Z",
+   "updated_at": "2026-09-29T15:45:00Z",
    "stale": false,
-   "age_seconds": 397
+   "age_seconds": 0
   }
  ]
 }
