@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:53:18.135291+00:00",
+ "generated_at": "2026-09-29T16:55:18.366769+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 198
+   "age_seconds": 318
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -122,20 +122,20 @@
    },
    "updated_at": "2026-09-29T16:45:52Z",
    "stale": false,
-   "age_seconds": 446
+   "age_seconds": 566
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
    "current": {
-    "base": "origin/main @ fd411fd",
-    "branch": "parity/settings-data-storage",
-    "commit": "e811ce6659e649c85733b09efc1b7505550aa68c",
-    "detail": "S4 adversarial review returned CHANGES REQUESTED; fixup committed as e811ce6 (pushed to parity/settings-data-storage, PR #171 OPEN, body updated). Applied: F1 seeded guard in driver set_less_data_for_calls (Err while unseeded, covers both toggles); F2 set_auto_download_settings doc rewritten to apply-on-ok-only; F3 DECISIONS.md 9 fields + by_chat; F4 tests/data_storage.rs (4 new apply-on-ok reducer tests, new named file); nit 6 chat_id==0 labeled 'Other chats'; nit 5 weighed, duplicate format_storage_bytes kept (shared returns '' for 0, no GB); nit 7 ui/mod.rs waiver 48465->48432 exact, connect.rs waiver 24153->24159 exact (type-coherent). Gates on e811ce6 all green: fmt, clippy -D warnings, tests (1066 lib + 59 replay + 4 new), check_file_sizes.sh OK, Mac-runner UI build success (run 36600603800, FULL POWER directive \u2014 no VM serialized build). Awaiting targeted re-review; NOT merging.",
-    "phase": "s4-in-review-fixup",
-    "pr": 171,
-    "screenshot": "docs/screenshots/ready-storage-usage.png",
-    "slice": "S4 (Settings -> Data & Storage)",
-    "worktree": "~/workspace/quill-l3-s4"
+    "base": "origin/main @ de943a2",
+    "branch": "parity/bots-force-reply",
+    "commit": null,
+    "detail": "Force-reply keyboard bar slice implementing: replyMarkupForceReply renders the reply-keyboard bar above the composer (was: composer focus only). Worktree ~/workspace/quill-l3-force-reply, branch parity/bots-force-reply. Prev state: S4 adversarial review fixup e811ce6 pushed, PR #171 OPEN awaiting re-review.",
+    "phase": "implementing",
+    "pr": null,
+    "screenshot": null,
+    "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
+    "worktree": "~/workspace/quill-l3-force-reply"
    },
    "lanes": "bots, polls, payments, settings",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
@@ -144,9 +144,9 @@
     "parity/settings-appearance": "PR #161 OPEN (verified 2026-09-29T16:43Z) \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:53:01Z",
+   "updated_at": "2026-09-29T16:54:32Z",
    "stale": false,
-   "age_seconds": 17
+   "age_seconds": 46
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -195,7 +195,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 280
+   "age_seconds": 400
   }
  ]
 }
