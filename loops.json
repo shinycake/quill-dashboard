@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:41:20.559707+00:00",
+ "generated_at": "2026-09-29T20:43:22.747530+00:00",
  "loops": [
   {
    "blockers": [],
@@ -51,7 +51,7 @@
    "last_evidence_event": "coordinator restarted; G10 branch state verified (b82341d clean vs origin/main); G10 implementer dispatched (rebase+gates+screenshots+review+PR); pipeline workflow adopted",
    "wip_open_prs": 0,
    "stale": false,
-   "age_seconds": 590
+   "age_seconds": 712
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -59,10 +59,10 @@
     "slice": "S16 fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
     "branch": "parity/loop2-s16-emoji-sticker-type",
     "worktree": "~/workspace/quill-loop2-s16",
-    "phase": "implementing",
-    "pr": null,
-    "detail": "S10's emoji-set request builders sent sticker_type stickerTypeEmoji, which does not exist in the pinned TDLib 1.8.67 schema (StickerType = Regular/Mask/CustomEmoji only, td_api.tl:412-421) \u2014 TDLib 400s those requests, so the emoji panel's installed/archived/trending/search/reorder fetches were broken in production. Fix: stickerTypeCustomEmoji in the 5 wire builders (getInstalled/Archived/Trending/Search/Reorder), test fixtures, and comments; README parity:emoji-custom-packs parenthetical corrected. No new README boxes (bug fix).",
-    "handoff": null
+    "phase": "pr-open",
+    "pr": 175,
+    "detail": "S10's emoji-set request builders sent sticker_type stickerTypeEmoji, which does not exist in the pinned TDLib 1.8.67 schema (StickerType = Regular/Mask/CustomEmoji only, td_api.tl:412-421) \u2014 TDLib 400s those requests, so the emoji panel's installed/archived/trending/search/reorder fetches were broken in production. Fix: stickerTypeCustomEmoji in the 5 wire builders (getInstalled/Archived/Trending/Search/Reorder), test fixtures, and comments; README parity:emoji-custom-packs parenthetical corrected. No new README boxes (bug fix). PR #175 opened; handed to merge-pipeline.",
+    "handoff": "merge-pipeline"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -122,8 +122,9 @@
      "handoff": "merge-pipeline"
     },
     "s16": {
-     "number": null,
-     "state": "implementing"
+     "number": 175,
+     "state": "open \u2014 handed to merge-pipeline",
+     "handoff": "merge-pipeline"
     }
    },
    "status": "active",
@@ -146,9 +147,9 @@
     "parity": "372/525 (70.9%)",
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
-   "last_evidence_at": "2026-09-29T20:31:50Z",
+   "last_evidence_at": "2026-09-29T20:43:06Z",
    "stale": false,
-   "age_seconds": 570
+   "age_seconds": 16
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -173,7 +174,7 @@
    "updated_at": "2026-09-29T20:34:32Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": false,
-   "age_seconds": 638
+   "age_seconds": 760
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -223,7 +224,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 260
+   "age_seconds": 382
   }
  ]
 }
