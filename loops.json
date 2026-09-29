@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:35:17.508350+00:00",
+ "generated_at": "2026-09-29T16:37:17.859883+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:25:51Z",
+   "updated_at": "2026-09-29T16:35:53Z",
    "current_slice": "G9",
    "current_branch": "parity/community-service-rows",
    "current_commit": "b0616c1",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 84
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -120,9 +120,9 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T16:25:51Z",
+   "updated_at": "2026-09-29T16:35:54Z",
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 83
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -142,7 +142,7 @@
    "updated_at": "2026-09-29T16:34:32Z",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 165
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -183,7 +183,7 @@
    "status": "active",
    "updated_at": "2026-09-29T16:28:37Z",
    "stale": false,
-   "age_seconds": 400
+   "age_seconds": 520
   }
  ]
 }
