@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:33:27.125235+00:00",
+ "generated_at": "2026-09-29T13:35:18.514312+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:35:00Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 18
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -79,7 +79,7 @@
    },
    "updated_at": "2026-09-29T13:35:00Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 18
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -97,9 +97,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:45:00Z",
+   "updated_at": "2026-09-29T13:34:34Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 44
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -130,7 +130,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:28:47Z",
    "stale": false,
-   "age_seconds": 280
+   "age_seconds": 391
   }
  ]
 }
