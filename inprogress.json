@@ -47,14 +47,6 @@
    "pr": 178,
    "url": "https://github.com/shinycake/quill/pull/178",
    "branch": "parity/loop2-s17-choosing-sticker"
-  },
-  {
-   "area": "Stickers, emoji & GIFs",
-   "label": "loop2-s16-emoji-sticker-type",
-   "kind": "branch",
-   "pr": null,
-   "url": "https://github.com/shinycake/quill/tree/parity/loop2-s16-emoji-sticker-type",
-   "branch": "parity/loop2-s16-emoji-sticker-type"
   }
  ]
 }
