@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:29:17.555008+00:00",
+ "generated_at": "2026-09-29T02:31:17.145530+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -21,7 +21,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:25:55Z",
    "stale": false,
-   "age_seconds": 202
+   "age_seconds": 322
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -42,16 +42,16 @@
    "status": "active",
    "updated_at": "2026-09-29T02:25:56Z",
    "stale": false,
-   "age_seconds": 201
+   "age_seconds": 321
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "phase": "bots-backend",
-    "slice": "Slice 2 IN REVIEW: inline-mode TDLib backend (implementer done, gates green, dedicated adversarial review in flight). Slice 3 research scout running in parallel (payments-clear: deleteSavedOrderInfo/deleteSavedCredentials vs recurring-payments ToS).",
+    "slice": "Slice 2 IN REVIEW (inline backend, adversarial review in flight). Slice 3 IN FLIGHT: payments-clear backend (deleteSavedOrderInfo/deleteSavedCredentials builders + tests) \u2014 implementer running in ~/workspace/quill-l3-payclear.",
     "branch": "parity/bots-inline-backend",
     "pr": null,
-    "detail": "Slice 2 implementer complete: builders + envelope parsing + state slot + driver + 7 tests, no UI, README box untouched. Reviewer queued; Slice 3 spec queued. PR #134 merged (parity 366/522 = 70.1%)."
+    "detail": "Slice 3 spec chose deleteSavedOrderInfo+deleteSavedCredentials (schema 15286/15289, nothing client-side to clear). Recurring-payments: no backend slice possible; found a one-line UI gap (pay gate at ui/mod.rs:9019 ignores recurring terms URL) \u2014 flagged for the kit Phase 9 payment-dialog work. PR #134 merged; parity 366/522 = 70.1%."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -60,7 +60,7 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:31:00Z",
+   "updated_at": "2026-09-29T02:33:00Z",
    "stale": false,
    "age_seconds": 0
   },
@@ -68,8 +68,8 @@
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
    "current": {
     "branch": "parity/auth-lifecycle-1",
-    "detail": "deleteAccount + getAccountTtl/setAccountTtl backend (request builders, connect methods, state reducer, envelope parse, tests). UI halves (delete-confirm dialog, TTL picker) spec'd in DECISIONS.md for post-Phase-9. No UI code while kit Phase 9 owns src/ui/mod.rs.",
-    "phase": "implementing",
+    "detail": "A7 backend committed (202a416) on parity/auth-lifecycle-1; dedicated adversarial reviewer running. Gates green: fmt, clippy -D warnings, 996 lib + 59 replay tests.",
+    "phase": "adversarial-review",
     "pr": null,
     "slice": "A7 account lifecycle (backend)",
     "worktree": "~/workspace/quill-l4-lifecycle"
@@ -85,17 +85,17 @@
    "loop": 4,
    "next": {
     "branch": null,
-    "detail": "queued",
-    "phase": "queued",
-    "slice": "A7 follow-up: change-number backend research / platform flood-errors",
+    "detail": "Research complete: sendPhoneNumberCode/checkPhoneNumberCode with phoneNumberCodeTypeChange while authorized (NOT re-auth; README claim corrected). Caveat: schema says official Android/iOS only \u2014 verify server acceptance before UI. Full notes: quill-progress/loop4-research-change-number.md",
+    "phase": "research-done",
+    "slice": "A8 change phone number (backend)",
     "worktree": null
    },
    "parked": false,
-   "phase": "implementing",
+   "phase": "review",
    "status": "active",
-   "updated_at": "2026-09-29T02:28:41Z",
+   "updated_at": "2026-09-29T03:05:00Z",
    "stale": false,
-   "age_seconds": 36
+   "age_seconds": 0
   }
  ]
 }
