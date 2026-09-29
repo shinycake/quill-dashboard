@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T19:55:20.300381+00:00",
+ "generated_at": "2026-09-29T19:57:19.362515+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T19:45:53Z",
+   "updated_at": "2026-09-29T19:55:51Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 567
+   "age_seconds": 88
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -135,7 +135,7 @@
     "s13": "PR #167 (open, awaiting review)",
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)"
    },
-   "updated_at": "2026-09-29T19:45:57Z",
+   "updated_at": "2026-09-29T19:55:51Z",
    "last_merge": {
     "pr": 172,
     "slice": "S14 story-posting restriction notices backend",
@@ -145,7 +145,7 @@
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 88
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -169,7 +169,7 @@
    "status": "active",
    "updated_at": "2026-09-29T19:54:30Z",
    "stale": false,
-   "age_seconds": 50
+   "age_seconds": 169
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -218,7 +218,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 403
+   "age_seconds": 522
   }
  ]
 }
