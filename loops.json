@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:03:18.248037+00:00",
+ "generated_at": "2026-09-29T14:05:17.847790+00:00",
  "loops": [
   {
    "blockers": [],
@@ -36,7 +36,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:55:54Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 563
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -86,16 +86,16 @@
    },
    "updated_at": "2026-09-29T13:56:02Z",
    "stale": false,
-   "age_seconds": 436
+   "age_seconds": 555
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/bots-payment-clear-backend",
-    "detail": "Slice 3 RECOVERED and PR #159 OPENED (2026-09-29 ~14:00Z): orphaned commit 9ff0204 inspected; rebase onto origin/main@530de44 exposed a file-size gate failure (waived requests.rs grew to 10362 > 10322). Restructured per standing code-organization rule: builders moved to NEW src/telegram/requests_payments.rs (requests_emoji/requests_story split precedent), requests.rs restored to main state, re-exports in telegram/mod.rs; amended to ea1eb2b. Gates all green: fmt, clippy -D warnings, test --no-default-features --locked (2 new shape tests pass), build --features ui (recreated wiped /tmp/xkb-lib for the xkb link quirk), check_file_sizes.sh. Branch pushed. NOT merged \u2014 awaiting fresh dedicated adversarial reviewer (coordinator depth 2/2 cannot spawn subagents). Next: re-evaluate parked settings branches (kit Phase 9 #142 merged, UI-block lifted).",
+    "detail": "PR #159 OPEN (payments-clear backend). Appearance branch parity/settings-appearance rebased onto origin/main@530de44 (was 109 behind): resolved conflicts in main.rs, synthetic.rs (kit Phase 4 MessageChrome + BubbleLook union; plain mode -> kit Ghost variant), settings.rs (merged test fns), ui/mod.rs (8 hunks: module decls, kit import union, appearance overlay wiring kept, look-threading ported onto virtualized history pipeline, link-preview fixups kept font scaling + theme-aware colors). Waiver bump src/ui/mod.rs 48465->48628 committed (type-coherent wiring). Gates re-running.",
     "phase": "payments-clear",
     "pr": 159,
-    "slice": "Slice 3 OPEN as PR #159 (payments-clear backend, restructured requests_payments.rs). All gates green on rebased tree. Fresh adversarial review required before merge (parent must spawn; coordinator cannot)."
+    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Parked settings-appearance: rebased onto origin/main@530de44, re-gating."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -104,9 +104,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T13:54:39Z",
+   "updated_at": "2026-09-29T14:04:36Z",
    "stale": false,
-   "age_seconds": 519
+   "age_seconds": 41
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -137,7 +137,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:58:43Z",
    "stale": false,
-   "age_seconds": 275
+   "age_seconds": 394
   }
  ]
 }
