@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Quill — Live Parity Dashboard</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0e14'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%2358a6ff' font-family='sans-serif' font-weight='bold'%3EQ%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Live build progress of Quill, the Rust Telegram desktop client. Parity trend, PR velocity, loop activity, merged PRs, reviews, and work in progress.">
-<meta name="dashboard-version" content="2026-09-29-desktop-viz">
+<meta name="dashboard-version" content="2026-09-29-github-snapshot">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -286,7 +287,6 @@
 
 <script>
 const OWNER = 'shinycake', REPO = 'quill';
-const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 let cache = null;          // last good payload, kept in memory
 let refreshing = false;
 let lastLoopsSig = null;  // signature of last rendered loops.json
@@ -316,31 +316,21 @@ function ago(iso){
   return new Date(iso).toLocaleDateString();
 }
 
-async function getJSON(url){
-  const headers = { 'Accept': 'application/vnd.github+json' };
-  if (etags[url]) headers['If-None-Match'] = etags[url];
-  const r = await fetch(url, { headers, cache: 'no-store' });
-  if (r.status === 304) return { notModified: true, data: bodies[url] };
-  if (r.status === 403 && r.headers.get('x-ratelimit-remaining') === '0') {
-    const e = new Error('rate-limited'); e.rateLimited = true; throw e;
-  }
-  if (!r.ok) { const e = new Error('HTTP ' + r.status); e.status = r.status; throw e; }
-  const et = r.headers.get('ETag');
-  if (et) etags[url] = et;
-  const data = await r.json();
-  bodies[url] = data;
-  return { notModified: false, data };
-}
-
-async function getText(url){
+// GitHub data snapshot written by the build machine (quill-github-snapshot,
+// called from quill-loops-publish every 2 min) using its authenticated gh CLI.
+// The dashboard used to call api.github.com straight from the browser and hit
+// the unauthenticated 60 req/hr limit (403s); the snapshot is same-origin and
+// ETag-cached, so polling it never touches the API rate limit.
+async function getGithub(){
+  const url = 'github.json';
   const headers = {};
   if (etags[url]) headers['If-None-Match'] = etags[url];
   const r = await fetch(url, { headers, cache: 'no-store' });
   if (r.status === 304) return { notModified: true, data: bodies[url] };
-  if (!r.ok) { const e = new Error('README HTTP ' + r.status); e.status = r.status; throw e; }
+  if (!r.ok) { const e = new Error('snapshot HTTP ' + r.status); e.status = r.status; throw e; }
   const et = r.headers.get('ETag');
   if (et) etags[url] = et;
-  const data = await r.text();
+  const data = await r.json();
   bodies[url] = data;
   return { notModified: false, data };
 }
@@ -713,23 +703,17 @@ async function refresh(manual){
   btn.innerHTML = '<span class="spin">↻</span> Loading…';
   $('rateBanner').classList.remove('show');
   try {
-    const [mdR, closedR, openR, eventsR, commitsR, loopsR, kitR, histR] = await Promise.all([
-      getText('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/README.md'),
-      // per_page=100: one request feeds both the merged list and the velocity chart
-      getJSON(API + '/pulls?state=closed&per_page=100&sort=updated&direction=desc'),
-      getJSON(API + '/pulls?state=open&per_page=20'),
-      getJSON(API + '/events?per_page=40'),
-      getJSON(API + '/commits?per_page=10&sha=main'),
+    const [ghR, loopsR, kitR, histR] = await Promise.all([
+      getGithub().catch(() => ({ notModified: false, data: null })),
       getLoops().catch(() => ({ notModified: false, data: null })),
       getKit().catch(() => ({ notModified: false, data: null })),
       getHistory().catch(() => ({ notModified: false, data: null })),
     ]);
-    const now = new Date().toISOString();
-    const changed = [mdR, closedR, openR, eventsR, commitsR, histR].some(r => !r.notModified);
+    const changed = [ghR, histR].some(r => !r.notModified);
 
     if (changed || !cache) {
-      const md = mdR.data, closedPRs = closedR.data, openPRs = openR.data,
-            events = eventsR.data, commits = commitsR.data;
+      const g = ghR.data, md = g.readme, closedPRs = g.closedPRs, openPRs = g.openPRs,
+            events = g.events, commits = g.commits;
 
     const readme = parseReadme(md);
     const merged = closedPRs
@@ -764,11 +748,12 @@ async function refresh(manual){
       html_url: c.html_url,
     }));
 
-    cache = { readme, merged, open, wip, commits: commitList, fetchedAt: now };
+    cache = { readme, merged, open, wip, commits: commitList, fetchedAt: g.generated_at };
       render(cache);
     } else {
-      cache.fetchedAt = now; // unchanged — just refresh the "checked" timestamp
-      $('updatedAt').textContent = 'Checked ' + ago(now);
+      // Unchanged — the snapshot's own timestamp is the honest "checked" time.
+      if (ghR.data) cache.fetchedAt = ghR.data.generated_at;
+      $('updatedAt').textContent = 'Checked ' + ago(cache.fetchedAt);
     }
 
     // Live loops render independently of the GitHub-data gate above.
