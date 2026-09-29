@@ -18,14 +18,6 @@
   },
   {
    "area": "Media",
-   "label": "infra: delete check_file_sizes.sh waiver system",
-   "kind": "pr",
-   "pr": 185,
-   "url": "https://github.com/shinycake/quill/pull/185",
-   "branch": "parity/remove-check-file-sizes"
-  },
-  {
-   "area": "Media",
    "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
    "kind": "pr",
    "pr": 184,

@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 185,
+   "title": "infra: delete check_file_sizes.sh waiver system",
+   "merged_at": "2026-09-29T23:56:14Z",
+   "html_url": "https://github.com/shinycake/quill/pull/185",
+   "head": {
+    "ref": "parity/remove-check-file-sizes"
+   }
+  },
+  {
    "number": 181,
    "title": "communities-search-filter: community chat-type filter for message search",
    "merged_at": "2026-09-29T23:40:31Z",
@@ -894,27 +903,9 @@
    "head": {
     "ref": "checklist/anniversary-update-gaps"
    }
-  },
-  {
-   "number": 83,
-   "title": "parity:messaging-core-1 compose formatting + message actions (M1)",
-   "merged_at": "2026-09-27T14:17:03Z",
-   "html_url": "https://github.com/shinycake/quill/pull/83",
-   "head": {
-    "ref": "parity/messaging-core-1"
-   }
   }
  ],
  "openPRs": [
-  {
-   "number": 185,
-   "title": "infra: delete check_file_sizes.sh waiver system",
-   "updated_at": "2026-09-29T23:48:31Z",
-   "html_url": "https://github.com/shinycake/quill/pull/185",
-   "head": {
-    "ref": "parity/remove-check-file-sizes"
-   }
-  },
   {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
@@ -944,6 +935,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T23:56:14Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1333,19 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/bots-force-reply"
-   },
-   "created_at": "2026-09-29T21:50:28Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
+   "html_url": "https://github.com/shinycake/quill/commit/1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
+   "commit": {
+    "message": "infra: delete check_file_sizes.sh waiver system (#185)\n\n* Delete scripts/check_file_sizes.sh waiver system per Idan: caused merge conflicts, useless during feature dev. File-size enforcement returns properly at the split phase. (ci.yml step removal follows via web \u2014 gh token lacks workflow scope)\n\n* ci: drop deleted check_file_sizes.sh step\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T23:56:13Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "73c31931def29192a88895084eed2f80ed364bd3",
    "html_url": "https://github.com/shinycake/quill/commit/73c31931def29192a88895084eed2f80ed364bd3",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T21:11:48Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "8fd501baaccd7d12ecb277a49e8cca69f3c65029",
-   "html_url": "https://github.com/shinycake/quill/commit/8fd501baaccd7d12ecb277a49e8cca69f3c65029",
-   "commit": {
-    "message": "Slice S4: Settings \u2192 Data & Storage (auto-download, less-data calls, storage usage, clear cache) (#171)\n\n* Slice S4: Data & Storage \u2014 auto-download settings, less-data calls, storage usage, clear cache\n\nTDLib (pinned 1.8.67): setAutoDownloadSettings, getAutoDownloadSettingsPresets,\nremoveAllFilesFromDownloads, getStorageStatistics (chat_limit 50).\n\n- New src/data_settings.rs: NetworkKind, complete AutoDownloadNetSettings\n  (all 10 td_api.tl fields preserved on write), DataStoragePrefs with\n  preset seeding (wifi=high, mobile=medium, roaming=low), account-local\n  data_storage.json persistence, cap labels/cycling, StorageChatStats.\n- New src/telegram/requests_data_settings.rs: request builders with\n  shape tests; presets-envelope parse test moved out of waived envelope.rs.\n- New src/ui/dialogs/data_storage.rs: kit Dialog/Switch/Table overview,\n  per-network editor, storage + per-chat tables, clear-cache confirmation.\n- State: presets seed once (guarded by seeded + @extra), settings apply\n  on confirmed ok (purpose carries the sent settings \u2014 never\n  optimistically), clear success drops stats for refetch, errors surface\n  on-screen (S3 pattern, never toasts).\n- Shared 'Use less data for calls' toggle drives all three networks\n  (TGX/TD behavior); obsolete local-only CallPrefs.less_data_for_calls\n  removed.\n- Screenshot ready-storage-usage.png refreshed; docs updated.\n\nWaiver: src/state.rs 21012 -> 21018 (type-coherent: enum variant field\n+ match arms on existing types). README: +4 boxes (376/525, 71.6%).\n\n* fixup(s4): adversarial review findings 1-4 + housekeeping nits 5-7\n\nFinding 1 (blocking): set_less_data_for_calls refuses while\ndata_storage is unseeded \u2014 the calls-tab toggle fired even before the\npresets seeded, pushing auto-download disabled + zero caps for all\nthree networks account-wide. Choke-point guard in the driver covers\nboth toggles; the calls-tab on_click already maps Err -> status note.\n\nFinding 2: set_auto_download_settings doc rewritten \u2014 it claimed\noptimistic application; the code applies on confirmed ok only. The\nsetAccountTtl precedent (state.rs:8383) also applies on ok.\n\nFinding 3: DECISIONS.md S4 entry \u2014 autoDownloadSettings has all 9\nschema fields (not 8); storageStatistics.by_chat (not by_chats).\n\nFinding 4: tests/data_storage.rs \u2014 apply-on-ok reducer coverage:\nsettings applied on ok (+ seeded/dirty flags), clear-cache ok drops\nstats + flags cache_cleared, TDLib errors surface on\ndata_storage_error without applying.\n\nNit 5 (weighed, no change): local format_storage_bytes kept \u2014 the\nshared format_bytes returns '' for 0 (load-bearing at ui/mod.rs:47591)\nand has no GB branch; extending it would change other callers'\nbehavior. The duplicate stays documented where it is.\n\nNit 6: chat_id==0 storage row labeled 'Other chats' (the schema's\n'all other chats grouped' bucket).\n\nNit 7: ui/mod.rs waiver 48465 -> 48432 (exact); connect.rs waiver\n24153 -> 24159 (exact \u2014 type-coherent guard + doc in existing\nmethods, cannot live in a named module).\n\n* ci: trigger pull_request run on current head\n\n* ci: retrigger checks on current head\n\n* rebase: resolve main conflicts (union) + exact S4 waiver bumps\n\n* fixup(s4): use i32::MAX 'No limit' sentinel; correct rebased waiver counts\n\nAdversarial review: the 'No limit' size cap used i64::MAX, which exceeds\nthe TDLib wire bounds (max_photo_file_size:int32) \u2014 TDLib's\nfrom_json(int32&) round-trip check rejects out-of-range values, so\nselecting 'No limit' + Save deterministically 400s. New NO_LIMIT_SIZE_CAP\nconst (i32::MAX as i64) fits int32 and int53 alike; SIZE_CAP_STEPS,\nsize_cap_label, and the unit tests now use it.\n\nAlso corrects the rebase's waiver baselines to exact measured values:\nconnect.rs 24593 and state.rs 21455 (the merge agent recorded pre-rebase\ncounts; conflict resolution added one net line each), adds the missing\nenvelope.rs S4 justification comment, and confirms\nscripts/check_file_sizes.sh passes locally.\n\n* rebase: onto main post-S3/S13/G9 + exact S4 waiver bumps\n\n---------\n\nCo-authored-by: Muse <muse@quill>\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: quill-merge <quill-merge@local>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T20:17:51Z"
     }
    },
    "author": {
