@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:33:21.906269+00:00",
+ "generated_at": "2026-09-29T21:35:20.020090+00:00",
  "loops": [
   {
    "blockers": [],
@@ -26,8 +26,10 @@
     "slice": "ephemeral-updates",
     "branch": "parity/ephemeral-updates",
     "worktree": "~/workspace/quill-l1-ephemeral",
-    "phase": "implementing",
-    "detail": "Apply updateMessageEphemeralContent over time (initial render already shipped as parity:msg-ephemeral-render). Handle the TDLib update in the dispatcher, refresh the message ephemeral content in state, re-render the bubble. Schema: updateMessageEphemeralContent (td_api.tl:10424) \u2014 verified exists, currently unhandled in src/."
+    "phase": "in-review",
+    "commit": "bb807a64234b1d0bcbdb9467ae2ec8705baaeb0c",
+    "reviewer": "ce7ad521-97a0-47be-89ba-5fda839bd083 (pending)",
+    "detail": "Apply updateMessageEphemeralContent over time. EnvelopePayload variant + parse arm, HistoryState::update_ephemeral + reducer arm, 2 tests, waiver bumps state.rs +100 / envelope.rs +49 (exact). Awaiting dedicated review; then PR open (global cap check at open time), handoff to merge-pipeline."
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -36,7 +38,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T21:25:54Z",
+   "updated_at": "2026-09-29T21:36:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -49,23 +51,23 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T21:23:00Z",
-   "last_evidence_event": "next slice claimed: ephemeral-updates (parity:msg-ephemeral-updates) \u2014 secret-chats lane, schema constructor verified (td_api.tl:10424), no other loop/PR claims it; implementer dispatched",
+   "last_evidence_at": "2026-09-29T21:36:00Z",
+   "last_evidence_event": "ephemeral-updates implementer completed: branch parity/ephemeral-updates pushed (bb807a6), all gates green, 2 tests passing, README box checked (claimed 406/525 = 77.3%); dedicated adversarial reviewer dispatched",
    "wip_open_prs": 1,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 621
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "S17 choosing-sticker action label",
-    "branch": "parity/loop2-s17-choosing-sticker",
-    "worktree": "~/workspace/quill-loop2-s17",
-    "phase": "pr-open",
-    "pr": 178,
-    "detail": "PR #178 opened 2026-09-29T21:32Z; commit fef4263 (rebased onto d4caf43; waiver baselines re-derived post-S15). All gates green (fmt/clippy/test local, Mac UI build run 36632707426 success). Handed to merge-pipeline.",
-    "handoff": "merge-pipeline"
+    "slice": "S18 sticker suggestions by emoji in composer",
+    "branch": "parity/loop2-s18-sticker-suggest",
+    "worktree": "~/workspace/quill-loop2-s18",
+    "phase": "implementing",
+    "pr": null,
+    "detail": "S18 claimed 2026-09-29T21:33Z: getStickers emoji-query + composer suggestion row + Installed+recommended / Only installed / None setting. Branch from d4caf43; no getStickers builder exists yet, unclaimed by other loops.",
+    "handoff": null
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -158,7 +160,7 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": false,
-   "age_seconds": 51
+   "age_seconds": 170
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -181,10 +183,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T21:33:00Z",
+   "updated_at": "2026-09-29T21:34:35Z",
    "last_evidence_at": "2026-09-29T21:33:00Z",
    "stale": false,
-   "age_seconds": 21
+   "age_seconds": 140
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -236,7 +238,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 1101
+   "age_seconds": 1220
   }
  ]
 }
