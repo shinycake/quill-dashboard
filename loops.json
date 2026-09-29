@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:37:23.112871+00:00",
+ "generated_at": "2026-09-29T15:39:19.221878+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 90
+   "age_seconds": 206
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -114,16 +114,16 @@
    },
    "updated_at": "2026-09-29T15:35:54Z",
    "stale": false,
-   "age_seconds": 89
+   "age_seconds": 205
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/settings-privacy",
-    "detail": "Slice S3 COMPLETE and in review as PR #166 (commit 6ae172b, pushed). Rebased onto origin/main@530de44; 6 conflicts resolved via unions; zero README boxes lost, +9 new (372 -> 381/525 = 72.6%). File-split refactor for the CI size gate: src/ui/privacy.rs (1044 lines, impl QuillApp), src/privacy.rs (352 lines, domain + 5 tests), src/telegram/requests_privacy.rs (204 lines, builders + shape test). Waived-file growth is type-coherent only with exact bumps in scripts/check_file_sizes.sh (ui/mod.rs +67, connect.rs +194, state.rs +169, envelope.rs +63, requests.rs +20). All 5 gates green: fmt, clippy -D warnings, test (1059+59), ui build, check_file_sizes.sh. ready-privacy.png re-captured post-rebase from the rebuilt binary and verified. Fixed two dead rebase-union imports (unread_badge_text, outgoing_status_label) removed by kit Phase 4. Awaiting adversarial review \u2014 do NOT merge own PR.",
-    "phase": "settings-privacy-review",
+    "detail": "Slice S3 in review as PR #166. Adversarial review returned approve-once-fixed with 3 mechanical findings (plus partial-box questions the parent is deciding). Fixup applied on parity/settings-privacy: deleted dead PrivacyWho::rules_with_exceptions (19 lines) + doc from src/telegram/requests.rs; deleted dead PrivacySettingKey::ALL from src/telegram/requests_privacy.rs; test repointed at PrivacyRuleDetail::recompose(); corrected 6 wrong schema line citations (userPrivacySettingAllowChatInvites :9003 not :9004; readDatePrivacySettings :9026 not :9022) in requests_privacy.rs, state.rs, DECISIONS.md; waiver entry in scripts/check_file_sizes.sh back to 10323 (verified with wc -l). Gates running. Awaiting adversarial re-review \u2014 do NOT merge own PR.",
+    "phase": "settings-privacy-rereview",
     "pr": 166,
-    "slice": "Slice 3 DONE as PR #166 (awaiting adversarial review). Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
+    "slice": "Slice 3 in review as PR #166 \u2014 adversarial review APPROVE-ONCE-FINDINGS-FIXED; fixup applied (deleted dead PrivacyWho::rules_with_exceptions + dead const ALL; fixed 6 wrong schema citations; waiver back to 10323), awaiting re-review. Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -131,9 +131,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:34:30Z",
+   "updated_at": "2026-09-29T15:45:00Z",
    "stale": false,
-   "age_seconds": 173
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -170,9 +170,9 @@
     "slice": "A8 change phone number (backend)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:28:38Z",
+   "updated_at": "2026-09-29T15:38:37Z",
    "stale": false,
-   "age_seconds": 525
+   "age_seconds": 42
   }
  ]
 }
