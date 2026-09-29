@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-09-29T14:23:18.030312+00:00",
+ "generated_at": "2026-09-29T14:25:18.399576+00:00",
  "loops": [
   {
    "blockers": [],
    "coordinator": "104dcfec-76b7-4a06-8acf-c538c75d2fa6",
    "current": {
     "branch": "parity/calls-screen-share-render",
-    "commit": "ccd80be",
-    "detail": "C2l implemented + committed (ccd80be): peer 1:1 screen share renders as the main video-stage tile w/ badge; dedicated decode slot; ActiveCall::remote_screen closes the C2j late-frame race; ReadyCallScreenShareReceive demo fixture; README parity:calls-screen-share checked (373/525 = 71.0%). All gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1054 passed + new remote_screen_state_recorded_on_call), cargo build --features ui, check_file_sizes.sh. Two fixes since first ui-gate attempt: (1) E0004 seed-match arm for the new demo variant; (2) link needs LIBRARY_PATH=/tmp/xkb-lib (earlier 'success' was masked by tail pipe). Fresh screenshot docs/screenshots/ready-call-screenshare-receive.png captured on :101 (lavapipe) \u2014 peer screen renders with 'Peer's screen' badge. Branch not pushed, no PR yet. NEEDS: dedicated adversarial reviewer from parent (depth 2/2 cannot spawn), then push + PR; do NOT merge.",
+    "commit": "ff7dbfb",
+    "detail": "C2l implemented + review fixups applied (ff7dbfb): all seven DO-NOT-APPROVE findings addressed \u2014 F1 folded is_screen into the (seq, is_screen) cache key (deleted cached_screen_image/call_screen_image), F2 merged the screen-state test (3 remote_screen asserts), F3 deleted dead fixture line, F4 kit Tag::info() badge chip, F5 paused share now states the tile ('Screen share paused by peer') matching the camera arm, F6 folded seed arms with |, F7 refreshed stale latest_screen_frame doc. README box wording updated to match. Screenshot docs/screenshots/ready-call-screenshare-receive.png refreshed (kit Tag badge visible). Gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1053 passed), cargo build --features ui (LIBRARY_PATH=/tmp/xkb-lib), check_file_sizes.sh. Waivers recalculated exact shrink-only: ui 48642->48612, connect 24055->24039. Rebased onto origin/main 530de44 (no-op), pushed. PR #162 OPEN and mergeable. NEEDS: adversarial reviewer dispatched by parent (depth 2/2 cannot spawn subagents); do NOT merge own PR.",
     "parity": "373/525 (71.0%)",
-    "phase": "ready-for-review",
-    "pr": null,
+    "phase": "in-review",
+    "pr": 162,
     "slice": "C2l",
     "worktree": "~/workspace/quill-l1-c2l"
    },
@@ -23,24 +23,24 @@
    },
    "loop": 1,
    "next": {
-    "detail": "Next lane item per README gaps; coordinator picks on C2l merge.",
-    "phase": "queued",
-    "slice": "TBD"
+    "detail": "G8: group/channel title + description + photo edit UI (parity:groups-set-title/description/photo). Backend drivers exist (connect.rs set_group_title/description/photo + group_info_edit_allowed gate; README: 'backend done, edit UI deferred post-Phase-9' \u2014 #142 merged, unblocked). Plan: extend TextPromptKind with GroupTitle/GroupDescription reusing UsernameDialog (open from group/channel info panel, can_change_info-gated); photo via existing file-picker pattern + set_group_photo (None deletes). Fresh worktree ~/workspace/quill-l1-g8 from origin/main 530de44.",
+    "phase": "starting",
+    "slice": "G8"
    },
-   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 verified intact, unrelated, left alone. quill-l1-community worktree removed (branch merged in #146); fresh worktree quill-l1-c2l at origin/main 530de44. Parity script on clean origin/main reads 372/525 (task standing 371/525 was slightly stale); C2l checks one box -> 373/525. Subagents cannot be spawned at depth 2/2, so the dedicated adversarial reviewer must come from the parent \u2014 a rigorous self-review of the diff was done instead; flagging explicitly.",
+   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked).",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
     "pr": 142,
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:15:51Z",
+   "updated_at": "2026-09-29T14:35:00Z",
    "stale": false,
-   "age_seconds": 447
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S11 PR opened (#158): group sticker-set management backend (setSupergroupStickerSet + setSupergroupCustomEmojiStickerSet; builders in new requests_group_stickers.rs, envelope fields, state reducers, drivers, tests). Backend-only, parity:stickers-group-set partial. Awaiting dedicated adversarial review \u2014 DO NOT MERGE until reviewed.",
+   "current": "S12 in progress: sticker suggestions by emoji in composer (backend) \u2014 StickerSuggestMode in new src/sticker_suggest.rs (persisted in MediaPrefs), trailing-emoji detection, RequestPurpose::SuggestStickers + searchStickers dispatch into StickerPanel::suggestions (InstalledOnly filters to installed set ids), update_sticker_suggestions driver with dedupe + stale in-flight drop. Fresh worktree ~/workspace/quill-loop2-s12 on branch parity/loop2-s12-sticker-suggest. Backend-only (composer suggestion-row UI + settings toggle pending post-Phase-9). Tests running; gates so far: fmt OK, cargo check OK, clippy OK, file sizes OK (waiver bumps: state.rs 20913->21017, connect.rs 24015->24064).",
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
     "pr": 155,
@@ -48,7 +48,7 @@
     "commit": "530de44"
    },
    "loop": 2,
-   "next": "Adversarial review of #158 -> fix findings -> merge",
+   "next": "Tests green -> commit -> report S12 branch to parent for adversarial review -> fix findings -> open PR",
    "parity": "372/525 (70.9%)",
    "parked": false,
    "phase": "active",
@@ -86,7 +86,7 @@
    },
    "updated_at": "2026-09-29T14:15:55Z",
    "stale": false,
-   "age_seconds": 443
+   "age_seconds": 563
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -104,9 +104,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:55:00Z",
+   "updated_at": "2026-09-29T14:24:30Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 48
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -137,7 +137,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:18:38Z",
    "stale": false,
-   "age_seconds": 280
+   "age_seconds": 400
   }
  ]
 }
