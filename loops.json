@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:47:20.860298+00:00",
+ "generated_at": "2026-09-29T06:49:17.484287+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,7 +45,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 88
+   "age_seconds": 205
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -93,7 +93,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:44:35Z",
    "stale": false,
-   "age_seconds": 165
+   "age_seconds": 282
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -124,9 +124,9 @@
    "parked": false,
    "phase": "pr-open",
    "status": "active",
-   "updated_at": "2026-09-29T06:38:42Z",
+   "updated_at": "2026-09-29T06:48:39Z",
    "stale": false,
-   "age_seconds": 518
+   "age_seconds": 38
   }
  ]
 }
