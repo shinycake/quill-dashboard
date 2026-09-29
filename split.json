@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-29T17:31:26.879431+00:00",
+ "generated_at": "2026-09-29T17:33:23.692588+00:00",
  "target_lines": 2000,
  "files": [
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "waiver": 48129,
-   "current": 48129
+   "waiver": 48295,
+   "current": 48295
   },
   {
    "path": "src/connect.rs",
