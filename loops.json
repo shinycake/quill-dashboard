@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:35:19.154622+00:00",
+ "generated_at": "2026-09-29T15:37:23.112871+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:25:54Z",
+   "updated_at": "2026-09-29T15:35:53Z",
    "current_slice": "G9",
    "current_branch": "parity/community-service-rows",
    "current_commit": "377c4ed",
@@ -54,7 +54,7 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 90
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -112,9 +112,9 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T15:25:54Z",
+   "updated_at": "2026-09-29T15:35:54Z",
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 89
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -133,7 +133,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:34:30Z",
    "stale": false,
-   "age_seconds": 49
+   "age_seconds": 173
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -172,7 +172,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:28:38Z",
    "stale": false,
-   "age_seconds": 401
+   "age_seconds": 525
   }
  ]
 }
