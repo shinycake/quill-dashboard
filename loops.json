@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:17:18.347255+00:00",
+ "generated_at": "2026-09-29T15:19:19.525337+00:00",
  "loops": [
   {
    "blockers": [],
@@ -54,7 +54,7 @@
     "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 207
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -114,7 +114,7 @@
    },
    "updated_at": "2026-09-29T15:15:51Z",
    "stale": false,
-   "age_seconds": 87
+   "age_seconds": 208
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -133,7 +133,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:14:29Z",
    "stale": false,
-   "age_seconds": 169
+   "age_seconds": 290
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -170,9 +170,9 @@
     "slice": "A8 change phone number (backend)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:08:37Z",
+   "updated_at": "2026-09-29T15:18:37Z",
    "stale": false,
-   "age_seconds": 521
+   "age_seconds": 42
   }
  ]
 }
