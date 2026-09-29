@@ -25,8 +25,10 @@
     "slice": "communities-chatlist-mode",
     "branch": "parity/community-chatlist-mode",
     "worktree": "~/workspace/quill-l1-commmode",
-    "phase": "implementing",
-    "detail": "Community chat-list mode: selected community filters the main chat list to its chats (community_id match), with enter/exit affordances. Builds on G10 hub + communities backend core (merged)."
+    "phase": "in-review",
+    "detail": "Community chat-list mode: selected community filters the main chat list to its chats (community_id match), with enter/exit affordances. Builds on G10 hub + communities backend core (merged).",
+    "commit": "ee95ed5",
+    "reviewer": "fe2bfb32-1630-4ab0-bc8d-6a40ad270656 (pending)"
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -35,7 +37,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:36:00Z",
+   "updated_at": "2026-09-29T22:44:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -48,12 +50,12 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T22:17:00Z",
-   "last_evidence_event": "next slice claimed: communities-chatlist-mode (parity:communities-chatlist-mode) \u2014 now unblocked (#176 merged); schema/state support verified (communityFullInfo.chats, chat.community_id tracked, G10 hub exists); implementer dispatched",
+   "last_evidence_at": "2026-09-29T22:44:00Z",
+   "last_evidence_event": "communities-chatlist-mode implementer completed: branch parity/community-chatlist-mode pushed (ee95ed5, rebased on origin/main @fdc7ea7), all gates green incl. Mac UI build success, 7 tests in new named file, README box checked; dedicated adversarial reviewer dispatched (verifying the premise correction + waiver legitimacy)",
    "wip_open_prs": 2,
    "global_open_prs": 4,
-   "stale": true,
-   "age_seconds": 1458
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -157,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:40:30Z",
    "stale": false,
-   "age_seconds": 48
+   "age_seconds": 169
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -179,19 +181,22 @@
    "status": "active",
    "updated_at": "2026-09-29T22:38:09Z",
    "last_evidence_at": "2026-09-29T22:48:00Z",
+   "next": {
+    "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
+   },
    "stale": false,
    "age_seconds": 0
   },
   {
-   "coordinator": "75b864ab-d2d6-4314-915a-91df37669f17",
+   "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
    "current": {
-    "slice": "platform-minimize-to-tray: minimize/close-to-tray behavior",
-    "branch": "parity/platform-minimize-to-tray",
-    "worktree": "~/workspace/quill-loop4-a12",
-    "phase": "parked-phase4",
+    "slice": "secret-chat blocker verification (phase-1 partition)",
+    "branch": null,
+    "worktree": null,
+    "phase": "standby-phase1",
     "pr": null,
-    "detail": "PARKED per Idan 2026-09-29 phase plan: platform work waits for phase 4 (after loop-1 list, loop-3+auth list, and the file-split freeze). Branch kept if it exists. Phase-1 coordinator dispatched 2026-09-29T22:38:00Z (agent 415e4224). Replacement coordinator dispatched 2026-09-29T22:46Z after daemon restart killed the prior one before it started.",
-    "handoff": null
+    "handoff": null,
+    "detail": "Parent-directed standby: loop 4 verified all 3 secret-chat blockers as genuinely blocked with fresh concept-level evidence (screenshot-send: no Linux OS detection API; screenshot-block: no FLAG_SECURE equiv; session-terminate: no auth-key linkage in td_api.tl). Phase-1 pool audited \u2014 nothing unblocked/unclaimed remains in its lanes. Wake condition: parent declares phase 2. Watchdog: do NOT respawn as dead \u2014 deliberate hold."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "secret chats (phase 1: functionality-first)",
@@ -205,7 +210,7 @@
     "worktree": null,
     "slice": null,
     "phase": "queued",
-    "detail": "After minimize-to-tray PR opens: platform-tray-menu (tray context menu: open window, quit) or auth-qr-authorize-other \u2014 pick whichever README box is unclaimed then."
+    "detail": "Phase 2 (bots, polls, payments, settings, auth/accounts) \u2014 awaiting parent declaration. Do NOT resume minimize-to-tray (parked to phase 4 per Idan) or sticker/emoji/GIF work (parked to phase 4)."
    },
    "parked": false,
    "phase": "implementing",
@@ -220,8 +225,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:38:33Z",
-   "updated_at": "2026-09-29T22:38:38Z",
+   "last_evidence_at": "2026-09-29T22:43:00Z",
+   "updated_at": "2026-09-29T22:43:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -230,8 +235,27 @@
     "parity": "374/525 (71.2%)",
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
+   "secret_chat_verification": {
+    "verified_at": "2026-09-29T22:50:00Z",
+    "schema": "td_api.tl pinned 1.8.67 (~/workspace/quill/schema/td_api.tl)",
+    "items": {
+     "parity:secret-screenshot-send": {
+      "verdict": "BLOCKED (OS trigger)",
+      "evidence": "Send mechanism EXISTS in TDLib: viewMessages takes source:MessageSource (td_api.tl:13230) and messageSourceScreenshot exists (td_api.tl:3234) \u2014 TGX uses this path. But Linux has no OS screenshot-detection API to trigger it: X11 exposes no screenshot-taken event; Wayland has no standard screenshot-detection protocol; no D-Bus signal from screenshot tools. Independently corroborated by lucid-softworks/react-native-linux Linux screen-capture doc (no portable detection signal; honest no-op). TDLib is UI-agnostic and cannot detect OS screenshots itself. Polling screenshot dirs is flaky (clipboard-only captures, custom paths) \u2014 rejected."
+     },
+     "parity:secret-screenshot-block": {
+      "verdict": "BLOCKED (OS API)",
+      "evidence": "No FLAG_SECURE equivalent on Linux: X11 any client can XGetImage the root window with no per-window opt-out (protocol fact); Wayland has no standard secure-surface protocol \u2014 wp-security-context-v1 is compositor-specific (GNOME mutter partial, sway/others no) and does not reliably block PipeWire/screen-cast capture. td_api.tl grep for secure/prevent/screenshot shows no window-security API (only story protect_content, server-side). TDLib does not do window management. Independently corroborated by the same Linux screen-capture doc (no portable secure-window hint; capture tools succeed regardless)."
+     },
+     "parity:secret-session-terminate": {
+      "verdict": "BLOCKED (TDLib API surface)",
+      "evidence": "td_api.tl 1.8.67: secretChat (line 2816) = id, user_id, state, is_outbound, key_hash, layer \u2014 NO session id, NO auth-key linkage. session (line 9144) = capability flags only (can_accept_secret_chats), NO secret-chat linkage. Zero 'auth_key' fields anywhere in td_api.tl. Which auth-key a secret chat is bound to is server-side/internal state not exposed to clients; per-device E2E state means other sessions' secret chats are unknowable client-side anyway. No client-side join key exists, so the count cannot be computed. TGX shows no such count on session termination (its ClosingXSecretChats string is for bulk chat deletion)."
+     }
+    },
+    "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
+   },
    "stale": false,
-   "age_seconds": 165
+   "age_seconds": 19
   }
  ]
 }

@@ -9,14 +9,6 @@
    "branch": "parity/auth-profile-accent"
   },
   {
-   "area": "Auth & accounts",
-   "label": "platform-minimize-to-tray: minimize/close-to-tray behavior",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-minimize-to-tray"
-  },
-  {
    "area": "Chat list",
    "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
    "kind": "branch",
