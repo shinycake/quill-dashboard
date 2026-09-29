@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:49:21.154488+00:00",
+ "generated_at": "2026-09-29T15:51:18.216021+00:00",
  "loops": [
   {
    "blockers": [],
@@ -122,16 +122,16 @@
    },
    "updated_at": "2026-09-29T15:45:51Z",
    "stale": false,
-   "age_seconds": 210
+   "age_seconds": 327
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "branch": "parity/settings-privacy",
-    "detail": "Slice S3 in review as PR #166. Adversarial review returned approve-once-fixed; fixup committed as a163ea2 and pushed to parity/settings-privacy: deleted dead PrivacyWho::rules_with_exceptions (19 lines) + doc from src/telegram/requests.rs; deleted dead PrivacySettingKey::ALL from src/telegram/requests_privacy.rs; test repointed at PrivacyRuleDetail::recompose(); corrected 6 wrong schema line citations (userPrivacySettingAllowChatInvites :9003 not :9004; readDatePrivacySettings :9026 not :9022) in requests_privacy.rs, state.rs, DECISIONS.md; waiver entry in scripts/check_file_sizes.sh back to 10323 (verified with wc -l). All gates green: fmt, clippy -D warnings, test (exit 0), UI build via quill-build (exit 0), check_file_sizes.sh OK. Awaiting adversarial re-review \u2014 do NOT merge own PR.",
-    "phase": "settings-privacy-rereview",
+    "detail": "Slice S3 in review as PR #166. Re-review verified the fixup but flagged two follow-ups, both fixed and committed as eadae62, pushed to parity/settings-privacy: (1) waiver entry in scripts/check_file_sizes.sh corrected 10323 -> 10322 (verified with wc -l); (2) DECISIONS.md ~6148 reworded \u2014 PrivacyWho::rules_with_exceptions was deleted as a dead duplicate of PrivacyRuleDetail::recompose. Gates green: cargo fmt --check OK, scripts/check_file_sizes.sh OK. Awaiting adversarial re-review of the follow-up commit \u2014 do NOT merge own PR.",
+    "phase": "settings-privacy-rereview-followup",
     "pr": 166,
-    "slice": "Slice 3 in review as PR #166 \u2014 adversarial review APPROVE-ONCE-FINDINGS-FIXED; fixup applied (deleted dead PrivacyWho::rules_with_exceptions + dead const ALL; fixed 6 wrong schema citations; waiver back to 10323), awaiting re-review. Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
+    "slice": "Slice 3 in review as PR #166 \u2014 re-review verified fixup but flagged 2 follow-ups (waiver 10322 not 10323; stale DECISIONS.md line); follow-up commit eadae62 applied and pushed, gates green, awaiting re-review of the follow-up. Appearance PR #161 OPEN (awaiting fresh adversarial review). Payments PR #159 OPEN (awaiting fresh adversarial review)."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -139,9 +139,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:05:00Z",
+   "updated_at": "2026-09-29T15:49:43Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 95
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -180,7 +180,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:48:38Z",
    "stale": false,
-   "age_seconds": 43
+   "age_seconds": 160
   }
  ]
 }
