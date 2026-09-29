@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:51:23.093789+00:00",
+ "generated_at": "2026-09-29T16:53:18.135291+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,11 +34,11 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:45:53Z",
-   "current_slice": "G9",
-   "current_branch": "parity/community-service-rows",
-   "current_commit": "b0616c1",
-   "current_status": "PR #168 OPEN (https://github.com/shinycake/quill/pull/168), head b0616c1, branch parity/community-service-rows, worktree ~/workspace/quill-l1-community-rows; all gates green on final tree incl. cargo build --features ui (caught + fixed one ui-only E0004: the &mut caption-edit match in src/ui/mod.rs needed the ChatJoinFromCommunity arm). NEEDS: adversarial reviewer dispatched by parent (depth 2/2 cannot spawn subagents). DO NOT merge own PR.",
+   "updated_at": "2026-09-29T16:50:00Z",
+   "current_slice": "G10",
+   "current_branch": "parity/communities-ui",
+   "current_commit": null,
+   "current_status": "IMPLEMENTING: G10 communities create + hub + info UI. Branch parity/communities-ui, worktree ~/workspace/quill-l1-communities. Backend verified complete (create_community/load_community_full_info/set_community_name in connect.rs + requests.rs + state sync; no backend work needed). Plan: new src/ui/dialogs/community.rs (CreateCommunityDialog + hub dialog + info panel render + fixture), DialogKind::CommunityCreate/CommunityHub, InfoPanelTarget::Community(i64), TextPromptKind::CommunityName reuse of UsernameDialog, 3 screenshot scenarios. No overlap with open PRs (#158,#160-#171).",
    "parity": "375/525 = 71.4%",
    "last_slice": {
     "id": "G9",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 330
+   "age_seconds": 198
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -122,16 +122,16 @@
    },
    "updated_at": "2026-09-29T16:45:52Z",
    "stale": false,
-   "age_seconds": 331
+   "age_seconds": 446
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
    "current": {
     "base": "origin/main @ fd411fd",
     "branch": "parity/settings-data-storage",
-    "commit": "fea262c98ceef5df69df8aa649f5a6898f7a3c15",
-    "detail": "S4 review-ready, rebased onto origin/main (fd411fd), PR #171 OPEN (created by new coordinator after verifying branch/commit intact against GitHub). Contents: auto-download per network (getAutoDownloadSettingsPresets/setAutoDownloadSettings, complete 10-field struct, presets wifi=high/mobile=medium/roaming=low), shared use-less-data-for-calls toggle driving all three networks (old local-only CallPrefs flag deleted), storage usage with per-chat breakdown (chat_limit 50), clear cache via removeAllFilesFromDownloads (only_active:false/only_completed:true/delete_from_cache:true). Settings apply on confirmed ok (purpose carries sent settings, never optimistically). Screenshot docs/screenshots/ready-storage-usage.png. Adversarial reviewer subagent dispatched 2026-09-29T16:44Z \u2014 awaiting verdict; will merge on APPROVED + green CI, or fix up on CHANGES REQUESTED.",
-    "phase": "s4-in-review",
+    "commit": "e811ce6659e649c85733b09efc1b7505550aa68c",
+    "detail": "S4 adversarial review returned CHANGES REQUESTED; fixup committed as e811ce6 (pushed to parity/settings-data-storage, PR #171 OPEN, body updated). Applied: F1 seeded guard in driver set_less_data_for_calls (Err while unseeded, covers both toggles); F2 set_auto_download_settings doc rewritten to apply-on-ok-only; F3 DECISIONS.md 9 fields + by_chat; F4 tests/data_storage.rs (4 new apply-on-ok reducer tests, new named file); nit 6 chat_id==0 labeled 'Other chats'; nit 5 weighed, duplicate format_storage_bytes kept (shared returns '' for 0, no GB); nit 7 ui/mod.rs waiver 48465->48432 exact, connect.rs waiver 24153->24159 exact (type-coherent). Gates on e811ce6 all green: fmt, clippy -D warnings, tests (1066 lib + 59 replay + 4 new), check_file_sizes.sh OK, Mac-runner UI build success (run 36600603800, FULL POWER directive \u2014 no VM serialized build). Awaiting targeted re-review; NOT merging.",
+    "phase": "s4-in-review-fixup",
     "pr": 171,
     "screenshot": "docs/screenshots/ready-storage-usage.png",
     "slice": "S4 (Settings -> Data & Storage)",
@@ -144,9 +144,9 @@
     "parity/settings-appearance": "PR #161 OPEN (verified 2026-09-29T16:43Z) \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:44:33Z",
+   "updated_at": "2026-09-29T16:53:01Z",
    "stale": false,
-   "age_seconds": 410
+   "age_seconds": 17
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -195,7 +195,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 165
+   "age_seconds": 280
   }
  ]
 }
