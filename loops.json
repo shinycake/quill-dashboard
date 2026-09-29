@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:55:22.099937+00:00",
+ "generated_at": "2026-09-29T20:57:20.193584+00:00",
  "loops": [
   {
    "blockers": [],
@@ -37,7 +37,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:56:00Z",
+   "updated_at": "2026-09-29T20:56:04Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -55,18 +55,18 @@
    "wip_open_prs": 0,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 80
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "S16 fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
-    "branch": "parity/loop2-s16-emoji-sticker-type",
-    "worktree": "~/workspace/quill-loop2-s16",
-    "phase": "pr-open",
-    "pr": 175,
-    "detail": "S10's emoji-set request builders sent sticker_type stickerTypeEmoji, which does not exist in the pinned TDLib 1.8.67 schema (StickerType = Regular/Mask/CustomEmoji only, td_api.tl:412-421) \u2014 TDLib 400s those requests, so the emoji panel's installed/archived/trending/search/reorder fetches were broken in production. Fix: stickerTypeCustomEmoji in the 5 wire builders (getInstalled/Archived/Trending/Search/Reorder), test fixtures, and comments; README parity:emoji-custom-packs parenthetical corrected. No new README boxes (bug fix). PR #175 opened; handed to merge-pipeline.",
-    "handoff": "merge-pipeline"
+    "slice": "S17 choosing-sticker action label",
+    "branch": "parity/loop2-s17-choosing-sticker",
+    "worktree": "~/workspace/quill-loop2-s17",
+    "phase": "implementing",
+    "pr": null,
+    "detail": "chatActionChoosingSticker -> \"choosing a sticker\u2026\" label in header + sidebar; PR on hold (per-loop cap: #173, #175 open; repo at 3/4)",
+    "handoff": null
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -142,7 +142,7 @@
     "s13": "merged (#167)",
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)"
    },
-   "updated_at": "2026-09-29T20:45:53Z",
+   "updated_at": "2026-09-29T20:55:56Z",
    "last_merge": {
     "pr": 172,
     "slice": "S14 story-posting restriction notices backend",
@@ -151,9 +151,9 @@
     "parity": "372/525 (70.9%)",
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
-   "last_evidence_at": "2026-09-29T20:43:06Z",
+   "last_evidence_at": "2026-09-29T20:55:55Z",
    "stale": false,
-   "age_seconds": 736
+   "age_seconds": 85
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +178,7 @@
    "updated_at": "2026-09-29T20:54:34Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": true,
-   "age_seconds": 1479
+   "age_seconds": 1597
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -228,7 +228,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 1102
+   "age_seconds": 1220
   }
  ]
 }
