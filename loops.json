@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:15:17.982130+00:00",
+ "generated_at": "2026-09-29T17:17:19.970278+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T17:05:54Z",
+   "updated_at": "2026-09-29T17:15:52Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": null,
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 563
+   "age_seconds": 87
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -120,7 +120,7 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T17:05:53Z",
+   "updated_at": "2026-09-29T17:15:54Z",
    "last_merge": {
     "pr": 158,
     "slice": "S11 group sticker-set management backend",
@@ -130,16 +130,16 @@
     "note": "Adversarial review: APPROVE, no blockers. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 564
+   "age_seconds": 85
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
    "current": {
     "base": "origin/main @ de943a2",
     "branch": "parity/bots-force-reply",
-    "commit": null,
-    "detail": "Force-reply keyboard bar slice implementing: replyMarkupForceReply renders the reply-keyboard bar above the composer (was: composer focus only). Worktree ~/workspace/quill-l3-force-reply, branch parity/bots-force-reply. Prev state: S4 adversarial review fixup e811ce6 pushed, PR #171 OPEN awaiting re-review.",
-    "phase": "implementing",
+    "commit": "9a7ae01",
+    "detail": "Force-reply keyboard bar implemented and committed as 9a7ae01 (pushed to parity/bots-force-reply). Gates green: fmt, clippy -D warnings, cargo test (1067 lib incl. 3 new force_reply tests + 59 replay), check_file_sizes OK (ui/mod.rs waiver exact bump 48465->48469). Mac remote UI build dispatched (run 36603600537); local screenshot build running -j1. Screenshot + PR pending on builds.",
+    "phase": "gates-green-awaiting-screenshot",
     "pr": null,
     "screenshot": null,
     "slice": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
@@ -152,9 +152,9 @@
     "parity/settings-appearance": "PR #161 OPEN (verified 2026-09-29T16:43Z) \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T17:14:32Z",
+   "updated_at": "2026-09-29T17:20:00Z",
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -203,7 +203,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 398
+   "age_seconds": 520
   }
  ]
 }

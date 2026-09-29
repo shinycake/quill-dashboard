@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-29T17:15:19.535673+00:00",
+ "generated_at": "2026-09-29T17:17:24.128453+00:00",
  "target_lines": 2000,
  "files": [
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "waiver": 48465,
-   "current": 48465
+   "waiver": 48129,
+   "current": 48129
   },
   {
    "path": "src/connect.rs",
@@ -64,10 +64,10 @@
   },
   {
    "html_url": "https://github.com/shinycake/quill/pull/160",
-   "merged_at": null,
+   "merged_at": "2026-09-29T17:17:20Z",
    "number": 160,
    "title": "refactor: split ui/mod.rs batch 3 (keybindings, menu states, history rows, playback, format helpers)",
-   "updated_at": "2026-09-29T17:08:14Z",
+   "updated_at": "2026-09-29T17:17:20Z",
    "extracted": 347
   }
  ]
