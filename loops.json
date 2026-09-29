@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:53:17.682877+00:00",
+ "generated_at": "2026-09-29T14:55:18.690910+00:00",
  "loops": [
   {
    "blockers": [],
@@ -36,7 +36,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:45:51Z",
    "stale": false,
-   "age_seconds": 446
+   "age_seconds": 567
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -91,7 +91,7 @@
    },
    "updated_at": "2026-09-29T14:45:53Z",
    "stale": false,
-   "age_seconds": 444
+   "age_seconds": 565
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -108,9 +108,9 @@
     "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:55:00Z",
+   "updated_at": "2026-09-29T14:54:31Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 47
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -147,7 +147,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:48:41Z",
    "stale": false,
-   "age_seconds": 276
+   "age_seconds": 397
   }
  ]
 }
