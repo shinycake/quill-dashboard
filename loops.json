@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:41:19.996468+00:00",
+ "generated_at": "2026-09-29T13:43:18.318245+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:36:49Z",
    "stale": false,
-   "age_seconds": 270
+   "age_seconds": 389
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -79,7 +79,7 @@
    },
    "updated_at": "2026-09-29T13:36:58Z",
    "stale": false,
-   "age_seconds": 261
+   "age_seconds": 380
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -99,7 +99,7 @@
    "status": "active",
    "updated_at": "2026-09-29T13:34:34Z",
    "stale": false,
-   "age_seconds": 405
+   "age_seconds": 524
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -107,8 +107,8 @@
     "branch": "parity/auth-change-number-1",
     "worktree": "/home/hatch/workspace/quill-loop4-a8",
     "slice": "A8 change phone number (backend)",
-    "phase": "implementing",
-    "detail": "Builders (send/resend/checkPhoneNumberCode) + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose variants + Session change_number_* fields + reducer arms + connect.rs drivers + tests all written in dedicated worktree; DECISIONS.md A8 entry added; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). Gates running (fmt done, clippy in progress). No PR yet."
+    "phase": "in-review",
+    "detail": "PR #157 opened 2026-09-29 (commit e6535ad): sendPhoneNumberCode/checkPhoneNumberCode/resendPhoneNumberCode builders + EnvelopePayload::AuthenticationCodeInfo + RequestPurpose unit variants + Session change_number_* fields + reducer arms + connect.rs drivers + 10 new tests; DECISIONS.md A8 entry; README auth-change-number corrected to partial (backend shipped, UI blocked on server-acceptance verification). All gates green: fmt, clippy -D warnings, 1062 lib + 59 replay tests, check_file_sizes (waiver bumps: connect.rs 24104, state.rs 21150, envelope.rs 18293, requests.rs 10407). No UI touched so no --features ui build needed. REVIEWER GAP: this coordinator cannot spawn subagents (depth 2/2) \u2014 performed a rigorous adversarial self-review instead (found + fixed: refused resend/send was clearing the pending number; fixed to keep pending number/timeout since the failed request never aborted the existing verification). Needs a dedicated independent reviewer subagent before merge \u2014 parent must arrange."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
@@ -120,17 +120,17 @@
    "loop": 4,
    "next": {
     "branch": null,
-    "detail": "After A8 PR merges: pick next Loop 4 lane item (auth/password-recovery, auth-qr-authorize-other, or platform edge cases).",
+    "detail": "After A8 PR #157 merges: next Loop 4 lane item (auth/password-recovery, auth-qr-authorize-other, or platform edge cases).",
     "phase": "queued",
     "slice": null,
     "worktree": null
    },
    "parked": false,
-   "phase": "implementing",
+   "phase": "in-review",
    "status": "active",
-   "updated_at": "2026-09-29T13:38:40Z",
+   "updated_at": "2026-09-29T13:55:00Z",
    "stale": false,
-   "age_seconds": 159
+   "age_seconds": 0
   }
  ]
 }
