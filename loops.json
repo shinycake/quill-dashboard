@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:27:19.837686+00:00",
+ "generated_at": "2026-09-29T02:29:17.555008+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -21,7 +21,7 @@
    "status": "active",
    "updated_at": "2026-09-29T02:25:55Z",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 202
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -42,16 +42,16 @@
    "status": "active",
    "updated_at": "2026-09-29T02:25:56Z",
    "stale": false,
-   "age_seconds": 83
+   "age_seconds": 201
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
     "phase": "bots-backend",
-    "slice": "Slice 2 IN FLIGHT: inline-mode TDLib backend (getInlineQueryResults/sendInlineQueryResultMessage + state + tests, no UI) \u2014 implementer running in ~/workspace/quill-l3-inline on branch parity/bots-inline-backend",
+    "slice": "Slice 2 IN REVIEW: inline-mode TDLib backend (implementer done, gates green, dedicated adversarial review in flight). Slice 3 research scout running in parallel (payments-clear: deleteSavedOrderInfo/deleteSavedCredentials vs recurring-payments ToS).",
     "branch": "parity/bots-inline-backend",
     "pr": null,
-    "detail": "PR #134 merged (parity 366/522 = 70.1%). Slice 2 spec (research scout) complete: no schema gaps, both constructors exist in 1.8.67, dovetails with existing insert_switch_inline_text composer hook. Implementer spawned; dedicated adversarial reviewer queued for its completion."
+    "detail": "Slice 2 implementer complete: builders + envelope parsing + state slot + driver + 7 tests, no UI, README box untouched. Reviewer queued; Slice 3 spec queued. PR #134 merged (parity 366/522 = 70.1%)."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
@@ -60,9 +60,9 @@
     "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred (see current.detail)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T02:24:35Z",
+   "updated_at": "2026-09-29T02:31:00Z",
    "stale": false,
-   "age_seconds": 164
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -93,9 +93,9 @@
    "parked": false,
    "phase": "implementing",
    "status": "active",
-   "updated_at": "2026-09-29T02:18:42Z",
+   "updated_at": "2026-09-29T02:28:41Z",
    "stale": false,
-   "age_seconds": 517
+   "age_seconds": 36
   }
  ]
 }
