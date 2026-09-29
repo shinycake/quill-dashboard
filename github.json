@@ -927,7 +927,7 @@
   {
    "number": 181,
    "title": "communities-search-filter: community chat-type filter for message search",
-   "updated_at": "2026-09-29T22:13:11Z",
+   "updated_at": "2026-09-29T23:22:24Z",
    "html_url": "https://github.com/shinycake/quill/pull/181",
    "head": {
     "ref": "parity/community-search-filter"
