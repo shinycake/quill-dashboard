@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 78
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -157,15 +157,15 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": true,
-   "age_seconds": 1007
+   "age_seconds": 1128
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
    "current": {
     "base": "origin/main @ 8fd501b",
     "branch": "parity/bots-force-reply",
-    "commit": "ade480b",
-    "detail": "PR #177 reviewer verdict: NOT CONFIRM. F1 (armed-vs-newest selector mismatch) fixed in open_chat_force_reply (armed reply wins); F3 fixed: DECISIONS.md rebuilt = current origin/main + my 25-line entry (8 other slices sections restored, incl. S13/A10/S3/S4 the reviewer missed); F4 field order fixed; F2 (is_personal dropped at parse) filed as follow-up in the entry Out-of-this-slice. Fixups committed+pushed; gates green; merge pipeline owns rebase/merge. Repo still 4/4 open PRs \u2014 no new slice.",
+    "commit": "210e920",
+    "detail": "PR #177 fixups pushed (210e920): F1 selector fix, DECISIONS.md restored to origin/main + my entry, F4 corrected, F2 filed as follow-up, stray marker file dropped. Gates all green: fmt, clippy -D warnings, 1104+59 tests, cargo check --features ui. Branch parity/bots-force-reply @ 210e920 handed back to merge pipeline for rebase onto current main (#173 merged since my rebase) + FIFO merge. Repo still 4/4 open PRs \u2014 no new slice until one merges.",
     "phase": "pr-open-review-fixups",
     "pr": 177,
     "screenshot": "docs/screenshots/ready-bot-keyboards.png",
@@ -180,10 +180,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T21:44:30Z",
-   "last_evidence_at": "2026-09-29T21:33:00Z",
-   "stale": true,
-   "age_seconds": 977
+   "updated_at": "2026-09-29T21:50:41Z",
+   "last_evidence_at": "2026-09-29T21:50:41Z",
+   "stale": false,
+   "age_seconds": 37
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -235,7 +235,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 2057
+   "age_seconds": 2178
   }
  ]
 }
