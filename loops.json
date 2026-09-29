@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T18:11:53.508723+00:00",
+ "generated_at": "2026-09-29T18:13:18.392115+00:00",
  "loops": [
   {
    "blockers": [],
@@ -7,19 +7,19 @@
    "current": {
     "branch": "parity/calls-screen-share-render",
     "commit": "ff7dbfb",
-    "detail": "C2l implemented + review fixups applied (ff7dbfb): all seven DO-NOT-APPROVE findings addressed \u2014 F1 folded is_screen into the (seq, is_screen) cache key (deleted cached_screen_image/call_screen_image), F2 merged the screen-state test (3 remote_screen asserts), F3 deleted dead fixture line, F4 kit Tag::info() badge chip, F5 paused share now states the tile ('Screen share paused by peer') matching the camera arm, F6 folded seed arms with |, F7 refreshed stale latest_screen_frame doc. README box wording updated to match. Screenshot docs/screenshots/ready-call-screenshare-receive.png refreshed (kit Tag badge visible). Gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1053 passed), cargo build --features ui (LIBRARY_PATH=/tmp/xkb-lib), check_file_sizes.sh. Waivers recalculated exact shrink-only: ui 48642->48612, connect 24055->24039. Rebased onto origin/main 530de44 (no-op), pushed. PR #162 OPEN and mergeable. NEEDS: adversarial reviewer dispatched by parent (depth 2/2 cannot spawn subagents); do NOT merge own PR.",
+    "detail": "C2l implemented + review fixups applied (ff7dbfb): all seven DO-NOT-APPROVE findings addressed \u2014 F1 folded is_screen into the (seq, is_screen) cache key (deleted cached_screen_image/call_screen_image), F2 merged the screen-state test (3 remote_screen asserts), F3 deleted dead fixture line, F4 kit Tag::info() badge chip, F5 paused share now states the tile ('Screen share paused by peer') matching the camera arm, F6 folded seed arms with |, F7 refreshed stale latest_screen_frame doc. README box wording updated to match. Screenshot docs/screenshots/ready-call-screenshare-receive.png refreshed (kit Tag badge visible). Gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1053 passed), cargo build --features ui (LIBRARY_PATH=/tmp/xkb-lib), check_file_sizes.sh. Waivers recalculated exact shrink-only: ui 48642->48612, connect 24055->24039. Rebased onto origin/main 530de44 (no-op), pushed. PR #162 MERGED 2026-09-29T17:58:15Z.",
     "parity": "373/525 (71.0%)",
-    "phase": "in-review",
+    "phase": "merged",
     "pr": 162,
     "slice": "C2l",
     "worktree": "~/workspace/quill-l1-c2l"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
-    "commit": "f85661c",
-    "parity": "367/525 (69.9%)",
-    "pr": 147,
-    "slice": "docs-secret-session-terminate"
+    "commit": "ff7dbfb",
+    "parity": "373/525 (71.0%)",
+    "pr": 162,
+    "slice": "C2l"
    },
    "loop": 1,
    "next": {
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T18:05:56Z",
+   "updated_at": "2026-09-29T18:13:16Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 357
+   "age_seconds": 2
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -141,7 +141,7 @@
     "note": "Adversarial review: APPROVE, no blockers. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 357
+   "age_seconds": 442
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -165,7 +165,7 @@
    "status": "active",
    "updated_at": "2026-09-29T18:04:33Z",
    "stale": false,
-   "age_seconds": 440
+   "age_seconds": 525
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -214,7 +214,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 194
+   "age_seconds": 279
   }
  ]
 }
