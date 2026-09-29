@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:57:17.584416+00:00",
+ "generated_at": "2026-09-29T06:59:16.897698+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,25 +45,26 @@
     }
    ],
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 203
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
-   "current": "S6 merged; S10 fixups + S5/S7 rebases in flight",
+   "current": "S10 PR #152 opened; ui build running, awaiting CI",
    "lanes": "stories, stickers, emoji, GIFs",
    "loop": 2,
-   "next": "S10 PR + merge; S7 review + PR; S5 PR",
+   "next": "Merge S10; then S5/S7 PRs",
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T06:55:53Z",
+   "updated_at": "2026-09-29T07:20:00Z",
    "pr": {
     "s8": 138,
     "s9": 140,
     "s6": {
      "number": 149,
      "state": "merged"
-    }
+    },
+    "s10": 152
    },
    "last_merged": {
     "slice": "S9 GIF backend",
@@ -73,11 +74,12 @@
    "unparked": {
     "s6": "merged (#149)",
     "s5": "rebase in progress",
-    "s7": "rebase in progress"
+    "s7": "rebase in progress",
+    "s10": "PR #152"
    },
    "parity": "368/525 (70.1%)",
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 0
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -97,7 +99,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:54:31Z",
    "stale": false,
-   "age_seconds": 166
+   "age_seconds": 285
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -128,9 +130,9 @@
    "parked": false,
    "phase": "pr-open",
    "status": "active",
-   "updated_at": "2026-09-29T06:48:39Z",
+   "updated_at": "2026-09-29T06:58:43Z",
    "stale": false,
-   "age_seconds": 518
+   "age_seconds": 33
   }
  ]
 }
