@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:25:17.543154+00:00",
+ "generated_at": "2026-09-29T06:27:18.760938+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,7 +9,7 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #146 (C2k) BLOCKED by new file-size cap CI (PR #143): envelope.rs +81 / ui/mod.rs +7 over waivers; waivers-only-shrink with no splits in flight and no exemption process. Escalated to parent. C2l similarly blocked. Secret-session-terminate linkage research pipelined (unblocked)."
+    "detail": "PR #147 MERGED (docs: secret-session-terminate impossible, premise corrected). PR #146 (C2k) still blocked by file-size cap \u2014 escalated. C2l blocked (same files)."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -20,12 +20,12 @@
     "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T09:15:00Z",
+   "updated_at": "2026-09-29T09:45:00Z",
    "last_merged": {
-    "pr": 144,
-    "slice": "community-backend-core",
+    "pr": 147,
+    "slice": "docs-secret-session-terminate",
     "parity": "367/525 (69.9%)",
-    "commit": "709f4c8"
+    "commit": "f85661c"
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated to this slice, left alone.",
    "phase9": {
@@ -56,7 +56,7 @@
    "parked": false,
    "phase": "active",
    "status": "active",
-   "updated_at": "2026-09-29T06:16:02Z",
+   "updated_at": "2026-09-29T06:25:53Z",
    "pr": {
     "s8": 138,
     "s9": 140
@@ -72,7 +72,7 @@
     "s7": "parked"
    },
    "stale": false,
-   "age_seconds": 555
+   "age_seconds": 85
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -92,7 +92,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:24:36Z",
    "stale": false,
-   "age_seconds": 41
+   "age_seconds": 162
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -125,7 +125,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:18:46Z",
    "stale": false,
-   "age_seconds": 391
+   "age_seconds": 512
   }
  ]
 }
