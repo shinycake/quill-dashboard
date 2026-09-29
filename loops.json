@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:53:21.003693+00:00",
+ "generated_at": "2026-09-29T20:55:22.099937+00:00",
  "loops": [
   {
    "blockers": [],
@@ -13,7 +13,9 @@
     "commit": "afd54f9",
     "detail": "G10: community create/hub/info UI. Implementer done: rebased onto origin/main, 12 files +687/-7, all gates green, screenshots + docs rows committed, claimed parity 405/525 (77.1%). Awaiting dedicated adversarial review (coordinator-spawned); then PR open (global open-PR count 3/4 \u2014 room to open), handoff to merge-pipeline.",
     "handoff": "legacy-transition: dedicated reviewer finishes under coordinator hand; PR then handed to merge-pipeline agent for CI chase + FIFO merge (never merge own PRs). Pipeline model fully applies from NEXT slice onward.",
-    "reviewer": "d12856ed-8e33-43b5-9250-f045db939d8d (pending)"
+    "reviewer": "d12856ed-8e33-43b5-9250-f045db939d8d (pending)",
+    "review_verdict": "BLOCK \u2014 duplicated text helper (community.rs:55-57 vs EditProfileDialog::text); fixup in progress",
+    "fixup_agent": "a925ad2c-5fe3-4793-a040-abb2712ab5dc (pending)"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
@@ -35,7 +37,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:53:00Z",
+   "updated_at": "2026-09-29T20:56:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -48,12 +50,12 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T20:53:00Z",
-   "last_evidence_event": "G10 implementer completed: rebased onto origin/main 8fd501b, pushed 3 commits (9a5cc0d/84e5200/afd54f9), all gates green (fmt/clippy/test 1169 passed/file-sizes/ui build), 3 screenshots committed + docs rows; dedicated adversarial reviewer dispatched (coordinator-spawned, legacy transition)",
+   "last_evidence_at": "2026-09-29T20:56:00Z",
+   "last_evidence_event": "dedicated adversarial review returned BLOCK: 1 trivial blocking finding (duplicated text helper, ponytail defect) + 5 nits; fixup agent dispatched to apply blocking fix + 4 nits",
    "wip_open_prs": 0,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 21
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -151,7 +153,7 @@
    },
    "last_evidence_at": "2026-09-29T20:43:06Z",
    "stale": false,
-   "age_seconds": 615
+   "age_seconds": 736
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -173,10 +175,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:44:32Z",
+   "updated_at": "2026-09-29T20:54:34Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": true,
-   "age_seconds": 1358
+   "age_seconds": 1479
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -226,7 +228,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": true,
-   "age_seconds": 981
+   "age_seconds": 1102
   }
  ]
 }
