@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:29:20.420296+00:00",
+ "generated_at": "2026-09-29T20:31:26.459864+00:00",
  "loops": [
   {
    "blockers": [],
@@ -11,7 +11,8 @@
     "phase": "in-progress",
     "pr": null,
     "commit": "b82341d",
-    "detail": "G10: community create/hub/info UI. Verified 2026-09-29 20:20Z: worktree @ b82341d == origin/parity/communities-ui tip, no unpushed commits, merge-tree clean vs origin/main 8fd501b. Pre-freeze gates were green (remote Mac UI build success, local fmt/clippy/test/file-sizes green, parity 375/525 with 3 boxes checked). Remaining: rebase onto origin/main (preserve README box union), re-run full gates, capture screenshots, add docs/screenshots/README.md rows, adversarial review, open PR."
+    "detail": "G10: community create/hub/info UI. Verified 2026-09-29 20:20Z: worktree @ b82341d == origin/parity/communities-ui tip, no unpushed commits, merge-tree clean vs origin/main 8fd501b. Pre-freeze gates were green (remote Mac UI build success, local fmt/clippy/test/file-sizes green, parity 375/525 with 3 boxes checked). Remaining: rebase onto origin/main (preserve README box union), re-run full gates, capture screenshots, add docs/screenshots/README.md rows, adversarial review, open PR.",
+    "handoff": "legacy \u2014 reviewer finishes under coordinator, coordinator merges after CONFIRM (pipeline model applies from NEXT slice onward)"
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
@@ -33,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:25:57Z",
+   "updated_at": "2026-09-29T20:31:30Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -45,8 +46,12 @@
     "pr": 168,
     "status": "merged 2026-09-29 during freeze flush"
    },
+   "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. Never merge own PRs (merge-pipeline agent owns open PRs). WIP cap: max 2 open PRs from this loop. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at updated ONLY on real events (push, PR open, review, merge).",
+   "last_evidence_at": "2026-09-29T20:31:30Z",
+   "last_evidence_event": "coordinator restarted; G10 branch state verified (b82341d clean vs origin/main); G10 implementer dispatched (rebase+gates+screenshots+review+PR); pipeline workflow adopted",
+   "wip_open_prs": 0,
    "stale": false,
-   "age_seconds": 203
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -54,9 +59,10 @@
     "slice": "S15 dynamic sticker-set order (backend + state)",
     "branch": "parity/loop2-s15-dynamic-order",
     "worktree": "~/workspace/quill-loop2-s15",
-    "phase": "in-review",
-    "pr": null,
-    "detail": "S15 implementing in dedicated worktree on origin/main @ 8fd501b (rebased from 87892ab post-freeze). Design: send_sticker passes update_order_of_installed_sticker_sets=true (schema 1.8.67:5928) so TDLib moves the used set to front; handle updateInstalledStickerSets (schema:10932) by reordering cached sets in place (no refetch, no UI change \u2014 picker lists stored order). Dedup: #158/#163/#167/#172 all merged, no overlap."
+    "phase": "pr-open",
+    "pr": 173,
+    "detail": "S15 implementing in dedicated worktree on origin/main @ 8fd501b (rebased from 87892ab post-freeze). Design: send_sticker passes update_order_of_installed_sticker_sets=true (schema 1.8.67:5928) so TDLib moves the used set to front; handle updateInstalledStickerSets (schema:10932) by reordering cached sets in place (no refetch, no UI change \u2014 picker lists stored order). Dedup: #158/#163/#167/#172 all merged, no overlap.",
+    "handoff": "merge-pipeline"
    },
    "lanes": "stories, stickers, emoji, GIFs",
    "last_merged": {
@@ -111,8 +117,8 @@
      "commit": "cf39d8be82bb12e4902d6ccbe9ea103303a7eb79"
     },
     "s15": {
-     "number": null,
-     "state": "implementing"
+     "number": 173,
+     "state": "open \u2014 adversarial review CONFIRM, awaiting CI + merge"
     }
    },
    "status": "active",
@@ -135,8 +141,9 @@
     "parity": "372/525 (70.9%)",
     "note": "Backend-only, no README box change. (Prior: #163 S12 merged 2026-09-29T18:41Z, #158 S11 merged 2026-09-29T17:05Z.)"
    },
+   "last_evidence_at": "2026-09-29T20:30:29Z",
    "stale": false,
-   "age_seconds": 203
+   "age_seconds": 57
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -159,8 +166,9 @@
    },
    "status": "active",
    "updated_at": "2026-09-29T20:24:31Z",
+   "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": false,
-   "age_seconds": 289
+   "age_seconds": 44
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -208,8 +216,9 @@
     "parity": "374/525 (71.2%)",
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
+   "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 44
   }
  ]
 }
