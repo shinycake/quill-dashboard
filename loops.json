@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T15:11:18.975337+00:00",
+ "generated_at": "2026-09-29T15:13:18.184953+00:00",
  "loops": [
   {
    "blockers": [],
@@ -27,34 +27,34 @@
     "phase": "starting",
     "slice": "G8"
    },
-   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked).",
+   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
     "pr": 142,
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T15:05:51Z",
-   "current_slice": "G8",
-   "current_branch": "parity/groups-info-edit",
-   "current_commit": "351122f",
-   "current_status": "adversarial review APPROVED with non-blocking findings; fixups F1 (honesty: Ok(None) notes -> 'request already in flight'), F2 (waiver rationale corrected to cite the waiver-bump rule's type-coherent-extension carve-out), F3 (photo path ~ expansion) applied. Gates green on final tree: cargo fmt, clippy --no-default-features -D warnings, cargo test --no-default-features (1053 + 59 passed), check_file_sizes.sh. Waiver recalculated exact: ui/mod.rs 48465->48717 (+6 for tilde expansion). Based on origin/main 530de44 (no rebase needed). PR #165 OPEN, head 351122f -- do NOT merge",
+   "updated_at": "2026-09-29T15:28:00Z",
+   "current_slice": "G9",
+   "current_branch": "parity/community-service-rows",
+   "current_commit": "377c4ed",
+   "current_status": "implemented + committed 377c4ed in ~/workspace/quill-l1-community-rows; gates green (fmt, clippy --no-default-features --all-targets -D warnings, test 1055+59, check_file_sizes.sh with exact waiver bumps: ui/mod.rs 48465->48528, envelope.rs 18209->18264); UI build gate running via quill-build (queued, lock-serialized); pending: build gate, rebase on current origin/main, PR, adversarial review. DO NOT merge own PR.",
    "parity": "375/525 = 71.4%",
    "last_slice": {
-    "id": "G8",
-    "name": "group/channel title, description, photo edit UI",
-    "branch": "parity/groups-info-edit",
-    "commit": "351122f",
-    "worktree": "~/workspace/quill-l1-g8",
+    "id": "G9",
+    "name": "community service message rows (join/added/removed)",
+    "branch": "parity/community-service-rows",
+    "commit": "377c4ed",
+    "worktree": "~/workspace/quill-l1-community-rows",
     "checklist_boxes": [
-     "parity:groups-set-title",
-     "parity:groups-set-description",
-     "parity:groups-set-photo"
+     "parity:groups-added-to-community",
+     "parity:groups-removed-from-community",
+     "parity:communities-join-service-message"
     ],
-    "status": "review approved; fixups F1-F3 applied; all gates green; PR #165 open -- DO NOT merge"
+    "status": "implemented + committed; gates green; UI build gate running; pending rebase + PR + adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 327
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -109,7 +109,7 @@
    },
    "updated_at": "2026-09-29T15:05:50Z",
    "stale": false,
-   "age_seconds": 328
+   "age_seconds": 448
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -128,7 +128,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:04:30Z",
    "stale": false,
-   "age_seconds": 408
+   "age_seconds": 528
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -167,7 +167,7 @@
    "status": "active",
    "updated_at": "2026-09-29T15:08:37Z",
    "stale": false,
-   "age_seconds": 161
+   "age_seconds": 281
   }
  ]
 }
