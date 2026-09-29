@@ -1,6 +1,6 @@
 {
-  "notes": "Phase 8 merged as PR #133 (light theme; 5 review fixups incl. dark-mode orange regression, outgoing-bubble action-row contrast, media-viewer control contrast; linux-fmt-clippy-test green). Moving to Phase 9, the final kit phase. Feature loops stay parked.",
-  "phase": "Phase 9 — delight polish (hover/pressed feedback, skeletons, empty states, tooltips, reduced motion)",
+  "notes": "Phase 8 merged 2026-09-29T01:33:26Z; feature loops RESUMED 2026-09-29 ~02:10Z on non-UI slices (src/ui/mod.rs off-limits until Phase 9 merges); loop3 heartbeat keepalive recreated.",
+  "phase": "Phase 9 \u2014 delight polish (hover/pressed feedback, skeletons, empty states, tooltips, reduced motion)",
   "prs": [
     122,
     123,
