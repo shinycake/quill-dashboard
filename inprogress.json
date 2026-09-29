@@ -26,6 +26,14 @@
   },
   {
    "area": "Media",
+   "label": "remove-check-file-sizes",
+   "kind": "branch",
+   "pr": null,
+   "url": "https://github.com/shinycake/quill/tree/parity/remove-check-file-sizes",
+   "branch": "parity/remove-check-file-sizes"
+  },
+  {
+   "area": "Media",
    "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
    "kind": "pr",
    "pr": 184,
