@@ -28,7 +28,7 @@
     "phase": "in-review",
     "detail": "Community chat-list mode: selected community filters the main chat list to its chats (community_id match), with enter/exit affordances. Builds on G10 hub + communities backend core (merged).",
     "commit": "ee95ed5",
-    "reviewer": "fe2bfb32-1630-4ab0-bc8d-6a40ad270656 (pending)"
+    "reviewer": "0b79b31c-b088-4c52-8955-fba687b555da (pending, re-dispatched)"
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -37,7 +37,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:44:00Z",
+   "updated_at": "2026-09-29T22:45:54Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -50,12 +50,12 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T22:44:00Z",
-   "last_evidence_event": "communities-chatlist-mode implementer completed: branch parity/community-chatlist-mode pushed (ee95ed5, rebased on origin/main @fdc7ea7), all gates green incl. Mac UI build success, 7 tests in new named file, README box checked; dedicated adversarial reviewer dispatched (verifying the premise correction + waiver legitimacy)",
+   "last_evidence_at": "2026-09-29T22:47:00Z",
+   "last_evidence_event": "communities-chatlist-mode reviewer agent errored on daemon restart (no verdict); re-dispatched identical review brief",
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 98
+   "age_seconds": 18
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -149,7 +149,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:40:30Z",
+   "updated_at": "2026-09-29T22:45:56Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:40:30Z",
    "stale": false,
-   "age_seconds": 308
+   "age_seconds": 408
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -170,7 +170,7 @@
     "base": "origin/main @ fdc7ea7",
     "phase": "implementing",
     "pr": null,
-    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance. Replacement coordinator dispatched 2026-09-29T22:48Z to resume badge-settings in the existing worktree (prior coordinator died in daemon restart)."
+    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance. Replacement coordinator dispatched 2026-09-29T22:48Z to resume badge-settings in the existing worktree (prior coordinator died in daemon restart). Third coordinator dispatched 2026-09-29T22:46:03Z to resume badge-settings (5 files modified on disk, uncommitted; prior coordinator died in daemon restart)."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
@@ -179,13 +179,13 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:38:09Z",
-   "last_evidence_at": "2026-09-29T22:48:00Z",
+   "updated_at": "2026-09-29T22:46:03Z",
+   "last_evidence_at": "2026-09-29T22:46:03Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 75
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -255,7 +255,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 158
+   "age_seconds": 258
   }
  ]
 }
