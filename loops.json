@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T10:05:17.323536+00:00",
+ "generated_at": "2026-09-29T10:07:17.573307+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -20,7 +20,7 @@
     "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T09:55:52Z",
+   "updated_at": "2026-09-29T10:05:51Z",
    "last_merged": {
     "pr": 147,
     "slice": "docs-secret-session-terminate",
@@ -45,25 +45,23 @@
     }
    ],
    "stale": false,
-   "age_seconds": 565
+   "age_seconds": 86
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": "S5 merged (#154); S7 PR #155 CI rerun after fmt fix",
    "lanes": "stories, stickers, emoji, GIFs",
+   "last_merged": {
+    "commit": "5da1d24",
+    "pr": 140,
+    "slice": "S9 GIF backend"
+   },
    "loop": 2,
    "next": "Merge S7 after CI",
+   "parity": "371/525 (70.7%)",
    "parked": false,
    "phase": "active",
-   "status": "active",
-   "updated_at": "2026-09-29T09:55:51Z",
    "pr": {
-    "s8": 138,
-    "s9": 140,
-    "s6": {
-     "number": 149,
-     "state": "merged"
-    },
     "s10": {
      "number": 152,
      "state": "merged"
@@ -72,25 +70,27 @@
      "number": 154,
      "state": "merged"
     },
+    "s6": {
+     "number": 149,
+     "state": "merged"
+    },
     "s7": {
      "number": 155,
      "state": "open"
-    }
+    },
+    "s8": 138,
+    "s9": 140
    },
-   "last_merged": {
-    "slice": "S9 GIF backend",
-    "pr": 140,
-    "commit": "5da1d24"
-   },
+   "status": "active",
    "unparked": {
-    "s6": "merged (#149)",
     "s10": "merged (#152)",
     "s5": "merged (#154)",
+    "s6": "merged (#149)",
     "s7": "PR #155"
    },
-   "parity": "371/525 (70.7%)",
+   "updated_at": "2026-09-29T10:05:57Z",
    "stale": false,
-   "age_seconds": 566
+   "age_seconds": 80
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -110,7 +110,7 @@
    "status": "active",
    "updated_at": "2026-09-29T10:04:32Z",
    "stale": false,
-   "age_seconds": 45
+   "age_seconds": 165
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -143,7 +143,7 @@
    "status": "active",
    "updated_at": "2026-09-29T09:58:38Z",
    "stale": false,
-   "age_seconds": 399
+   "age_seconds": 519
   }
  ]
 }
