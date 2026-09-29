@@ -158,6 +158,12 @@
     #areas .card{margin-bottom:12px}
     .stats{grid-template-columns:repeat(4,1fr)}
   }
+  /* mobile: stack split rows (path / bar / numbers) instead of fixed 230px+170px columns */
+  @media (max-width:640px){
+    .f-row{grid-template-columns:1fr; gap:5px; padding:3px 0}
+    .f-path{white-space:normal; overflow:visible; text-overflow:clip}
+    .f-nums{text-align:left; font-size:12.5px}
+  }
   @media (prefers-reduced-motion:reduce){
     .live-dot,.spin,.skel{animation:none}
     .bar i{transition:none}
@@ -429,9 +435,9 @@ function renderSplit(data){
     (b.extracted ? ' · ' + fmtLines(b.extracted) : '') + '</span></a>'
   ).join('');
   el.innerHTML = '<div class="card" style="margin-bottom:0">' +
-    '<div class="t" style="font-weight:700">No-dumping-grounds split' +
-    ' <span style="color:var(--muted);font-weight:500;font-size:12.5px">· grandfathered files → ≤ ' +
-    fmtLines(target) + ' lines each</span></div>' +
+    '<div class="t" style="font-weight:700">No-dumping-grounds split</div>' +
+    '<div style="color:var(--muted);font-size:12.5px;margin-top:2px">grandfathered files &rarr; &le; ' +
+    fmtLines(target) + ' lines each</div>' +
     '<div class="f-list">' + rows + '</div>' +
     (batchChips ? '<div class="s-prs" style="margin-top:10px">' + batchChips + '</div>' : '') +
     '<div class="meta" style="color:var(--muted);margin-top:8px">updated ' + ago(data.generated_at) + '</div>' +
@@ -531,7 +537,7 @@ function renderTrend(history, live){
     dots + '</svg>' +
     '<div class="chart-note">+' + gain.toFixed(1) + ' pp since ' +
     new Date(pts[0].t).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) +
-    ' · hover points for exact values</div>';
+    ' · tap / hover points for exact values</div>';
 }
 
 // Merges-per-day bar chart (inline SVG). Only days actually covered by the
