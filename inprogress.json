@@ -10,19 +10,19 @@
   },
   {
    "area": "Bots, polls & payments",
+   "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
+   "kind": "pr",
+   "pr": 183,
+   "url": "https://github.com/shinycake/quill/pull/183",
+   "branch": "parity/chatlist-badge-settings"
+  },
+  {
+   "area": "Bots, polls & payments",
    "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/settings-mentions-pinned"
-  },
-  {
-   "area": "Chat list",
-   "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/chatlist-badge-settings"
   },
   {
    "area": "Chat list",

@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": false,
-   "age_seconds": 170
+   "age_seconds": 290
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -168,9 +168,10 @@
     "branch": "parity/chatlist-badge-settings",
     "worktree": "~/workspace/quill-l3-badge-settings",
     "base": "origin/main @ fdc7ea7",
-    "phase": "implementing",
-    "pr": null,
-    "detail": "Claimed 2026-09-29: app badge counter settings (include muted, include archived, count messages vs chats). BadgePrefs in settings.rs, badge_count in tray.rs, section in Notification defaults dialog. Pause/resume skipped: one-shot downloadFile has no pause in TDLib 1.8.67 (toggleDownloadIsPaused is persistent-list only); list-style deferred as appearance. Replacement coordinator dispatched 2026-09-29T22:48Z to resume badge-settings in the existing worktree (prior coordinator died in daemon restart). Third coordinator dispatched 2026-09-29T22:46:03Z to resume badge-settings (5 files modified on disk, uncommitted; prior coordinator died in daemon restart)."
+    "phase": "landing-duty",
+    "pr": 183,
+    "detail": "PR #183 open (merge pipeline owns it). Repo at 4-PR cap (#180-#183): on landing duty per cap rule, no new feature slice until a merge. Merge pipeline alive (draining, queue [180,181], #180 rebased w/ review pending). Noted: #182 CONFLICTING (pipeline will rebase in FIFO turn), #181 mergeable UNKNOWN/CI pending, #180 UNSTABLE (macos smoke in progress). Phase 2 declared (loops 2/4 on bots/settings). When a slot opens: claim a phase-2 polls/payments/auth slice. chatlist-list-style (phase 1) left unchecked \u2014 phase 1 declared done by parent.",
+    "handoff": "merge-pipeline"
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
@@ -179,13 +180,13 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:54:33Z",
-   "last_evidence_at": "2026-09-29T22:46:03Z",
+   "updated_at": "2026-09-29T23:05:00Z",
+   "last_evidence_at": "2026-09-29T23:05:00Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": false,
-   "age_seconds": 674
+   "age_seconds": 0
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -226,7 +227,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-29T22:54:00Z",
-   "updated_at": "2026-09-29T22:54:00Z",
+   "updated_at": "2026-09-29T22:58:39Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -255,7 +256,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 197
+   "age_seconds": 317
   }
  ]
 }

@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 183,
+   "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
+   "updated_at": "2026-09-29T22:58:02Z",
+   "html_url": "https://github.com/shinycake/quill/pull/183",
+   "head": {
+    "ref": "parity/chatlist-badge-settings"
+   }
+  },
+  {
    "number": 182,
    "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
    "updated_at": "2026-09-29T22:53:56Z",
@@ -935,6 +944,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:58:02Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1321,16 +1340,6 @@
     "ref": "parity/loop2-s17-choosing-sticker"
    },
    "created_at": "2026-09-29T20:59:53Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/auth-lifecycle-1"
-   },
-   "created_at": "2026-09-29T13:25:26Z",
    "actor": {
     "login": "shinycake"
    }
