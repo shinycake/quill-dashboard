@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T14:51:16.862434+00:00",
+ "generated_at": "2026-09-29T14:53:17.682877+00:00",
  "loops": [
   {
    "blockers": [],
@@ -36,7 +36,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:45:51Z",
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 446
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -91,27 +91,26 @@
    },
    "updated_at": "2026-09-29T14:45:53Z",
    "stale": false,
-   "age_seconds": 323
+   "age_seconds": 444
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
    "current": {
-    "branch": "parity/bots-payment-clear-backend",
-    "detail": "PR #159 OPEN (payments-clear backend, no README boxes). Appearance slice parity/settings-appearance rebased onto origin/main@530de44 (109 commits): 8 mod.rs hunks + fixups resolved, kit Phase 4/7/8 integrated (MessageChrome + BubbleLook union, Ghost variant for plain mode, theme-aware link preview, virtualized history look-threading), waiver bump ui/mod.rs 48465->48628, safe_app_root fix, all 5 gates green, fresh screenshot captured, PR #161 OPEN with 6 README boxes (theme-switch, auto-night, accent-color, chat-wallpaper, font-size, bubble-style). Both pre-rebase reviews are STALE \u2014 fresh dedicated adversarial reviewers needed for #159 and #161 before merge. Parity: 371/525 = 70.7% now; 377/525 = 71.8% after #161 merges.",
-    "phase": "payments-clear",
+    "branch": "parity/settings-privacy",
+    "detail": "Rebased onto origin/main@530de44 (7ce6a6d): 6 conflicted files resolved (import-list unions; kept both InlineQuery+PrivacyRule structs in envelope.rs; kept both payment+privacy request tests; ui/mod.rs render wiring takes kit-Phase-2 HEAD comments + privacy's own 3 overlay wirings \u2014 the old deleted overlay calls dropped). Refactored for the file-size CI gate (waivers only shrink): privacy UI -> src/ui/privacy.rs (1038 lines, impl QuillApp), privacy domain state -> src/privacy.rs (PrivacyRule, PrivacyRuleDetail, PrivacyKeyState + 5 unit tests), privacy requests -> src/telegram/requests_privacy.rs (PrivacySettingKey + 5 builders + shape test). ui/mod.rs keeps fields/variants/match arms + render wiring; state.rs keeps RequestPurpose variants + reducer arms; connect.rs keeps driver methods; envelope.rs keeps payload variants. Gates: cargo fmt clean; cargo check/clippy/test + ui build + check_file_sizes.sh queued/running. NOT pushed, no PR yet. 9 README boxes (privacy) verified: 0 lost, +9 new.",
+    "phase": "settings-privacy-rebase",
     "pr": 159,
-    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Appearance rebased + PR #161 OPEN (awaiting fresh adversarial review). Next: privacy branch rebase."
+    "slice": "Slice 3 OPEN as PR #159 (awaiting fresh adversarial review). Appearance PR #161 OPEN (awaiting fresh adversarial review). Privacy: rebased + file-split refactor, gates running."
    },
    "lanes": "bots, polls, payments, settings",
    "loop": 3,
    "parked_branches": {
-    "parity/settings-appearance": "c3bb7ad \u2014 5 reviewer fixups applied, gates green, rebased onto c9eddc6. NOT pushed, no PR. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR).",
-    "parity/settings-privacy": "c11d29e \u2014 fully implemented (all 9 boxes checked, gates were green, ready-privacy.png captured), worktree clean. NOT pushed, no PR. Rebase deliberately deferred. UI-blocked premise OUTDATED: kit Phase 9 PR #142 already merged. Re-evaluate next (rebase + re-gate + push + PR)."
+    "parity/settings-appearance": "PR #161 OPEN \u2014 awaiting fresh adversarial review (parent dispatched)."
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:44:30Z",
+   "updated_at": "2026-09-29T14:55:00Z",
    "stale": false,
-   "age_seconds": 406
+   "age_seconds": 0
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -148,7 +147,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:48:41Z",
    "stale": false,
-   "age_seconds": 155
+   "age_seconds": 276
   }
  ]
 }
