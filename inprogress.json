@@ -34,14 +34,6 @@
   },
   {
    "area": "Stickers, emoji & GIFs",
-   "label": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
-   "kind": "pr",
-   "pr": 175,
-   "url": "https://github.com/shinycake/quill/pull/175",
-   "branch": "parity/loop2-s16-emoji-sticker-type"
-  },
-  {
-   "area": "Stickers, emoji & GIFs",
    "label": "Slice S17: show 'choosing a sticker' chat action of others",
    "kind": "pr",
    "pr": 178,

@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 175,
+   "title": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
+   "merged_at": "2026-09-29T21:43:03Z",
+   "html_url": "https://github.com/shinycake/quill/pull/175",
+   "head": {
+    "ref": "parity/loop2-s16-emoji-sticker-type"
+   }
+  },
+  {
    "number": 174,
    "title": "platform-tray-icon: system tray icon with unread count",
    "merged_at": "2026-09-29T21:27:19Z",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/group-calls-1"
    }
-  },
-  {
-   "number": 76,
-   "title": "Phase C2e-2: 1:1 video transport driver + UI",
-   "merged_at": "2026-09-27T08:20:14Z",
-   "html_url": "https://github.com/shinycake/quill/pull/76",
-   "head": {
-    "ref": "parity/call-video-2"
-   }
   }
  ],
  "openPRs": [
@@ -927,23 +927,24 @@
   {
    "number": 176,
    "title": "G10: community create/hub/info UI",
-   "updated_at": "2026-09-29T21:20:08Z",
+   "updated_at": "2026-09-29T21:42:40Z",
    "html_url": "https://github.com/shinycake/quill/pull/176",
    "head": {
     "ref": "parity/communities-ui"
    }
-  },
-  {
-   "number": 175,
-   "title": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji)",
-   "updated_at": "2026-09-29T21:28:17Z",
-   "html_url": "https://github.com/shinycake/quill/pull/175",
-   "head": {
-    "ref": "parity/loop2-s16-emoji-sticker-type"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T21:43:03Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1333,19 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/auth-password-recovery"
-   },
-   "created_at": "2026-09-29T18:58:36Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "82626fdb89953c0dfdc30dd4181aeee23f8c0618",
+   "html_url": "https://github.com/shinycake/quill/commit/82626fdb89953c0dfdc30dd4181aeee23f8c0618",
+   "commit": {
+    "message": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji) (#175)\n\nstickerTypeEmoji does not exist in the pinned TDLib 1.8.67 schema\n(StickerType = Regular/Mask/CustomEmoji only, td_api.tl:412-421), so the\nfive emoji-set request builders (getInstalled/Archived/Trending/Search/\nReorderStickerSets) were sending a bogus type TDLib 400s. The emoji panel's\ninstalled/archived/trending/search/reorder fetches were broken in production.\nFix is a rename to stickerTypeCustomEmoji in the builders, fixtures,\ncomments, and the parity:emoji-custom-packs README parenthetical. No new\nREADME boxes (bug fix); no waiver bumps (line-neutral).\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T21:43:03Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "cc1f2cff616db3c21fa3b91b07711de9233ac0f4",
    "html_url": "https://github.com/shinycake/quill/commit/cc1f2cff616db3c21fa3b91b07711de9233ac0f4",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T18:53:24Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "098f453b337e4ccec9dadd33464ba36226244130",
-   "html_url": "https://github.com/shinycake/quill/commit/098f453b337e4ccec9dadd33464ba36226244130",
-   "commit": {
-    "message": "Loop 2 S12: sticker suggestions by emoji in composer (backend) (#163)\n\nS12: sticker suggestions by emoji in composer (backend).\n\nAdversarial re-review CONFIRM: dedup fix verified, tests in src/sticker_suggest.rs, exact waivers (connect.rs:24405, state.rs:21311) verified, schema claims verbatim. Both required CI checks green on rebased head eb5d31d (run 36613260320). Backend-only.",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T18:41:08Z"
     }
    },
    "author": {
