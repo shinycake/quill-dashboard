@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:49:23.767642+00:00",
+ "generated_at": "2026-09-29T17:51:22.323419+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 207
+   "age_seconds": 326
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -137,7 +137,7 @@
     "note": "Adversarial review: APPROVE, no blockers. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 84
+   "age_seconds": 203
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -161,7 +161,7 @@
    "status": "active",
    "updated_at": "2026-09-29T17:44:35Z",
    "stale": false,
-   "age_seconds": 288
+   "age_seconds": 407
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -210,7 +210,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 34
+   "age_seconds": 153
   }
  ]
 }
