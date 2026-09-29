@@ -134,22 +134,12 @@
   .chart-card svg{width:100%; height:auto; display:block}
   .chart-note{font-size:12px; color:var(--faint); margin-top:8px}
 
-  /* kit stepper */
-  .stepper{margin-top:12px}
-  .step{display:flex; gap:10px; align-items:flex-start; padding:7px 0; position:relative}
-  .s-node{
-    width:28px; height:28px; border-radius:50%; flex:0 0 28px;
-    display:flex; align-items:center; justify-content:center;
-    font-size:13px; font-weight:800; border:2px solid var(--border);
-    background:var(--card2); color:var(--faint); z-index:1;
-  }
-  .step.s-done .s-node{background:var(--green-dim); border-color:var(--green); color:var(--green)}
-  .step.s-cur .s-node{background:var(--amber-dim); border-color:var(--amber); color:#e8c56d; animation:pulse 2s infinite}
-  .s-phase{font-size:12px; color:var(--faint); font-weight:600}
-  .s-name{font-size:13.5px; font-weight:600}
-  .step.s-todo .s-name{color:var(--faint); font-weight:500}
-  .s-prs{margin-top:4px; display:flex; gap:6px; flex-wrap:wrap}
-  .s-prs a{text-decoration:none}
+  /* file splitting */
+  .f-list{margin-top:12px; display:flex; flex-direction:column; gap:9px}
+  .f-row{display:grid; grid-template-columns:230px 1fr 170px; gap:12px; align-items:center}
+  .f-path{font-size:12.5px; font-weight:600; font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .f-nums{font-size:12px; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums}
+  .f-nums b{color:var(--fg); font-weight:700}
 
   footer{margin-top:36px; text-align:center; color:var(--faint); font-size:12.5px}
   footer a{color:var(--blue); text-decoration:none}
@@ -167,17 +157,9 @@
     #areas{display:grid; grid-template-columns:1fr 1fr; gap:0 16px}
     #areas .card{margin-bottom:12px}
     .stats{grid-template-columns:repeat(4,1fr)}
-    /* horizontal kit timeline */
-    .stepper{display:flex; align-items:flex-start; position:relative; padding:6px 4px 0}
-    .stepper::before{
-      content:''; position:absolute; top:20px; left:34px; right:34px;
-      height:2px; background:var(--border);
-    }
-    .step{flex:1; flex-direction:column; align-items:center; text-align:center; padding:0 4px}
-    .s-node{margin-bottom:8px}
   }
   @media (prefers-reduced-motion:reduce){
-    .live-dot,.spin,.skel,.step.s-cur .s-node{animation:none}
+    .live-dot,.spin,.skel{animation:none}
     .bar i{transition:none}
   }
 </style>
@@ -233,8 +215,8 @@
   </section>
 
   <section class="span12">
-    <h2>gpui-kit adoption <span class="count" id="kitCount"></span></h2>
-    <div id="kit"><div class="skel"></div></div>
+    <h2>File splitting <span class="count" id="splitCount"></span></h2>
+    <div id="split"><div class="skel"></div></div>
   </section>
 
   <section class="span8">
@@ -290,7 +272,7 @@ const OWNER = 'shinycake', REPO = 'quill';
 let cache = null;          // last good payload, kept in memory
 let refreshing = false;
 let lastLoopsSig = null;  // signature of last rendered loops.json
-let lastKitSig = null;   // signature of last rendered kit.json
+let lastSplitSig = null; // signature of last rendered split.json
 // ETag stores: GitHub returns 304 Not Modified for unchanged resources and
 // 304s do NOT count against the API rate limit — this is what allows 30s polling.
 const etags = {};          // url -> ETag
@@ -398,22 +380,11 @@ const PHASE_PILL = { implementing:'wip', reviewing:'review', fixups:'review',
                      gates:'wip', merging:'merged', idle:'num', blocked:'stale',
                      'pr-open':'open', 'bots-backend':'wip' };
 
-const KIT_PHASES = [
-  'Color tokens', 'Kill debug chrome', 'Kit overlays', 'Virtualized lists',
-  'Bubbles & message chrome', 'Composer', 'Dialogs, settings & forms',
-  'Native chrome (macOS)', 'Light theme', 'Delight polish'
-];
-
-// Shipped PR per kit phase, from the merged kit PRs #122–#133
-// (Phase 2's first attempt #124 was reverted by #126, then redone as #127).
-const KIT_PHASE_PRS = {0:[122],1:[123],2:[126,127],3:[128],4:[129],5:[130],6:[131],7:[132],8:[133],9:[]};
-
-const KIT_PILL = { waiting: 'wip', active: 'review', done: 'merged' };
-
-// gpui-kit adoption progress published by the build machine (~/workspace/bin/quill-loops-publish
-// every 2 min, from ~/workspace/quill-progress/kit.json maintained by the kit coordinator).
-async function getKit(){
-  const url = 'kit.json';
+// File-split progress published by the build machine (~/workspace/bin/quill-loops-publish
+// every 2 min, from current origin/main: waiver baselines + actual line counts
+// for the grandfathered oversized files, plus the split-batch PRs).
+async function getSplit(){
+  const url = 'split.json';
   const headers = {};
   if (etags[url]) headers['If-None-Match'] = etags[url];
   const r = await fetch(url, { headers, cache: 'no-store' });
@@ -426,50 +397,48 @@ async function getKit(){
   return { notModified: false, data };
 }
 
-function prChip(n){
-  return '<a href="https://github.com/' + OWNER + '/' + REPO + '/pull/' + n + '">' +
-    '<span class="pill num">#' + n + '</span></a>';
+function fmtLines(n){
+  if (n == null) return '—';
+  return n.toLocaleString('en-US');
 }
 
-function renderKit(data){
-  const el = $('kit');
-  if (!data){
-    $('kitCount').textContent = '';
-    el.innerHTML = '<div class="empty">Kit adoption feed is starting…</div>';
+function renderSplit(data){
+  const el = $('split');
+  if (!data || !data.files || !data.files.length){
+    $('splitCount').textContent = '';
+    el.innerHTML = '<div class="empty">Split progress feed is starting…</div>';
     return;
   }
-  const m = String(data.phase || '').match(/phase\s*(\d+)/i);
-  const curIdx = m ? parseInt(m[1], 10) : -1;
-  const doneAll = data.status === 'done';
-  const doneCount = doneAll ? 10 : Math.max(0, curIdx);
-  $('kitCount').textContent = (curIdx >= 0 || doneAll) ? doneCount + '/10' : '';
-  const pill = '<span class="pill ' + (KIT_PILL[data.status] || 'num') + '">' + esc(data.status || 'unknown') + '</span>';
-  const upd = data.updated_at ? 'updated ' + ago(data.updated_at) : 'no update yet';
-  // Any PR numbers in kit.json not covered by the historical phase map ride
-  // along on the current phase rather than being dropped.
-  const mapped = new Set([].concat(...Object.values(KIT_PHASE_PRS)));
-  const extra = (data.prs || []).filter(n => !mapped.has(n));
-  const steps = KIT_PHASES.map((name, i) => {
-    const state = doneAll || i < curIdx ? 'done' : (i === curIdx ? 'cur' : 'todo');
-    const dot = state === 'done' ? '✓' : (state === 'cur' ? '●' : '○');
-    let prs = (KIT_PHASE_PRS[i] || []).slice();
-    if (i === curIdx && extra.length) prs = prs.concat(extra);
-    const chips = prs.length ? '<div class="s-prs">' + prs.map(prChip).join('') + '</div>' : '';
-    return '<div class="step s-' + state + '">' +
-      '<div class="s-node">' + dot + '</div>' +
-      '<div><div class="s-phase">Phase ' + i + '</div>' +
-      '<div class="s-name">' + esc(name) + '</div>' + chips + '</div></div>';
+  const target = data.target_lines || 2000;
+  let removed = 0, total = 0;
+  const rows = data.files.map(f => {
+    const orig = f.original, cur = f.current;
+    const span = Math.max(1, orig - target);
+    const p = (cur == null) ? 0 : Math.max(0, Math.min(1, (orig - cur) / span));
+    if (cur != null){ removed += Math.max(0, orig - cur); total += Math.max(0, orig - target); }
+    const pct = (p * 100).toFixed(1);
+    const short = f.path.replace(/^src\//, '');
+    return '<div class="f-row">' +
+      '<div class="f-path" title="' + esc(f.path) + '">' + esc(short) + '</div>' +
+      '<div class="' + barClass(p) + '"><i style="width:' + pct + '%"></i></div>' +
+      '<div class="f-nums"><b>' + fmtLines(cur) + '</b> / ' + fmtLines(orig) + ' → ' + fmtLines(target) + '</div>' +
+      '</div>';
   }).join('');
+  const overall = total ? removed / total : 0;
+  $('splitCount').textContent = Math.round(overall * 100) + '% · ' + fmtLines(removed) + ' lines out';
+  const batchChips = (data.batches || []).map(b =>
+    '<a href="' + b.html_url + '"><span class="pill ' + (b.merged_at ? 'merged' : 'open') + '">#' + b.number +
+    '</span></a>'
+  ).join('');
   el.innerHTML = '<div class="card" style="margin-bottom:0">' +
-    '<div class="t" style="font-weight:700">gpui-kit adoption' +
-    (data.phase ? ' <span style="color:var(--muted);font-weight:500;font-size:12.5px">· ' + esc(data.phase) + '</span>' : '') + '</div>' +
-    (data.notes ? '<div class="meta" style="color:var(--muted)">' + esc(data.notes) + '</div>' : '') +
-    '<div class="meta" style="display:flex;gap:8px;align-items:center;margin-top:7px;font-size:12.5px;color:var(--muted)">' +
-      pill + '<span>' + upd + '</span></div>' +
-    '<div class="stepper">' + steps + '</div>' +
+    '<div class="t" style="font-weight:700">No-dumping-grounds split' +
+    ' <span style="color:var(--muted);font-weight:500;font-size:12.5px">· grandfathered files → ≤ ' +
+    fmtLines(target) + ' lines each</span></div>' +
+    '<div class="f-list">' + rows + '</div>' +
+    (batchChips ? '<div class="s-prs" style="margin-top:10px">' + batchChips + '</div>' : '') +
+    '<div class="meta" style="color:var(--muted);margin-top:8px">updated ' + ago(data.generated_at) + '</div>' +
     '</div>';
 }
-
 function renderLoops(data){
   const el = $('loops');
   if (!data || !data.loops || !data.loops.length){
@@ -706,10 +675,10 @@ async function refresh(manual){
   btn.innerHTML = '<span class="spin">↻</span> Loading…';
   $('rateBanner').classList.remove('show');
   try {
-    const [ghR, loopsR, kitR, histR] = await Promise.all([
+    const [ghR, loopsR, splitR, histR] = await Promise.all([
       getGithub().catch(() => ({ notModified: false, data: null })),
       getLoops().catch(() => ({ notModified: false, data: null })),
-      getKit().catch(() => ({ notModified: false, data: null })),
+      getSplit().catch(() => ({ notModified: false, data: null })),
       getHistory().catch(() => ({ notModified: false, data: null })),
     ]);
     const changed = [ghR, histR].some(r => !r.notModified);
@@ -766,11 +735,11 @@ async function refresh(manual){
       renderLoops(loopsR.data);
     }
 
-    // Kit adoption renders independently too.
-    const kitSig = JSON.stringify(kitR.data);
-    if (kitSig !== lastKitSig) {
-      lastKitSig = kitSig;
-      renderKit(kitR.data);
+    // File-split progress renders independently too.
+    const splitSig = JSON.stringify(splitR.data);
+    if (splitSig !== lastSplitSig) {
+      lastSplitSig = splitSig;
+      renderSplit(splitR.data);
     }
   } catch (err) {
     if (err && err.rateLimited) $('rateBanner').classList.add('show');
