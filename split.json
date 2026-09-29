@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T13:05:18.326124+00:00",
+ "generated_at": "2026-09-29T13:07:19.419691+00:00",
  "target_lines": 2000,
  "files": [
   {
@@ -59,7 +59,7 @@
    "merged_at": null,
    "number": 153,
    "title": "refactor: split ui/mod.rs dialogs batch 2 (GroupConfirm->Welcome)",
-   "updated_at": "2026-09-29T12:46:29Z",
+   "updated_at": "2026-09-29T13:05:22Z",
    "extracted": 504
   }
  ]
