@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:05:22.731751+00:00",
+ "generated_at": "2026-09-29T17:07:19.456216+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T16:55:55Z",
+   "updated_at": "2026-09-29T17:05:54Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": null,
@@ -55,7 +55,7 @@
     "status": "PR #168 open; all gates green; awaiting adversarial review -- DO NOT merge"
    },
    "stale": false,
-   "age_seconds": 567
+   "age_seconds": 85
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -120,9 +120,17 @@
     "s12": "PR #163 (open, fixup applied, awaiting re-review)",
     "s13": "PR #167 (open, awaiting review)"
    },
-   "updated_at": "2026-09-29T16:55:53Z",
+   "updated_at": "2026-09-29T17:05:53Z",
+   "last_merge": {
+    "pr": 158,
+    "slice": "S11 group sticker-set management backend",
+    "commit": "bb6d393",
+    "merged_at": "2026-09-29T16:55Z",
+    "parity": "372/525 (70.9%)",
+    "note": "Adversarial review: APPROVE, no blockers. Backend-only, no README box change."
+   },
    "stale": false,
-   "age_seconds": 569
+   "age_seconds": 86
   },
   {
    "coordinator": "5880f3bf-6e2c-4063-9ff3-d240cda331c1",
@@ -146,7 +154,7 @@
    "status": "active",
    "updated_at": "2026-09-29T17:04:32Z",
    "stale": false,
-   "age_seconds": 50
+   "age_seconds": 167
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -195,7 +203,7 @@
     "note": "Adversarial review: 1 blocker (stale send/resend purpose on check ok) fixed via take_purpose; regression assertions folded into existing test per file-organization rule. Backend-only, no README box change."
    },
    "stale": false,
-   "age_seconds": 403
+   "age_seconds": 520
   }
  ]
 }
