@@ -25,8 +25,8 @@
    "branch": "parity/community-search-filter"
   },
   {
-   "area": "Media",
-   "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
+   "area": "Settings",
+   "label": "Settings: mention + pinned-message notification overrides per scope",
    "kind": "pr",
    "pr": 184,
    "url": "https://github.com/shinycake/quill/pull/184",
@@ -39,6 +39,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/bots-inline-mode"
+  },
+  {
+   "area": "Stories",
+   "label": "reaction + story notification settings (parity:settings-reaction-notif)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-reaction-notif"
   }
  ]
 }

@@ -56,7 +56,7 @@
     "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
    },
    "stale": false,
-   "age_seconds": 20
+   "age_seconds": 140
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -162,7 +162,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 2213
+   "age_seconds": 2333
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -189,18 +189,18 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 1580
+   "age_seconds": 1700
   },
   {
    "coordinator": "3b206b72-87f3-4482-b9be-3c7ddca21736-loop4",
    "current": {
-    "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
-    "branch": "parity/settings-mentions-pinned",
-    "worktree": "~/workspace/quill-l4-mentions-pinned",
-    "phase": "in_review",
-    "pr": 184,
-    "handoff": "merge-pipeline",
-    "detail": "PR #184 OPEN on rebased commit 6493f55 (was b95e551; rebased onto origin/main 4c7ce8b after #180 landed; scripts/check_file_sizes.sh conflict resolved: waiver baselines taken from #180's numbers, slice bump re-measured exact 49204 -> 49338; README checkbox union-kept). PR opened 2026-09-29T23:28:35Z on the pushed rebased branch; gates re-verified green post-rebase by the watchdog-restart coordinator (fmt, clippy -D warnings, tests, check_file_sizes). Review/merge owned by merge-pipeline per FIFO. Repo back at 4-PR cap (#181-#184)."
+    "slice": "reaction + story notification settings (parity:settings-reaction-notif)",
+    "branch": "parity/settings-reaction-notif",
+    "worktree": "~/workspace/quill-l4-reaction-notif",
+    "phase": "implementing",
+    "pr": null,
+    "handoff": null,
+    "detail": "Claimed 2026-09-29T23:31Z after PR #184 opened (mentions-pinned, handed to merge-pipeline). Reaction half: new setReactionNotificationSettings plumbing (requests builder + connect driver + state reducer + envelope update parsing) with source selectors (All/Contacts/None) for message/story reactions and poll votes in Notification defaults dialog. Story half: per-scope 'Notify about stories' Switch via apply_scope_story_mute following the existing apply_scope_preview pattern. Schema verified: reactionNotificationSettings @td_api.tl:3396, setReactionNotificationSettings @13668, updateReactionNotificationSettings @10671; mute_stories in scopeNotificationSettings @3375."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -219,17 +219,16 @@
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "branch": "parity/auth-profile-accent",
-    "worktree": "/home/hatch/workspace/quill-loop4-a12",
-    "slice": "auth-profile-accent: profile accent color (setProfileAccentColor)",
+    "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
+    "branch": "parity/settings-mentions-pinned",
+    "worktree": "~/workspace/quill-l4-mentions-pinned",
     "phase": "in_review",
-    "pr": 180,
-    "commit": "a0c81b68496935ca6b3b3eaba15f073ad7454479",
-    "detail": "PR #180 OPEN and CI GREEN (linux-fmt-clippy-test + macos-compile-smoke SUCCESS, verified 2026-09-29T22:18Z); handoff merge-pipeline \u2014 review/merge owned by merge pipeline. Awaiting dedicated review.",
-    "last_evidence_at": "2026-09-29T22:20:00Z"
+    "pr": 184,
+    "handoff": "merge-pipeline",
+    "detail": "PR #184 OPEN on rebased commit 6493f55 (was b95e551; rebased onto origin/main 4c7ce8b after #180 landed; scripts/check_file_sizes.sh conflict resolved: waiver baselines taken from #180's numbers, slice bump re-measured exact 49204 -> 49338; README checkbox union-kept). PR opened 2026-09-29T23:28:35Z on the pushed rebased branch; gates re-verified green post-rebase by the watchdog-restart coordinator (fmt, clippy -D warnings, tests, check_file_sizes). Review/merge owned by merge-pipeline per FIFO. Repo back at 4-PR cap (#181-#184)."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T23:30:06Z",
+   "last_evidence_at": "2026-09-29T23:31:00Z",
    "updated_at": "2026-09-29T23:28:44Z",
    "last_merge": {
     "pr": 164,
@@ -259,7 +258,7 @@
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
    "stale": false,
-   "age_seconds": 74
+   "age_seconds": 140
   }
  ]
 }
