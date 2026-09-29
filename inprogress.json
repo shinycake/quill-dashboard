@@ -25,6 +25,14 @@
    "branch": "parity/communities-ui"
   },
   {
+   "area": "Messaging core",
+   "label": "ephemeral-updates: apply updateMessageEphemeralContent over time",
+   "kind": "pr",
+   "pr": 179,
+   "url": "https://github.com/shinycake/quill/pull/179",
+   "branch": "parity/ephemeral-updates"
+  },
+  {
    "area": "Stickers, emoji & GIFs",
    "label": "S18 sticker suggestions by emoji in composer",
    "kind": "branch",
