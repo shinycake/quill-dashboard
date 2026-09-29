@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 184,
+   "title": "Settings: mention + pinned-message notification overrides per scope",
+   "updated_at": "2026-09-29T23:28:35Z",
+   "html_url": "https://github.com/shinycake/quill/pull/184",
+   "head": {
+    "ref": "parity/settings-mentions-pinned"
+   }
+  },
+  {
    "number": 183,
    "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
    "updated_at": "2026-09-29T22:58:02Z",
@@ -927,7 +936,7 @@
   {
    "number": 181,
    "title": "communities-search-filter: community chat-type filter for message search",
-   "updated_at": "2026-09-29T23:22:24Z",
+   "updated_at": "2026-09-29T23:29:20Z",
    "html_url": "https://github.com/shinycake/quill/pull/181",
    "head": {
     "ref": "parity/community-search-filter"
@@ -935,6 +944,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T23:28:35Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "DeleteEvent",
    "payload": {
@@ -1321,16 +1340,6 @@
     "ref": "parity/settings-appearance"
    },
    "created_at": "2026-09-29T14:16:17Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T21:20:36Z",
    "actor": {
     "login": "shinycake"
    }

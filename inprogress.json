@@ -27,9 +27,9 @@
   {
    "area": "Settings",
    "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 184,
+   "url": "https://github.com/shinycake/quill/pull/184",
    "branch": "parity/settings-mentions-pinned"
   },
   {

@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 3,
    "stale": true,
-   "age_seconds": 1459
+   "age_seconds": 1577
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -159,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 1972
+   "age_seconds": 2090
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -186,7 +186,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 1339
+   "age_seconds": 1457
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -194,10 +194,10 @@
     "slice": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
     "branch": "parity/settings-mentions-pinned",
     "worktree": "~/workspace/quill-l4-mentions-pinned",
-    "phase": "holding-pr",
-    "pr": null,
-    "handoff": null,
-    "detail": "Slice complete and gated: commit b95e551 (rebased onto origin/main) pushed to parity/settings-mentions-pinned. Gates green: fmt, clippy -D warnings, tests, Mac-runner ui build (run 36642741525, success). PR deliberately NOT opened \u2014 repo at 4-PR cap (#180, #181, #182, #183). Waiting for a slot."
+    "phase": "in_review",
+    "pr": 184,
+    "handoff": "merge-pipeline",
+    "detail": "PR #184 opened (https://github.com/shinycake/quill/pull/184). Branch parity/settings-mentions-pinned rebased onto origin/main 4c7ce8b, force-pushed. All gates green on final head 6493f55: fmt, clippy -D warnings, tests, Mac-runner ui build (run 36645073776, success). Waiver bump exact: ui/mod.rs 49204\u219249338 (+134, type-coherent). Review/merge owned by merge pipeline."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -226,8 +226,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T23:00:00Z",
-   "updated_at": "2026-09-29T23:18:39Z",
+   "last_evidence_at": "2026-09-29T23:28:44Z",
+   "updated_at": "2026-09-29T23:28:44Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -255,8 +255,8 @@
     },
     "note": "Prior 'blocked' assessments were taken on faith; this re-verification used fresh concept-level searches and stands on its own evidence."
    },
-   "stale": true,
-   "age_seconds": 1639
+   "stale": false,
+   "age_seconds": 33
   }
  ]
 }
