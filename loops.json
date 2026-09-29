@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:45:20.752168+00:00",
+ "generated_at": "2026-09-29T20:47:21.489272+00:00",
  "loops": [
   {
    "blockers": [],
@@ -34,7 +34,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T20:35:57Z",
+   "updated_at": "2026-09-29T20:45:55Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -50,8 +50,8 @@
    "last_evidence_at": "2026-09-29T20:31:30Z",
    "last_evidence_event": "coordinator restarted; G10 branch state verified (b82341d clean vs origin/main); G10 implementer dispatched (rebase+gates+screenshots+review+PR); pipeline workflow adopted",
    "wip_open_prs": 0,
-   "stale": false,
-   "age_seconds": 830
+   "stale": true,
+   "age_seconds": 951
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -138,7 +138,7 @@
     "s13": "merged (#167)",
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)"
    },
-   "updated_at": "2026-09-29T20:35:56Z",
+   "updated_at": "2026-09-29T20:45:53Z",
    "last_merge": {
     "pr": 172,
     "slice": "S14 story-posting restriction notices backend",
@@ -149,7 +149,7 @@
    },
    "last_evidence_at": "2026-09-29T20:43:06Z",
    "stale": false,
-   "age_seconds": 134
+   "age_seconds": 255
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -173,8 +173,8 @@
    "status": "active",
    "updated_at": "2026-09-29T20:44:32Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
-   "stale": false,
-   "age_seconds": 878
+   "stale": true,
+   "age_seconds": 999
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -224,7 +224,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 500
+   "age_seconds": 621
   }
  ]
 }
