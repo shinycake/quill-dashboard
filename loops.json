@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-29T14:59:24.415584+00:00",
+ "generated_at": "2026-09-29T15:01:17.361665+00:00",
  "loops": [
   {
    "blockers": [],
-   "coordinator": "104dcfec-76b7-4a06-8acf-c538c75d2fa6",
+   "coordinator": "7dfc916b-9b21-423a-aad3-23ca706e683e",
    "current": {
     "branch": "parity/calls-screen-share-render",
     "commit": "ff7dbfb",
@@ -34,9 +34,27 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T14:55:51Z",
+   "updated_at": "2026-09-29T15:05:00Z",
+   "current_slice": "G8",
+   "current_branch": "parity/groups-info-edit",
+   "current_commit": "9f473b9",
+   "current_status": "implemented \u2014 ready for adversarial review",
+   "parity": "375/525 = 71.4%",
+   "last_slice": {
+    "id": "G8",
+    "name": "group/channel title, description, photo edit UI",
+    "branch": "parity/groups-info-edit",
+    "commit": "9f473b9",
+    "worktree": "~/workspace/quill-l1-g8",
+    "checklist_boxes": [
+     "parity:groups-set-title",
+     "parity:groups-set-description",
+     "parity:groups-set-photo"
+    ],
+    "status": "implemented, all gates green, awaiting adversarial review \u2014 DO NOT merge without reviewer"
+   },
    "stale": false,
-   "age_seconds": 213
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -91,7 +109,7 @@
    },
    "updated_at": "2026-09-29T14:55:53Z",
    "stale": false,
-   "age_seconds": 211
+   "age_seconds": 324
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -110,7 +128,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:54:31Z",
    "stale": false,
-   "age_seconds": 293
+   "age_seconds": 406
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -149,7 +167,7 @@
    "status": "active",
    "updated_at": "2026-09-29T14:58:37Z",
    "stale": false,
-   "age_seconds": 47
+   "age_seconds": 160
   }
  ]
 }
