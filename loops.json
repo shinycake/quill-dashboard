@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T07:07:18.064766+00:00",
+ "generated_at": "2026-09-29T07:09:17.523551+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -45,7 +45,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 205
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -79,7 +79,7 @@
    },
    "parity": "368/525 (70.1%)",
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 204
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -99,7 +99,7 @@
    "status": "active",
    "updated_at": "2026-09-29T07:04:32Z",
    "stale": false,
-   "age_seconds": 166
+   "age_seconds": 285
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -130,9 +130,9 @@
    "parked": false,
    "phase": "pr-open",
    "status": "active",
-   "updated_at": "2026-09-29T06:58:43Z",
+   "updated_at": "2026-09-29T07:08:47Z",
    "stale": false,
-   "age_seconds": 515
+   "age_seconds": 30
   }
  ]
 }
