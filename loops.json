@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:07:21.896515+00:00",
+ "generated_at": "2026-09-29T21:09:19.145490+00:00",
  "loops": [
   {
    "blockers": [],
@@ -55,7 +55,7 @@
    "wip_open_prs": 0,
    "global_open_prs": 3,
    "stale": false,
-   "age_seconds": 681
+   "age_seconds": 799
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -153,7 +153,7 @@
    },
    "last_evidence_at": "2026-09-29T20:59:56Z",
    "stale": false,
-   "age_seconds": 445
+   "age_seconds": 563
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +178,7 @@
    "updated_at": "2026-09-29T21:04:37Z",
    "last_evidence_at": "2026-09-29T20:30:42.240897Z",
    "stale": true,
-   "age_seconds": 2199
+   "age_seconds": 2316
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
@@ -220,7 +220,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-29T21:15:00Z",
-   "updated_at": "2026-09-29T20:58:38Z",
+   "updated_at": "2026-09-29T21:08:40Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
