@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 407,
+  "done": 408,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 177,
+   "title": "Bots: force-reply keyboard bar above the composer",
+   "merged_at": "2026-09-29T22:12:52Z",
+   "html_url": "https://github.com/shinycake/quill/pull/177",
+   "head": {
+    "ref": "parity/bots-force-reply"
+   }
+  },
   {
    "number": 176,
    "title": "G10: community create/hub/info UI",
@@ -894,18 +903,27 @@
    "head": {
     "ref": "parity/group-calls-3"
    }
-  },
-  {
-   "number": 78,
-   "title": "parity:calls group video tiles + group-call screen sharing (C2g)",
-   "merged_at": "2026-09-27T10:23:46Z",
-   "html_url": "https://github.com/shinycake/quill/pull/78",
-   "head": {
-    "ref": "parity/group-calls-2"
-   }
   }
  ],
  "openPRs": [
+  {
+   "number": 181,
+   "title": "communities-search-filter: community chat-type filter for message search",
+   "updated_at": "2026-09-29T22:13:11Z",
+   "html_url": "https://github.com/shinycake/quill/pull/181",
+   "head": {
+    "ref": "parity/community-search-filter"
+   }
+  },
+  {
+   "number": 180,
+   "title": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
+   "updated_at": "2026-09-29T22:12:13Z",
+   "html_url": "https://github.com/shinycake/quill/pull/180",
+   "head": {
+    "ref": "parity/auth-profile-accent"
+   }
+  },
   {
    "number": 179,
    "title": "ephemeral-updates: apply updateMessageEphemeralContent over time",
@@ -923,18 +941,59 @@
    "head": {
     "ref": "parity/loop2-s17-choosing-sticker"
    }
-  },
-  {
-   "number": 177,
-   "title": "Bots: force-reply keyboard bar above the composer",
-   "updated_at": "2026-09-29T22:03:46Z",
-   "html_url": "https://github.com/shinycake/quill/pull/177",
-   "head": {
-    "ref": "parity/bots-force-reply"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:13:11Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:12:52Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/community-search-filter"
+   },
+   "created_at": "2026-09-29T22:12:14Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-29T22:12:13Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/platform-tray-icon"
+   },
+   "created_at": "2026-09-29T21:19:24Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1284,59 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T12:50:08Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T19:57:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T19:46:43Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-data-storage"
-   },
-   "created_at": "2026-09-29T19:26:27Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "kit/phase6-forms"
-   },
-   "created_at": "2026-09-28T23:53:16Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "54d4d7a947c0c6a5df9b9db1df69cd16e0d2ce51",
+   "html_url": "https://github.com/shinycake/quill/commit/54d4d7a947c0c6a5df9b9db1df69cd16e0d2ce51",
+   "commit": {
+    "message": "Bots: force-reply keyboard bar above the composer\n\nMerge of #177 (bots force-reply keyboard bar).\n\nReview: dedicated adversarial re-review CONFIRM on rebased head (DECISIONS.md union verified, armed-reply-wins selector logic-walked, stale commit message amended; tree-identical reword pushed as da72f093).\nCI: linux-fmt-clippy-test SUCCESS, macos-compile-smoke SUCCESS on merged head da72f093.\nParity: 408/525 (77.7%).",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-29T22:12:52Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "3916bb53debc6ce3d3303e0283b13f938faf2669",
    "html_url": "https://github.com/shinycake/quill/commit/3916bb53debc6ce3d3303e0283b13f938faf2669",
@@ -1457,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T19:13:21Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "595067f6dfc87fdc46be4d26d4a1f8aaab5dee18",
-   "html_url": "https://github.com/shinycake/quill/commit/595067f6dfc87fdc46be4d26d4a1f8aaab5dee18",
-   "commit": {
-    "message": "A10: 2FA password recovery via emailed code (backend + UI) (#169)\n\n* A10: 2FA password recovery via emailed code (backend + UI)\n\nShips parity:auth-password-recovery. The login 2FA screen gains\n'Forgot password?' (when the server advertised a recovery email):\nrequestAuthenticationPasswordRecovery emails the code, the screen\nswitches to recovery-code entry, and recoverAuthenticationPassword\nsubmits it (code zeroized after send, never stored \u2014 the A2 rule).\n\ncheckAuthenticationPasswordRecoveryCode is deliberately skipped:\nrecoverAuthenticationPassword validates the code itself. Recovery sets\nan empty new password (removes 2FA); the status note points at\nSettings -> Two-Step Verification to re-enable it (slice A2).\n\nNew named module src/ui/auth_recovery.rs (kit-first); ui/mod.rs grows\nonly by type-coherent wiring (+19, exact waiver bump 48465->48484).\nconnect.rs/state.rs/requests.rs exact waiver bumps for the new\ndrivers/purposes/builders (A8 precedent). Parity 373/525 (71.0%).\n\nGates: fmt, clippy --no-default-features --all-targets -D warnings,\ncargo test --no-default-features (1056 lib + 59 replay), cargo build\n--features ui, check_file_sizes.sh \u2014 all green.\n\n* A10 review fixups: drop redundant recovery params (F1), assert new_hint (F3)\n\nF1: sidebar no longer takes recovery_mode/has_recovery_email \u2014 both are\ncomputable from self (self.recovery_mode, self.current_auth()); auth_password_section\nis now auth_password_section(&self, cx) and computes them itself. Deletes the\n14-line call-site matches! block; ui/mod.rs waiver baseline 48484 -> 48475.\nF2 deliberately not applied (reviewer: harmless defense-in-depth).\nF3: recover_authentication_password_shape now also asserts new_hint:\"\".\nrequests.rs waiver baseline 10363 -> 10364 (one-line test assertion).\n\nGates: cargo fmt, clippy -D warnings, cargo test all green\n(1056/1056 incl. vendored_schema_equals_official_commit on retry;\none full-suite run showed a single proxy-stall failure of that\nnetwork-fetch test, which passed standalone 2s later).\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T19:07:11Z"
     }
    },
    "author": {

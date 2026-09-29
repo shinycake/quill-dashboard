@@ -487,6 +487,7 @@
     "Per-button disabled flag on inline buttons (verified: TDLib 1.8.67 exposes `inlineKeyboardButtonTypeDisabled`; `envelope.rs:8791` parses it to `InlineKeyboardButtonType::Disabled`; `inline_keyboard_button` (src/ui/mod.rs:44503) renders it non-interactive via the `element.disabled(true)` fallthrough (44599) \u2014 no click handler attached \u2014 with tooltip \"This button is disabled\" (44616))",
     "Custom reply keyboards rendered above the composer; text sends, one-time hides on tap, contact/location/poll honestly disabled",
     "Force-reply markup focuses the composer with the reply target set",
+    "Force-reply keyboards render the reply-keyboard bar (a \u21a9 {placeholder} ghost button above the composer, kit Button; tap focuses the composer)",
     "Bot info panel with description and tappable /command buttons inserting into the composer",
     "Bot START button / start_parameter deep links (partial: link parser + armed START state are wired, but Quill registers no t.me/tg: URL scheme so OS deep-link intake is out of this slice): t.me/<bot>?start=<param> parses to (bot, param); START button sends sendBotStartMessage with the parameter (state.rs, ui/mod.rs)",
     "Restart bot: confirm-gated; clears the bot chat history (deleteChatHistory, kept in list) then re-sends sendBotStartMessage with an empty parameter (connect.rs:restart_bot)",
@@ -519,7 +520,6 @@
     "Payment receipts: getPaymentReceipt dialog from paid invoices (\"View receipt\") plus messagePaymentSuccessful/messagePaymentSuccessfulBot rows (ui/mod.rs)"
    ],
    "pending": [
-    "Force-reply keyboards render the reply-keyboard bar (the official clients show the custom-keyboard UI for forceReply markup; Quill covers only composer focus)",
     "Stop button for streaming bot drafts (cancel an in-flight streaming bot reply)",
     "Ephemeral-command icon in the bot command list (BotCommand.is_ephemeral)",
     "Inline mode: type @bot in composer, inline query results list, send an inline result (no getInlineQueryResults code in src)",

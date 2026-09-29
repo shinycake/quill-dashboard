@@ -2,10 +2,10 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "auth-profile-accent: profile accent color (setProfileAccentColor)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "label": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker",
+   "kind": "pr",
+   "pr": 180,
+   "url": "https://github.com/shinycake/quill/pull/180",
    "branch": "parity/auth-profile-accent"
   },
   {
@@ -17,8 +17,16 @@
    "branch": "parity/bots-force-reply"
   },
   {
+   "area": "Groups, supergroups & channels",
+   "label": "communities-search-filter",
+   "kind": "pr",
+   "pr": 181,
+   "url": "https://github.com/shinycake/quill/pull/181",
+   "branch": "parity/community-search-filter"
+  },
+  {
    "area": "Messaging core",
-   "label": "ephemeral-updates",
+   "label": "ephemeral-updates: apply updateMessageEphemeralContent over time",
    "kind": "pr",
    "pr": 179,
    "url": "https://github.com/shinycake/quill/pull/179",

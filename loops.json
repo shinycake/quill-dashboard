@@ -4,14 +4,14 @@
    "blockers": [],
    "coordinator": "990383e7-7bb5-4704-8d87-59a7c3866893",
    "current": {
-    "slice": "ephemeral-updates",
-    "branch": "parity/ephemeral-updates",
-    "worktree": "~/workspace/quill-l1-ephemeral",
+    "slice": "communities-search-filter",
+    "branch": "parity/community-search-filter",
+    "worktree": "~/workspace/quill-l1-commsearch",
     "phase": "pr-open",
-    "pr": 179,
+    "pr": 181,
     "handoff": "merge-pipeline",
-    "commit": "ce18f06f6acbd97995c290ce606748ededbad5b7",
-    "detail": "ephemeral-updates PR #179 open (https://github.com/shinycake/quill/pull/179). Reviewer BLOCK verdict fully addressed in ce18f06 (tests moved to tests/ephemeral_updates.rs, waivers shrunk to 21701/18615). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
+    "commit": "5955a0b",
+    "detail": "communities-search-filter PR #181 open (https://github.com/shinycake/quill/pull/181). Reviewer BLOCK verdict fully addressed in 5955a0b (free function inlined as Option<i64> param, waiver recomputed to exact 10491). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "last_merged": {
@@ -40,7 +40,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:11:00Z",
+   "updated_at": "2026-09-29T22:14:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -53,12 +53,12 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T22:11:00Z",
-   "last_evidence_event": "dedicated adversarial review returned BLOCK: new free function search_messages_chat_type_filter_json in waived requests.rs (waiver-rule violation); all other hunks adjudicated ALLOWED; parity counted 405/525 (77.1%). Fixup agent dispatched with exact prescription (inline constructor as Option<i64> param, recompute waiver).",
+   "last_evidence_at": "2026-09-29T22:14:00Z",
+   "last_evidence_event": "PR #181 opened for communities-search-filter (parity/community-search-filter); handoff to merge-pipeline; scanning next slice",
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 18
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -162,7 +162,7 @@
    },
    "last_evidence_at": "2026-09-29T21:32:30Z",
    "stale": true,
-   "age_seconds": 2328
+   "age_seconds": 2451
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -188,19 +188,19 @@
    "updated_at": "2026-09-29T22:04:31Z",
    "last_evidence_at": "2026-09-29T21:50:41Z",
    "stale": true,
-   "age_seconds": 1237
+   "age_seconds": 1360
   },
   {
    "coordinator": "354dd370-d2d8-4a12-9d94-f1fd3e01d39f",
    "current": {
-    "branch": "parity/auth-profile-accent",
-    "worktree": "/home/hatch/workspace/quill-loop4-a12",
-    "slice": "auth-profile-accent: profile accent color (setProfileAccentColor)",
-    "phase": "implementing",
+    "branch": null,
+    "worktree": null,
+    "slice": "platform-minimize-to-tray: minimize/close-to-tray behavior (queued)",
+    "phase": "queued",
     "pr": null,
     "commit": null,
-    "detail": "Slice claimed 2026-09-29T20:37Z. Schema verified: setProfileAccentColor (td_api.tl:14820), updateProfileAccentColors (10964) with available_accent_color_ids. Concept-level research in progress: request builders, update dispatch, own-profile state, profile settings UI location.",
-    "last_evidence_at": "2026-09-29T21:15:00Z"
+    "detail": "Repo at 4-open-PR cap (#177, #178, #179, #180) \u2014 new development paused per cap rule; slice starts when count drops below 4. Natural follow-up to A11 tray icon (parity:platform-minimize-to-tray).",
+    "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "auth/accounts, platform edge cases",
@@ -217,20 +217,20 @@
     "detail": "After A9/A10 merge: next Loop 4 lane item (auth-qr-authorize-other, or platform edge cases). A8 PR #157 file-size CI failure FIXED 2026-09-29: waiver miscounted (connect.rs 24104 vs actual 24109; the three new ConnectDriver methods are type-coherent extensions on an existing type) \u2014 exact bump to 24109 committed as cd2e655 on parity/auth-change-number-1 (worktree /home/hatch/workspace/quill-fix-157), PR description corrected, CI ALL GREEN on new head (linux-fmt-clippy-test + macos-compile-smoke). NOT MERGED \u2014 merge watcher takes it from there."
    },
    "parked": false,
-   "phase": "implementing",
+   "phase": "queued",
    "previous": {
-    "branch": "parity/platform-tray-icon",
-    "worktree": "/home/hatch/workspace/quill-loop4-a11",
-    "slice": "system tray icon (unread badge, 1s sync)",
+    "branch": "parity/auth-profile-accent",
+    "worktree": "/home/hatch/workspace/quill-loop4-a12",
+    "slice": "auth-profile-accent: profile accent color (setProfileAccentColor)",
     "phase": "in_review",
-    "pr": 174,
-    "commit": "b95629c",
-    "detail": "PR #174 opened 2026-09-29T20:36:59Z (https://github.com/shinycake/quill/pull/174); handoff recorded as merge-pipeline \u2014 review/CI/merge owned by the merge pipeline, not this loop.",
-    "last_evidence_at": "2026-09-29T20:36:59Z"
+    "pr": 180,
+    "commit": "a0c81b68496935ca6b3b3eaba15f073ad7454479",
+    "detail": "PR #180 opened 2026-09-29T22:20Z (https://github.com/shinycake/quill/pull/180); handoff recorded as merge-pipeline \u2014 review/CI/merge owned by the merge pipeline, not this loop. Gates: fmt clean, clippy clean, 1115 tests pass, file sizes OK, Mac UI gate run 36637893729 success. Screenshot proof: accent section with selected-state ring (~/workspace/profile-accent-proof.png).",
+    "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T21:15:00Z",
-   "updated_at": "2026-09-29T22:08:38Z",
+   "last_evidence_at": "2026-09-29T22:20:00Z",
+   "updated_at": "2026-09-29T22:20:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -239,8 +239,8 @@
     "parity": "374/525 (71.2%)",
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
-   "stale": true,
-   "age_seconds": 3378
+   "stale": false,
+   "age_seconds": 0
   }
  ]
 }
