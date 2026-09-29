@@ -9,6 +9,14 @@
    "branch": "parity/auth-profile-accent"
   },
   {
+   "area": "Auth & accounts",
+   "label": "platform-minimize-to-tray: minimize/close-to-tray behavior",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-minimize-to-tray"
+  },
+  {
    "area": "Bots, polls & payments",
    "label": "bots force-reply keyboard bar (parity:bots-force-reply-keyboard)",
    "kind": "pr",
@@ -31,14 +39,6 @@
    "pr": 179,
    "url": "https://github.com/shinycake/quill/pull/179",
    "branch": "parity/ephemeral-updates"
-  },
-  {
-   "area": "Platform & edge cases",
-   "label": "platform-minimize-to-tray: minimize/close-to-tray behavior",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-minimize-to-tray"
   },
   {
    "area": "Stickers, emoji & GIFs",

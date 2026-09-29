@@ -13,7 +13,7 @@
     "commit": "5955a0b",
     "detail": "communities-search-filter PR #181 open (https://github.com/shinycake/quill/pull/181). Reviewer BLOCK verdict fully addressed in 5955a0b (free function inlined as Option<i64> param, waiver recomputed to exact 10491). Merge pipeline owns CI chase + FIFO merge. Worktree retained until merge confirmed."
    },
-   "lanes": "calls, secret chats, chat list, media, groups/channels",
+   "lanes": "calls + groups/channels (phase 1: functionality-first)",
    "last_merged": {
     "pr": 168,
     "slice": "G9",
@@ -35,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:25:53Z",
+   "updated_at": "2026-09-29T22:35:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -53,7 +53,7 @@
    "wip_open_prs": 2,
    "global_open_prs": 4,
    "stale": false,
-   "age_seconds": 617
+   "age_seconds": 765
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -61,12 +61,12 @@
     "slice": "S18 sticker suggestions by emoji in composer",
     "branch": "parity/loop2-s18-sticker-suggest",
     "worktree": "~/workspace/quill-loop2-s18",
-    "phase": "implementing",
+    "phase": "parked-phase4",
     "pr": null,
-    "detail": "S18 claimed 2026-09-29T21:33Z: getStickers emoji-query + composer suggestion row + Installed+recommended / Only installed / None setting. Branch from d4caf43; no getStickers builder exists yet, unclaimed by other loops.",
+    "detail": "PARKED per Idan 2026-09-29: stickers/emoji/GIFs deferred to phase 4 (last priority). Branch kept, not deleted. Do NOT open a PR for it.",
     "handoff": null
    },
-   "lanes": "stories, stickers, emoji, GIFs",
+   "lanes": "groups/channels/communities (phase 1: functionality-first)",
    "last_merged": {
     "pr": 155,
     "slice": "S7 clickable story areas",
@@ -147,7 +147,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T22:25:52Z",
+   "updated_at": "2026-09-29T22:35:00Z",
    "last_merge": {
     "pr": 173,
     "slice": "S15 dynamic sticker-set order (usage-driven)",
@@ -155,9 +155,9 @@
     "parity": "403/525 (76.8%)",
     "note": "Backend-only, no README box change."
    },
-   "last_evidence_at": "2026-09-29T21:32:30Z",
-   "stale": true,
-   "age_seconds": 3287
+   "last_evidence_at": "2026-09-29T22:35:00Z",
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -173,32 +173,31 @@
     "worktree": "~/workspace/quill-l3-force-reply",
     "handoff": "merge-pipeline"
    },
-   "lanes": "bots, polls, payments, settings",
+   "lanes": "media + chat list (phase 1: functionality-first)",
    "last_merge": "#159 payments-clear backend merged 2026-09-29T16:23:54Z as 5b587bb (review APPROVED, both CI green); branch deleted",
    "loop": 3,
    "parked_branches": {
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-29T22:24:31Z",
+   "updated_at": "2026-09-29T22:35:00Z",
    "last_evidence_at": "2026-09-29T21:50:41Z",
    "stale": true,
-   "age_seconds": 2196
+   "age_seconds": 2344
   },
   {
    "coordinator": "75b864ab-d2d6-4314-915a-91df37669f17",
    "current": {
-    "branch": "parity/platform-minimize-to-tray",
-    "worktree": "/home/hatch/workspace/quill-loop4-tray",
     "slice": "platform-minimize-to-tray: minimize/close-to-tray behavior",
-    "phase": "implementing",
+    "branch": "parity/platform-minimize-to-tray",
+    "worktree": "~/workspace/quill-loop4-a12",
+    "phase": "parked-phase4",
     "pr": null,
-    "commit": null,
-    "detail": "Watchdog restart 2026-09-29T22:20Z (prev coordinator quiet 90m+). Repo at 4-open-PR cap (#178, #179, #180, #181) \u2014 implementing+gating in worktree from 54d4d7a9; PR deliberately HELD until open count drops below 4. Natural follow-up to A11 tray icon (parity:platform-tray-icon, src/tray.rs). Verified unclaimed: loops 1/2/3 on other slices, README box unchecked.",
-    "last_evidence_at": "2026-09-29T22:20:00Z"
+    "detail": "PARKED per Idan 2026-09-29 phase plan: platform work waits for phase 4 (after loop-1 list, loop-3+auth list, and the file-split freeze). Branch kept if it exists.",
+    "handoff": null
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
-   "lanes": "auth/accounts, platform edge cases",
+   "lanes": "secret chats (phase 1: functionality-first)",
    "last_merged": {
     "commit": "dec95dc",
     "pr": 136,
@@ -224,8 +223,8 @@
     "last_evidence_at": "2026-09-29T22:20:00Z"
    },
    "status": "active",
-   "last_evidence_at": "2026-09-29T22:20:00Z",
-   "updated_at": "2026-09-29T22:20:00Z",
+   "last_evidence_at": "2026-09-29T22:35:00Z",
+   "updated_at": "2026-09-29T22:29:45Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -235,7 +234,7 @@
     "note": "README auth-delete-account + auth-account-ttl checked. (Prior: #157 A8 change-number backend merged 2026-09-29T16:46Z.)"
    },
    "stale": false,
-   "age_seconds": 437
+   "age_seconds": 0
   }
  ]
 }
