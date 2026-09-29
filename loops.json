@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T05:17:17.654106+00:00",
+ "generated_at": "2026-09-29T05:19:17.804083+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,7 +9,7 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #141 MERGED (367/525=69.9%). C2k + C2l parked-blocked on Phase 9 unfreeze. Communities backend core implemented (f289abe, 1013+59 tests green), in adversarial review."
+    "detail": "PR #141 MERGED (367/525=69.9%). PHASE 9 MERGED (PR #142) \u2014 ui/mod.rs UNFROZEN; C2k + C2l now unparkable. Communities backend core approved-with-nits, rebased (30283c9), UI gate building."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
@@ -17,11 +17,11 @@
     "slice": "community-backend-core",
     "branch": "parity/community-backend-core",
     "worktree": "~/workspace/quill-l1-communitycore",
-    "phase": "reviewing",
-    "commit": "f289abe"
+    "phase": "ui-gate",
+    "commit": "30283c9"
    },
    "status": "active",
-   "updated_at": "2026-09-29T05:15:51Z",
+   "updated_at": "2026-09-29T08:15:00Z",
    "last_merged": {
     "pr": 141,
     "slice": "group-info-edit",
@@ -29,8 +29,13 @@
     "commit": "ed11149"
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in quill-l1-groupedit worktree \u2014 intact, unrelated to this slice, left alone.",
+   "phase9": {
+    "status": "merged",
+    "pr": 142,
+    "note": "ui/mod.rs unfrozen; C2k/C2l unblocked"
+   },
    "stale": false,
-   "age_seconds": 86
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -52,7 +57,7 @@
     "commit": "5da1d24"
    },
    "stale": false,
-   "age_seconds": 81
+   "age_seconds": 201
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -72,7 +77,7 @@
    "status": "active",
    "updated_at": "2026-09-29T05:14:31Z",
    "stale": false,
-   "age_seconds": 166
+   "age_seconds": 286
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -103,9 +108,9 @@
    "parked": false,
    "phase": "pr-open",
    "status": "active",
-   "updated_at": "2026-09-29T05:08:45Z",
+   "updated_at": "2026-09-29T05:18:40Z",
    "stale": false,
-   "age_seconds": 512
+   "age_seconds": 37
   }
  ]
 }
