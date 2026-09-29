@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:21:18.077878+00:00",
+ "generated_at": "2026-09-29T06:23:17.549169+00:00",
  "loops": [
   {
    "coordinator": "c8e22b59-d131-4616-958d-cb3eedfc0b33",
@@ -9,18 +9,18 @@
     "worktree": "~/workspace/quill-l1-community",
     "phase": "parked-blocked",
     "pr": null,
-    "detail": "PR #144 MERGED (communities backend core; 367/525=69.9%). PHASE 9 MERGED \u2014 C2k UNPARKED (adding ui/mod.rs arms post-freeze; agent in flight)."
+    "detail": "PR #146 (C2k) BLOCKED by new file-size cap CI (PR #143): envelope.rs +81 / ui/mod.rs +7 over waivers; waivers-only-shrink with no splits in flight and no exemption process. Escalated to parent. C2l similarly blocked. Secret-session-terminate linkage research pipelined (unblocked)."
    },
    "lanes": "calls, secret chats, chat list, media, groups/channels",
    "loop": 1,
    "next": {
-    "slice": "C2k-unpark",
+    "slice": "C2k",
     "branch": "parity/community-service-messages",
-    "worktree": "~/workspace/quill-l1-community",
-    "phase": "adding-ui-arms"
+    "phase": "blocked-file-size-cap",
+    "pr": 146
    },
    "status": "active",
-   "updated_at": "2026-09-29T06:15:53Z",
+   "updated_at": "2026-09-29T09:15:00Z",
    "last_merged": {
     "pr": 144,
     "slice": "community-backend-core",
@@ -33,8 +33,19 @@
     "pr": 142,
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked"
    },
+   "blockers": [
+    {
+     "pr": 146,
+     "cause": "file-size cap (PR #143) \u2014 waivers only shrink, no splits in flight, no exemption process",
+     "files": {
+      "src/telegram/envelope.rs": "+81 over 17953",
+      "src/ui/mod.rs": "+7 over 48393"
+     },
+     "escalated": "2026-09-29"
+    }
+   ],
    "stale": false,
-   "age_seconds": 325
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -61,7 +72,7 @@
     "s7": "parked"
    },
    "stale": false,
-   "age_seconds": 316
+   "age_seconds": 435
   },
   {
    "coordinator": "12e529c1-5a5a-4729-a8cc-b4c05f9e3b96",
@@ -81,7 +92,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:14:32Z",
    "stale": false,
-   "age_seconds": 406
+   "age_seconds": 525
   },
   {
    "coordinator": "cfb99853-3973-45c1-ab11-ffaa3515e6af",
@@ -114,7 +125,7 @@
    "status": "active",
    "updated_at": "2026-09-29T06:18:46Z",
    "stale": false,
-   "age_seconds": 152
+   "age_seconds": 271
   }
  ]
 }
