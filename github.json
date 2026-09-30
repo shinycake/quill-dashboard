@@ -909,7 +909,7 @@
   {
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:49:08Z",
+   "updated_at": "2026-09-30T04:49:53Z",
    "html_url": "https://github.com/shinycake/quill/pull/198",
    "head": {
     "ref": "refactor/split-ui-modrs"
@@ -971,6 +971,46 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/infra/quill-conductor-shadow"
+   },
+   "created_at": "2026-09-30T04:51:25Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/infra/quill-conductor-shadow"
+   },
+   "created_at": "2026-09-30T04:50:44Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/ephemeral-updates"
+   },
+   "created_at": "2026-09-29T22:41:00Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/infra/quill-conductor-shadow"
+   },
+   "created_at": "2026-09-30T04:49:32Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1327,46 +1367,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T03:05:45Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s9-gif-backend"
-   },
-   "created_at": "2026-09-29T04:51:10Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T03:00:08Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-state"
-   },
-   "created_at": "2026-09-30T02:57:13Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s13-story-reactions"
-   },
-   "created_at": "2026-09-29T19:47:18Z",
    "actor": {
     "login": "shinycake"
    }
