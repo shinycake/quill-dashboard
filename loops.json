@@ -81,7 +81,7 @@
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
    "stale": true,
-   "age_seconds": 2603
+   "age_seconds": 2733
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -238,7 +238,7 @@
     "gate_regime_2026_09_30": "2026-09-30 ~11:11 CDT per Idan: VM disk hit 94% \u2014 target/ wiped in EVERY quill worktree (in-flight local builds may fail; expected, do not chase). Mac runner idan-m1pro ONLINE. The --features ui build gate now goes EXCLUSIVELY through ~/workspace/bin/quill-ui-build-remote <pushed-branch> \u2014 NEVER run a local --features ui build/link again. Verify built ref from the run's checkout log (gh run view shows headBranch: main BY DESIGN \u2014 check the checkout log's ref: <branch> line and that the built SHA matches the pushed commit). cargo fmt / clippy / test --no-default-features stay LOCAL on the VM."
    },
    "stale": false,
-   "age_seconds": 104
+   "age_seconds": 234
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -262,11 +262,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T16:04:32Z",
+   "updated_at": "2026-09-30T16:14:36Z",
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 9203
+   "age_seconds": 9333
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -373,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 6803
+   "age_seconds": 6933
   }
  ]
 }
