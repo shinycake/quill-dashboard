@@ -65,7 +65,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T14:05:54Z",
+   "updated_at": "2026-09-30T14:15:54Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -81,7 +81,7 @@
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
    "stale": false,
-   "age_seconds": 318
+   "age_seconds": 442
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,7 +204,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T14:05:55Z",
+   "updated_at": "2026-09-30T14:15:53Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 4265
+   "age_seconds": 4389
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -251,7 +251,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 2118
+   "age_seconds": 2242
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -259,10 +259,10 @@
     "slice": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
     "branch": "parity/platform-shortcuts-reference",
     "worktree": "/home/hatch/workspace/quill-l4-shortcuts-ref",
-    "phase": "implementing",
+    "phase": "gating",
     "pr": null,
     "handoff": null,
-    "detail": "Implemented 2026-09-30 ~14:00 UTC in worktree quill-l4-shortcuts-ref: keybindings.rs refactored to a single shortcut_rows() table driving both bind_keys and the dialog; new src/ui/shortcuts.rs read-only kit Dialog (DialogKind::Shortcuts, KINDS 36->37) rendering sections with kit Kbd chips; OpenShortcuts action + Help menu entry; ready-shortcuts screenshot-demo scenario; README platform-shortcuts-reference checked; phantom bots-streaming-draft-stop line removed. Gates running (cargo check in progress, cold target dir)."
+    "detail": "Committed e962bdb. Gates: cargo fmt clean, cargo check --no-default-features clean, cargo clippy --no-default-features --all-targets -D warnings clean, cargo test --no-default-features passed (exit 0). cargo build --features ui running locally (Mac runner offline). Next: screenshot capture, then open PR."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "secret chats (done/blocked) -> communities (blocked, verified) -> phase-4 platform/stories gaps (parent-redirected)",
@@ -289,8 +289,8 @@
     "detail": "PR #219 opened 2026-09-30 ~13:45 UTC. Completes parity:auth-multi-account: new src/ui/accounts.rs Accounts dialog (kit, window.open_dialog, DialogKind::Accounts) \u2014 list with \u2713 Active badge, Switch (documented shutdown\u2192set_active\u2192connect flow), Add (reuses existing auth UI for the new account), Remove (inline confirm; active not removable). Entry via main menu. Screenshot docs/screenshots/ready-accounts.png. Post-rebase caught E0308 (another merged PR added a DialogKind; array 36\u219237), fixed, all gates green, full ui link succeeded in screenshot run. README box checked. Based on origin/main d37d031 (#214, #207, #210 merged), 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T14:05:00Z",
-   "updated_at": "2026-09-30T14:08:39Z",
+   "last_evidence_at": "2026-09-30T14:20:00Z",
+   "updated_at": "2026-09-30T14:20:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -358,7 +358,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 618
+   "age_seconds": 0
   }
  ]
 }

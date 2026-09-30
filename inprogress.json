@@ -10,14 +10,6 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-shortcuts-reference"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "platform-autostart (parity:platform-autostart)",
    "kind": "branch",
    "pr": null,
@@ -63,6 +55,14 @@
    "pr": 218,
    "url": "https://github.com/shinycake/quill/pull/218",
    "branch": "parity/platform-offline-indicator"
+  },
+  {
+   "area": "Platform & edge cases",
+   "label": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-shortcuts-reference"
   },
   {
    "area": "Secret chats",
