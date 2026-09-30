@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 197,
+   "title": "refactor: split src/calls/engine.rs into one-responsibility modules",
+   "updated_at": "2026-09-30T03:16:27Z",
+   "html_url": "https://github.com/shinycake/quill/pull/197",
+   "head": {
+    "ref": "refactor/split-calls-engine"
+   }
+  },
+  {
    "number": 196,
    "title": "refactor: split src/connect.rs into one-responsibility modules",
    "updated_at": "2026-09-30T03:10:59Z",
@@ -953,6 +962,26 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T03:16:27Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "refactor/split-calls-engine"
+   },
+   "created_at": "2026-09-30T03:16:20Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1329,26 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T01:57:37Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/settings-notif-exceptions"
-   },
-   "created_at": "2026-09-30T01:10:14Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/calls-screen-share-receive"
-   },
-   "created_at": "2026-09-29T03:40:55Z",
    "actor": {
     "login": "shinycake"
    }
