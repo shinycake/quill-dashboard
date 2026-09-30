@@ -42,14 +42,6 @@
   },
   {
    "area": "Settings",
-   "label": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
-   "kind": "pr",
-   "pr": 206,
-   "url": "https://github.com/shinycake/quill/pull/206",
-   "branch": "parity/settings-notif-exceptions"
-  },
-  {
-   "area": "Settings",
    "label": "Slice settings-reset-notif: reset all notification settings",
    "kind": "pr",
    "pr": 208,

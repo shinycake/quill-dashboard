@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 427,
+  "done": 428,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 206,
+   "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
+   "merged_at": "2026-09-30T11:48:35Z",
+   "html_url": "https://github.com/shinycake/quill/pull/206",
+   "head": {
+    "ref": "parity/settings-notif-exceptions"
+   }
+  },
   {
    "number": 209,
    "title": "Slice settings-inapp-sound: in-app notification sounds toggle",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/polls"
    }
-  },
-  {
-   "number": 109,
-   "title": "Loop 1: link preview send options (parity:media-link-preview-send-options)",
-   "merged_at": "2026-09-28T12:15:56Z",
-   "html_url": "https://github.com/shinycake/quill/pull/109",
-   "head": {
-    "ref": "parity/media-linkpreview"
-   }
   }
  ],
  "openPRs": [
@@ -932,18 +932,19 @@
    "head": {
     "ref": "parity/bots-payment-recurring"
    }
-  },
-  {
-   "number": 206,
-   "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
-   "updated_at": "2026-09-30T11:39:56Z",
-   "html_url": "https://github.com/shinycake/quill/pull/206",
-   "head": {
-    "ref": "parity/settings-notif-exceptions"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T11:48:35Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1333,19 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T08:20:26Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "237b2609306d3461ddf85460db66a43317da683c",
+   "html_url": "https://github.com/shinycake/quill/commit/237b2609306d3461ddf85460db66a43317da683c",
+   "commit": {
+    "message": "Slice settings-notif-exceptions: per-scope notification exceptions list view (#206)\n\n* parity/settings-notif-exceptions: notification exceptions list view (WIP \u2014 split-phase stop)\n\n- requests.rs: get_chat_notification_settings_exceptions builder (td_api.tl 1.8.67:13659)\n- state.rs: RequestPurpose::GetChatNotificationSettingsExceptions, Session::notification_exceptions (+loading set), local_notification_exceptions helper, Chats-arm correlation via pending.scope, updateChatNotificationSettings prune/invalidate, error-arm loading cleanup, 4 new tests\n- connect.rs: maybe_fetch_notification_exceptions (guarded, once per dialog open), reset_chat_notification_settings\n- ui/mod.rs: per-scope Exceptions row (count / Loading\u2026) in notification defaults dialog, expandable exceptions sub-view with per-chat Reset to default, fetch on dialog open, demo fixture answers via local_notification_exceptions\n- README: check parity:settings-notif-exceptions\n\nGates on this head: fmt OK, clippy -D warnings OK, cargo test OK. UI build (Mac runner) NOT run \u2014 no PR.\n\n* settings: notification exceptions list view (parity:settings-notif-exceptions)\n\nWIP from prior session: list of chats with custom notification exceptions\nusing TDLib getChatNotificationSettingsExceptions. Adds\nConnectDriver::maybe_fetch_notification_exceptions /\nreset_chat_notification_settings, session notification_exceptions state,\nresponse/error handling, exceptions list view in the notification\ndefaults dialog, and tests.\n\n* Fix compare_sound semantics (include sound-only exceptions); prune placeholder chats across all scopes\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T11:48:35Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "dda1171ca1e64a083a851889a5bfe283ab1743af",
    "html_url": "https://github.com/shinycake/quill/commit/dda1171ca1e64a083a851889a5bfe283ab1743af",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T06:01:00Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
-   "html_url": "https://github.com/shinycake/quill/commit/23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
-   "commit": {
-    "message": "refactor: split tests/replay.rs into per-area test files (#195)\n\n* refactor: split tests/replay.rs into per-area test files\n\n3,505-line integration test split into 12 per-area files plus\ntests/replay_common.rs (shared helpers). Pure code motion \u2014 every line\nverified present exactly once; only fn/const -> pub fn/pub const changed.\n\n* fixup: silence dead_code/unused_imports on shared replay test helper\n\ntests/replay_common.rs is compiled as its own test target (cargo builds\nevery top-level tests/*.rs file standalone) where none of its items are\nreferenced, and each replay_* binary only uses a subset. The items are\ngenuinely shared across the binaries.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T05:58:48Z"
     }
    },
    "author": {
