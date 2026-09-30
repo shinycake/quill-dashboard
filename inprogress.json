@@ -11,9 +11,9 @@
   {
    "area": "Calls",
    "label": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 202,
+   "url": "https://github.com/shinycake/quill/pull/202",
    "branch": "parity/calls-swap-prompt"
   },
   {

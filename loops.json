@@ -7,14 +7,14 @@
     "slice": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
     "branch": "parity/calls-swap-prompt",
     "worktree": "~/workspace/quill-l1-swap",
-    "phase": "claimed",
-    "pr": null,
-    "handoff": null,
-    "detail": "2026-09-30 ~01:50 CDT relaunch: verified parity/composer-send-keys already merged via #190 (README items parity:settings-enter-send/ctrlenter-send checked on origin/main) \u2014 discarded duplicate. Claimed parity:calls-swap-prompt: replace auto-decline-with-banner with a real swap prompt (end current & accept incoming, or decline incoming). Calls unchecked pool also has audio-fx (empty pre-split branch, code not started), less-data (blocked: no engine API), video-tiles + group-screen-share (partial, live-verify blocked: no ntgcalls runtime on VM); groups unchecked = 3 communities items blocked (no TDLib 1.8.67 method)."
+    "phase": "pr_open",
+    "pr": 202,
+    "handoff": "merge-pipeline",
+    "detail": "2026-09-30 ~03:25 CDT: PR #202 opened (branch parity/calls-swap-prompt, commit 46c1b5d, rebased onto origin/main 78c3026). Kit Dialog swap prompt: End & answer / Decline; accept queued until active call's discard lands; Esc/backdrop/dismiss declines busy. Gates: fmt/clippy/test green, ui check clean, ready-call-swap screenshot verified. Handed to merge-pipeline; Mac runner ui build dispatched."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T06:46:37Z",
-   "last_evidence_event": "slice claimed: parity:calls-swap-prompt",
+   "last_evidence_at": "2026-09-30T08:27:00Z",
+   "last_evidence_event": "PR #202 opened: parity/calls-swap-prompt",
    "last_merged": {
     "name": "composer-send-keys",
     "parity": "420/525 (80.0%)",
@@ -31,7 +31,13 @@
    },
    "loop": 1,
    "notes": "Watchdog 2026-09-30 ~03:10Z: PR #190 MERGED 02:48:36Z, PR #187 MERGED 02:06:53Z \u2014 claims corrected from in_review to merged; open_prs cleared. | STANDING ORDER 2026-09-29 ~20:07 CDT (Idan): phase is now SPLIT \u2014 no new feature slices; Loop 1 standing by for src/ui/mod.rs extraction-chunk assignment from the split coordinator. | Previous: 2026-09-29 ~19:28 CDT watchdog restarted Loop 1; chatlist-list-style \u2192 PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining all blocked/partial-unimplementable; groups remaining: 3 blocked + 1 in PR #182. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
-   "open_prs": [],
+   "open_prs": [
+    {
+     "branch": "parity/calls-swap-prompt",
+     "pr": 202,
+     "slice": "calls-swap-prompt"
+    }
+   ],
    "merged_prs": [
     {
      "branch": "parity/chatlist-list-style",
@@ -46,7 +52,7 @@
      "merged_at": "2026-09-30T02:48:36Z"
     }
    ],
-   "parity": "421/525 (80.2%) \u2014 origin/main (verified 2026-09-30T03:10Z watchdog)",
+   "parity": "422/525 (80.4%) \u2014 origin/main (verified 2026-09-30T08:27Z)",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
     "pr": 142,
@@ -58,10 +64,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:15:55Z",
+   "updated_at": "2026-09-30T08:27:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
-   "stale": true,
-   "age_seconds": 5560
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -172,8 +178,8 @@
     "parity": "421/525 (80.2%)"
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
-   "stale": false,
-   "age_seconds": 894
+   "stale": true,
+   "age_seconds": 1014
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -200,7 +206,7 @@
    "updated_at": "2026-09-30T08:14:31Z",
    "last_evidence_event": "slice claimed: media-downloads-pause",
    "stale": true,
-   "age_seconds": 5357
+   "age_seconds": 5477
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -275,7 +281,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 5552
+   "age_seconds": 5672
   }
  ]
 }
