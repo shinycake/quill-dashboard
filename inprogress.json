@@ -18,18 +18,10 @@
   },
   {
    "area": "Chat list",
-   "label": "Chat list: style settings (two/three lines, media icons, formatted preview)",
+   "label": "chatlist-list-style",
    "kind": "pr",
    "pr": 187,
    "url": "https://github.com/shinycake/quill/pull/187",
-   "branch": "parity/chatlist-list-style"
-  },
-  {
-   "area": "Chat list",
-   "label": "chatlist-list-style",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
    "branch": "parity/chatlist-list-style"
   },
   {

@@ -2,63 +2,49 @@
  "loops": [
   {
    "blockers": [],
-   "coordinator": "990383e7-7bb5-4704-8d87-59a7c3866893",
+   "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
-    "slice": "chatlist-list-style",
     "branch": "parity/chatlist-list-style",
-    "worktree": "~/workspace/quill-l1-clstyle",
-    "phase": "holding-pr",
-    "pr": null,
+    "commit": "c80673b",
+    "detail": "chatlist-list-style: Settings \u2192 Appearance \u2192 Chat list rows (two/three lines, media icons, text formatting preview). Rebasing onto origin/main@1e62510 was clean (no conflicts). Gates green on rebased head: cargo fmt \u2713, clippy -D warnings \u2713, cargo test \u2713. Dedicated adversarial review: CONFIRM (previous coordinator). Mac UI build verified on pre-rebase SHA (run 36648459614); rebase was content-identical single-commit. PR #187 opened 2026-09-29 ~19:28 CDT; handoff to merge-pipeline (auto-merge armed by pipeline).",
     "handoff": "merge-pipeline",
-    "commit": "29145b2",
-    "detail": "chatlist-list-style review CONFIRM, all gates green (incl. verified Mac UI build 36648459614 on SHA 29145b2). PR unopened \u2014 repo at 4/4 global cap. Open when cap drops below 4, then spawn dedicated reviewer is already done; handoff to merge-pipeline."
+    "phase": "in_review",
+    "pr": 187,
+    "slice": "chatlist-list-style",
+    "worktree": "~/workspace/quill-l1-clstyle"
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
+   "last_evidence_at": "2026-09-30T00:28:00Z",
+   "last_evidence_event": "PR #187 opened for chatlist-list-style (rebased onto origin/main@1e62510, all gates green)",
    "last_merged": {
-    "pr": 168,
-    "slice": "G9",
     "name": "community service message rows",
-    "parity": "398/525 (75.8%)"
+    "parity": "398/525 (75.8%)",
+    "pr": 168,
+    "slice": "G9"
    },
-   "loop": 1,
-   "next": {
-    "slice": "chatlist-list-style",
-    "branch": "parity/chatlist-list-style",
-    "worktree": "~/workspace/quill-l1-clstyle",
-    "phase": "in-review",
-    "detail": "Chat-list style settings (two/three lines, media icons, text formatting). Waiver system abolished \u2014 no size-check gate, no baseline bookkeeping; new-code-placement guidance only.",
-    "commit": "29145b2",
-    "reviewer": "7030d265-005e-4378-9f12-970b1937713b (pending)"
-   },
-   "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
-   "phase9": {
-    "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
-    "pr": 142,
-    "status": "merged"
-   },
-   "status": "active",
-   "updated_at": "2026-09-30T00:25:58Z",
-   "current_slice": "G10",
-   "current_branch": "parity/communities-ui",
-   "current_commit": "b82341d",
-   "current_status": "UI GATE GREEN: remote Mac UI build (run 36604401681, ref parity/communities-ui @ b82341d) concluded success. cargo fmt / clippy --no-default-features -D warnings / cargo test --no-default-features / check_file_sizes.sh all green on the pushed tree. Parity 375/525 = 71.4% (3 boxes checked). Remaining: local --features ui build (restarted ~17:24, for screenshots) -> capture ready-community-create/hub/info PNGs -> docs/screenshots/README.md rows -> final gates re-check -> READY-FOR-REVIEW (no PR until parent relays APPROVED).",
-   "parity": "398/525 = 75.8%",
    "last_slice": {
     "id": "G9",
     "name": "community service message rows (join/added/removed)",
     "pr": 168,
     "status": "merged 2026-09-29 during freeze flush"
    },
-   "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-30T00:12:00Z",
-   "last_evidence_event": "dedicated adversarial review returned CONFIRM (no blocking findings; 4 non-blocking nits); repo at global cap 4/4 (#182,#183,#184,#186) \u2014 PR deliberately NOT opened; branch recorded as holding-pr per standing rule; feature development paused until cap drops",
-   "wip_open_prs": 1,
-   "global_open_prs": 4,
-   "standing_rules": {
-    "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
+   "loop": 1,
+   "notes": "2026-09-29 ~19:28 CDT: previous coordinator (990383e7) went dark; watchdog restarted Loop 1 with new coordinator. chatlist-list-style holding-pr \u2192 rebased, gated, PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining items all blocked/partial-unimplementable (swap-prompt: no hold/swap API; less-data: no engine API; proxy: no proxy infra in Quill + no ntgcalls proxy API; audio-fx: no engine API; video-tiles/group-screen-share: unverifiable on VM); groups remaining: 3 blocked (no TDLib method, verified) + 1 in PR #182. Per NEVER REST, moving to phase-2 areas next. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
+   "parity": "412/525 = 78.5%",
+   "phase9": {
+    "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
+    "pr": 142,
+    "status": "merged"
    },
-   "stale": true,
-   "age_seconds": 921
+   "standing_rules": {
+    "never_rest": "2026-09-29 ~19:02 CDT \u2014 always have a slice in flight, no holding-pr/landing-duty/standby ever",
+    "pr_cap": "REMOVED 2026-09-29 ~19:01 CDT \u2014 no cap on open PRs",
+    "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
+   },
+   "status": "active",
+   "updated_at": "2026-09-30T00:28:00Z",
+   "stale": false,
+   "age_seconds": 79
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -165,7 +151,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 5574
+   "age_seconds": 5692
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -192,7 +178,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 4941
+   "age_seconds": 5059
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -231,7 +217,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T00:04:46Z",
-   "updated_at": "2026-09-30T00:18:46Z",
+   "updated_at": "2026-09-30T00:28:41Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -267,7 +253,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 1355
+   "age_seconds": 1473
   }
  ]
 }
