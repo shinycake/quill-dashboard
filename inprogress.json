@@ -26,14 +26,6 @@
   },
   {
    "area": "Media",
-   "label": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
-   "kind": "pr",
-   "pr": 203,
-   "url": "https://github.com/shinycake/quill/pull/203",
-   "branch": "parity/media-downloads-pause"
-  },
-  {
-   "area": "Media",
    "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
    "kind": "branch",
    "pr": null,

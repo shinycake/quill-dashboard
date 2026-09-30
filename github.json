@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 422,
+  "done": 423,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 203,
+   "title": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
+   "merged_at": "2026-09-30T08:35:59Z",
+   "html_url": "https://github.com/shinycake/quill/pull/203",
+   "head": {
+    "ref": "parity/media-downloads-pause"
+   }
+  },
   {
    "number": 201,
    "title": "Bots: ephemeral-command icon in the bot command list",
@@ -894,27 +903,9 @@
    "head": {
     "ref": "parity/calls-remainder-2"
    }
-  },
-  {
-   "number": 101,
-   "title": "B2: bot profile actions (START, restart, share, block, menu button, privacy, similar bots)",
-   "merged_at": "2026-09-28T07:05:40Z",
-   "html_url": "https://github.com/shinycake/quill/pull/101",
-   "head": {
-    "ref": "parity/bots-profile"
-   }
   }
  ],
  "openPRs": [
-  {
-   "number": 203,
-   "title": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
-   "updated_at": "2026-09-30T08:32:03Z",
-   "html_url": "https://github.com/shinycake/quill/pull/203",
-   "head": {
-    "ref": "parity/media-downloads-pause"
-   }
-  },
   {
    "number": 202,
    "title": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
@@ -1329,6 +1320,20 @@
  ],
  "commits": [
   {
+   "sha": "693b0cd533d6d7446031fa65b36be17ad41a1082",
+   "html_url": "https://github.com/shinycake/quill/commit/693b0cd533d6d7446031fa65b36be17ad41a1082",
+   "commit": {
+    "message": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list (#203)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T08:35:58Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
+  {
    "sha": "78c3026e99529fe0e9e90528f4ef8677e7851470",
    "html_url": "https://github.com/shinycake/quill/commit/78c3026e99529fe0e9e90528f4ef8677e7851470",
    "commit": {
@@ -1448,20 +1453,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T04:57:41Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "06458a2dc36653fc5b3e6c6467214f2abd6ee377",
-   "html_url": "https://github.com/shinycake/quill/commit/06458a2dc36653fc5b3e6c6467214f2abd6ee377",
-   "commit": {
-    "message": "bots: typed inline mode (@bot query \u2192 results \u2192 send) with debounce and pagination (#191)\n\nImplements README parity:bots-inline-mode:\n- composer parses a leading @botname trigger (debounced 100ms)\n- searchPublicChat resolves the inline bot (generation-correlated)\n- getInlineQueryResults with next_offset pagination\n- selectable results dropdown (keyboard + mouse), Esc/Up/Down/Enter\n- sendInlineQueryResultMessage with hide_via_bot=false; clears composer\n- one-time secret-chat privacy warning before first typed inline query\n\nGates: cargo fmt, clippy -D warnings (clean), 1192 tests pass (1 filtered:\nvendored_schema_equals_official_commit needs network), full\n--features ui build links. Screenshot: docs/screenshots/ready-inline-results.png\n\nCo-authored-by: shinycake <idan.birman@gmail.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T03:00:07Z"
     }
    },
    "author": {

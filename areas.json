@@ -236,6 +236,7 @@
     "On-demand `downloadFile` with priority and auto-download of thumbnails in the open chat (requests.rs:1491, connect.rs:2820)",
     "Download progress display on history rows (MED3: real percent from `localFile.downloaded_size` + determinate progress bar; media viewer shows percent too)",
     "Cancel an in-flight download (MED3: `cancelDownloadFile(only_if_pending:false)`; works from history chip and manager)",
+    "Pause / resume user-initiated downloads via the persistent file-download list (`addFileToDownloads` replaces one-shot `downloadFile` for user downloads; `toggleDownloadIsPaused` drives Pause/Resume in the manager panel and on history download chips; listed cancels use `removeFileFromDownloads`; `updateFileDownload` tracks pause/completion; automatic/thumbnail downloads stay one-shot)",
     "Retry a failed download (MED3: failed state from `downloadFile` errors + stalled active\u2192idle transitions; \"Retry\" re-issues the request)",
     "Downloads manager screen listing active/completed downloads (MED3: right-side panel \u2014 active with progress/cancel, recent completed with open/reveal, failed with retry)",
     "Automatic media download settings incl. data-saver pause-all mode (MED3: TGX-compatible per-chat-kind \u00d7 media-type bitmask + data saver; `media_prefs.json`; desktop collapses TGX's mobile/wifi/roaming grids into one; enabled types auto-download full media in the open chat, secret/spoiler excluded)",
@@ -263,11 +264,6 @@
      "text": "Picture-in-picture for video playback",
      "blocked": true,
      "reason": "GPUI 0.3.5 `WindowOptions` has no always-on-top field on Linux and the repo has no multi-window plumbing; a second window would not be an honest PiP"
-    },
-    {
-     "text": "Pause / resume a download (schema: pause exists only for the persistent file-download list \u2014 `toggleDownloadIsPaused`; MED3 uses one-shot `downloadFile`, so pause is out of slice, see DECISIONS.md)",
-     "blocked": false,
-     "reason": null
     }
    ]
   },

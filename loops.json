@@ -64,7 +64,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:45:00Z",
+   "updated_at": "2026-09-30T08:35:54Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": false,
    "age_seconds": 0
@@ -169,7 +169,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T08:25:53Z",
+   "updated_at": "2026-09-30T08:35:52Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1855
+   "age_seconds": 1975
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -207,7 +207,7 @@
    "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 18
+   "age_seconds": 138
   },
   {
    "coordinator": "88f899f5-2c0b-4269-b9b9-0f789eaebdd7",
@@ -281,7 +281,7 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "stale": false,
-   "age_seconds": 172
+   "age_seconds": 292
   }
  ]
 }
