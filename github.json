@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 223,
+   "title": "Messages: expandable block quotes",
+   "updated_at": "2026-09-30T15:18:31Z",
+   "html_url": "https://github.com/shinycake/quill/pull/223",
+   "head": {
+    "ref": "parity/msg-blockquote-expandable"
+   }
+  },
+  {
    "number": 222,
    "title": "parity:platform-autostart \u2014 launch Quill at login",
    "updated_at": "2026-09-30T14:26:14Z",
@@ -944,6 +953,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T15:18:31Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1330,16 +1349,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T13:27:27Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-30T13:27:05Z",
    "actor": {
     "login": "shinycake"
    }

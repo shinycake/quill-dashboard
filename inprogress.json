@@ -34,6 +34,14 @@
   },
   {
    "area": "Messaging core",
+   "label": "Messages: expandable block quotes",
+   "kind": "pr",
+   "pr": 223,
+   "url": "https://github.com/shinycake/quill/pull/223",
+   "branch": "parity/msg-blockquote-expandable"
+  },
+  {
+   "area": "Messaging core",
    "label": "expandable block quotes (parity:msg-blockquote-expandable)",
    "kind": "branch",
    "pr": null,
