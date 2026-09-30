@@ -909,7 +909,7 @@
   {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
-   "updated_at": "2026-09-30T09:58:49Z",
+   "updated_at": "2026-09-30T10:00:54Z",
    "html_url": "https://github.com/shinycake/quill/pull/208",
    "head": {
     "ref": "parity/settings-reset-notif"
@@ -918,7 +918,7 @@
   {
    "number": 207,
    "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
-   "updated_at": "2026-09-30T09:56:43Z",
+   "updated_at": "2026-09-30T10:01:04Z",
    "html_url": "https://github.com/shinycake/quill/pull/207",
    "head": {
     "ref": "parity/bots-payment-recurring"
@@ -944,6 +944,26 @@
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T10:01:04Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T10:00:54Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1320,26 +1340,6 @@
     "ref": "refs/heads/refactor/split-requests"
    },
    "created_at": "2026-09-30T02:26:46Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-replay"
-   },
-   "created_at": "2026-09-30T02:57:40Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/calls-proxy"
-   },
-   "created_at": "2026-09-30T02:08:58Z",
    "actor": {
     "login": "shinycake"
    }
