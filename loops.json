@@ -179,21 +179,21 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1138
+   "age_seconds": 1256
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "slice": "media-downloads-pause (parity:media-downloads-pause)",
-    "branch": "parity/media-downloads-pause",
-    "worktree": "~/workspace/quill-l3-downloads-pause",
-    "phase": "in_review",
-    "pr": 203,
-    "handoff": "merge-pipeline",
-    "detail": "PR #203 opened: pause/resume downloads via persistent file-download list. Pushed a39ac590be58d5a96896695a0ddd58c557b5cad9. Gates all green (fmt, clippy -D warnings, 1144+ tests, local --features ui link succeeded). Finisher repaired 2 compile errors + 1 failing test from the daemon-killed implementer's uncommitted diff; no design changes. Screenshot docs/screenshots/ready-downloads.png committed. Caveat: live toggleDownloadIsPaused round-trip unverifiable without live Telegram; pause is non-optimistic. Merge pipeline owns from here."
+    "slice": "bots-games (parity:bots-games)",
+    "branch": "parity/bots-games",
+    "worktree": "~/workspace/quill-l3-games",
+    "phase": "implementing",
+    "pr": null,
+    "handoff": null,
+    "detail": "Phase-1 partition (media+chat list) exhausted: chat list 100% checked, media only has blocked pip + in-review downloads-pause (#203). Per NEVER REST moved to phase-2. bots-games unclaimed (loop2 is on payments, loop4 on settings; no collision). B1 groundwork exists: messageGame parsed (short_name), CallbackGame press -> callbackQueryPayloadGame -> URL in browser. Missing: messageGame render (currently '(messageGame)' placeholder), high scores, send. Schema verified: inputMessageGame (6156), messageGame (5233), getGameHighScores (13174), chatActionStartPlayingGame (6388)."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T08:25:00Z",
+   "last_evidence_at": "2026-09-30T08:35:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -203,8 +203,8 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:25:00Z",
-   "last_evidence_event": "PR #203 opened",
+   "updated_at": "2026-09-30T08:24:30Z",
+   "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": false,
    "age_seconds": 0
@@ -282,7 +282,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 5796
+   "age_seconds": 5914
   }
  ]
 }

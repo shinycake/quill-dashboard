@@ -2,6 +2,14 @@
  "items": [
   {
    "area": "Bots, polls & payments",
+   "label": "bots-games (parity:bots-games)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/bots-games"
+  },
+  {
+   "area": "Bots, polls & payments",
    "label": "clear payment/shipping info UI (parity:bots-payment-clear)",
    "kind": "branch",
    "pr": null,
@@ -18,7 +26,7 @@
   },
   {
    "area": "Media",
-   "label": "media-downloads-pause (parity:media-downloads-pause)",
+   "label": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
    "kind": "pr",
    "pr": 203,
    "url": "https://github.com/shinycake/quill/pull/203",
