@@ -965,6 +965,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-29T07:07:33Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/parity/bots-force-reply"
    },
    "created_at": "2026-09-29T20:23:33Z",
@@ -1348,16 +1358,6 @@
     "ref": "security/tdlib-log-stream"
    },
    "created_at": "2026-09-29T05:46:32Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T01:10:06Z",
    "actor": {
     "login": "shinycake"
    }
