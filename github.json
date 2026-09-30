@@ -920,6 +920,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/parity/composer-send-keys"
+   },
+   "created_at": "2026-09-30T02:39:09Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/refactor/split-requests"
    },
    "created_at": "2026-09-30T01:44:17Z",
@@ -1303,16 +1313,6 @@
     "ref": "refs/heads/parity/chatlist-badge-settings"
    },
    "created_at": "2026-09-29T22:55:25Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s10-emoji-backend"
-   },
-   "created_at": "2026-09-29T06:57:30Z",
    "actor": {
     "login": "shinycake"
    }
