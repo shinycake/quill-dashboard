@@ -61,7 +61,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T11:36:29Z",
+   "updated_at": "2026-09-30T11:37:19Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 1925
+   "age_seconds": 1979
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -87,7 +87,7 @@
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~05:15 CDT right after PR #207 (recurring payments) opened. Part 1 of bots-games: send game (inputMessageGame), render messageGame with Play, play via OS-browser fallback. Part 2 (high scores: getGameHighScores/setGameScore) queued next. PR #207 phase=in_review, handoff=merge-pipeline, auto-merge armed."
+    "detail": "Slice claimed 2026-09-30 ~05:15 CDT. First implementer died in a daemon restart (~06:34 CDT) leaving uncommitted work (game_send.rs dialog + envelope/request/UI wiring \u2014 coherent with the slice). Replacement implementer dispatched ~06:35 CDT to resume the dirty tree: assess, finish part 1 (send/play; high scores = part 2), gate, commit, push. PR #207 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -190,7 +190,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T11:37:04Z",
+   "updated_at": "2026-09-30T11:37:08Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -198,13 +198,13 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T10:13:07Z",
+   "last_evidence_at": "2026-09-30T11:37:08Z",
    "blockers": {
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies.",
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
-   "stale": true,
-   "age_seconds": 5038
+   "stale": false,
+   "age_seconds": 51
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -232,7 +232,7 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 6425
+   "age_seconds": 6479
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -307,7 +307,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 5097
+   "age_seconds": 5151
   }
  ]
 }
