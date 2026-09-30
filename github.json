@@ -5,15 +5,6 @@
  },
  "closedPRs": [
   {
-   "number": 211,
-   "title": "Slice settings-language: app language selector",
-   "merged_at": null,
-   "html_url": "https://github.com/shinycake/quill/pull/211",
-   "head": {
-    "ref": "parity/settings-language"
-   }
-  },
-  {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
    "merged_at": "2026-09-30T13:43:10Z",
@@ -903,13 +894,22 @@
    "head": {
     "ref": "parity/media-shared-gallery"
    }
+  },
+  {
+   "number": 115,
+   "title": "A5: profile management \u2014 edit name/bio, username check + multi-username list, set/remove photo",
+   "merged_at": "2026-09-28T15:04:42Z",
+   "html_url": "https://github.com/shinycake/quill/pull/115",
+   "head": {
+    "ref": "parity/auth-profile-1"
+   }
   }
  ],
  "openPRs": [
   {
    "number": 219,
    "title": "Slice auth-multi-account (UI): Accounts dialog \u2014 list / switch / add / remove",
-   "updated_at": "2026-09-30T13:42:24Z",
+   "updated_at": "2026-09-30T14:08:28Z",
    "html_url": "https://github.com/shinycake/quill/pull/219",
    "head": {
     "ref": "parity/auth-multi-account-ui"
@@ -950,9 +950,48 @@
    "head": {
     "ref": "parity/auth-logout-warning"
    }
+  },
+  {
+   "number": 211,
+   "title": "Slice settings-language: app language selector",
+   "updated_at": "2026-09-30T14:08:33Z",
+   "html_url": "https://github.com/shinycake/quill/pull/211",
+   "head": {
+    "ref": "parity/settings-language"
+   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:08:33Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:08:28Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/settings-language"
+   },
+   "created_at": "2026-09-30T14:07:25Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1319,36 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T12:06:26Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/auth-multi-account"
-   },
-   "created_at": "2026-09-30T12:05:46Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/settings-reset-notif"
-   },
-   "created_at": "2026-09-30T09:58:07Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T11:58:01Z",
    "actor": {
     "login": "shinycake"
    }
