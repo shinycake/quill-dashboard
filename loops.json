@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 2347
+   "age_seconds": 2467
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -247,11 +247,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T13:34:35Z",
+   "updated_at": "2026-09-30T13:44:30Z",
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 200
+   "age_seconds": 320
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -259,8 +259,8 @@
     "slice": null,
     "branch": null,
     "worktree": null,
-    "phase": "scanning",
-    "detail": "Settings/auth/accounts lane nearly exhausted (remaining: change-number UI blocked, logout-warning with Loop 3, registration/email/premium UnsupportedHalts). Scanning bots/polls/payments checklist for next Phase 2 slice."
+    "phase": "partition-exhausted",
+    "detail": "Loop 4 Phase 2 partition (settings/auth/accounts + bots/polls/payments) exhausted as of 2026-09-30 ~13:50 UTC. Every settings/auth item is merged, in-review (PRs #208, #211, #219), with Loop 3 (logout-warning), or blocked with evidence (qr-authorize-other, streaming-draft-stop, change-number UI, registration/email/premium UnsupportedHalts). Polls and payments have zero unchecked items; bots has only the phantom item. Awaiting parent direction for next assignment \u2014 phase transitions are parent-declared."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -287,8 +287,8 @@
     "detail": "PR #219 opened 2026-09-30 ~13:45 UTC. Completes parity:auth-multi-account: new src/ui/accounts.rs Accounts dialog (kit, window.open_dialog, DialogKind::Accounts) \u2014 list with \u2713 Active badge, Switch (documented shutdown\u2192set_active\u2192connect flow), Add (reuses existing auth UI for the new account), Remove (inline confirm; active not removable). Entry via main menu. Screenshot docs/screenshots/ready-accounts.png. Post-rebase caught E0308 (another merged PR added a DialogKind; array 36\u219237), fixed, all gates green, full ui link succeeded in screenshot run. README box checked. Based on origin/main d37d031 (#214, #207, #210 merged), 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T13:42:38Z",
-   "updated_at": "2026-09-30T13:42:38Z",
+   "last_evidence_at": "2026-09-30T13:44:45Z",
+   "updated_at": "2026-09-30T13:44:45Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -329,10 +329,16 @@
      "verdict": "BLOCKED (TDLib API surface)",
      "at": "2026-09-30T11:55:37Z",
      "evidence": "Concept-level search of td_api.tl 1.8.67: `logintoken` 0 hits; `requestQrCodeAuthentication` (:11346) is reverse direction (unauthenticated client logs itself in); `confirmQrCodeAuthentication` (:11414) is scan-side (needs camera). No method/type/update exposes a login token. `sendCustomRequest` (:16155) is bots-only, no raw-MTProto escape hatch. `auth.exportLoginToken` exists at MTProto layer (used by raw-MTProto Telegram Desktop) but TDLib keeps it internal to AuthManager; Quill talks to TDLib only via TdJson. Display-side QR has no API surface."
+    },
+    {
+     "slice": "Stop button for streaming bot drafts (parity:bots-streaming-draft-stop)",
+     "verdict": "BLOCKED (phantom item \u2014 feature does not exist)",
+     "at": "2026-09-30T13:44:45Z",
+     "evidence": "Concept-level search: TDLib 1.8.67 has no streaming-bot-reply concept (all 'stream' hits in td_api.tl are video/live-stream). No streaming-bot-reply machinery exists anywhere in Quill's codebase (state.rs/connect.rs/ui only reference video streaming and the update stream; 'bot drafts' in state.rs just means composer drafts are skipped for bot chats). The checklist item (restored 2026-09-28 in e2d2704 from a release audit) describes a Stop button for a feature that exists in neither TDLib nor Quill. Building streaming bot replies itself would be a new-feature slice, not this item. No code written."
     }
    ],
    "stale": false,
-   "age_seconds": 42
+   "age_seconds": 35
   }
  ]
 }
