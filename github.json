@@ -909,7 +909,7 @@
   {
    "number": 206,
    "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
-   "updated_at": "2026-09-30T09:38:34Z",
+   "updated_at": "2026-09-30T09:43:41Z",
    "html_url": "https://github.com/shinycake/quill/pull/206",
    "head": {
     "ref": "parity/settings-notif-exceptions"
@@ -926,6 +926,16 @@
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:43:41Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1312,16 +1322,6 @@
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-30T06:44:07Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/composer-send-keys"
-   },
-   "created_at": "2026-09-30T02:39:09Z",
    "actor": {
     "login": "shinycake"
    }
