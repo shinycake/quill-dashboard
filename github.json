@@ -936,7 +936,7 @@
   {
    "number": 187,
    "title": "Chat list: style settings (two/three lines, media icons, formatted preview)",
-   "updated_at": "2026-09-30T01:00:53Z",
+   "updated_at": "2026-09-30T01:41:42Z",
    "html_url": "https://github.com/shinycake/quill/pull/187",
    "head": {
     "ref": "parity/chatlist-list-style"
