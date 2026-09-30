@@ -42,6 +42,14 @@
   },
   {
    "area": "Messaging core",
+   "label": "Rich messages: compact table rendering",
+   "kind": "pr",
+   "pr": 224,
+   "url": "https://github.com/shinycake/quill/pull/224",
+   "branch": "parity/msg-richtext-tables"
+  },
+  {
+   "area": "Messaging core",
    "label": "compact tables in rich messages (parity:msg-richtext-tables)",
    "kind": "branch",
    "pr": null,
