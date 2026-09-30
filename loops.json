@@ -60,8 +60,8 @@
    "status": "active",
    "updated_at": "2026-09-30T06:55:54Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
-   "stale": false,
-   "age_seconds": 880
+   "stale": true,
+   "age_seconds": 1000
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -166,8 +166,8 @@
     "parity": "421/525 (80.2%)"
    },
    "last_evidence_at": "2026-09-30T06:46:54Z",
-   "stale": false,
-   "age_seconds": 863
+   "stale": true,
+   "age_seconds": 983
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -194,7 +194,7 @@
    "updated_at": "2026-09-30T06:54:31Z",
    "last_evidence_event": "slice claimed: media-downloads-pause",
    "stale": false,
-   "age_seconds": 677
+   "age_seconds": 797
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -268,8 +268,8 @@
     "done_by_this_instance": "Rebased parity/settings-mentions-pinned b95e551 -> 6493f55 onto origin/main 4c7ce8b (post-#180); resolved scripts/check_file_sizes.sh conflict with exact waiver bump 49204 -> 49338 (+134); README checkbox union kept; re-gated green post-rebase (fmt, clippy -D warnings, tests, check_file_sizes.sh); verified cap slot (3 open at the time) and that no PR existed on the branch; force-pushed 6493f55; verified PR #184 exists on it; recorded in_review handoff in this JSON. Touched NOTHING in ~/workspace/quill-l4-reaction-notif.",
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
-   "stale": false,
-   "age_seconds": 872
+   "stale": true,
+   "age_seconds": 992
   }
  ]
 }
