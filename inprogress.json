@@ -10,27 +10,11 @@
   },
   {
    "area": "Auth & accounts",
-   "label": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
+   "label": "multi-account part 3: settings UI (parity:auth-multi-account)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/auth-multi-account-ui"
-  },
-  {
-   "area": "Auth & accounts",
-   "label": "multi-account part 2: startup wiring + switch backend (parity:auth-multi-account)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/auth-multi-account-switch"
-  },
-  {
-   "area": "Auth & accounts",
-   "label": "parity:auth-multi-account part 1 \u2014 account registry data layer",
-   "kind": "pr",
-   "pr": 213,
-   "url": "https://github.com/shinycake/quill/pull/213",
-   "branch": "parity/auth-multi-account-registry"
   },
   {
    "area": "Auth & accounts",

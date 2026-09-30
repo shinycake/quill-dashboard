@@ -4,16 +4,16 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "multi-account part 2: startup wiring + switch backend (parity:auth-multi-account)",
-    "branch": "parity/auth-multi-account-switch",
-    "worktree": "~/workspace/quill-l1-multi-account-2",
+    "slice": "multi-account part 3: settings UI (parity:auth-multi-account)",
+    "branch": "parity/auth-multi-account-ui",
+    "worktree": "~/workspace/quill-l1-multi-account-3",
     "phase": "claiming",
     "pr": null,
-    "detail": "Part 1 (registry data layer) PR #213 open, handed to merge-pipeline. Part 2: load registry at startup, use registry.current instead of hardcoded primary, switch_account(key) backend (tear down + reinit driver under a different key). UI in part 3.",
+    "detail": "Part 2 (startup wiring + switch backend) PR #215 open, handed to merge-pipeline. Part 3: settings UI \u2014 account list rows, add-account entry, switch, remove (not current). UI slice: needs ui gate via Mac runner.",
     "handoff": null
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T11:40:00Z",
+   "last_evidence_at": "2026-09-30T12:15:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,7 +61,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T12:15:53Z",
+   "updated_at": "2026-09-30T12:15:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -75,8 +75,8 @@
     "parity:bots-streaming-draft-stop": "No streaming-receive infra in Quill and no TDLib 1.8.67 streaming API; premature.",
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
-   "stale": true,
-   "age_seconds": 2358
+   "stale": false,
+   "age_seconds": 377
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 2530
+   "age_seconds": 2649
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -232,7 +232,7 @@
    "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 558
+   "age_seconds": 677
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -315,7 +315,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 717
+   "age_seconds": 836
   }
  ]
 }

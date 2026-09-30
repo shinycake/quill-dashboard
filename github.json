@@ -5,6 +5,24 @@
  },
  "closedPRs": [
   {
+   "number": 215,
+   "title": "parity:auth-multi-account part 2 \u2014 startup wiring + switch backend",
+   "merged_at": null,
+   "html_url": "https://github.com/shinycake/quill/pull/215",
+   "head": {
+    "ref": "parity/auth-multi-account-switch"
+   }
+  },
+  {
+   "number": 213,
+   "title": "parity:auth-multi-account part 1 \u2014 account registry data layer",
+   "merged_at": null,
+   "html_url": "https://github.com/shinycake/quill/pull/213",
+   "head": {
+    "ref": "parity/auth-multi-account-registry"
+   }
+  },
+  {
    "number": 206,
    "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
    "merged_at": "2026-09-30T11:48:35Z",
@@ -885,24 +903,6 @@
    "head": {
     "ref": "parity/stories-4"
    }
-  },
-  {
-   "number": 110,
-   "title": "Loop 1: groups-welcome-view \u2014 joiner rendering via existing pipeline (research, docs-only)",
-   "merged_at": "2026-09-28T12:44:43Z",
-   "html_url": "https://github.com/shinycake/quill/pull/110",
-   "head": {
-    "ref": "parity/groups-welcome-view"
-   }
-  },
-  {
-   "number": 103,
-   "title": "B3: poll creation options \u2014 quiz, description, duration, revoting, shuffle, countries, discard confirm",
-   "merged_at": "2026-09-28T12:36:14Z",
-   "html_url": "https://github.com/shinycake/quill/pull/103",
-   "head": {
-    "ref": "parity/polls"
-   }
   }
  ],
  "openPRs": [
@@ -913,15 +913,6 @@
    "html_url": "https://github.com/shinycake/quill/pull/214",
    "head": {
     "ref": "parity/auth-multi-account"
-   }
-  },
-  {
-   "number": 213,
-   "title": "parity:auth-multi-account part 1 \u2014 account registry data layer",
-   "updated_at": "2026-09-30T11:58:01Z",
-   "html_url": "https://github.com/shinycake/quill/pull/213",
-   "head": {
-    "ref": "parity/auth-multi-account-registry"
    }
   },
   {
@@ -971,6 +962,56 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T12:20:17Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T12:21:29Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T12:21:26Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T11:58:01Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T12:20:17Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1317,56 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T09:43:28Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/media-downloads-pause"
-   },
-   "created_at": "2026-09-30T08:21:03Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:40:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T08:35:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:38:34Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:36:54Z",
    "actor": {
     "login": "shinycake"
    }
