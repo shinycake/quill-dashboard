@@ -945,6 +945,16 @@
  ],
  "events": [
   {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T08:36:00Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "IssueCommentEvent",
    "payload": {
     "ref": null
@@ -1330,16 +1340,6 @@
     "ref": "refs/heads/refactor/split-envelope"
    },
    "created_at": "2026-09-30T02:31:44Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-requests"
-   },
-   "created_at": "2026-09-30T02:26:46Z",
    "actor": {
     "login": "shinycake"
    }

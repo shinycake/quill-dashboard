@@ -64,7 +64,7 @@
    "updated_at": "2026-09-30T09:55:50Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": false,
-   "age_seconds": 497
+   "age_seconds": 616
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -185,7 +185,7 @@
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
    },
    "stale": true,
-   "age_seconds": 2922
+   "age_seconds": 3041
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -209,11 +209,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:54:29Z",
+   "updated_at": "2026-09-30T10:04:31Z",
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
-   "stale": false,
-   "age_seconds": 797
+   "stale": true,
+   "age_seconds": 916
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -288,7 +288,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": false,
-   "age_seconds": 258
+   "age_seconds": 377
   }
  ]
 }
