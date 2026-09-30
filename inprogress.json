@@ -41,7 +41,7 @@
    "branch": "parity/media-downloads-pause"
   },
   {
-   "area": "Settings",
+   "area": "Media",
    "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
    "kind": "branch",
    "pr": null,
