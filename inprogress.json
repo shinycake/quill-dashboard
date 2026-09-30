@@ -34,14 +34,6 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "platform-chat-export (parity:platform-chat-export)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-chat-export"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "rich-text composer max length 32,768 chars (parity:msg-richtext-max-length)",
    "kind": "branch",
    "pr": null,
@@ -55,6 +47,14 @@
    "pr": 210,
    "url": "https://github.com/shinycake/quill/pull/210",
    "branch": "parity/calls-less-data"
+  },
+  {
+   "area": "Media",
+   "label": "platform-history-export (parity:platform-history-export)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-history-export"
   },
   {
    "area": "Secret chats",
