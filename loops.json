@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 3427
+   "age_seconds": 3546
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -251,7 +251,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 1280
+   "age_seconds": 1399
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -262,7 +262,7 @@
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Claimed 2026-09-30 13:52 UTC. Communities lane exhausted: add-chat, chat-visibility, admin-rights all re-verified BLOCKED (concept-level td_api.tl 1.8.67 search: only createCommunity/setCommunityName exist as methods; no add/remove/toggle/rights setters). Phantom bots-streaming-draft-stop README line removal rides in this first slice PR (parent-verified). Slice renders all bindings from src/ui/keybindings.rs registry in a kit dialog/overlay; no overlap with loop1 (platform-autostart), loop2 (msg-blockquote-expandable), loop3 (msg-richtext-inline-media) or open PRs #211/#212/#216/#217/#218/#219."
+    "detail": "Implemented 2026-09-30 ~14:00 UTC in worktree quill-l4-shortcuts-ref: keybindings.rs refactored to a single shortcut_rows() table driving both bind_keys and the dialog; new src/ui/shortcuts.rs read-only kit Dialog (DialogKind::Shortcuts, KINDS 36->37) rendering sections with kit Kbd chips; OpenShortcuts action + Help menu entry; ready-shortcuts screenshot-demo scenario; README platform-shortcuts-reference checked; phantom bots-streaming-draft-stop line removed. Gates running (cargo check in progress, cold target dir)."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "secret chats (done/blocked) -> communities (blocked, verified) -> phase-4 platform/stories gaps (parent-redirected)",
@@ -289,8 +289,8 @@
     "detail": "PR #219 opened 2026-09-30 ~13:45 UTC. Completes parity:auth-multi-account: new src/ui/accounts.rs Accounts dialog (kit, window.open_dialog, DialogKind::Accounts) \u2014 list with \u2713 Active badge, Switch (documented shutdown\u2192set_active\u2192connect flow), Add (reuses existing auth UI for the new account), Remove (inline confirm; active not removable). Entry via main menu. Screenshot docs/screenshots/ready-accounts.png. Post-rebase caught E0308 (another merged PR added a DialogKind; array 36\u219237), fixed, all gates green, full ui link succeeded in screenshot run. README box checked. Based on origin/main d37d031 (#214, #207, #210 merged), 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T13:52:00Z",
-   "updated_at": "2026-09-30T13:58:43Z",
+   "last_evidence_at": "2026-09-30T14:05:00Z",
+   "updated_at": "2026-09-30T14:05:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -358,7 +358,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 560
+   "age_seconds": 0
   }
  ]
 }
