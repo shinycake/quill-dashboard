@@ -82,11 +82,11 @@
   },
   {
    "area": "Stories",
-   "label": "story notification settings (parity:stories-notify-settings)",
+   "label": "story custom/paid reactions render + picker (parity:stories-custom-reactions)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/stories-notify-settings"
+   "branch": "parity/stories-custom-reactions"
   }
  ]
 }
