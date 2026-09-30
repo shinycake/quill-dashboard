@@ -4,16 +4,16 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "less data for calls setting (parity:calls-less-data)",
-    "branch": "parity/calls-less-data",
-    "worktree": "~/workspace/quill-l1-less-data",
-    "phase": "pr_open",
-    "pr": 210,
-    "detail": "Driver test + README box checked. Pushed as 8ab4263. Gates: fmt/clippy clean, 1153 tests pass; 1 pre-existing environmental failure (vendored_schema_equals_official_commit \u2014 network fetch).",
-    "handoff": "merge-pipeline"
+    "slice": "multi-account part 1: account registry (parity:auth-multi-account)",
+    "branch": "parity/auth-multi-account-registry",
+    "worktree": "~/workspace/quill-l1-multi-account",
+    "phase": "claiming",
+    "pr": null,
+    "detail": "Phase-1 lanes exhausted (all remaining items blocked, evidence above). Moved to phase-2 auth per NEVER REST. Part 1: AccountRegistry data layer (accounts.json \u2014 list/add/remove/set-current + startup migration), no UI/switching yet (parts 2-3).",
+    "handoff": null
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T10:55:00Z",
+   "last_evidence_at": "2026-09-30T11:05:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,11 +61,22 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T10:55:00Z",
+   "updated_at": "2026-09-30T11:05:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
+   "blocked": {
+    "parity:calls-audio-fx": "No TDLib 1.8.67 API (schema: only callProblemEcho/callProblemNoise rating enums) and no ntgcalls C-API echo/noise setters (full symbol list checked). Client-side DSP would be speculative. Verified 2026-09-30.",
+    "parity:calls-video-tiles": "Engine path implemented; live verification impossible \u2014 no ntgcalls runtime on this VM.",
+    "parity:calls-group-screen-share": "Handshake implemented; native screen source unverifiable \u2014 no ntgcalls runtime on this VM.",
+    "parity:communities-chat-visibility": "No TDLib 1.8.67 method to toggle hidden state (communityChat.is_hidden is read-only). Verified 2026-09-30.",
+    "parity:communities-add-chat": "No TDLib 1.8.67 method. Verified 2026-09-30.",
+    "parity:communities-admin-rights": "No TDLib 1.8.67 method. Verified 2026-09-30.",
+    "parity:auth-qr-authorize-other": "Needs raw auth.exportLoginToken (0 hits in td_api.tl); confirmQrCodeAuthentication is the scanning side only. TDLib 1.8.67 cannot generate a login QR. Verified 2026-09-30.",
+    "parity:bots-streaming-draft-stop": "No streaming-receive infra in Quill and no TDLib 1.8.67 streaming API; premature.",
+    "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
+   },
    "stale": false,
-   "age_seconds": 512
+   "age_seconds": 26
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -193,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 3025
+   "age_seconds": 3139
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -217,11 +228,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T10:54:34Z",
+   "updated_at": "2026-09-30T11:04:33Z",
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 4412
+   "age_seconds": 4526
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -296,7 +307,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 3084
+   "age_seconds": 3198
   }
  ]
 }

@@ -1,6 +1,14 @@
 {
  "items": [
   {
+   "area": "Auth & accounts",
+   "label": "multi-account part 1: account registry (parity:auth-multi-account)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/auth-multi-account-registry"
+  },
+  {
    "area": "Bots, polls & payments",
    "label": "games: send / play (parity:bots-games, part 1)",
    "kind": "branch",
@@ -18,7 +26,7 @@
   },
   {
    "area": "Calls",
-   "label": "less data for calls setting (parity:calls-less-data)",
+   "label": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
    "kind": "pr",
    "pr": 210,
    "url": "https://github.com/shinycake/quill/pull/210",
