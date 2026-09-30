@@ -64,10 +64,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:25:52Z",
+   "updated_at": "2026-09-30T09:35:52Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 3017
+   "age_seconds": 3138
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -175,7 +175,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T09:25:52Z",
+   "updated_at": "2026-09-30T09:35:53Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -188,7 +188,7 @@
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
    },
    "stale": true,
-   "age_seconds": 1242
+   "age_seconds": 1363
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -196,13 +196,13 @@
     "slice": "bots-games (parity:bots-games)",
     "branch": "parity/bots-games",
     "worktree": "~/workspace/quill-l3-games",
-    "phase": "implementing",
-    "pr": null,
-    "handoff": null,
-    "detail": "Phase-1 partition (media+chat list) exhausted: chat list 100% checked, media only has blocked pip + in-review downloads-pause (#203). Per NEVER REST moved to phase-2. bots-games unclaimed (loop2 is on payments, loop4 on settings; no collision). B1 groundwork exists: messageGame parsed (short_name), CallbackGame press -> callbackQueryPayloadGame -> URL in browser. Missing: messageGame render (currently '(messageGame)' placeholder), high scores, send. Schema verified: inputMessageGame (6156), messageGame (5233), getGameHighScores (13174), chatActionStartPlayingGame (6388)."
+    "phase": "in_review",
+    "pr": 205,
+    "handoff": "merge-pipeline",
+    "detail": "PR #205 opened: bots-games (render messageGame card, Play via existing callback-game flow, high-scores panel, send via inputMessageGame from bot info panel with cached short names). Pushed fe351b9c2ce507aa70a2dbdc1f6fc7d7a866a7eb. Gates green (fmt, clippy -D warnings, 1143 lib + 22 integration bins, local --features ui link 27m31s). Screenshot docs/screenshots/ready-game-card.png. Caveat: live round trips unverifiable without live Telegram. Merge pipeline owns from here."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T08:35:00Z",
+   "last_evidence_at": "2026-09-30T09:40:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -212,11 +212,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:34:29Z",
-   "last_evidence_event": "slice claimed: bots-games",
+   "updated_at": "2026-09-30T09:40:00Z",
+   "last_evidence_event": "PR #205 opened",
    "last_merged": null,
-   "stale": true,
-   "age_seconds": 3617
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -291,7 +291,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 3771
+   "age_seconds": 3892
   }
  ]
 }

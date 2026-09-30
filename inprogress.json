@@ -11,9 +11,9 @@
   {
    "area": "Bots, polls & payments",
    "label": "bots-games (parity:bots-games)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 205,
+   "url": "https://github.com/shinycake/quill/pull/205",
    "branch": "parity/bots-games"
   },
   {
