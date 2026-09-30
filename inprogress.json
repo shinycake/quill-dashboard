@@ -10,6 +10,14 @@
   },
   {
    "area": "Bots, polls & payments",
+   "label": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-shortcuts-reference"
+  },
+  {
+   "area": "Bots, polls & payments",
    "label": "platform-autostart (parity:platform-autostart)",
    "kind": "branch",
    "pr": null,
