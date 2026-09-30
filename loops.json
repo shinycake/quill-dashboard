@@ -238,7 +238,7 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": false,
-   "age_seconds": 601
+   "age_seconds": 727
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -266,7 +266,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-ai-tools (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 438
+   "age_seconds": 564
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -305,7 +305,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T14:20:00Z",
-   "updated_at": "2026-09-30T16:28:56Z",
+   "updated_at": "2026-09-30T16:38:39Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -373,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 8238
+   "age_seconds": 8364
   }
  ]
 }
