@@ -65,7 +65,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T13:46:01Z",
+   "updated_at": "2026-09-30T13:55:52Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -204,7 +204,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T13:46:00Z",
+   "updated_at": "2026-09-30T13:55:54Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 3068
+   "age_seconds": 3186
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -251,7 +251,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 921
+   "age_seconds": 1039
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -358,7 +358,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 201
+   "age_seconds": 319
   }
  ]
 }
