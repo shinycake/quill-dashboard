@@ -7,14 +7,14 @@
     "slice": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
     "branch": "parity/bots-payment-recurring",
     "worktree": "~/workspace/quill-impl-payment-recurring",
-    "phase": "claimed",
-    "pr": null,
-    "handoff": null,
-    "detail": "2026-09-30 ~03:45 CDT: claimed after parity:calls-audio-fx was researched and recorded BLOCKED (engine hardcodes APM off, no C API; docs pushed to origin/parity/calls-audio-fx, no PR). Phase 1 exhausted for Loop 1 (remaining calls/secret/media items all blocked or at verification boundary); moved to Phase 2 per phase plan. Schema supports it: getStarSubscriptions / editStarSubscription / reuseStarSubscription + starSubscription types in TDLib 1.8.67. Codebase has StarSubscriptionPricing parsing only (chat_invite.rs); no StarSubscription envelope, no subscription requests, no subscriptions UI. Next: envelope + requests + state + Settings UI."
+    "phase": "pr_open",
+    "pr": 207,
+    "handoff": "merge-pipeline",
+    "detail": "2026-09-30 ~04:55 CDT: PR #207 opened (commit a2b2fc7), handed to merge-pipeline. All gates green: fmt/clippy clean, ui build clean, 1146/1147 tests pass (only vendored_schema network test fails, environmental). Screenshot docs/screenshots/ready-subscriptions.png captured."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T08:45:00Z",
-   "last_evidence_event": "slice claimed: parity:bots-payment-recurring (audio-fx blocked+recorded, Phase 1 exhausted)",
+   "last_evidence_at": "2026-09-30T09:55:00Z",
+   "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
     "parity": "420/525 (80.0%)",
@@ -32,11 +32,8 @@
    "loop": 1,
    "notes": "Watchdog 2026-09-30 ~03:10Z: PR #190 MERGED 02:48:36Z, PR #187 MERGED 02:06:53Z \u2014 claims corrected from in_review to merged; open_prs cleared. | STANDING ORDER 2026-09-29 ~20:07 CDT (Idan): phase is now SPLIT \u2014 no new feature slices; Loop 1 standing by for src/ui/mod.rs extraction-chunk assignment from the split coordinator. | Previous: 2026-09-29 ~19:28 CDT watchdog restarted Loop 1; chatlist-list-style \u2192 PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining all blocked/partial-unimplementable; groups remaining: 3 blocked + 1 in PR #182. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
    "open_prs": [
-    {
-     "branch": "parity/calls-swap-prompt",
-     "pr": 202,
-     "slice": "calls-swap-prompt"
-    }
+    202,
+    207
    ],
    "merged_prs": [
     {
@@ -64,10 +61,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:45:51Z",
+   "updated_at": "2026-09-30T09:55:50Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
-   "stale": true,
-   "age_seconds": 4217
+   "stale": false,
+   "age_seconds": 137
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -175,7 +172,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T09:45:51Z",
+   "updated_at": "2026-09-30T09:55:51Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -188,7 +185,7 @@
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
    },
    "stale": true,
-   "age_seconds": 2442
+   "age_seconds": 2562
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -216,7 +213,7 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 317
+   "age_seconds": 437
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -291,7 +288,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 996
+   "age_seconds": 1116
   }
  ]
 }

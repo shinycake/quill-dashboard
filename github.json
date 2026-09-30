@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 207,
+   "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
+   "updated_at": "2026-09-30T09:56:43Z",
+   "html_url": "https://github.com/shinycake/quill/pull/207",
+   "head": {
+    "ref": "parity/bots-payment-recurring"
+   }
+  },
+  {
    "number": 206,
    "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
    "updated_at": "2026-09-30T09:43:41Z",
@@ -926,6 +935,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:56:43Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1312,16 +1331,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T06:44:06Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/composer-send-keys"
-   },
-   "created_at": "2026-09-30T02:38:13Z",
    "actor": {
     "login": "shinycake"
    }

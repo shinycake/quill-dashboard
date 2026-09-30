@@ -9,20 +9,28 @@
    "branch": "parity/bots-games"
   },
   {
+   "area": "Bots, polls & payments",
+   "label": "recurring payments UX (parity:bots-payment-recurring)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/bots-payment-recurring"
+  },
+  {
+   "area": "Bots, polls & payments",
+   "label": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
+   "kind": "pr",
+   "pr": 207,
+   "url": "https://github.com/shinycake/quill/pull/207",
+   "branch": "parity/bots-payment-recurring"
+  },
+  {
    "area": "Secret chats",
    "label": "auth-logout-warning (parity:auth-logout-warning)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/auth-logout-warning"
-  },
-  {
-   "area": "Secret chats",
-   "label": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/bots-payment-recurring"
   },
   {
    "area": "Settings",
