@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 196,
+   "title": "refactor: split src/connect.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T06:01:01Z",
+   "html_url": "https://github.com/shinycake/quill/pull/196",
+   "head": {
+    "ref": "refactor/split-connect"
+   }
+  },
+  {
    "number": 195,
    "title": "refactor: split tests/replay.rs into per-area test files",
    "merged_at": "2026-09-30T05:58:48Z",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/chat-list-1"
    }
-  },
-  {
-   "number": 88,
-   "title": "MED1: media viewer & playback",
-   "merged_at": "2026-09-27T18:50:12Z",
-   "html_url": "https://github.com/shinycake/quill/pull/88",
-   "head": {
-    "ref": "parity/media-1"
-   }
   }
  ],
  "openPRs": [
@@ -923,18 +923,19 @@
    "head": {
     "ref": "refactor/split-ui-modrs"
    }
-  },
-  {
-   "number": 196,
-   "title": "refactor: split src/connect.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T05:54:34Z",
-   "html_url": "https://github.com/shinycake/quill/pull/196",
-   "head": {
-    "ref": "refactor/split-connect"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T06:01:02Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1324,19 +1325,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-replay"
-   },
-   "created_at": "2026-09-30T04:40:36Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
+   "html_url": "https://github.com/shinycake/quill/commit/f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
+   "commit": {
+    "message": "refactor: split src/connect.rs into one-responsibility modules (#196)\n\nPure code motion, no behavior change. 24,983 lines -> 25 modules,\nall under 2,000 lines. Public paths preserved via re-exports.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T06:01:00Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
    "html_url": "https://github.com/shinycake/quill/commit/23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
@@ -1457,20 +1462,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T02:06:52Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "c0ae1e737c6862ac6494fdf835fa65e83f6c449c",
-   "html_url": "https://github.com/shinycake/quill/commit/c0ae1e737c6862ac6494fdf835fa65e83f6c449c",
-   "commit": {
-    "message": "Settings: mention + pinned-message notification overrides per scope (#184)\n\n* Settings: mention + pinned-message notification overrides per scope\n\nAdds two kit Switch rows per scope (private / groups / channels) in the\nNotification defaults dialog, wired to setScopeNotificationSettings via\ndisable_mention_notifications and disable_pinned_message_notifications\n(TDLib 1.8.67, line 3375). Follows the existing apply_scope_preview /\nmute / sound pattern exactly: copy current scope settings, change one\nfield, send; demo path applies locally.\n\nWaiver bump (Idan 2026-09-29 rule): ui/mod.rs 49101 -> 49235 (+134).\nType-coherent extensions only: two methods on the existing app type and\ntwo Switch rows inside the existing scope-section builder, which cannot\nrender from a named module.\n\nParity: settings-mentions-pinned\n\n* fixup: drop stray pinned-notif lines from apply_reaction_preview\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T01:39:20Z"
     }
    },
    "author": {

@@ -18,14 +18,6 @@
   },
   {
    "area": null,
-   "label": "refactor: split src/connect.rs into one-responsibility modules",
-   "kind": "pr",
-   "pr": 196,
-   "url": "https://github.com/shinycake/quill/pull/196",
-   "branch": "refactor/split-connect"
-  },
-  {
-   "area": null,
    "label": "refactor: split src/ui/mod.rs into one-responsibility modules",
    "kind": "pr",
    "pr": 198,
