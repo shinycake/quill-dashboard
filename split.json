@@ -4,7 +4,7 @@
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "current": 50271
+   "current": 101
   },
   {
    "path": "src/connect.rs",
@@ -64,10 +64,10 @@
   },
   {
    "html_url": "https://github.com/shinycake/quill/pull/198",
-   "merged_at": null,
+   "merged_at": "2026-09-30T06:38:06Z",
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T06:32:24Z",
+   "updated_at": "2026-09-30T06:38:06Z",
    "extracted": 0
   }
  ]

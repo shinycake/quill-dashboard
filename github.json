@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 198,
+   "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T06:38:06Z",
+   "html_url": "https://github.com/shinycake/quill/pull/198",
+   "head": {
+    "ref": "refactor/split-ui-modrs"
+   }
+  },
+  {
    "number": 196,
    "title": "refactor: split src/connect.rs into one-responsibility modules",
    "merged_at": "2026-09-30T06:01:01Z",
@@ -894,38 +903,50 @@
    "head": {
     "ref": "parity/auth-login-1"
    }
-  },
-  {
-   "number": 92,
-   "title": "CL1: chat-list row menu, pin, read/unread, mute, clear, delete",
-   "merged_at": "2026-09-27T21:40:56Z",
-   "html_url": "https://github.com/shinycake/quill/pull/92",
-   "head": {
-    "ref": "parity/chat-list-1"
-   }
   }
  ],
  "openPRs": [
   {
    "number": 200,
    "title": "infra: Quill Conductor workflows (shadow mode, read-only)",
-   "updated_at": "2026-09-30T04:51:51Z",
+   "updated_at": "2026-09-30T06:37:52Z",
    "html_url": "https://github.com/shinycake/quill/pull/200",
    "head": {
     "ref": "infra/quill-conductor-shadow"
    }
-  },
-  {
-   "number": 198,
-   "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T06:32:24Z",
-   "html_url": "https://github.com/shinycake/quill/pull/198",
-   "head": {
-    "ref": "refactor/split-ui-modrs"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T06:38:07Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T06:38:06Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T06:37:51Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1295,39 +1316,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/stories-6"
-   },
-   "created_at": "2026-09-29T06:39:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T23:56:15Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/remove-check-file-sizes"
-   },
-   "created_at": "2026-09-29T23:56:15Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "644155132e6275d19902d40fdce477a4429f820e",
+   "html_url": "https://github.com/shinycake/quill/commit/644155132e6275d19902d40fdce477a4429f820e",
+   "commit": {
+    "message": "refactor: split src/ui/mod.rs into one-responsibility modules (#198)\n\n* refactor: split src/ui/mod.rs into one-responsibility modules\n\nSplit the 49,967-line src/ui/mod.rs into focused one-responsibility\nmodules (78 modules, each <=2000 lines, mod.rs is 101 lines of\ndeclarations/re-exports only).\n\nIntegrates merged PRs #187 (chat-list style), #190 (send-key mode),\nand #191 (inline mode) into the split module structure.\n\npure code motion, no behavior change.\n\n* fix: build secret-chat key_hash fixture at runtime to avoid gitleaks false positive\n\nSame pattern as the envelope split (#194): the hardcoded base64 literal\ntrips the generic-api-key rule. xorshift32 (seed 0x9E3779B9) reproduces the\nexact same 36 bytes, so the demo fingerprint grid is unchanged.\n\n* fix: restore six sites dropped in split (adversarial review D1-D6)\n\nchat_row_height lost its preview_lines param and hardcoded 56/80px\ninstead of quill::chatlist_style::chat_row_height_px (D1, #187\nregression); session_chat_row gained an extra wrapper div around the\nsender/preview lines (D2); send_text_on_enter was dropped in the\ncomposer submit and in send_group_call_message (D3/D4, #190\nregression); the chat-switch inline-dropdown reset was dropped (D5,\n#191 regression); ReadyInlineResults was reordered in the\nScreenshotDemo enum (D6, behavior-neutral). All restored verbatim\nfrom the pre-split source; no behavior change intended.\n\n* fixup: restore #184/#188/#191 feature code dropped by ui split\n\n- notification_settings.rs: restore QuillApp::apply_scope_mention_notif /\n  apply_scope_pinned_notif and the 'Notify about mentions' /\n  'Notify about pinned messages' Switch rows in scope_settings_section\n  (#184 regression)\n- settings_ui.rs: restore the 'Use proxy for calls' row in\n  call_settings_section (#188 regression)\n- composer.rs: restore the !inline_active guard in sync_command_menu\n  (#191 regression)\n- message_actions.rs: restore the if !query.is_empty() guard in\n  confirm_inline_bot_alert (#191 regression)\n- app_demo.rs: restore .submit_on_enter(submit_on_enter) in new_with_demo\n  and SendKeyMode::Enter for the non-chat input subscriptions\n  (#190 regression)\n\nAll restored byte-identically from origin/main:src/ui/mod.rs.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T06:38:06Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
    "html_url": "https://github.com/shinycake/quill/commit/f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
@@ -1448,20 +1453,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T02:14:35Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "71a9f5abf09099390382d6e02cc0f8273da6a74f",
-   "html_url": "https://github.com/shinycake/quill/commit/71a9f5abf09099390382d6e02cc0f8273da6a74f",
-   "commit": {
-    "message": "parity: chat-list style settings (two/three lines, media icons, formatted preview) (#187)\n\nSettings \u2192 Appearance \u2192 Chat list rows: preview line count (2/3),\nmedia-type icons before the preview, formatted preview text\n(bold/italic/etc. via styled_runs).\n\n- src/chatlist_style.rs (new): pure logic \u2014 line-count clamp, row\n  heights, media-icon map, entity clipping, sender-line rule.\n- src/ui/chatlist_style.rs (new): GPUI preview-line renderer.\n- AppearancePrefs: preview_lines, chat_list_media_icons,\n  chat_list_rich_preview (defaults preserve current behavior).\n- ChatSummary captures the preview's icon/entities/sender next to\n  last_preview at the three update sites that compute it.\n- tests/chatlist_list_style.rs (new): 10 tests over prefs round-trip,\n  row heights, icon/entity/sender capture, and the pure helpers.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T02:06:52Z"
     }
    },
    "author": {
