@@ -918,7 +918,7 @@
   {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T02:31:45Z",
+   "updated_at": "2026-09-30T02:57:29Z",
    "html_url": "https://github.com/shinycake/quill/pull/194",
    "head": {
     "ref": "refactor/split-envelope"
@@ -927,7 +927,7 @@
   {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T02:36:10Z",
+   "updated_at": "2026-09-30T02:57:14Z",
    "html_url": "https://github.com/shinycake/quill/pull/193",
    "head": {
     "ref": "refactor/split-state"
@@ -945,7 +945,7 @@
   {
    "number": 191,
    "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
-   "updated_at": "2026-09-30T02:53:53Z",
+   "updated_at": "2026-09-30T02:56:12Z",
    "html_url": "https://github.com/shinycake/quill/pull/191",
    "head": {
     "ref": "parity/bots-inline-mode"
@@ -953,6 +953,46 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-state"
+   },
+   "created_at": "2026-09-30T02:57:13Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/loop2-s13-story-reactions"
+   },
+   "created_at": "2026-09-29T19:47:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-29T19:46:44Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:56:12Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1309,46 +1349,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T01:44:21Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T01:39:21Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/chatlist-list-style-minimal"
-   },
-   "created_at": "2026-09-30T01:38:32Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/community-service-messages"
-   },
-   "created_at": "2026-09-29T06:09:53Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/community-chatlist-mode"
-   },
-   "created_at": "2026-09-30T00:23:44Z",
    "actor": {
     "login": "shinycake"
    }
