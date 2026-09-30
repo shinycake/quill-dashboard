@@ -7,6 +7,30 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
+  },
+  {
+   "area": "Bots, polls & payments",
+   "label": "ephemeral-command icon in the bot command list (parity:bots-ephemeral-command-icon)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/bots-ephemeral-command-icon"
+  },
+  {
+   "area": "Calls",
+   "label": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/calls-swap-prompt"
+  },
+  {
+   "area": "Media",
+   "label": "media-downloads-pause (parity:media-downloads-pause)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/media-downloads-pause"
   }
  ]
 }

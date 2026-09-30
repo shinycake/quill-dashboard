@@ -4,19 +4,17 @@
    "blockers": [],
    "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
-    "branch": "parity/composer-send-keys",
-    "commit": "8cc548983787dd3adbb5df03185c8f830f887cbf",
-    "detail": "composer-send-keys: client-side SendKeyMode (Enter vs Ctrl/Cmd+Enter), persisted to chat_prefs.json. All 8 chat-composer Enter handlers in src/ui/mod.rs route through should_send_on_enter(event, mode); IME never sends in either mode; kit RadioGroup in Settings -> Appearance ('Send messages with'). 2FA recovery-code form keeps plain-Enter submit. Tests: tests/composer_send_keys.rs (8 integration tests: policy matrix both modes, IME, prefs roundtrip/missing-file). Gates ALL GREEN on pushed head: cargo fmt \u2713, cargo clippy -D warnings \u2713, cargo test \u2713 (1120 unit + 8 new), Mac UI build success (run 36652841253 on this branch; first dispatch failed on checkout ref, re-dispatched with branch name). README boxes parity:settings-enter-send + parity:settings-ctrlenter-send checked. PR #190 opened 2026-09-29 ~20:10 CDT; handoff to merge-pipeline (auto-merge armed by pipeline). MERGED 2026-09-30T02:48:36Z as 1ade16ca (adversarial CONFIRM, linux+macos green). Branch fully pushed; worktree clean.",
-    "handoff": "merge-pipeline",
-    "phase": "merged",
-    "pr": 190,
-    "merged_at": "2026-09-30T02:48:36Z",
-    "slice": "composer-send-keys",
-    "worktree": "~/workspace/quill-l1-sendkeys"
+    "slice": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
+    "branch": "parity/calls-swap-prompt",
+    "worktree": "~/workspace/quill-l1-swap",
+    "phase": "claimed",
+    "pr": null,
+    "handoff": null,
+    "detail": "2026-09-30 ~01:50 CDT relaunch: verified parity/composer-send-keys already merged via #190 (README items parity:settings-enter-send/ctrlenter-send checked on origin/main) \u2014 discarded duplicate. Claimed parity:calls-swap-prompt: replace auto-decline-with-banner with a real swap prompt (end current & accept incoming, or decline incoming). Calls unchecked pool also has audio-fx (empty pre-split branch, code not started), less-data (blocked: no engine API), video-tiles + group-screen-share (partial, live-verify blocked: no ntgcalls runtime on VM); groups unchecked = 3 communities items blocked (no TDLib 1.8.67 method)."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T03:10:00Z",
-   "last_evidence_event": "Watchdog ~03:10Z: verified PR #190 MERGED 2026-09-30T02:48:36Z and PR #187 MERGED 2026-09-30T02:06:53Z; claims corrected (phase merged, open_prs cleared)",
+   "last_evidence_at": "2026-09-30T06:46:37Z",
+   "last_evidence_event": "slice claimed: parity:calls-swap-prompt",
    "last_merged": {
     "name": "composer-send-keys",
     "parity": "420/525 (80.0%)",
@@ -60,25 +58,21 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T06:35:51Z",
+   "updated_at": "2026-09-30T06:45:55Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
-   "stale": true,
-   "age_seconds": 12917
+   "stale": false,
+   "age_seconds": 40
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "bot inline mode (parity:bots-inline-mode)",
-    "branch": "parity/bots-inline-mode",
-    "worktree": "~/workspace/quill-l2-inline-mode",
-    "phase": "merged",
-    "pr": 191,
-    "merged_at": "2026-09-30T03:00:08Z",
-    "handoff": "merge-pipeline",
-    "detail": "PR #191 opened: typed inline mode (debounced getInlineQueryResults, results dropdown, sendInlineQueryResultMessage, secret-chat alert). Gates: fmt/clippy clean, 1192 tests pass (1 filtered: vendored_schema needs network), --features ui build links, fresh screenshot docs/screenshots/ready-inline-results.png. Rebased onto origin/main (94fc738); README union intact, parity 416/525=79.2%. Split phase active: no next slice per phase.json \u2014 loop parked until the mod.rs split PR merges. Clean stop per 20:07 split-phase order: branch committed + pushed, PR #191 MERGED 2026-09-30T03:00:08Z (9a58ae2); parity 421/525 (80.2%). No further Loop 2 action pending (split phase).",
-    "updated_at": "2026-09-30T06:35:51Z",
-    "last_evidence_at": "2026-09-30T03:10:00Z",
-    "commit": "3722ce647d8523982bda2d7bea30196d44121073"
+    "slice": "ephemeral-command icon in the bot command list (parity:bots-ephemeral-command-icon)",
+    "branch": "parity/bots-ephemeral-command-icon",
+    "worktree": "~/workspace/quill-l2-ephemeral-icon",
+    "phase": "implementing",
+    "pr": null,
+    "handoff": null,
+    "detail": "Slice claimed 2026-09-30 ~01:55 CDT. Schema verified: botCommand.is_ephemeral:Bool exists in pinned TDLib 1.8.67 (schema/td_api.tl:826). Envelope currently DROPS is_ephemeral (src/telegram/envelope/bots.rs:4-5 comment). Work: keep is_ephemeral in typed BotCommand, show ephemeral indicator in the bot command list UI. Implementer dispatched in dedicated worktree from 614e797."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -163,7 +157,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T06:35:51Z",
+   "updated_at": "2026-09-30T06:46:54Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -171,23 +165,23 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T03:10:00Z",
-   "stale": true,
-   "age_seconds": 12917
+   "last_evidence_at": "2026-09-30T06:46:54Z",
+   "stale": false,
+   "age_seconds": 23
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "branch": null,
-    "detail": "Watchdog restarted Loop 3 at 2026-09-30T02:16Z (previous coordinator dead >90m; last slice PR #183 merged 2026-09-30T00:51:29Z). phase.json is 'split' (Idan 2026-09-29 ~20:13 CDT: all feature work paused until the 7 oversized files split). Per PHASE OVERRIDE: no feature slices. Split workers are already active (branches refactor/split-ui-modrs, split-connect, split-state, split-envelope, split-requests, split-replay; open split PRs #192/#193/#194). Loop 3 has no split file assigned \u2014 standing by for parent's split assignment, re-checking phase.json; resume feature slices the moment phase flips to 'feature'.",
-    "handoff": "none",
-    "phase": "split-standby",
+    "slice": "media-downloads-pause (parity:media-downloads-pause)",
+    "branch": "parity/media-downloads-pause",
+    "worktree": "~/workspace/quill-l3-downloads-pause",
+    "phase": "implementing",
     "pr": null,
-    "slice": "split-phase standby (feature work paused \u2014 Idan freeze)",
-    "worktree": null
+    "handoff": null,
+    "detail": "Pause/resume downloads via the persistent file-download list (addFileToDownloads + toggleDownloadIsPaused + updateFileDownload). Schema 1.8.67 verified: addFileToDownloads(:14039), toggleDownloadIsPaused(:14044), updateFileDownload(:10795), fileDownload.is_paused(:3318). MED3 evidence (DECISIONS.md): pause exists ONLY for the list API \u2014 one-shot downloadFile has no pause. Slice routes user-initiated downloads (history rows, viewer, manager retry) through addFileToDownloads, adds Pause/Resume UI in downloads manager + history chips, keeps auto-downloads one-shot. Chat list fully checked; media-video-pip honestly blocked. Worktree fresh from 614e797."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T02:19:37Z",
+   "last_evidence_at": "2026-09-30T06:50:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -197,9 +191,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T06:44:30Z",
-   "stale": true,
-   "age_seconds": 15940
+   "updated_at": "2026-09-30T06:50:00Z",
+   "last_evidence_event": "slice claimed: media-downloads-pause",
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -207,10 +202,10 @@
     "slice": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
     "branch": "parity/settings-notif-exceptions",
     "worktree": "~/workspace/quill-l4-notif-exceptions",
-    "phase": "split-stop",
+    "phase": "rebasing",
     "pr": null,
     "handoff": null,
-    "detail": "SPLIT-PHASE STOP complete. Implementer committed worktree as-is and pushed branch parity/settings-notif-exceptions as 1d2bed1b991a8dfb4506edd4816618ed07d69605 (origin, 2026-09-30T01:14Z). NO PR opened: fmt/clippy(-D warnings)/tests all green on the pushed head, but the Mac UI build (cargo build --features ui) never ran, so the PR gate set was incomplete. Implemented: requests.rs get_chat_notification_settings_exceptions builder; state.rs RequestPurpose::GetChatNotificationSettingsExceptions + Session::notification_exceptions (+loading set) + local_notification_exceptions helper + Chats-arm correlation via pending.scope + updateChatNotificationSettings prune/invalidate + error-arm cleanup + 4 new tests (all passing); connect.rs maybe_fetch_notification_exceptions + reset_chat_notification_settings; ui/mod.rs per-scope Exceptions row (count/Loading\u2026) + expandable exceptions sub-view with per-chat Reset to default + fetch on dialog open + demo fixture answering through the real correlation path; README parity:settings-notif-exceptions checked. Remains: Mac-runner UI build + PR creation; reviewer pass; rebase onto origin/main at PR time (pushed head is on 1e62510). Worktree clean; branch parked for split phase."
+    "detail": "RESUMED 2026-09-30 ~01:45 CDT (split phase complete, feature dev full speed). Rebasing parity/settings-notif-exceptions (d4a82d1, pushed, no PR) onto origin/main 614e797e: requests.rs->telegram/requests/chats.rs, state.rs->state/* (request_purpose.rs, history_types.rs, session_*), connect.rs->connect/settings.rs, ui/mod.rs->ui/app.rs + ui/notification_settings.rs. Implementer dispatched."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -220,11 +215,11 @@
     "slice": "A7 account lifecycle backend"
    },
    "next": {
-    "branch": null,
-    "worktree": null,
-    "slice": null,
-    "phase": "standby-split",
-    "detail": "Loop 4 on standby for split-phase assignment. Dedicated split coordinator owns src/ui/mod.rs; Loop 4 may receive extraction chunks."
+    "slice": "reset all notification settings (parity:settings-reset-notif)",
+    "branch": "parity/settings-reset-notif",
+    "worktree": "~/workspace/quill-l4-reset-notif",
+    "phase": "queued",
+    "detail": "Claimed 2026-09-30 ~01:47 CDT; starts the moment the notif-exceptions PR opens. Schema verified: resetAllNotificationSettings = Ok (td_api.tl:13670-13671, pinned 1.8.67) \u2014 'Resets all chat and scope notification settings to their default values.' Plan: request builder + ConnectDriver method + Ok-response cache invalidation (notification_exceptions, scope_notification_settings) + 'Reset all' button in Notification defaults dialog + README check. Unclaimed: loop1 on calls-swap-prompt, loop2 on bots-ephemeral-command-icon, loop3 split-standby; no open PRs."
    },
    "parked": false,
    "phase": "implementing",
@@ -237,8 +232,8 @@
     "detail": "PR #186 MERGED. New types ReactionNotificationSource/Settings in envelope.rs, set_reaction_notification_settings builder, driver send, Session.reaction_notification_settings tracked from updateReactionNotificationSettings, Reactions section + per-scope story switches in Notification defaults dialog."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T01:14:00Z",
-   "updated_at": "2026-09-30T06:38:36Z",
+   "last_evidence_at": "2026-09-30T06:46:45Z",
+   "updated_at": "2026-09-30T06:47:12Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -273,8 +268,8 @@
     "done_by_this_instance": "Rebased parity/settings-mentions-pinned b95e551 -> 6493f55 onto origin/main 4c7ce8b (post-#180); resolved scripts/check_file_sizes.sh conflict with exact waiver bump 49204 -> 49338 (+134); README checkbox union kept; re-gated green post-rebase (fmt, clippy -D warnings, tests, check_file_sizes.sh); verified cap slot (3 open at the time) and that no PR existed on the branch; force-pushed 6493f55; verified PR #184 exists on it; recorded in_review handoff in this JSON. Touched NOTHING in ~/workspace/quill-l4-reaction-notif.",
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
-   "stale": true,
-   "age_seconds": 19877
+   "stale": false,
+   "age_seconds": 32
   }
  ]
 }
