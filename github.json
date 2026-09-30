@@ -920,6 +920,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/refactor/split-requests"
+   },
+   "created_at": "2026-09-30T01:44:17Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-30T06:38:07Z",
@@ -1303,16 +1313,6 @@
     "ref": "refs/heads/parity/loop2-s10-emoji-backend"
    },
    "created_at": "2026-09-29T06:57:30Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-state"
-   },
-   "created_at": "2026-09-30T04:40:45Z",
    "actor": {
     "login": "shinycake"
    }
