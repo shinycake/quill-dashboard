@@ -66,7 +66,7 @@
   },
   {
    "area": "Stories",
-   "label": "stories-live-play (parity:stories-live-play)",
+   "label": "parity:stories-live-play",
    "kind": "branch",
    "pr": null,
    "url": null,

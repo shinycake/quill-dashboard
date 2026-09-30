@@ -4,20 +4,15 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "stories-live-play (parity:stories-live-play)",
+    "slice": "parity:stories-live-play",
     "branch": "parity/stories-live-play",
-    "worktree": "~/workspace/quill-l1-live-story",
-    "phase": "claiming",
+    "worktree": "/home/hatch/workspace/quill-l1-live-story",
+    "phase": "gating",
     "pr": null,
-    "detail": "PR #222 (platform-autostart) open, handed to merge-pipeline. Claim verified: no open PR, no active worktree/branch on live stories (loop2-s13 = reactions, stories-5/6/7 = stale parked pre-split branches; only parked stories-5 parses storyContentLive). Scope: parse storyContentLive (group_call_id) + story viewer Join -> existing group-call join path + driver test.",
-    "handoff": {
-     "pr": 222,
-     "slice": "parity:platform-autostart",
-     "to": "merge-pipeline"
-    }
+    "detail": "Committed 5893c45, pushed. Local gates green (fmt/clippy/1282 tests). UI gate running on Mac runner (quill-ui-build-remote). Bug caught+fixed in review: pump intent now keeps the getGroupCall RequestId so early ingests can't lose it."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T15:30:00Z",
+   "last_evidence_at": "2026-09-30T16:35:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -80,8 +75,8 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature.",
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
-   "stale": true,
-   "age_seconds": 3440
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -243,7 +238,7 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": false,
-   "age_seconds": 3
+   "age_seconds": 127
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -271,7 +266,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 10040
+   "age_seconds": 10164
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -310,7 +305,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T14:20:00Z",
-   "updated_at": "2026-09-30T16:18:52Z",
+   "updated_at": "2026-09-30T16:28:56Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -378,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 7640
+   "age_seconds": 7764
   }
  ]
 }
