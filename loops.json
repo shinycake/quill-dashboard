@@ -60,7 +60,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T16:26:01Z",
+   "updated_at": "2026-09-30T16:35:55Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -213,7 +213,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T16:27:17Z",
+   "updated_at": "2026-09-30T16:35:54Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -238,21 +238,21 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": false,
-   "age_seconds": 487
+   "age_seconds": 601
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "slice": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
-    "branch": "parity/msg-richtext-inline-media",
-    "worktree": "~/workspace/quill-l3-inline-media",
+    "slice": "msg-richtext-ai-tools (parity:msg-richtext-ai-tools)",
+    "branch": "parity/msg-richtext-ai-tools",
+    "worktree": "~/workspace/quill-l3-ai-tools",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Phase-4 (remaining areas, coordinator priority). Unclaimed (loop2 on blockquote-expandable; max-length taken by #216). Verified: RichBlock has Document (inputPageBlockDocument) but no Photo/Video. Scope: RichBlock::Photo/Video variants with local_path for editor-created blocks; composer submit converts attached photos/videos (mirroring the Document path in composer.rs:submit_rich_composer); input_rich_message emits inputPageBlockPhoto/inputPageBlockVideo; parse_page_block handles incoming pageBlockPhoto/pageBlockVideo; render the blocks; tests + README box."
+    "detail": "Phase-4 (remaining areas, coordinator priority). Unclaimed. Schema-verified all 5 methods in td_api.tl: composeTextWithAi :12154, composeRichMessageWithAi :12162, createRichMessageWithAi :12168, fixTextWithAi :12172, fixRichMessageWithAi :12176. Scope: AI menu in the rich-text composer (Fix text, Compose, Create from prompt) with drivers for all five methods; fix* replaces the draft with the fixed text (FixedText text + diff), compose*/create* produce RichMessage -> parsed into blocks; tests + README box."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T13:40:00Z",
+   "last_evidence_at": "2026-09-30T16:30:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -262,11 +262,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T16:34:37Z",
-   "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
+   "updated_at": "2026-09-30T16:30:00Z",
+   "last_evidence_event": "slice claimed: msg-richtext-ai-tools (phase 4)",
    "last_merged": null,
-   "stale": true,
-   "age_seconds": 10524
+   "stale": false,
+   "age_seconds": 438
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -373,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 8124
+   "age_seconds": 8238
   }
  ]
 }

@@ -26,14 +26,6 @@
   },
   {
    "area": "Media",
-   "label": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/msg-richtext-inline-media"
-  },
-  {
-   "area": "Media",
    "label": "parity:platform-history-export \u2014 chat history export to JSON file",
    "kind": "pr",
    "pr": 217,
@@ -55,6 +47,14 @@
    "pr": 224,
    "url": "https://github.com/shinycake/quill/pull/224",
    "branch": "parity/msg-richtext-tables"
+  },
+  {
+   "area": "Messaging core",
+   "label": "msg-richtext-ai-tools (parity:msg-richtext-ai-tools)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/msg-richtext-ai-tools"
   },
   {
    "area": "Platform & edge cases",
