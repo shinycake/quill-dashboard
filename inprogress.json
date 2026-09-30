@@ -18,6 +18,14 @@
   },
   {
    "area": "Media",
+   "label": "Slice msg-richtext-inline-media: inline photos/videos in the rich-text composer",
+   "kind": "pr",
+   "pr": 226,
+   "url": "https://github.com/shinycake/quill/pull/226",
+   "branch": "parity/msg-richtext-inline-media"
+  },
+  {
+   "area": "Media",
    "label": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
    "kind": "branch",
    "pr": null,

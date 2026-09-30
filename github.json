@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 226,
+   "title": "Slice msg-richtext-inline-media: inline photos/videos in the rich-text composer",
+   "updated_at": "2026-09-30T16:35:14Z",
+   "html_url": "https://github.com/shinycake/quill/pull/226",
+   "head": {
+    "ref": "parity/msg-richtext-inline-media"
+   }
+  },
+  {
    "number": 225,
    "title": "parity:stories-live-play \u2014 join live stories from the viewer",
    "updated_at": "2026-09-30T16:32:37Z",
@@ -971,6 +980,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T16:35:14Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1357,16 +1376,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T13:51:09Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T13:31:08Z",
    "actor": {
     "login": "shinycake"
    }
