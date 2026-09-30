@@ -42,11 +42,19 @@
   },
   {
    "area": "Settings",
-   "label": "reset all notification settings (parity:settings-reset-notif)",
+   "label": "Slice settings-reset-notif: reset all notification settings",
+   "kind": "pr",
+   "pr": 208,
+   "url": "https://github.com/shinycake/quill/pull/208",
+   "branch": "parity/settings-reset-notif"
+  },
+  {
+   "area": "Settings",
+   "label": "in-app notification sounds toggle (parity:settings-inapp-sound)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/settings-reset-notif"
+   "branch": "parity/settings-inapp-sound"
   }
  ]
 }

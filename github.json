@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 208,
+   "title": "Slice settings-reset-notif: reset all notification settings",
+   "updated_at": "2026-09-30T09:58:49Z",
+   "html_url": "https://github.com/shinycake/quill/pull/208",
+   "head": {
+    "ref": "parity/settings-reset-notif"
+   }
+  },
+  {
    "number": 207,
    "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
    "updated_at": "2026-09-30T09:56:43Z",
@@ -935,6 +944,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:58:49Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1321,16 +1340,6 @@
     "ref": "refs/heads/parity/calls-proxy"
    },
    "created_at": "2026-09-30T02:08:58Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T06:44:06Z",
    "actor": {
     "login": "shinycake"
    }
