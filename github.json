@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 414,
+  "done": 415,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 183,
+   "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
+   "merged_at": "2026-09-30T00:51:29Z",
+   "html_url": "https://github.com/shinycake/quill/pull/183",
+   "head": {
+    "ref": "parity/chatlist-badge-settings"
+   }
+  },
   {
    "number": 182,
    "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/messaging-2"
    }
-  },
-  {
-   "number": 86,
-   "title": "G2: groups/channels remainder + welcome messages",
-   "merged_at": "2026-09-27T17:06:41Z",
-   "html_url": "https://github.com/shinycake/quill/pull/86",
-   "head": {
-    "ref": "parity/groups-channels-2"
-   }
   }
  ],
  "openPRs": [
@@ -936,23 +936,44 @@
   {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
-   "updated_at": "2026-09-30T00:18:19Z",
+   "updated_at": "2026-09-30T00:50:33Z",
    "html_url": "https://github.com/shinycake/quill/pull/184",
    "head": {
     "ref": "parity/settings-mentions-pinned"
    }
-  },
-  {
-   "number": 183,
-   "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
-   "updated_at": "2026-09-30T00:41:21Z",
-   "html_url": "https://github.com/shinycake/quill/pull/183",
-   "head": {
-    "ref": "parity/chatlist-badge-settings"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/infra/file-size-cap"
+   },
+   "created_at": "2026-09-29T05:26:59Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:51:29Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/settings-mentions-pinned"
+   },
+   "created_at": "2026-09-30T00:50:33Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1322,39 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/auth-profile-accent"
-   },
-   "created_at": "2026-09-29T22:59:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T22:58:02Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/auth-profile-accent"
-   },
-   "created_at": "2026-09-29T22:54:56Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "8cea051680b8844773e57063bce79e47d673cf9d",
+   "html_url": "https://github.com/shinycake/quill/commit/8cea051680b8844773e57063bce79e47d673cf9d",
+   "commit": {
+    "message": "Chat list: app badge counter settings (include muted/archived, messages vs chats) (#183)\n\n* Chat list: app badge counter settings (include muted/archived, messages vs chats)\n\nBadgePrefs in settings.rs (persisted to badge_prefs.json, Telegram Desktop\ndefaults: muted in, archived out, count messages); badge_count() in tray.rs\nhonors the prefs; Session.badge_prefs loaded at startup in connect.rs;\nApp badge counter section with kit Switch rows in the notification defaults\ndialog (src/ui/mod.rs).\n\n* Check parity:chatlist-badge-settings README box; exact waiver bumps (ui/mod.rs 49101->49211, connect.rs 24898->24907, state.rs 21773->21780)\n\n---------\n\nCo-authored-by: Quill Loop 3 <quill-loop3@local>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T00:51:28Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "dcdcd5dfa1f223a474aff654ccebafb997525165",
    "html_url": "https://github.com/shinycake/quill/commit/dcdcd5dfa1f223a474aff654ccebafb997525165",
@@ -1475,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T21:58:23Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "82626fdb89953c0dfdc30dd4181aeee23f8c0618",
-   "html_url": "https://github.com/shinycake/quill/commit/82626fdb89953c0dfdc30dd4181aeee23f8c0618",
-   "commit": {
-    "message": "Slice S16: fix emoji sticker_type (stickerTypeEmoji -> stickerTypeCustomEmoji) (#175)\n\nstickerTypeEmoji does not exist in the pinned TDLib 1.8.67 schema\n(StickerType = Regular/Mask/CustomEmoji only, td_api.tl:412-421), so the\nfive emoji-set request builders (getInstalled/Archived/Trending/Search/\nReorderStickerSets) were sending a bogus type TDLib 400s. The emoji panel's\ninstalled/archived/trending/search/reorder fetches were broken in production.\nFix is a rename to stickerTypeCustomEmoji in the builders, fixtures,\ncomments, and the parity:emoji-custom-packs README parenthetical. No new\nREADME boxes (bug fix); no waiver bumps (line-neutral).\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T21:43:03Z"
     }
    },
    "author": {
