@@ -9,6 +9,14 @@
    "branch": "parity/auth-multi-account-ui"
   },
   {
+   "area": "Auth & accounts",
+   "label": "parity:platform-autostart \u2014 launch Quill at login",
+   "kind": "pr",
+   "pr": 222,
+   "url": "https://github.com/shinycake/quill/pull/222",
+   "branch": "parity/platform-autostart"
+  },
+  {
    "area": "Bots, polls & payments",
    "label": "platform-autostart (parity:platform-autostart)",
    "kind": "branch",
