@@ -945,7 +945,7 @@
   {
    "number": 190,
    "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
-   "updated_at": "2026-09-30T02:16:10Z",
+   "updated_at": "2026-09-30T02:24:59Z",
    "html_url": "https://github.com/shinycake/quill/pull/190",
    "head": {
     "ref": "parity/composer-send-keys"
