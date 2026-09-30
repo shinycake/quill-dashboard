@@ -17,6 +17,14 @@
    "branch": "parity/settings-notif-exceptions"
   },
   {
+   "area": "Media",
+   "label": "refactor: split tests/replay.rs into per-area test files",
+   "kind": "pr",
+   "pr": 195,
+   "url": "https://github.com/shinycake/quill/pull/195",
+   "branch": "refactor/split-replay"
+  },
+  {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
    "kind": "pr",

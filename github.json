@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 195,
+   "title": "refactor: split tests/replay.rs into per-area test files",
+   "updated_at": "2026-09-30T02:37:22Z",
+   "html_url": "https://github.com/shinycake/quill/pull/195",
+   "head": {
+    "ref": "refactor/split-replay"
+   }
+  },
+  {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
    "updated_at": "2026-09-30T02:31:45Z",
@@ -918,7 +927,7 @@
   {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T02:11:18Z",
+   "updated_at": "2026-09-30T02:36:10Z",
    "html_url": "https://github.com/shinycake/quill/pull/193",
    "head": {
     "ref": "refactor/split-state"
@@ -945,7 +954,7 @@
   {
    "number": 190,
    "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
-   "updated_at": "2026-09-30T02:24:59Z",
+   "updated_at": "2026-09-30T02:36:49Z",
    "html_url": "https://github.com/shinycake/quill/pull/190",
    "head": {
     "ref": "parity/composer-send-keys"
@@ -953,6 +962,36 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:37:22Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:36:48Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-state"
+   },
+   "created_at": "2026-09-30T02:36:09Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1319,36 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T01:00:53Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-mentions-pinned"
-   },
-   "created_at": "2026-09-30T00:01:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s12-sticker-suggest"
-   },
-   "created_at": "2026-09-29T17:55:40Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-reaction-notif"
-   },
-   "created_at": "2026-09-29T23:58:15Z",
    "actor": {
     "login": "shinycake"
    }
