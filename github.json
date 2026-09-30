@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 429,
+  "done": 430,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 207,
+   "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
+   "merged_at": "2026-09-30T13:27:03Z",
+   "html_url": "https://github.com/shinycake/quill/pull/207",
+   "head": {
+    "ref": "parity/bots-payment-recurring"
+   }
+  },
   {
    "number": 210,
    "title": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/auth-websessions-1"
    }
-  },
-  {
-   "number": 112,
-   "title": "S4/Loop 2: story viewers list, report story, stealth mode (Phase 9.5)",
-   "merged_at": "2026-09-28T13:21:04Z",
-   "html_url": "https://github.com/shinycake/quill/pull/112",
-   "head": {
-    "ref": "parity/stories-4"
-   }
   }
  ],
  "openPRs": [
@@ -927,7 +927,7 @@
   {
    "number": 214,
    "title": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
-   "updated_at": "2026-09-30T12:06:26Z",
+   "updated_at": "2026-09-30T13:27:27Z",
    "html_url": "https://github.com/shinycake/quill/pull/214",
    "head": {
     "ref": "parity/auth-multi-account"
@@ -959,18 +959,49 @@
    "head": {
     "ref": "parity/settings-reset-notif"
    }
-  },
-  {
-   "number": 207,
-   "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
-   "updated_at": "2026-09-30T13:17:07Z",
-   "html_url": "https://github.com/shinycake/quill/pull/207",
-   "head": {
-    "ref": "parity/bots-payment-recurring"
-   }
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:27:27Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T13:27:05Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:27:03Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/calls-screen-share-render"
+   },
+   "created_at": "2026-09-29T14:23:34Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1330,49 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T10:41:19Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/calls-swap-prompt"
-   },
-   "created_at": "2026-09-30T08:20:20Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T10:20:43Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T10:20:03Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "412ec80dda84ad0a18651a65cf19858736f7d7fa",
+   "html_url": "https://github.com/shinycake/quill/commit/412ec80dda84ad0a18651a65cf19858736f7d7fa",
+   "commit": {
+    "message": "parity:bots-payment-recurring \u2014 Stars subscriptions management (#207)\n\n* parity:bots-payment-recurring \u2014 Stars subscriptions management\n\nAdds a \u2b50 Subscriptions dialog (chat-list settings menu) listing the\naccount's star subscriptions via getStarSubscriptions, with star balance,\nrequired-stars banner, pagination, and per-row actions: cancel (inline\ntwo-step confirm) / re-enable via editStarSubscription, rejoin expired\nchannel subs via reuseStarSubscription. Mutations never update the UI\noptimistically \u2014 the ok marks the list stale and it refetches from the\nauthoritative response. Envelope parsers + payload registration, request\nbuilders, state cache + reducer, driver fetch/mutation helpers, tests,\nscreenshot demo (ready-subscriptions), README box checked.\n\n* fixup: reuseStarSubscription only rejoins active channel subs (can_reuse); expired subs renew via invite_link\n\n- 'Rejoin' button now gated on starSubscriptionTypeChannel.can_reuse:\n  schema (td_api.tl 1.8.67) defines reuseStarSubscription as reusing an\n  ACTIVE Telegram Star subscription to rejoin the subscribed chat, and\n  can_reuse is only true for active subscriptions.\n- Expired channel subs instead get a 'Renew' button that opens the type's\n  invite_link ('usable to renew the subscription if it has expired') in\n  the OS browser via cx.open_url, replacing the mis-wired reuse call.\n- Demo fixture: expired channel row now has can_reuse=false and a real\n  invite_link so the Renew path renders.\n- Corrected the tolerate_gaps test comment: a missing pricing block drops\n  the subscription (parse_star_subscription uses ?), zero-valued pricing\n  parses fine; behavior unchanged (pricing is non-optional per schema).\n- README.md / DECISIONS.md and the builder/driver doc comments now state\n  the correct semantics.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: Muse <muse@local>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T13:27:03Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "9a36c27e0fc052df9d84094b980e751bf91c4b02",
    "html_url": "https://github.com/shinycake/quill/commit/9a36c27e0fc052df9d84094b980e751bf91c4b02",
@@ -1493,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T06:44:05Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "644155132e6275d19902d40fdce477a4429f820e",
-   "html_url": "https://github.com/shinycake/quill/commit/644155132e6275d19902d40fdce477a4429f820e",
-   "commit": {
-    "message": "refactor: split src/ui/mod.rs into one-responsibility modules (#198)\n\n* refactor: split src/ui/mod.rs into one-responsibility modules\n\nSplit the 49,967-line src/ui/mod.rs into focused one-responsibility\nmodules (78 modules, each <=2000 lines, mod.rs is 101 lines of\ndeclarations/re-exports only).\n\nIntegrates merged PRs #187 (chat-list style), #190 (send-key mode),\nand #191 (inline mode) into the split module structure.\n\npure code motion, no behavior change.\n\n* fix: build secret-chat key_hash fixture at runtime to avoid gitleaks false positive\n\nSame pattern as the envelope split (#194): the hardcoded base64 literal\ntrips the generic-api-key rule. xorshift32 (seed 0x9E3779B9) reproduces the\nexact same 36 bytes, so the demo fingerprint grid is unchanged.\n\n* fix: restore six sites dropped in split (adversarial review D1-D6)\n\nchat_row_height lost its preview_lines param and hardcoded 56/80px\ninstead of quill::chatlist_style::chat_row_height_px (D1, #187\nregression); session_chat_row gained an extra wrapper div around the\nsender/preview lines (D2); send_text_on_enter was dropped in the\ncomposer submit and in send_group_call_message (D3/D4, #190\nregression); the chat-switch inline-dropdown reset was dropped (D5,\n#191 regression); ReadyInlineResults was reordered in the\nScreenshotDemo enum (D6, behavior-neutral). All restored verbatim\nfrom the pre-split source; no behavior change intended.\n\n* fixup: restore #184/#188/#191 feature code dropped by ui split\n\n- notification_settings.rs: restore QuillApp::apply_scope_mention_notif /\n  apply_scope_pinned_notif and the 'Notify about mentions' /\n  'Notify about pinned messages' Switch rows in scope_settings_section\n  (#184 regression)\n- settings_ui.rs: restore the 'Use proxy for calls' row in\n  call_settings_section (#188 regression)\n- composer.rs: restore the !inline_active guard in sync_command_menu\n  (#191 regression)\n- message_actions.rs: restore the if !query.is_empty() guard in\n  confirm_inline_bot_alert (#191 regression)\n- app_demo.rs: restore .submit_on_enter(submit_on_enter) in new_with_demo\n  and SendKeyMode::Enter for the non-chat input subscriptions\n  (#190 regression)\n\nAll restored byte-identically from origin/main:src/ui/mod.rs.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T06:38:06Z"
     }
    },
    "author": {

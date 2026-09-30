@@ -26,14 +26,6 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
-   "kind": "pr",
-   "pr": 207,
-   "url": "https://github.com/shinycake/quill/pull/207",
-   "branch": "parity/bots-payment-recurring"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "platform-autostart (parity:platform-autostart)",
    "kind": "branch",
    "pr": null,
