@@ -918,7 +918,7 @@
   {
    "number": 220,
    "title": "Slice settings-language: app language selector",
-   "updated_at": "2026-09-30T14:23:01Z",
+   "updated_at": "2026-09-30T14:37:15Z",
    "html_url": "https://github.com/shinycake/quill/pull/220",
    "head": {
     "ref": "parity/settings-language"
@@ -962,6 +962,16 @@
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:37:15Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1348,16 +1358,6 @@
     "ref": "parity/platform-history-export"
    },
    "created_at": "2026-09-30T13:21:25Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/calls-less-data"
-   },
-   "created_at": "2026-09-30T10:57:05Z",
    "actor": {
     "login": "shinycake"
    }
