@@ -34,14 +34,6 @@
   },
   {
    "area": "Settings",
-   "label": "Slice settings-inapp-sound: in-app notification sounds toggle",
-   "kind": "pr",
-   "pr": 209,
-   "url": "https://github.com/shinycake/quill/pull/209",
-   "branch": "parity/settings-inapp-sound"
-  },
-  {
-   "area": "Settings",
    "label": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
    "kind": "pr",
    "pr": 206,

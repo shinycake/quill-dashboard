@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 426,
+  "done": 427,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 209,
+   "title": "Slice settings-inapp-sound: in-app notification sounds toggle",
+   "merged_at": "2026-09-30T10:42:18Z",
+   "html_url": "https://github.com/shinycake/quill/pull/209",
+   "head": {
+    "ref": "parity/settings-inapp-sound"
+   }
+  },
   {
    "number": 205,
    "title": "Slice bots-games: render, play, send, and high scores for bot games",
@@ -894,27 +903,9 @@
    "head": {
     "ref": "parity/media-linkpreview"
    }
-  },
-  {
-   "number": 107,
-   "title": "Loop 1: chat preview on long-press (parity:chatlist-chat-preview)",
-   "merged_at": "2026-09-28T11:33:52Z",
-   "html_url": "https://github.com/shinycake/quill/pull/107",
-   "head": {
-    "ref": "parity/chat-preview"
-   }
   }
  ],
  "openPRs": [
-  {
-   "number": 209,
-   "title": "Slice settings-inapp-sound: in-app notification sounds toggle",
-   "updated_at": "2026-09-30T10:20:03Z",
-   "html_url": "https://github.com/shinycake/quill/pull/209",
-   "head": {
-    "ref": "parity/settings-inapp-sound"
-   }
-  },
   {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
@@ -944,6 +935,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T10:42:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1333,19 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-envelope"
-   },
-   "created_at": "2026-09-30T02:57:29Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "dda1171ca1e64a083a851889a5bfe283ab1743af",
+   "html_url": "https://github.com/shinycake/quill/commit/dda1171ca1e64a083a851889a5bfe283ab1743af",
+   "commit": {
+    "message": "settings: in-app notification sounds toggle (parity:settings-inapp-sound) (#209)\n\nCo-authored-by: Muse <muse@local>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T10:42:18Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "f32f95457c471847e43311e4c644aaee2f58a2a2",
    "html_url": "https://github.com/shinycake/quill/commit/f32f95457c471847e43311e4c644aaee2f58a2a2",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T05:58:48Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "1437abb8e21b6ad6daed470452f666946a61771c",
-   "html_url": "https://github.com/shinycake/quill/commit/1437abb8e21b6ad6daed470452f666946a61771c",
-   "commit": {
-    "message": "refactor: split src/calls/engine.rs into one-responsibility modules (#197)\n\nPure code motion, no behavior change. 3,212 lines -> 5 modules,\nall under 2,000 lines. Public paths preserved via re-exports.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T05:58:28Z"
     }
    },
    "author": {
