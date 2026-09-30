@@ -2,14 +2,6 @@
  "items": [
   {
    "area": "Bots, polls & payments",
-   "label": "Slice bots-games: render, play, send, and high scores for bot games",
-   "kind": "pr",
-   "pr": 205,
-   "url": "https://github.com/shinycake/quill/pull/205",
-   "branch": "parity/bots-games"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "games: send / play (parity:bots-games, part 1)",
    "kind": "branch",
    "pr": null,
@@ -18,11 +10,19 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
+   "label": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
    "kind": "pr",
    "pr": 207,
    "url": "https://github.com/shinycake/quill/pull/207",
    "branch": "parity/bots-payment-recurring"
+  },
+  {
+   "area": "Calls",
+   "label": "less data for calls setting (parity:calls-less-data)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/calls-less-data"
   },
   {
    "area": "Secret chats",

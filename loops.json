@@ -2,18 +2,18 @@
  "loops": [
   {
    "blockers": [],
-   "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
+   "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
-    "branch": "parity/bots-payment-recurring",
-    "worktree": "~/workspace/quill-impl-payment-recurring",
-    "phase": "pr_open",
-    "pr": 207,
-    "handoff": "merge-pipeline",
-    "detail": "2026-09-30 ~04:55 CDT: PR #207 opened (commit a2b2fc7), handed to merge-pipeline. All gates green: fmt/clippy clean, ui build clean, 1146/1147 tests pass (only vendored_schema network test fails, environmental). Screenshot docs/screenshots/ready-subscriptions.png captured."
+    "slice": "less data for calls setting (parity:calls-less-data)",
+    "branch": "parity/calls-less-data",
+    "worktree": "~/workspace/quill-l1-less-data",
+    "phase": "implementing",
+    "pr": null,
+    "detail": "Feature already shipped by slice S4 (real TDLib autoDownloadSettings.use_less_data_for_calls, UI toggle in call settings); this slice adds the missing driver-level test and checks the stale README box.",
+    "handoff": null
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T09:55:00Z",
+   "last_evidence_at": "2026-09-30T10:22:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,10 +61,11 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T10:15:53Z",
+   "updated_at": "2026-09-30T10:22:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
-   "stale": true,
-   "age_seconds": 1458
+   "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -192,7 +193,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": false,
-   "age_seconds": 371
+   "age_seconds": 496
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -220,7 +221,7 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 1758
+   "age_seconds": 1883
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -295,7 +296,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": false,
-   "age_seconds": 430
+   "age_seconds": 555
   }
  ]
 }

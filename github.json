@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 425,
+  "done": 426,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 205,
+   "title": "Slice bots-games: render, play, send, and high scores for bot games",
+   "merged_at": "2026-09-30T10:20:43Z",
+   "html_url": "https://github.com/shinycake/quill/pull/205",
+   "head": {
+    "ref": "parity/bots-games"
+   }
+  },
   {
    "number": 204,
    "title": "Payments: clear saved payment/shipping info (privacy)",
@@ -894,22 +903,13 @@
    "head": {
     "ref": "parity/chat-preview"
    }
-  },
-  {
-   "number": 106,
-   "title": "parity/auth-sessions-1: active sessions list, incomplete login attempts, terminate one/all others",
-   "merged_at": "2026-09-28T10:58:04Z",
-   "html_url": "https://github.com/shinycake/quill/pull/106",
-   "head": {
-    "ref": "parity/auth-sessions-1"
-   }
   }
  ],
  "openPRs": [
   {
    "number": 209,
    "title": "Slice settings-inapp-sound: in-app notification sounds toggle",
-   "updated_at": "2026-09-30T10:11:59Z",
+   "updated_at": "2026-09-30T10:20:03Z",
    "html_url": "https://github.com/shinycake/quill/pull/209",
    "head": {
     "ref": "parity/settings-inapp-sound"
@@ -941,18 +941,29 @@
    "head": {
     "ref": "parity/settings-notif-exceptions"
    }
-  },
-  {
-   "number": 205,
-   "title": "Slice bots-games: render, play, send, and high scores for bot games",
-   "updated_at": "2026-09-30T09:50:46Z",
-   "html_url": "https://github.com/shinycake/quill/pull/205",
-   "head": {
-    "ref": "parity/bots-games"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T10:20:43Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T10:20:03Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1332,29 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-notif-exceptions"
-   },
-   "created_at": "2026-09-30T02:49:34Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-envelope"
-   },
-   "created_at": "2026-09-30T04:29:31Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "f32f95457c471847e43311e4c644aaee2f58a2a2",
+   "html_url": "https://github.com/shinycake/quill/commit/f32f95457c471847e43311e4c644aaee2f58a2a2",
+   "commit": {
+    "message": "Slice bots-games: render, play, send, and high scores for bot games (#205)\n\n* Slice bots-games: render/play/send/high-scores for bot games\n\n- messageGame card in history (thumbnail/title/text/description,\n  Play + Scores); Play reuses the B1 callbackQueryPayloadGame flow\n  (answer URL opens in OS browser)\n- Inline high-score panel via getGameHighScores keyed on current user\n  (toggle; loading/empty/rows states; error surfaces via status note)\n- Bot info panel Games section: games cached per bot from messageGame\n  traffic in the shared upsert_message choke point; Send buttons fire\n  sendMessage+inputMessageGame (only TDLib-delivered short names)\n- Chat-list preview: game emoji + title\n- parity:bots-games README box checked; DECISIONS.md slice note\n- Screenshot: docs/screenshots/ready-game-card.png\n\n* Fix stale answer re-opening a user-closed scores panel; fix gameHighScore int widths in DECISIONS.md\n\n---------\n\nCo-authored-by: Muse <muse@local>\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T10:20:42Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "e3d65f39ffebeb808dc4286680aa387c887d8b01",
    "html_url": "https://github.com/shinycake/quill/commit/e3d65f39ffebeb808dc4286680aa387c887d8b01",
@@ -1475,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T05:58:28Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
-   "html_url": "https://github.com/shinycake/quill/commit/e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
-   "commit": {
-    "message": "refactor: split src/telegram/envelope.rs into one-responsibility modules (#194)\n\nPure code motion, no behavior change. 18,837 lines -> 49 modules\n(src/telegram/envelope/mod.rs declares modules and re-exports only).\nLargest module payload.rs is 1,902 lines (single match dispatcher, under\nthe 2,000 cap). All 191 public items keep their paths. Gates green:\ncargo fmt, clippy --all-targets -D warnings, cargo test (1126 passed).\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T05:55:58Z"
     }
    },
    "author": {
