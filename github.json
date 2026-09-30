@@ -945,7 +945,7 @@
   {
    "number": 212,
    "title": "Slice auth-logout-warning: log out flow with secret-chats/media warning",
-   "updated_at": "2026-09-30T13:30:41Z",
+   "updated_at": "2026-09-30T16:02:37Z",
    "html_url": "https://github.com/shinycake/quill/pull/212",
    "head": {
     "ref": "parity/auth-logout-warning"
