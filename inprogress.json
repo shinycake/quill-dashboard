@@ -10,19 +10,27 @@
   },
   {
    "area": "Auth & accounts",
-   "label": "auth-logout-warning (parity:auth-logout-warning)",
-   "kind": "pr",
-   "pr": 212,
-   "url": "https://github.com/shinycake/quill/pull/212",
-   "branch": "parity/auth-logout-warning"
-  },
-  {
-   "area": "Auth & accounts",
-   "label": "multi-account part 1: account registry (parity:auth-multi-account)",
+   "label": "multi-account part 2: startup wiring + switch backend (parity:auth-multi-account)",
    "kind": "branch",
    "pr": null,
    "url": null,
+   "branch": "parity/auth-multi-account-switch"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "parity:auth-multi-account part 1 \u2014 account registry data layer",
+   "kind": "pr",
+   "pr": 213,
+   "url": "https://github.com/shinycake/quill/pull/213",
    "branch": "parity/auth-multi-account-registry"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "platform-offline-indicator (parity:platform-offline-indicator)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-offline-indicator"
   },
   {
    "area": "Bots, polls & payments",
@@ -47,6 +55,14 @@
    "pr": 210,
    "url": "https://github.com/shinycake/quill/pull/210",
    "branch": "parity/calls-less-data"
+  },
+  {
+   "area": "Secret chats",
+   "label": "Slice auth-logout-warning: log out flow with secret-chats/media warning",
+   "kind": "pr",
+   "pr": 212,
+   "url": "https://github.com/shinycake/quill/pull/212",
+   "branch": "parity/auth-logout-warning"
   },
   {
    "area": "Settings",

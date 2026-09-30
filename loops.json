@@ -4,16 +4,16 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "multi-account part 1: account registry (parity:auth-multi-account)",
-    "branch": "parity/auth-multi-account-registry",
-    "worktree": "~/workspace/quill-l1-multi-account",
+    "slice": "multi-account part 2: startup wiring + switch backend (parity:auth-multi-account)",
+    "branch": "parity/auth-multi-account-switch",
+    "worktree": "~/workspace/quill-l1-multi-account-2",
     "phase": "claiming",
     "pr": null,
-    "detail": "Phase-1 lanes exhausted (all remaining items blocked, evidence above). Moved to phase-2 auth per NEVER REST. Part 1: AccountRegistry data layer (accounts.json \u2014 list/add/remove/set-current + startup migration), no UI/switching yet (parts 2-3).",
+    "detail": "Part 1 (registry data layer) PR #213 open, handed to merge-pipeline. Part 2: load registry at startup, use registry.current instead of hardcoded primary, switch_account(key) backend (tear down + reinit driver under a different key). UI in part 3.",
     "handoff": null
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T11:05:00Z",
+   "last_evidence_at": "2026-09-30T11:40:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,7 +61,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T11:55:50Z",
+   "updated_at": "2026-09-30T11:40:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 3137
+   "age_seconds": 1157
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,21 +204,21 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 1209
+   "age_seconds": 1329
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "slice": "auth-logout-warning (parity:auth-logout-warning)",
-    "branch": "parity/auth-logout-warning",
-    "worktree": "~/workspace/quill-l3-logout-warning",
-    "phase": "in_review",
-    "pr": 212,
-    "handoff": "merge-pipeline",
-    "detail": "PR #212 opened: auth-logout-warning (logout flow with TGX SignOutHint2 warning). Pushed 0ffdc2f (rebased onto 237b260 to resolve DECISIONS.md append-conflict with #205's note). Gates green (fmt, clippy -D warnings, 1151 tests + 1 pre-existing network-env failure, ui check + link). Rebase touched DECISIONS.md only. Merge pipeline owns from here."
+    "slice": "platform-offline-indicator (parity:platform-offline-indicator)",
+    "branch": "parity/platform-offline-indicator",
+    "worktree": "~/workspace/quill-l3-offline-indicator",
+    "phase": "implementing",
+    "pr": null,
+    "handoff": null,
+    "detail": "Phase-4 (remaining areas, coordinator priority). Phase 2 exhausted for loop3: qr-authorize-other BLOCKED (requestQrCodeAuthentication is login-flow-only per td_api.tl:11352 \u2014 no API for a logged-in client to mint login QRs), registration/email/premium are deliberate UnsupportedHalts, multi-account has loops 1+4 on it, everything else is merged/in-PR/in-flight. Scope: render Session::connection (parsed from updateConnectionState, stored at session_apply.rs:66, never rendered) as an offline indicator in the UI + test + README box."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T12:00:00Z",
+   "last_evidence_at": "2026-09-30T12:10:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -228,8 +228,8 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T12:00:00Z",
-   "last_evidence_event": "PR #212 opened",
+   "updated_at": "2026-09-30T12:10:00Z",
+   "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
    "last_merged": null,
    "stale": false,
    "age_seconds": 0
@@ -271,7 +271,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T11:55:37Z",
-   "updated_at": "2026-09-30T11:55:37Z",
+   "updated_at": "2026-09-30T11:58:38Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -315,7 +315,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 100
+   "age_seconds": 220
   }
  ]
 }
