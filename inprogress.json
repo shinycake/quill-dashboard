@@ -10,11 +10,11 @@
   },
   {
    "area": "Auth & accounts",
-   "label": "add another account / switch between accounts (parity:auth-multi-account) \u2014 backend",
+   "label": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/auth-multi-account"
+   "branch": "parity/auth-multi-account-ui"
   },
   {
    "area": "Auth & accounts",
