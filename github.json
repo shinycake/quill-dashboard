@@ -936,7 +936,7 @@
   {
    "number": 192,
    "title": "refactor: split src/telegram/requests.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T02:26:46Z",
+   "updated_at": "2026-09-30T02:54:09Z",
    "html_url": "https://github.com/shinycake/quill/pull/192",
    "head": {
     "ref": "refactor/split-requests"
@@ -945,7 +945,7 @@
   {
    "number": 191,
    "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
-   "updated_at": "2026-09-30T02:51:15Z",
+   "updated_at": "2026-09-30T02:53:53Z",
    "html_url": "https://github.com/shinycake/quill/pull/191",
    "head": {
     "ref": "parity/bots-inline-mode"
@@ -953,6 +953,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/composer-send-keys"
+   },
+   "created_at": "2026-09-30T02:03:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1339,16 +1349,6 @@
     "ref": "refs/heads/parity/community-chatlist-mode"
    },
    "created_at": "2026-09-30T00:23:44Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/groups-info-edit"
-   },
-   "created_at": "2026-09-29T18:17:39Z",
    "actor": {
     "login": "shinycake"
    }
