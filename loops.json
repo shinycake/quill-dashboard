@@ -44,7 +44,7 @@
    "status": "active",
    "updated_at": "2026-09-30T00:28:00Z",
    "stale": false,
-   "age_seconds": 320
+   "age_seconds": 442
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -151,7 +151,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 5933
+   "age_seconds": 6055
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -172,13 +172,13 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T00:24:37Z",
+   "updated_at": "2026-09-30T00:34:34Z",
    "last_evidence_at": "2026-09-29T23:05:00Z",
    "next": {
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 5300
+   "age_seconds": 5422
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -253,7 +253,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 1714
+   "age_seconds": 1836
   }
  ]
 }

@@ -954,6 +954,16 @@
  ],
  "events": [
   {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/remove-check-file-sizes"
+   },
+   "created_at": "2026-09-29T23:32:10Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "PushEvent",
    "payload": {
     "ref": "refs/heads/main"
@@ -1339,16 +1349,6 @@
     "ref": null
    },
    "created_at": "2026-09-29T22:50:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/ephemeral-updates"
-   },
-   "created_at": "2026-09-29T22:40:43Z",
    "actor": {
     "login": "shinycake"
    }
