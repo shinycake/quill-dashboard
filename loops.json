@@ -7,12 +7,12 @@
     "slice": "parity:stories-live-play",
     "branch": "parity/stories-live-play",
     "worktree": "/home/hatch/workspace/quill-l1-live-story",
-    "phase": "gating",
-    "pr": null,
-    "detail": "Committed 5893c45, pushed. Local gates green (fmt/clippy/1282 tests). UI gate running on Mac runner (quill-ui-build-remote). Bug caught+fixed in review: pump intent now keeps the getGroupCall RequestId so early ingests can't lose it."
+    "phase": "pr-open",
+    "pr": 225,
+    "detail": "PR #225 opened (https://github.com/shinycake/quill/pull/225). All gates green: fmt/clippy/1282 tests/Mac UI build (run 36744482229). Handoff: merge-pipeline."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T16:35:00Z",
+   "last_evidence_at": "2026-09-30T16:55:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -238,7 +238,7 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": false,
-   "age_seconds": 257
+   "age_seconds": 368
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -266,7 +266,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 10294
+   "age_seconds": 10405
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -373,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 7894
+   "age_seconds": 8005
   }
  ]
 }

@@ -67,9 +67,9 @@
   {
    "area": "Stories",
    "label": "parity:stories-live-play",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 225,
+   "url": "https://github.com/shinycake/quill/pull/225",
    "branch": "parity/stories-live-play"
   },
   {
