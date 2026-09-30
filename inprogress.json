@@ -58,14 +58,6 @@
   },
   {
    "area": null,
-   "label": "refactor: split src/telegram/requests.rs into one-responsibility modules",
-   "kind": "pr",
-   "pr": 192,
-   "url": "https://github.com/shinycake/quill/pull/192",
-   "branch": "refactor/split-requests"
-  },
-  {
-   "area": null,
    "label": "refactor: split src/ui/mod.rs into one-responsibility modules",
    "kind": "pr",
    "pr": 198,

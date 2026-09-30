@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 192,
+   "title": "refactor: split src/telegram/requests.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T04:57:42Z",
+   "html_url": "https://github.com/shinycake/quill/pull/192",
+   "head": {
+    "ref": "refactor/split-requests"
+   }
+  },
+  {
    "number": 191,
    "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
    "merged_at": "2026-09-30T03:00:08Z",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/stories-2"
    }
-  },
-  {
-   "number": 95,
-   "title": "Story posting composer (postStory + canPostStory)",
-   "merged_at": "2026-09-28T03:01:21Z",
-   "html_url": "https://github.com/shinycake/quill/pull/95",
-   "head": {
-    "ref": "parity/stories-1"
-   }
   }
  ],
  "openPRs": [
@@ -918,7 +918,7 @@
   {
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:49:53Z",
+   "updated_at": "2026-09-30T04:59:13Z",
    "html_url": "https://github.com/shinycake/quill/pull/198",
    "head": {
     "ref": "refactor/split-ui-modrs"
@@ -968,18 +968,39 @@
    "head": {
     "ref": "refactor/split-state"
    }
-  },
-  {
-   "number": 192,
-   "title": "refactor: split src/telegram/requests.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:44:05Z",
-   "html_url": "https://github.com/shinycake/quill/pull/192",
-   "head": {
-    "ref": "refactor/split-requests"
-   }
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T04:59:13Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/loop2-s17-choosing-sticker"
+   },
+   "created_at": "2026-09-29T22:19:36Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T04:57:42Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "DeleteEvent",
    "payload": {
@@ -1349,39 +1370,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "refactor/split-calls-engine"
-   },
-   "created_at": "2026-09-30T03:16:20Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/group-info-edit"
-   },
-   "created_at": "2026-09-29T05:00:41Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T03:10:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "ffd56a11b5fb672df353eefc279eb28be058e4b1",
+   "html_url": "https://github.com/shinycake/quill/commit/ffd56a11b5fb672df353eefc279eb28be058e4b1",
+   "commit": {
+    "message": "refactor: split src/telegram/requests.rs into one-responsibility modules (#192)\n\n* refactor: split src/telegram/requests.rs into one-responsibility modules\n\nPure code motion: 10,555-line requests.rs becomes src/telegram/requests/\nwith 20 domain modules plus 10 test modules. Module path\ncrate::telegram::requests is unchanged; every public path is preserved\nvia re-exports. The only semantic delta is promoting four private helpers\n(send_reply_value, message_topic_value, formatted_caption,\nself_destruct_type_value) to pub(crate) so sibling modules can use them,\nplus per-module use headers and a fixed include_str! path in tests.\n\nAll 344 top-level items and 152 test fns preserved verbatim.\n\n* fix: drop unused serde_json::json import in tests_chat_list.rs (rebase fallout)\n\n---------\n\nCo-authored-by: Muse <muse@local>\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T04:57:41Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "06458a2dc36653fc5b3e6c6467214f2abd6ee377",
    "html_url": "https://github.com/shinycake/quill/commit/06458a2dc36653fc5b3e6c6467214f2abd6ee377",
@@ -1502,20 +1507,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T00:18:44Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
-   "html_url": "https://github.com/shinycake/quill/commit/1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
-   "commit": {
-    "message": "infra: delete check_file_sizes.sh waiver system (#185)\n\n* Delete scripts/check_file_sizes.sh waiver system per Idan: caused merge conflicts, useless during feature dev. File-size enforcement returns properly at the split phase. (ci.yml step removal follows via web \u2014 gh token lacks workflow scope)\n\n* ci: drop deleted check_file_sizes.sh step\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T23:56:13Z"
     }
    },
    "author": {
