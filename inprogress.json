@@ -10,7 +10,7 @@
   },
   {
    "area": "Auth & accounts",
-   "label": "multi-account part 3: settings UI (parity:auth-multi-account)",
+   "label": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
    "kind": "branch",
    "pr": null,
    "url": null,
@@ -26,19 +26,27 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "games: send / play (parity:bots-games, part 1)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/bots-games-send-play"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
    "kind": "pr",
    "pr": 207,
    "url": "https://github.com/shinycake/quill/pull/207",
    "branch": "parity/bots-payment-recurring"
+  },
+  {
+   "area": "Bots, polls & payments",
+   "label": "platform-chat-export (parity:platform-chat-export)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-chat-export"
+  },
+  {
+   "area": "Bots, polls & payments",
+   "label": "rich-text composer max length 32,768 chars (parity:msg-richtext-max-length)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/msg-richtext-max-length"
   },
   {
    "area": "Calls",
