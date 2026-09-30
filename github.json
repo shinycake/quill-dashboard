@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 434,
+  "done": 435,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 212,
+   "title": "Slice auth-logout-warning: log out flow with secret-chats/media warning",
+   "merged_at": "2026-09-30T16:54:29Z",
+   "html_url": "https://github.com/shinycake/quill/pull/212",
+   "head": {
+    "ref": "parity/auth-logout-warning"
+   }
+  },
   {
    "number": 216,
    "title": "Rich text: enforce 32,768-char composer max length",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/calls-screenshare-send-ci2"
    }
-  },
-  {
-   "number": 118,
-   "title": "Payments: invoice rendering, Buy-button checkout, receipts",
-   "merged_at": "2026-09-28T16:57:13Z",
-   "html_url": "https://github.com/shinycake/quill/pull/118",
-   "head": {
-    "ref": "parity/payments-p1"
-   }
   }
  ],
  "openPRs": [
@@ -968,18 +968,19 @@
    "head": {
     "ref": "parity/platform-history-export"
    }
-  },
-  {
-   "number": 212,
-   "title": "Slice auth-logout-warning: log out flow with secret-chats/media warning",
-   "updated_at": "2026-09-30T16:47:26Z",
-   "html_url": "https://github.com/shinycake/quill/pull/212",
-   "head": {
-    "ref": "parity/auth-logout-warning"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T16:54:29Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1369,19 +1370,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T13:57:44Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "68772538f803dab79eb773e3bfe9c7c3215f7a42",
+   "html_url": "https://github.com/shinycake/quill/commit/68772538f803dab79eb773e3bfe9c7c3215f7a42",
+   "commit": {
+    "message": "Slice auth-logout-warning: log out flow with secret-chats/media warning (#212)\n\n* Slice auth-logout-warning: log out flow with secret-chats/media warning\n\nDriver: ConnectDriver::request_logout (Ready-only guard) sends logOut with\nRequestPurpose::LogOut; Session::set_auth handles LoggingOut -> Closed.\nUI: 'Log out' section in the Account dialog between the TTL picker and the\ndelete-account danger zone; inline confirm banner carries the TGX-verified\nSignOutHint2 warning copy. poll_live detects LoggingOut -> Closed and\nrestarts the live connection with the stored credentials so the user lands\non the login screen. Screenshot fixture arms the logout confirm.\n\n* Slice auth-logout-warning fix-up: latch LoggingOut in poll drain, sweep media caches on logout\n\n- D1: poll_live latches saw_logging_out inside the drain loop so a\n  batched LoggingOut -> Closed transition in one poll still triggers\n  the restart; extracted logout_restart_trigger + unit test.\n- D2: restart_live_connection calls sweep_media_caches() after dropping\n  the old client, as the warning copy promises.\n- N2: submit_logout no longer swallows request_logout() errors - a\n  failed send keeps the dialog open with a status note.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T16:54:29Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "d8f29c3de14a3be3c27803697833cd900279bac7",
    "html_url": "https://github.com/shinycake/quill/commit/d8f29c3de14a3be3c27803697833cd900279bac7",
@@ -1502,20 +1507,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T10:42:18Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "f32f95457c471847e43311e4c644aaee2f58a2a2",
-   "html_url": "https://github.com/shinycake/quill/commit/f32f95457c471847e43311e4c644aaee2f58a2a2",
-   "commit": {
-    "message": "Slice bots-games: render, play, send, and high scores for bot games (#205)\n\n* Slice bots-games: render/play/send/high-scores for bot games\n\n- messageGame card in history (thumbnail/title/text/description,\n  Play + Scores); Play reuses the B1 callbackQueryPayloadGame flow\n  (answer URL opens in OS browser)\n- Inline high-score panel via getGameHighScores keyed on current user\n  (toggle; loading/empty/rows states; error surfaces via status note)\n- Bot info panel Games section: games cached per bot from messageGame\n  traffic in the shared upsert_message choke point; Send buttons fire\n  sendMessage+inputMessageGame (only TDLib-delivered short names)\n- Chat-list preview: game emoji + title\n- parity:bots-games README box checked; DECISIONS.md slice note\n- Screenshot: docs/screenshots/ready-game-card.png\n\n* Fix stale answer re-opening a user-closed scores panel; fix gameHighScore int widths in DECISIONS.md\n\n---------\n\nCo-authored-by: Muse <muse@local>\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T10:20:42Z"
     }
    },
    "author": {

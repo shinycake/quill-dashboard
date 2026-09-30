@@ -18,6 +18,7 @@
     "Per-session toggles: accept secret chats / accept calls (schema: toggleSessionCanAcceptSecretChats, toggleSessionCanAcceptCalls; TGX SessionAccepts)",
     "\"Logged in with Telegram\" websites list + disconnect all (TGX WebSessionsTitle, TerminateAllWebSessions)",
     "Log out (telegram/requests.rs:98; state.rs:6502 invalidates account)",
+    "Logout warning text: secret chats die, downloaded media erased (TGX SignOutHint2) (Account dialog \u2192 Log out \u2192 confirm banner with the warning \u2192 logOut \u2192 `authorizationStateLoggingOut \u2192 Closed` \u2192 connection restarts to the login screen)",
     "Delete account with \"Deleted Account\" explainer: \"\ud83d\uddd1\ufe0f Account\" sidebar entry \u2192 kit Dialog with the TGX-verbatim explainer (chats see you as Deleted Account), optional reason field, 2FA password field only when `passwordState.has_password`, inline \"Alright, delete account.\" final confirm; password zeroized and never logged (A7: deleteAccount builder + connect + reducer; A9: UI)",
     "Self-destruct-if-away timer: kit RadioGroup picker with the TGX-verified options (1/3/6/12/18/24 months \u2192 31/91/181/366/546/730 days); current value rendered with TGX's display rule; confirmed days land from the authoritative `ok`, never optimistic (A7: getAccountTtl/setAccountTtl builders + connect + cached days; A9: UI)",
     "Contacts list with empty state (ui/mod.rs:7729 contacts_list; telegram/requests.rs:364 getContacts)",
@@ -50,11 +51,6 @@
     },
     {
      "text": "Premium-purchase-gated login state (partial: explicit UnsupportedHalt, auth.rs:66)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Logout warning text: secret chats die, downloaded media erased (TGX SignOutHint2) (partial: logout works, no warning copy)",
      "blocked": false,
      "reason": null
     },
