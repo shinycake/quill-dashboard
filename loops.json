@@ -86,13 +86,13 @@
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "expandable block quotes (parity:msg-blockquote-expandable)",
-    "branch": "parity/msg-blockquote-expandable",
-    "worktree": "~/workspace/quill-l2-blockquote-expand",
+    "slice": "compact tables in rich messages (parity:msg-richtext-tables)",
+    "branch": "parity/msg-richtext-tables",
+    "worktree": "~/workspace/quill-l2-richtext-tables",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~08:05 CDT right after PR #216 (richtext-max-length) opened. Rendering slice: long block quotes in message history collapse with an expand affordance; authoring already done (parity:msg-quote-block checked). PR #216 phase=in_review, handoff=merge-pipeline, auto-merge armed."
+    "detail": "Slice claimed 2026-09-30 ~10:20 CDT right after PR #223 (expandable block quotes) opened. Rich-message Table blocks exist in the model (src/rich.rs parse/serialize); this slice makes their rendering compact. PR #223 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -190,6 +190,12 @@
      "state": "open",
      "handoff": "merge-pipeline",
      "commit": "502e5de"
+    },
+    "blockquote_expandable": {
+     "number": 223,
+     "state": "open",
+     "handoff": "merge-pipeline",
+     "commit": "afc7e03"
     }
    },
    "status": "active",
@@ -204,7 +210,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T15:15:54Z",
+   "updated_at": "2026-09-30T15:20:12Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -212,7 +218,7 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T13:04:13Z",
+   "last_evidence_at": "2026-09-30T15:20:12Z",
    "blockers": {
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies.",
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built.",
@@ -222,8 +228,8 @@
    "salvaged_findings": {
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
-   "stale": true,
-   "age_seconds": 8153
+   "stale": false,
+   "age_seconds": 279
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -247,11 +253,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T15:15:06Z",
+   "updated_at": "2026-09-30T15:24:50Z",
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 6006
+   "age_seconds": 6291
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -358,7 +364,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 3606
+   "age_seconds": 3891
   }
  ]
 }

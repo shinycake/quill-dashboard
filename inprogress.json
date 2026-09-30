@@ -42,11 +42,11 @@
   },
   {
    "area": "Messaging core",
-   "label": "expandable block quotes (parity:msg-blockquote-expandable)",
+   "label": "compact tables in rich messages (parity:msg-richtext-tables)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/msg-blockquote-expandable"
+   "branch": "parity/msg-richtext-tables"
   },
   {
    "area": "Platform & edge cases",
