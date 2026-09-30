@@ -66,6 +66,14 @@
   },
   {
    "area": "Stories",
+   "label": "Notifications: per-chat story settings",
+   "kind": "pr",
+   "pr": 227,
+   "url": "https://github.com/shinycake/quill/pull/227",
+   "branch": "parity/stories-notify-settings"
+  },
+  {
+   "area": "Stories",
    "label": "parity:stories-live-play",
    "kind": "pr",
    "pr": 225,

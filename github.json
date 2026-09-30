@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 227,
+   "title": "Notifications: per-chat story settings",
+   "updated_at": "2026-09-30T16:55:05Z",
+   "html_url": "https://github.com/shinycake/quill/pull/227",
+   "head": {
+    "ref": "parity/stories-notify-settings"
+   }
+  },
+  {
    "number": 226,
    "title": "Slice msg-richtext-inline-media: inline photos/videos in the rich-text composer",
    "updated_at": "2026-09-30T16:35:14Z",
@@ -971,6 +980,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T16:55:05Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1357,16 +1376,6 @@
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-30T11:48:36Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-language"
-   },
-   "created_at": "2026-09-30T13:57:42Z",
    "actor": {
     "login": "shinycake"
    }
