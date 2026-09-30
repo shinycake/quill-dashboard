@@ -81,7 +81,7 @@
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
    "stale": false,
-   "age_seconds": 204
+   "age_seconds": 318
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 4151
+   "age_seconds": 4265
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -247,11 +247,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T14:04:33Z",
+   "updated_at": "2026-09-30T14:14:32Z",
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 2004
+   "age_seconds": 2118
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -358,7 +358,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 504
+   "age_seconds": 618
   }
  ]
 }

@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 221,
+   "title": "PROBE: ci trigger test (will close)",
+   "merged_at": null,
+   "html_url": "https://github.com/shinycake/quill/pull/221",
+   "head": {
+    "ref": "parity/settings-language-probe"
+   }
+  },
+  {
    "number": 211,
    "title": "Slice settings-language: app language selector",
    "merged_at": null,
@@ -894,27 +903,9 @@
    "head": {
     "ref": "parity/media-shared-gallery-ci2"
    }
-  },
-  {
-   "number": 114,
-   "title": "Loop 1: shared-media gallery panel with per-tab empty states",
-   "merged_at": null,
-   "html_url": "https://github.com/shinycake/quill/pull/114",
-   "head": {
-    "ref": "parity/media-shared-gallery"
-   }
   }
  ],
  "openPRs": [
-  {
-   "number": 221,
-   "title": "PROBE: ci trigger test (will close)",
-   "updated_at": "2026-09-30T14:13:04Z",
-   "html_url": "https://github.com/shinycake/quill/pull/221",
-   "head": {
-    "ref": "parity/settings-language-probe"
-   }
-  },
   {
    "number": 220,
    "title": "Slice settings-language: app language selector",
@@ -971,6 +962,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:13:04Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1357,16 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T12:20:17Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T12:21:29Z",
    "actor": {
     "login": "shinycake"
    }
