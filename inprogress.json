@@ -2,6 +2,14 @@
  "items": [
   {
    "area": "Auth & accounts",
+   "label": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
+   "kind": "pr",
+   "pr": 214,
+   "url": "https://github.com/shinycake/quill/pull/214",
+   "branch": "parity/auth-multi-account"
+  },
+  {
+   "area": "Auth & accounts",
    "label": "add another account / switch between accounts (parity:auth-multi-account) \u2014 backend",
    "kind": "branch",
    "pr": null,
