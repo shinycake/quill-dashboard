@@ -61,18 +61,18 @@
    "updated_at": "2026-09-30T07:55:52Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 4603
+   "age_seconds": 4720
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "ephemeral-command icon in the bot command list (parity:bots-ephemeral-command-icon)",
-    "branch": "parity/bots-ephemeral-command-icon",
-    "worktree": "~/workspace/quill-l2-ephemeral-icon",
+    "slice": "clear payment/shipping info UI (parity:bots-payment-clear)",
+    "branch": "parity/bots-payment-clear-ui",
+    "worktree": "~/workspace/quill-l2-payment-clear",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~01:55 CDT. Schema verified: botCommand.is_ephemeral:Bool exists in pinned TDLib 1.8.67 (schema/td_api.tl:826). Envelope currently DROPS is_ephemeral (src/telegram/envelope/bots.rs:4-5 comment). Work: keep is_ephemeral in typed BotCommand, show ephemeral indicator in the bot command list UI. Implementer dispatched in dedicated worktree from 614e797."
+    "detail": "Slice claimed 2026-09-30 ~03:05 CDT right after PR #201 (ephemeral-command icon) opened. Backend already merged via #159 (deleteSavedOrderInfo + deleteSavedCredentials in src/telegram/requests_payments.rs). This slice adds the user-facing clear action. PR #201 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -143,6 +143,12 @@
      "state": "merged",
      "merged_at": "2026-09-29T21:43:03Z",
      "handoff": "merge-pipeline"
+    },
+    "ephemeral_icon": {
+     "number": 201,
+     "state": "open",
+     "handoff": "merge-pipeline",
+     "commit": "3f8d4c5"
     }
    },
    "status": "active",
@@ -157,7 +163,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T07:55:52Z",
+   "updated_at": "2026-09-30T08:04:23Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -165,9 +171,9 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T06:46:54Z",
-   "stale": true,
-   "age_seconds": 4586
+   "last_evidence_at": "2026-09-30T08:04:23Z",
+   "stale": false,
+   "age_seconds": 54
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -191,10 +197,10 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T07:54:32Z",
+   "updated_at": "2026-09-30T08:04:31Z",
    "last_evidence_event": "slice claimed: media-downloads-pause",
    "stale": true,
-   "age_seconds": 4400
+   "age_seconds": 4517
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -269,7 +275,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 4595
+   "age_seconds": 4712
   }
  ]
 }
