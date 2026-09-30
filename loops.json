@@ -4,16 +4,20 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "platform-history-export (parity:platform-history-export)",
-    "branch": "parity/platform-history-export",
-    "worktree": "~/workspace/quill-l1-chat-export",
+    "slice": "platform-autostart (parity:platform-autostart)",
+    "branch": "parity/platform-autostart",
+    "worktree": "~/workspace/quill-l1-autostart",
     "phase": "claiming",
     "pr": null,
-    "detail": "Chat history export to file -> JSON in Downloads. Checklist tag is parity:platform-history-export (working name platform-chat-export kept in code). Phase-4 lane crossed: phase-2 areas fully exhausted for loop 1. No open PR, no code existed.",
-    "handoff": null
+    "detail": "PR #217 (history-export) open, handed to merge-pipeline. Phase-2 re-surveyed 2026-09-30: all items loop-owned (open PRs #207/#208/#211) or blocked/premature; #204 merged with box checked. Next: autostart on login (OS-level; schema autostart is bot-only). Small, self-contained, testable on this VM.",
+    "handoff": {
+     "pr": 217,
+     "slice": "parity:platform-history-export",
+     "to": "merge-pipeline"
+    }
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T12:25:00Z",
+   "last_evidence_at": "2026-09-30T14:10:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,7 +65,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T13:15:57Z",
+   "updated_at": "2026-09-30T14:10:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -76,8 +80,8 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature.",
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
-   "stale": true,
-   "age_seconds": 3377
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -219,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 1024
+   "age_seconds": 1152
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -247,7 +251,7 @@
    "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 4277
+   "age_seconds": 4405
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -330,7 +334,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 4436
+   "age_seconds": 4564
   }
  ]
 }

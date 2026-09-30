@@ -33,19 +33,19 @@
    "branch": "parity/bots-payment-recurring"
   },
   {
+   "area": "Bots, polls & payments",
+   "label": "platform-autostart (parity:platform-autostart)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-autostart"
+  },
+  {
    "area": "Media",
    "label": "parity:platform-history-export \u2014 chat history export to JSON file",
    "kind": "pr",
    "pr": 217,
    "url": "https://github.com/shinycake/quill/pull/217",
-   "branch": "parity/platform-history-export"
-  },
-  {
-   "area": "Media",
-   "label": "platform-history-export (parity:platform-history-export)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
    "branch": "parity/platform-history-export"
   },
   {
