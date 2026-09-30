@@ -4,17 +4,17 @@
    "blockers": [],
    "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
-    "slice": "echo cancellation / noise suppression toggles (parity:calls-audio-fx)",
-    "branch": "parity/calls-audio-fx",
-    "worktree": "~/workspace/quill-impl-calls-audio-fx",
+    "slice": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
+    "branch": "parity/bots-payment-recurring",
+    "worktree": "~/workspace/quill-impl-payment-recurring",
     "phase": "claimed",
     "pr": null,
     "handoff": null,
-    "detail": "2026-09-30 ~03:30 CDT: claimed after PR #202 opened. Pre-split branch was an empty stub (no code written); rebased onto origin/main 78c3026 (aca5f9d). README: 'Echo cancellation / noise suppression toggles (partial: ntgcalls defaults only, no settings UI)'. Next: research ntgcalls audio-processing API + existing call settings UI surface, then implement toggles."
+    "detail": "2026-09-30 ~03:45 CDT: claimed after parity:calls-audio-fx was researched and recorded BLOCKED (engine hardcodes APM off, no C API; docs pushed to origin/parity/calls-audio-fx, no PR). Phase 1 exhausted for Loop 1 (remaining calls/secret/media items all blocked or at verification boundary); moved to Phase 2 per phase plan. Schema supports it: getStarSubscriptions / editStarSubscription / reuseStarSubscription + starSubscription types in TDLib 1.8.67. Codebase has StarSubscriptionPricing parsing only (chat_invite.rs); no StarSubscription envelope, no subscription requests, no subscriptions UI. Next: envelope + requests + state + Settings UI."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T08:32:00Z",
-   "last_evidence_event": "slice claimed: parity:calls-audio-fx (stub branch rebased onto origin/main)",
+   "last_evidence_at": "2026-09-30T08:45:00Z",
+   "last_evidence_event": "slice claimed: parity:bots-payment-recurring (audio-fx blocked+recorded, Phase 1 exhausted)",
    "last_merged": {
     "name": "composer-send-keys",
     "parity": "420/525 (80.0%)",
@@ -64,10 +64,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:32:00Z",
+   "updated_at": "2026-09-30T08:45:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": false,
-   "age_seconds": 77
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1734
+   "age_seconds": 1855
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -203,11 +203,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:24:30Z",
+   "updated_at": "2026-09-30T08:34:30Z",
    "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 0
+   "age_seconds": 18
   },
   {
    "coordinator": "88f899f5-2c0b-4269-b9b9-0f789eaebdd7",
@@ -281,7 +281,7 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "stale": false,
-   "age_seconds": 51
+   "age_seconds": 172
   }
  ]
 }

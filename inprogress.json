@@ -18,14 +18,6 @@
   },
   {
    "area": "Calls",
-   "label": "echo cancellation / noise suppression toggles (parity:calls-audio-fx)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/calls-audio-fx"
-  },
-  {
-   "area": "Calls",
    "label": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
    "kind": "pr",
    "pr": 202,
@@ -47,6 +39,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
+  },
+  {
+   "area": "Secret chats",
+   "label": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/bots-payment-recurring"
   }
  ]
 }
