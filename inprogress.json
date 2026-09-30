@@ -2,14 +2,6 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "composer-send-keys",
-   "kind": "pr",
-   "pr": 190,
-   "url": "https://github.com/shinycake/quill/pull/190",
-   "branch": "parity/composer-send-keys"
-  },
-  {
-   "area": "Auth & accounts",
    "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
    "kind": "branch",
    "pr": null,
@@ -25,12 +17,12 @@
    "branch": "refactor/split-replay"
   },
   {
-   "area": "Secret chats",
-   "label": "bot inline mode (parity:bots-inline-mode)",
+   "area": null,
+   "label": "refactor: split src/connect.rs into one-responsibility modules",
    "kind": "pr",
-   "pr": 191,
-   "url": "https://github.com/shinycake/quill/pull/191",
-   "branch": "parity/bots-inline-mode"
+   "pr": 196,
+   "url": "https://github.com/shinycake/quill/pull/196",
+   "branch": "refactor/split-connect"
   },
   {
    "area": null,

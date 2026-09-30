@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 196,
+   "title": "refactor: split src/connect.rs into one-responsibility modules",
+   "updated_at": "2026-09-30T03:10:59Z",
+   "html_url": "https://github.com/shinycake/quill/pull/196",
+   "head": {
+    "ref": "refactor/split-connect"
+   }
+  },
+  {
    "number": 195,
    "title": "refactor: split tests/replay.rs into per-area test files",
    "updated_at": "2026-09-30T02:57:41Z",
@@ -944,6 +953,26 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T03:10:59Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-connect"
+   },
+   "created_at": "2026-09-30T03:10:51Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1320,26 +1349,6 @@
     "ref": "refactor/split-ui-modrs"
    },
    "created_at": "2026-09-30T01:52:49Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/composer-send-keys"
-   },
-   "created_at": "2026-09-30T00:56:07Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/infra/auto-merge-default"
-   },
-   "created_at": "2026-09-30T00:53:13Z",
    "actor": {
     "login": "shinycake"
    }
