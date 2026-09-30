@@ -237,8 +237,8 @@
     "cleanup_routine_2026_09_30": "2026-09-30 ~11:20 CDT: Idan's standing cleanup rule recorded \u2014 remove slice worktree when its PR is confirmed merged; keep at most 2 slice worktrees; df /home/hatch check before ANY local build (no build at/above 80%, clean inactive target/ first, stop+report if still >=80%); quill-disk-watch cron every 5 min auto-cleans at >=80%; PAUSE-RECOMMENDED from it means pause all build work. Loop2 cleanup this turn: removed worktrees quill-impl-payment-recurring (#207 merged), quill-l2-inline-mode (#191 merged), quill-l2-richtext-maxlen (#216 merged), quill-l2-blockquote-expand (#223 open \u2014 branch on origin, re-creatable if pipeline needs a fix). Remaining: quill-l2-richtext-tables (#224 open), quill-l2-stories-notify (implementing).",
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
-   "stale": false,
-   "age_seconds": 843
+   "stale": true,
+   "age_seconds": 977
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -266,7 +266,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-ai-tools (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 680
+   "age_seconds": 814
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -373,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 8480
+   "age_seconds": 8614
   }
  ]
 }
