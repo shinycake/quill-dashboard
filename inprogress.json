@@ -35,9 +35,9 @@
   {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 191,
+   "url": "https://github.com/shinycake/quill/pull/191",
    "branch": "parity/bots-inline-mode"
   },
   {
