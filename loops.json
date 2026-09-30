@@ -4,17 +4,17 @@
    "blockers": [],
    "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
-    "slice": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
-    "branch": "parity/calls-swap-prompt",
-    "worktree": "~/workspace/quill-l1-swap",
-    "phase": "pr_open",
-    "pr": 202,
-    "handoff": "merge-pipeline",
-    "detail": "2026-09-30 ~03:25 CDT: PR #202 opened (branch parity/calls-swap-prompt, commit 46c1b5d, rebased onto origin/main 78c3026). Kit Dialog swap prompt: End & answer / Decline; accept queued until active call's discard lands; Esc/backdrop/dismiss declines busy. Gates: fmt/clippy/test green, ui check clean, ready-call-swap screenshot verified. Handed to merge-pipeline; Mac runner ui build dispatched."
+    "slice": "echo cancellation / noise suppression toggles (parity:calls-audio-fx)",
+    "branch": "parity/calls-audio-fx",
+    "worktree": "~/workspace/quill-impl-calls-audio-fx",
+    "phase": "claimed",
+    "pr": null,
+    "handoff": null,
+    "detail": "2026-09-30 ~03:30 CDT: claimed after PR #202 opened. Pre-split branch was an empty stub (no code written); rebased onto origin/main 78c3026 (aca5f9d). README: 'Echo cancellation / noise suppression toggles (partial: ntgcalls defaults only, no settings UI)'. Next: research ntgcalls audio-processing API + existing call settings UI surface, then implement toggles."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T08:27:00Z",
-   "last_evidence_event": "PR #202 opened: parity/calls-swap-prompt",
+   "last_evidence_at": "2026-09-30T08:32:00Z",
+   "last_evidence_event": "slice claimed: parity:calls-audio-fx (stub branch rebased onto origin/main)",
    "last_merged": {
     "name": "composer-send-keys",
     "parity": "420/525 (80.0%)",
@@ -64,10 +64,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:25:53Z",
+   "updated_at": "2026-09-30T08:32:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": false,
-   "age_seconds": 19
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1376
+   "age_seconds": 1495
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -246,7 +246,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T06:46:45Z",
-   "updated_at": "2026-09-30T08:18:39Z",
+   "updated_at": "2026-09-30T08:28:42Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -282,7 +282,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 6034
+   "age_seconds": 6153
   }
  ]
 }

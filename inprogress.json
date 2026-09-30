@@ -18,7 +18,15 @@
   },
   {
    "area": "Calls",
-   "label": "incoming-call-while-busy swap prompt (parity:calls-swap-prompt)",
+   "label": "echo cancellation / noise suppression toggles (parity:calls-audio-fx)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/calls-audio-fx"
+  },
+  {
+   "area": "Calls",
+   "label": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
    "kind": "pr",
    "pr": 202,
    "url": "https://github.com/shinycake/quill/pull/202",
