@@ -17,14 +17,6 @@
    "branch": "parity/settings-notif-exceptions"
   },
   {
-   "area": "Calls",
-   "label": "calls-proxy: Use proxy for calls setting",
-   "kind": "pr",
-   "pr": 188,
-   "url": "https://github.com/shinycake/quill/pull/188",
-   "branch": "parity/calls-proxy"
-  },
-  {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
    "kind": "pr",

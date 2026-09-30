@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 417,
+  "done": 418,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 188,
+   "title": "calls-proxy: Use proxy for calls setting",
+   "merged_at": "2026-09-30T02:14:36Z",
+   "html_url": "https://github.com/shinycake/quill/pull/188",
+   "head": {
+    "ref": "parity/calls-proxy"
+   }
+  },
   {
    "number": 187,
    "title": "Chat list: style settings (two/three lines, media icons, formatted preview)",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/chat-list-3"
    }
-  },
-  {
-   "number": 93,
-   "title": "CL2: chat list part 2 \u2014 pinned reorder, mark-all-read, Saved Messages, archive, chips",
-   "merged_at": "2026-09-27T22:37:18Z",
-   "html_url": "https://github.com/shinycake/quill/pull/93",
-   "head": {
-    "ref": "parity/chat-list-2"
-   }
   }
  ],
  "openPRs": [
@@ -950,18 +950,29 @@
    "head": {
     "ref": "parity/composer-send-keys"
    }
-  },
-  {
-   "number": 188,
-   "title": "calls-proxy: Use proxy for calls setting",
-   "updated_at": "2026-09-30T02:08:59Z",
-   "html_url": "https://github.com/shinycake/quill/pull/188",
-   "head": {
-    "ref": "parity/calls-proxy"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:14:36Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T02:14:37Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1341,29 +1352,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T00:52:35Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/infra/file-size-cap"
-   },
-   "created_at": "2026-09-29T05:26:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "be11b0fff052bdbe20c9f564af324309560fea85",
+   "html_url": "https://github.com/shinycake/quill/commit/be11b0fff052bdbe20c9f564af324309560fea85",
+   "commit": {
+    "message": "parity:calls-proxy \u2014 Use proxy for calls setting (#188)\n\n- CallPrefs.use_proxy_for_calls (default off), persisted in call_prefs.json\n- Settings \u2192 Call settings kit-Switch row via existing pref_row helper\n- New calls::proxy module: SOCKS5-only proxy_for_calls() selection with\n  unit tests pinning the official rule (toggle on + enabled SOCKS5 only)\n- README parity:calls-proxy box checked; DECISIONS.md slice section\n\nResearch: TDLib schema (1.8.67) has no use-proxy-for-calls option \u2014 the\ntoggle is purely client-side; TDLib transports no call media (signaling\nonly). ntgcalls v3.0.0 C API (66 fns, verbatim-verified bindings)\nexposes no proxy configuration, and Quill has no proxy management yet,\nso media routing is blocked at the engine boundary; the selection\nfunction is the seam the proxy-management slice will feed.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T02:14:35Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "71a9f5abf09099390382d6e02cc0f8273da6a74f",
    "html_url": "https://github.com/shinycake/quill/commit/71a9f5abf09099390382d6e02cc0f8273da6a74f",
@@ -1484,20 +1489,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T23:08:20Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "bda430766d48fe555a13caf549a88639b630a5a1",
-   "html_url": "https://github.com/shinycake/quill/commit/bda430766d48fe555a13caf549a88639b630a5a1",
-   "commit": {
-    "message": "ephemeral-updates: apply updateMessageEphemeralContent over time (#179)\n\n* Slice: apply updateMessageEphemeralContent (ephemeral content refreshes over time) [parity:msg-ephemeral-updates]\n\n- envelope: new UpdateMessageEphemeralContent variant + parse arm on the\n  existing parse_payload match (td_api.tl:10424); missing ephemeral_content\n  drops the update (MissingField)\n- state: update_ephemeral on HistoryState + reducer arm mirroring\n  UpdateMessageContent \u2014 replaces the stored ephemeral content in place,\n  refreshes chat.last_preview when it is the last message (ephemeral wins\n  via effective_content)\n- tests: parse test (envelope) + reducer test (synthetic update through\n  apply_json asserts stored content and preview)\n- README: parity:msg-ephemeral-updates checked\n- Waiver bumps (exact, post-fmt): state.rs 21654->21754, envelope.rs\n  18600->18649 \u2014 type-coherent extensions only (new enum variant, new\n  match arms on existing matches, new method on existing type)\n\n* ephemeral-updates: review fixups \u2014 move tests to tests/ephemeral_updates.rs, shrink waivers to type-coherent deltas\n\n- tests: both slice tests moved out of the waived files into\n  tests/ephemeral_updates.rs, driven through public APIs only (per the\n  tests/sticker_dynamic_order.rs template); the in-module test fns in\n  src/state.rs and src/telegram/envelope.rs are deleted\n- waivers: exact post-fmt type-coherent deltas \u2014 state.rs 21654->21701\n  (+47: update_ephemeral method + reducer match arm), envelope.rs\n  18600->18615 (+15: UpdateMessageEphemeralContent variant + parse arm);\n  comment fixed, test-growth justification dropped\n- parity 404/525 (77.0%) \u2014 README has 404 checked boxes; the previous\n  commit's 406/525 was a miscount, not repeated here\n\n* Merge-pipeline: rebase post-#178; exact waiver baselines\n\n* Merge-pipeline: add ephemeral-updates DECISIONS.md section\n\n* Merge-pipeline: fix null ephemeral_content semantics (review finding)\n\nSchema-legal explicit null clears the stored ephemeral content instead of\ndropping the update as MissingField. Variant field -> Option, parse arm\ndistinguishes present-null (None) from missing/mistyped (MissingField),\nupdate_ephemeral takes Option and assigns. Null-case test added.\n\nExact waiver bumps (type-coherent): state.rs 21768->21773 (+5),\nenvelope.rs 18619->18633 (+14).\n\n* Merge-pipeline: DECISIONS.md reflects final +52/+29 deltas and null semantics\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T22:50:32Z"
     }
    },
    "author": {

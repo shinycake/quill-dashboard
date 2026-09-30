@@ -471,6 +471,7 @@
     "Confirm before calling setting (persisted per-account call_prefs.json; gates startCall)",
     "\"Who can call me\" privacy setting (getUserPrivacySettingRules / setUserPrivacySettingRules)",
     "Peer-to-peer call relay toggle (getUserPrivacySettingRules / setUserPrivacySettingRules)",
+    "Use proxy for calls setting (persisted per-account call_prefs.json; client-side toggle \u2014 the TDLib schema has no such option; SOCKS5-only proxy selection for call media wired to the extent the ntgcalls C API allows)",
     "Start video call with working video (video negotiated when a camera exists via `video_wanted`; peer frames flow through the engine callbacks to the video stage \u2014 verified in code + screenshot; real camera/peer still unverified)",
     "Camera preview (local video tile) in video call (renders latest driver frame as a 160x120 PiP; \"Starting camera\u2026\" / \"Camera off\" states when no frame)",
     "Remote video frames in video call (peer camera as the main tile; Connecting/paused/off state text from `RemoteVideoState`)",
@@ -511,11 +512,6 @@
     },
     {
      "text": "Less data for calls setting (partial: persisted in call_prefs.json, but the native call engine exposes no data-saving API)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Use proxy for calls setting",
      "blocked": false,
      "reason": null
     },
