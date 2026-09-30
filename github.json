@@ -936,7 +936,7 @@
   {
    "number": 188,
    "title": "calls-proxy: Use proxy for calls setting",
-   "updated_at": "2026-09-30T00:52:57Z",
+   "updated_at": "2026-09-30T02:08:59Z",
    "html_url": "https://github.com/shinycake/quill/pull/188",
    "head": {
     "ref": "parity/calls-proxy"
