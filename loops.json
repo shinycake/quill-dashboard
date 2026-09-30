@@ -62,7 +62,7 @@
    "status": "standby-split",
    "updated_at": "2026-09-30T03:10:00Z",
    "stale": false,
-   "age_seconds": 78
+   "age_seconds": 203
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -162,17 +162,17 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T03:05:52Z",
+   "updated_at": "2026-09-30T03:10:00Z",
    "last_merge": {
-    "pr": 178,
-    "slice": "S17 choosing-a-sticker chat action",
-    "merged_at": "2026-09-29T22:26:17Z",
-    "commit": "fdc7ea73",
-    "parity": "409/525 (77.9%)"
+    "pr": 191,
+    "slice": "bots inline mode (parity:bots-inline-mode)",
+    "merged_at": "2026-09-30T03:00:08Z",
+    "commit": "9a58ae2",
+    "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-29T22:54:27Z",
-   "stale": true,
-   "age_seconds": 15411
+   "last_evidence_at": "2026-09-30T03:10:00Z",
+   "stale": false,
+   "age_seconds": 203
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -198,7 +198,7 @@
    "status": "active",
    "updated_at": "2026-09-30T03:04:32Z",
    "stale": true,
-   "age_seconds": 3101
+   "age_seconds": 3226
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -273,7 +273,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 7038
+   "age_seconds": 7163
   }
  ]
 }
