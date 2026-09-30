@@ -2,14 +2,6 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
-   "kind": "pr",
-   "pr": 214,
-   "url": "https://github.com/shinycake/quill/pull/214",
-   "branch": "parity/auth-multi-account"
-  },
-  {
-   "area": "Auth & accounts",
    "label": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
    "kind": "branch",
    "pr": null,
@@ -55,6 +47,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/msg-blockquote-expandable"
+  },
+  {
+   "area": "Platform & edge cases",
+   "label": "Slice platform-offline-indicator: render connection state as offline indicator",
+   "kind": "pr",
+   "pr": 218,
+   "url": "https://github.com/shinycake/quill/pull/218",
+   "branch": "parity/platform-offline-indicator"
   },
   {
    "area": "Secret chats",

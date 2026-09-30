@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 214,
+   "title": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
+   "merged_at": "2026-09-30T13:32:05Z",
+   "html_url": "https://github.com/shinycake/quill/pull/214",
+   "head": {
+    "ref": "parity/auth-multi-account"
+   }
+  },
+  {
    "number": 207,
    "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
    "merged_at": "2026-09-30T13:27:03Z",
@@ -894,22 +903,22 @@
    "head": {
     "ref": "parity/polls-manage"
    }
-  },
-  {
-   "number": 111,
-   "title": "Slice A4: connected websites + per-session secret-chat/call toggles",
-   "merged_at": "2026-09-28T14:16:36Z",
-   "html_url": "https://github.com/shinycake/quill/pull/111",
-   "head": {
-    "ref": "parity/auth-websessions-1"
-   }
   }
  ],
  "openPRs": [
   {
+   "number": 218,
+   "title": "Slice platform-offline-indicator: render connection state as offline indicator",
+   "updated_at": "2026-09-30T13:33:13Z",
+   "html_url": "https://github.com/shinycake/quill/pull/218",
+   "head": {
+    "ref": "parity/platform-offline-indicator"
+   }
+  },
+  {
    "number": 217,
    "title": "parity:platform-history-export \u2014 chat history export to JSON file",
-   "updated_at": "2026-09-30T13:21:33Z",
+   "updated_at": "2026-09-30T13:33:12Z",
    "html_url": "https://github.com/shinycake/quill/pull/217",
    "head": {
     "ref": "parity/platform-history-export"
@@ -922,15 +931,6 @@
    "html_url": "https://github.com/shinycake/quill/pull/216",
    "head": {
     "ref": "parity/msg-richtext-max-length"
-   }
-  },
-  {
-   "number": 214,
-   "title": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
-   "updated_at": "2026-09-30T13:27:27Z",
-   "html_url": "https://github.com/shinycake/quill/pull/214",
-   "head": {
-    "ref": "parity/auth-multi-account"
    }
   },
   {
@@ -962,6 +962,46 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:33:13Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:33:11Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/security/gitleaks-ci"
+   },
+   "created_at": "2026-09-29T12:39:27Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:32:05Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1321,49 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T13:10:56Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/bots-games"
-   },
-   "created_at": "2026-09-30T09:36:25Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/bots-payment-clear-ui"
-   },
-   "created_at": "2026-09-30T09:13:41Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T10:57:12Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "d37d03126dd577395392feecdd65f5701fd9fdca",
+   "html_url": "https://github.com/shinycake/quill/commit/d37d03126dd577395392feecdd65f5701fd9fdca",
+   "commit": {
+    "message": "auth: multi-account backend \u2014 registry, add/remove, active account (parity:auth-multi-account) (#214)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T13:32:05Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "412ec80dda84ad0a18651a65cf19858736f7d7fa",
    "html_url": "https://github.com/shinycake/quill/commit/412ec80dda84ad0a18651a65cf19858736f7d7fa",
@@ -1484,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T08:17:14Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
-   "html_url": "https://github.com/shinycake/quill/commit/614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
-   "commit": {
-    "message": "infra: Quill Conductor workflows (shadow mode, read-only) (#200)\n\n* infra: add quill-conductor.yml (shadow mode)\n\n* infra: add .github/workflows/quill-worker.yml (shadow mode)\n\n* infra: add .github/workflows/quill-publisher.yml (shadow mode)\n\n* infra: add .github/workflows/quill-notify.yml (shadow mode)\n\n* infra: add .github/scripts/quill-shadow-projection.sh (shadow mode)",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T06:44:05Z"
     }
    },
    "author": {
