@@ -947,6 +947,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/parity/loop2-s12-sticker-suggest"
+   },
+   "created_at": "2026-09-29T17:55:40Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/parity/settings-reaction-notif"
    },
    "created_at": "2026-09-29T23:58:15Z",
@@ -1330,16 +1340,6 @@
     "ref": "refs/heads/parity/remove-check-file-sizes"
    },
    "created_at": "2026-09-29T23:38:30Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T04:10:50Z",
    "actor": {
     "login": "shinycake"
    }
