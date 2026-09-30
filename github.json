@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 428,
+  "done": 429,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 210,
+   "title": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
+   "merged_at": "2026-09-30T13:15:39Z",
+   "html_url": "https://github.com/shinycake/quill/pull/210",
+   "head": {
+    "ref": "parity/calls-less-data"
+   }
+  },
   {
    "number": 215,
    "title": "parity:auth-multi-account part 2 \u2014 startup wiring + switch backend",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/stories-4"
    }
-  },
-  {
-   "number": 105,
-   "title": "S4/Loop 2: story viewers list, report story, stealth mode (Phase 9.5)",
-   "merged_at": null,
-   "html_url": "https://github.com/shinycake/quill/pull/105",
-   "head": {
-    "ref": "parity/stories-4"
-   }
   }
  ],
  "openPRs": [
@@ -943,18 +943,9 @@
    }
   },
   {
-   "number": 210,
-   "title": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
-   "updated_at": "2026-09-30T11:53:30Z",
-   "html_url": "https://github.com/shinycake/quill/pull/210",
-   "head": {
-    "ref": "parity/calls-less-data"
-   }
-  },
-  {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
-   "updated_at": "2026-09-30T13:13:31Z",
+   "updated_at": "2026-09-30T13:15:18Z",
    "html_url": "https://github.com/shinycake/quill/pull/208",
    "head": {
     "ref": "parity/settings-reset-notif"
@@ -971,6 +962,36 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:15:39Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T13:15:40Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:15:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1340,39 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:58:49Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:56:43Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:50:46Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "9a36c27e0fc052df9d84094b980e751bf91c4b02",
+   "html_url": "https://github.com/shinycake/quill/commit/9a36c27e0fc052df9d84094b980e751bf91c4b02",
+   "commit": {
+    "message": "test: driver coverage for less-data-for-calls toggle (parity:calls-less-data) (#210)\n\nThe feature shipped in slice S4 (real TDLib autoDownloadSettings.use_less_data_for_calls\npushed per network via setAutoDownloadSettings, one toggle in Call settings driving all\nthree networks). This slice adds the missing driver-level test: unseeded prefs are refused,\nseeded prefs push setAutoDownloadSettings with use_less_data_for_calls for all three\nnetworks. Checks the stale README box.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T13:15:38Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "237b2609306d3461ddf85460db66a43317da683c",
    "html_url": "https://github.com/shinycake/quill/commit/237b2609306d3461ddf85460db66a43317da683c",
@@ -1493,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T06:38:06Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
-   "html_url": "https://github.com/shinycake/quill/commit/f7e1d30b8db0fa55918fc5816aa966b65618c2e4",
-   "commit": {
-    "message": "refactor: split src/connect.rs into one-responsibility modules (#196)\n\nPure code motion, no behavior change. 24,983 lines -> 25 modules,\nall under 2,000 lines. Public paths preserved via re-exports.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T06:01:00Z"
     }
    },
    "author": {

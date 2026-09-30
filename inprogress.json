@@ -33,14 +33,6 @@
    "branch": "parity/bots-payment-recurring"
   },
   {
-   "area": "Calls",
-   "label": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
-   "kind": "pr",
-   "pr": 210,
-   "url": "https://github.com/shinycake/quill/pull/210",
-   "branch": "parity/calls-less-data"
-  },
-  {
    "area": "Media",
    "label": "platform-history-export (parity:platform-history-export)",
    "kind": "branch",
