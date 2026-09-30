@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 189,
+   "title": "ci: enable auto-merge (squash) on new PRs by default",
+   "updated_at": "2026-09-30T00:45:51Z",
+   "html_url": "https://github.com/shinycake/quill/pull/189",
+   "head": {
+    "ref": "infra/auto-merge-default"
+   }
+  },
+  {
    "number": 188,
    "title": "calls-proxy: Use proxy for calls setting",
    "updated_at": "2026-09-30T00:26:27Z",
@@ -944,6 +953,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:45:51Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1330,16 +1349,6 @@
     "ref": null
    },
    "created_at": "2026-09-29T22:53:56Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/communities-ui"
-   },
-   "created_at": "2026-09-29T21:58:26Z",
    "actor": {
     "login": "shinycake"
    }

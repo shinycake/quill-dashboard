@@ -47,6 +47,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
+  },
+  {
+   "area": null,
+   "label": "ci: enable auto-merge (squash) on new PRs by default",
+   "kind": "pr",
+   "pr": 189,
+   "url": "https://github.com/shinycake/quill/pull/189",
+   "branch": "infra/auto-merge-default"
   }
  ]
 }
