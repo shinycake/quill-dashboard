@@ -74,6 +74,14 @@
   },
   {
    "area": "Settings",
+   "label": "PROBE: ci trigger test (will close)",
+   "kind": "pr",
+   "pr": 221,
+   "url": "https://github.com/shinycake/quill/pull/221",
+   "branch": "parity/settings-language-probe"
+  },
+  {
+   "area": "Settings",
    "label": "Slice settings-language: app language selector",
    "kind": "pr",
    "pr": 220,
