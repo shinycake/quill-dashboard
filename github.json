@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 200,
+   "title": "infra: Quill Conductor workflows (shadow mode, read-only)",
+   "updated_at": "2026-09-30T04:51:51Z",
+   "html_url": "https://github.com/shinycake/quill/pull/200",
+   "head": {
+    "ref": "infra/quill-conductor-shadow"
+   }
+  },
+  {
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
    "updated_at": "2026-09-30T04:49:53Z",
@@ -971,6 +980,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T04:51:51Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1357,16 +1376,6 @@
     "ref": "refs/heads/refactor/split-connect"
    },
    "created_at": "2026-09-30T03:10:51Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T03:05:45Z",
    "actor": {
     "login": "shinycake"
    }

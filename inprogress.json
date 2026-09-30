@@ -26,6 +26,14 @@
   },
   {
    "area": null,
+   "label": "infra: Quill Conductor workflows (shadow mode, read-only)",
+   "kind": "pr",
+   "pr": 200,
+   "url": "https://github.com/shinycake/quill/pull/200",
+   "branch": "infra/quill-conductor-shadow"
+  },
+  {
+   "area": null,
    "label": "refactor: split src/connect.rs into one-responsibility modules",
    "kind": "pr",
    "pr": 196,
