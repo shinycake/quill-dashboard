@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 1997
+   "age_seconds": 2119
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 2169
+   "age_seconds": 2291
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -228,11 +228,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T12:04:29Z",
+   "updated_at": "2026-09-30T12:14:30Z",
    "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 197
+   "age_seconds": 319
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -315,7 +315,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 356
+   "age_seconds": 478
   }
  ]
 }
