@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 194,
+   "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T05:55:59Z",
+   "html_url": "https://github.com/shinycake/quill/pull/194",
+   "head": {
+    "ref": "refactor/split-envelope"
+   }
+  },
+  {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
    "merged_at": "2026-09-30T05:48:40Z",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/media-4"
    }
-  },
-  {
-   "number": 99,
-   "title": "B1: bot keyboards \u2014 inline buttons, custom keyboards, force-reply",
-   "merged_at": "2026-09-28T03:58:24Z",
-   "html_url": "https://github.com/shinycake/quill/pull/99",
-   "head": {
-    "ref": "parity/bots-keyboards"
-   }
   }
  ],
  "openPRs": [
@@ -950,18 +950,19 @@
    "head": {
     "ref": "refactor/split-replay"
    }
-  },
-  {
-   "number": 194,
-   "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T05:49:38Z",
-   "html_url": "https://github.com/shinycake/quill/pull/194",
-   "head": {
-    "ref": "refactor/split-envelope"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T05:56:00Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1143,9 +1144,9 @@
    }
   },
   {
-   "type": "DeleteEvent",
+   "type": "PushEvent",
    "payload": {
-    "ref": "parity/remove-check-file-sizes"
+    "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1153,9 +1154,9 @@
    }
   },
   {
-   "type": "PushEvent",
+   "type": "DeleteEvent",
    "payload": {
-    "ref": "refs/heads/main"
+    "ref": "parity/remove-check-file-sizes"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1351,19 +1352,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "IssuesEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:33:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
+   "html_url": "https://github.com/shinycake/quill/commit/e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
+   "commit": {
+    "message": "refactor: split src/telegram/envelope.rs into one-responsibility modules (#194)\n\nPure code motion, no behavior change. 18,837 lines -> 49 modules\n(src/telegram/envelope/mod.rs declares modules and re-exports only).\nLargest module payload.rs is 1,902 lines (single match dispatcher, under\nthe 2,000 cap). All 191 public items keep their paths. Gates green:\ncargo fmt, clippy --all-targets -D warnings, cargo test (1126 passed).\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T05:55:58Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "e1291cc84d9388e0edcc2d9b791844b74aabd13c",
    "html_url": "https://github.com/shinycake/quill/commit/e1291cc84d9388e0edcc2d9b791844b74aabd13c",
@@ -1484,20 +1489,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T00:51:28Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "dcdcd5dfa1f223a474aff654ccebafb997525165",
-   "html_url": "https://github.com/shinycake/quill/commit/dcdcd5dfa1f223a474aff654ccebafb997525165",
-   "commit": {
-    "message": "communities-chatlist-mode: view a community's chats as a filtered chat list (#182)\n\n* Communities: community chat-list mode (parity:communities-chatlist-mode)\n\nSelecting a community's \"View chats\" in the communities hub filters the\nmain chat list to that community's chats. Membership is derived from the\ncached communityFullInfo.chats pack (state keeps no per-chat\ncommunity_id); updateCommunityFullInfo replaces the pack wholesale, so\nmembership changes update the list on the next render. Hidden chats\n(is_hidden) stay included: the mode only narrows the already-visible main\nlist and the hub lists owned communities.\n\nUI: kit Button \"View chats\" per hub row; mode banner (community name +\nclear X) under the folder tabs; empty state for communities with no chats\nand a Loading state while the full-info pack hasn't landed. The mode exits\nvia the banner X or by selecting a folder tab / Unread / Archived.\n\nWaiver bump (rule 2026-09-29): src/ui/mod.rs 49090 -> 49217 (+127), exact.\nType-coherent extensions only: ChatListFilter::Community(i64) variant, a\nnew arm on the existing chat-list empty-state chain, and five QuillApp\nmethods (enter/exit_community_chat_list_mode, community_mode_banner,\nfolder_tabs_with_community_banner, retain_community_chats) + 1 import +\n2 call-site glue lines. The pure filter logic lives in the new named\nmodule src/community_mode.rs (not in the waived file); the hub button in\nsrc/ui/dialogs/community.rs; tests in tests/community_chatlist_mode.rs.\n\n* Merge-pipeline: rebase post-#181; union DECISIONS.md section (file-size gate deleted per Idan 2026-09-29)\n\n* Merge-pipeline: cargo fmt fixup for post-rebase tree\n\n* Review fixup: collapse duplicated community filter predicate into single tested retain_community_chats\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T00:37:41Z"
     }
    },
    "author": {

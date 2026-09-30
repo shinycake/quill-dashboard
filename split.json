@@ -19,7 +19,7 @@
   {
    "path": "src/telegram/envelope.rs",
    "original": 17953,
-   "current": 18849
+   "current": null
   },
   {
    "path": "src/telegram/requests.rs",
