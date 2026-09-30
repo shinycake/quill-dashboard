@@ -5,17 +5,17 @@
    "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
     "branch": "parity/composer-send-keys",
-    "commit": "8cc5489",
-    "detail": "composer-send-keys: client-side SendKeyMode (Enter vs Ctrl/Cmd+Enter), persisted to chat_prefs.json. All 8 chat composer Enter handlers route through the policy; IME never sends in either mode; kit RadioGroup in Settings -> Appearance ('Send messages with'). Recovery-code form keeps plain-Enter submit. Gates: cargo fmt \u2713, clippy -D warnings \u2713, cargo test \u2713 (1120 unit + 8 new integration tests). Mac UI build dispatched (run 36652696259 failed on checkout ref \u2014 re-dispatched with branch name).",
-    "handoff": null,
-    "phase": "gating",
-    "pr": null,
+    "commit": "8cc548983787dd3adbb5df03185c8f830f887cbf",
+    "detail": "composer-send-keys: client-side SendKeyMode (Enter vs Ctrl/Cmd+Enter), persisted to chat_prefs.json. All 8 chat-composer Enter handlers in src/ui/mod.rs route through should_send_on_enter(event, mode); IME never sends in either mode; kit RadioGroup in Settings -> Appearance ('Send messages with'). 2FA recovery-code form keeps plain-Enter submit. Tests: tests/composer_send_keys.rs (8 integration tests: policy matrix both modes, IME, prefs roundtrip/missing-file). Gates ALL GREEN on pushed head: cargo fmt \u2713, cargo clippy -D warnings \u2713, cargo test \u2713 (1120 unit + 8 new), Mac UI build success (run 36652841253 on this branch; first dispatch failed on checkout ref, re-dispatched with branch name). README boxes parity:settings-enter-send + parity:settings-ctrlenter-send checked. PR #190 opened 2026-09-29 ~20:10 CDT; handoff to merge-pipeline (auto-merge armed by pipeline). NOT rebased onto latest origin/main \u2014 pipeline owns rebase (strict mode). Branch fully pushed; worktree clean.",
+    "handoff": "merge-pipeline",
+    "phase": "in_review",
+    "pr": 190,
     "slice": "composer-send-keys",
     "worktree": "~/workspace/quill-l1-sendkeys"
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T01:05:00Z",
-   "last_evidence_event": "composer-send-keys implemented and gated locally (fmt/clippy/test green); commit 8cc5489 pushed to origin/parity/composer-send-keys",
+   "last_evidence_at": "2026-09-30T01:10:00Z",
+   "last_evidence_event": "PR #190 opened for composer-send-keys (all gates green, Mac UI build success); slice clean-stopped per split-phase order",
    "last_merged": {
     "name": "community service message rows",
     "parity": "398/525 (75.8%)",
@@ -29,30 +29,36 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "loop": 1,
-   "notes": "2026-09-29 ~19:28 CDT: previous coordinator (990383e7) went dark; watchdog restarted Loop 1 with new coordinator. chatlist-list-style holding-pr \u2192 rebased, gated, PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining items all blocked/partial-unimplementable (swap-prompt: no hold/swap API; less-data: no engine API; proxy: no proxy infra in Quill + no ntgcalls proxy API; audio-fx: no engine API; video-tiles/group-screen-share: unverifiable on VM); groups remaining: 3 blocked (no TDLib method, verified) + 1 in PR #182. Per NEVER REST, moving to phase-2 areas next. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
+   "notes": "STANDING ORDER 2026-09-29 ~20:07 CDT (Idan): phase is now SPLIT \u2014 no new feature slices; Loop 1 standing by for src/ui/mod.rs extraction-chunk assignment from the split coordinator. | Previous: 2026-09-29 ~19:28 CDT watchdog restarted Loop 1; chatlist-list-style \u2192 PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining all blocked/partial-unimplementable; groups remaining: 3 blocked + 1 in PR #182. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
    "open_prs": [
     {
      "branch": "parity/chatlist-list-style",
      "pr": 187,
      "slice": "chatlist-list-style",
      "status": "in_review, handoff merge-pipeline"
+    },
+    {
+     "branch": "parity/composer-send-keys",
+     "pr": 190,
+     "slice": "composer-send-keys",
+     "status": "in_review, handoff merge-pipeline"
     }
    ],
-   "parity": "412/525 = 78.5%",
+   "parity": "415/525 = 79.0%",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
     "pr": 142,
     "status": "merged"
    },
    "standing_rules": {
-    "never_rest": "2026-09-29 ~19:02 CDT \u2014 always have a slice in flight, no holding-pr/landing-duty/standby ever",
+    "never_rest": "2026-09-29 ~19:02 CDT \u2014 SUPERSEDED during split phase: no new feature slices per Idan 2026-09-29 ~20:07 CDT",
     "pr_cap": "REMOVED 2026-09-29 ~19:01 CDT \u2014 no cap on open PRs",
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
-   "status": "active",
-   "updated_at": "2026-09-30T01:05:56Z",
+   "status": "standby-split",
+   "updated_at": "2026-09-30T01:10:00Z",
    "stale": false,
-   "age_seconds": 265
+   "age_seconds": 79
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -159,7 +165,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 8098
+   "age_seconds": 8212
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -186,7 +192,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 1076
+   "age_seconds": 1190
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -197,7 +203,7 @@
     "phase": "split-stop",
     "pr": null,
     "handoff": null,
-    "detail": "STOPPED for split phase per Idan 2026-09-29 ~20:07 CDT (phase.json: split; auto-merge workflow PR #189 merged). No new feature slices. Implementer ordered to commit-as-is, push branch, and report exact state; awaiting its report to finalize branch SHA / done-vs-remaining. No PR unless all gates were green on the pushed head."
+    "detail": "SPLIT-PHASE STOP complete. Implementer committed worktree as-is and pushed branch parity/settings-notif-exceptions as 1d2bed1b991a8dfb4506edd4816618ed07d69605 (origin, 2026-09-30T01:14Z). NO PR opened: fmt/clippy(-D warnings)/tests all green on the pushed head, but the Mac UI build (cargo build --features ui) never ran, so the PR gate set was incomplete. Implemented: requests.rs get_chat_notification_settings_exceptions builder; state.rs RequestPurpose::GetChatNotificationSettingsExceptions + Session::notification_exceptions (+loading set) + local_notification_exceptions helper + Chats-arm correlation via pending.scope + updateChatNotificationSettings prune/invalidate + error-arm cleanup + 4 new tests (all passing); connect.rs maybe_fetch_notification_exceptions + reset_chat_notification_settings; ui/mod.rs per-scope Exceptions row (count/Loading\u2026) + expandable exceptions sub-view with per-chat Reset to default + fetch on dialog open + demo fixture answering through the real correlation path; README parity:settings-notif-exceptions checked. Remains: Mac-runner UI build + PR creation; reviewer pass; rebase onto origin/main at PR time (pushed head is on 1e62510). Worktree clean; branch parked for split phase."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -224,8 +230,8 @@
     "detail": "PR #186 MERGED. New types ReactionNotificationSource/Settings in envelope.rs, set_reaction_notification_settings builder, driver send, Session.reaction_notification_settings tracked from updateReactionNotificationSettings, Reactions section + per-scope story switches in Notification defaults dialog."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T01:09:02Z",
-   "updated_at": "2026-09-30T01:09:02Z",
+   "last_evidence_at": "2026-09-30T01:14:00Z",
+   "updated_at": "2026-09-30T01:14:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -261,7 +267,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": false,
-   "age_seconds": 23
+   "age_seconds": 0
   }
  ]
 }

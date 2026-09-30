@@ -1,6 +1,22 @@
 {
  "items": [
   {
+   "area": "Auth & accounts",
+   "label": "composer-send-keys",
+   "kind": "pr",
+   "pr": 190,
+   "url": "https://github.com/shinycake/quill/pull/190",
+   "branch": "parity/composer-send-keys"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-notif-exceptions"
+  },
+  {
    "area": "Calls",
    "label": "calls-proxy: Use proxy for calls setting",
    "kind": "pr",
@@ -31,22 +47,6 @@
    "pr": 184,
    "url": "https://github.com/shinycake/quill/pull/184",
    "branch": "parity/settings-mentions-pinned"
-  },
-  {
-   "area": "Settings",
-   "label": "composer-send-keys",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/composer-send-keys"
-  },
-  {
-   "area": "Settings",
-   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/settings-notif-exceptions"
   }
  ]
 }
