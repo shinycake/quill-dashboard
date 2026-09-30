@@ -992,6 +992,16 @@
   {
    "type": "CreateEvent",
    "payload": {
+    "ref": "parity/settings-privacy"
+   },
+   "created_at": "2026-09-29T15:03:41Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
     "ref": "parity/groups-info-edit"
    },
    "created_at": "2026-09-29T15:03:13Z",
@@ -1365,16 +1375,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T14:10:04Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T14:08:33Z",
    "actor": {
     "login": "shinycake"
    }
