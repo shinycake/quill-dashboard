@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 2898
+   "age_seconds": 3016
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 970
+   "age_seconds": 1088
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -228,22 +228,22 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T11:44:48Z",
+   "updated_at": "2026-09-30T11:54:29Z",
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 7398
+   "age_seconds": 7516
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
    "current": {
-    "slice": "app language selector (parity:settings-language)",
-    "branch": "parity/settings-language",
-    "worktree": "~/workspace/quill-l4-language",
+    "slice": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
+    "branch": "parity/auth-qr-authorize-other",
+    "worktree": "~/workspace/quill-l4-qr-authorize",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Claimed 2026-09-30 ~10:15 UTC; verified unclaimed (no open PR, loops 1-3 on other slices). system_language_code currently hardcoded."
+    "detail": "Claimed 2026-09-30 ~11:35 UTC; verified unclaimed (no open PR, loops 1-3 on other slices). Starts with concept-level schema search: does TDLib expose QR-based linking of ANOTHER device?"
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -257,21 +257,21 @@
     "branch": null,
     "worktree": null,
     "phase": "unclaimed",
-    "detail": "Pick next settings/auth/accounts gap after language PR opens."
+    "detail": "Pick next settings/auth/accounts gap after qr-authorize PR opens (or after blocked verdict)."
    },
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "slice": "in-app notification sounds toggle (parity:settings-inapp-sound)",
-    "branch": "parity/settings-inapp-sound",
-    "worktree": "/home/hatch/workspace/quill-l4-inapp-sound",
+    "slice": "app language selector (parity:settings-language)",
+    "branch": "parity/settings-language",
+    "worktree": "/home/hatch/workspace/quill-l4-language",
     "phase": "in_review",
-    "pr": 209,
-    "detail": "PR #209 opened 2026-09-30 ~10:15 UTC. Gates: fmt/clippy clean, tests all green (incl. new toggle test), cargo check --features ui clean (7m12s); full link skipped (one kit Switch, check type-checked it; Mac runner offline). Based on origin/main e3d65f3, 0 conflicts. Handed to merge-pipeline. Note: added Preferences load/save (did not exist); hide_notification_previews mirror still hardcoded true (pre-existing, untouched)."
+    "pr": 211,
+    "detail": "PR #211 opened 2026-09-30 ~11:35 UTC. Implementer died on infra error (sqlx pool timeout) with work done but uncommitted; coordinator finished it: ran fmt/clippy/tests green, UI check caught E0282 type-inference error in the new section (fixed: explicit &usize event type), committed e0c5594, pushed, opened PR. Full link skipped (kit RadioGroup only; Mac runner offline). Based on origin/main e3d65f3, 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T10:12:08Z",
-   "updated_at": "2026-09-30T11:48:44Z",
+   "last_evidence_at": "2026-09-30T11:53:51Z",
+   "updated_at": "2026-09-30T11:53:51Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -306,8 +306,8 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
-   "stale": true,
-   "age_seconds": 6070
+   "stale": false,
+   "age_seconds": 85
   }
  ]
 }

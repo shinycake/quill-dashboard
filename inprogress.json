@@ -2,6 +2,14 @@
  "items": [
   {
    "area": "Auth & accounts",
+   "label": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/auth-qr-authorize-other"
+  },
+  {
+   "area": "Auth & accounts",
    "label": "multi-account part 1: account registry (parity:auth-multi-account)",
    "kind": "branch",
    "pr": null,
@@ -42,19 +50,19 @@
   },
   {
    "area": "Settings",
+   "label": "Slice settings-language: app language selector",
+   "kind": "pr",
+   "pr": 211,
+   "url": "https://github.com/shinycake/quill/pull/211",
+   "branch": "parity/settings-language"
+  },
+  {
+   "area": "Settings",
    "label": "Slice settings-reset-notif: reset all notification settings",
    "kind": "pr",
    "pr": 208,
    "url": "https://github.com/shinycake/quill/pull/208",
    "branch": "parity/settings-reset-notif"
-  },
-  {
-   "area": "Settings",
-   "label": "app language selector (parity:settings-language)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/settings-language"
   }
  ]
 }

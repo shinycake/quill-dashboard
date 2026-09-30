@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 211,
+   "title": "Slice settings-language: app language selector",
+   "updated_at": "2026-09-30T11:53:40Z",
+   "html_url": "https://github.com/shinycake/quill/pull/211",
+   "head": {
+    "ref": "parity/settings-language"
+   }
+  },
+  {
    "number": 210,
    "title": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
    "updated_at": "2026-09-30T11:53:30Z",
@@ -918,7 +927,7 @@
   {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
-   "updated_at": "2026-09-30T10:00:54Z",
+   "updated_at": "2026-09-30T11:54:31Z",
    "html_url": "https://github.com/shinycake/quill/pull/208",
    "head": {
     "ref": "parity/settings-reset-notif"
@@ -935,6 +944,36 @@
   }
  ],
  "events": [
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/settings-inapp-sound"
+   },
+   "created_at": "2026-09-30T10:11:21Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/settings-reset-notif"
+   },
+   "created_at": "2026-09-30T11:54:31Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T11:53:40Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1301,36 +1340,6 @@
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-30T08:39:20Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T08:39:19Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T08:32:03Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T08:33:28Z",
    "actor": {
     "login": "shinycake"
    }
