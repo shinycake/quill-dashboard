@@ -61,10 +61,10 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T10:05:51Z",
+   "updated_at": "2026-09-30T10:15:53Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 1217
+   "age_seconds": 1337
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -178,7 +178,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T10:13:07Z",
+   "updated_at": "2026-09-30T10:15:50Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -192,7 +192,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": false,
-   "age_seconds": 130
+   "age_seconds": 250
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -220,7 +220,7 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 1517
+   "age_seconds": 1637
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -295,7 +295,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": false,
-   "age_seconds": 189
+   "age_seconds": 309
   }
  ]
 }
