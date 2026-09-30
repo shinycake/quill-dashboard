@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 423,
+  "done": 424,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 202,
+   "title": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
+   "merged_at": "2026-09-30T08:39:19Z",
+   "html_url": "https://github.com/shinycake/quill/pull/202",
+   "head": {
+    "ref": "parity/calls-swap-prompt"
+   }
+  },
   {
    "number": 203,
    "title": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
@@ -894,29 +903,20 @@
    "head": {
     "ref": "parity/auth-2fa-1"
    }
-  },
-  {
-   "number": 102,
-   "title": "docs: calls-remainder-2 \u2014 calls-audio-fx and calls-proxy documented as honest-unchecked",
-   "merged_at": "2026-09-28T07:15:31Z",
-   "html_url": "https://github.com/shinycake/quill/pull/102",
-   "head": {
-    "ref": "parity/calls-remainder-2"
-   }
   }
  ],
- "openPRs": [
-  {
-   "number": 202,
-   "title": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
-   "updated_at": "2026-09-30T08:33:28Z",
-   "html_url": "https://github.com/shinycake/quill/pull/202",
-   "head": {
-    "ref": "parity/calls-swap-prompt"
-   }
-  }
- ],
+ "openPRs": [],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T08:39:19Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1306,19 +1306,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/stories-7"
-   },
-   "created_at": "2026-09-29T07:26:39Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "e6be59e9d32b0f7597e44ef56d76eed7004a483a",
+   "html_url": "https://github.com/shinycake/quill/commit/e6be59e9d32b0f7597e44ef56d76eed7004a483a",
+   "commit": {
+    "message": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt dialog (#202)\n\nFirst incoming call while another is active raises a kit dialog\n(End & answer / Decline) instead of the silent busy auto-decline.\nEnd & answer discards the current call, then acceptCalls the pending\none once the discard lands (no Telegram hold API \u2014 said honestly in\nthe dialog). Esc/backdrop/dismiss declines busy; further incoming\ncalls while the prompt is open keep the old busy auto-decline.\nState: call_swap_pending + call_swap_accept_queued on Session;\ndriver: decline_swap_call / accept_swap_call / maybe_accept_queued_swap.\nDemo fixture + ready-call-swap screenshot demo; 5 new state tests;\n2 replay tests updated to the prompt behavior.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T08:39:18Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "693b0cd533d6d7446031fa65b36be17ad41a1082",
    "html_url": "https://github.com/shinycake/quill/commit/693b0cd533d6d7446031fa65b36be17ad41a1082",
@@ -1439,20 +1443,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T05:48:39Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "ffd56a11b5fb672df353eefc279eb28be058e4b1",
-   "html_url": "https://github.com/shinycake/quill/commit/ffd56a11b5fb672df353eefc279eb28be058e4b1",
-   "commit": {
-    "message": "refactor: split src/telegram/requests.rs into one-responsibility modules (#192)\n\n* refactor: split src/telegram/requests.rs into one-responsibility modules\n\nPure code motion: 10,555-line requests.rs becomes src/telegram/requests/\nwith 20 domain modules plus 10 test modules. Module path\ncrate::telegram::requests is unchanged; every public path is preserved\nvia re-exports. The only semantic delta is promoting four private helpers\n(send_reply_value, message_topic_value, formatted_caption,\nself_destruct_type_value) to pub(crate) so sibling modules can use them,\nplus per-module use headers and a fixed include_str! path in tests.\n\nAll 344 top-level items and 152 test fns preserved verbatim.\n\n* fix: drop unused serde_json::json import in tests_chat_list.rs (rebase fallout)\n\n---------\n\nCo-authored-by: Muse <muse@local>\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T04:57:41Z"
     }
    },
    "author": {

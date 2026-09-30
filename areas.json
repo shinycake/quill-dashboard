@@ -454,6 +454,7 @@
     "Call state indicators (calling / connecting / exchanging keys)",
     "Mute / unmute microphone during call (toggle_call_mute ui/mod.rs:4483; set_call_muted connect.rs:1871)",
     "Microphone and speaker output selection during call (select_call_devices connect.rs:1891; picker ui/mod.rs:4523)",
+    "Incoming-call-while-busy swap prompt: kit dialog (End & answer / Decline) when a call arrives mid-call; answering discards the current call then `acceptCall`s the pending one once the discard lands (no Telegram hold API \u2014 true hold-and-answer stays impossible, said honestly in the dialog); Esc/backdrop/dismiss declines busy; further incoming calls while the prompt is open auto-decline busy with the banner (src/state/session_calls.rs, src/connect/calls.rs, src/ui/calls.rs)",
     "Call failed / offline / microphone-missing error states (\"Call failed\" card ui/mod.rs:9668)",
     "Reconnect indicator when audio transport drops (TransportState::Reconnecting calls/engine.rs:27; shown ui/mod.rs:9787)",
     "Call end summary screen with duration (CallSummary state.rs:2006)",
@@ -501,11 +502,6 @@
     "In-call chat messages for group calls (`sendGroupCallMessage` + live `updateNewGroupCallMessage` feed with composer, gated on `can_send_messages`/`are_messages_allowed`; no history getter exists in the schema, so live feed only; code + demo only, live unverified)"
    ],
    "pending": [
-    {
-     "text": "Incoming-call-while-busy swap prompt (partial: no Telegram-level hold/swap API; incoming call is auto-declined with an explanatory banner, state.rs)",
-     "blocked": false,
-     "reason": null
-    },
     {
      "text": "Less data for calls setting (partial: persisted in call_prefs.json, but the native call engine exposes no data-saving API)",
      "blocked": false,

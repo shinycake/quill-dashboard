@@ -17,14 +17,6 @@
    "branch": "parity/bots-payment-clear-ui"
   },
   {
-   "area": "Calls",
-   "label": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
-   "kind": "pr",
-   "pr": 202,
-   "url": "https://github.com/shinycake/quill/pull/202",
-   "branch": "parity/calls-swap-prompt"
-  },
-  {
    "area": "Media",
    "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
    "kind": "branch",

@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1975
+   "age_seconds": 2094
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -207,7 +207,7 @@
    "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 138
+   "age_seconds": 257
   },
   {
    "coordinator": "88f899f5-2c0b-4269-b9b9-0f789eaebdd7",
@@ -246,7 +246,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T08:32:26Z",
-   "updated_at": "2026-09-30T08:32:26Z",
+   "updated_at": "2026-09-30T08:38:37Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -281,7 +281,7 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "stale": false,
-   "age_seconds": 292
+   "age_seconds": 411
   }
  ]
 }
