@@ -10,7 +10,15 @@
   },
   {
    "area": "Chat list",
-   "label": "communities-chatlist-mode",
+   "label": "chatlist-list-style",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/chatlist-list-style"
+  },
+  {
+   "area": "Chat list",
+   "label": "communities-chatlist-mode: view a community's chats as a filtered chat list",
    "kind": "pr",
    "pr": 182,
    "url": "https://github.com/shinycake/quill/pull/182",

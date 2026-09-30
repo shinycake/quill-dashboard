@@ -947,6 +947,16 @@
   {
    "type": "CreateEvent",
    "payload": {
+    "ref": "parity/platform-tray-icon"
+   },
+   "created_at": "2026-09-29T17:22:37Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
     "ref": "parity/chatlist-list-style"
    },
    "created_at": "2026-09-30T00:04:12Z",
@@ -1330,16 +1340,6 @@
     "ref": "refs/heads/parity/platform-tray-icon"
    },
    "created_at": "2026-09-29T21:18:34Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/loop2-s15-dynamic-order"
-   },
-   "created_at": "2026-09-29T21:11:51Z",
    "actor": {
     "login": "shinycake"
    }
