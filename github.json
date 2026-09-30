@@ -910,6 +910,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/parity/bots-inline-mode"
+   },
+   "created_at": "2026-09-30T02:53:52Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/refactor/split-replay"
    },
    "created_at": "2026-09-30T04:31:57Z",
@@ -1293,16 +1303,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T05:49:38Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-envelope"
-   },
-   "created_at": "2026-09-30T05:49:12Z",
    "actor": {
     "login": "shinycake"
    }
