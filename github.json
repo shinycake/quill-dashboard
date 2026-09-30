@@ -1052,9 +1052,9 @@
    }
   },
   {
-   "type": "DeleteEvent",
+   "type": "PushEvent",
    "payload": {
-    "ref": "parity/remove-check-file-sizes"
+    "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1062,9 +1062,9 @@
    }
   },
   {
-   "type": "PushEvent",
+   "type": "DeleteEvent",
    "payload": {
-    "ref": "refs/heads/main"
+    "ref": "parity/remove-check-file-sizes"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
