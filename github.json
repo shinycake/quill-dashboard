@@ -918,7 +918,7 @@
   {
    "number": 196,
    "title": "refactor: split src/connect.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T03:10:59Z",
+   "updated_at": "2026-09-30T04:23:57Z",
    "html_url": "https://github.com/shinycake/quill/pull/196",
    "head": {
     "ref": "refactor/split-connect"
@@ -962,6 +962,16 @@
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T04:23:57Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1348,16 +1358,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T02:36:48Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-state"
-   },
-   "created_at": "2026-09-30T02:36:09Z",
    "actor": {
     "login": "shinycake"
    }
