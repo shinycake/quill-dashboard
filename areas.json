@@ -838,6 +838,7 @@
    "done": [
     "Global keyboard shortcuts: 22 bindings wired in `bind_keys` (Quit, focus sidebar/composer, chat search, media viewer nav/zoom)",
     "System tray icon with unread count (src/tray.rs: tray-icon 0.21 crate, programmatic 64x64 RGBA icon + red unread pill capped at \"99+\", tooltip \u2014 no-op on Linux per tray-icon's docs; 1s UI-thread sync from main.rs; silent no-op when the OS has no system tray; badge sums non-archived chats incl. muted \u2014 Telegram Desktop's actual default `_includeMutedCounter = true`)",
+    "Offline connection indicator in UI: slim strip below the title bar driven by `Session::connection` \u2014 kit warning banner \"Waiting for network\u2026\" when offline, presence dot for transitional states (Connecting/Updating/ConnectingToProxy); per-state reconnect labels are parity:platform-reconnect-states",
     "TDLib request errors surfaced on the originating surface (e.g. failed createCall \u2192 error line on call overlay)",
     "Copy text to clipboard (inline keyboard copy-text button src/ui/mod.rs:3932; invite link src/ui/mod.rs:6357)"
    ],
@@ -934,11 +935,6 @@
     },
     {
      "text": "Update changelog display after updates",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Offline connection indicator in UI (partial: updateConnectionState parsed at telegram/envelope.rs:5506 and stored in state.rs:2199, but never rendered)",
      "blocked": false,
      "reason": null
     },

@@ -50,14 +50,6 @@
   },
   {
    "area": "Platform & edge cases",
-   "label": "Slice platform-offline-indicator: render connection state as offline indicator",
-   "kind": "pr",
-   "pr": 218,
-   "url": "https://github.com/shinycake/quill/pull/218",
-   "branch": "parity/platform-offline-indicator"
-  },
-  {
-   "area": "Platform & edge cases",
    "label": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
    "kind": "branch",
    "pr": null,

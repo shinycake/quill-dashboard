@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 431,
+  "done": 432,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 218,
+   "title": "Slice platform-offline-indicator: render connection state as offline indicator",
+   "merged_at": "2026-09-30T14:35:23Z",
+   "html_url": "https://github.com/shinycake/quill/pull/218",
+   "head": {
+    "ref": "parity/platform-offline-indicator"
+   }
+  },
   {
    "number": 221,
    "title": "PROBE: ci trigger test (will close)",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "docs/audit-checklist-restore"
    }
-  },
-  {
-   "number": 116,
-   "title": "Loop 1: shared-media gallery panel with per-tab empty states",
-   "merged_at": "2026-09-28T15:29:53Z",
-   "html_url": "https://github.com/shinycake/quill/pull/116",
-   "head": {
-    "ref": "parity/media-shared-gallery-ci2"
-   }
   }
  ],
  "openPRs": [
@@ -934,15 +934,6 @@
    }
   },
   {
-   "number": 218,
-   "title": "Slice platform-offline-indicator: render connection state as offline indicator",
-   "updated_at": "2026-09-30T13:57:44Z",
-   "html_url": "https://github.com/shinycake/quill/pull/218",
-   "head": {
-    "ref": "parity/platform-offline-indicator"
-   }
-  },
-  {
    "number": 217,
    "title": "parity:platform-history-export \u2014 chat history export to JSON file",
    "updated_at": "2026-09-30T13:33:12Z",
@@ -971,6 +962,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:35:23Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1360,19 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T13:15:39Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "9e559f9653b817d96a5c98c6ee22e4ba84c13432",
+   "html_url": "https://github.com/shinycake/quill/commit/9e559f9653b817d96a5c98c6ee22e4ba84c13432",
+   "commit": {
+    "message": "Slice platform-offline-indicator: render connection state as offline indicator (#218)\n\nSlim strip below the title bar driven by Session::connection (re-read\nevery frame; the 40ms poll_live loop keeps it live): kit warning banner\n'Waiting for network\u2026' for the WaitingForNetwork offline case, presence\ndot for transitional states (per-state reconnect labels are the\nplatform-reconnect-states slice). Demo fixtures model a connected\nclient; new ready-offline screenshot demo forces WaitingForNetwork.\n\nCo-authored-by: shinycake <idan.birman@gmail.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T14:35:22Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "0f65f3f859d882f9a3f14a041cf53dc933cf7e1e",
    "html_url": "https://github.com/shinycake/quill/commit/0f65f3f859d882f9a3f14a041cf53dc933cf7e1e",
@@ -1493,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T08:39:18Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "693b0cd533d6d7446031fa65b36be17ad41a1082",
-   "html_url": "https://github.com/shinycake/quill/commit/693b0cd533d6d7446031fa65b36be17ad41a1082",
-   "commit": {
-    "message": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list (#203)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T08:35:58Z"
     }
    },
    "author": {
