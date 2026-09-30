@@ -60,9 +60,9 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "standby-split",
-   "updated_at": "2026-09-30T04:45:51Z",
+   "updated_at": "2026-09-30T04:55:51Z",
    "stale": true,
-   "age_seconds": 6317
+   "age_seconds": 6437
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -75,7 +75,7 @@
     "merged_at": "2026-09-30T03:00:08Z",
     "handoff": "merge-pipeline",
     "detail": "PR #191 opened: typed inline mode (debounced getInlineQueryResults, results dropdown, sendInlineQueryResultMessage, secret-chat alert). Gates: fmt/clippy clean, 1192 tests pass (1 filtered: vendored_schema needs network), --features ui build links, fresh screenshot docs/screenshots/ready-inline-results.png. Rebased onto origin/main (94fc738); README union intact, parity 416/525=79.2%. Split phase active: no next slice per phase.json \u2014 loop parked until the mod.rs split PR merges. Clean stop per 20:07 split-phase order: branch committed + pushed, PR #191 MERGED 2026-09-30T03:00:08Z (9a58ae2); parity 421/525 (80.2%). No further Loop 2 action pending (split phase).",
-    "updated_at": "2026-09-30T04:45:51Z",
+    "updated_at": "2026-09-30T04:55:52Z",
     "last_evidence_at": "2026-09-30T03:10:00Z",
     "commit": "3722ce647d8523982bda2d7bea30196d44121073"
    },
@@ -162,7 +162,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T04:45:51Z",
+   "updated_at": "2026-09-30T04:55:52Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -172,7 +172,7 @@
    },
    "last_evidence_at": "2026-09-30T03:10:00Z",
    "stale": true,
-   "age_seconds": 6317
+   "age_seconds": 6437
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -198,7 +198,7 @@
    "status": "active",
    "updated_at": "2026-09-30T04:54:30Z",
    "stale": true,
-   "age_seconds": 9340
+   "age_seconds": 9460
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -273,7 +273,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 13277
+   "age_seconds": 13397
   }
  ]
 }
