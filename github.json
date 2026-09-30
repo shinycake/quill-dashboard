@@ -936,7 +936,7 @@
   {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T02:57:29Z",
+   "updated_at": "2026-09-30T03:53:42Z",
    "html_url": "https://github.com/shinycake/quill/pull/194",
    "head": {
     "ref": "refactor/split-envelope"
