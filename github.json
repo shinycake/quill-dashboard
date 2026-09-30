@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 421,
+  "done": 422,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 201,
+   "title": "Bots: ephemeral-command icon in the bot command list",
+   "merged_at": "2026-09-30T08:17:15Z",
+   "html_url": "https://github.com/shinycake/quill/pull/201",
+   "head": {
+    "ref": "parity/bots-ephemeral-command-icon"
+   }
+  },
   {
    "number": 200,
    "title": "infra: Quill Conductor workflows (shadow mode, read-only)",
@@ -894,29 +903,20 @@
    "head": {
     "ref": "parity/bots-profile"
    }
-  },
-  {
-   "number": 100,
-   "title": "build-infra: dev-profile iteration experiment (line-tables-only + per-dep debug off)",
-   "merged_at": "2026-09-28T05:35:15Z",
-   "html_url": "https://github.com/shinycake/quill/pull/100",
-   "head": {
-    "ref": "parity/dev-profile"
-   }
   }
  ],
- "openPRs": [
-  {
-   "number": 201,
-   "title": "Bots: ephemeral-command icon in the bot command list",
-   "updated_at": "2026-09-30T08:08:17Z",
-   "html_url": "https://github.com/shinycake/quill/pull/201",
-   "head": {
-    "ref": "parity/bots-ephemeral-command-icon"
-   }
-  }
- ],
+ "openPRs": [],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T08:17:16Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1306,19 +1306,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T05:58:48Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "78c3026e99529fe0e9e90528f4ef8677e7851470",
+   "html_url": "https://github.com/shinycake/quill/commit/78c3026e99529fe0e9e90528f4ef8677e7851470",
+   "commit": {
+    "message": "parity:bots-ephemeral-command-icon \u2014 keep is_ephemeral and mark ephemeral commands with an eye-off icon (#201)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T08:17:14Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
    "html_url": "https://github.com/shinycake/quill/commit/614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
@@ -1439,20 +1443,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T03:00:07Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "1ade16ca489d0171563508c7b5edace45feead28",
-   "html_url": "https://github.com/shinycake/quill/commit/1ade16ca489d0171563508c7b5edace45feead28",
-   "commit": {
-    "message": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter) (#190)\n\n* Composer send-key mode: Enter vs Ctrl/Cmd+Enter (parity:settings-enter-send, parity:settings-ctrlenter-send)\n\nClient-side SendKeyMode (default Enter) persisted to chat_prefs.json;\nall chat composer Enter handlers route through the policy; IME\ncomposition never sends in either mode; kit RadioGroup control in\nSettings -> Appearance ('Send messages with'). Recovery-code form\nkeeps plain-Enter submit.\n\n* fixup: review findings \u2014 scope send-key policy to chat composers, sync kit submit_on_enter, strip kit newline\n\n- Non-chat inputs (auth phone/code/password, global/in-chat search,\n  forward picker) always submit on Enter via SendKeyMode::Enter.\n- set_chat_prefs flips submit_on_enter on both chat composers; initial\n  mode applied at startup from persisted prefs.\n- send_text_on_enter strips kit's pre-emit newline in CtrlEnter mode.\n- load/save_chat_prefs delegate to the generic json prefs helpers.\n- Send-key radio label is Cmd+Enter on macOS.\n\n* fixup: restore appearance_chat_list_section closing brace dropped in rebase union\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T02:48:35Z"
     }
    },
    "author": {

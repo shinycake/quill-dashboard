@@ -2,14 +2,6 @@
  "items": [
   {
    "area": "Bots, polls & payments",
-   "label": "Bots: ephemeral-command icon in the bot command list",
-   "kind": "pr",
-   "pr": 201,
-   "url": "https://github.com/shinycake/quill/pull/201",
-   "branch": "parity/bots-ephemeral-command-icon"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "clear payment/shipping info UI (parity:bots-payment-clear)",
    "kind": "branch",
    "pr": null,
