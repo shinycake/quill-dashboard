@@ -361,7 +361,7 @@
     "Chat-level self-destruct timer for secret chats (incl. text messages): \u23f1 picker (Off/5s/30s/1m/1h/1d/1w), timer status line, \"X set timer \u2026\" service rows, per-message auto_delete_in countdown chips (setChatMessageAutoDeleteTime; connect.rs:2513, ui/mod.rs:12882/11611, envelope.rs:3137)",
     "Incoming/outgoing \"X took a screenshot\" rendered as a chat service message (messageScreenshotTaken parsed in envelope.rs; \"You took a screenshot\" for own, \"{name} took a screenshot\" for peer) (src/telegram/envelope.rs, src/ui/mod.rs)",
     "Forwarding to/from secret chats: destination gate in submit_forward_to shows TGX's verbatim \"This message cannot be forwarded to secret chats.\" (picker stays open); source gate hides the Forward/Select buttons on secret-chat messages, mirroring TGX only offering Forward when messageProperties.canBeForwarded (MessagesController.java:5287) (src/ui/mod.rs)",
-    "Inline-bot warning alert in secret chats (Telegram X's `SecretChatContextBotAlert`: gates the `SwitchInline` button path in secret chats \u2014 Quill's only inline-bot invocation point; first press in a session shows the verbatim TGX warning above the composer with Confirm-only behavior, then inserts the query)",
+    "Inline-bot warning alert in secret chats (Telegram X's `SecretChatContextBotAlert`: gates the `SwitchInline` button path and the typed `@bot` inline-mode path in secret chats \u2014 first inline use in a session shows the verbatim TGX warning above the composer with Confirm-only behavior before any query is sent)",
     "Link previews off in secret chats: sendMessage emits explicit linkPreviewOptions{is_disabled:true} for secret chats (previews are generated on Telegram servers, which can't see E2E content); the TGX opt-in alert to enable server-side previews is not yet surfaced (src/telegram/requests.rs, src/connect.rs)",
     "\"{name}'s Telegram client doesn't support this feature. They need to install an update first.\" notice when sending a video note in a secret chat whose layer < 66 (TGX SecretChatFeatureUnsupported / chatSupportsRoundVideos gate) (src/ui/mod.rs)",
     "\"Toggle whether a session can accept incoming secret chats\" privacy toggle (verified: sessions dialog renders a per-session kit \"Secret Chats\" Switch (ui/mod.rs:30680) checked from `can_accept_secret_chats` \u2192 `toggle_session_secret_chats` (30480) \u2192 driver `toggle_session_can_accept_secret_chats` (connect.rs:11202) \u2192 `toggleSessionCanAcceptSecretChats` builder (requests.rs:2081); TGX's EditSessionController \"Session Accepts \u2192 Secret Chats\" toggle)",
@@ -756,6 +756,7 @@
     "Bot privacy settings (read-only): privacy-policy URL button, /privacy command fallback, else the schema's telegram.org/privacy-tpa fallback note \u2014 no client-side bot privacy setting exists in the schema",
     "Similar bots section in the bot profile: getBotSimilarBots, names resolved from the user cache, tap opens the bot chat (state.rs, connect.rs, ui/mod.rs)",
     "`/` command menu merging chat-specific bot commands and global getCommands",
+    "Inline mode: type @bot in composer, inline query results list, send an inline result (`getInlineQueryResults` backend from S9; this slice adds: `@bot query` trigger parse, bot resolution via local user cache with `searchPublicChat` fallback, 100ms-debounced queries, results dropdown with keyboard/mouse pick + next-page loading, `sendInlineQueryResultMessage` send, secret-chat alert on the typed path)",
     "Poll creation dialog: question, add/remove options (2\u201310), validation errors, anonymous + multiple-answer toggles (ui/mod.rs:14860, poll.rs:112)",
     "Create quiz polls: quiz-mode toggle, mark correct option (radio), quiz explanation (0\u2013200 chars, \u22642 line feeds); sends `inputPollTypeQuiz` (ui/mod.rs, poll.rs, requests.rs)",
     "Poll description field (shown above the poll title) (ui/mod.rs, requests.rs)",
@@ -786,11 +787,6 @@
     },
     {
      "text": "Ephemeral-command icon in the bot command list (BotCommand.is_ephemeral)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Inline mode: type @bot in composer, inline query results list, send an inline result (no getInlineQueryResults code in src)",
      "blocked": false,
      "reason": null
     },

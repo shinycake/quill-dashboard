@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 420,
+  "done": 421,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 191,
+   "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
+   "merged_at": "2026-09-30T03:00:08Z",
+   "html_url": "https://github.com/shinycake/quill/pull/191",
+   "head": {
+    "ref": "parity/bots-inline-mode"
+   }
+  },
   {
    "number": 190,
    "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/stories-1"
    }
-  },
-  {
-   "number": 30,
-   "title": "Phase 1: send local audio",
-   "merged_at": null,
-   "html_url": "https://github.com/shinycake/quill/pull/30",
-   "head": {
-    "ref": "cursor/send-local-audio-b8ce"
-   }
   }
  ],
  "openPRs": [
@@ -941,18 +941,19 @@
    "head": {
     "ref": "refactor/split-requests"
    }
-  },
-  {
-   "number": 191,
-   "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
-   "updated_at": "2026-09-30T02:56:12Z",
-   "html_url": "https://github.com/shinycake/quill/pull/191",
-   "head": {
-    "ref": "parity/bots-inline-mode"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T03:00:08Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1342,19 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T01:44:21Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "06458a2dc36653fc5b3e6c6467214f2abd6ee377",
+   "html_url": "https://github.com/shinycake/quill/commit/06458a2dc36653fc5b3e6c6467214f2abd6ee377",
+   "commit": {
+    "message": "bots: typed inline mode (@bot query \u2192 results \u2192 send) with debounce and pagination (#191)\n\nImplements README parity:bots-inline-mode:\n- composer parses a leading @botname trigger (debounced 100ms)\n- searchPublicChat resolves the inline bot (generation-correlated)\n- getInlineQueryResults with next_offset pagination\n- selectable results dropdown (keyboard + mouse), Esc/Up/Down/Enter\n- sendInlineQueryResultMessage with hide_via_bot=false; clears composer\n- one-time secret-chat privacy warning before first typed inline query\n\nGates: cargo fmt, clippy -D warnings (clean), 1192 tests pass (1 filtered:\nvendored_schema_equals_official_commit needs network), full\n--features ui build links. Screenshot: docs/screenshots/ready-inline-results.png\n\nCo-authored-by: shinycake <idan.birman@gmail.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T03:00:07Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "1ade16ca489d0171563508c7b5edace45feead28",
    "html_url": "https://github.com/shinycake/quill/commit/1ade16ca489d0171563508c7b5edace45feead28",
@@ -1475,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T23:56:13Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "73c31931def29192a88895084eed2f80ed364bd3",
-   "html_url": "https://github.com/shinycake/quill/commit/73c31931def29192a88895084eed2f80ed364bd3",
-   "commit": {
-    "message": "communities-search-filter: community chat-type filter for message search (#181)\n\n* Slice: community search filter (searchMessagesChatTypeFilterCommunity)\n\nTyped-search panel gains 'All chats' + per-community filter chips fed by\nSessionState.communities (updateCommunity; have_access only \u2014 TDLib has no\nlist-communities method). Chip click stores SearchState::community_filter and\nre-runs the query; the driver sends searchMessagesChatTypeFilterCommunity\n{ community_id } in the chat_type_filter slot (schema 1.8.67, line 6344).\nNo selection (or 'All chats') keeps the historical null filter.\n\nWaiver bumps (type-coherent extensions only, cannot live in named modules):\nrequests.rs +22 (search_messages_chat_type_filter_json builder next to its\nsibling + search_messages chat_type_filter param \u2014 request builders are this\nfile's single responsibility); connect.rs +30 (set_search_community_filter\ndriver method on the existing Connect type + import + call-site wiring);\nstate.rs +9 (SearchState::community_filter field + Default init + resets \u2014\nper-search-session state the driver must read); ui/mod.rs +75\n(search_community_filter_chips render fn + set_search_community_filter\nhandler on the existing app type + chips-row hook). All new tests in\ntests/community_search_filter.rs.\n\n* communities-search-filter: review fixups \u2014 inline chat-type filter, drop free function\n\nRemove the new free function search_messages_chat_type_filter_json from\nwaived src/telegram/requests.rs; search_messages now takes\ncommunity_filter: Option<i64> and builds the\nsearchMessagesChatTypeFilterCommunity constructor inline. Call site in\nconnect.rs passes self.session.search.community_filter straight through;\nre-export and import of the deleted function dropped. Integration tests\ndrive search_messages directly with Some(42)/None. Waiver entry set to\nthe exact 10491 lines (+14 edit to the existing search_messages only).\n\n* Merge-pipeline: rebase post-#180; union DECISIONS.md section, exact waiver baselines\n\n* Merge-pipeline: restore set_profile_accent_color re-export (review finding)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T23:40:31Z"
     }
    },
    "author": {
