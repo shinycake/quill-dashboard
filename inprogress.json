@@ -1,14 +1,6 @@
 {
  "items": [
   {
-   "area": "Auth & accounts",
-   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/settings-notif-exceptions"
-  },
-  {
    "area": "Bots, polls & payments",
    "label": "ephemeral-command icon in the bot command list (parity:bots-ephemeral-command-icon)",
    "kind": "branch",
@@ -31,6 +23,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/media-downloads-pause"
+  },
+  {
+   "area": "Settings",
+   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-notif-exceptions"
   }
  ]
 }
