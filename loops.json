@@ -61,8 +61,8 @@
    },
    "status": "standby-split",
    "updated_at": "2026-09-30T03:15:53Z",
-   "stale": false,
-   "age_seconds": 798
+   "stale": true,
+   "age_seconds": 916
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -171,8 +171,8 @@
     "parity": "421/525 (80.2%)"
    },
    "last_evidence_at": "2026-09-30T03:10:00Z",
-   "stale": false,
-   "age_seconds": 798
+   "stale": true,
+   "age_seconds": 916
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -196,9 +196,9 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T03:14:31Z",
+   "updated_at": "2026-09-30T03:24:29Z",
    "stale": true,
-   "age_seconds": 3821
+   "age_seconds": 3939
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -273,7 +273,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 7758
+   "age_seconds": 7876
   }
  ]
 }
