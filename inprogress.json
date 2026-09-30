@@ -25,14 +25,6 @@
    "branch": "parity/calls-proxy"
   },
   {
-   "area": "Chat list",
-   "label": "Chat list: style settings (two/three lines, media icons, formatted preview)",
-   "kind": "pr",
-   "pr": 187,
-   "url": "https://github.com/shinycake/quill/pull/187",
-   "branch": "parity/chatlist-list-style"
-  },
-  {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
    "kind": "pr",

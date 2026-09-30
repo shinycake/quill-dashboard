@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 416,
+  "done": 417,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 187,
+   "title": "Chat list: style settings (two/three lines, media icons, formatted preview)",
+   "merged_at": "2026-09-30T02:06:53Z",
+   "html_url": "https://github.com/shinycake/quill/pull/187",
+   "head": {
+    "ref": "parity/chatlist-list-style"
+   }
+  },
   {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/chat-list-2"
    }
-  },
-  {
-   "number": 90,
-   "title": "MED3: downloads & documents",
-   "merged_at": "2026-09-27T20:23:52Z",
-   "html_url": "https://github.com/shinycake/quill/pull/90",
-   "head": {
-    "ref": "parity/media-3"
-   }
   }
  ],
  "openPRs": [
@@ -941,18 +941,29 @@
    "head": {
     "ref": "parity/calls-proxy"
    }
-  },
-  {
-   "number": 187,
-   "title": "Chat list: style settings (two/three lines, media icons, formatted preview)",
-   "updated_at": "2026-09-30T01:48:12Z",
-   "html_url": "https://github.com/shinycake/quill/pull/187",
-   "head": {
-    "ref": "parity/chatlist-list-style"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:06:53Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T02:06:54Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1332,29 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T00:37:42Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/remove-check-file-sizes"
-   },
-   "created_at": "2026-09-29T23:32:10Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "71a9f5abf09099390382d6e02cc0f8273da6a74f",
+   "html_url": "https://github.com/shinycake/quill/commit/71a9f5abf09099390382d6e02cc0f8273da6a74f",
+   "commit": {
+    "message": "parity: chat-list style settings (two/three lines, media icons, formatted preview) (#187)\n\nSettings \u2192 Appearance \u2192 Chat list rows: preview line count (2/3),\nmedia-type icons before the preview, formatted preview text\n(bold/italic/etc. via styled_runs).\n\n- src/chatlist_style.rs (new): pure logic \u2014 line-count clamp, row\n  heights, media-icon map, entity clipping, sender-line rule.\n- src/ui/chatlist_style.rs (new): GPUI preview-line renderer.\n- AppearancePrefs: preview_lines, chat_list_media_icons,\n  chat_list_rich_preview (defaults preserve current behavior).\n- ChatSummary captures the preview's icon/entities/sender next to\n  last_preview at the three update sites that compute it.\n- tests/chatlist_list_style.rs (new): 10 tests over prefs round-trip,\n  row heights, icon/entity/sender capture, and the pure helpers.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T02:06:52Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "c0ae1e737c6862ac6494fdf835fa65e83f6c449c",
    "html_url": "https://github.com/shinycake/quill/commit/c0ae1e737c6862ac6494fdf835fa65e83f6c449c",
@@ -1475,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T22:50:32Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
-   "html_url": "https://github.com/shinycake/quill/commit/fdc7ea73778b86db7f02748a5bbcf90b68aaec98",
-   "commit": {
-    "message": "Slice S17: show 'choosing a sticker' chat action of others\n\nMerge of #178 (S17 choosing-sticker chat action).\n\nReview: dedicated adversarial re-review CONFIRM on head e814b57e (header-gate defect fixed, S17 DECISIONS.md section added, baselines exact).\nCI: linux-fmt-clippy-test SUCCESS, macos-compile-smoke SUCCESS on merged head.\nParity: 409/525 (77.9%).",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T22:26:16Z"
     }
    },
    "author": {
