@@ -927,7 +927,7 @@
   {
    "number": 190,
    "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
-   "updated_at": "2026-09-30T01:46:56Z",
+   "updated_at": "2026-09-30T02:03:18Z",
    "html_url": "https://github.com/shinycake/quill/pull/190",
    "head": {
     "ref": "parity/composer-send-keys"
@@ -953,6 +953,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/loop2-s14-story-restriction"
+   },
+   "created_at": "2026-09-29T19:08:47Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1339,16 +1349,6 @@
     "ref": "refs/heads/parity/loop2-s12-sticker-suggest"
    },
    "created_at": "2026-09-29T17:43:49Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T00:26:27Z",
    "actor": {
     "login": "shinycake"
    }
