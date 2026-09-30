@@ -37,30 +37,5 @@
    "current": 3505
   }
  ],
- "batches": [
-  {
-   "html_url": "https://github.com/shinycake/quill/pull/148",
-   "merged_at": "2026-09-29T06:36:00Z",
-   "number": 148,
-   "title": "refactor: split src/ui/mod.rs batch 1 \u2014 dialogs (Poll..Restrict)",
-   "updated_at": "2026-09-29T06:36:00Z",
-   "extracted": 626
-  },
-  {
-   "html_url": "https://github.com/shinycake/quill/pull/153",
-   "merged_at": "2026-09-29T13:10:55Z",
-   "number": 153,
-   "title": "refactor: split ui/mod.rs dialogs batch 2 (GroupConfirm->Welcome)",
-   "updated_at": "2026-09-29T13:10:55Z",
-   "extracted": 504
-  },
-  {
-   "html_url": "https://github.com/shinycake/quill/pull/160",
-   "merged_at": "2026-09-29T17:17:20Z",
-   "number": 160,
-   "title": "refactor: split ui/mod.rs batch 3 (keybindings, menu states, history rows, playback, format helpers)",
-   "updated_at": "2026-09-29T17:17:36Z",
-   "extracted": 347
-  }
- ]
+ "batches": []
 }
