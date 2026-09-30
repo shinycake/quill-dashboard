@@ -981,7 +981,7 @@
   {
    "number": 217,
    "title": "parity:platform-history-export \u2014 chat history export to JSON file",
-   "updated_at": "2026-09-30T15:03:15Z",
+   "updated_at": "2026-09-30T17:21:34Z",
    "html_url": "https://github.com/shinycake/quill/pull/217",
    "head": {
     "ref": "parity/platform-history-export"
