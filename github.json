@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 418,
+  "done": 420,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 190,
+   "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
+   "merged_at": "2026-09-30T02:48:36Z",
+   "html_url": "https://github.com/shinycake/quill/pull/190",
+   "head": {
+    "ref": "parity/composer-send-keys"
+   }
+  },
   {
    "number": 188,
    "title": "calls-proxy: Use proxy for calls setting",
@@ -894,22 +903,13 @@
    "head": {
     "ref": "cursor/send-local-audio-b8ce"
    }
-  },
-  {
-   "number": 94,
-   "title": "CL3: chat-list mention/reaction badges, multi-select, report/block",
-   "merged_at": "2026-09-27T23:21:56Z",
-   "html_url": "https://github.com/shinycake/quill/pull/94",
-   "head": {
-    "ref": "parity/chat-list-3"
-   }
   }
  ],
  "openPRs": [
   {
    "number": 195,
    "title": "refactor: split tests/replay.rs into per-area test files",
-   "updated_at": "2026-09-30T02:37:22Z",
+   "updated_at": "2026-09-30T02:48:32Z",
    "html_url": "https://github.com/shinycake/quill/pull/195",
    "head": {
     "ref": "refactor/split-replay"
@@ -950,18 +950,29 @@
    "head": {
     "ref": "parity/bots-inline-mode"
    }
-  },
-  {
-   "number": 190,
-   "title": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter)",
-   "updated_at": "2026-09-30T02:40:37Z",
-   "html_url": "https://github.com/shinycake/quill/pull/190",
-   "head": {
-    "ref": "parity/composer-send-keys"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:48:36Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:48:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1341,29 +1352,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/bots-inline-mode"
-   },
-   "created_at": "2026-09-30T01:11:36Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "security/tdlib-log-stream"
-   },
-   "created_at": "2026-09-29T05:46:32Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "1ade16ca489d0171563508c7b5edace45feead28",
+   "html_url": "https://github.com/shinycake/quill/commit/1ade16ca489d0171563508c7b5edace45feead28",
+   "commit": {
+    "message": "Composer: send-key mode (Enter vs Ctrl/Cmd+Enter) (#190)\n\n* Composer send-key mode: Enter vs Ctrl/Cmd+Enter (parity:settings-enter-send, parity:settings-ctrlenter-send)\n\nClient-side SendKeyMode (default Enter) persisted to chat_prefs.json;\nall chat composer Enter handlers route through the policy; IME\ncomposition never sends in either mode; kit RadioGroup control in\nSettings -> Appearance ('Send messages with'). Recovery-code form\nkeeps plain-Enter submit.\n\n* fixup: review findings \u2014 scope send-key policy to chat composers, sync kit submit_on_enter, strip kit newline\n\n- Non-chat inputs (auth phone/code/password, global/in-chat search,\n  forward picker) always submit on Enter via SendKeyMode::Enter.\n- set_chat_prefs flips submit_on_enter on both chat composers; initial\n  mode applied at startup from persisted prefs.\n- send_text_on_enter strips kit's pre-emit newline in CtrlEnter mode.\n- load/save_chat_prefs delegate to the generic json prefs helpers.\n- Send-key radio label is Cmd+Enter on macOS.\n\n* fixup: restore appearance_chat_list_section closing brace dropped in rebase union\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T02:48:35Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "be11b0fff052bdbe20c9f564af324309560fea85",
    "html_url": "https://github.com/shinycake/quill/commit/be11b0fff052bdbe20c9f564af324309560fea85",
@@ -1484,20 +1489,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T23:40:31Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
-   "html_url": "https://github.com/shinycake/quill/commit/4c7ce8b04d2731e0ce94ebc4cbf6f21810471096",
-   "commit": {
-    "message": "A12: profile accent color (setProfileAccentColor) backend + edit-profile picker (#180)\n\n* Merge-pipeline: rebase post-#179; union DECISIONS.md, exact waiver baselines\n\n* Merge-pipeline: fix off-by-one schema line pins (10963->10964, review nit)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T23:08:20Z"
     }
    },
    "author": {

@@ -850,7 +850,9 @@
     "Auto-download per network (mobile / Wi-Fi / roaming) and media type",
     "Use less data for calls",
     "Storage usage view with per-chat / file-type breakdown",
-    "Clear cache"
+    "Clear cache",
+    "Enter-to-send toggle (Settings \u2192 Appearance \u2192 Send messages with; `composer::SendKeyMode`, `chat_prefs.json`)",
+    "Send by Cmd/Ctrl+Enter option (same setting; Ctrl/Cmd+Enter sends in CtrlEnter mode)"
    ],
    "pending": [
     {
@@ -870,16 +872,6 @@
     },
     {
      "text": "App language selector (partial: `system_language_code:\"en\"` hardcoded in src/connect.rs:284)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Enter-to-send toggle (partial: Enter always sends, hardcoded in src/composer.rs:19-20; no toggle)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Send by Cmd/Ctrl+Enter option",
      "blocked": false,
      "reason": null
     }
