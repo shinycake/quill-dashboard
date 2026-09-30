@@ -33,14 +33,6 @@
    "branch": "parity/bots-payment-recurring"
   },
   {
-   "area": "Bots, polls & payments",
-   "label": "rich-text composer max length 32,768 chars (parity:msg-richtext-max-length)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/msg-richtext-max-length"
-  },
-  {
    "area": "Calls",
    "label": "parity:calls-less-data \u2014 driver test + check the less-data-for-calls box",
    "kind": "pr",
@@ -55,6 +47,22 @@
    "pr": null,
    "url": null,
    "branch": "parity/platform-history-export"
+  },
+  {
+   "area": "Messaging core",
+   "label": "Rich text: enforce 32,768-char composer max length",
+   "kind": "pr",
+   "pr": 216,
+   "url": "https://github.com/shinycake/quill/pull/216",
+   "branch": "parity/msg-richtext-max-length"
+  },
+  {
+   "area": "Messaging core",
+   "label": "expandable block quotes (parity:msg-blockquote-expandable)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/msg-blockquote-expandable"
   },
   {
    "area": "Secret chats",
