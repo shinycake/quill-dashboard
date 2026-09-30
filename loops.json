@@ -64,18 +64,18 @@
    "updated_at": "2026-09-30T10:05:51Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 977
+   "age_seconds": 1096
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "recurring payments UX (parity:bots-payment-recurring)",
-    "branch": "parity/bots-payment-recurring",
-    "worktree": "~/workspace/quill-impl-payment-recurring",
+    "slice": "games: send / play (parity:bots-games, part 1)",
+    "branch": "parity/bots-games-send-play",
+    "worktree": "~/workspace/quill-l2-games",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~04:15 CDT. RESUMED unfinished pre-freeze work: branch parity/bots-payment-recurring (local-only, base 78c3026) + dirty tree in ~/workspace/quill-impl-payment-recurring (~1062 insertions, 24 files: Star subscriptions getStarSubscriptions/editStarSubscription/reuseStarSubscription plumbing + payments UI). Previous implementer stopped at the split freeze; new implementer assesses, finishes, gates, commits. PR #204 phase=in_review, handoff=merge-pipeline, auto-merge armed."
+    "detail": "Slice claimed 2026-09-30 ~05:15 CDT right after PR #207 (recurring payments) opened. Part 1 of bots-games: send game (inputMessageGame), render messageGame with Play, play via OS-browser fallback. Part 2 (high scores: getGameHighScores/setGameScore) queued next. PR #207 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -158,6 +158,12 @@
      "state": "open",
      "handoff": "merge-pipeline",
      "commit": "73ec71c"
+    },
+    "payment_recurring": {
+     "number": 207,
+     "state": "open",
+     "handoff": "merge-pipeline",
+     "commit": "a2b2fc7"
     }
    },
    "status": "active",
@@ -172,7 +178,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T10:05:50Z",
+   "updated_at": "2026-09-30T10:13:07Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -180,12 +186,13 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T09:14:35Z",
+   "last_evidence_at": "2026-09-30T10:13:07Z",
    "blockers": {
-    "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
+    "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies.",
+    "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
-   "stale": true,
-   "age_seconds": 3402
+   "stale": false,
+   "age_seconds": 9
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -213,18 +220,18 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 1277
+   "age_seconds": 1396
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
    "current": {
-    "slice": "in-app notification sounds toggle (parity:settings-inapp-sound)",
-    "branch": "parity/settings-inapp-sound",
-    "worktree": "~/workspace/quill-l4-inapp-sound",
+    "slice": "app language selector (parity:settings-language)",
+    "branch": "parity/settings-language",
+    "worktree": "~/workspace/quill-l4-language",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Claimed 2026-09-30 ~10:00 UTC; verified unclaimed (open PRs #204-#208 none cover it; loops 1-3 on other slices). Next settings gap after reset-notif."
+    "detail": "Claimed 2026-09-30 ~10:15 UTC; verified unclaimed (no open PR, loops 1-3 on other slices). system_language_code currently hardcoded."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -238,21 +245,21 @@
     "branch": null,
     "worktree": null,
     "phase": "unclaimed",
-    "detail": "Pick next settings/auth/accounts gap after inapp-sound PR opens."
+    "detail": "Pick next settings/auth/accounts gap after language PR opens."
    },
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "slice": "reset all notification settings (parity:settings-reset-notif)",
-    "branch": "parity/settings-reset-notif",
-    "worktree": "/home/hatch/workspace/quill-l4-reset-notif",
+    "slice": "in-app notification sounds toggle (parity:settings-inapp-sound)",
+    "branch": "parity/settings-inapp-sound",
+    "worktree": "/home/hatch/workspace/quill-l4-inapp-sound",
     "phase": "in_review",
-    "pr": 208,
-    "detail": "PR #208 opened 2026-09-30 ~10:00 UTC. Gates: fmt/clippy clean, tests 0 failed, cargo check --features ui clean (9m26s); full link skipped (single kit Button, check type-checked it; Mac runner offline). Rebased onto origin/main e3d65f3 (#204), 0 conflicts. Handed to merge-pipeline. Follow-up: extend reset ok-arm to drop notification_exceptions once #206 merges."
+    "pr": 209,
+    "detail": "PR #209 opened 2026-09-30 ~10:15 UTC. Gates: fmt/clippy clean, tests all green (incl. new toggle test), cargo check --features ui clean (7m12s); full link skipped (one kit Switch, check type-checked it; Mac runner offline). Based on origin/main e3d65f3, 0 conflicts. Handed to merge-pipeline. Note: added Preferences load/save (did not exist); hide_notification_previews mirror still hardcoded true (pre-existing, untouched)."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T09:58:59Z",
-   "updated_at": "2026-09-30T10:08:37Z",
+   "last_evidence_at": "2026-09-30T10:12:08Z",
+   "updated_at": "2026-09-30T10:12:08Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -288,7 +295,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": false,
-   "age_seconds": 738
+   "age_seconds": 68
   }
  ]
 }

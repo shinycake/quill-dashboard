@@ -10,11 +10,11 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "recurring payments UX (parity:bots-payment-recurring)",
+   "label": "games: send / play (parity:bots-games, part 1)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/bots-payment-recurring"
+   "branch": "parity/bots-games-send-play"
   },
   {
    "area": "Bots, polls & payments",
@@ -34,6 +34,14 @@
   },
   {
    "area": "Settings",
+   "label": "Slice settings-inapp-sound: in-app notification sounds toggle",
+   "kind": "pr",
+   "pr": 209,
+   "url": "https://github.com/shinycake/quill/pull/209",
+   "branch": "parity/settings-inapp-sound"
+  },
+  {
+   "area": "Settings",
    "label": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
    "kind": "pr",
    "pr": 206,
@@ -50,11 +58,11 @@
   },
   {
    "area": "Settings",
-   "label": "in-app notification sounds toggle (parity:settings-inapp-sound)",
+   "label": "app language selector (parity:settings-language)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/settings-inapp-sound"
+   "branch": "parity/settings-language"
   }
  ]
 }
