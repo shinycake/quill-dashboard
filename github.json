@@ -918,7 +918,7 @@
   {
    "number": 183,
    "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
-   "updated_at": "2026-09-29T22:58:02Z",
+   "updated_at": "2026-09-30T00:01:29Z",
    "html_url": "https://github.com/shinycake/quill/pull/183",
    "head": {
     "ref": "parity/chatlist-badge-settings"
@@ -927,7 +927,7 @@
   {
    "number": 182,
    "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
-   "updated_at": "2026-09-29T23:51:06Z",
+   "updated_at": "2026-09-30T00:01:04Z",
    "html_url": "https://github.com/shinycake/quill/pull/182",
    "head": {
     "ref": "parity/community-chatlist-mode"
