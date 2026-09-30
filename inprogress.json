@@ -39,14 +39,6 @@
    "pr": 191,
    "url": "https://github.com/shinycake/quill/pull/191",
    "branch": "parity/bots-inline-mode"
-  },
-  {
-   "area": "Settings",
-   "label": "Settings: mention + pinned-message notification overrides per scope",
-   "kind": "pr",
-   "pr": 184,
-   "url": "https://github.com/shinycake/quill/pull/184",
-   "branch": "parity/settings-mentions-pinned"
   }
  ]
 }
