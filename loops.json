@@ -65,7 +65,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T13:35:54Z",
+   "updated_at": "2026-09-30T13:46:01Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -204,7 +204,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T13:35:55Z",
+   "updated_at": "2026-09-30T13:46:00Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 2467
+   "age_seconds": 2586
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -251,10 +251,10 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 320
+   "age_seconds": 439
   },
   {
-   "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
+   "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
    "current": {
     "slice": null,
     "branch": null,
@@ -277,7 +277,7 @@
     "detail": null
    },
    "parked": false,
-   "phase": "implementing",
+   "phase": "active",
    "previous": {
     "slice": "account switcher UI (parity:auth-multi-account)",
     "branch": "parity/auth-multi-account-ui",
@@ -288,7 +288,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T13:44:45Z",
-   "updated_at": "2026-09-30T13:44:45Z",
+   "updated_at": "2026-09-30T13:47:00Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -322,7 +322,7 @@
     "finding": "Loop genuinely dead: last commit 24572ac on parity/settings-notif-exceptions at 06:48Z; no worktree activity since 06:47Z; no PR on branch; no CI runs ever on it; no live process on the worktree. last_evidence_at 06:46:45Z (>90m). Prior coordinator + its 'cargo test running' implementer both gone.",
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
-   "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
+   "note": "Predecessor 9ff5a5c3 completed cleanly 13:45 UTC (partition exhausted: #219 opened, #206/#209/#214 merged; auth-qr-authorize-other blocked with evidence). Parent redirected Loop 4 to remaining Phase 1 communities gaps (add-chat/admin-rights/chat-visibility); first task includes removing phantom README item bots-streaming-draft-stop (parent-verified: no streaming-message concept in td_api.tl).",
    "blocked": [
     {
      "slice": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
@@ -338,7 +338,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 35
+   "age_seconds": 154
   }
  ]
 }
