@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 189,
+   "title": "ci: enable auto-merge (squash) on new PRs by default",
+   "merged_at": "2026-09-30T01:02:04Z",
+   "html_url": "https://github.com/shinycake/quill/pull/189",
+   "head": {
+    "ref": "infra/auto-merge-default"
+   }
+  },
+  {
    "number": 183,
    "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
    "merged_at": "2026-09-30T00:51:29Z",
@@ -894,27 +903,9 @@
    "head": {
     "ref": "parity/media-2"
    }
-  },
-  {
-   "number": 87,
-   "title": "M2: anniversary messaging (rich text, rich messages, ephemeral)",
-   "merged_at": "2026-09-27T18:05:17Z",
-   "html_url": "https://github.com/shinycake/quill/pull/87",
-   "head": {
-    "ref": "parity/messaging-2"
-   }
   }
  ],
  "openPRs": [
-  {
-   "number": 189,
-   "title": "ci: enable auto-merge (squash) on new PRs by default",
-   "updated_at": "2026-09-30T00:53:14Z",
-   "html_url": "https://github.com/shinycake/quill/pull/189",
-   "head": {
-    "ref": "infra/auto-merge-default"
-   }
-  },
   {
    "number": 188,
    "title": "calls-proxy: Use proxy for calls setting",
@@ -936,7 +927,7 @@
   {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
-   "updated_at": "2026-09-30T00:55:52Z",
+   "updated_at": "2026-09-30T01:03:17Z",
    "html_url": "https://github.com/shinycake/quill/pull/184",
    "head": {
     "ref": "parity/settings-mentions-pinned"
@@ -944,6 +935,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T01:02:04Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1333,19 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T23:40:31Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "94fc73883af720f9995149de3710d6b91bb92eb5",
+   "html_url": "https://github.com/shinycake/quill/commit/94fc73883af720f9995149de3710d6b91bb92eb5",
+   "commit": {
+    "message": "ci: enable auto-merge (squash) on new PRs by default (#189)",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T01:02:03Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "8cea051680b8844773e57063bce79e47d673cf9d",
    "html_url": "https://github.com/shinycake/quill/commit/8cea051680b8844773e57063bce79e47d673cf9d",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T22:12:52Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "3916bb53debc6ce3d3303e0283b13f938faf2669",
-   "html_url": "https://github.com/shinycake/quill/commit/3916bb53debc6ce3d3303e0283b13f938faf2669",
-   "commit": {
-    "message": "G10: community create/hub/info UI\n\nMerge of #176 (G10 communities UI).\n\nReview: dedicated adversarial re-review CONFIRM on head c7f2dc8c (duplicate-method blocker fixed, baselines exact, README union verified).\nCI: linux-fmt-clippy-test SUCCESS, macos-compile-smoke SUCCESS on merged head.\nParity: 407/525 (77.5%), 404\u2192407 (+3 G10 boxes).",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T21:58:23Z"
     }
    },
    "author": {

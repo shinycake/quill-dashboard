@@ -1,14 +1,6 @@
 {
  "items": [
   {
-   "area": "Bots, polls & payments",
-   "label": "chat list badge counter settings (parity:chatlist-badge-settings)",
-   "kind": "pr",
-   "pr": 183,
-   "url": "https://github.com/shinycake/quill/pull/183",
-   "branch": "parity/chatlist-badge-settings"
-  },
-  {
    "area": "Calls",
    "label": "calls-proxy: Use proxy for calls setting",
    "kind": "pr",
@@ -55,14 +47,6 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
-  },
-  {
-   "area": null,
-   "label": "ci: enable auto-merge (squash) on new PRs by default",
-   "kind": "pr",
-   "pr": 189,
-   "url": "https://github.com/shinycake/quill/pull/189",
-   "branch": "infra/auto-merge-default"
   }
  ]
 }
