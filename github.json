@@ -909,7 +909,7 @@
   {
    "number": 220,
    "title": "Slice settings-language: app language selector",
-   "updated_at": "2026-09-30T14:11:29Z",
+   "updated_at": "2026-09-30T14:23:01Z",
    "html_url": "https://github.com/shinycake/quill/pull/220",
    "head": {
     "ref": "parity/settings-language"
