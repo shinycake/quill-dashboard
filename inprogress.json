@@ -19,9 +19,9 @@
   {
    "area": "Media",
    "label": "media-downloads-pause (parity:media-downloads-pause)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 203,
+   "url": "https://github.com/shinycake/quill/pull/203",
    "branch": "parity/media-downloads-pause"
   },
   {

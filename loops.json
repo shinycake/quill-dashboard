@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 1014
+   "age_seconds": 1138
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -187,13 +187,13 @@
     "slice": "media-downloads-pause (parity:media-downloads-pause)",
     "branch": "parity/media-downloads-pause",
     "worktree": "~/workspace/quill-l3-downloads-pause",
-    "phase": "implementing",
-    "pr": null,
-    "handoff": null,
-    "detail": "Pause/resume downloads via the persistent file-download list (addFileToDownloads + toggleDownloadIsPaused + updateFileDownload). Schema 1.8.67 verified: addFileToDownloads(:14039), toggleDownloadIsPaused(:14044), updateFileDownload(:10795), fileDownload.is_paused(:3318). MED3 evidence (DECISIONS.md): pause exists ONLY for the list API \u2014 one-shot downloadFile has no pause. Slice routes user-initiated downloads (history rows, viewer, manager retry) through addFileToDownloads, adds Pause/Resume UI in downloads manager + history chips, keeps auto-downloads one-shot. Chat list fully checked; media-video-pip honestly blocked. Worktree fresh from 614e797."
+    "phase": "in_review",
+    "pr": 203,
+    "handoff": "merge-pipeline",
+    "detail": "PR #203 opened: pause/resume downloads via persistent file-download list. Pushed a39ac590be58d5a96896695a0ddd58c557b5cad9. Gates all green (fmt, clippy -D warnings, 1144+ tests, local --features ui link succeeded). Finisher repaired 2 compile errors + 1 failing test from the daemon-killed implementer's uncommitted diff; no design changes. Screenshot docs/screenshots/ready-downloads.png committed. Caveat: live toggleDownloadIsPaused round-trip unverifiable without live Telegram; pause is non-optimistic. Merge pipeline owns from here."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T06:50:00Z",
+   "last_evidence_at": "2026-09-30T08:25:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -203,10 +203,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T08:14:31Z",
-   "last_evidence_event": "slice claimed: media-downloads-pause",
-   "stale": true,
-   "age_seconds": 5477
+   "updated_at": "2026-09-30T08:25:00Z",
+   "last_evidence_event": "PR #203 opened",
+   "last_merged": null,
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -281,7 +282,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 5672
+   "age_seconds": 5796
   }
  ]
 }

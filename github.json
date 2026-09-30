@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 203,
+   "title": "Slice media-downloads-pause: pause/resume downloads via the persistent file-download list",
+   "updated_at": "2026-09-30T08:21:42Z",
+   "html_url": "https://github.com/shinycake/quill/pull/203",
+   "head": {
+    "ref": "parity/media-downloads-pause"
+   }
+  },
+  {
    "number": 202,
    "title": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
    "updated_at": "2026-09-30T08:20:26Z",
@@ -917,6 +926,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T08:21:42Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1303,16 +1322,6 @@
     "ref": "refs/heads/parity/chatlist-list-style"
    },
    "created_at": "2026-09-30T01:41:35Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/community-chatlist-mode"
-   },
-   "created_at": "2026-09-30T00:01:03Z",
    "actor": {
     "login": "shinycake"
    }
