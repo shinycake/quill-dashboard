@@ -954,6 +954,26 @@
  ],
  "events": [
   {
+   "type": "DeleteEvent",
+   "payload": {
+    "ref": "parity/groups-info-edit"
+   },
+   "created_at": "2026-09-29T18:17:39Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/chatlist-list-style"
+   },
+   "created_at": "2026-09-30T00:25:56Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "CreateEvent",
    "payload": {
     "ref": "refactor/split-state"
@@ -1329,26 +1349,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T00:03:17Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T23:56:14Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/bots-payment-clear-backend"
-   },
-   "created_at": "2026-09-29T16:16:17Z",
    "actor": {
     "login": "shinycake"
    }
