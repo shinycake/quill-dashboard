@@ -954,7 +954,7 @@
   {
    "number": 207,
    "title": "parity:bots-payment-recurring \u2014 Stars subscriptions management",
-   "updated_at": "2026-09-30T13:04:34Z",
+   "updated_at": "2026-09-30T13:17:07Z",
    "html_url": "https://github.com/shinycake/quill/pull/207",
    "head": {
     "ref": "parity/bots-payment-recurring"
