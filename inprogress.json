@@ -76,8 +76,8 @@
    "area": "Settings",
    "label": "Slice settings-language: app language selector",
    "kind": "pr",
-   "pr": 211,
-   "url": "https://github.com/shinycake/quill/pull/211",
+   "pr": 220,
+   "url": "https://github.com/shinycake/quill/pull/220",
    "branch": "parity/settings-language"
   }
  ]
