@@ -65,11 +65,11 @@
    "branch": "parity/platform-shortcuts-reference"
   },
   {
-   "area": "Settings",
+   "area": "Platform & edge cases",
    "label": "parity:platform-high-contrast",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 228,
+   "url": "https://github.com/shinycake/quill/pull/228",
    "branch": "parity/platform-high-contrast"
   },
   {

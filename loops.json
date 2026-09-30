@@ -7,12 +7,12 @@
     "slice": "parity:platform-high-contrast",
     "branch": "parity/platform-high-contrast",
     "worktree": "~/workspace/quill-l1-high-contrast",
-    "phase": "gating",
-    "pr": null,
-    "detail": "HC theme slice: ThemeChoice::HighContrast (third Appearance theme), orthogonal HC palette flag in chat_theme (pure-black surfaces/white text/yellow links), wins over auto-night, 3-way toggle cycle. Local gates green (fmt, clippy, 1286 tests). Mac UI gate run 36749509654 dispatched; local UI screenshot build in progress."
+    "phase": "pr-open",
+    "pr": 228,
+    "detail": "PR #228 open (https://github.com/shinycake/quill/pull/228). Merge-pipeline owns it. Local screenshot build running for the HC dialog capture."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T17:35:00Z",
+   "last_evidence_at": "2026-09-30T17:45:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -245,7 +245,7 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": true,
-   "age_seconds": 909
+   "age_seconds": 1033
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -269,11 +269,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T17:04:34Z",
+   "updated_at": "2026-09-30T17:14:31Z",
    "last_evidence_event": "slice claimed: msg-richtext-ai-tools (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 2601
+   "age_seconds": 2725
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -380,7 +380,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 10401
+   "age_seconds": 10525
   }
  ]
 }
