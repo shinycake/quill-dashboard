@@ -47,14 +47,6 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
-  },
-  {
-   "area": "Stories",
-   "label": "Settings: reaction + story notification settings",
-   "kind": "pr",
-   "pr": 186,
-   "url": "https://github.com/shinycake/quill/pull/186",
-   "branch": "parity/settings-reaction-notif"
   }
  ]
 }

@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 412,
+  "done": 413,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 186,
+   "title": "Settings: reaction + story notification settings",
+   "merged_at": "2026-09-30T00:18:45Z",
+   "html_url": "https://github.com/shinycake/quill/pull/186",
+   "head": {
+    "ref": "parity/settings-reaction-notif"
+   }
+  },
   {
    "number": 185,
    "title": "infra: delete check_file_sizes.sh waiver system",
@@ -894,31 +903,13 @@
    "head": {
     "ref": "parity/groups-channels-1"
    }
-  },
-  {
-   "number": 84,
-   "title": "checklist: fold in Telegram 13th-anniversary update gaps",
-   "merged_at": "2026-09-27T14:24:22Z",
-   "html_url": "https://github.com/shinycake/quill/pull/84",
-   "head": {
-    "ref": "checklist/anniversary-update-gaps"
-   }
   }
  ],
  "openPRs": [
   {
-   "number": 186,
-   "title": "Settings: reaction + story notification settings",
-   "updated_at": "2026-09-30T00:03:17Z",
-   "html_url": "https://github.com/shinycake/quill/pull/186",
-   "head": {
-    "ref": "parity/settings-reaction-notif"
-   }
-  },
-  {
    "number": 184,
    "title": "Settings: mention + pinned-message notification overrides per scope",
-   "updated_at": "2026-09-30T00:01:51Z",
+   "updated_at": "2026-09-30T00:18:19Z",
    "html_url": "https://github.com/shinycake/quill/pull/184",
    "head": {
     "ref": "parity/settings-mentions-pinned"
@@ -936,7 +927,7 @@
   {
    "number": 182,
    "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
-   "updated_at": "2026-09-30T00:03:19Z",
+   "updated_at": "2026-09-30T00:18:02Z",
    "html_url": "https://github.com/shinycake/quill/pull/182",
    "head": {
     "ref": "parity/community-chatlist-mode"
@@ -944,6 +935,66 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestReviewEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:18:56Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T00:18:46Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:18:45Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-29T17:32:34Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:18:19Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:18:02Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestReviewEvent",
    "payload": {
@@ -1283,69 +1334,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/loop2-s13-story-reactions"
-   },
-   "created_at": "2026-09-29T15:14:47Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T22:13:11Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T22:12:52Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/community-search-filter"
-   },
-   "created_at": "2026-09-29T22:12:14Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T22:12:13Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/platform-tray-icon"
-   },
-   "created_at": "2026-09-29T21:19:24Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "de324303960091586aa868661657a8c28994507f",
+   "html_url": "https://github.com/shinycake/quill/commit/de324303960091586aa868661657a8c28994507f",
+   "commit": {
+    "message": "Slice parity:settings-reaction-notif: reaction + story notification settings (#186)\n\nBackend:\n- envelope.rs: ReactionNotificationSource {None, Contacts, All} +\n  ReactionNotificationSettings (schema 1.8.67, line 3396); parse\n  updateReactionNotificationSettings (line 10671) into a new\n  UpdateReactionNotificationSettings payload\n- requests.rs: set_reaction_notification_settings JSON builder\n- connect.rs: send_reaction_notification_settings driver method\n- state.rs: Session.reaction_notification_settings cache, fed from the\n  update stream (no getter exists in the schema)\n\nUI (Notification defaults dialog):\n- new Reactions section: source presets (None/Contacts/Everyone) for\n  message reactions, story reactions, poll votes; kit Switch for show\n  preview; saved-sound picker via new SoundPickerTarget::Reaction\n- per-scope sections: 'Mute story notifications' and 'Show story poster'\n  kit Switches (mute_stories / show_story_poster in\n  setScopeNotificationSettings). Skipped: story-sound picker \u2014 the\n  per-scope message-sound picker already covers sound choice.\n\nREADME: check parity:settings-reaction-notif.\n\nGates: cargo fmt, clippy -D warnings, cargo test all green\n(no-default-features, locked). UI build not run: PR cap at 4.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T00:18:44Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
    "html_url": "https://github.com/shinycake/quill/commit/1e62510b823a8007a450fb08e1e596ea5d7ea1d5",
@@ -1466,20 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T21:27:19Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "d4caf4394bfca95f6a4fffef352e6690633932b9",
-   "html_url": "https://github.com/shinycake/quill/commit/d4caf4394bfca95f6a4fffef352e6690633932b9",
-   "commit": {
-    "message": "Slice S15: dynamic sticker-set order (usage-driven) (#173)\n\n* Slice S15: dynamic sticker-set order (usage-driven)\n\nSticker sends from the panel pass update_order_of_installed_sticker_sets=true\n(schema 1.8.67:5928) so TDLib moves the used set to the front and broadcasts\nupdateInstalledStickerSets (schema:10932), which the state reducer applies in\nplace to the cached installed sets (sticker panel for regular sets, emoji\npanel for other types). Picker lists stored order, so no UI change needed.\n\nWaiver bumps (exact, coherent extensions that cannot live elsewhere):\n- src/state.rs 21622 -> 21745 (reducer match arm + Session method + inline test)\n- src/telegram/envelope.rs 18575 -> 18630 (envelope variant + parse arm + tests)\n- src/telegram/requests.rs 10470 -> 10480 (send_sticker options + test assert)\n- src/ui/mod.rs 48851 -> 48853 (SendOptions field init for text sends)\nParity: checks stickers-dynamic-order box.\n\n* S15 review fixup: move tests to tests/sticker_dynamic_order.rs, ship exact waiver bumps, ui/mod.rs via ..Default\n\n* Fix envelope.rs waiver baseline: 18601 -> 18600 (true S15 bump is +25, not +26)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T21:11:48Z"
     }
    },
    "author": {
