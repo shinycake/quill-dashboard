@@ -401,7 +401,7 @@ async function loadFeeds(){
   const failures = [];
   await Promise.all(FEEDS.map(async file => {
     try {
-      const url = remote ? 'https://raw.githubusercontent.com/shinycake/quill-dashboard/main/' + file + '?t=' + Math.floor(Date.now()/30000) : file;
+      const url = remote ? 'https://raw.githubusercontent.com/shinycake/quill-dashboard/codex/dashboard-data/' + file + '?t=' + Math.floor(Date.now()/30000) : file;
       const {data, at} = await fetchJSON(url);
       if (!validFeed(file, data)) throw new Error('Invalid ' + file);
       if (JSON.stringify(bodies[file]) !== JSON.stringify(data)){bodies[file] = data; changed = true;}
