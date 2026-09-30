@@ -963,6 +963,16 @@
  ],
  "events": [
   {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/msg-richtext-max-length"
+   },
+   "created_at": "2026-09-30T13:03:25Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "PushEvent",
    "payload": {
     "ref": "refs/heads/parity/settings-reset-notif"
@@ -1348,16 +1358,6 @@
     "ref": "refs/heads/parity/bots-games"
    },
    "created_at": "2026-09-30T09:50:28Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T09:43:41Z",
    "actor": {
     "login": "shinycake"
    }
