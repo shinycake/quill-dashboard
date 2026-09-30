@@ -67,18 +67,18 @@
    "updated_at": "2026-09-30T09:05:51Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 1705
+   "age_seconds": 1817
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "clear payment/shipping info UI (parity:bots-payment-clear)",
-    "branch": "parity/bots-payment-clear-ui",
-    "worktree": "~/workspace/quill-l2-payment-clear",
+    "slice": "recurring payments UX (parity:bots-payment-recurring)",
+    "branch": "parity/bots-payment-recurring",
+    "worktree": "~/workspace/quill-impl-payment-recurring",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~03:05 CDT right after PR #201 (ephemeral-command icon) opened. Backend already merged via #159 (deleteSavedOrderInfo + deleteSavedCredentials in src/telegram/requests_payments.rs). This slice adds the user-facing clear action. PR #201 phase=in_review, handoff=merge-pipeline, auto-merge armed."
+    "detail": "Slice claimed 2026-09-30 ~04:15 CDT. RESUMED unfinished pre-freeze work: branch parity/bots-payment-recurring (local-only, base 78c3026) + dirty tree in ~/workspace/quill-impl-payment-recurring (~1062 insertions, 24 files: Star subscriptions getStarSubscriptions/editStarSubscription/reuseStarSubscription plumbing + payments UI). Previous implementer stopped at the split freeze; new implementer assesses, finishes, gates, commits. PR #204 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -155,6 +155,12 @@
      "state": "open",
      "handoff": "merge-pipeline",
      "commit": "3f8d4c5"
+    },
+    "payment_clear": {
+     "number": 204,
+     "state": "open",
+     "handoff": "merge-pipeline",
+     "commit": "73ec71c"
     }
    },
    "status": "active",
@@ -169,7 +175,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T09:05:52Z",
+   "updated_at": "2026-09-30T09:14:35Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -177,9 +183,12 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T08:04:23Z",
-   "stale": true,
-   "age_seconds": 4142
+   "last_evidence_at": "2026-09-30T09:14:35Z",
+   "blockers": {
+    "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
+   },
+   "stale": false,
+   "age_seconds": 42
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -203,11 +212,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:04:30Z",
+   "updated_at": "2026-09-30T09:14:29Z",
    "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 2305
+   "age_seconds": 2417
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -282,7 +291,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 2459
+   "age_seconds": 2571
   }
  ]
 }

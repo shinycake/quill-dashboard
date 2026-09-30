@@ -905,8 +905,28 @@
    }
   }
  ],
- "openPRs": [],
+ "openPRs": [
+  {
+   "number": 204,
+   "title": "Payments: clear saved payment/shipping info (privacy)",
+   "updated_at": "2026-09-30T09:14:18Z",
+   "html_url": "https://github.com/shinycake/quill/pull/204",
+   "head": {
+    "ref": "parity/bots-payment-clear-ui"
+   }
+  }
+ ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:14:18Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1293,16 +1313,6 @@
     "ref": "refactor/split-envelope"
    },
    "created_at": "2026-09-30T01:14:15Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/calls-audio-fx"
-   },
-   "created_at": "2026-09-30T01:09:55Z",
    "actor": {
     "login": "shinycake"
    }
