@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 413,
+  "done": 414,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 182,
+   "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
+   "merged_at": "2026-09-30T00:37:42Z",
+   "html_url": "https://github.com/shinycake/quill/pull/182",
+   "head": {
+    "ref": "parity/community-chatlist-mode"
+   }
+  },
   {
    "number": 186,
    "title": "Settings: reaction + story notification settings",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/groups-channels-2"
    }
-  },
-  {
-   "number": 85,
-   "title": "G1: groups/channels management core",
-   "merged_at": "2026-09-27T16:01:00Z",
-   "html_url": "https://github.com/shinycake/quill/pull/85",
-   "head": {
-    "ref": "parity/groups-channels-1"
-   }
   }
  ],
  "openPRs": [
@@ -941,18 +941,19 @@
    "head": {
     "ref": "parity/chatlist-badge-settings"
    }
-  },
-  {
-   "number": 182,
-   "title": "communities-chatlist-mode: view a community's chats as a filtered chat list",
-   "updated_at": "2026-09-30T00:23:44Z",
-   "html_url": "https://github.com/shinycake/quill/pull/182",
-   "head": {
-    "ref": "parity/community-chatlist-mode"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:37:42Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "CreateEvent",
    "payload": {
@@ -1342,19 +1343,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T22:50:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "dcdcd5dfa1f223a474aff654ccebafb997525165",
+   "html_url": "https://github.com/shinycake/quill/commit/dcdcd5dfa1f223a474aff654ccebafb997525165",
+   "commit": {
+    "message": "communities-chatlist-mode: view a community's chats as a filtered chat list (#182)\n\n* Communities: community chat-list mode (parity:communities-chatlist-mode)\n\nSelecting a community's \"View chats\" in the communities hub filters the\nmain chat list to that community's chats. Membership is derived from the\ncached communityFullInfo.chats pack (state keeps no per-chat\ncommunity_id); updateCommunityFullInfo replaces the pack wholesale, so\nmembership changes update the list on the next render. Hidden chats\n(is_hidden) stay included: the mode only narrows the already-visible main\nlist and the hub lists owned communities.\n\nUI: kit Button \"View chats\" per hub row; mode banner (community name +\nclear X) under the folder tabs; empty state for communities with no chats\nand a Loading state while the full-info pack hasn't landed. The mode exits\nvia the banner X or by selecting a folder tab / Unread / Archived.\n\nWaiver bump (rule 2026-09-29): src/ui/mod.rs 49090 -> 49217 (+127), exact.\nType-coherent extensions only: ChatListFilter::Community(i64) variant, a\nnew arm on the existing chat-list empty-state chain, and five QuillApp\nmethods (enter/exit_community_chat_list_mode, community_mode_banner,\nfolder_tabs_with_community_banner, retain_community_chats) + 1 import +\n2 call-site glue lines. The pure filter logic lives in the new named\nmodule src/community_mode.rs (not in the waived file); the hub button in\nsrc/ui/dialogs/community.rs; tests in tests/community_chatlist_mode.rs.\n\n* Merge-pipeline: rebase post-#181; union DECISIONS.md section (file-size gate deleted per Idan 2026-09-29)\n\n* Merge-pipeline: cargo fmt fixup for post-rebase tree\n\n* Review fixup: collapse duplicated community filter predicate into single tested retain_community_chats\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T00:37:41Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "de324303960091586aa868661657a8c28994507f",
    "html_url": "https://github.com/shinycake/quill/commit/de324303960091586aa868661657a8c28994507f",
@@ -1475,20 +1480,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-29T21:43:03Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "cc1f2cff616db3c21fa3b91b07711de9233ac0f4",
-   "html_url": "https://github.com/shinycake/quill/commit/cc1f2cff616db3c21fa3b91b07711de9233ac0f4",
-   "commit": {
-    "message": "platform-tray-icon: system tray icon with unread count (#174)\n\n* platform-tray-icon: system tray icon with unread count\n\nPivoted from A11 (auth-qr-authorize-other): TDLib 1.8.67 cannot mint a\nlogin token for another device from an authorized client\n(requestQrCodeAuthentication is WaitPhoneNumber-only; confirmQrCodeAuthentication\nis scan-only; the only auth.exportLoginToken call site is create_unauth).\nFull evidence in DECISIONS.md; the QR box stays unchecked honestly.\n\nNew named module src/tray.rs: total_unread (saturating sum over chats),\nprogrammatic 64x64 RGBA icon (blue rounded square + paper-plane glyph, no\nasset files), red unread pill capped at 99+, tray-icon 0.21 handle with\nchange-only re-render and tooltip, sync_tray on a process-wide handle that\nretries creation until the OS tray exists (silent no-op otherwise).\nsrc/main.rs: 1s UI-thread timer syncs the tray via WeakEntity.\nsrc/ui/mod.rs: zero line growth (48465) \u2014 only fn session -> pub(crate) fn\nsession (line-neutral). tray-menu / minimize-to-tray / start-minimized /\napp-icon-badge / updater boxes untouched.\n\nREADME: parity:platform-tray-icon checked.\n\n* platform-tray-icon: reviewer fixups (F2-F5)\n\nF2: badge excludes effectively muted chats via Session::effective_muted\n(same gate as the notification toast) \u2014 matches Telegram Desktop's default\n('Include muted chats in unread count' is opt-in); module docs corrected\n(the old 'official-client OS-badge semantics' claim was wrong).\nF3: badge pill clamped by x0, not cx \u2014 no more 1px right-edge clip at >=10\nunread; proof image re-rendered (~/workspace/tray-icons-proof.png).\nF4: DECISIONS.md \u2014 thread_local RefCell (not OnceLock<Mutex>) and verified\ntd_api.tl refs (:11346, :11414, :9357).\nF5: tooltip is a no-op on Linux (tray-icon docs) noted in README/DECISIONS.\nTests: muted chats excluded from total_unread.\n\n* platform-tray-icon: cargo fmt\n\n* platform-tray-icon: fix Cargo.lock libloading disambiguation after rebase\n\n* platform-tray-icon: include muted chats in badge (Telegram Desktop's actual default)\n\nThe earlier F2 fixup claimed TD excludes muted by default ('opt-in').\nThat was factually wrong: tdesktop core_settings.h declares\n_includeMutedCounter = true, and computeUnreadBadge includes muted marks\nwhen the setting is on (the 'Include muted chats' toggle defaults ON).\ntotal_unread now sums non-archived chats with muted included; archived\nexcluded (both clients exclude archived from the badge by default).\nTests + docs corrected.\n\n* Fix review findings: correct DECISIONS.md line counts (ui/mod.rs 48851\u219248851 zero growth, src/main.rs +23)\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-29T21:27:19Z"
     }
    },
    "author": {

@@ -328,6 +328,7 @@
     "Welcome message setup: Welcome-message row in the group/channel info panel opens the pack editor dialog (src/ui/mod.rs)",
     "Communities: create a community (createCommunity exists in TDLib 1.8.67; backend \u2014 builder + driver + state sync \u2014 plus \"New community\" dialog UI: name field, base-chat picker, hide-chat option)",
     "Communities: browse and manage owned communities (backend \u2014 builders + drivers + state sync for create/loadFullInfo/setName \u2014 plus Communities hub dialog listing owned communities with per-row info buttons)",
+    "Communities: community chat-list mode (view a community's chats as a filtered chat list)",
     "Communities: info panel (backend \u2014 loadFullInfo/setName builders + drivers + state sync \u2014 plus community info panel UI: name with edit prompt, admin/banned/request counts, chat list with hidden badges)",
     "Communities: \"chat added to community\" service message (`messageChatAddedToCommunity`; TGX `ActionChatAddedToCommunity`/`ActionChatAddedToCommunityUnknown` verbatim \u2014 `This chat was added to community \"NAME\"` with the name from the session `updateCommunity` cache, nameless fallback when unknown) (src/telegram/envelope.rs, src/ui/mod.rs)",
     "Communities: \"chat removed from community\" service message (`messageChatRemovedFromCommunity`; TGX `ActionChatRemovedFromCommunity` verbatim \u2014 `This chat was removed from community`) (src/telegram/envelope.rs, src/ui/mod.rs)",
@@ -339,11 +340,6 @@
      "text": "Communities: toggle community chat visibility",
      "blocked": true,
      "reason": "no TDLib 1.8.67 method to toggle hidden state"
-    },
-    {
-     "text": "Communities: community chat-list mode (view a community's chats as a filtered chat list)",
-     "blocked": false,
-     "reason": null
     },
     {
      "text": "Communities: add a chat to a community",

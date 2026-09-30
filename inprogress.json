@@ -25,14 +25,6 @@
    "branch": "parity/chatlist-list-style"
   },
   {
-   "area": "Chat list",
-   "label": "communities-chatlist-mode: view a community's chats as a filtered chat list",
-   "kind": "pr",
-   "pr": 182,
-   "url": "https://github.com/shinycake/quill/pull/182",
-   "branch": "parity/community-chatlist-mode"
-  },
-  {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
    "kind": "branch",
