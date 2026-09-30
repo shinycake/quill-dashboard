@@ -936,7 +936,7 @@
   {
    "number": 195,
    "title": "refactor: split tests/replay.rs into per-area test files",
-   "updated_at": "2026-09-30T04:33:31Z",
+   "updated_at": "2026-09-30T04:40:37Z",
    "html_url": "https://github.com/shinycake/quill/pull/195",
    "head": {
     "ref": "refactor/split-replay"
@@ -945,7 +945,7 @@
   {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:38:58Z",
+   "updated_at": "2026-09-30T04:40:10Z",
    "html_url": "https://github.com/shinycake/quill/pull/194",
    "head": {
     "ref": "refactor/split-envelope"
@@ -954,7 +954,7 @@
   {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:03:42Z",
+   "updated_at": "2026-09-30T04:40:45Z",
    "html_url": "https://github.com/shinycake/quill/pull/193",
    "head": {
     "ref": "refactor/split-state"
@@ -971,6 +971,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-replay"
+   },
+   "created_at": "2026-09-30T04:40:36Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1357,16 +1367,6 @@
     "ref": "refs/heads/parity/composer-send-keys"
    },
    "created_at": "2026-09-30T02:03:18Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/stories-7"
-   },
-   "created_at": "2026-09-29T07:13:46Z",
    "actor": {
     "login": "shinycake"
    }
