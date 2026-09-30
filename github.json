@@ -929,6 +929,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/parity/community-chatlist-mode"
+   },
+   "created_at": "2026-09-30T00:01:03Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-30T06:01:02Z",
@@ -1312,16 +1322,6 @@
     "ref": "refs/heads/parity/community-search-filter"
    },
    "created_at": "2026-09-29T23:22:13Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-requests"
-   },
-   "created_at": "2026-09-30T04:44:04Z",
    "actor": {
     "login": "shinycake"
    }
