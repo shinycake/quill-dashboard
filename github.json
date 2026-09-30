@@ -909,7 +909,7 @@
   {
    "number": 189,
    "title": "ci: enable auto-merge (squash) on new PRs by default",
-   "updated_at": "2026-09-30T00:45:51Z",
+   "updated_at": "2026-09-30T00:53:14Z",
    "html_url": "https://github.com/shinycake/quill/pull/189",
    "head": {
     "ref": "infra/auto-merge-default"
@@ -918,7 +918,7 @@
   {
    "number": 188,
    "title": "calls-proxy: Use proxy for calls setting",
-   "updated_at": "2026-09-30T00:26:27Z",
+   "updated_at": "2026-09-30T00:52:57Z",
    "html_url": "https://github.com/shinycake/quill/pull/188",
    "head": {
     "ref": "parity/calls-proxy"
@@ -944,6 +944,26 @@
   }
  ],
  "events": [
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:52:57Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T00:52:35Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1320,26 +1340,6 @@
     "ref": "parity/auth-profile-accent"
    },
    "created_at": "2026-09-29T23:08:23Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-29T23:08:21Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/auth-profile-accent"
-   },
-   "created_at": "2026-09-29T22:09:38Z",
    "actor": {
     "login": "shinycake"
    }

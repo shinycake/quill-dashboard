@@ -4,17 +4,17 @@
   {
    "path": "src/ui/mod.rs",
    "original": 48393,
-   "current": 49857
+   "current": 49967
   },
   {
    "path": "src/connect.rs",
    "original": 23615,
-   "current": 24974
+   "current": 24983
   },
   {
    "path": "src/state.rs",
    "original": 20295,
-   "current": 21876
+   "current": 21883
   },
   {
    "path": "src/telegram/envelope.rs",
