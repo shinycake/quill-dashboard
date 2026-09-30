@@ -770,7 +770,8 @@
     "Poll stopped service message",
     "Invoice message rendering: product card with title, description, total price, TEST badge; paid invoices link to their receipt (ui/mod.rs)",
     "Payment checkout flow: getPaymentForm dialog, validateOrderInfo with shipping options, saved/new credentials, terms consent, sendPaymentForm; provider/additional-option/verification URLs open in the OS browser; Stars forms honestly declined (envelope.rs, requests.rs, connect.rs, state.rs, ui/mod.rs)",
-    "Payment receipts: getPaymentReceipt dialog from paid invoices (\"View receipt\") plus messagePaymentSuccessful/messagePaymentSuccessfulBot rows (ui/mod.rs)"
+    "Payment receipts: getPaymentReceipt dialog from paid invoices (\"View receipt\") plus messagePaymentSuccessful/messagePaymentSuccessfulBot rows (ui/mod.rs)",
+    "Clear payment/shipping info (privacy)"
    ],
    "pending": [
     {
@@ -785,11 +786,6 @@
     },
     {
      "text": "Recurring payments",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Clear payment/shipping info (privacy)",
      "blocked": false,
      "reason": null
     },

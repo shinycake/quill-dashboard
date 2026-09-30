@@ -2,14 +2,6 @@
  "items": [
   {
    "area": "Bots, polls & payments",
-   "label": "Payments: clear saved payment/shipping info (privacy)",
-   "kind": "pr",
-   "pr": 204,
-   "url": "https://github.com/shinycake/quill/pull/204",
-   "branch": "parity/bots-payment-clear-ui"
-  },
-  {
-   "area": "Bots, polls & payments",
    "label": "Slice bots-games: render, play, send, and high scores for bot games",
    "kind": "pr",
    "pr": 205,

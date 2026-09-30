@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 424,
+  "done": 425,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 204,
+   "title": "Payments: clear saved payment/shipping info (privacy)",
+   "merged_at": "2026-09-30T09:43:28Z",
+   "html_url": "https://github.com/shinycake/quill/pull/204",
+   "head": {
+    "ref": "parity/bots-payment-clear-ui"
+   }
+  },
   {
    "number": 202,
    "title": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/auth-sessions-1"
    }
-  },
-  {
-   "number": 104,
-   "title": "parity/auth-2fa-1: two-step verification management (getPasswordState/setPassword/recovery email)",
-   "merged_at": "2026-09-28T08:59:34Z",
-   "html_url": "https://github.com/shinycake/quill/pull/104",
-   "head": {
-    "ref": "parity/auth-2fa-1"
-   }
   }
  ],
  "openPRs": [
@@ -923,18 +923,29 @@
    "head": {
     "ref": "parity/bots-games"
    }
-  },
-  {
-   "number": 204,
-   "title": "Payments: clear saved payment/shipping info (privacy)",
-   "updated_at": "2026-09-30T09:18:11Z",
-   "html_url": "https://github.com/shinycake/quill/pull/204",
-   "head": {
-    "ref": "parity/bots-payment-clear-ui"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:43:28Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/media-downloads-pause"
+   },
+   "created_at": "2026-09-30T08:21:03Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1314,29 +1325,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-requests"
-   },
-   "created_at": "2026-09-30T01:44:17Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-30T06:38:07Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "e3d65f39ffebeb808dc4286680aa387c887d8b01",
+   "html_url": "https://github.com/shinycake/quill/commit/e3d65f39ffebeb808dc4286680aa387c887d8b01",
+   "commit": {
+    "message": "feat: clear saved payment/shipping info UI (parity:bots-payment-clear) (#204)\n\nPrivacy overlay gets a Payments section with a destructive\n'Clear saved payment/shipping info...' row. The shared group-confirm\ndialog (new GroupConfirmAction::ClearPaymentInfo) asks for\nconfirmation; on confirm the driver fires deleteSavedOrderInfo +\ndeleteSavedCredentials (TDLib 1.8.67, lines 15286/15289) via the new\nRequestPurpose::DeleteSavedOrderInfo/DeleteSavedCredentials, reusing\nthe existing request builders from PR #159. Success/failure goes to\nthe status-note toast (async refusals land on chat_action_error);\ndemo mode reports 'need a live connection' like other chat actions.\n\nTests: driver-level RecordingSender test asserting both constructors\ndispatch with distinct @extra ids, plus the not-Ready refusal gate.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T09:43:27Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "e6be59e9d32b0f7597e44ef56d76eed7004a483a",
    "html_url": "https://github.com/shinycake/quill/commit/e6be59e9d32b0f7597e44ef56d76eed7004a483a",
@@ -1457,20 +1462,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T05:55:58Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "e1291cc84d9388e0edcc2d9b791844b74aabd13c",
-   "html_url": "https://github.com/shinycake/quill/commit/e1291cc84d9388e0edcc2d9b791844b74aabd13c",
-   "commit": {
-    "message": "refactor: split src/state.rs into one-responsibility modules (#193)\n\nPure code motion, no behavior change. src/state.rs (21,883 lines) becomes\nsrc/state/mod.rs plus 34 modules, each under 2,000 lines:\n\n- Types: member_list, request_purpose, requests, chat_types,\n  history_types, search_types, shared_media_types, sticker_gif_types,\n  call_types, session, story_types, info_types\n- apply_payload dispatcher (session_apply) with 20 largest arms extracted\n  to session_apply_{error,ok,chats,messages,queries} helpers\n- Session methods grouped by responsibility: session_{chat_caps,updates,\n  stories,files,stickers,members,calls,sponsored,chatlist,notifications,\n  forum,requests,search,chat_search,forward}\n- 233 unit tests moved to src/state/tests/ grouped by area\n\nAll 1,126 lib tests pass. cargo fmt/clippy clean.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T05:48:39Z"
     }
    },
    "author": {
