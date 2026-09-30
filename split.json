@@ -67,7 +67,7 @@
    "merged_at": null,
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T06:29:16Z",
+   "updated_at": "2026-09-30T06:32:24Z",
    "extracted": 0
   }
  ]
