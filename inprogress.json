@@ -17,14 +17,6 @@
    "branch": "parity/platform-autostart"
   },
   {
-   "area": "Bots, polls & payments",
-   "label": "platform-autostart (parity:platform-autostart)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-autostart"
-  },
-  {
    "area": "Media",
    "label": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
    "kind": "branch",
@@ -87,6 +79,14 @@
    "pr": 220,
    "url": "https://github.com/shinycake/quill/pull/220",
    "branch": "parity/settings-language"
+  },
+  {
+   "area": "Stories",
+   "label": "stories-live-play (parity:stories-live-play)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/stories-live-play"
   }
  ]
 }
