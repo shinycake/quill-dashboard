@@ -9,20 +9,20 @@
    "branch": "parity/auth-multi-account-ui"
   },
   {
-   "area": "Auth & accounts",
-   "label": "platform-offline-indicator (parity:platform-offline-indicator)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/platform-offline-indicator"
-  },
-  {
    "area": "Bots, polls & payments",
    "label": "platform-autostart (parity:platform-autostart)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/platform-autostart"
+  },
+  {
+   "area": "Media",
+   "label": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/msg-richtext-inline-media"
   },
   {
    "area": "Media",

@@ -223,21 +223,21 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 1745
+   "age_seconds": 1866
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "slice": "platform-offline-indicator (parity:platform-offline-indicator)",
-    "branch": "parity/platform-offline-indicator",
-    "worktree": "~/workspace/quill-l3-offline-indicator",
+    "slice": "msg-richtext-inline-media (parity:msg-richtext-inline-media)",
+    "branch": "parity/msg-richtext-inline-media",
+    "worktree": "~/workspace/quill-l3-inline-media",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Phase-4 (remaining areas, coordinator priority). Phase 2 exhausted for loop3: qr-authorize-other BLOCKED (requestQrCodeAuthentication is login-flow-only per td_api.tl:11352 \u2014 no API for a logged-in client to mint login QRs), registration/email/premium are deliberate UnsupportedHalts, multi-account has loops 1+4 on it, everything else is merged/in-PR/in-flight. Scope: render Session::connection (parsed from updateConnectionState, stored at session_apply.rs:66, never rendered) as an offline indicator in the UI + test + README box."
+    "detail": "Phase-4 (remaining areas, coordinator priority). Unclaimed (loop2 on blockquote-expandable; max-length taken by #216). Verified: RichBlock has Document (inputPageBlockDocument) but no Photo/Video. Scope: RichBlock::Photo/Video variants with local_path for editor-created blocks; composer submit converts attached photos/videos (mirroring the Document path in composer.rs:submit_rich_composer); input_rich_message emits inputPageBlockPhoto/inputPageBlockVideo; parse_page_block handles incoming pageBlockPhoto/pageBlockVideo; render the blocks; tests + README box."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T12:10:00Z",
+   "last_evidence_at": "2026-09-30T13:40:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -247,11 +247,11 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T13:24:41Z",
-   "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
+   "updated_at": "2026-09-30T13:34:35Z",
+   "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
-   "stale": true,
-   "age_seconds": 4998
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -334,7 +334,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 5157
+   "age_seconds": 5278
   }
  ]
 }
