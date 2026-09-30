@@ -954,7 +954,7 @@
   {
    "number": 208,
    "title": "Slice settings-reset-notif: reset all notification settings",
-   "updated_at": "2026-09-30T11:54:31Z",
+   "updated_at": "2026-09-30T13:13:31Z",
    "html_url": "https://github.com/shinycake/quill/pull/208",
    "head": {
     "ref": "parity/settings-reset-notif"
