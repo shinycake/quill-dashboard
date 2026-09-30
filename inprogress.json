@@ -39,6 +39,14 @@
    "pr": 191,
    "url": "https://github.com/shinycake/quill/pull/191",
    "branch": "parity/bots-inline-mode"
+  },
+  {
+   "area": null,
+   "label": "refactor: split src/telegram/requests.rs into one-responsibility modules",
+   "kind": "pr",
+   "pr": 192,
+   "url": "https://github.com/shinycake/quill/pull/192",
+   "branch": "refactor/split-requests"
   }
  ]
 }
