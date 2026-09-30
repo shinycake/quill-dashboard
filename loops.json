@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 1988
+   "age_seconds": 2107
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -290,7 +290,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T12:07:21Z",
-   "updated_at": "2026-09-30T13:29:20Z",
+   "updated_at": "2026-09-30T13:38:38Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -334,7 +334,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 5400
+   "age_seconds": 5519
   }
  ]
 }
