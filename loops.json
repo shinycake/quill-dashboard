@@ -61,7 +61,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T11:46:05Z",
+   "updated_at": "2026-09-30T11:55:50Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 3016
+   "age_seconds": 3137
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -190,7 +190,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T11:46:06Z",
+   "updated_at": "2026-09-30T11:55:50Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -204,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 1088
+   "age_seconds": 1209
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -212,13 +212,13 @@
     "slice": "auth-logout-warning (parity:auth-logout-warning)",
     "branch": "parity/auth-logout-warning",
     "worktree": "~/workspace/quill-l3-logout-warning",
-    "phase": "implementing",
-    "pr": null,
-    "handoff": null,
-    "detail": "Phase-2, unclaimed (loop4 is on settings pipeline: notif-exceptions gating + reset-notif queued; no auth plans). Evidence: NO logout UI or driver exists \u2014 only the logOut builder (requests/auth.rs) re-exported but never called. README's '(partial: logout works)' is stale. Honest scope: logout entry in Settings/profile -> confirm dialog with TGX SignOutHint2 warning (secret chats lost, downloaded media erased) -> logOut driver -> auth-state handling back to login."
+    "phase": "in_review",
+    "pr": 212,
+    "handoff": "merge-pipeline",
+    "detail": "PR #212 opened: auth-logout-warning (logout flow with TGX SignOutHint2 warning). Pushed 0ffdc2f (rebased onto 237b260 to resolve DECISIONS.md append-conflict with #205's note). Gates green (fmt, clippy -D warnings, 1151 tests + 1 pre-existing network-env failure, ui check + link). Rebase touched DECISIONS.md only. Merge pipeline owns from here."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T09:50:00Z",
+   "last_evidence_at": "2026-09-30T12:00:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -228,22 +228,22 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T11:54:29Z",
-   "last_evidence_event": "slice claimed: auth-logout-warning",
+   "updated_at": "2026-09-30T12:00:00Z",
+   "last_evidence_event": "PR #212 opened",
    "last_merged": null,
-   "stale": true,
-   "age_seconds": 7516
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
    "current": {
-    "slice": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
-    "branch": "parity/auth-qr-authorize-other",
-    "worktree": "~/workspace/quill-l4-qr-authorize",
+    "slice": "add another account / switch between accounts (parity:auth-multi-account) \u2014 backend",
+    "branch": "parity/auth-multi-account",
+    "worktree": "~/workspace/quill-l4-multi-account",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Claimed 2026-09-30 ~11:35 UTC; verified unclaimed (no open PR, loops 1-3 on other slices). Starts with concept-level schema search: does TDLib expose QR-based linking of ANOTHER device?"
+    "detail": "Claimed 2026-09-30 ~11:55 UTC after auth-qr-authorize-other came back BLOCKED (recorded above). Verified unclaimed. Scoped: backend only (account store beyond accounts/primary, add/remove/list, session-per-account switch seam); account-switcher UI is the follow-up slice."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -270,8 +270,8 @@
     "detail": "PR #211 opened 2026-09-30 ~11:35 UTC. Implementer died on infra error (sqlx pool timeout) with work done but uncommitted; coordinator finished it: ran fmt/clippy/tests green, UI check caught E0282 type-inference error in the new section (fixed: explicit &usize event type), committed e0c5594, pushed, opened PR. Full link skipped (kit RadioGroup only; Mac runner offline). Based on origin/main e3d65f3, 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T11:53:51Z",
-   "updated_at": "2026-09-30T11:53:51Z",
+   "last_evidence_at": "2026-09-30T11:55:37Z",
+   "updated_at": "2026-09-30T11:55:37Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -306,8 +306,16 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
+   "blocked": [
+    {
+     "slice": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
+     "verdict": "BLOCKED (TDLib API surface)",
+     "at": "2026-09-30T11:55:37Z",
+     "evidence": "Concept-level search of td_api.tl 1.8.67: `logintoken` 0 hits; `requestQrCodeAuthentication` (:11346) is reverse direction (unauthenticated client logs itself in); `confirmQrCodeAuthentication` (:11414) is scan-side (needs camera). No method/type/update exposes a login token. `sendCustomRequest` (:16155) is bots-only, no raw-MTProto escape hatch. `auth.exportLoginToken` exists at MTProto layer (used by raw-MTProto Telegram Desktop) but TDLib keeps it internal to AuthManager; Quill talks to TDLib only via TdJson. Display-side QR has no API surface."
+    }
+   ],
    "stale": false,
-   "age_seconds": 85
+   "age_seconds": 100
   }
  ]
 }

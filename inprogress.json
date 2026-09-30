@@ -2,11 +2,19 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "\"link desktop device\" QR to authorize another device (parity:auth-qr-authorize-other)",
+   "label": "add another account / switch between accounts (parity:auth-multi-account) \u2014 backend",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/auth-qr-authorize-other"
+   "branch": "parity/auth-multi-account"
+  },
+  {
+   "area": "Auth & accounts",
+   "label": "auth-logout-warning (parity:auth-logout-warning)",
+   "kind": "pr",
+   "pr": 212,
+   "url": "https://github.com/shinycake/quill/pull/212",
+   "branch": "parity/auth-logout-warning"
   },
   {
    "area": "Auth & accounts",
@@ -39,14 +47,6 @@
    "pr": 210,
    "url": "https://github.com/shinycake/quill/pull/210",
    "branch": "parity/calls-less-data"
-  },
-  {
-   "area": "Secret chats",
-   "label": "auth-logout-warning (parity:auth-logout-warning)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/auth-logout-warning"
   },
   {
    "area": "Settings",
