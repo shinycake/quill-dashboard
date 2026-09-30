@@ -4,15 +4,15 @@
    "blockers": [],
    "coordinator": "c275da9e-e54e-47ec-8e46-304187d28f78",
    "current": {
-    "slice": "parity:platform-high-contrast",
-    "branch": "parity/platform-high-contrast",
-    "worktree": "~/workspace/quill-l1-high-contrast",
-    "phase": "pr-open",
-    "pr": 228,
-    "detail": "PR #228 open (https://github.com/shinycake/quill/pull/228). Merge-pipeline owns it. Local screenshot build running for the HC dialog capture."
+    "slice": "parity:platform-spellcheck",
+    "branch": "parity/platform-spellcheck",
+    "worktree": "~/workspace/quill-l1-spellcheck",
+    "phase": "implementing",
+    "pr": null,
+    "detail": "Claimed 2026-09-30 ~17:50 UTC (claim-check: no PR/branch/worktree/loop). Spellcheck in composer. G worktree kept for fixes + screenshot build running."
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T17:45:00Z",
+   "last_evidence_at": "2026-09-30T17:50:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -32,7 +32,11 @@
    "notes": "Watchdog 2026-09-30 ~03:10Z: PR #190 MERGED 02:48:36Z, PR #187 MERGED 02:06:53Z \u2014 claims corrected from in_review to merged; open_prs cleared. | STANDING ORDER 2026-09-29 ~20:07 CDT (Idan): phase is now SPLIT \u2014 no new feature slices; Loop 1 standing by for src/ui/mod.rs extraction-chunk assignment from the split coordinator. | Previous: 2026-09-29 ~19:28 CDT watchdog restarted Loop 1; chatlist-list-style \u2192 PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining all blocked/partial-unimplementable; groups remaining: 3 blocked + 1 in PR #182. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
    "open_prs": [
     202,
-    207
+    207,
+    217,
+    222,
+    225,
+    228
    ],
    "merged_prs": [
     {
@@ -60,7 +64,7 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T17:06:02Z",
+   "updated_at": "2026-09-30T17:15:59Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
    "blocked": {
@@ -220,7 +224,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T17:06:01Z",
+   "updated_at": "2026-09-30T17:15:57Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -245,7 +249,7 @@
     "remote_build_log_reading": "2026-09-30: when verifying a quill-ui-build-remote run, 'HEAD is now at X' lines during the fetch phase and 'Previous HEAD position was X' refer to the REUSED runner workspace's stale state (another loop's branch built there before), NOT the checked-out ref. Authoritative lines: the `ref: <branch>` input, the depth-1 fetch of +refs/heads/<branch>*, and `git checkout -B <branch> refs/remotes/origin/<branch>`. Do not mistake stale-workspace lines for a wrong checkout."
    },
    "stale": true,
-   "age_seconds": 1033
+   "age_seconds": 1152
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -273,7 +277,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-ai-tools (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 2725
+   "age_seconds": 2844
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -380,7 +384,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 10525
+   "age_seconds": 10644
   }
  ]
 }

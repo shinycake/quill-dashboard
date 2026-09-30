@@ -66,7 +66,15 @@
   },
   {
    "area": "Platform & edge cases",
-   "label": "parity:platform-high-contrast",
+   "label": "parity:platform-spellcheck",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-spellcheck"
+  },
+  {
+   "area": "Settings",
+   "label": "parity:platform-high-contrast \u2014 real high-contrast theme mode",
    "kind": "pr",
    "pr": 228,
    "url": "https://github.com/shinycake/quill/pull/228",
