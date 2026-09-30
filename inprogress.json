@@ -10,11 +10,19 @@
   },
   {
    "area": "Bots, polls & payments",
-   "label": "bots-games (parity:bots-games)",
+   "label": "Slice bots-games: render, play, send, and high scores for bot games",
    "kind": "pr",
    "pr": 205,
    "url": "https://github.com/shinycake/quill/pull/205",
    "branch": "parity/bots-games"
+  },
+  {
+   "area": "Secret chats",
+   "label": "auth-logout-warning (parity:auth-logout-warning)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/auth-logout-warning"
   },
   {
    "area": "Secret chats",
@@ -26,11 +34,19 @@
   },
   {
    "area": "Settings",
-   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+   "label": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
+   "kind": "pr",
+   "pr": 206,
+   "url": "https://github.com/shinycake/quill/pull/206",
+   "branch": "parity/settings-notif-exceptions"
+  },
+  {
+   "area": "Settings",
+   "label": "reset all notification settings (parity:settings-reset-notif)",
    "kind": "branch",
    "pr": null,
    "url": null,
-   "branch": "parity/settings-notif-exceptions"
+   "branch": "parity/settings-reset-notif"
   }
  ]
 }

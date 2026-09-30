@@ -67,7 +67,7 @@
    "updated_at": "2026-09-30T09:35:52Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 3138
+   "age_seconds": 3258
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -188,21 +188,21 @@
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies."
    },
    "stale": true,
-   "age_seconds": 1363
+   "age_seconds": 1483
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
    "current": {
-    "slice": "bots-games (parity:bots-games)",
-    "branch": "parity/bots-games",
-    "worktree": "~/workspace/quill-l3-games",
-    "phase": "in_review",
-    "pr": 205,
-    "handoff": "merge-pipeline",
-    "detail": "PR #205 opened: bots-games (render messageGame card, Play via existing callback-game flow, high-scores panel, send via inputMessageGame from bot info panel with cached short names). Pushed fe351b9c2ce507aa70a2dbdc1f6fc7d7a866a7eb. Gates green (fmt, clippy -D warnings, 1143 lib + 22 integration bins, local --features ui link 27m31s). Screenshot docs/screenshots/ready-game-card.png. Caveat: live round trips unverifiable without live Telegram. Merge pipeline owns from here."
+    "slice": "auth-logout-warning (parity:auth-logout-warning)",
+    "branch": "parity/auth-logout-warning",
+    "worktree": "~/workspace/quill-l3-logout-warning",
+    "phase": "implementing",
+    "pr": null,
+    "handoff": null,
+    "detail": "Phase-2, unclaimed (loop4 is on settings pipeline: notif-exceptions gating + reset-notif queued; no auth plans). Evidence: NO logout UI or driver exists \u2014 only the logOut builder (requests/auth.rs) re-exported but never called. README's '(partial: logout works)' is stale. Honest scope: logout entry in Settings/profile -> confirm dialog with TGX SignOutHint2 warning (secret chats lost, downloaded media erased) -> logOut driver -> auth-state handling back to login."
    },
    "lanes": "media + chat list (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T09:40:00Z",
+   "last_evidence_at": "2026-09-30T09:50:00Z",
    "last_merge": "#183 chat list badge counter settings merged 2026-09-30T00:51:29Z. #187 chat list style settings (parity/chatlist-list-style \u2014 was Loop 3's planned next slice) merged 2026-09-30T02:06:53Z while coordinator was dead; landed via another path, NOT re-claimed.",
    "loop": 3,
    "next": {
@@ -212,8 +212,8 @@
     "parity/settings-appearance": "PR #161 merged 2026-09-29 (flush)"
    },
    "status": "active",
-   "updated_at": "2026-09-30T09:40:00Z",
-   "last_evidence_event": "PR #205 opened",
+   "updated_at": "2026-09-30T09:50:00Z",
+   "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": false,
    "age_seconds": 0
@@ -221,13 +221,13 @@
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
    "current": {
-    "slice": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
-    "branch": "parity/settings-notif-exceptions",
-    "worktree": "~/workspace/quill-l4-notif-exceptions",
-    "phase": "gating",
+    "slice": "reset all notification settings (parity:settings-reset-notif)",
+    "branch": "parity/settings-reset-notif",
+    "worktree": "~/workspace/quill-l4-reset-notif",
+    "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Resumed 09:05 UTC by coordinator 9ff5a5c3 (watchdog's restart 88f899f5 died with the watchdog timeout; prior coordinator 0a16bdc2 completed mid-gating). Branch parity/settings-notif-exceptions rebased cleanly onto origin/main e6be59e (merge-tree 0 conflicts); worktree clean; fmt clean; README box parity:settings-notif-exceptions checked with provenance. clippy running; test result unknown (implementer died) \u2014 re-running full gates, then UI gate + Mac build, push, PR."
+    "detail": "Claimed from queue. Schema verified: resetAllNotificationSettings = Ok (td_api.tl:13670-13671, pinned 1.8.67). Plan: request builder + ConnectDriver method + Ok-response cache invalidation (notification_exceptions, scope_notification_settings) + 'Reset all' button in Notification defaults dialog + README check."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -237,25 +237,25 @@
     "slice": "A7 account lifecycle backend"
    },
    "next": {
-    "slice": "reset all notification settings (parity:settings-reset-notif)",
-    "branch": "parity/settings-reset-notif",
-    "worktree": "~/workspace/quill-l4-reset-notif",
-    "phase": "queued",
-    "detail": "Claimed 2026-09-30 ~01:47 CDT; starts the moment the notif-exceptions PR opens. Schema verified: resetAllNotificationSettings = Ok (td_api.tl:13670-13671, pinned 1.8.67) \u2014 'Resets all chat and scope notification settings to their default values.' Plan: request builder + ConnectDriver method + Ok-response cache invalidation (notification_exceptions, scope_notification_settings) + 'Reset all' button in Notification defaults dialog + README check. Unclaimed: loop1 on calls-swap-prompt, loop2 on bots-ephemeral-command-icon, loop3 split-standby; no open PRs."
+    "slice": null,
+    "branch": null,
+    "worktree": null,
+    "phase": "unclaimed",
+    "detail": "Pick next settings/auth/accounts gap after reset-notif PR opens."
    },
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "branch": "parity/settings-reaction-notif",
-    "worktree": "/home/hatch/workspace/quill-l4-reaction-notif",
-    "slice": "reaction + story notification settings (parity:settings-reaction-notif)",
-    "phase": "merged",
-    "pr": 186,
-    "detail": "PR #186 MERGED. New types ReactionNotificationSource/Settings in envelope.rs, set_reaction_notification_settings builder, driver send, Session.reaction_notification_settings tracked from updateReactionNotificationSettings, Reactions section + per-scope story switches in Notification defaults dialog."
+    "slice": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+    "branch": "parity/settings-notif-exceptions",
+    "worktree": "/home/hatch/workspace/quill-l4-notif-exceptions",
+    "phase": "in_review",
+    "pr": 206,
+    "detail": "PR #206 opened 2026-09-30 ~09:45 UTC. Gates: fmt/clippy clean, tests 0 failed, cargo check --features ui clean, cargo build --features ui LINKED locally (25m59s). Mac runner offline \u2014 remote link run 36693870019 queued. Handed to merge-pipeline. Branch head 58b76a4 on origin/main e6be59e."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T08:32:26Z",
-   "updated_at": "2026-09-30T09:28:38Z",
+   "last_evidence_at": "2026-09-30T09:38:41Z",
+   "updated_at": "2026-09-30T09:38:41Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -290,8 +290,8 @@
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
-   "stale": true,
-   "age_seconds": 3892
+   "stale": false,
+   "age_seconds": 37
   }
  ]
 }

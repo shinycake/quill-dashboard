@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 206,
+   "title": "Slice settings-notif-exceptions: per-scope notification exceptions list view",
+   "updated_at": "2026-09-30T09:38:34Z",
+   "html_url": "https://github.com/shinycake/quill/pull/206",
+   "head": {
+    "ref": "parity/settings-notif-exceptions"
+   }
+  },
+  {
    "number": 205,
    "title": "Slice bots-games: render, play, send, and high scores for bot games",
    "updated_at": "2026-09-30T09:36:54Z",
@@ -926,6 +935,26 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T08:35:59Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T09:38:34Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1302,26 +1331,6 @@
     "ref": null
    },
    "created_at": "2026-09-30T06:38:06Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T06:37:51Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-connect"
-   },
-   "created_at": "2026-09-30T05:49:36Z",
    "actor": {
     "login": "shinycake"
    }
