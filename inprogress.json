@@ -34,14 +34,6 @@
   },
   {
    "area": "Messaging core",
-   "label": "Rich text: enforce 32,768-char composer max length",
-   "kind": "pr",
-   "pr": 216,
-   "url": "https://github.com/shinycake/quill/pull/216",
-   "branch": "parity/msg-richtext-max-length"
-  },
-  {
-   "area": "Messaging core",
    "label": "expandable block quotes (parity:msg-blockquote-expandable)",
    "kind": "branch",
    "pr": null,

@@ -125,7 +125,8 @@
     "Render richMessage PageBlocks in message bubbles (messageRichMessage, getFullRichMessage)",
     "In-message buttons: render pageBlockButtonRow + richTextButton, taps fire bot callbacks",
     "Ephemeral messages: render message.ephemeral_content instead of regular content",
-    "Apply updateMessageEphemeralContent (ephemeral content refreshes over time; initial render covered by parity:msg-ephemeral-render)"
+    "Apply updateMessageEphemeralContent (ephemeral content refreshes over time; initial render covered by parity:msg-ephemeral-render)",
+    "Rich-text composer max length (32,768 chars)"
    ],
    "pending": [
     {
@@ -145,11 +146,6 @@
     },
     {
      "text": "AI tools in the rich-text composer (composeTextWithAi, composeRichMessageWithAi, createRichMessageWithAi, fixTextWithAi, fixRichMessageWithAi)",
-     "blocked": false,
-     "reason": null
-    },
-    {
-     "text": "Rich-text composer max length (32,768 chars)",
      "blocked": false,
      "reason": null
     },
