@@ -963,7 +963,7 @@
   {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T05:28:18Z",
+   "updated_at": "2026-09-30T05:44:44Z",
    "html_url": "https://github.com/shinycake/quill/pull/193",
    "head": {
     "ref": "refactor/split-state"
@@ -971,6 +971,26 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T01:02:05Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T05:44:44Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1072,9 +1092,9 @@
    }
   },
   {
-   "type": "DeleteEvent",
+   "type": "PushEvent",
    "payload": {
-    "ref": "parity/remove-check-file-sizes"
+    "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1082,9 +1102,9 @@
    }
   },
   {
-   "type": "PushEvent",
+   "type": "DeleteEvent",
    "payload": {
-    "ref": "refs/heads/main"
+    "ref": "parity/remove-check-file-sizes"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1347,26 +1367,6 @@
     "ref": "refs/heads/refactor/split-envelope"
    },
    "created_at": "2026-09-30T04:20:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:19:53Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:18:02Z",
    "actor": {
     "login": "shinycake"
    }
