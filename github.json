@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 430,
+  "done": 431,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 208,
+   "title": "Slice settings-reset-notif: reset all notification settings",
+   "merged_at": "2026-09-30T13:43:10Z",
+   "html_url": "https://github.com/shinycake/quill/pull/208",
+   "head": {
+    "ref": "parity/settings-reset-notif"
+   }
+  },
   {
    "number": 214,
    "title": "Slice auth-multi-account: multi-account backend (registry, add/remove, active account)",
@@ -894,18 +903,18 @@
    "head": {
     "ref": "parity/auth-profile-1"
    }
-  },
-  {
-   "number": 113,
-   "title": "B4: poll management \u2014 voters, stop, quiz explanation, restrictions, permissions, service message",
-   "merged_at": "2026-09-28T14:36:35Z",
-   "html_url": "https://github.com/shinycake/quill/pull/113",
-   "head": {
-    "ref": "parity/polls-manage"
-   }
   }
  ],
  "openPRs": [
+  {
+   "number": 219,
+   "title": "Slice auth-multi-account (UI): Accounts dialog \u2014 list / switch / add / remove",
+   "updated_at": "2026-09-30T13:42:24Z",
+   "html_url": "https://github.com/shinycake/quill/pull/219",
+   "head": {
+    "ref": "parity/auth-multi-account-ui"
+   }
+  },
   {
    "number": 218,
    "title": "Slice platform-offline-indicator: render connection state as offline indicator",
@@ -927,7 +936,7 @@
   {
    "number": 216,
    "title": "Rich text: enforce 32,768-char composer max length",
-   "updated_at": "2026-09-30T13:23:00Z",
+   "updated_at": "2026-09-30T13:43:38Z",
    "html_url": "https://github.com/shinycake/quill/pull/216",
    "head": {
     "ref": "parity/msg-richtext-max-length"
@@ -950,18 +959,39 @@
    "head": {
     "ref": "parity/settings-language"
    }
-  },
-  {
-   "number": 208,
-   "title": "Slice settings-reset-notif: reset all notification settings",
-   "updated_at": "2026-09-30T13:15:18Z",
-   "html_url": "https://github.com/shinycake/quill/pull/208",
-   "head": {
-    "ref": "parity/settings-reset-notif"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/msg-richtext-max-length"
+   },
+   "created_at": "2026-09-30T13:43:38Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:43:10Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T13:42:24Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1331,39 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T11:51:50Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T11:48:35Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-30T09:43:29Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "0f65f3f859d882f9a3f14a041cf53dc933cf7e1e",
+   "html_url": "https://github.com/shinycake/quill/commit/0f65f3f859d882f9a3f14a041cf53dc933cf7e1e",
+   "commit": {
+    "message": "Slice settings-reset-notif: reset all notification settings (#208)\n\n* settings: reset-all notification settings (parity:settings-reset-notif)\n\n* review fixups: confirm-before-reset for notification settings reset\n\n- Gate the defaults dialog's destructive \"Reset all\" button behind an\n  explicit confirm banner (NotificationsConfirm + notifications_confirm\n  field, mirroring the SessionsConfirm/WebsitesConfirm +\n  sessions_confirm_banner pattern in security.rs): button arms the banner,\n  the request fires only on confirm; cancel/dismiss clears it.\n- Fix resetAllNotificationSettings schema citations: td_api.tl line 13671,\n  not 13670 (chats.rs, tests_chats.rs, notifications test).\n\nReviewer: PR #208 (parity/settings-reset-notif).\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>\nCo-authored-by: Muse <muse@quill>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T13:43:09Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "d37d03126dd577395392feecdd65f5701fd9fdca",
    "html_url": "https://github.com/shinycake/quill/commit/d37d03126dd577395392feecdd65f5701fd9fdca",
@@ -1484,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T08:35:58Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "78c3026e99529fe0e9e90528f4ef8677e7851470",
-   "html_url": "https://github.com/shinycake/quill/commit/78c3026e99529fe0e9e90528f4ef8677e7851470",
-   "commit": {
-    "message": "parity:bots-ephemeral-command-icon \u2014 keep is_ephemeral and mark ephemeral commands with an eye-off icon (#201)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T08:17:14Z"
     }
    },
    "author": {

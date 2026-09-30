@@ -223,7 +223,7 @@
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
    "stale": true,
-   "age_seconds": 2225
+   "age_seconds": 2347
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -251,18 +251,16 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 78
+   "age_seconds": 200
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
    "current": {
-    "slice": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
-    "branch": "parity/auth-multi-account-ui",
-    "worktree": "~/workspace/quill-l4-multi-account-ui",
-    "phase": "implementing",
-    "pr": null,
-    "handoff": null,
-    "detail": "Claimed 2026-09-30 ~12:10 UTC; verified unclaimed. Builds on the merged-in backend (PR #214) once it lands \u2014 or on the same branch's backend if faster."
+    "slice": null,
+    "branch": null,
+    "worktree": null,
+    "phase": "scanning",
+    "detail": "Settings/auth/accounts lane nearly exhausted (remaining: change-number UI blocked, logout-warning with Loop 3, registration/email/premium UnsupportedHalts). Scanning bots/polls/payments checklist for next Phase 2 slice."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -276,21 +274,21 @@
     "branch": null,
     "worktree": null,
     "phase": "unclaimed",
-    "detail": "Pick next settings/auth/accounts gap after the switcher PR opens."
+    "detail": null
    },
    "parked": false,
    "phase": "implementing",
    "previous": {
-    "slice": "multi-account backend (parity:auth-multi-account)",
-    "branch": "parity/auth-multi-account",
-    "worktree": "/home/hatch/workspace/quill-l4-multi-account",
+    "slice": "account switcher UI (parity:auth-multi-account)",
+    "branch": "parity/auth-multi-account-ui",
+    "worktree": "/home/hatch/workspace/quill-l4-multi-account-ui",
     "phase": "in_review",
-    "pr": 214,
-    "detail": "PR #214 opened 2026-09-30 ~12:10 UTC. Backend only: AccountKey::new validation, accounts.json registry (list/add/remove, last-account protection, corrupt \u21d2 defaults), active-account threading at connect, real switch_account seam (shutdown \u2192 set_active \u2192 start_live_connect_for_account). 8 new tests, 1170 pass. README box NOT checked \u2014 account-switcher UI is the follow-up slice. Based on origin/main 237b260 (#206, #209, #205 merged), 0 conflicts. Handed to merge-pipeline."
+    "pr": 219,
+    "detail": "PR #219 opened 2026-09-30 ~13:45 UTC. Completes parity:auth-multi-account: new src/ui/accounts.rs Accounts dialog (kit, window.open_dialog, DialogKind::Accounts) \u2014 list with \u2713 Active badge, Switch (documented shutdown\u2192set_active\u2192connect flow), Add (reuses existing auth UI for the new account), Remove (inline confirm; active not removable). Entry via main menu. Screenshot docs/screenshots/ready-accounts.png. Post-rebase caught E0308 (another merged PR added a DialogKind; array 36\u219237), fixed, all gates green, full ui link succeeded in screenshot run. README box checked. Based on origin/main d37d031 (#214, #207, #210 merged), 0 conflicts. Handed to merge-pipeline."
    },
    "status": "active",
-   "last_evidence_at": "2026-09-30T12:07:21Z",
-   "updated_at": "2026-09-30T13:38:38Z",
+   "last_evidence_at": "2026-09-30T13:42:38Z",
+   "updated_at": "2026-09-30T13:42:38Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -333,8 +331,8 @@
      "evidence": "Concept-level search of td_api.tl 1.8.67: `logintoken` 0 hits; `requestQrCodeAuthentication` (:11346) is reverse direction (unauthenticated client logs itself in); `confirmQrCodeAuthentication` (:11414) is scan-side (needs camera). No method/type/update exposes a login token. `sendCustomRequest` (:16155) is bots-only, no raw-MTProto escape hatch. `auth.exportLoginToken` exists at MTProto layer (used by raw-MTProto Telegram Desktop) but TDLib keeps it internal to AuthManager; Quill talks to TDLib only via TdJson. Display-side QR has no API surface."
     }
    ],
-   "stale": true,
-   "age_seconds": 5637
+   "stale": false,
+   "age_seconds": 42
   }
  ]
 }

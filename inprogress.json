@@ -2,10 +2,10 @@
  "items": [
   {
    "area": "Auth & accounts",
-   "label": "account switcher UI (parity:auth-multi-account follow-up \u2014 completes the item)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "label": "Slice auth-multi-account (UI): Accounts dialog \u2014 list / switch / add / remove",
+   "kind": "pr",
+   "pr": 219,
+   "url": "https://github.com/shinycake/quill/pull/219",
    "branch": "parity/auth-multi-account-ui"
   },
   {
@@ -71,14 +71,6 @@
    "pr": 211,
    "url": "https://github.com/shinycake/quill/pull/211",
    "branch": "parity/settings-language"
-  },
-  {
-   "area": "Settings",
-   "label": "Slice settings-reset-notif: reset all notification settings",
-   "kind": "pr",
-   "pr": 208,
-   "url": "https://github.com/shinycake/quill/pull/208",
-   "branch": "parity/settings-reset-notif"
   }
  ]
 }
