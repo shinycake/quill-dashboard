@@ -929,6 +929,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/refactor/split-connect"
+   },
+   "created_at": "2026-09-30T05:49:36Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/refactor/split-replay"
    },
    "created_at": "2026-09-30T05:49:23Z",
@@ -1297,16 +1307,6 @@
    }
   },
   {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/remove-check-file-sizes"
-   },
-   "created_at": "2026-09-29T23:56:15Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
    "type": "PushEvent",
    "payload": {
     "ref": "refs/heads/main"
@@ -1317,11 +1317,11 @@
    }
   },
   {
-   "type": "PushEvent",
+   "type": "DeleteEvent",
    "payload": {
-    "ref": "refs/heads/refactor/split-envelope"
+    "ref": "parity/remove-check-file-sizes"
    },
-   "created_at": "2026-09-30T04:33:43Z",
+   "created_at": "2026-09-29T23:56:15Z",
    "actor": {
     "login": "shinycake"
    }
