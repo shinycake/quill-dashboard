@@ -4,18 +4,18 @@
    "blockers": [],
    "coordinator": "ad1b75cf-4bab-41f6-b155-1085952e1bba",
    "current": {
-    "branch": "parity/chatlist-list-style",
-    "commit": "c80673b",
-    "detail": "chatlist-list-style: Settings \u2192 Appearance \u2192 Chat list rows (two/three lines, media icons, text formatting preview). Rebasing onto origin/main@1e62510 was clean (no conflicts). Gates green on rebased head: cargo fmt \u2713, clippy -D warnings \u2713, cargo test \u2713. Dedicated adversarial review: CONFIRM (previous coordinator). Mac UI build verified on pre-rebase SHA (run 36648459614); rebase was content-identical single-commit. PR #187 opened 2026-09-29 ~19:28 CDT; handoff to merge-pipeline (auto-merge armed by pipeline).",
-    "handoff": "merge-pipeline",
-    "phase": "in_review",
-    "pr": 187,
-    "slice": "chatlist-list-style",
-    "worktree": "~/workspace/quill-l1-clstyle"
+    "branch": "parity/composer-send-keys",
+    "commit": "8cc5489",
+    "detail": "composer-send-keys: client-side SendKeyMode (Enter vs Ctrl/Cmd+Enter), persisted to chat_prefs.json. All 8 chat composer Enter handlers route through the policy; IME never sends in either mode; kit RadioGroup in Settings -> Appearance ('Send messages with'). Recovery-code form keeps plain-Enter submit. Gates: cargo fmt \u2713, clippy -D warnings \u2713, cargo test \u2713 (1120 unit + 8 new integration tests). Mac UI build dispatched (run 36652696259 failed on checkout ref \u2014 re-dispatched with branch name).",
+    "handoff": null,
+    "phase": "gating",
+    "pr": null,
+    "slice": "composer-send-keys",
+    "worktree": "~/workspace/quill-l1-sendkeys"
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T00:28:00Z",
-   "last_evidence_event": "PR #187 opened for chatlist-list-style (rebased onto origin/main@1e62510, all gates green)",
+   "last_evidence_at": "2026-09-30T01:05:00Z",
+   "last_evidence_event": "composer-send-keys implemented and gated locally (fmt/clippy/test green); commit 8cc5489 pushed to origin/parity/composer-send-keys",
    "last_merged": {
     "name": "community service message rows",
     "parity": "398/525 (75.8%)",
@@ -30,6 +30,14 @@
    },
    "loop": 1,
    "notes": "2026-09-29 ~19:28 CDT: previous coordinator (990383e7) went dark; watchdog restarted Loop 1 with new coordinator. chatlist-list-style holding-pr \u2192 rebased, gated, PR #187 opened. | Phase-1 partition EXHAUSTED (verified 2026-09-29): calls remaining items all blocked/partial-unimplementable (swap-prompt: no hold/swap API; less-data: no engine API; proxy: no proxy infra in Quill + no ntgcalls proxy API; audio-fx: no engine API; video-tiles/group-screen-share: unverifiable on VM); groups remaining: 3 blocked (no TDLib method, verified) + 1 in PR #182. Per NEVER REST, moving to phase-2 areas next. | Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree \u2014 verified intact, unrelated, left alone.",
+   "open_prs": [
+    {
+     "branch": "parity/chatlist-list-style",
+     "pr": 187,
+     "slice": "chatlist-list-style",
+     "status": "in_review, handoff merge-pipeline"
+    }
+   ],
    "parity": "412/525 = 78.5%",
    "phase9": {
     "note": "ui/mod.rs unfrozen; C2k/C2l unblocked",
@@ -42,9 +50,9 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T00:55:53Z",
-   "stale": true,
-   "age_seconds": 1881
+   "updated_at": "2026-09-30T01:05:00Z",
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -151,7 +159,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 7494
+   "age_seconds": 7614
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -178,7 +186,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 6861
+   "age_seconds": 6981
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -253,7 +261,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": true,
-   "age_seconds": 3275
+   "age_seconds": 3395
   }
  ]
 }

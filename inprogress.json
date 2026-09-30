@@ -18,7 +18,7 @@
   },
   {
    "area": "Chat list",
-   "label": "chatlist-list-style",
+   "label": "Chat list: style settings (two/three lines, media icons, formatted preview)",
    "kind": "pr",
    "pr": 187,
    "url": "https://github.com/shinycake/quill/pull/187",
@@ -39,6 +39,14 @@
    "pr": 184,
    "url": "https://github.com/shinycake/quill/pull/184",
    "branch": "parity/settings-mentions-pinned"
+  },
+  {
+   "area": "Settings",
+   "label": "composer-send-keys",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/composer-send-keys"
   },
   {
    "area": "Settings",
