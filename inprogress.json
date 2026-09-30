@@ -31,6 +31,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/bots-inline-mode"
+  },
+  {
+   "area": "Stories",
+   "label": "Settings: reaction + story notification settings",
+   "kind": "pr",
+   "pr": 186,
+   "url": "https://github.com/shinycake/quill/pull/186",
+   "branch": "parity/settings-reaction-notif"
   }
  ]
 }
