@@ -7,13 +7,13 @@
     "slice": "less data for calls setting (parity:calls-less-data)",
     "branch": "parity/calls-less-data",
     "worktree": "~/workspace/quill-l1-less-data",
-    "phase": "implementing",
-    "pr": null,
-    "detail": "Feature already shipped by slice S4 (real TDLib autoDownloadSettings.use_less_data_for_calls, UI toggle in call settings); this slice adds the missing driver-level test and checks the stale README box.",
-    "handoff": null
+    "phase": "pr_open",
+    "pr": 210,
+    "detail": "Driver test + README box checked. Pushed as 8ab4263. Gates: fmt/clippy clean, 1153 tests pass; 1 pre-existing environmental failure (vendored_schema_equals_official_commit \u2014 network fetch).",
+    "handoff": "merge-pipeline"
    },
    "lanes": "calls + groups/channels (phase 1: functionality-first)",
-   "last_evidence_at": "2026-09-30T10:22:00Z",
+   "last_evidence_at": "2026-09-30T10:55:00Z",
    "last_evidence_event": "PR #207 opened for parity:bots-payment-recurring, handed to merge-pipeline",
    "last_merged": {
     "name": "composer-send-keys",
@@ -61,11 +61,11 @@
     "waiver_system": "DELETED 2026-09-29 per Idan \u2014 no size-check gate, no waiver bumps; soft 1500/hard 2000 line guidance for new-code placement only"
    },
    "status": "active",
-   "updated_at": "2026-09-30T10:45:55Z",
+   "updated_at": "2026-09-30T10:55:00Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "note": "Predecessor 6dca56ca errored 10:19 UTC on a lost background exec; recorded coordinator id was a stale ghost from 2026-09-29. Respawned 10:22 UTC; slice recurring-payments already handed off (#207), new coordinator claims next slice.",
-   "stale": true,
-   "age_seconds": 2000
+   "stale": false,
+   "age_seconds": 140
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -179,7 +179,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T10:45:56Z",
+   "updated_at": "2026-09-30T10:55:52Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -193,7 +193,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 2533
+   "age_seconds": 2653
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -221,7 +221,7 @@
    "last_evidence_event": "slice claimed: auth-logout-warning",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 3920
+   "age_seconds": 4040
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -296,7 +296,7 @@
    },
    "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 2592
+   "age_seconds": 2712
   }
  ]
 }

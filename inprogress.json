@@ -19,9 +19,9 @@
   {
    "area": "Calls",
    "label": "less data for calls setting (parity:calls-less-data)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
+   "kind": "pr",
+   "pr": 210,
+   "url": "https://github.com/shinycake/quill/pull/210",
    "branch": "parity/calls-less-data"
   },
   {
