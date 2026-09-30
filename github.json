@@ -909,7 +909,7 @@
   {
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:43:40Z",
+   "updated_at": "2026-09-30T04:46:11Z",
    "html_url": "https://github.com/shinycake/quill/pull/198",
    "head": {
     "ref": "refactor/split-ui-modrs"
@@ -971,6 +971,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/community-search-filter"
+   },
+   "created_at": "2026-09-29T23:22:13Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1357,16 +1367,6 @@
     "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T19:46:44Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T02:56:12Z",
    "actor": {
     "login": "shinycake"
    }
