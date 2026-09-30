@@ -35,7 +35,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-29T23:55:54Z",
+   "updated_at": "2026-09-30T00:05:54Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -56,7 +56,7 @@
     "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
    },
    "stale": true,
-   "age_seconds": 2059
+   "age_seconds": 2181
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -68,7 +68,7 @@
     "pr": null,
     "handoff": null,
     "detail": "parity:bots-inline-mode implementation complete in worktree (branch parity/bots-inline-mode): @bot trigger parse, searchPublicChat resolution w/ generation correlation, 100ms debounce, results dropdown, sendInlineQueryResultMessage, secret-chat alert on typed path, screenshot demo ready-inline-results. Waiting on UI compile check + gates before PR.",
-    "updated_at": "2026-09-29T23:55:55Z"
+    "updated_at": "2026-09-30T00:05:54Z"
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -153,7 +153,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-29T23:55:55Z",
+   "updated_at": "2026-09-30T00:05:54Z",
    "last_merge": {
     "pr": 178,
     "slice": "S17 choosing-a-sticker chat action",
@@ -163,7 +163,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 4252
+   "age_seconds": 4374
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -190,7 +190,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 3619
+   "age_seconds": 3741
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -265,7 +265,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": false,
-   "age_seconds": 33
+   "age_seconds": 155
   }
  ]
 }
