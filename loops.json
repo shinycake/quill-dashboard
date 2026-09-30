@@ -76,7 +76,7 @@
     "parity:gifts-signed-comment": "No Marketplace purchase flow exists in Quill at all; premature."
    },
    "stale": true,
-   "age_seconds": 2239
+   "age_seconds": 2358
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -204,7 +204,7 @@
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built."
    },
    "stale": true,
-   "age_seconds": 2411
+   "age_seconds": 2530
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -232,7 +232,7 @@
    "last_evidence_event": "slice claimed: platform-offline-indicator (phase 4)",
    "last_merged": null,
    "stale": false,
-   "age_seconds": 439
+   "age_seconds": 558
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -271,7 +271,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T12:07:21Z",
-   "updated_at": "2026-09-30T12:08:36Z",
+   "updated_at": "2026-09-30T12:18:36Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -315,7 +315,7 @@
     }
    ],
    "stale": false,
-   "age_seconds": 598
+   "age_seconds": 717
   }
  ]
 }
