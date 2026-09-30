@@ -61,6 +61,14 @@
    "title": "refactor: split ui/mod.rs batch 3 (keybindings, menu states, history rows, playback, format helpers)",
    "updated_at": "2026-09-29T17:17:36Z",
    "extracted": 347
+  },
+  {
+   "html_url": "https://github.com/shinycake/quill/pull/198",
+   "merged_at": null,
+   "number": 198,
+   "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
+   "updated_at": "2026-09-30T04:32:39Z",
+   "extracted": 0
   }
  ]
 }

@@ -55,6 +55,14 @@
    "pr": 192,
    "url": "https://github.com/shinycake/quill/pull/192",
    "branch": "refactor/split-requests"
+  },
+  {
+   "area": null,
+   "label": "refactor: split src/ui/mod.rs into one-responsibility modules",
+   "kind": "pr",
+   "pr": 198,
+   "url": "https://github.com/shinycake/quill/pull/198",
+   "branch": "refactor/split-ui-modrs"
   }
  ]
 }
