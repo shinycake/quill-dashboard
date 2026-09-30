@@ -1,9 +1,18 @@
 {
  "parity": {
-  "done": 432,
+  "done": 433,
   "total": 525
  },
  "closedPRs": [
+  {
+   "number": 220,
+   "title": "Slice settings-language: app language selector",
+   "merged_at": "2026-09-30T14:40:37Z",
+   "html_url": "https://github.com/shinycake/quill/pull/220",
+   "head": {
+    "ref": "parity/settings-language"
+   }
+  },
   {
    "number": 218,
    "title": "Slice platform-offline-indicator: render connection state as offline indicator",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/stories-3"
    }
-  },
-  {
-   "number": 117,
-   "title": "docs: restore 23 release-audit checklist items lost to automated reset",
-   "merged_at": "2026-09-28T15:44:47Z",
-   "html_url": "https://github.com/shinycake/quill/pull/117",
-   "head": {
-    "ref": "docs/audit-checklist-restore"
-   }
   }
  ],
  "openPRs": [
@@ -913,15 +913,6 @@
    "html_url": "https://github.com/shinycake/quill/pull/222",
    "head": {
     "ref": "parity/platform-autostart"
-   }
-  },
-  {
-   "number": 220,
-   "title": "Slice settings-language: app language selector",
-   "updated_at": "2026-09-30T14:37:15Z",
-   "html_url": "https://github.com/shinycake/quill/pull/220",
-   "head": {
-    "ref": "parity/settings-language"
    }
   },
   {
@@ -962,6 +953,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T14:40:37Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "IssueCommentEvent",
    "payload": {
@@ -1351,19 +1352,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "CreateEvent",
-   "payload": {
-    "ref": "parity/platform-history-export"
-   },
-   "created_at": "2026-09-30T13:21:25Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "560111a5342b93bd1339b7dd7e2f69c2ef46efb2",
+   "html_url": "https://github.com/shinycake/quill/commit/560111a5342b93bd1339b7dd7e2f69c2ef46efb2",
+   "commit": {
+    "message": "settings: app language selector (parity:settings-language) (#220)\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T14:40:37Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "9e559f9653b817d96a5c98c6ee22e4ba84c13432",
    "html_url": "https://github.com/shinycake/quill/commit/9e559f9653b817d96a5c98c6ee22e4ba84c13432",
@@ -1484,20 +1489,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T09:43:27Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "e6be59e9d32b0f7597e44ef56d76eed7004a483a",
-   "html_url": "https://github.com/shinycake/quill/commit/e6be59e9d32b0f7597e44ef56d76eed7004a483a",
-   "commit": {
-    "message": "parity:calls-swap-prompt \u2014 incoming-call-while-busy swap prompt dialog (#202)\n\nFirst incoming call while another is active raises a kit dialog\n(End & answer / Decline) instead of the silent busy auto-decline.\nEnd & answer discards the current call, then acceptCalls the pending\none once the discard lands (no Telegram hold API \u2014 said honestly in\nthe dialog). Esc/backdrop/dismiss declines busy; further incoming\ncalls while the prompt is open keep the old busy auto-decline.\nState: call_swap_pending + call_swap_accept_queued on Session;\ndriver: decline_swap_call / accept_swap_call / maybe_accept_queued_swap.\nDemo fixture + ready-call-swap screenshot demo; 5 new state tests;\n2 replay tests updated to the prompt behavior.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T08:39:18Z"
     }
    },
    "author": {

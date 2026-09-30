@@ -822,16 +822,11 @@
     "Use less data for calls",
     "Storage usage view with per-chat / file-type breakdown",
     "Clear cache",
+    "App language selector (Settings \u2192 Appearance \u2192 Language; `system_language_code` in `language_prefs.json`, default \"en\", applies on restart \u2014 full UI-string translation out of scope; `setOption(\"language_pack_id\")` is real but only names a downloaded language-pack database Quill doesn't use, so no runtime application)",
     "Enter-to-send toggle (Settings \u2192 Appearance \u2192 Send messages with; `composer::SendKeyMode`, `chat_prefs.json`)",
     "Send by Cmd/Ctrl+Enter option (same setting; Ctrl/Cmd+Enter sends in CtrlEnter mode)"
    ],
-   "pending": [
-    {
-     "text": "App language selector (partial: `system_language_code:\"en\"` hardcoded in src/connect.rs:284)",
-     "blocked": false,
-     "reason": null
-    }
-   ]
+   "pending": []
   },
   {
    "name": "Platform & edge cases",

@@ -65,14 +65,6 @@
    "branch": "parity/auth-logout-warning"
   },
   {
-   "area": "Settings",
-   "label": "Slice settings-language: app language selector",
-   "kind": "pr",
-   "pr": 220,
-   "url": "https://github.com/shinycake/quill/pull/220",
-   "branch": "parity/settings-language"
-  },
-  {
    "area": "Stories",
    "label": "stories-live-play (parity:stories-live-play)",
    "kind": "branch",
