@@ -17,20 +17,20 @@
    "branch": "parity/bots-payment-clear-ui"
   },
   {
-   "area": "Media",
-   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/settings-notif-exceptions"
-  },
-  {
    "area": "Secret chats",
    "label": "recurring payments via Telegram Stars subscriptions (parity:bots-payment-recurring)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/bots-payment-recurring"
+  },
+  {
+   "area": "Settings",
+   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-notif-exceptions"
   }
  ]
 }

@@ -67,7 +67,7 @@
    "updated_at": "2026-09-30T08:55:51Z",
    "relaunch_note": "2026-09-30 ~01:45 CDT: split phase complete, feature dev resumed at Idan's order. Fresh coordinator spawned; verify whether parity/composer-send-keys was already merged via #190 before resuming that branch.",
    "stale": true,
-   "age_seconds": 977
+   "age_seconds": 1098
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -179,7 +179,7 @@
    },
    "last_evidence_at": "2026-09-30T08:04:23Z",
    "stale": true,
-   "age_seconds": 3414
+   "age_seconds": 3535
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -207,7 +207,7 @@
    "last_evidence_event": "slice claimed: bots-games",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 1577
+   "age_seconds": 1698
   },
   {
    "coordinator": "9ff5a5c3-f912-4296-8baf-cd9f1259ff47",
@@ -218,7 +218,7 @@
     "phase": "gating",
     "pr": null,
     "handoff": null,
-    "detail": "Watchdog restart 2026-09-30T08:32Z: prior instance verifiably dead (branch tip 24572ac untouched, zero live processes, no PR). Implementer spawned to commit WIP (15 files, 482 insertions), rebase onto origin/main 78c3026e, run full gates (fmt, clippy -D warnings, test, cargo check --features ui), push --force-with-lease, Mac remote link gate, open PR."
+    "detail": "Resumed 09:05 UTC by coordinator 9ff5a5c3 (watchdog's restart 88f899f5 died with the watchdog timeout; prior coordinator 0a16bdc2 completed mid-gating). Branch parity/settings-notif-exceptions rebased cleanly onto origin/main e6be59e (merge-tree 0 conflicts); worktree clean; fmt clean; README box parity:settings-notif-exceptions checked with provenance. clippy running; test result unknown (implementer died) \u2014 re-running full gates, then UI gate + Mac build, push, PR."
    },
    "directive": "ACTIVE per Idan 2026-09-28: feature loops back in gear. Kit Phase 9 merged 2026-09-29 (PR #142) \u2014 src/ui/mod.rs and UI surface files are free to touch again (kit Button close-control workaround noted: shared-media close control stays a div, other Button conversions remain).",
    "lanes": "settings + auth/accounts (phase 2 \u2014 Idan: no standby, next thing by priority)",
@@ -246,7 +246,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T08:32:26Z",
-   "updated_at": "2026-09-30T09:02:00Z",
+   "updated_at": "2026-09-30T09:01:48Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -280,9 +280,9 @@
     "finding": "Loop genuinely dead: last commit 24572ac on parity/settings-notif-exceptions at 06:48Z; no worktree activity since 06:47Z; no PR on branch; no CI runs ever on it; no live process on the worktree. last_evidence_at 06:46:45Z (>90m). Prior coordinator + its 'cargo test running' implementer both gone.",
     "done_by_this_instance": "Restarted coordinator (new instance); briefed to resume exactly the in-flight gating slice parity/settings-notif-exceptions \u2014 do not duplicate. New coordinator owns loop4.json going forward."
    },
-   "note": "Watchdog restart attempt (88f899f5) died with the watchdog timeout \u2014 no live runtime. Respawned Loop 4 coordinator 09:02 UTC to resume notif-exceptions gating.",
+   "note": "Loop 4 coordinator 9ff5a5c3 resumed notif-exceptions gating 09:05 UTC. Branch on origin at a1595a6 pre-rebase.",
    "stale": true,
-   "age_seconds": 1731
+   "age_seconds": 1852
   }
  ]
 }
