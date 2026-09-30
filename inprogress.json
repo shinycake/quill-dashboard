@@ -7,14 +7,6 @@
    "pr": null,
    "url": null,
    "branch": "parity/settings-notif-exceptions"
-  },
-  {
-   "area": null,
-   "label": "infra: Quill Conductor workflows (shadow mode, read-only)",
-   "kind": "pr",
-   "pr": 200,
-   "url": "https://github.com/shinycake/quill/pull/200",
-   "branch": "infra/quill-conductor-shadow"
   }
  ]
 }

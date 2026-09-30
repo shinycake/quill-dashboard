@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 200,
+   "title": "infra: Quill Conductor workflows (shadow mode, read-only)",
+   "merged_at": "2026-09-30T06:44:06Z",
+   "html_url": "https://github.com/shinycake/quill/pull/200",
+   "head": {
+    "ref": "infra/quill-conductor-shadow"
+   }
+  },
+  {
    "number": 198,
    "title": "refactor: split src/ui/mod.rs into one-responsibility modules",
    "merged_at": "2026-09-30T06:38:06Z",
@@ -894,29 +903,20 @@
    "head": {
     "ref": "parity/dev-profile"
    }
-  },
-  {
-   "number": 97,
-   "title": "A1: login-flow completion \u2014 code resend + QR login",
-   "merged_at": "2026-09-28T03:34:16Z",
-   "html_url": "https://github.com/shinycake/quill/pull/97",
-   "head": {
-    "ref": "parity/auth-login-1"
-   }
   }
  ],
- "openPRs": [
-  {
-   "number": 200,
-   "title": "infra: Quill Conductor workflows (shadow mode, read-only)",
-   "updated_at": "2026-09-30T06:37:52Z",
-   "html_url": "https://github.com/shinycake/quill/pull/200",
-   "head": {
-    "ref": "infra/quill-conductor-shadow"
-   }
-  }
- ],
+ "openPRs": [],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T06:44:07Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1306,19 +1306,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/chatlist-badge-settings"
-   },
-   "created_at": "2026-09-29T22:55:25Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
+   "html_url": "https://github.com/shinycake/quill/commit/614e797eac43b9c101ca84ed42fbaed3fea9ed6a",
+   "commit": {
+    "message": "infra: Quill Conductor workflows (shadow mode, read-only) (#200)\n\n* infra: add quill-conductor.yml (shadow mode)\n\n* infra: add .github/workflows/quill-worker.yml (shadow mode)\n\n* infra: add .github/workflows/quill-publisher.yml (shadow mode)\n\n* infra: add .github/workflows/quill-notify.yml (shadow mode)\n\n* infra: add .github/scripts/quill-shadow-projection.sh (shadow mode)",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T06:44:05Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "644155132e6275d19902d40fdce477a4429f820e",
    "html_url": "https://github.com/shinycake/quill/commit/644155132e6275d19902d40fdce477a4429f820e",
@@ -1439,20 +1443,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T02:48:35Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "be11b0fff052bdbe20c9f564af324309560fea85",
-   "html_url": "https://github.com/shinycake/quill/commit/be11b0fff052bdbe20c9f564af324309560fea85",
-   "commit": {
-    "message": "parity:calls-proxy \u2014 Use proxy for calls setting (#188)\n\n- CallPrefs.use_proxy_for_calls (default off), persisted in call_prefs.json\n- Settings \u2192 Call settings kit-Switch row via existing pref_row helper\n- New calls::proxy module: SOCKS5-only proxy_for_calls() selection with\n  unit tests pinning the official rule (toggle on + enabled SOCKS5 only)\n- README parity:calls-proxy box checked; DECISIONS.md slice section\n\nResearch: TDLib schema (1.8.67) has no use-proxy-for-calls option \u2014 the\ntoggle is purely client-side; TDLib transports no call media (signaling\nonly). ntgcalls v3.0.0 C API (66 fns, verbatim-verified bindings)\nexposes no proxy configuration, and Quill has no proxy management yet,\nso media routing is blocked at the engine boundary; the selection\nfunction is the seam the proxy-management slice will feed.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T02:14:35Z"
     }
    },
    "author": {
