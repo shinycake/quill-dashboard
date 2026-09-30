@@ -945,6 +945,16 @@
  ],
  "events": [
   {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/bots-payment-clear-ui"
+   },
+   "created_at": "2026-09-30T09:13:41Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "PullRequestEvent",
    "payload": {
     "ref": null
@@ -1330,16 +1340,6 @@
     "ref": "parity/bots-ephemeral-command-icon"
    },
    "created_at": "2026-09-30T08:03:39Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-ui-modrs"
-   },
-   "created_at": "2026-09-30T04:49:07Z",
    "actor": {
     "login": "shinycake"
    }
