@@ -5,6 +5,24 @@
  },
  "closedPRs": [
   {
+   "number": 195,
+   "title": "refactor: split tests/replay.rs into per-area test files",
+   "merged_at": "2026-09-30T05:58:48Z",
+   "html_url": "https://github.com/shinycake/quill/pull/195",
+   "head": {
+    "ref": "refactor/split-replay"
+   }
+  },
+  {
+   "number": 197,
+   "title": "refactor: split src/calls/engine.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T05:58:28Z",
+   "html_url": "https://github.com/shinycake/quill/pull/197",
+   "head": {
+    "ref": "refactor/split-calls-engine"
+   }
+  },
+  {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
    "merged_at": "2026-09-30T05:55:59Z",
@@ -885,24 +903,6 @@
    "head": {
     "ref": "parity/media-1"
    }
-  },
-  {
-   "number": 96,
-   "title": "calls-remainder-1: scheduled-chat notify toggle, 1:1 verification emojis, group video paused badge",
-   "merged_at": "2026-09-28T04:06:36Z",
-   "html_url": "https://github.com/shinycake/quill/pull/96",
-   "head": {
-    "ref": "parity/calls-remainder-1"
-   }
-  },
-  {
-   "number": 91,
-   "title": "MED4: link previews + captions",
-   "merged_at": "2026-09-27T21:08:22Z",
-   "html_url": "https://github.com/shinycake/quill/pull/91",
-   "head": {
-    "ref": "parity/media-4"
-   }
   }
  ],
  "openPRs": [
@@ -925,15 +925,6 @@
    }
   },
   {
-   "number": 197,
-   "title": "refactor: split src/calls/engine.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T04:18:02Z",
-   "html_url": "https://github.com/shinycake/quill/pull/197",
-   "head": {
-    "ref": "refactor/split-calls-engine"
-   }
-  },
-  {
    "number": 196,
    "title": "refactor: split src/connect.rs into one-responsibility modules",
    "updated_at": "2026-09-30T05:54:34Z",
@@ -941,18 +932,49 @@
    "head": {
     "ref": "refactor/split-connect"
    }
-  },
-  {
-   "number": 195,
-   "title": "refactor: split tests/replay.rs into per-area test files",
-   "updated_at": "2026-09-30T05:50:09Z",
-   "html_url": "https://github.com/shinycake/quill/pull/195",
-   "head": {
-    "ref": "refactor/split-replay"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T05:58:48Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-state"
+   },
+   "created_at": "2026-09-30T05:28:17Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T05:58:49Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T05:58:28Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1312,49 +1334,37 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:38:52Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:33:44Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-requests"
-   },
-   "created_at": "2026-09-30T04:35:16Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/loop2-s17-choosing-sticker"
-   },
-   "created_at": "2026-09-29T22:17:56Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
+   "html_url": "https://github.com/shinycake/quill/commit/23ed15ad7fa6d842ab93e539269b7a9213e3ef18",
+   "commit": {
+    "message": "refactor: split tests/replay.rs into per-area test files (#195)\n\n* refactor: split tests/replay.rs into per-area test files\n\n3,505-line integration test split into 12 per-area files plus\ntests/replay_common.rs (shared helpers). Pure code motion \u2014 every line\nverified present exactly once; only fn/const -> pub fn/pub const changed.\n\n* fixup: silence dead_code/unused_imports on shared replay test helper\n\ntests/replay_common.rs is compiled as its own test target (cargo builds\nevery top-level tests/*.rs file standalone) where none of its items are\nreferenced, and each replay_* binary only uses a subset. The items are\ngenuinely shared across the binaries.\n\n---------\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T05:58:48Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "sha": "1437abb8e21b6ad6daed470452f666946a61771c",
+   "html_url": "https://github.com/shinycake/quill/commit/1437abb8e21b6ad6daed470452f666946a61771c",
+   "commit": {
+    "message": "refactor: split src/calls/engine.rs into one-responsibility modules (#197)\n\nPure code motion, no behavior change. 3,212 lines -> 5 modules,\nall under 2,000 lines. Public paths preserved via re-exports.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T05:58:28Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
    "html_url": "https://github.com/shinycake/quill/commit/e79d0d5df9a1ebeaeaa200a4ea65b168e0724cfa",
@@ -1461,34 +1471,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T01:39:20Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "94fc73883af720f9995149de3710d6b91bb92eb5",
-   "html_url": "https://github.com/shinycake/quill/commit/94fc73883af720f9995149de3710d6b91bb92eb5",
-   "commit": {
-    "message": "ci: enable auto-merge (squash) on new PRs by default (#189)",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T01:02:03Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "8cea051680b8844773e57063bce79e47d673cf9d",
-   "html_url": "https://github.com/shinycake/quill/commit/8cea051680b8844773e57063bce79e47d673cf9d",
-   "commit": {
-    "message": "Chat list: app badge counter settings (include muted/archived, messages vs chats) (#183)\n\n* Chat list: app badge counter settings (include muted/archived, messages vs chats)\n\nBadgePrefs in settings.rs (persisted to badge_prefs.json, Telegram Desktop\ndefaults: muted in, archived out, count messages); badge_count() in tray.rs\nhonors the prefs; Session.badge_prefs loaded at startup in connect.rs;\nApp badge counter section with kit Switch rows in the notification defaults\ndialog (src/ui/mod.rs).\n\n* Check parity:chatlist-badge-settings README box; exact waiver bumps (ui/mod.rs 49101->49211, connect.rs 24898->24907, state.rs 21773->21780)\n\n---------\n\nCo-authored-by: Quill Loop 3 <quill-loop3@local>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T00:51:28Z"
     }
    },
    "author": {
