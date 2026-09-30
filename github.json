@@ -927,7 +927,7 @@
   {
    "number": 192,
    "title": "refactor: split src/telegram/requests.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T01:44:21Z",
+   "updated_at": "2026-09-30T02:26:46Z",
    "html_url": "https://github.com/shinycake/quill/pull/192",
    "head": {
     "ref": "refactor/split-requests"
@@ -936,7 +936,7 @@
   {
    "number": 191,
    "title": "bots: typed inline mode (@bot query \u2192 results \u2192 send)",
-   "updated_at": "2026-09-30T01:57:37Z",
+   "updated_at": "2026-09-30T02:26:23Z",
    "html_url": "https://github.com/shinycake/quill/pull/191",
    "head": {
     "ref": "parity/bots-inline-mode"
