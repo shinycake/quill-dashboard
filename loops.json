@@ -25,8 +25,10 @@
     "slice": "chatlist-list-style",
     "branch": "parity/chatlist-list-style",
     "worktree": "~/workspace/quill-l1-clstyle",
-    "phase": "implementing",
-    "detail": "Chat-list style settings (two/three lines, media icons, text formatting). Waiver system abolished \u2014 no size-check gate, no baseline bookkeeping; new-code-placement guidance only."
+    "phase": "in-review",
+    "detail": "Chat-list style settings (two/three lines, media icons, text formatting). Waiver system abolished \u2014 no size-check gate, no baseline bookkeeping; new-code-placement guidance only.",
+    "commit": "29145b2",
+    "reviewer": "7030d265-005e-4378-9f12-970b1937713b (pending)"
    },
    "notes": "Pre-existing stash stash@{0} WIP on parity/chat-ttl (7d36c27) sits in the quill-l1-c2l worktree (quill-l1-groupedit no longer exists) \u2014 verified intact, unrelated, left alone. Note: an earlier loop1.json note said the stash was in quill-l1-groupedit; that worktree is gone, the stash lives in quill-l1-c2l. Parity script reads 373/525 on this branch (C2l box checked). | G9 picked as next lane slice: community service-message rows (added/removed/join). PR #165 (G8) still open.",
    "phase9": {
@@ -35,7 +37,7 @@
     "status": "merged"
    },
    "status": "active",
-   "updated_at": "2026-09-30T00:05:54Z",
+   "updated_at": "2026-09-30T00:10:00Z",
    "current_slice": "G10",
    "current_branch": "parity/communities-ui",
    "current_commit": "b82341d",
@@ -48,15 +50,15 @@
     "status": "merged 2026-09-29 during freeze flush"
    },
    "workflow": "PIPELINE (Idan 2026-09-29): job ends at PR-open \u2014 record handoff in JSON, immediately start next slice in fresh worktree. GLOBAL WIP CAP (Idan 2026-09-29, replaces per-loop cap of 2 as the hard rule): NEVER more than 4 open PRs repo-wide. Before opening any PR, count via gh pr list --state open --jq length; if count == 4, stop feature dev and help land open PRs (review fixups, rebase help, chase CI), re-check periodically, open when count < 4. Per-loop max 2 open PRs remains a hygiene guideline. Merges strict FIFO oldest-first via the merge-pipeline agent \u2014 NEVER merge your own PRs. Claim discipline: verify no other loop JSON / open PR claims a slice before starting. Delete merged slice worktrees after confirming merge. Blocked slices: record reason, move on. last_evidence_at bumps on genuine phase transitions only (slice claimed/started, real-diff checkpoint, push, PR open, review received, merge confirmed) \u2014 never on keepalive heartbeats.",
-   "last_evidence_at": "2026-09-29T23:31:00Z",
-   "last_evidence_event": "standing rule change from Idan: check_file_sizes.sh waiver system DELETED from repo (removal PR in flight) \u2014 size-check gate, waiver-bump bookkeeping, and baseline PR-body docs all discontinued; soft 1500/hard 2000 guidance remains for new-code placement only; running chatlist-list-style implementer steered to drop the gate and waiver bookkeeping",
+   "last_evidence_at": "2026-09-30T00:10:00Z",
+   "last_evidence_event": "chatlist-list-style implementer completed: branch parity/chatlist-list-style pushed (29145b2), all gates green incl. Mac UI build success and local cargo check --features ui (libgtk-3-dev installed via passwordless sudo); dedicated adversarial reviewer dispatched",
    "wip_open_prs": 2,
    "global_open_prs": 3,
    "standing_rules": {
     "waiver_system": "DELETED 2026-09-29 ~23:31 CDT per Idan \u2014 no size-check gate, no waiver bumps, no baseline docs; soft 1500/hard 2000 line guidance for new-code placement only, until Phase 3 implements enforcement properly"
    },
-   "stale": true,
-   "age_seconds": 2181
+   "stale": false,
+   "age_seconds": 0
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
@@ -163,7 +165,7 @@
    },
    "last_evidence_at": "2026-09-29T22:54:27Z",
    "stale": true,
-   "age_seconds": 4374
+   "age_seconds": 4492
   },
   {
    "coordinator": "ac2c9077-27e4-4c75-a2bd-a9a7b905a1b5",
@@ -190,7 +192,7 @@
     "after_badge_settings": "chatlist-list-style, then evaluate media L198 (download pause/resume): loop 4 flagged that re-architecting downloads onto the persistent download list + toggleDownloadIsPaused is a real candidate \u2014 the earlier skip only ruled out pausing one-shot downloadFile. Do the evaluation as a proper slice decision with evidence, not a skip."
    },
    "stale": true,
-   "age_seconds": 3741
+   "age_seconds": 3859
   },
   {
    "coordinator": "e33b2d4d-2d50-4c46-9390-328a0bed408e",
@@ -229,7 +231,7 @@
    },
    "status": "active",
    "last_evidence_at": "2026-09-30T00:04:46Z",
-   "updated_at": "2026-09-30T00:04:46Z",
+   "updated_at": "2026-09-30T00:08:41Z",
    "last_merge": {
     "pr": 164,
     "slice": "A9 account lifecycle UI (delete-account dialog + self-destruct TTL picker)",
@@ -265,7 +267,7 @@
     "stand_down": "This instance made a reaction-notif claim in this JSON at 23:31Z and created no files for it; the claim has been REMOVED to avoid a two-writer collision. Standing down from the duplicate slice. RECOMMENDATION to parent: steer or retire one of the two Loop 4 coordinator instances to restore one-slice-at-a-time; the prior instance holds the live WIP and should finish reaction-notif."
    },
    "stale": false,
-   "age_seconds": 155
+   "age_seconds": 273
   }
  ]
 }
