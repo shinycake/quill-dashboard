@@ -14,7 +14,7 @@
   {
    "path": "src/state.rs",
    "original": 20295,
-   "current": 22180
+   "current": null
   },
   {
    "path": "src/telegram/envelope.rs",

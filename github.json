@@ -5,6 +5,15 @@
  },
  "closedPRs": [
   {
+   "number": 193,
+   "title": "refactor: split src/state.rs into one-responsibility modules",
+   "merged_at": "2026-09-30T05:48:40Z",
+   "html_url": "https://github.com/shinycake/quill/pull/193",
+   "head": {
+    "ref": "refactor/split-state"
+   }
+  },
+  {
    "number": 192,
    "title": "refactor: split src/telegram/requests.rs into one-responsibility modules",
    "merged_at": "2026-09-30T04:57:42Z",
@@ -894,15 +903,6 @@
    "head": {
     "ref": "parity/bots-keyboards"
    }
-  },
-  {
-   "number": 98,
-   "title": "Story composer options (expiry, areas, chat-page + protect toggles)",
-   "merged_at": "2026-09-28T03:45:40Z",
-   "html_url": "https://github.com/shinycake/quill/pull/98",
-   "head": {
-    "ref": "parity/stories-2"
-   }
   }
  ],
  "openPRs": [
@@ -945,7 +945,7 @@
   {
    "number": 195,
    "title": "refactor: split tests/replay.rs into per-area test files",
-   "updated_at": "2026-09-30T05:30:18Z",
+   "updated_at": "2026-09-30T05:49:23Z",
    "html_url": "https://github.com/shinycake/quill/pull/195",
    "head": {
     "ref": "refactor/split-replay"
@@ -954,23 +954,44 @@
   {
    "number": 194,
    "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T05:31:20Z",
+   "updated_at": "2026-09-30T05:49:13Z",
    "html_url": "https://github.com/shinycake/quill/pull/194",
    "head": {
     "ref": "refactor/split-envelope"
    }
-  },
-  {
-   "number": 193,
-   "title": "refactor: split src/state.rs into one-responsibility modules",
-   "updated_at": "2026-09-30T05:44:44Z",
-   "html_url": "https://github.com/shinycake/quill/pull/193",
-   "head": {
-    "ref": "refactor/split-state"
-   }
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/refactor/split-envelope"
+   },
+   "created_at": "2026-09-30T05:49:12Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T05:48:40Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/main"
+   },
+   "created_at": "2026-09-30T05:48:41Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PushEvent",
    "payload": {
@@ -1340,39 +1361,23 @@
    "actor": {
     "login": "shinycake"
    }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:20:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T04:23:57Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/refactor/split-envelope"
-   },
-   "created_at": "2026-09-30T04:20:33Z",
-   "actor": {
-    "login": "shinycake"
-   }
   }
  ],
  "commits": [
+  {
+   "sha": "e1291cc84d9388e0edcc2d9b791844b74aabd13c",
+   "html_url": "https://github.com/shinycake/quill/commit/e1291cc84d9388e0edcc2d9b791844b74aabd13c",
+   "commit": {
+    "message": "refactor: split src/state.rs into one-responsibility modules (#193)\n\nPure code motion, no behavior change. src/state.rs (21,883 lines) becomes\nsrc/state/mod.rs plus 34 modules, each under 2,000 lines:\n\n- Types: member_list, request_purpose, requests, chat_types,\n  history_types, search_types, shared_media_types, sticker_gif_types,\n  call_types, session, story_types, info_types\n- apply_payload dispatcher (session_apply) with 20 largest arms extracted\n  to session_apply_{error,ok,chats,messages,queries} helpers\n- Session methods grouped by responsibility: session_{chat_caps,updates,\n  stories,files,stickers,members,calls,sponsored,chatlist,notifications,\n  forum,requests,search,chat_search,forward}\n- 233 unit tests moved to src/state/tests/ grouped by area\n\nAll 1,126 lib tests pass. cargo fmt/clippy clean.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
+    "author": {
+     "name": "shinycake",
+     "date": "2026-09-30T05:48:39Z"
+    }
+   },
+   "author": {
+    "login": "shinycake"
+   }
+  },
   {
    "sha": "ffd56a11b5fb672df353eefc279eb28be058e4b1",
    "html_url": "https://github.com/shinycake/quill/commit/ffd56a11b5fb672df353eefc279eb28be058e4b1",
@@ -1493,20 +1498,6 @@
     "author": {
      "name": "shinycake",
      "date": "2026-09-30T00:37:41Z"
-    }
-   },
-   "author": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "sha": "de324303960091586aa868661657a8c28994507f",
-   "html_url": "https://github.com/shinycake/quill/commit/de324303960091586aa868661657a8c28994507f",
-   "commit": {
-    "message": "Slice parity:settings-reaction-notif: reaction + story notification settings (#186)\n\nBackend:\n- envelope.rs: ReactionNotificationSource {None, Contacts, All} +\n  ReactionNotificationSettings (schema 1.8.67, line 3396); parse\n  updateReactionNotificationSettings (line 10671) into a new\n  UpdateReactionNotificationSettings payload\n- requests.rs: set_reaction_notification_settings JSON builder\n- connect.rs: send_reaction_notification_settings driver method\n- state.rs: Session.reaction_notification_settings cache, fed from the\n  update stream (no getter exists in the schema)\n\nUI (Notification defaults dialog):\n- new Reactions section: source presets (None/Contacts/Everyone) for\n  message reactions, story reactions, poll votes; kit Switch for show\n  preview; saved-sound picker via new SoundPickerTarget::Reaction\n- per-scope sections: 'Mute story notifications' and 'Show story poster'\n  kit Switches (mute_stories / show_story_poster in\n  setScopeNotificationSettings). Skipped: story-sound picker \u2014 the\n  per-scope message-sound picker already covers sound choice.\n\nREADME: check parity:settings-reaction-notif.\n\nGates: cargo fmt, clippy -D warnings, cargo test all green\n(no-default-features, locked). UI build not run: PR cap at 4.\n\nCo-authored-by: shinycake <shinycake@users.noreply.github.com>",
-    "author": {
-     "name": "shinycake",
-     "date": "2026-09-30T00:18:44Z"
     }
    },
    "author": {
