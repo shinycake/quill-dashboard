@@ -17,20 +17,28 @@
    "branch": "parity/community-chatlist-mode"
   },
   {
-   "area": "Media",
-   "label": "settings notification overrides: mentions + pinned-message per scope (parity:settings-mentions-pinned)",
-   "kind": "pr",
-   "pr": 184,
-   "url": "https://github.com/shinycake/quill/pull/184",
-   "branch": "parity/settings-mentions-pinned"
-  },
-  {
    "area": "Secret chats",
    "label": "bot inline mode (parity:bots-inline-mode)",
    "kind": "branch",
    "pr": null,
    "url": null,
    "branch": "parity/bots-inline-mode"
+  },
+  {
+   "area": "Settings",
+   "label": "Settings: mention + pinned-message notification overrides per scope",
+   "kind": "pr",
+   "pr": 184,
+   "url": "https://github.com/shinycake/quill/pull/184",
+   "branch": "parity/settings-mentions-pinned"
+  },
+  {
+   "area": "Settings",
+   "label": "list of chats with custom notification exceptions (parity:settings-notif-exceptions)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/settings-notif-exceptions"
   },
   {
    "area": "Stories",

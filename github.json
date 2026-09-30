@@ -945,6 +945,16 @@
  ],
  "events": [
   {
+   "type": "CreateEvent",
+   "payload": {
+    "ref": "parity/chatlist-list-style"
+   },
+   "created_at": "2026-09-30T00:04:12Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "PushEvent",
    "payload": {
     "ref": "refs/heads/parity/settings-mentions-pinned"
@@ -1330,16 +1340,6 @@
     "ref": "parity/loop2-s15-dynamic-order"
    },
    "created_at": "2026-09-29T21:11:51Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/bots-force-reply"
-   },
-   "created_at": "2026-09-29T21:59:48Z",
    "actor": {
     "login": "shinycake"
    }
