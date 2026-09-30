@@ -936,7 +936,7 @@
   {
    "number": 183,
    "title": "Chat list: app badge counter settings (include muted/archived, messages vs chats)",
-   "updated_at": "2026-09-30T00:16:33Z",
+   "updated_at": "2026-09-30T00:41:21Z",
    "html_url": "https://github.com/shinycake/quill/pull/183",
    "head": {
     "ref": "parity/chatlist-badge-settings"
@@ -944,6 +944,16 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/platform-tray-icon"
+   },
+   "created_at": "2026-09-29T17:35:31Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1330,16 +1340,6 @@
     "ref": "parity/communities-ui"
    },
    "created_at": "2026-09-29T21:58:26Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "DeleteEvent",
-   "payload": {
-    "ref": "parity/ephemeral-updates"
-   },
-   "created_at": "2026-09-29T22:50:35Z",
    "actor": {
     "login": "shinycake"
    }
