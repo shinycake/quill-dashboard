@@ -974,6 +974,16 @@
   {
    "type": "PushEvent",
    "payload": {
+    "ref": "refs/heads/refactor/split-state"
+   },
+   "created_at": "2026-09-30T04:40:45Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PushEvent",
+   "payload": {
     "ref": "refs/heads/parity/stories-6"
    },
    "created_at": "2026-09-29T06:39:59Z",
@@ -982,9 +992,9 @@
    }
   },
   {
-   "type": "DeleteEvent",
+   "type": "PushEvent",
    "payload": {
-    "ref": "parity/remove-check-file-sizes"
+    "ref": "refs/heads/main"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -992,9 +1002,9 @@
    }
   },
   {
-   "type": "PushEvent",
+   "type": "DeleteEvent",
    "payload": {
-    "ref": "refs/heads/main"
+    "ref": "parity/remove-check-file-sizes"
    },
    "created_at": "2026-09-29T23:56:15Z",
    "actor": {
@@ -1357,16 +1367,6 @@
     "ref": "refs/heads/parity/bots-inline-mode"
    },
    "created_at": "2026-09-30T02:50:21Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/main"
-   },
-   "created_at": "2026-09-29T21:43:04Z",
    "actor": {
     "login": "shinycake"
    }
