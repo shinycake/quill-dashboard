@@ -907,6 +907,15 @@
  ],
  "openPRs": [
   {
+   "number": 194,
+   "title": "refactor: split src/telegram/envelope.rs into one-responsibility modules",
+   "updated_at": "2026-09-30T02:13:01Z",
+   "html_url": "https://github.com/shinycake/quill/pull/194",
+   "head": {
+    "ref": "refactor/split-envelope"
+   }
+  },
+  {
    "number": 193,
    "title": "refactor: split src/state.rs into one-responsibility modules",
    "updated_at": "2026-09-30T02:11:18Z",
@@ -953,6 +962,26 @@
   }
  ],
  "events": [
+  {
+   "type": "PushEvent",
+   "payload": {
+    "ref": "refs/heads/parity/stories-6"
+   },
+   "created_at": "2026-09-29T06:42:11Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
+   "type": "PullRequestEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T02:13:01Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
   {
    "type": "PullRequestEvent",
    "payload": {
@@ -1329,26 +1358,6 @@
     "ref": "refs/heads/infra/file-size-cap"
    },
    "created_at": "2026-09-29T05:26:59Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PullRequestEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T00:51:29Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "PushEvent",
-   "payload": {
-    "ref": "refs/heads/parity/settings-mentions-pinned"
-   },
-   "created_at": "2026-09-30T00:50:33Z",
    "actor": {
     "login": "shinycake"
    }
