@@ -945,6 +945,16 @@
  ],
  "events": [
   {
+   "type": "IssueCommentEvent",
+   "payload": {
+    "ref": null
+   },
+   "created_at": "2026-09-30T03:05:45Z",
+   "actor": {
+    "login": "shinycake"
+   }
+  },
+  {
    "type": "PushEvent",
    "payload": {
     "ref": "refs/heads/parity/loop2-s9-gif-backend"
@@ -1330,16 +1340,6 @@
     "ref": "refs/heads/infra/auto-merge-default"
    },
    "created_at": "2026-09-30T00:53:13Z",
-   "actor": {
-    "login": "shinycake"
-   }
-  },
-  {
-   "type": "IssueCommentEvent",
-   "payload": {
-    "ref": null
-   },
-   "created_at": "2026-09-30T01:48:12Z",
    "actor": {
     "login": "shinycake"
    }
