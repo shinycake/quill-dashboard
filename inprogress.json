@@ -65,6 +65,14 @@
    "branch": "parity/platform-shortcuts-reference"
   },
   {
+   "area": "Settings",
+   "label": "parity:platform-high-contrast",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/platform-high-contrast"
+  },
+  {
    "area": "Stories",
    "label": "Notifications: per-chat story settings",
    "kind": "pr",
@@ -74,7 +82,7 @@
   },
   {
    "area": "Stories",
-   "label": "parity:stories-live-play",
+   "label": "parity:stories-live-play \u2014 join live stories from the viewer",
    "kind": "pr",
    "pr": 225,
    "url": "https://github.com/shinycake/quill/pull/225",
