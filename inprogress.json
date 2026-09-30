@@ -49,14 +49,6 @@
    "branch": "parity/msg-richtext-tables"
   },
   {
-   "area": "Messaging core",
-   "label": "compact tables in rich messages (parity:msg-richtext-tables)",
-   "kind": "branch",
-   "pr": null,
-   "url": null,
-   "branch": "parity/msg-richtext-tables"
-  },
-  {
    "area": "Platform & edge cases",
    "label": "keyboard shortcuts reference overlay (parity:platform-shortcuts-reference)",
    "kind": "branch",
@@ -79,6 +71,14 @@
    "pr": null,
    "url": null,
    "branch": "parity/stories-live-play"
+  },
+  {
+   "area": "Stories",
+   "label": "story notification settings (parity:stories-notify-settings)",
+   "kind": "branch",
+   "pr": null,
+   "url": null,
+   "branch": "parity/stories-notify-settings"
   }
  ]
 }

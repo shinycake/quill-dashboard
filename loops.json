@@ -81,18 +81,18 @@
     "auth-multi-account-loop1-poached": "2026-09-30: my PRs #213 (registry) and #215 (switch backend) closed as superseded by Loop 4 PR #214 \u2014 Loop 4 owned multi-account all along (active slice: account switcher UI). Lesson: check git branches/worktrees, not just open PRs, before claiming."
    },
    "stale": true,
-   "age_seconds": 2480
+   "age_seconds": 2603
   },
   {
    "coordinator": "a7199b4e-3636-421d-9d38-a8909d9670fd",
    "current": {
-    "slice": "compact tables in rich messages (parity:msg-richtext-tables)",
-    "branch": "parity/msg-richtext-tables",
-    "worktree": "~/workspace/quill-l2-richtext-tables",
+    "slice": "story notification settings (parity:stories-notify-settings)",
+    "branch": "parity/stories-notify-settings",
+    "worktree": "~/workspace/quill-l2-stories-notify",
     "phase": "implementing",
     "pr": null,
     "handoff": null,
-    "detail": "Slice claimed 2026-09-30 ~10:20 CDT. TWO implementers died in daemon restarts (~10:22 and ~10:37 CDT); second left uncommitted work (message_text.rs table rendering + README box checked). Third implementer dispatched ~10:40 CDT to resume the dirty tree: assess, finish, gate, commit, push. PR #223 phase=in_review, handoff=merge-pipeline, auto-merge armed."
+    "detail": "Slice claimed 2026-09-30 ~11:05 CDT right after PR #224 (compact tables) opened. Three implementers died in daemon restarts on the tables slice; coordinator finished it personally (all gates green, commit 71e13e0). Story notification settings: mute stories per chat, story sound, show story poster \u2014 parsed into fields only (telegram/envelope.rs:1859-1860); slice wires them into behavior + UI. PR #224 phase=in_review, handoff=merge-pipeline, auto-merge armed."
    },
    "lanes": "bots, polls, payments (phase 2 \u2014 Idan: no standby, next thing by priority)",
    "last_merged": {
@@ -196,6 +196,12 @@
      "state": "open",
      "handoff": "merge-pipeline",
      "commit": "afc7e03"
+    },
+    "richtext_tables": {
+     "number": 224,
+     "state": "open",
+     "handoff": "merge-pipeline",
+     "commit": "71e13e0"
     }
    },
    "status": "active",
@@ -210,7 +216,7 @@
     "s14": "merged (#172 @ cf39d8b, 2026-09-29T19:13Z)",
     "s15": "merged (#173, 2026-09-29T21:11Z)"
    },
-   "updated_at": "2026-09-30T16:05:57Z",
+   "updated_at": "2026-09-30T16:12:02Z",
    "last_merge": {
     "pr": 191,
     "slice": "bots inline mode (parity:bots-inline-mode)",
@@ -218,7 +224,7 @@
     "commit": "9a58ae2",
     "parity": "421/525 (80.2%)"
    },
-   "last_evidence_at": "2026-09-30T15:42:15Z",
+   "last_evidence_at": "2026-09-30T16:11:39Z",
    "blockers": {
     "parity:bots-streaming-draft-stop": "BLOCKED 2026-09-30: no streaming-bot-draft concept in pinned TDLib 1.8.67 (td_api.tl has no streaming draft/message type; only RTMP/live streams + log streams) and no such infra in Quill src. Item needs re-audit when TDLib gains streaming bot replies.",
     "parity:gifts-signed-comment": "BLOCKED 2026-09-30: presupposes a Marketplace collectible-gift purchase flow that does not exist in Quill (no sendResoldGift/purchase UI anywhere in src). The comment field (sendResoldGift text) can only land once the purchase flow exists; parked until that flow is built.",
@@ -228,8 +234,11 @@
    "salvaged_findings": {
     "games-play-path": "2026-09-30: game object has NO URL field (schema:673); playable URL exists only in callbackQueryAnswer.url \u2014 verified against Telegram X TGInlineKeyboard.java:1193-1207. Not in main's DECISIONS.md; fold into a future games-adjacent slice if one arises."
    },
-   "stale": true,
-   "age_seconds": 1745
+   "notes": {
+    "gate_regime_2026_09_30": "2026-09-30 ~11:11 CDT per Idan: VM disk hit 94% \u2014 target/ wiped in EVERY quill worktree (in-flight local builds may fail; expected, do not chase). Mac runner idan-m1pro ONLINE. The --features ui build gate now goes EXCLUSIVELY through ~/workspace/bin/quill-ui-build-remote <pushed-branch> \u2014 NEVER run a local --features ui build/link again. Verify built ref from the run's checkout log (gh run view shows headBranch: main BY DESIGN \u2014 check the checkout log's ref: <branch> line and that the built SHA matches the pushed commit). cargo fmt / clippy / test --no-default-features stay LOCAL on the VM."
+   },
+   "stale": false,
+   "age_seconds": 104
   },
   {
    "coordinator": "1865ac1c-6e8a-4c87-acb8-2f68c2baa17a",
@@ -257,7 +266,7 @@
    "last_evidence_event": "slice claimed: msg-richtext-inline-media (phase 4)",
    "last_merged": null,
    "stale": true,
-   "age_seconds": 9080
+   "age_seconds": 9203
   },
   {
    "coordinator": "2606cd25-c664-48e9-8860-15be777f6b43",
@@ -364,7 +373,7 @@
     }
    ],
    "stale": true,
-   "age_seconds": 6680
+   "age_seconds": 6803
   }
  ]
 }
