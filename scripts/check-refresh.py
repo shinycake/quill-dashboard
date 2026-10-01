@@ -17,3 +17,26 @@ assert feeds['loops.json']['loops'][0] == {'updated_at': 'old', 'last_evidence_a
 refresh.refresh(feeds, main, readme, prs, [], [])
 assert len(feeds['parity-history.json']['points']) == 1
 print('Dashboard refresh checks passed')
+
+# GitHub Contents returns no base64 body for files above 1 MB. The publisher reads raw JSON.
+import json
+import subprocess
+publisher = refresh._publisher
+calls = []
+def large_feed(args, **kwargs):
+    calls.append(args)
+    if '/git/ref/' in args[2]:
+        data = {'object': {'sha': 'parent'}}
+    elif '-H' in args:
+        assert args[-1] == 'Accept: application/vnd.github.raw+json'
+        data = {'feeds': feeds}
+    else:
+        data = {'encoding': 'none', 'content': ''}
+    return subprocess.CompletedProcess(args, 0, json.dumps(data), '')
+original = subprocess.run
+try:
+    subprocess.run = large_feed
+    publisher['publish']({'feeds': feeds}, 'example/repo')
+    assert len(calls) == 3
+finally:
+    subprocess.run = original
