@@ -6,7 +6,9 @@ Static HTML, CSS, inline SVG, and JavaScript. Preview with `python3 -m http.serv
 
 GitHub Pages serves the UI from `main`. The browser reads one atomic `data.json` from `codex/dashboard-data`, which is independent of the Pages source branch. Polling pauses in hidden tabs, resumes immediately when visible, times out after 12 seconds, and preserves the last valid snapshot on failure. A 30-second cache-busting bucket avoids a cached raw-GitHub snapshot; the browser makes no authenticated API calls. Source timestamps and overdue heartbeats remain visible even if refresh requests succeed.
 
-On the build machine, keep the existing feed generation in `quill-loops-publish`. **Replace its dashboard commit/push/deploy step** with:
+The `Refresh dashboard data` GitHub Actions workflow refreshes the public Quill projection every five minutes and supports manual dispatch. It reads the checklist at a single main commit, updates PRs/activity/history, removes merged PRs from work records, and publishes only the data branch. GitHub may delay scheduled runs; the page still displays the actual snapshot age. Repository observation time never overwrites coordinator heartbeat or work-evidence timestamps. This workflow replaces the build machine as the routine GitHub projection publisher.
+
+For additional coordinator feeds on the build machine, keep the existing feed generation in `quill-loops-publish`. **Replace its dashboard commit/push/deploy step** with:
 
 ```sh
 python3 /path/to/quill-dashboard/scripts/publish-data.py /path/to/generated-feeds
