@@ -256,7 +256,7 @@
   </section>
 
   <section class="span8">
-    <h2>Live loops <span class="count" id="loopsCount"></span></h2>
+    <h2>Coordinator reports <span class="count" id="loopsCount"></span></h2>
     <div id="loopSummary" class="section-note"></div>
     <div id="loops"><div class="skel"></div><div class="skel"></div></div>
   </section>
@@ -299,7 +299,7 @@
   </div>
 
   <footer>
-    Snapshots from the build machine · checks every 30s while visible · timestamps reflect source data<br>
+    Repository state from GitHub · checks every 30s while visible · coordinator reports are separate<br>
     <a href="https://github.com/shinycake/quill">shinycake/quill</a> ·
     <a href="https://github.com/shinycake/quill-dashboard">dashboard source</a>
   </footer>
@@ -345,9 +345,12 @@ function ago(iso){
 }
 
 const FEEDS = ['github.json', 'loops.json', 'parity-history.json', 'areas.json', 'inprogress.json'];
-const remote = location.hostname === 'shinycake.github.io';
-const DATA_URL = 'https://raw.githubusercontent.com/shinycake/quill-dashboard/codex/dashboard-data/data.json';
-let bundleAvailable = false, bundleRetryAt = 0, lastChecked = null;
+const remote = new URLSearchParams(location.search || '').get('data') !== 'local';
+const BUNDLE_URLS = [
+  'https://raw.githubusercontent.com/shinycake/quill/codex/dashboard-data/data.json',
+  'https://raw.githubusercontent.com/shinycake/quill-dashboard/codex/dashboard-data/data.json',
+];
+let activeBundleURL = null, lastBundleAt = 0, lastChecked = null;
 const sourceTimes = {};
 
 function validFeed(file, data){
@@ -378,30 +381,39 @@ async function fetchJSON(url){
   return {data:await r.json(), at:r.headers.get('Last-Modified')};
 }
 async function loadFeeds(){
-  // One atomic snapshot on a data-only branch; UI deployments are independent.
-  if (remote && (bundleAvailable || Date.now() >= bundleRetryAt)){
-    try {
-      const {data} = await fetchJSON(DATA_URL + '?t=' + Math.floor(Date.now() / 30000));
-      if (!Number.isFinite(Date.parse(data.generated_at)) || !FEEDS.every(f => validFeed(f, data.feeds?.[f])))
-        throw new Error('Invalid snapshot');
-      const counts = data.feeds['areas.json'].areas.reduce((p,a) =>
-        ({done:p.done+a.done.length,total:p.total+a.done.length+a.pending.length}), {done:0,total:0});
-      const par = data.feeds['github.json'].parity;
-      if (counts.done !== par.done || counts.total !== par.total) throw new Error('Snapshot counts disagree');
-      const changed = JSON.stringify(bodies) !== JSON.stringify(data.feeds);
-      FEEDS.forEach(f => {bodies[f] = data.feeds[f]; sourceTimes[f] = data.generated_at;});
-      bundleAvailable = true;
-      return {changed, failures:[]};
-    } catch (err){
-      if (bundleAvailable) return {changed:false, failures:['live snapshot']};
-      bundleRetryAt = Date.now() + 5 * 60000;
+  if (remote){
+    // The legacy bundle is only a migration fallback; never downgrade after source publication.
+    const urls = activeBundleURL === BUNDLE_URLS[0] ? [BUNDLE_URLS[0]] : BUNDLE_URLS;
+    for (const url of urls){
+      try {
+        const {data} = await fetchJSON(url + '?t=' + Math.floor(Date.now()/30000));
+        const at = Date.parse(data.generated_at);
+        if (!Number.isFinite(at) || !['github.json','areas.json'].every(f=>validFeed(f,data.feeds?.[f])))
+          throw new Error('Invalid repository snapshot');
+        if (at < lastBundleAt) throw new Error('Older repository snapshot');
+        const counts = data.feeds['areas.json'].areas.reduce((p,a)=>
+          ({done:p.done+a.done.length,total:p.total+a.done.length+a.pending.length}),{done:0,total:0});
+        const par = data.feeds['github.json'].parity;
+        if (counts.done !== par.done || counts.total !== par.total) throw new Error('Snapshot counts disagree');
+        const changed = JSON.stringify(bodies) !== JSON.stringify(data.feeds);
+        const failures = [];
+        FEEDS.forEach(f=>{
+          if (validFeed(f,data.feeds[f])){
+            bodies[f] = data.feeds[f];
+            sourceTimes[f] = f === 'github.json' ? data.feeds[f].observed_at || data.generated_at : data.generated_at;
+          } else failures.push(f);
+        });
+        activeBundleURL = url;lastBundleAt = at;
+        return {changed,failures};
+      } catch(err){/* Keep the last valid snapshot; optional legacy fallback only during migration. */}
     }
+    return {changed:false,failures:['repository snapshot']};
   }
   let changed = false;
   const failures = [];
   await Promise.all(FEEDS.map(async file => {
     try {
-      const url = remote ? 'https://raw.githubusercontent.com/shinycake/quill-dashboard/codex/dashboard-data/' + file + '?t=' + Math.floor(Date.now()/30000) : file;
+      const url = file;
       const {data, at} = await fetchJSON(url);
       if (!validFeed(file, data)) throw new Error('Invalid ' + file);
       if (JSON.stringify(bodies[file]) !== JSON.stringify(data)){bodies[file] = data; changed = true;}
@@ -436,7 +448,7 @@ function renderLoops(data){
   const loops = data?.loops || [];
   $('loopsCount').textContent = loops.length || '—';
   if (!loops.length){
-    $('loops').innerHTML = '<div class="empty">No loop snapshot available yet.</div>';
+    $('loops').innerHTML = '<div class="empty">No coordinator reports in this snapshot. Repository progress is tracked above.</div>';
     $('loopSummary').textContent = '';
     return;
   }
@@ -923,13 +935,14 @@ function showFeedState(failures = []){
   const missing = FEEDS.filter(f=>!bodies[f]);
   const counts = (areasData || []).reduce((n,a)=>({done:n.done+a.done,total:n.total+a.total}),{done:0,total:0});
   const syncing = cache && areasData && (counts.done !== cache.parity.done || counts.total !== cache.parity.total);
-  const warning = failures.length || stale || missing.length || syncing;
+  const legacy = remote && activeBundleURL === BUNDLE_URLS[1];
+  const warning = failures.length || stale || missing.length || syncing || legacy;
   $('liveDot').classList.toggle('warning', !!warning);
-  $('feedStatus').textContent = failures.length || missing.length ? 'Update delayed' : syncing ? 'Counts syncing' : stale ? 'Snapshot out of date' : 'Snapshot current';
-  $('updatedAt').textContent = (source ? 'Snapshot ' + ago(source) : 'Source time unavailable') + (lastChecked ? ' · checked ' + ago(lastChecked) : '');
+  $('feedStatus').textContent = failures.length || missing.length ? 'Update delayed' : syncing ? 'Counts syncing' : stale ? 'Repository observation overdue' : legacy ? 'Legacy feed' : remote ? 'Repository checked' : 'Local fixtures';
+  $('updatedAt').textContent = (source ? 'Repo observed ' + ago(source) : 'Source time unavailable') + (bodies['github.json']?.main_sha ? ' · main ' + bodies['github.json'].main_sha.slice(0,7) : '') + (lastChecked ? ' · browser checked ' + ago(lastChecked) : '');
   $('rateBanner').classList.toggle('show', !!warning);
   $('rateBanner').textContent = failures.length ? 'Could not update ' + failures.join(', ') + '. Keeping the last valid data; retrying automatically.' :
-    syncing ? 'Checklist counts and the GitHub snapshot are syncing. Refreshing automatically; the separate data feed publishes them together.' : 'The source snapshot is more than 15 minutes old or has no publication time. A successful check does not mean new work was published.';
+    legacy ? 'Using the legacy dashboard feed until Quill publishes its repository snapshot. The source-repository workflow still needs enabling.' : syncing ? 'Checklist counts and the GitHub snapshot are syncing. Refreshing automatically; the separate data feed publishes them together.' : 'The source snapshot is more than 15 minutes old or has no publication time. A successful check does not mean new work was published.';
 }
 let lastFailures = [];
 async function refresh(manual){

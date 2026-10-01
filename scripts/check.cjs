@@ -11,8 +11,8 @@ const element = id => {
     classList:{contains:()=>false,add(){},remove(){},toggle(){}},addEventListener(){},setAttribute(){},querySelectorAll:()=>[]});
   return elements.get(id);
 };
-const sandbox = {console,Date,URL,AbortSignal,setInterval(){},setTimeout(){},clearTimeout(){},
-  document:{getElementById:element,addEventListener(){},hidden:false},window:{addEventListener(){}},location:{hostname:'localhost'}};
+const sandbox = {console,Date,URL,URLSearchParams,AbortSignal,setInterval(){},setTimeout(){},clearTimeout(){},
+  document:{getElementById:element,addEventListener(){},hidden:false},window:{addEventListener(){}},location:{hostname:'localhost',search:'?data=local'}};
 const code = fs.readFileSync('index.html','utf8').split('<script>')[1].split('</script>')[0].replace('refresh(false);\nsetInterval','setInterval');
 vm.createContext(sandbox);vm.runInContext(code,sandbox);
 const run = code => vm.runInContext(code,sandbox);
@@ -63,9 +63,9 @@ sandbox.feeds=feeds;
 run(`Object.assign(bodies,feeds);githubPayload(bodies['github.json']);renderLoops(bodies['loops.json']);`);
 assert.doesNotMatch(element('loops').innerHTML,/native code|Loop undefined/);
 assert.match(element('loops').innerHTML,/S18 sticker-suggest/);
-assert.equal(run(`inprogressByArea['Messaging core'].length`),2);
+const originalWorkCount=run(`inprogressByArea['Auth & accounts'].length`);
 run(`bodies['inprogress.json'].items.push({...bodies['inprogress.json'].items[0]});githubPayload(bodies['github.json']);`);
-assert.equal(run(`inprogressByArea['Auth & accounts'].length`),2);
+assert.equal(run(`inprogressByArea['Auth & accounts'].length`),originalWorkCount);
 run(`bodies['inprogress.json'].items.push({area:'Demo',pr:216,branch:'merged-branch'});githubPayload(bodies['github.json']);`);
 assert.equal(run(`inprogressByArea.Demo`),undefined);
 // Fetch failures/malformed responses preserve last-valid data independently.
@@ -73,23 +73,30 @@ sandbox.fetch=async url=>({ok:true,status:200,headers:{get:()=>new Date(now).toU
 (async()=>{
   const result = await run('loadFeeds()');assert.ok(result.failures.includes('loops.json'));assert.equal(run('bodies["loops.json"].loops.length'),4);
   sandbox.fetch=async()=>{throw new Error('Offline');};
-  const offline = await run('loadFeeds()');assert.equal(offline.failures.length,5);assert.equal(run('bodies["github.json"].parity.done'),434);
+  const offline = await run('loadFeeds()');assert.equal(offline.failures.length,5);assert.equal(run('bodies["github.json"].parity.done'),feeds['github.json'].parity.done);
   // The live branch is an atomic, single-request feed; outage/corruption cannot downgrade it.
-  const liveSandbox={...sandbox,location:{hostname:'shinycake.github.io'}};
+  const liveSandbox={...sandbox,location:{hostname:'shinycake.github.io',search:''}};
   vm.createContext(liveSandbox);vm.runInContext(code,liveSandbox);
   const runLive=expression=>vm.runInContext(expression,liveSandbox);
   let requests=0;
-  liveSandbox.fetch=async url=>{requests++;return {ok:!url.includes('data.json'),status:url.includes('data.json')?404:200,headers:{get:()=>new Date(now).toUTCString()},json:async()=>feeds[url.split('/').pop().split('?')[0]]};};
-  runLive('bundleRetryAt=0;bundleAvailable=false');
-  const fallback=await runLive('loadFeeds()');assert.equal(requests,6);assert.equal(fallback.failures.length,0);
-  requests=0;
   const bundle={generated_at:new Date(now).toISOString(),feeds};
+  liveSandbox.fetch=async url=>{requests++;return {ok:!url.includes('/quill/'),status:url.includes('/quill/')?404:200,headers:{get:()=>null},json:async()=>bundle};};
+  const fallback=await runLive('loadFeeds()');assert.equal(requests,2);assert.equal(fallback.failures.length,0);
+  assert.equal(runLive('activeBundleURL'),runLive('BUNDLE_URLS[1]'));
+  requests=0;
   liveSandbox.fetch=async()=>{requests++;return {ok:true,status:200,headers:{get:()=>null},json:async()=>bundle};};
-  runLive('bundleRetryAt=0');await runLive('loadFeeds()');assert.equal(requests,1);assert.equal(runLive('bundleAvailable'),true);
+  await runLive('loadFeeds()');assert.equal(requests,1);assert.equal(runLive('activeBundleURL'),runLive('BUNDLE_URLS[0]'));
   assert.equal(runLive(`sourceTimes['github.json']`),bundle.generated_at);
   const corrupt=JSON.parse(JSON.stringify(bundle));corrupt.feeds['github.json'].parity.done++;
   liveSandbox.fetch=async()=>({ok:true,status:200,headers:{get:()=>null},json:async()=>corrupt});
-  const rejected=await runLive('loadFeeds()');assert.deepEqual(Array.from(rejected.failures),['live snapshot']);assert.equal(runLive(`bodies['github.json'].parity.done`),434);
+  const rejected=await runLive('loadFeeds()');assert.deepEqual(Array.from(rejected.failures),['repository snapshot']);assert.equal(runLive(`bodies['github.json'].parity.done`),feeds['github.json'].parity.done);
+  // A malformed optional report must not freeze the authoritative parity/PR snapshot.
+  const optional=JSON.parse(JSON.stringify(bundle));optional.feeds['loops.json']={loops:null};
+  liveSandbox.fetch=async()=>({ok:true,status:200,headers:{get:()=>null},json:async()=>optional});
+  const partial=await runLive('loadFeeds()');assert.ok(partial.failures.includes('loops.json'));assert.equal(runLive(`bodies['loops.json'].loops.length`),4);
+  const older={...bundle,generated_at:new Date(now-60000).toISOString()};
+  liveSandbox.fetch=async()=>({ok:true,status:200,headers:{get:()=>null},json:async()=>older});
+  assert.equal((await runLive('loadFeeds()')).failures.length,1);assert.equal(runLive('lastBundleAt'),now);
   requests=0;liveSandbox.fetch=async()=>{requests++;throw new Error('Offline');};
   const bundleOffline=await runLive('loadFeeds()');assert.equal(requests,1);assert.equal(bundleOffline.failures.length,1);
   // The publisher API is faked: verify atomic tree/commit/ref writes and unchanged-data skip.

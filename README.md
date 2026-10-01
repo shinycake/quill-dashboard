@@ -4,9 +4,9 @@ Static HTML, CSS, inline SVG, and JavaScript. Preview with `python3 -m http.serv
 
 ## Publish data without redeploying the UI
 
-GitHub Pages serves the UI from `main`. The browser reads one atomic `data.json` from `codex/dashboard-data`, which is independent of the Pages source branch. Polling pauses in hidden tabs, resumes immediately when visible, times out after 12 seconds, and preserves the last valid snapshot on failure. A 30-second cache-busting bucket avoids a cached raw-GitHub snapshot; the browser makes no authenticated API calls. Source timestamps and overdue heartbeats remain visible even if refresh requests succeed.
+GitHub Pages serves the UI from `main`. The browser prefers one atomic `data.json` from Quill’s `codex/dashboard-data` branch, with the old dashboard branch used only during migration, which is independent of the Pages source branch. Polling pauses in hidden tabs, resumes immediately when visible, times out after 12 seconds, and preserves the last valid snapshot on failure. A 30-second cache-busting bucket avoids a cached raw-GitHub snapshot; the browser makes no authenticated API calls. Source timestamps and overdue heartbeats remain visible even if refresh requests succeed.
 
-The `Refresh dashboard data` GitHub Actions workflow refreshes the public Quill projection every five minutes and supports manual dispatch. It reads the checklist at a single main commit, updates PRs/activity/history, removes merged PRs from work records, and publishes only the data branch. GitHub may delay scheduled runs; the page still displays the actual snapshot age. Repository observation time never overwrites coordinator heartbeat or work-evidence timestamps. This workflow replaces the build machine as the routine GitHub projection publisher.
+The repo-driven migration is specified in [REPO-DRIVEN-HANDOFF.md](REPO-DRIVEN-HANDOFF.md). Its caller publishes on repository events; the schedule is a backup. The previous dashboard-only workflow remains a migration fallback until the source caller is installed. It reads the checklist at a single main commit, updates PRs/activity/history, removes merged PRs from work records, and publishes only the data branch. GitHub may delay scheduled runs; the page still displays the actual snapshot age. Repository observation time never overwrites coordinator heartbeat or work-evidence timestamps. This workflow replaces the build machine as the routine GitHub projection publisher.
 
 For additional coordinator feeds on the build machine, keep the existing feed generation in `quill-loops-publish`. **Replace its dashboard commit/push/deploy step** with:
 
@@ -22,7 +22,7 @@ Validate without publishing:
 python3 scripts/publish-data.py . --dry-run
 ```
 
-The new data branch is created on the first successful publish. Until then, production reads the existing JSON feeds directly from `main`, keeping the dashboard compatible with the current publisher; it checks for the new branch every five minutes. Once an atomic feed has loaded, failures keep that snapshot rather than switch to older deployed files. Local previews always read local JSON.
+The new data branch is created on the first successful publish. Until then, production reads the existing JSON feeds directly from `main`, keeping the dashboard compatible with the current publisher; it checks for the new branch every five minutes. Once an atomic feed has loaded, failures keep that snapshot rather than switch to older deployed files. Local previews now read live snapshots by default; use `?data=local` to inspect local fixtures.
 
 GitHub raw hosting is eventually consistent: the poll cadence is not a guarantee of publication latency. If guaranteed subsecond delivery becomes necessary, host the same snapshot on a mutable endpoint with conditional requests; the UI does not need another deployment for each update.
 
