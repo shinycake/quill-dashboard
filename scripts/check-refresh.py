@@ -51,6 +51,6 @@ def fragments(path):
     assert 'ref=head' in path
     return {'content': base64.b64encode(b'parity:pending\nparity:done\n# comment').decode()}
 refresh.api = fragments
-items = refresh.progress_items(readme, [pr])
-assert len(items) == 1 and items[0]['item'] == 'Pending' and items[0]['area'] == 'Test'
+items = refresh.progress_items(readme.replace("<!-- parity:pending -->", "<!-- parity:pending --> (partial)"), [pr])
+assert len(items) == 1 and items[0]['item'] == 'Pending (partial)' and items[0]['area'] == 'Test'
 assert refresh.progress_items(readme, []) == []

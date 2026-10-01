@@ -76,7 +76,7 @@ def progress_items(readme, prs):
             area = line[4:]
         match = re.match(r'- \[ \] (.*)<!-- (parity:[a-z0-9-]+) -->', line)
         if match and area:
-            anchors[match[2]] = (area, match[1].strip())
+            anchors[match[2]] = (area, re.sub(r'\s*<!--.*?-->', '', line[6:]).strip())
     items = []
     for pr in prs:
         for file in api(f'pulls/{pr["number"]}/files?per_page=100'):
