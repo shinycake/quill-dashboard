@@ -38,8 +38,10 @@ def snapshot(directory):
 def publish(data, repository):
     endpoint = f'repos/{repository}'
 
-    def api(path, method='GET', payload=None, allow_missing=False):
+    def api(path, method='GET', payload=None, allow_missing=False, raw=False):
         args = ['gh', 'api', f'{endpoint}/{path}', '--method', method]
+        if raw:
+            args += ['-H', 'Accept: application/vnd.github.raw+json']
         if payload is not None:
             args += ['--input', '-']
         result = subprocess.run(args, input=json.dumps(payload) if payload is not None else None,
@@ -55,7 +57,8 @@ def publish(data, repository):
     # Compare the Git tree before creating a commit; unchanged data needs no write.
     if parent:
         previous = api(f'contents/data.json?ref={BRANCH}')
-        old = json.loads(base64.b64decode(previous['content']))
+        old = (json.loads(base64.b64decode(previous['content'])) if previous.get('content')
+               else api(f'contents/data.json?ref={BRANCH}', raw=True))
         if old.get('feeds') == data['feeds']:
             print('No data changes; skipped publish')
             return

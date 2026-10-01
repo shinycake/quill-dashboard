@@ -15,8 +15,11 @@ publish, snapshot = _publisher['publish'], _publisher['snapshot']
 REPO = 'shinycake/quill'
 
 
-def api(path, repository=REPO):
-    return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repository}/{path}'], text=True))
+def api(path, repository=REPO, raw=False):
+    args = ['gh', 'api', f'repos/{repository}/{path}']
+    if raw:
+        args += ['-H', 'Accept: application/vnd.github.raw+json']
+    return json.loads(subprocess.check_output(args, text=True))
 
 
 def checklist(readme):
@@ -42,6 +45,15 @@ def refresh(feeds, main, readme, prs, events, commits):
     parity = {'done': sum(len(a['done']) for a in areas),
               'total': sum(len(a['done']) + len(a['pending']) for a in areas)}
     feeds['areas.json'] = {'areas': areas}
+    # Store only the fields the page renders; full GitHub payloads include large PR bodies/diffs.
+    prs = [{**{key: p.get(key) for key in ('number', 'title', 'state', 'merged_at', 'created_at', 'updated_at', 'html_url')},
+            'head': {'ref': p.get('head', {}).get('ref')}} for p in prs]
+    events = [{**{key: e.get(key) for key in ('type', 'created_at')},
+               'payload': {'ref': e.get('payload', {}).get('ref')},
+               'actor': {'login': e.get('actor', {}).get('login')}} for e in events]
+    commits = [{**{key: c.get(key) for key in ('sha', 'html_url')},
+                'author': {'login': (c.get('author') or {}).get('login')},
+                'commit': {key: c['commit'].get(key) for key in ('message', 'author')}} for c in commits]
     feeds['github.json'] = {'parity': parity, 'closedPRs': [p for p in prs if p.get('merged_at')],
                             'openPRs': [p for p in prs if p['state'] == 'open'],
                             'events': events, 'commits': commits, 'observed_at': datetime.now(timezone.utc).isoformat()}
@@ -56,8 +68,8 @@ def refresh(feeds, main, readme, prs, events, commits):
 
 
 def main():
-    previous = api('contents/data.json?ref=codex/dashboard-data', 'shinycake/quill-dashboard')
-    feeds = json.loads(base64.b64decode(previous['content']))['feeds']
+    previous = api('contents/data.json?ref=codex/dashboard-data', 'shinycake/quill-dashboard', raw=True)
+    feeds = previous['feeds']
     head = api('commits/main')
     readme = base64.b64decode(api(f'contents/README.md?ref={head["sha"]}')['content']).decode()
     # Keep recent closed PRs and fetch the complete current open queue separately.
