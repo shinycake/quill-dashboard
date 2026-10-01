@@ -40,3 +40,17 @@ try:
     assert len(calls) == 3
 finally:
     subprocess.run = original
+
+# Match active work to exact unchecked fragment IDs, never to title keywords.
+import base64
+pr = {'number': 3, 'title': 'Feature', 'html_url': 'https://github.com/shinycake/quill/pull/3', 'head': {'sha': 'head', 'ref': 'codex/test'}}
+def fragments(path):
+    if path.startswith('pulls/'):
+        return [{'filename': 'parity-fragments/test.txt', 'status': 'added'},
+                {'filename': 'parity-fragments/old.txt', 'status': 'removed'}]
+    assert 'ref=head' in path
+    return {'content': base64.b64encode(b'parity:pending\nparity:done\n# comment').decode()}
+refresh.api = fragments
+items = refresh.progress_items(readme, [pr])
+assert len(items) == 1 and items[0]['item'] == 'Pending' and items[0]['area'] == 'Test'
+assert refresh.progress_items(readme, []) == []
