@@ -1,0 +1,31 @@
+name: Project Quill repository state
+on:
+  workflow_call:
+    inputs:
+      implementation_ref:
+        description: Dashboard implementation commit; must match the called workflow revision
+        required: true
+        type: string
+permissions:
+  contents: write
+  pull-requests: read
+jobs:
+  project:
+    if: github.repository == 'shinycake/quill'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: shinycake/quill-dashboard
+          ref: ${{ inputs.implementation_ref }}
+          sparse-checkout: scripts
+          persist-credentials: false
+      - name: Check projection logic
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 scripts/check-refresh.py
+      - name: Publish current GitHub state in the source repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/refresh-data.py --publish-repo shinycake/quill
