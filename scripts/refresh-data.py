@@ -8,6 +8,7 @@ import tempfile
 from pathlib import Path
 import runpy
 from datetime import datetime, timezone
+from urllib.parse import quote
 
 _publisher = runpy.run_path(str(Path(__file__).with_name('publish-data.py')))
 publish, snapshot = _publisher['publish'], _publisher['snapshot']
@@ -67,6 +68,30 @@ def refresh(feeds, main, readme, prs, events, commits):
     return feeds
 
 
+def progress_items(readme, prs):
+    anchors = {}
+    area = None
+    for line in readme.splitlines():
+        if line.startswith('### '):
+            area = line[4:]
+        match = re.match(r'- \[ \] (.*)<!-- (parity:[a-z0-9-]+) -->', line)
+        if match and area:
+            anchors[match[2]] = (area, re.sub(r'\s*<!--.*?-->', '', line[6:]).strip())
+    items = []
+    for pr in prs:
+        for file in api(f'pulls/{pr["number"]}/files?per_page=100'):
+            path = file['filename']
+            if file['status'] == 'removed' or not path.startswith('parity-fragments/') or not path.endswith('.txt'):
+                continue
+            body = base64.b64decode(api(f'contents/{quote(path)}?ref={pr["head"]["sha"]}')['content']).decode()
+            for id in body.splitlines():
+                if id.strip() in anchors:
+                    area, item = anchors[id.strip()]
+                    items.append({'area': area, 'item': item, 'label': pr['title'], 'kind': 'pr',
+                                  'pr': pr['number'], 'url': pr['html_url'], 'branch': pr['head']['ref']})
+    return items
+
+
 def main():
     previous = api('contents/data.json?ref=codex/dashboard-data', 'shinycake/quill-dashboard', raw=True)
     feeds = previous['feeds']
@@ -77,6 +102,7 @@ def main():
     open_prs = api('pulls?state=open&per_page=100')
     prs = list({p['number']: p for p in [*prs, *open_prs]}.values())
     refresh(feeds, head, readme, prs, api('events?per_page=30'), api(f'commits?sha={head["sha"]}&per_page=30'))
+    feeds['inprogress.json'] = {'items': progress_items(readme, open_prs)}
     with tempfile.TemporaryDirectory() as directory:
         root = Path(directory)
         for name, body in feeds.items():
