@@ -59,3 +59,14 @@ assert refresh.progress_items(readme, []) == []
 assert refresh.initial_feeds()['loops.json'] == {'loops': []}
 assert refresh.initial_feeds({'feeds': {'loops.json': None, 'parity-history.json': {'points': [{'t': 'bad', 'done': 0, 'total': 1}]}}})['parity-history.json']['points'] == []
 assert feeds['github.json']['main_sha'] == main['sha']
+
+# Explicit partial-work markers require a real unchecked ID; duplicate fragment
+# mappings collapse, and completed/unknown IDs never create active work.
+pr['body'] = '<!-- parity-work:pending --> <!-- parity-work:blocked --> <!-- parity-work:done --> <!-- parity-work:unknown -->'
+items = refresh.progress_items(readme, [pr])
+assert {item['item'] for item in items} == {'Pending', 'Blocked: no API'}
+assert len(items) == 2
+assert feeds['github.json']['parity'] == {'done': 1, 'total': 3}
+pr['body'] = None
+assert len(refresh.progress_items(readme, [pr])) == 1
+print('Partial parity work is visible without changing completion counts')
