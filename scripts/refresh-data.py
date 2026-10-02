@@ -114,16 +114,20 @@ def progress_items(readme, prs):
             anchors[match[2]] = (area, re.sub(r'\s*<!--.*?-->', '', line[6:]).strip())
     items = []
     for pr in prs:
+        # Partial work has no completion fragment. An explicit PR marker maps
+        # it to an unchecked item without advancing the completion count.
+        ids = set(re.findall(r'<!-- parity-work:([a-z0-9-]+) -->', pr.get('body') or ''))
+        ids = {'parity:' + id for id in ids}
         for file in api(f'pulls/{pr["number"]}/files?per_page=100', paginate=True):
             path = file['filename']
             if file['status'] == 'removed' or not path.startswith('parity-fragments/') or not path.endswith('.txt'):
                 continue
             body = base64.b64decode(api(f'contents/{quote(path)}?ref={pr["head"]["sha"]}')['content']).decode()
-            for id in body.splitlines():
-                if id.strip() in anchors:
-                    area, item = anchors[id.strip()]
-                    items.append({'area': area, 'item': item, 'label': pr['title'], 'kind': 'pr',
-                                  'pr': pr['number'], 'url': pr['html_url'], 'branch': pr['head']['ref']})
+            ids.update(id.strip() for id in body.splitlines())
+        for id in sorted(ids & anchors.keys()):
+            area, item = anchors[id]
+            items.append({'area': area, 'item': item, 'label': pr['title'], 'kind': 'pr',
+                          'pr': pr['number'], 'url': pr['html_url'], 'branch': pr['head']['ref']})
     return items
 
 
