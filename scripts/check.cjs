@@ -41,13 +41,39 @@ assert.equal(run(`loopState({updated_at:new Date(now).toISOString(),current:{pha
 assert.equal(run(`loopState({updated_at:new Date(now).toISOString(),last_evidence_at:new Date(now).toISOString(),current:{phase:'gating'}},now).tone`),'wip');
 const points = [0,1,2,3].map(i=>({t:new Date(now-(3-i)*hour).toISOString(),done:70+i*2,total:100}));
 sandbox.points=points;
-let model=run('forecast(points,now)');
-assert.ok(Math.abs(model.slope-48)<1e-8);assert.ok(Math.abs(model.days-.5)<1e-8);
-assert.equal(run('forecast(points.map(p=>({...p,done:70})),now).days'),null);
-assert.equal(run('forecast(points.map((p,i)=>({...p,done:80-i})),now).days'),null);
-assert.equal(run('forecast(points.slice(-2),now)'),null);
-assert.equal(run('forecast(points,now+3600000).stale'),true);
-assert.equal(run('forecast(points.map((p,i)=>({...p,total:i===3?101:100})),now)'),null);
+// Pace counts items checked per day against the current checklist size (100 here): 70 -> 76 in 3h.
+let model=run('paceModel(points,now)');
+assert.ok(Math.abs(model.perDay-48)<1e-8);assert.ok(Math.abs(model.ppPerDay-48)<1e-8);assert.ok(Math.abs(model.daysLeft-.5)<1e-8);
+assert.equal(model.days,1);assert.equal(model.gained,6);assert.equal(model.stale,false);
+assert.equal(run('paceModel(points.map(p=>({...p,done:70})),now).daysLeft'),null);
+assert.equal(run('paceModel(points.map((p,i)=>({...p,done:80-i})),now).daysLeft'),null);
+assert.equal(run('paceModel(points.slice(-2),now)'),null);   // under 2h of history: no estimate
+assert.equal(run('paceModel([],now)'),null);
+assert.equal(run('paceModel(points,now+3600000).stale'),true);
+// A checklist that grew from 100 to 200 must not erase the pace: scored against 200 items, 6 more items = 3pp.
+const grown = [{t:new Date(now-5*hour).toISOString(),done:100,total:100},{t:new Date(now-3*hour).toISOString(),done:100,total:200},
+  {t:new Date(now-hour).toISOString(),done:104,total:200},{t:new Date(now).toISOString(),done:106,total:200}];
+sandbox.grown=grown;
+model=run('paceModel(grown,now)');
+assert.equal(model.total,200);assert.equal(model.gained,6);assert.ok(Math.abs(model.perDay-6/(5/24))<1e-8);
+assert.ok(Math.abs(model.ppPerDay-model.perDay/2)<1e-8);
+assert.equal(run('pctOf(grown[0],200)'),50);                  // 100/100 at the time -> 50% of today's 200
+assert.equal(run('pointLabel(grown[0],200)'),'50.0% of today’s 200 · 100/100 at the time');
+assert.equal(run('pointLabel(grown[3],200)'),'53.0% of today’s 200 · 106/200');
+assert.equal(run('pctOf({done:250,total:300},200)'),100);     // numerators above today's size are capped
+assert.equal(run('pctOf({done:5,total:5},0)'),0);
+// Quiet tail: the 24h window ends at the latest observation, so stalled work shows as a lower pace, not no data.
+const tail = [{t:new Date(now-24*hour).toISOString(),done:50,total:100},{t:new Date(now-20*hour).toISOString(),done:70,total:100},
+  {t:new Date(now).toISOString(),done:70,total:100}];
+sandbox.tail=tail;
+model=run('paceModel(tail,now)');assert.equal(model.gained,20);assert.ok(Math.abs(model.perDay-20)<1e-8);
+// Widens to 3 days when the last 24h had no movement; reports the window used.
+const slow = [{t:new Date(now-48*hour).toISOString(),done:40,total:100},{t:new Date(now-30*hour).toISOString(),done:50,total:100},
+  {t:new Date(now).toISOString(),done:50,total:100}];
+sandbox.slow=slow;
+model=run('paceModel(slow,now)');assert.equal(model.days,3);assert.equal(model.gained,10);
+assert.equal(run('doneAt(slow,Date.parse(slow[1].t)-1,100)'),40);
+assert.equal(run('doneAt(slow,Date.parse(slow[0].t)-1,100)'),null);
 assert.equal(run(`trendPoints({points:[...points,...points]}, {at:points[0].t,done:80,total:100},0).length`),4);
 assert.equal(run(`trendPoints({points:[...points,{t:'invalid',done:0,total:0}]},null,0).length`),4);
 assert.equal(run(`validCounts({done:101,total:100})`),false);
@@ -68,6 +94,14 @@ run(`bodies['inprogress.json'].items.push({...bodies['inprogress.json'].items[0]
 assert.equal(run(`inprogressByArea['Auth & accounts'].length`),originalWorkCount);
 run(`bodies['inprogress.json'].items.push({area:'Demo',pr:216,branch:'merged-branch'});githubPayload(bodies['github.json']);`);
 assert.equal(run(`inprogressByArea.Demo`),undefined);
+// Missing history must render a waiting state, never "Blocked only" or a thrown error.
+run(`lastHistory=null;lastLive=null;renderForecast()`);
+assert.match(element('forecast').innerHTML,/Waiting for enough history/);
+assert.doesNotMatch(element('forecast').innerHTML,/Blocked only|NaN|undefined/);
+// With history, the cards use the current denominator and show raw counts for blocked items.
+run(`lastHistory=bodies['parity-history.json'];lastLive={at:new Date(now).toISOString(),done:feeds['github.json'].parity.done,total:feeds['github.json'].parity.total};areasData=bodies['areas.json'].areas.map(a=>({name:a.name,done:a.done.length,total:a.done.length+a.pending.length,doneItems:a.done,pendingItems:a.pending.map(normItem)}));renderForecast()`);
+assert.doesNotMatch(element('forecast').innerHTML,/NaN|undefined/);
+assert.match(element('forecast').innerHTML,/of \d+ items · \d+\.\d\d%/);
 // Fetch failures/malformed responses preserve last-valid data independently.
 sandbox.fetch=async url=>({ok:true,status:200,headers:{get:()=>new Date(now).toUTCString()},json:async()=>url==='loops.json'?{loops:null}:feeds[url]});
 (async()=>{

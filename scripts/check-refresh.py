@@ -70,3 +70,56 @@ assert feeds['github.json']['parity'] == {'done': 1, 'total': 3}
 pr['body'] = None
 assert len(refresh.progress_items(readme, [pr])) == 1
 print('Partial parity work is visible without changing completion counts')
+
+# History stays deduped and ordered; raw done/total are preserved per point.
+dup = refresh.initial_feeds({'feeds': {'parity-history.json': {'points': [
+    {'t': '2026-10-02T00:00:00Z', 'sha': 'b', 'done': 6, 'total': 10},
+    {'t': '2026-10-01T00:00:00Z', 'sha': 'a', 'done': 5, 'total': 10},
+    {'t': '2026-10-01T00:00:00+00:00', 'sha': 'a2', 'done': 5, 'total': 10},   # same instant, other spelling
+    {'t': '2026-10-03T00:00:00Z', 'sha': 'b', 'done': 6, 'total': 10},        # same commit seen twice
+    {'t': '2026-10-04T00:00:00Z', 'sha': 'z', 'done': 0, 'total': 0},         # empty checklist is never a real point
+    {'t': '2026-10-05T00:00:00Z', 'sha': 'y', 'done': 11, 'total': 10}]}}})   # done above total
+assert [p['sha'] for p in dup['parity-history.json']['points']] == ['a2', 'b'], dup['parity-history.json']['points']
+assert dup['parity-history.json']['points'][1]['t'] == '2026-10-03T00:00:00Z'
+
+# A README that parses to nothing, or collapses against the last good point, must not write a point.
+def attempt(text, history):
+    f = {'loops.json': {'loops': []}, 'inprogress.json': {'items': []}, 'parity-history.json': {'points': list(history)}}
+    try:
+        refresh.refresh(f, main, text, [], [], [])
+    except ValueError:
+        return f, True
+    return f, False
+good = [{'t': '2026-09-30T00:00:00Z', 'sha': 'old', 'done': 80, 'total': 100}]
+for bad in ('', '# Quill\nno checklist here\n', '### Area\n- [ ] not a checkbox line\n', '### Area\n- [x] one\n- [ ] two\n'):
+    f, refused = attempt(bad, good)
+    assert refused and f['parity-history.json']['points'] == good and 'github.json' not in f, repr(bad)
+ok = '### A\n' + '- [x] done\n' * 85 + '- [ ] todo\n' * 15
+f, refused = attempt(ok, good)
+assert not refused and f['parity-history.json']['points'][-1] == {'t': '2026-10-01T00:00:00Z', 'sha': 'abcdef1', 'done': 85, 'total': 100}
+# Growth of the checklist is normal (scope was added); the raw total is kept for tooltips.
+bigger = '### A\n' + '- [x] done\n' * 90 + '- [ ] todo\n' * 160
+f, refused = attempt(bigger, good)
+assert not refused and f['parity-history.json']['points'][-1]['total'] == 250
+
+# Losing a publish race re-reads and retries; any other failure is raised immediately.
+import sys
+calls = []
+def flaky(args):
+    calls.append(1)
+    if len(calls) < 3:
+        raise RuntimeError('HTTP 422: Update is not a fast forward')
+refresh.observe = flaky
+refresh.time.sleep = lambda s: None
+sys.argv = ['refresh-data.py']
+refresh.main()
+assert len(calls) == 3
+def broken(args):
+    raise RuntimeError('HTTP 500: server error')
+refresh.observe = broken
+try:
+    refresh.main()
+    raise AssertionError('non-race failure was swallowed')
+except RuntimeError:
+    pass
+print('History dedupe, malformed-README guard, and publish retry checks passed')

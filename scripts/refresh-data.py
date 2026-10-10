@@ -6,6 +6,7 @@ import json
 import re
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 import runpy
 from datetime import datetime, timezone
@@ -32,6 +33,46 @@ def api(path, repository=REPO, raw=False, paginate=False, allow_missing=False):
     return [item for page in value for item in page] if paginate else value
 
 
+def valid_point(value):
+    try:
+        datetime.fromisoformat(value['t'].replace('Z', '+00:00'))
+        return type(value['done']) is int and type(value['total']) is int and 0 <= value['done'] <= value['total'] and value['total'] > 0
+    except (KeyError, AttributeError, ValueError, TypeError):
+        return False
+
+
+def instant(point):
+    parsed = datetime.fromisoformat(point['t'].replace('Z', '+00:00'))
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
+def clean_points(points):
+    """Drop invalid points, collapse repeated commits or timestamps, and return history in time order."""
+    seen_sha, seen_time, kept = set(), set(), []
+    # Newest write wins when two points share a commit or a timestamp.
+    for point in reversed(sorted((p for p in points if isinstance(p, dict) and valid_point(p)), key=instant)):
+        sha, when = point.get('sha'), instant(point)
+        if (sha and sha in seen_sha) or when in seen_time:
+            continue
+        seen_sha.add(sha)
+        seen_time.add(when)
+        kept.append(point)
+    return kept[::-1]
+
+
+def check_plausible(parity, areas, points):
+    """Refuse to record a README that parsed badly: no items, or a collapse against the last good point."""
+    if not areas or parity['total'] <= 0:
+        raise ValueError('Checklist parsed to zero items; keeping the previous snapshot')
+    if parity['done'] > parity['total']:
+        raise ValueError('Checklist has more done items than total items; keeping the previous snapshot')
+    if points:
+        last = points[-1]
+        if parity['total'] < last['total'] * 0.8 or parity['done'] < last['done'] * 0.8:
+            raise ValueError(f"Checklist {parity['done']}/{parity['total']} is far below the last recorded "
+                             f"{last['done']}/{last['total']}; keeping the previous snapshot")
+
+
 def initial_feeds(previous=None):
     # Optional history/coordinator reports cannot be prerequisites for observing GitHub.
     old = previous.get('feeds', {}) if isinstance(previous, dict) else {}
@@ -47,14 +88,10 @@ def initial_feeds(previous=None):
         for value in values:
             if not isinstance(value, dict):
                 continue
-            if key == 'points':
-                try:
-                    datetime.fromisoformat(value['t'].replace('Z', '+00:00'))
-                    if not (type(value['done']) is int and type(value['total']) is int and 0 <= value['done'] <= value['total']):
-                        continue
-                except (KeyError, AttributeError, ValueError, TypeError):
-                    continue
+            if key == 'points' and not valid_point(value):
+                continue
             feeds[file][key].append(value)
+    feeds['parity-history.json']['points'] = clean_points(feeds['parity-history.json']['points'])
     return feeds
 
 
@@ -80,6 +117,7 @@ def refresh(feeds, main, readme, prs, events, commits):
     areas = checklist(readme)
     parity = {'done': sum(len(a['done']) for a in areas),
               'total': sum(len(a['done']) + len(a['pending']) for a in areas)}
+    check_plausible(parity, areas, feeds['parity-history.json']['points'])
     feeds['areas.json'] = {'areas': areas}
     # Store only the fields the page renders; full GitHub payloads include large PR bodies/diffs.
     prs = [{**{key: p.get(key) for key in ('number', 'title', 'state', 'merged_at', 'created_at', 'updated_at', 'html_url')},
@@ -97,9 +135,8 @@ def refresh(feeds, main, readme, prs, events, commits):
     open_numbers = {p['number'] for p in prs if p['state'] == 'open'}
     feeds['inprogress.json']['items'] = [w for w in feeds['inprogress.json']['items'] if w.get('pr') in open_numbers]
     point = {'t': main['commit']['committer']['date'], 'sha': main['sha'][:7], **parity}
-    points = feeds['parity-history.json']['points']
-    if not points or points[-1].get('sha') != point['sha']:
-        points.append(point)
+    # Raw done/total stay in every point; the dashboard rescales them against the newest total.
+    feeds['parity-history.json']['points'] = clean_points([*feeds['parity-history.json']['points'], point])
     return feeds
 
 
@@ -131,11 +168,11 @@ def progress_items(readme, prs):
     return items
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--publish-repo', default='shinycake/quill-dashboard')
-    parser.add_argument('--output', type=Path, help='Write a snapshot locally without publishing')
-    args = parser.parse_args()
+RACE = re.compile(r'fast.forward|HTTP 409|HTTP 422|already exists', re.I)
+
+
+def observe(args):
+    """One full read-modify-publish pass. Re-reads the published snapshot so a retry merges, never clobbers."""
     previous = api('contents/data.json?ref=codex/dashboard-data', args.publish_repo, raw=True, allow_missing=True)
     # A first publication needs no seeded branch or working build machine.
     feeds = initial_feeds(previous)
@@ -171,6 +208,22 @@ def main():
     print(f'Observed {REPO} main {head["sha"]}: {feeds["github.json"]["parity"]}; {len(open_prs)} open PRs')
     for warning in warnings:
         print(warning)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--publish-repo', default='shinycake/quill-dashboard')
+    parser.add_argument('--output', type=Path, help='Write a snapshot locally without publishing')
+    args = parser.parse_args()
+    # The caller serializes runs; if one still loses a ref race, retry from the newly published history.
+    for attempt in range(1, 4):
+        try:
+            return observe(args)
+        except RuntimeError as error:
+            if attempt == 3 or not RACE.search(str(error)):
+                raise
+            print(f'Publish raced another writer (attempt {attempt}); re-reading and retrying')
+            time.sleep(attempt * 3)
 
 
 if __name__ == '__main__':
