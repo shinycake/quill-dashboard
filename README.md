@@ -30,7 +30,19 @@ GitHub raw hosting is eventually consistent: the poll cadence is not a guarantee
 
 Each checklist item occupies exactly one segment: complete, inferred in progress, queued, or blocked. Active work is matched conservatively to at most one unblocked pending item per work record; publishers can provide an exact `item` text to remove the keyword inference. Work whose PR closed or branch merged is excluded. Blocked-only areas display a patterned amber bar and “All blocked”; blockers never count toward completion.
 
-The forecast fits a line to observations from the last 24 hours with the current checklist size. It requires three points spanning at least two hours. Nonpositive pace has no ETA; estimates from source observations older than 15 minutes are labeled as snapshot estimates. It shows available-work duration separately from the conditional estimate for 100%; resolving blocked work is a prerequisite for full parity. The graph range does not change the recent forecast window.
+Estimates for an unfinished checklist show available-work duration separately from the conditional estimate for 100%; resolving blocked work is a prerequisite for full parity. Estimates from observations older than 15 minutes are labeled as snapshot estimates, and a pace of zero or less has no ETA. The graph range does not change the pace window.
+
+### Current-denominator parity
+
+Every history point is stored as raw `done` and `total`. The page divides each point's `done` by the newest checklist size, so the trend line rises only when items get checked and does not drop when new items join the checklist. Tooltips show both views, for example "72.1% of today's 960 · 520/525 at the time". Snapshots store counts, not item ids, so a numerator above today's size is capped at it. That only happens when items were removed from the checklist later, and the cap keeps the line from passing 100%. The chart axis reads "% of current checklist" and names the item count. The 7-day gain and the in-range change use the same basis.
+
+Pace is the number of items checked per day over the last 24 hours, ending at the newest observation. If nothing moved, the window widens to 3 days, then 7. A window needs at least 2 hours of history. The older rule asked for three points that all shared one checklist size, so every scope change reset it. The pace line on the chart is the first-to-last slope over that window. The full-parity and unblocked-work estimates divide the remaining items by the same pace, and the Blocked card shows the count, today's total, and a two-decimal percentage.
+
+### Reliability
+
+The projection keeps the previous snapshot when the checklist parse looks wrong: no items, more done than total, or a total or done count below 80% of the last recorded point. The run then fails visibly instead of writing a point. History is deduped by commit and by timestamp, sorted, and stripped of invalid points on every run. If two runs race for the data branch, the loser re-reads the published snapshot and retries up to three times; the caller's concurrency group already serializes runs in normal operation. The page shows when the repository was last observed and flags a snapshot older than 15 minutes. Run `node scripts/check.cjs` and `python3 scripts/check-refresh.py` for the math, parsing, dedupe, and retry tests.
+
+### Loop reports
 
 Loop heartbeat and work evidence are evaluated independently at view time. A missing/overdue heartbeat is an error; an overdue work-evidence timestamp is an attention state, even when the publisher reports the loop as active. Paused, parked, blocked, and all known phase names remain distinct. Expand work details and blocker lists inside each card.
 
