@@ -183,7 +183,9 @@ def observe(args):
         except (RuntimeError, ValueError, subprocess.TimeoutExpired):
             print('History seed unavailable; observing the repository without it')
     head = api('commits/main')
-    readme = base64.b64decode(api(f'contents/README.md?ref={head["sha"]}')['content']).decode()
+    # The checklist moved from README.md to STATUS.md; older heads only have the README copy.
+    source = api(f'contents/STATUS.md?ref={head["sha"]}', allow_missing=True) or api(f'contents/README.md?ref={head["sha"]}')
+    readme = base64.b64decode(source['content']).decode()
     prs = api('pulls?state=all&sort=updated&direction=desc&per_page=100')
     open_prs = api('pulls?state=open&per_page=100', paginate=True)
     prs = list({p['number']: p for p in [*prs, *open_prs]}.values())
