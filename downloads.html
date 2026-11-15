@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quill downloads</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--text:#e6edf3;--muted:#8b949e;--win:#58a6ff;--mac:#3fb950;--lin:#d29922;--fp:#bc8cff;--bad:#f85149}
+@media (prefers-color-scheme:light){:root{--bg:#f6f8fa;--panel:#fff;--line:#d0d7de;--text:#1f2328;--muted:#656d76;--win:#0969da;--mac:#1a7f37;--lin:#9a6700;--fp:#8250df;--bad:#cf222e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
+main{max-width:960px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left))}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:16px;margin:28px 0 10px}
+.sub,.meta{color:var(--muted);font-size:13px}.meta.bad{color:var(--bad)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:16px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.tile b{display:block;font-size:28px;font-variant-numeric:tabular-nums}.tile span{color:var(--muted);font-size:12px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;overflow-x:auto}
+svg text{fill:var(--muted);font-size:10px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.sub a{color:inherit}
+.wrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+</style></head><body><main>
+<h1>Quill downloads</h1>
+<div class="sub">Release asset download counts from the GitHub API, read live in your browser. They include updater downloads, Homebrew, installer scripts and CI, so they are an upper bound on people.</div>
+<div class="meta" id="status">Loading…</div>
+<div class="sub">Chocolatey has no browser-readable API, so its counts are on <a href="https://community.chocolatey.org/packages/quill">its package page</a>.</div>
+<div class="tiles" id="tiles"></div>
+<h2>Per release</h2>
+<div class="legend" id="legend"></div>
+<div class="chart" id="chart"></div>
+<h2>Releases</h2>
+<div class="wrap"><table><thead><tr><th>Release</th><th>Date</th><th class="n">Windows</th><th class="n">macOS</th><th class="n">Linux</th><th class="n">Flatpak</th><th class="n">Total</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<script>
+const API='https://api.github.com/repos/shinycake/quill';
+const KEYS=[['windows','Windows','--win'],['mac','macOS','--mac'],['linux','Linux','--lin'],['flatpak','Flatpak','--fp']];
+const REFRESH_MS=300000, TIMEOUT_MS=12000;
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString('en-US');
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+let last=null, timer=0;
+function kind(n){
+  if(/^(latest\.json|SHA256SUMS\.txt|LGPL-SOURCES\.txt)$/.test(n)||n.includes('source'))return null;
+  if(n.includes('flatpak'))return 'flatpak';
+  if(n.includes('macos'))return 'mac';
+  if(n.includes('windows'))return 'windows';
+  if(n.includes('linux'))return 'linux';
+  return null;
+}
+function rowsFrom(releases){
+  return releases.filter(r=>/^v/.test(r.tag_name)).map(r=>{
+    const c={windows:0,mac:0,linux:0,flatpak:0};
+    for(const a of r.assets){const k=kind(a.name);if(k)c[k]+=a.download_count}
+    return {release:r.tag_name,date:(r.published_at||'').slice(0,10),...c,total:c.windows+c.mac+c.linux+c.flatpak};
+  }).sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:0);
+}
+async function get(url){
+  const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),TIMEOUT_MS);
+  try{const r=await fetch(url,{signal:ctl.signal,headers:{Accept:'application/vnd.github+json'}});
+    if(!r.ok)throw new Error(r.status===403?'GitHub rate limit reached, retrying later':'GitHub returned '+r.status);
+    return await r.json()}
+  finally{clearTimeout(t)}
+}
+function tile(label,value){const d=document.createElement('div');d.className='tile';const b=document.createElement('b');b.textContent=value;const s=document.createElement('span');s.textContent=label;d.append(b,s);return d}
+function render(rows,repo,at){
+  const sum=k=>rows.reduce((a,r)=>a+r[k],0);
+  const latest=rows[rows.length-1];
+  $('tiles').replaceChildren(tile('All downloads',fmt(sum('total'))),...(latest?[tile('Latest ('+latest.release+')',fmt(latest.total))]:[]),...KEYS.map(([k,l])=>tile(l,fmt(sum(k)))),tile('Stars',fmt(repo.stargazers_count)));
+  $('legend').replaceChildren(...KEYS.map(([k,l,v])=>{const s=document.createElement('span');const i=document.createElement('i');i.style.background=css(v);s.append(i,l);return s}));
+  $('rows').replaceChildren(...rows.slice().reverse().map(r=>{const tr=document.createElement('tr');
+    [r.release,r.date,r.windows,r.mac,r.linux,r.flatpak,r.total].forEach((v,i)=>{const td=document.createElement('td');if(i>1)td.className='n';td.textContent=i>1?fmt(v):v;tr.append(td)});return tr}));
+  chart(rows);
+  const m=$('status');m.className='meta';m.textContent='Updated '+at.toLocaleTimeString()+'. Refreshes every 5 minutes while this tab is visible.';
+}
+function chart(rows){
+  const W=Math.max(480,rows.length*28+50),H=220,m={t:8,r:8,b:46,l:40};
+  const max=Math.max(1,...rows.map(r=>r.total));
+  const NS='http://www.w3.org/2000/svg',el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e};
+  const svg=el('svg',{width:W,height:H,role:'img','aria-label':'Stacked bars of downloads per release by platform'});
+  const bw=(W-m.l-m.r)/rows.length;
+  for(let i=0;i<=4;i++){const v=Math.round(max*i/4),y=H-m.b-(H-m.b-m.t)*i/4;
+    svg.append(el('line',{x1:m.l,x2:W-m.r,y1:y,y2:y,stroke:css('--line')}));
+    const t=el('text',{x:m.l-6,y:y+3,'text-anchor':'end'});t.textContent=fmt(v);svg.append(t)}
+  rows.forEach((r,i)=>{let y=H-m.b;const x=m.l+i*bw+bw*.15;
+    for(const [k,,v] of KEYS){const h=(H-m.b-m.t)*r[k]/max;if(!h)continue;y-=h;
+      const rect=el('rect',{x,y,width:bw*.7,height:h,fill:css(v)});const ti=el('title',{});ti.textContent=r.release+' '+k+': '+r[k];rect.append(ti);svg.append(rect)}
+    const t=el('text',{transform:'translate('+(x+bw*.35)+','+(H-m.b+10)+') rotate(-45)','text-anchor':'end'});t.textContent=r.date.slice(5);svg.append(t)});
+  $('chart').replaceChildren(svg);
+}
+async function load(){
+  try{
+    const [releases,repo]=await Promise.all([get(API+'/releases?per_page=100'),get(API)]);
+    last={rows:rowsFrom(releases),repo,at:new Date()};render(last.rows,last.repo,last.at);
+  }catch(e){
+    const m=$('status');m.className='meta bad';
+    m.textContent=(e.name==='AbortError'?'GitHub timed out':e.message)+(last?'. Showing the numbers from '+last.at.toLocaleTimeString()+'.':'.');
+  }
+}
+function schedule(){clearTimeout(timer);if(!document.hidden)timer=setTimeout(async()=>{await load();schedule()},REFRESH_MS)}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(timer);else{load();schedule()}});
+load().then(schedule);
+</script></body></html>
